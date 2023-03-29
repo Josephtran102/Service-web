@@ -33,65 +33,64 @@ const services = () => {
 			</Head>
 
 			<Header />
+			<div className={styles.mainColumn__wrapper} style={{ width: '100%' }}>
+				<div className={styles.mainColumn}>
+					<h2 style={{ paddingTop: '0px' }}>Services 🌟</h2>
+					<p className={styles.desc}>
+						Select a project from the list below to view installation guides and
+						useful commands.
+					</p>
+					<br />
+					<h3>Mainnets</h3>
+					<div className={styles.mainnetColumn}>
+						{Object.keys(mainnetData).map(item => {
+							const name =
+								mainnetData[item].name ||
+								item.charAt(0).toUpperCase() + item.slice(1)
+							const serviceURL = '/services/mainnet/' + name.toLowerCase()
 
-			<div className={styles.mainColumn}>
-				<h2>Services 🌟</h2>
-				<p className={styles.desc}>
-					Select a project from the list to view installation guides and useful
-					commands. We develop node operator tools such as: API, RPC, gRPC,
-					addrbook (upd. every hour), Snapshot (upd. every 4h), State Sync
-					Services and IBC Relayers.
-				</p>
+							return (
+								<div className={styles.chain__wrapper}>
+									<Image
+										src={require('@public/mainnet/'.concat(
+											mainnetData[item].imgUrl
+										))}
+										alt='project logo'
+										width='20'
+										height='20'
+										unoptimized={true}
+									/>
+									<Link href={serviceURL}>{name}</Link>
+								</div>
+							)
+						})}
+					</div>
 
-				<h3>Mainnets</h3>
-				<div className={styles.mainnetColumn}>
-					{Object.keys(mainnetData).map(item => {
-						const name =
-							mainnetData[item].name ||
-							item.charAt(0).toUpperCase() + item.slice(1)
-						const serviceURL = '/services/mainnet/' + name.toLowerCase()
+					<h3>Testnets</h3>
 
-						return (
-							<div className={styles.chain__wrapper}>
-								<Image
-									src={require('@public/mainnet/'.concat(
-										mainnetData[item].imgUrl
-									))}
-									alt='project logo'
-									width='20'
-									height='20'
-									unoptimized={true}
-								/>
-								<Link href={serviceURL}>{name}</Link>
-							</div>
-						)
-					})}
-				</div>
+					<div className={styles.testnetColumn}>
+						{Object.keys(testnetData).map(item => {
+							const name =
+								testnetData[item].name ||
+								item.charAt(0).toUpperCase() + item.slice(1)
+							const serviceURL = '/services/testnet/' + name.toLowerCase()
 
-				<h3>Testnets</h3>
-
-				<div className={styles.testnetColumn}>
-					{Object.keys(testnetData).map(item => {
-						const name =
-							testnetData[item].name ||
-							item.charAt(0).toUpperCase() + item.slice(1)
-						const serviceURL = '/services/testnet/' + name.toLowerCase()
-
-						return (
-							<div className={styles.chain__wrapper}>
-								<Image
-									src={require('@public/testnet/'.concat(
-										testnetData[item].imgUrl
-									))}
-									alt='project logo'
-									width='20'
-									height='20'
-									unoptimized={true}
-								/>
-								<Link href={serviceURL}>{name}</Link>
-							</div>
-						)
-					})}
+							return (
+								<div className={styles.chain__wrapper}>
+									<Image
+										src={require('@public/testnet/'.concat(
+											testnetData[item].imgUrl
+										))}
+										alt='project logo'
+										width='20'
+										height='20'
+										unoptimized={true}
+									/>
+									<Link href={serviceURL}>{name}</Link>
+								</div>
+							)
+						})}
+					</div>
 				</div>
 			</div>
 		</>

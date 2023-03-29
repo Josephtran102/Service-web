@@ -196,7 +196,7 @@ const ProjectData = props => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
-				<p className='flex items-center gap-5'>
+				<p className='flex items-center gap-5 my-0'>
 					<span>
 						<a
 							className='flex items-center gap-2'

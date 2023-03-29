@@ -24,7 +24,7 @@ const SideMenu = () => {
 	const mainnetData = projects.mainnet
 	const testnetData = projects.testnet
 	const [items, setItems] = useState([])
-	const rootSubmenuKeys = []
+	let rootSubmenuKeys = ['services', 'installation', 'upgrade']
 
 	const onOpenChange = keys => {
 		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
@@ -108,6 +108,7 @@ const SideMenu = () => {
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
 		const imgURL = projects[type][name].imgUrl
+		setOpenKeys([`services`])
 
 		setItems([
 			getItem(
@@ -132,42 +133,37 @@ const SideMenu = () => {
 					{
 						type: 'divider',
 					},
-					getItem(
-						<Link href={serviceURL}>Services</Link>,
-						`services${name}`,
-						null,
-						[
-							getItem(
-								<Link href={serviceURL + '#rpc'}>RPC, API, GRPC</Link>,
-								`rpc${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link href={serviceURL + '#peer'}>Peers, Seeds</Link>,
-								`peer${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link href={serviceURL + '#snap'}>Snapshot</Link>,
-								`snap${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link href={serviceURL + '#sync'}>State sync</Link>,
-								`state${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link href={serviceURL + '#wasm'}>Wasm</Link>,
-								`wasm${name}`,
-								<RightOutlined />
-							),
-						]
-					),
+					getItem(<Link href={serviceURL}>Services</Link>, `services`, null, [
+						getItem(
+							<Link href={serviceURL + '#rpc'}>RPC, API, GRPC</Link>,
+							`rpc${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link href={serviceURL + '#peer'}>Peers, Seeds</Link>,
+							`peer${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link href={serviceURL + '#snap'}>Snapshot</Link>,
+							`snap${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link href={serviceURL + '#sync'}>State sync</Link>,
+							`state${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link href={serviceURL + '#wasm'}>Wasm</Link>,
+							`wasm${name}`,
+							<RightOutlined />
+						),
+					]),
 
 					getItem(
 						<Link href={serviceURL + '/installation/'}>Installation</Link>,
-						`Installation${name}`,
+						`installation`,
 						null,
 						[
 							getItem(
@@ -214,7 +210,7 @@ const SideMenu = () => {
 					),
 					getItem(
 						<Link href={serviceURL + '/upgrade/'}>Upgrade</Link>,
-						`upgrade${name}`,
+						`upgrade`,
 						null,
 						[
 							getItem(
