@@ -1,0 +1,27 @@
+@mixin container {
+	padding: 0px 3.5rem;
+
+	@media only screen and (max-width: 1024px) {
+		padding: 0px 2rem;
+	}
+
+	@media only screen and (max-width: 768px) {
+		padding: 15px;
+	}
+}
+
+@mixin card {
+	box-shadow: rgb(120 120 120 / 12%) 0px 3px 22px;
+	border-radius: 12px;
+	padding: 20px 30px;
+	border: 1px solid;
+	border-color: rgba(139, 139, 149, 0.2);
+
+	@media only screen and (max-width: 1300px) {
+		padding: 20px;
+	}
+
+	@media only screen and (max-width: 768px) {
+		padding: 10px;
+	}
+}

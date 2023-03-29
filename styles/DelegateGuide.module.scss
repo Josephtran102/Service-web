@@ -1,0 +1,32 @@
+.contentWrapper {
+	padding: 40px 0;
+	width: 50%;
+
+	@media (max-width: 1024px) {
+		padding: 30px 0;
+		width: 70%;
+	}
+
+	@media (max-width: 768px) {
+		padding: 15px 0;
+		width: 93%;
+	}
+
+	h1 {
+		font-weight: 700;
+	}
+
+	li {
+		list-style: circle !important;
+	}
+
+	a {
+		color: #1677ff !important;
+		text-decoration: underline;
+		text-decoration-color: #1677ff30;
+
+		&:hover {
+			color: #69b1ff !important;
+		}
+	}
+}

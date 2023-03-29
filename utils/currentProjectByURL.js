@@ -1,0 +1,19 @@
+import projects from '@store/projects'
+
+export const currentProject = () => {
+	const URL = window.location.href
+	let name = ''
+	let type = URL.indexOf('testnet') > -1 ? 'testnet' : 'mainnet'
+
+	type === 'testnet'
+		? Object.keys(projects.testnet).map(item =>
+				URL.indexOf(item) > -1 ? (name = item) : null
+		  )
+		: Object.keys(projects.mainnet).map(item =>
+				URL.indexOf(item) > -1 ? (name = item) : null
+		  )
+
+	const serviceURL = `/services/${type}/` + name.toLowerCase()
+
+	return { name: name, type: type, serviceURL: serviceURL }
+}

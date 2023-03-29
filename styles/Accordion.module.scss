@@ -1,0 +1,90 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.accordion {
+	cursor: pointer;
+	padding: 35px 0;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+	border-bottom: 1px solid rgb(197, 197, 197);
+	display: flex;
+	color: inherit;
+	justify-content: space-between;
+	background: linear-gradient(
+		-45deg,
+		#ee765200,
+		#e73c7e00,
+		#23a5d500,
+		#23d5ab00
+	);
+	background-size: 400% 400%;
+
+	&:hover {
+		background: linear-gradient(
+			-45deg,
+			#ee765214,
+			#e73c7e19,
+			#23a5d510,
+			#23d5ab16
+		);
+		animation: gradient 15s ease infinite;
+	}
+
+	@keyframes gradient {
+		0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+
+	@media (max-width: 768px) {
+		font-size: 12px;
+	}
+
+	&__desc {
+		font-size: 14px;
+		width: 100%;
+		line-height: 1.5;
+
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
+	}
+}
+
+.panel {
+	background-color: transparent;
+	padding: 0 18px;
+	overflow: hidden;
+	transition: 0.2s ease-out;
+
+	p {
+		padding: 20px 0;
+	}
+}
+
+.button {
+	&__heading {
+		font-size: 18px;
+		font-weight: 400;
+		color: inherit;
+		transition: 0.2 ease-out;
+		padding: 5px 20px;
+
+		@media (max-width: 768px) {
+			font-size: 15px;
+			font-weight: 400;
+		}
+	}
+}

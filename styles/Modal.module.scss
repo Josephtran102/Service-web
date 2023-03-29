@@ -1,0 +1,74 @@
+.modal {
+	position: relative;
+	width: clamp(60%, 800px, 90%);
+	height: fit-content;
+	margin: auto;
+	padding: 2.5rem;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-shadow: rgba(164, 165, 165, 0.1) 0px 2px 40px;
+	z-index: 1010;
+
+	div {
+		line-height: 1.35;
+		position: relative;
+
+		a {
+			color: #8674e0;
+		}
+
+		@media (max-width: 768px) {
+			line-height: 1.2;
+			font-size: 12px;
+		}
+
+		button {
+			a {
+				color: #fff;
+			}
+
+			@media (max-width: 768px) {
+				line-height: 1.2;
+				font-size: 12px;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		width: calc(100% - 15px);
+		padding: 25px;
+	}
+}
+
+.exit {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30px;
+	width: 30px;
+	top: 20px;
+	right: 20px;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.9);
+	color: #fff;
+	border: 0px;
+	border-radius: 50%;
+	transition: 0.3s;
+	cursor: pointer;
+
+	@media (max-width: 768px) {
+		padding: 0;
+		width: 20px;
+		height: 20px;
+		top: 5px;
+		right: 5px;
+
+		span {
+			font-size: 12px;
+		}
+	}
+}
