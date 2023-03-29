@@ -234,7 +234,7 @@ const SideMenu = () => {
 				],
 				'group'
 			),
-			getItem('Ecosystem', 'grpprojects', null, null, 'group'),
+			getItem('', 'divider', null, null, 'group'),
 			{
 				type: 'divider',
 			},
@@ -266,14 +266,14 @@ const SideMenu = () => {
 			className={styles.sideColumn}
 			style={{
 				backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a',
-				boxShadow: 'rgba(140, 140, 140, 0.07) 0px 6px 24px 0px',
+				boxShadow: 'rgba(140, 140, 140, 0.18) 0px 6px 26px 0px',
 			}}
 		>
 			<Menu
 				items={items}
 				style={{
 					width: '100%',
-					borderInlineEnd: '1px solid rgba(140, 140, 140, 0.16)',
+					borderInlineEnd: '1px solid rgba(140, 140, 140, 0.2)',
 					transition: '0.1s',
 					backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a',
 				}}

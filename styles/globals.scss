@@ -309,6 +309,11 @@ div[role='menuitem'] {
 	margin: 2px 0 !important;
 	box-shadow: none !important;
 	transition: 0s !important;
+	font-size: 15px;
+
+	@media (max-width: 1200px) {
+		font-size: 14px;
+	}
 }
 
 li[role='menuitem'] {

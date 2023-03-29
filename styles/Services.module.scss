@@ -33,7 +33,7 @@ b.bold {
 .sideColumn {
 	padding: 10px 0 5px 15px;
 	position: relative;
-	width: calc(15% + 25px);
+	width: calc(15% + 30px);
 	z-index: 100;
 
 	@media (max-width: 1400px) {
@@ -231,10 +231,13 @@ b.bold {
 		font-size: 32px;
 		border-bottom: 2px solid #ebc52f;
 		padding-top: 55px;
-		margin: -35px 0px 8px;
+		margin: -35px 0px 10px;
 		font-weight: 600;
 		width: fit-content;
 
+		@media (max-width: 1600px) {
+			font-size: 31px;
+		}
 		@media (max-width: 1024px) {
 			font-size: 30px;
 		}
@@ -247,7 +250,7 @@ b.bold {
 
 		&:first-of-type {
 			padding-top: 12px;
-			margin: -5px 0 8px;
+			margin: -5px 0 10px;
 
 			@media (max-width: 768px) {
 				padding-top: 5px;
@@ -260,11 +263,11 @@ b.bold {
 		font-size: 20px;
 
 		@media (max-width: 1600px) {
-			font-size: 19px;
+			font-size: 18px;
 		}
 
 		@media (max-width: 768px) {
-			font-size: 18px;
+			font-size: 17px;
 		}
 	}
 

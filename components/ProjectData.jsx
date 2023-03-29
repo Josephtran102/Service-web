@@ -196,8 +196,7 @@ const ProjectData = props => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
-				<p>{desc}</p>
-				<p className='flex items-center gap-4'>
+				<p className='flex items-center gap-5'>
 					<span>
 						<a
 							className='flex items-center gap-2'
@@ -207,18 +206,6 @@ const ProjectData = props => {
 						>
 							<GlobalOutlined />
 							Website
-						</a>
-					</span>
-					<span className='divider__dot' />
-					<span>
-						<a
-							className='flex items-center gap-2'
-							href={`https://files.itrocket.net/${type}/${name}`}
-							target='_blank'
-							rel='noopener referrer'
-						>
-							<FileTextTwoTone />
-							Files
 						</a>
 					</span>
 					<span className='divider__dot' />

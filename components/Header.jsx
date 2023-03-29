@@ -63,14 +63,6 @@ const Header = () => {
 		>
 			Services
 		</Link>,
-		<a
-			href='https://files.itrocket.net/'
-			onClick={() => {
-				setIsOpen(!isOpen)
-			}}
-		>
-			Files
-		</a>,
 		<Link
 			href='/#faq'
 			onClick={() => {
@@ -136,11 +128,7 @@ const Header = () => {
 									Services
 								</Link>
 							</li>
-							<li>
-								<a href='https://files.itrocket.net/' className={styles.link}>
-									Files
-								</a>
-							</li>
+
 							<li>
 								<Link href='/#faq' className={styles.link}>
 									FAQ
