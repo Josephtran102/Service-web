@@ -193,7 +193,7 @@ const ProjectData = props => {
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
 				<h2 id='rpc'>RPC, API, gRPC</h2>
-				<div className='flex gap-1 items-center'>
+				<div className='flex flex-wrap gap-1 items-center'>
 					<span>Public RPC: </span>
 					<a
 						href={`https://${name}-${type}-rpc.itrocket.net:443`}
@@ -209,7 +209,7 @@ const ProjectData = props => {
 						}}
 					/>
 				</div>
-				<div className='flex gap-1 items-center'>
+				<div className='flex flex-wrap gap-1 items-center'>
 					<span>Public API: </span>
 					<a
 						href={`https://${name}-${type}-api.itrocket.net:443`}
@@ -225,7 +225,7 @@ const ProjectData = props => {
 						}}
 					/>
 				</div>
-				<div className='flex gap-1 items-center'>
+				<div className='flex flex-wrap gap-1 items-center'>
 					<span>Public gRPC: </span>
 					<a
 						href={`https://${name}-${type}-grpc.itrocket.net:443`}
