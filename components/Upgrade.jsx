@@ -95,7 +95,7 @@ const Upgrade = props => {
 	return (
 		<>
 			<Head>
-				<title>{`Installation - ${projectName} | Services`}</title>
+				<title>{`Upgrade - ${projectName} | Services`}</title>
 				<meta
 					name='description'
 					content='ITRocket 🚀 | Crypto Multipurpose Project'
