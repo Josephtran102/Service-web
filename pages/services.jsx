@@ -6,6 +6,7 @@ import { Context } from '@context/context'
 import Link from 'next/link'
 import Image from 'next/image'
 import Header from '@components/Header'
+import Footer from '@components/Footer'
 
 const services = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -35,13 +36,13 @@ const services = () => {
 			<Header />
 			<div className={styles.mainColumn__wrapper} style={{ width: '100%' }}>
 				<div className={styles.mainColumn}>
-					<h2 style={{ paddingTop: '0px' }}>Services 🌟</h2>
+					<h1 style={{ paddingTop: '0px' }}>Services 🌟</h1>
 					<p className={styles.desc}>
 						Select a project from the list below to view installation guides and
 						useful commands.
 					</p>
 					<br />
-					<h3>Mainnets</h3>
+					<h2 id='mainnets'>Mainnets</h2>
 					<div className={styles.mainnetColumn}>
 						{Object.keys(mainnetData).map(item => {
 							const name =
@@ -50,7 +51,7 @@ const services = () => {
 							const serviceURL = '/services/mainnet/' + name.toLowerCase()
 
 							return (
-								<div className={styles.chain__wrapper}>
+								<Link href={serviceURL} className={styles.chain__wrapper}>
 									<Image
 										src={require('@public/mainnet/'.concat(
 											mainnetData[item].imgUrl
@@ -60,14 +61,13 @@ const services = () => {
 										height='20'
 										unoptimized={true}
 									/>
-									<Link href={serviceURL}>{name}</Link>
-								</div>
+									{name}
+								</Link>
 							)
 						})}
 					</div>
-
-					<h3>Testnets</h3>
-
+					<br />
+					<h2>Testnets</h2>
 					<div className={styles.testnetColumn}>
 						{Object.keys(testnetData).map(item => {
 							const name =
@@ -76,7 +76,7 @@ const services = () => {
 							const serviceURL = '/services/testnet/' + name.toLowerCase()
 
 							return (
-								<div className={styles.chain__wrapper}>
+								<Link href={serviceURL} className={styles.chain__wrapper}>
 									<Image
 										src={require('@public/testnet/'.concat(
 											testnetData[item].imgUrl
@@ -86,13 +86,15 @@ const services = () => {
 										height='20'
 										unoptimized={true}
 									/>
-									<Link href={serviceURL}>{name}</Link>
-								</div>
+									{name}
+								</Link>
 							)
 						})}
 					</div>
 				</div>
 			</div>
+
+			<Footer />
 		</>
 	)
 }

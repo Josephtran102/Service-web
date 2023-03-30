@@ -24,7 +24,7 @@ const Card = () => {
 		show: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.2,
+				staggerChildren: 0.18,
 			},
 		},
 	}
@@ -35,7 +35,7 @@ const Card = () => {
 			opacity: 1,
 			y: 0,
 			transition: {
-				duration: 0.4,
+				duration: 0.35,
 			},
 		},
 	}
