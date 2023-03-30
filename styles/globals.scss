@@ -388,10 +388,16 @@ span.ant-typography,
 a.ant-typography {
 	font-weight: normal;
 	font-size: 17px;
+	margin-bottom: 0;
 
 	@media (max-width: 768px) {
 		font-size: 14px;
 	}
+}
+
+.ant-typography-copy {
+	display: flex !important;
+	margin-top: -3px;
 }
 
 .code-box-demo .ant-affix {

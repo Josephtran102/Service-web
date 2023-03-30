@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import SideMenu from '@components/SideMenu'
-import { fetchNetInfo, fetchStatus, fetchVersion } from 'utils/fetchProject.js'
+import { fetchStatus, fetchVersion } from 'utils/fetchProject.js'
 import styles from '@styles/Services.module.scss'
 import { currentProject } from 'utils/currentProjectByURL'
-import { CheckCircleTwoTone } from '@ant-design/icons'
+import { CheckCircleTwoTone, SearchOutlined } from '@ant-design/icons'
 import { Tooltip } from 'antd'
 
 export default function Dashboard(props) {
@@ -17,11 +17,14 @@ export default function Dashboard(props) {
 	const [version, setVersion] = useState()
 	const { theme, toggleTheme } = useContext(Context)
 	const [id, setId] = useState('')
+	const [explorer, setExplorer] = useState(null)
 
 	useEffect(() => {
-		const name = currentProject().name
-		const type = currentProject().type
-		setName(currentProject().name)
+		const project = currentProject()
+		const name = project.name
+		const type = project.type
+		setName(project.name)
+		setExplorer(project.explorer)
 
 		fetchVersion(name, type)
 			.then(status => {
@@ -64,16 +67,6 @@ export default function Dashboard(props) {
 		}, 1)
 	}, [])
 
-	// const netInfo = () => {
-	// 	fetchNetInfo(name, type)
-	// 		.then(info => {
-	// 			const peers = info.peers
-	// 		})
-	// 		.catch(err => {
-	// 			console.log(err)
-	// 		})
-	// }
-
 	return (
 		<div style={{ opacity: opacity }}>
 			<Header />
@@ -107,11 +100,32 @@ export default function Dashboard(props) {
 								<span className={`${styles.dot} ${isActive}`} />
 							</span>
 							<span>
-								<b className={styles.bold}>Bin: </b> v{version}
+								{explorer === undefined ? (
+									<a
+										className='flex items-center gap-2 font-medium text-blue-700 transition-colors hover:text-blue-500'
+										href={`https://${
+											currentProject().type
+										}.itrocket.net/${name}/staking`}
+										target='_blank'
+										rel='noopener referrer'
+									>
+										<SearchOutlined />
+										Explorer
+									</a>
+								) : (
+									<a
+										className='flex items-center gap-2'
+										href={`${explorer}`}
+										target='_blank'
+										rel='noopener referrer'
+									>
+										<SearchOutlined style={{ color: '#2982e7' }} />
+										Explorer
+									</a>
+								)}
 							</span>
 						</p>
 					</div>
-
 					{props.children}
 				</main>
 			</div>

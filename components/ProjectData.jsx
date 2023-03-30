@@ -6,17 +6,13 @@ import styles from '@styles/Services.module.scss'
 import CodeSnippet from '@components/CodeSnippet.jsx'
 import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
 import Head from 'next/head'
-import {
-	FileTextTwoTone,
-	GlobalOutlined,
-	SearchOutlined,
-} from '@ant-design/icons'
+import { Typography } from 'antd'
+const { Paragraph } = Typography
 
 const ProjectData = props => {
 	const name = props.name
 	const type = props.type
 	const project = projects[type][name]
-
 	const explorer = useRef()
 	const projectName =
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
@@ -196,46 +192,8 @@ const ProjectData = props => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
-				<p className='flex items-center gap-5 my-0'>
-					<span>
-						<a
-							className='flex items-center gap-2'
-							href={website}
-							target='_blank'
-							rel='noopener referrer'
-						>
-							<GlobalOutlined />
-							Website
-						</a>
-					</span>
-					<span className='divider__dot' />
-					<span>
-						{explorer.current === undefined ? (
-							<a
-								className='flex items-center gap-2'
-								href={`https://${type}.itrocket.net/${name}/staking`}
-								target='_blank'
-								rel='noopener referrer'
-							>
-								<SearchOutlined />
-								Explorer
-							</a>
-						) : (
-							<a
-								className='flex items-center gap-2'
-								href={`${explorer.current}`}
-								target='_blank'
-								rel='noopener referrer'
-							>
-								<SearchOutlined style={{ color: '#2982e7' }} />
-								Explorer
-							</a>
-						)}
-					</span>
-				</p>
-
 				<h2 id='rpc'>RPC, API, gRPC</h2>
-				<p>
+				<div className='flex gap-1 items-center'>
 					<span>Public RPC: </span>
 					<a
 						href={`https://${name}-${type}-rpc.itrocket.net:443`}
@@ -244,8 +202,14 @@ const ProjectData = props => {
 					>
 						{`https://${name}-${type}-rpc.itrocket.net:443`}
 					</a>
-				</p>
-				<p>
+					<Paragraph
+						copyable={{
+							text: `https://${name}-${type}-rpc.itrocket.net:443`,
+							tooltips: false,
+						}}
+					/>
+				</div>
+				<div className='flex gap-1 items-center'>
 					<span>Public API: </span>
 					<a
 						href={`https://${name}-${type}-api.itrocket.net:443`}
@@ -254,8 +218,14 @@ const ProjectData = props => {
 					>
 						{`https://${name}-${type}-api.itrocket.net:443`}
 					</a>
-				</p>
-				<p>
+					<Paragraph
+						copyable={{
+							text: `https://${name}-${type}-api.itrocket.net:443`,
+							tooltips: false,
+						}}
+					/>
+				</div>
+				<div className='flex gap-1 items-center'>
 					<span>Public gRPC: </span>
 					<a
 						href={`https://${name}-${type}-grpc.itrocket.net:443`}
@@ -264,7 +234,13 @@ const ProjectData = props => {
 					>
 						{`https://${name}-${type}-grpc.itrocket.net:443`}
 					</a>
-				</p>
+					<Paragraph
+						copyable={{
+							text: `https://${name}-${type}-grpc.itrocket.net:443`,
+							tooltips: false,
+						}}
+					/>
+				</div>
 				<h3 id='peer'>peers:</h3>
 				<CodeSnippet
 					theme={theme}

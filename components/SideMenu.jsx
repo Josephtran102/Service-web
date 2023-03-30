@@ -5,7 +5,7 @@ import projects from '@store/projects'
 import { Menu } from 'antd'
 import Link from 'next/link.js'
 import Image from 'next/image.js'
-import { RightOutlined } from '@ant-design/icons'
+import { GlobalOutlined, RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
 
 function getItem(label, key, icon, children, type) {
@@ -27,8 +27,6 @@ const SideMenu = () => {
 	let rootSubmenuKeys = ['services', 'installation', 'upgrade']
 
 	const onOpenChange = keys => {
-		console.log(keys)
-		console.log(rootSubmenuKeys)
 		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
 		if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
 			setOpenKeys(keys)
@@ -104,9 +102,10 @@ const SideMenu = () => {
 	const installRef = useRef()
 
 	useEffect(() => {
-		const name = currentProject().name
-		const type = currentProject().type
-		const serviceURL = currentProject().serviceURL
+		const project = currentProject()
+		const name = project.name
+		const type = project.type
+		const serviceURL = project.serviceURL
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
 		const imgURL = projects[type][name].imgUrl
@@ -236,8 +235,32 @@ const SideMenu = () => {
 			{
 				type: 'divider',
 			},
+
 			getItem(
-				'Other projects',
+				<p className='flex items-center gap-5 my-0'>
+					<GlobalOutlined />
+					<span>
+						<a
+							className='flex items-center gap-2'
+							href={projects[type][name].website}
+							target='_blank'
+							rel='noopener referrer'
+						>
+							Website
+						</a>
+					</span>
+				</p>,
+				'website',
+				null
+			),
+
+			getItem('', 'divider', null, null, 'group'),
+			{
+				type: 'divider',
+			},
+
+			getItem(
+				'All projects',
 				`grphide${name}`,
 				<Image
 					src={require('../public/justRocketCrop.png')}
