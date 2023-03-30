@@ -131,9 +131,6 @@ const SideMenu = () => {
 				'grpthis',
 				null,
 				[
-					{
-						type: 'divider',
-					},
 					getItem(<Link href={serviceURL}>Services</Link>, `services`, null, [
 						getItem(
 							<Link href={serviceURL + '#rpc'}>RPC, API, GRPC</Link>,

@@ -39,9 +39,7 @@ const Home = () => {
 	useEffect(() => {
 		const onPageLoad = () => {
 			setOpacity(0)
-			setTimeout(() => {
-				setShowing(true)
-			}, 500)
+			setShowing(true)
 		}
 
 		if (document.readyState === 'complete') {
@@ -55,20 +53,7 @@ const Home = () => {
 
 	return (
 		<>
-			{!showing ? (
-				<div
-					className='loader__wrapper'
-					style={{
-						backgroundColor:
-							theme === 'light' ? 'rgba(255,255,255,0.8)' : 'rgba(0,0,0,0.8)',
-						opacity: opacity,
-					}}
-				>
-					<div className='loader'></div>
-				</div>
-			) : (
-				<></>
-			)}
+			{!showing ? <></> : <></>}
 
 			<Head>
 				<title>
