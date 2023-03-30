@@ -37,7 +37,7 @@ mv arkhd $HOME/go/bin`,
 		},
 		nym: {
 			name: 'NYM',
-			link: 'https://mainnet.itrocket.net/nyx/staking',
+			link: 'https://mixnet.explorers.guru/',
 			imgUrl: 'nym.png',
 			delegate:
 				'https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5',
