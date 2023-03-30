@@ -388,7 +388,8 @@ p.desc {
 
 .projectInfoCard {
 	@include card;
-	position: relative;
+	position: sticky;
+	top: 2px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border-color: rgba(101, 101, 109, 0.3);

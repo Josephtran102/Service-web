@@ -27,6 +27,8 @@ const SideMenu = () => {
 	let rootSubmenuKeys = ['services', 'installation', 'upgrade']
 
 	const onOpenChange = keys => {
+		console.log(keys)
+		console.log(rootSubmenuKeys)
 		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
 		if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
 			setOpenKeys(keys)
