@@ -4,7 +4,7 @@ let projects = {
 	mainnet: {
 		arkhadian: {
 			link: 'https://mainnet.itrocket.net/arkhadian/staking',
-			DelLink:
+			delegate:
 				'https://mainnet.itrocket.net/arkhadian/staking/arkhvaloper18u4es3gnjerdqw3u96pjdq6ukclysh3f9wfmqe',
 			imgUrl: 'arkhadian.jpg',
 			desc: '',
@@ -39,10 +39,14 @@ mv arkhd $HOME/go/bin`,
 			name: 'NYM',
 			link: 'https://mainnet.itrocket.net/nyx/staking',
 			imgUrl: 'nym.png',
+			delegate:
+				'https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5',
 		},
 		nois: {
 			link: 'https://mainnet.itrocket.net/nois/staking',
 			imgUrl: 'nois.png',
+			delegate:
+				'https://mainnet.itrocket.net/nois/staking/noisvaloper19yul78yu9jzay9afsyjgmv0pk0k5rl80sa6vlx',
 			desc: 'Brings random beacons to Cosmos blockchains without compromising security or usability by leveraging drand and IBC.',
 			website: 'https://nois.network/',
 			offValDoc: 'https://docs2.nois.network/mainnet.html',
@@ -72,10 +76,11 @@ make install`,
 		forta: {
 			link: 'https://explorer.forta.network/',
 			imgUrl: 'forta.jpg',
+			delegate: 'https://app.forta.network/nodePool/272/',
 		},
 		quicksilver: {
 			link: 'https://mainnet.itrocket.net/quicksilver/staking',
-			DelLink:
+			delegate:
 				'https://wallet.keplr.app/chains/quicksilver?modal=validator&chain=quicksilver-2&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2xhttps://wallet.keplr.app/chains/quicksilver?modal=validator&chain=quicksilver-2&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x',
 			imgUrl: 'quicksilver.jpg',
 			desc: 'Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.',
@@ -108,7 +113,7 @@ make install`,
 		},
 		uptick: {
 			link: 'https://mainnet.itrocket.net/uptick/staking',
-			DelLink:
+			delegate:
 				'https://mainnet.itrocket.net/uptick/staking/uptickvaloper1dx5sfmg4ascplvmkn39stq3rgk0c3vhpv6ysd0',
 			imgUrl: 'uptick.jpg',
 			desc: 'The Business Grade Multi-Chain NFT Infrastructure for Web 3.0',
