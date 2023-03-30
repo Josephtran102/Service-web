@@ -155,25 +155,6 @@ const Installation = props => {
 							Official Documentation
 						</a>
 						<span className='divider__dot' />
-						<SearchOutlined />{' '}
-						{!explorer.current ? (
-							<a
-								href={`https://${type}.itrocket.net/${name}/staking`}
-								target='_blank'
-								rel='noopener referrer'
-							>
-								Explorer
-							</a>
-						) : (
-							<a
-								href={`${explorer.current}`}
-								target='_blank'
-								rel='noopener referrer'
-							>
-								Explorer
-							</a>
-						)}
-						<span className='divider__dot' />
 						<span> Recommended Hardware: {project.hardware}</span>
 					</p>
 
