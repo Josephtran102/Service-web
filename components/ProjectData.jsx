@@ -269,11 +269,14 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 				/>
 				<h2 id='snap'>Snapshot </h2>
 				<p className={styles.text_secondary}>
-					<b className={styles.bold}>height: </b> {snapHeight}{' '}
-					{` (${snapTime} ago)`} {' | '}
-					<b className={styles.bold}>size: </b> {`${snapSize}B | `}
-					<b className={styles.bold}>pruning: </b> {pruning} {' | '}
-					<b className={styles.bold}>indexer: </b> {indexer}
+					height: <b className={styles.bold}>{snapHeight}</b>
+					{' | '}
+					<b className={styles.bold}>{`${snapTime} ago`}</b>
+					{' | '}
+					size: <b className={styles.bold}>{`${snapSize}B | `}</b>
+					pruning: <b className={styles.bold}>{pruning}</b>
+					{' | '}
+					indexer: <b className={styles.bold}>{indexer}</b>
 				</p>
 				<CodeSnippet
 					theme={theme}

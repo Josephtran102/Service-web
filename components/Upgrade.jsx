@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { Context } from '@context/context'
 import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
 import CodeSnippet from './CodeSnippet'
+import { Alert } from 'antd'
 
 const Upgrade = props => {
 	const name = props.name
@@ -110,16 +111,21 @@ const Upgrade = props => {
 					<p>Project has no upgrades yet</p>
 				) : (
 					<>
+						<Alert
+							message={`Upgrade height: ${updHeight}. Please don\`t upgrade before specified height.`}
+							type='warning'
+							showIcon
+							closable
+							style={{ width: 'fit-content' }}
+						/>
 						<p className='flex items-center gap-2'>
-							<span>Upgrade height: {updHeight}</span>
+							<span></span>
 							{/* <span className='divider__dot' />
 							<span> Avg</span> */}
 						</p>
 
 						<h2 id='manual'>Manual upgrade</h2>
-						<p className={styles.text_secondary}>
-							Please don`t do manual upgrade before {updHeight} height
-						</p>
+						<p className={styles.text_secondary}></p>
 						<CodeSnippet
 							theme={theme}
 							code={`${installBin}
