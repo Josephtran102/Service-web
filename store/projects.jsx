@@ -106,7 +106,7 @@ rm -rf ~/quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
 git fetch
-git checkout v1.2.4
+git checkout v1.2.9-hotfix.0
 make install`,
 			updHeight: '1279200',
 			newInstallBin: `cd $HOME
@@ -114,7 +114,7 @@ rm -rf ~/quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
 git fetch
-git checkout v1.2.9
+git checkout v1.2.9-hotfix.0
 make install`,
 		},
 		uptick: {
@@ -145,7 +145,6 @@ rm -rf uptick
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
 git checkout v0.2.4
-
 make install`,
 			updHeight: '',
 			newInstallBin: ``,
