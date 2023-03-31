@@ -40,17 +40,17 @@ b.bold {
 	position: relative;
 
 	@media only screen and (min-width: 767px) {
-		padding-bottom: 55px;
+		padding-bottom: 15px;
 	}
 
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
-		padding: 5px 20px 450px;
+		padding: 5px 20px 500px;
 		width: calc(85% - 30px);
 
 		@media (max-width: 1300px) {
-			padding: 5px 15px 450px;
+			padding: 5px 15px 500px;
 		}
 		@media (max-width: 1024px) {
 			width: 100%;
