@@ -6,6 +6,7 @@ import { Context } from '@context/context'
 import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
 import CodeSnippet from './CodeSnippet'
 import { Alert } from 'antd'
+import AnimatedSection from './AnimatedSection'
 
 const Upgrade = props => {
 	const name = props.name
@@ -94,7 +95,7 @@ const Upgrade = props => {
 	}, [])
 
 	return (
-		<>
+		<AnimatedSection>
 			<Head>
 				<title>{`Upgrade - ${projectName} | Services`}</title>
 				<meta
@@ -167,7 +168,7 @@ tmux new -s ${name}-upgrade "sudo /bin/bash ${name}-upgrade.sh"
 					</>
 				)}
 			</div>
-		</>
+		</AnimatedSection>
 	)
 }
 

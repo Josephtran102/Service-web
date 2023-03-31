@@ -7,6 +7,7 @@ import CodeSnippet from '@components/CodeSnippet.jsx'
 import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
 import Head from 'next/head'
 import { Typography } from 'antd'
+import AnimatedSection from './AnimatedSection'
 const { Paragraph } = Typography
 
 const ProjectData = props => {
@@ -178,7 +179,7 @@ const ProjectData = props => {
 	}
 
 	return (
-		<>
+		<AnimatedSection>
 			<Head>
 				<title>{`${projectName} | Services`}</title>
 				<meta
@@ -347,7 +348,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 					<p>Sorry, this project has no wasm folder yet</p>
 				)}
 			</div>
-		</>
+		</AnimatedSection>
 	)
 }
 

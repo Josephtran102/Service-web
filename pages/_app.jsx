@@ -1,12 +1,17 @@
 import React from 'react'
 import { ContextProvider } from 'context/context'
 import '@styles/globals.scss'
+import { AnimatePresence } from 'framer-motion'
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps, router }) {
 	const getLayout = Component.getLayout || (page => page)
 
 	return (
-		<ContextProvider>{getLayout(<Component {...pageProps} />)}</ContextProvider>
+		<AnimatePresence wait>
+			<ContextProvider>
+				{getLayout(<Component {...pageProps} key={router.route} />)}
+			</ContextProvider>
+		</AnimatePresence>
 	)
 }
 

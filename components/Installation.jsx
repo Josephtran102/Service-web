@@ -6,7 +6,8 @@ import { Context } from '@context/context'
 import { fetchNetInfo, fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 import CodeSnippet from './CodeSnippet'
 import { Input, Space } from 'antd'
-import { FileDoneOutlined, SearchOutlined } from '@ant-design/icons'
+import { FileDoneOutlined } from '@ant-design/icons'
+import AnimatedSection from './AnimatedSection'
 
 const Installation = props => {
 	const name = props.name
@@ -29,7 +30,6 @@ const Installation = props => {
 	} = project
 
 	explorer.current = project.explorer
-
 	let wasm = useRef('false')
 
 	const { theme } = useContext(Context)
@@ -134,7 +134,7 @@ const Installation = props => {
 	}
 
 	return (
-		<>
+		<AnimatedSection>
 			<Head>
 				<title>{`Installation - ${projectName} | Services`}</title>
 				<meta
@@ -383,7 +383,7 @@ sudo rm -rf $HOME/${path}
 sed -i "/${VAR}_/d" $HOME/.bash_profile`}
 				/>
 			</div>
-		</>
+		</AnimatedSection>
 	)
 }
 

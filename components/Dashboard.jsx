@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
