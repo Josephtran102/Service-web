@@ -108,8 +108,14 @@ cd quicksilver
 git fetch
 git checkout v1.2.4
 make install`,
-			updHeight: '',
-			newInstallBin: ``,
+			updHeight: '1279200',
+			newInstallBin: `cd $HOME
+rm -rf ~/quicksilver
+git clone https://github.com/ingenuity-build/quicksilver
+cd quicksilver
+git fetch
+git checkout v1.2.9
+make instal`,
 		},
 		uptick: {
 			link: 'https://mainnet.itrocket.net/uptick/staking',
@@ -760,11 +766,6 @@ make install`,
 			link: 'https://pontem.network/',
 			imgUrl: 'pontem.svg',
 		},
-		// {
-		// 	name: 'Quicksilver',
-		// 	link: 'https://quicksilver.zone/',
-		// 	imgUrl: 'quicksilver.jpg',
-		// },
 		{
 			name: 'Empower',
 			link: 'https://www.empowerchain.io/',
