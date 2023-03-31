@@ -72,6 +72,11 @@ a {
 	transition: color 0s !important;
 }
 
+.text_secondary {
+	margin: 2px 0 10px;
+	color: #8a8989;
+}
+
 #guide,
 #installation,
 #auto,
@@ -174,9 +179,11 @@ a {
 
 .ant-menu-title-content {
 	transition: opacity 0s !important;
+	z-index: 10 !important;
 
 	a {
 		display: block !important;
+		z-index: 10 !important;
 	}
 }
 
@@ -217,11 +224,11 @@ a {
 }
 
 .ant-menu-root {
-	height: calc(100vh - 65px);
+	height: calc(100vh - 80px);
 	overflow-x: hidden;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 30px;
+	top: 10px;
 	padding-right: 10px;
 	overflow-x: hidden;
 	overflow-y: scroll;
@@ -310,9 +317,8 @@ a {
 
 div[role='menuitem'] {
 	width: 100%;
-	padding-left: 10px !important;
-	height: 34px !important;
-	margin: 2px 0 !important;
+	height: 35px !important;
+	margin: 3px 0 !important;
 	box-shadow: none !important;
 	transition: 0s !important;
 	font-size: 15px;
@@ -341,7 +347,7 @@ li[role='menuitem'] {
 .ant-menu-submenu-title {
 	user-select: none;
 	box-shadow: rgba(149, 157, 165, 0.06) 0px 8px 16px;
-	margin-block: 3px !important;
+	margin-block: 4px !important;
 	margin-inline: 0px !important;
 	padding: 0 0 0 15px !important;
 
@@ -361,7 +367,11 @@ li[role='menuitem'] {
 
 .ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title {
 	color: inherit !important;
-	background-color: #e9f4ff !important;
+}
+
+.ant-menu-light .ant-menu-submenu-title {
+	background-color: #f2f2f282 !important;
+	box-shadow: none !important;
 }
 
 .ant-menu-dark .ant-menu-submenu-title {
@@ -375,7 +385,7 @@ li[role='menuitem'] {
 }
 
 .ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline {
-	background-color: #89898907 !important;
+	background-color: #ffffff !important;
 	padding-left: 5px;
 }
 
@@ -465,7 +475,7 @@ a.ant-typography {
 
 .ant-menu-item-group-title {
 	margin-top: 5px;
-	padding: 5px 15px 5px 3px !important;
+	padding: 3px 15px 12px 3px !important;
 	font-size: 18px !important;
 	font-weight: 400;
 	text-transform: capitalize !important;

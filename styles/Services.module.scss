@@ -17,12 +17,12 @@
 .container {
 	display: flex;
 	position: relative;
-	margin-bottom: 100px;
+	margin-bottom: 20px;
 	width: 100%;
 
 	@media (max-width: 768px) {
 		padding: 5px 15px;
-		margin-bottom: 60px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -39,22 +39,24 @@ b.bold {
 	z-index: 0;
 	position: relative;
 
+	@media only screen and (min-width: 767px) {
+		padding-bottom: 55px;
+	}
+
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
-		padding: 5px 20px 70px;
+		padding: 5px 20px 450px;
 		width: calc(85% - 30px);
 
 		@media (max-width: 1300px) {
-			padding: 5px 15px 40px;
-		}
-		@media (max-width: 768px) {
-			width: 100%;
+			padding: 5px 15px 450px;
 		}
 		@media (max-width: 1024px) {
 			width: 100%;
 		}
 		@media (max-width: 768px) {
+			width: 100%;
 			padding: 0 0 15px;
 			font-size: 14px;
 		}
@@ -170,8 +172,8 @@ b.bold {
 		}
 
 		&:first-of-type {
-			padding-top: 67px;
-			margin: -60px 0 10px;
+			padding-top: 87px;
+			margin: -80px 0 10px;
 
 			@media (max-width: 768px) {
 				padding-top: 5px;
@@ -321,8 +323,8 @@ b.bold {
 .mainnetColumn {
 	display: flex;
 	flex-wrap: wrap;
-	row-gap: max(25px, 1.5vw);
-	column-gap: max(35px, 2vw);
+	row-gap: max(20px, 1.5vw);
+	column-gap: max(30px, 2vw);
 	margin: 10px 0;
 }
 
@@ -331,7 +333,7 @@ b.bold {
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: 20px;
-	column-gap: max(20px, 1.5vw);
+	column-gap: max(15px, 1.5vw);
 	margin: 10px 0;
 
 	@media (max-width: 768px) {

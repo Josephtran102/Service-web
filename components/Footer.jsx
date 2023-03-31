@@ -9,7 +9,10 @@ const Footer = () => {
 	const { theme, toggleTheme } = useContext(Context)
 
 	return (
-		<footer className={styles.footer}>
+		<footer
+			className={styles.footer}
+			style={{ backgroundColor: theme === 'light' ? '#fff' : '#171717' }}
+		>
 			<div className={styles.container}>
 				<div className={styles.footer__logo}>
 					<Link href='/'>

@@ -47,7 +47,10 @@ const SideMenu = () => {
 
 			allMarkup.push(
 				getItem(
-					`${name.charAt(0).toUpperCase() + name.slice(1)}`,
+					<a href={serviceURL} rel='noopener referrer'>
+						{name.charAt(0).toUpperCase() + name.slice(1)}
+					</a>,
+
 					`grp${id}`,
 					<Image
 						src={require(`../public/${type}/${imgURL}`)}
@@ -55,44 +58,7 @@ const SideMenu = () => {
 						width='20'
 						height='20'
 						unoptimized={true}
-					/>,
-					[
-						getItem(
-							<Link href={serviceURL}>About</Link>,
-							`About${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<a href={serviceURL + '/installation'}>Installation</a>,
-							`Installation${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link href={serviceURL + '/#rpc'}>API, RPC, gRPC</Link>,
-							`rpc${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link href={serviceURL + '/#peer'}>Peers, Seeds</Link>,
-							`peer${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link href={serviceURL + '/#snap'}>Snapshot</Link>,
-							`snap${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link href={serviceURL + '/#sync'}>State Sync</Link>,
-							`sync${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link href={serviceURL + '/#wasm'}>Wasm</Link>,
-							`wasm${name}`,
-							<RightOutlined />
-						),
-					]
+					/>
 				)
 			)
 		})

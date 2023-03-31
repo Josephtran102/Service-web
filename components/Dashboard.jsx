@@ -102,7 +102,7 @@ export default function Dashboard(props) {
 							<span>
 								{explorer === undefined ? (
 									<a
-										className='flex items-center gap-2 font-medium text-blue-700 transition-colors hover:text-blue-500'
+										className='flex items-center gap-2 font-medium text-blue-500 transition-colors hover:text-blue-400'
 										href={`https://${
 											currentProject().type
 										}.itrocket.net/${name}/staking`}
