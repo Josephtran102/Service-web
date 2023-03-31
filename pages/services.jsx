@@ -34,7 +34,10 @@ const services = () => {
 			</Head>
 
 			<Header />
-			<div className={styles.mainColumn__wrapper} style={{ width: '100%' }}>
+			<div
+				className={styles.mainColumn__wrapper}
+				style={{ width: '100%', paddingBottom: '60px' }}
+			>
 				<div className={styles.mainColumn}>
 					<h1 style={{ paddingTop: '0px' }}>Services 🌟</h1>
 					<p className={styles.desc}>
