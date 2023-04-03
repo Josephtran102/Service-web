@@ -8,14 +8,17 @@ import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
 
-function smoothScrollTo(targetId) {
-	const targetElement = document.getElementById(targetId)
+function smoothScrollTo(targetElement) {
 	targetElement.scrollIntoView({ behavior: 'smooth' })
 }
 
 const handleClick = (event, targetId) => {
-	event.preventDefault()
-	smoothScrollTo(targetId)
+	const targetElement = document.getElementById(targetId)
+
+	if (targetElement) {
+		event.preventDefault()
+		smoothScrollTo(targetElement)
+	}
 }
 
 function getItem(label, key, icon, children, type) {
