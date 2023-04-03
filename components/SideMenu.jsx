@@ -7,19 +7,7 @@ import Link from 'next/link.js'
 import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
-
-function smoothScrollTo(targetElement) {
-	targetElement.scrollIntoView({ behavior: 'smooth' })
-}
-
-const handleClick = (event, targetId) => {
-	const targetElement = document.getElementById(targetId)
-
-	if (targetElement) {
-		event.preventDefault()
-		smoothScrollTo(targetElement)
-	}
-}
+import { useRouter } from 'next/router'
 
 function getItem(label, key, icon, children, type) {
 	return {
@@ -32,12 +20,28 @@ function getItem(label, key, icon, children, type) {
 }
 
 const SideMenu = () => {
+	const router = useRouter()
 	const [openKeys, setOpenKeys] = useState([])
 	const { theme, toggleTheme } = useContext(Context)
 	const mainnetData = projects.mainnet
 	const testnetData = projects.testnet
 	const [items, setItems] = useState([])
 	let rootSubmenuKeys = ['services', 'installation', 'upgrade']
+
+	function smoothScrollTo(targetElement, e) {
+		targetElement.scrollIntoView({ behavior: 'smooth' })
+
+		router.push(e.target.href)
+	}
+
+	const handleClick = (event, targetId) => {
+		const targetElement = document.getElementById(targetId)
+
+		if (targetElement) {
+			event.preventDefault()
+			smoothScrollTo(targetElement, event)
+		}
+	}
 
 	const onOpenChange = keys => {
 		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
