@@ -17,6 +17,7 @@
 .container {
 	display: flex;
 	position: relative;
+	padding: 0 15px;
 	margin-bottom: 20px;
 	width: 100%;
 
@@ -46,11 +47,11 @@ b.bold {
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
-		padding: 5px 20px 500px;
-		width: calc(85% - 30px);
+		padding: 5px 0 500px 20px;
+		width: calc(84% - 30px);
 
 		@media (max-width: 1300px) {
-			padding: 5px 15px 500px;
+			padding: 5px 0 15px 500px 15px;
 		}
 		@media (max-width: 1024px) {
 			width: 100%;
@@ -233,9 +234,11 @@ b.bold {
 }
 
 .sideColumn {
+	@include card;
+	margin-top: 10px;
 	padding: 10px 0 5px 15px;
 	position: relative;
-	width: calc(15% + 30px);
+	width: calc(16% + 30px);
 	z-index: 100;
 
 	@media (max-width: 1400px) {

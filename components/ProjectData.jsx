@@ -236,7 +236,7 @@ const ProjectData = props => {
 				<CodeSnippet theme={theme} code={`${PEERS}`} />
 				<h3 id='seed'>seeds:</h3>
 				<CodeSnippet theme={theme} code={`${SEEDS}`} />
-				<h3 id='live_peers'>live peers:</h3>
+				<h3 id='live-peers'>live peers:</h3>
 				<p className={styles.text_secondary}>
 					active peers: {livePeersCounter} (upd. every 10 sec)
 				</p>

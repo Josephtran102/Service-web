@@ -4,6 +4,7 @@
 
 * {
 	box-sizing: border-box;
+
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	word-break: break-word;
@@ -320,10 +321,15 @@ li[role='menuitem'] {
 
 .ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title {
 	color: inherit !important;
+	background-color: #e6f4ff !important;
+}
+.ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title {
+	color: inherit !important;
+	background-color: #333 !important;
 }
 
 .ant-menu-light .ant-menu-submenu-title {
-	background-color: #f2f2f282 !important;
+	background-color: #f2f2f2a9;
 	box-shadow: none !important;
 }
 

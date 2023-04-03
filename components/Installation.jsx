@@ -290,7 +290,7 @@ sudo systemctl enable ${bin}
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 					/>
 				</>
-				<h2 id='wallet'>Create wallet</h2>
+				<h2 id='create-wallet'>Create wallet</h2>
 				<CodeSnippet
 					theme={theme}
 					code={`# to create a new wallet, use the following command. don’t forget to save the mnemonic
@@ -314,7 +314,7 @@ ${bin} query bank balances $WALLET_ADDRESS
 
 `}
 				/>
-				<h2 id='validator'>Create validator</h2>
+				<h2 id='create-validator'>Create validator</h2>
 				<CodeSnippet
 					theme={theme}
 					code={`# create validator

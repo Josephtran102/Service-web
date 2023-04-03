@@ -136,13 +136,15 @@ const SideMenu = () => {
 							<RightOutlined />
 						),
 						getItem(
-							<Link href={serviceURL + '/installation/#wallet'}>Wallet</Link>,
+							<Link href={serviceURL + '/installation/#create-wallet'}>
+								Create Wallet
+							</Link>,
 							`wallet${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link href={serviceURL + '/installation/#validator'}>
-								Validator
+							<Link href={serviceURL + '/installation/#create-validator'}>
+								Create Validator
 							</Link>,
 							`validator${name}`,
 							<RightOutlined />
@@ -262,6 +264,7 @@ const SideMenu = () => {
 				}}
 				mode='inline'
 				theme={theme}
+				defaultSelectedKeys={['services']}
 				openKeys={openKeys}
 				onOpenChange={onOpenChange}
 			/>
