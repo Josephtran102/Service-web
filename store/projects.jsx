@@ -578,10 +578,10 @@ sudo mv quasarnoded-linux-amd64 $HOME/go/bin/quasarnoded`,
 			ecosystem: 'cosmos',
 			bin: 'quicksilverd',
 			path: '.quicksilverd',
-			peerID: '',
+			peerID: '2aed12a25bfa92e40ccb95c88692735a9488a17e',
 			seedID: '56fd36257a48f92d0d38df2e7c9699fbccef4d63',
 			explorer: '',
-			peerPort: '',
+			peerPort: '37656',
 			seedPort: '37656',
 			installBin: `cd $HOME
 rm -rf ~/quicksilver
