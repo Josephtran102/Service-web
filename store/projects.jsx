@@ -588,7 +588,7 @@ rm -rf ~/quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
 git fetch
-git checkout v1.4.0-rc10.1
+git checkout v1.4.0-rc10.2
 make install`,
 			updHeight: '',
 			newInstallBin: ``,
