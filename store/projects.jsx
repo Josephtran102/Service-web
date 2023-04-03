@@ -685,6 +685,39 @@ make install`,
 			updHeight: '',
 			newInstallBin: ``,
 		},
+		quicksilver: {
+			link: 'https://testnet.itrocket.net/quicksilver/staking',
+			delegate:
+				'https://wallet.keplr.app/chains/quicksilver?modal=validator&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x&chain=quicksilver-2',
+			imgUrl: 'quicksilver.jpg',
+			desc: 'Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.',
+			website: 'https://quicksilver.zone/',
+			offValDoc: 'https://github.com/ingenuity-build/testnets/tree/main/innuendo',
+			hardware: '4 Cores, 16GB RAM, 500GB of storage (NVME)',
+			prHome: '/home/quick',
+			binHome: '/home/quick/go/bin/quicksilverd',
+			snapMaxSize: '10',
+			port: '37',
+			VAR: 'QUICKSILVER',
+			denom: 'uqck',
+			ecosystem: 'cosmos',
+			bin: 'quicksilverd',
+			path: '.quicksilverd',
+			peerID: '',
+			seedID: '56fd36257a48f92d0d38df2e7c9699fbccef4d63',
+			explorer: '',
+			peerPort: '',
+			seedPort: '37656',
+			installBin: `cd $HOME
+rm -rf ~/quicksilver
+git clone https://github.com/ingenuity-build/quicksilver
+cd quicksilver
+git fetch
+git checkout v1.4.0-rc10.1
+make install`,
+			updHeight: '',
+			newInstallBin: ``,
+		},
 	},
 	finished: [
 		{
