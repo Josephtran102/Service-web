@@ -107,7 +107,7 @@ const SideMenu = () => {
 				'grpthis',
 				null,
 				[
-					getItem(<Link href={serviceURL}>Services</Link>, `services`, null, [
+					getItem('Services', `services`, null, [
 						getItem(
 							<Link
 								href={serviceURL + '#rpc'}
@@ -160,100 +160,90 @@ const SideMenu = () => {
 						),
 					]),
 
-					getItem(
-						<Link href={serviceURL + '/installation/'}>Installation</Link>,
-						`installation`,
-						null,
-						[
-							getItem(
-								<Link
-									href={serviceURL + '/installation/#installation'}
-									onClick={event => handleClick(event, 'installation')}
-								>
-									Installation
-								</Link>,
-								`install${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link
-									href={serviceURL + '/installation/#wallet'}
-									onClick={event => handleClick(event, 'wallet')}
-								>
-									Wallet
-								</Link>,
-								`wallet${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link
-									href={serviceURL + '/installation/#validator'}
-									onClick={event => handleClick(event, 'validator')}
-								>
-									Validator
-								</Link>,
-								`validator${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link
-									href={serviceURL + '/installation/#monitoring'}
-									onClick={event => handleClick(event, 'monitoring')}
-								>
-									Monitoring
-								</Link>,
-								`Monitoring${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link
-									href={serviceURL + '/installation/#security'}
-									onClick={event => handleClick(event, 'security')}
-								>
-									Security
-								</Link>,
-								`security${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link
-									href={serviceURL + '/installation/#delete'}
-									onClick={event => handleClick(event, 'delete')}
-								>
-									Delete node
-								</Link>,
-								`Delete${name}`,
-								<RightOutlined />
-							),
-						]
-					),
-					getItem(
-						<Link href={serviceURL + '/upgrade/'}>Upgrade</Link>,
-						`upgrade`,
-						null,
-						[
-							getItem(
-								<Link
-									href={serviceURL + '/upgrade/#manual'}
-									onClick={event => handleClick(event, 'manual')}
-								>
-									Manual upgrade
-								</Link>,
-								`manual${name}`,
-								<RightOutlined />
-							),
-							getItem(
-								<Link
-									href={serviceURL + '/upgrade/#auto'}
-									onClick={event => handleClick(event, 'auto')}
-								>
-									Autoupgrade
-								</Link>,
-								`auto${name}`,
-								<RightOutlined />
-							),
-						]
-					),
+					getItem('Installation', `installation`, null, [
+						getItem(
+							<Link
+								href={serviceURL + '/installation/#installation'}
+								onClick={event => handleClick(event, 'installation')}
+							>
+								Installation
+							</Link>,
+							`install${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/installation/#wallet'}
+								onClick={event => handleClick(event, 'wallet')}
+							>
+								Wallet
+							</Link>,
+							`wallet${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/installation/#validator'}
+								onClick={event => handleClick(event, 'validator')}
+							>
+								Validator
+							</Link>,
+							`validator${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/installation/#monitoring'}
+								onClick={event => handleClick(event, 'monitoring')}
+							>
+								Monitoring
+							</Link>,
+							`Monitoring${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/installation/#security'}
+								onClick={event => handleClick(event, 'security')}
+							>
+								Security
+							</Link>,
+							`security${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/installation/#delete'}
+								onClick={event => handleClick(event, 'delete')}
+							>
+								Delete node
+							</Link>,
+							`Delete${name}`,
+							<RightOutlined />
+						),
+					]),
+					getItem('Upgrade', `upgrade`, null, [
+						getItem(
+							<Link
+								href={serviceURL + '/upgrade/#manual'}
+								onClick={event => handleClick(event, 'manual')}
+							>
+								Manual upgrade
+							</Link>,
+							`manual${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/upgrade/#auto'}
+								onClick={event => handleClick(event, 'auto')}
+							>
+								Autoupgrade
+							</Link>,
+							`auto${name}`,
+							<RightOutlined />
+						),
+					]),
 				],
 				'group'
 			),
@@ -267,6 +257,7 @@ const SideMenu = () => {
 					<Image
 						src={require('../public/icons/website.png')}
 						alt='item'
+						style={{ borderRadius: '50%' }}
 						unoptimized={true}
 						width='20'
 						height='20'

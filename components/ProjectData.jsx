@@ -17,8 +17,6 @@ const ProjectData = props => {
 	const explorer = useRef()
 	const projectName =
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const desc = project.desc
-	const website = project.website
 	const bin = project.bin
 	const guide_links = project.guide_links
 	const path = project.path
@@ -40,6 +38,14 @@ const ProjectData = props => {
 	const [snapTime, setSnapTime] = useState()
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
+	const PEERS = peerID
+			? `"${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"`
+			: '""',
+		LIVE_PEERS = peerID ? `${PEERS}` : `"${livePeers.slice(1)}"`,
+		SEEDS = seedID
+			? `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
+			: '""'
+
 	const items = [
 		{
 			key: 'part-1',
@@ -162,22 +168,6 @@ const ProjectData = props => {
 		}, 10000)
 	}, [])
 
-	const renderLinks = () => {
-		let links = []
-		for (let key in guide_links) {
-			links.push(
-				<span>
-					<span>{key.charAt(0).toUpperCase() + key.slice(1)} - </span>
-					<a href={guide_links[key]} target='_blank' rel='noopener referrer'>
-						{guide_links[key]}
-					</a>
-					<br />
-				</span>
-			)
-		}
-		return links
-	}
-
 	return (
 		<AnimatedSection>
 			<Head>
@@ -243,22 +233,16 @@ const ProjectData = props => {
 					/>
 				</div>
 				<h3 id='peer'>peers:</h3>
-				<CodeSnippet
-					theme={theme}
-					code={`${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}`}
-				/>
+				<CodeSnippet theme={theme} code={`${PEERS}`} />
 				<h3>seeds:</h3>
-				<CodeSnippet
-					theme={theme}
-					code={`${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}`}
-				/>
+				<CodeSnippet theme={theme} code={`${SEEDS}`} />
 				<h3>live peers:</h3>
 				<p className={styles.text_secondary}>
 					active peers: {livePeersCounter} (upd. every 10 sec)
 				</p>
 				<CodeSnippet
 					theme={theme}
-					code={`PEERS="${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"
+					code={`PEERS=${LIVE_PEERS}
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/config/config.toml`}
 				/>
 

@@ -31,7 +31,14 @@ const Installation = props => {
 
 	explorer.current = project.explorer
 	let wasm = useRef('false')
-
+	let PEERS = '""',
+		SEEDS = '""'
+	if (peerID) {
+		PEERS = `"${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"`
+	}
+	if (seedID) {
+		SEEDS = `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
+	}
 	const { theme } = useContext(Context)
 	const [isActive, setIsActive] = useState(styles.pending)
 	const [id, setId] = useState('')
@@ -40,7 +47,7 @@ const Installation = props => {
 	const [installBin, setInstallBin] = useState(project.installBin)
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
-	const [moniker, setMoniker] = useState('')
+	const [moniker, setMoniker] = useState('test')
 	const [wallet, setWallet] = useState('wallet')
 	const [port, setPort] = useState(project.port)
 	const [inputStatus, setInputStatus] = useState('')
@@ -179,7 +186,7 @@ go version`}
 							<span className={styles.text_secondary}>Node Name</span>
 							<Input
 								className={styles.input}
-								placeholder='Your Node Name'
+								placeholder='test'
 								style={{ minWidth: '250px' }}
 								onChange={e => setMoniker(e.target.value)}
 							/>
@@ -188,7 +195,7 @@ go version`}
 							<span className={styles.text_secondary}>Wallet</span>
 							<Input
 								className={styles.input}
-								defaultValue='wallet'
+								placeholder='wallet'
 								style={{ minWidth: '200px' }}
 								onChange={e => setWallet(e.target.value)}
 							/>
@@ -228,8 +235,8 @@ wget -O $HOME/${path}/config/genesis.json https://files.itrocket.net/${type}/${n
 wget -O $HOME/${path}/config/addrbook.json https://files.itrocket.net/${type}/${name}/addrbook.json
 
 # set seeds and peers
-SEEDS="${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"
-PEERS="${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"
+SEEDS=${SEEDS}
+PEERS=${PEERS}
 sed -i -e "s/^seeds *=.*/seeds = \\"$SEEDS\\"/; s/^persistent_peers *=.*/persistent_peers = \\"$PEERS\\"/" $HOME/${path}/config/config.toml
 
 # set custom ports in app.toml
