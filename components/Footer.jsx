@@ -5,13 +5,17 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useContext } from 'react'
 
-const Footer = () => {
+const Footer = props => {
 	const { theme, toggleTheme } = useContext(Context)
 
 	return (
 		<footer
 			className={styles.footer}
-			style={{ backgroundColor: theme === 'light' ? '#fff' : '#171717' }}
+			style={{
+				backgroundColor: theme === 'light' ? '#fff' : '#171717',
+				position: props.position === 'absolute' ? 'absolute' : 'relative',
+				bottom: '0',
+			}}
 		>
 			<div className={styles.container}>
 				<div className={styles.footer__logo}>

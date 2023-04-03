@@ -97,7 +97,7 @@ const services = () => {
 				</div>
 			</div>
 
-			<Footer />
+			<Footer position='absolute' />
 		</>
 	)
 }
