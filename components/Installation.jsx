@@ -31,14 +31,6 @@ const Installation = props => {
 
 	explorer.current = project.explorer
 	let wasm = useRef('false')
-	let PEERS = '""',
-		SEEDS = '""'
-	if (peerID) {
-		PEERS = `"${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"`
-	}
-	if (seedID) {
-		SEEDS = `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
-	}
 	const { theme } = useContext(Context)
 	const [isActive, setIsActive] = useState(styles.pending)
 	const [id, setId] = useState('')
@@ -51,6 +43,14 @@ const Installation = props => {
 	const [wallet, setWallet] = useState('wallet')
 	const [port, setPort] = useState(project.port)
 	const [inputStatus, setInputStatus] = useState('')
+	let PEERS = '""',
+		SEEDS = '""'
+	if (peerID) {
+		PEERS = `"${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"`
+	}
+	if (seedID) {
+		SEEDS = `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
+	}
 
 	const status = () => {
 		fetchStatus(name, type)
