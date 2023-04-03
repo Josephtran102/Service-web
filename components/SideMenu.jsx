@@ -5,7 +5,7 @@ import projects from '@store/projects'
 import { Menu } from 'antd'
 import Link from 'next/link.js'
 import Image from 'next/image.js'
-import { GlobalOutlined, RightOutlined } from '@ant-design/icons'
+import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
 
 function smoothScrollTo(targetId) {

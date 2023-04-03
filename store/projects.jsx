@@ -1,5 +1,3 @@
-//132
-
 let projects = {
 	mainnet: {
 		arkhadian: {
