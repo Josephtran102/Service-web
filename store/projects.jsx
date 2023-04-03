@@ -335,10 +335,6 @@ make install`,
 			updHeight: '',
 			newInstallBin: ``,
 		},
-		gear: {
-			link: 'https://telemetry.gear-tech.io/#list/0x209bc5d3262cad676cd1fcd87a958a3d00c0176f8720231cbbb54a10f735d9bb',
-			imgUrl: 'gear.jpg',
-		},
 		haqq: {
 			name: 'HAQQ',
 			link: 'https://testnet.itrocket.net/haqq/staking',
