@@ -234,9 +234,9 @@ const ProjectData = props => {
 				</div>
 				<h3 id='peer'>peers:</h3>
 				<CodeSnippet theme={theme} code={`${PEERS}`} />
-				<h3>seeds:</h3>
+				<h3 id='seed'>seeds:</h3>
 				<CodeSnippet theme={theme} code={`${SEEDS}`} />
-				<h3>live peers:</h3>
+				<h3 id='live_peers'>live peers:</h3>
 				<p className={styles.text_secondary}>
 					active peers: {livePeersCounter} (upd. every 10 sec)
 				</p>
@@ -246,7 +246,7 @@ const ProjectData = props => {
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/config/config.toml`}
 				/>
 
-				<h3>addrbook:</h3>
+				<h3 id='addrbook'>addrbook:</h3>
 				<p className={styles.text_secondary}>updates every hour</p>
 				<CodeSnippet
 					theme={theme}
