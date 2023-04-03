@@ -6,6 +6,8 @@
 	align-items: center;
 	padding: 15px 0;
 	border-top: 1px solid #8a8a8a1b;
+	min-height: 60px;
+	flex: 1;
 
 	@media (max-width: 768px) {
 		padding: 10px 0;

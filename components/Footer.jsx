@@ -13,8 +13,6 @@ const Footer = props => {
 			className={styles.footer}
 			style={{
 				backgroundColor: theme === 'light' ? '#fff' : '#171717',
-				position: props.position === 'absolute' ? 'absolute' : 'relative',
-				bottom: '0',
 			}}
 		>
 			<div className={styles.container}>

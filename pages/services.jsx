@@ -36,7 +36,7 @@ const services = () => {
 			<Header />
 			<div
 				className={styles.mainColumn__wrapper}
-				style={{ width: '100%', paddingBottom: '60px' }}
+				style={{ width: '100%', paddingBottom: '100px' }}
 			>
 				<div className={styles.mainColumn}>
 					<h1 style={{ paddingTop: '0px' }}>Services 🌟</h1>
@@ -60,8 +60,8 @@ const services = () => {
 											mainnetData[item].imgUrl
 										))}
 										alt='project logo'
-										width='20'
-										height='20'
+										width='25'
+										height='25'
 										unoptimized={true}
 									/>
 									{name}
@@ -85,8 +85,8 @@ const services = () => {
 											testnetData[item].imgUrl
 										))}
 										alt='project logo'
-										width='20'
-										height='20'
+										width='25'
+										height='25'
 										unoptimized={true}
 									/>
 									{name}
@@ -97,7 +97,7 @@ const services = () => {
 				</div>
 			</div>
 
-			<Footer position='absolute' />
+			<Footer />
 		</>
 	)
 }
