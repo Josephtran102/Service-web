@@ -28,21 +28,6 @@ const SideMenu = () => {
 	const [items, setItems] = useState([])
 	let rootSubmenuKeys = ['services', 'installation', 'upgrade']
 
-	function smoothScrollTo(targetElement, e) {
-		targetElement.scrollIntoView({ behavior: 'smooth' })
-
-		router.push(e.target.href)
-	}
-
-	const handleClick = (event, targetId) => {
-		const targetElement = document.getElementById(targetId)
-
-		if (targetElement) {
-			event.preventDefault()
-			smoothScrollTo(targetElement, event)
-		}
-	}
-
 	const onOpenChange = keys => {
 		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
 		if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
@@ -116,52 +101,27 @@ const SideMenu = () => {
 				[
 					getItem('Services', `services`, null, [
 						getItem(
-							<Link
-								href={serviceURL + '#rpc'}
-								onClick={event => handleClick(event, 'rpc')}
-							>
-								RPC, API, GRPC
-							</Link>,
+							<Link href={serviceURL + '#rpc'}>RPC, API, GRPC</Link>,
 							`rpc${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '#peer'}
-								onClick={event => handleClick(event, 'peer')}
-							>
-								Peers, Seeds
-							</Link>,
+							<Link href={serviceURL + '#peer'}>Peers, Seeds</Link>,
 							`peer${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '#snap'}
-								onClick={event => handleClick(event, 'snap')}
-							>
-								Snapshot
-							</Link>,
+							<Link href={serviceURL + '#snap'}>Snapshot</Link>,
 							`snap${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '#sync'}
-								onClick={event => handleClick(event, 'sync')}
-							>
-								State sync
-							</Link>,
+							<Link href={serviceURL + '#sync'}>State sync</Link>,
 							`state${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '#wasm'}
-								onClick={event => handleClick(event, 'wasm')}
-							>
-								Wasm
-							</Link>,
+							<Link href={serviceURL + '#wasm'}>Wasm</Link>,
 							`wasm${name}`,
 							<RightOutlined />
 						),
@@ -169,60 +129,40 @@ const SideMenu = () => {
 
 					getItem('Installation', `installation`, null, [
 						getItem(
-							<Link
-								href={serviceURL + '/installation/#installation'}
-								onClick={event => handleClick(event, 'installation')}
-							>
+							<Link href={serviceURL + '/installation/#installation'}>
 								Installation
 							</Link>,
 							`install${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '/installation/#wallet'}
-								onClick={event => handleClick(event, 'wallet')}
-							>
-								Wallet
-							</Link>,
+							<Link href={serviceURL + '/installation/#wallet'}>Wallet</Link>,
 							`wallet${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '/installation/#validator'}
-								onClick={event => handleClick(event, 'validator')}
-							>
+							<Link href={serviceURL + '/installation/#validator'}>
 								Validator
 							</Link>,
 							`validator${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '/installation/#monitoring'}
-								onClick={event => handleClick(event, 'monitoring')}
-							>
+							<Link href={serviceURL + '/installation/#monitoring'}>
 								Monitoring
 							</Link>,
 							`Monitoring${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '/installation/#security'}
-								onClick={event => handleClick(event, 'security')}
-							>
+							<Link href={serviceURL + '/installation/#security'}>
 								Security
 							</Link>,
 							`security${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '/installation/#delete'}
-								onClick={event => handleClick(event, 'delete')}
-							>
+							<Link href={serviceURL + '/installation/#delete'}>
 								Delete node
 							</Link>,
 							`Delete${name}`,
@@ -231,22 +171,14 @@ const SideMenu = () => {
 					]),
 					getItem('Upgrade', `upgrade`, null, [
 						getItem(
-							<Link
-								href={serviceURL + '/upgrade/#manual'}
-								onClick={event => handleClick(event, 'manual')}
-							>
+							<Link href={serviceURL + '/upgrade/#manual'}>
 								Manual upgrade
 							</Link>,
 							`manual${name}`,
 							<RightOutlined />
 						),
 						getItem(
-							<Link
-								href={serviceURL + '/upgrade/#auto'}
-								onClick={event => handleClick(event, 'auto')}
-							>
-								Autoupgrade
-							</Link>,
+							<Link href={serviceURL + '/upgrade/#auto'}>Autoupgrade</Link>,
 							`auto${name}`,
 							<RightOutlined />
 						),
