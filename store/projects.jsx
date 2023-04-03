@@ -333,10 +333,6 @@ make install`,
 			updHeight: '',
 			newInstallBin: ``,
 		},
-		gear: {
-			link: 'https://telemetry.gear-tech.io/#list/0x209bc5d3262cad676cd1fcd87a958a3d00c0176f8720231cbbb54a10f735d9bb',
-			imgUrl: 'gear.jpg',
-		},
 		haqq: {
 			name: 'HAQQ',
 			link: 'https://testnet.itrocket.net/haqq/staking',
@@ -498,49 +494,6 @@ make install`,
 		massa: {
 			link: 'https://massa.net/testnet/',
 			imgUrl: 'massa.jpg',
-		},
-		nibiru: {
-			link: 'https://testnet.itrocket.net/nibiru/staking',
-			imgUrl: 'nibiru.jpg',
-			desc: 'Nibiru is a sovereign proof-of-stake blockchain, open-source platform, and member of a family of interconnected blockchains that comprise the Cosmos Ecosystem.',
-			website: 'https://nibiru.fi/',
-			ecosystem: 'cosmos',
-			bin: 'nibid',
-			path: '.nibid',
-			peerID: 'a08e5b25443d038b08230177456ee23196509dd5',
-			seedID: '1edd1232fe59fd00a13bfdd9ac273e48b20f11c3',
-			peerPort: '12656',
-			seedPort: '12656',
-		},
-		nois: {
-			link: 'https://testnet.itrocket.net/nois/staking',
-			imgUrl: 'nois.png',
-			desc: 'Brings random beacons to Cosmos blockchains without compromising security or usability by leveraging drand and IBC.',
-			website: 'https://nois.network/',
-			offValDoc: 'https://docs.nois.network/use-cases/for-validators',
-			hardware: '4 Cores, 8GB RAM, 100GB of storage (NVME)',
-			prHome: '/home/nois',
-			binHome: '/home/nois/go/bin/noisd',
-			snapMaxSize: '10',
-			port: '21',
-			VAR: 'NOIS',
-			denom: 'unois',
-			ecosystem: 'cosmos',
-			bin: 'noisd',
-			path: '.noisd',
-			peerID: '5ecd40831e453845587cbd03534e68a7b9fc3576',
-			seedID: 'da81dd66bca4bba509163dbd06b4a6b2e05c2e12',
-			explorer: '',
-			peerPort: '21656',
-			seedPort: '21656',
-			installBin: `cd $HOME
-rm -rf $HOME/noisd
-git clone https://github.com/noislabs/noisd.git
-cd noisd
-git checkout v0.6.0
-make install`,
-			updHeight: '',
-			newInstallBin: ``,
 		},
 		ojo: {
 			link: 'https://testnet.itrocket.net/ojo/staking',
@@ -726,6 +679,39 @@ rm -rf uptick
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
 git checkout v0.2.4
+make install`,
+			updHeight: '',
+			newInstallBin: ``,
+		},
+		quicksilver: {
+			link: 'https://testnet.itrocket.net/quicksilver/staking',
+			delegate:
+				'https://wallet.keplr.app/chains/quicksilver?modal=validator&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x&chain=quicksilver-2',
+			imgUrl: 'quicksilver.jpg',
+			desc: 'Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.',
+			website: 'https://quicksilver.zone/',
+			offValDoc: 'https://github.com/ingenuity-build/testnets/tree/main/innuendo',
+			hardware: '4 Cores, 16GB RAM, 500GB of storage (NVME)',
+			prHome: '/home/quick',
+			binHome: '/home/quick/go/bin/quicksilverd',
+			snapMaxSize: '10',
+			port: '37',
+			VAR: 'QUICKSILVER',
+			denom: 'uqck',
+			ecosystem: 'cosmos',
+			bin: 'quicksilverd',
+			path: '.quicksilverd',
+			peerID: '',
+			seedID: '56fd36257a48f92d0d38df2e7c9699fbccef4d63',
+			explorer: '',
+			peerPort: '',
+			seedPort: '37656',
+			installBin: `cd $HOME
+rm -rf ~/quicksilver
+git clone https://github.com/ingenuity-build/quicksilver
+cd quicksilver
+git fetch
+git checkout v1.4.0-rc10.1
 make install`,
 			updHeight: '',
 			newInstallBin: ``,
