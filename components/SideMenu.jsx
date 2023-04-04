@@ -7,7 +7,6 @@ import Link from 'next/link.js'
 import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
-import { useRouter } from 'next/router'
 
 function getItem(label, key, icon, children, type) {
 	return {
@@ -20,7 +19,6 @@ function getItem(label, key, icon, children, type) {
 }
 
 const SideMenu = () => {
-	const router = useRouter()
 	const [openKeys, setOpenKeys] = useState([])
 	const { theme, toggleTheme } = useContext(Context)
 	const mainnetData = projects.mainnet

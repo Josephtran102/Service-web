@@ -273,7 +273,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
 ${bin} tendermint unsafe-reset-all --home $HOME/${path}
 
-peers="${peerID}@${name}-testnet-peer.itrocket.net:443${livePeers}"  
+peers="${peerID}@${name}-testnet-peer.itrocket.net:${peerPort}${livePeers}"  
 SNAP_RPC="https://${name}-${type}-rpc.itrocket.net:443"
 
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \\"$peers\\"/" $HOME/${path}/config/config.toml 
