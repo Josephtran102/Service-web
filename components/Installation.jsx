@@ -383,7 +383,7 @@ sudo ufw enable`}
 					theme={theme}
 					code={`sudo systemctl stop ${bin}
 sudo systemctl disable ${bin}
-sudo rm -rf /etc/systemd/system/${bin}*
+sudo rm -rf /etc/systemd/system/${bin}.service
 sudo rm $(which ${bin})
 sudo rm -rf $HOME/${path}
 sed -i "/${VAR}_/d" $HOME/.bash_profile`}
