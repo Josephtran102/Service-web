@@ -14,9 +14,8 @@ export default function Dashboard(props) {
 	const [name, setName] = useState('')
 	const [isActive, setIsActive] = useState(styles.pending)
 	const [blockHeight, setBlockHeight] = useState(null)
-	const [version, setVersion] = useState()
 	const { theme, toggleTheme } = useContext(Context)
-	const [id, setId] = useState('')
+	const [chainID, setChainID] = useState()
 	const [explorer, setExplorer] = useState(null)
 
 	useEffect(() => {
@@ -26,19 +25,10 @@ export default function Dashboard(props) {
 		setName(project.name)
 		setExplorer(project.explorer)
 
-		fetchVersion(name, type)
-			.then(status => {
-				let version = status.version
-				if (version[0] == 'v') version = version.slice(1)
-				setVersion(version)
-			})
-			.catch(err => {
-				console.log(err)
-			})
+		setChainID(project?.chainID)
 
 		fetchStatus(name, type)
 			.then(status => {
-				setId(status.node_info.network)
 				setBlockHeight(status.sync_info.latest_block_height)
 				setIsActive(styles.active)
 			})
@@ -50,7 +40,6 @@ export default function Dashboard(props) {
 		setInterval(() => {
 			fetchStatus(name, type)
 				.then(status => {
-					setId(status.node_info.network)
 					setBlockHeight(status.sync_info.latest_block_height)
 					setIsActive(styles.active)
 				})
@@ -90,7 +79,7 @@ export default function Dashboard(props) {
 							</span>
 							<span>
 								<b className={styles.bold}>Chain ID: </b>
-								{id}
+								{chainID}
 							</span>
 							<span>
 								<b className={styles.bold}>Block Height: </b> {blockHeight}{' '}

@@ -14,6 +14,7 @@ export const currentProject = () => {
 		  )
 
 	const serviceURL = `/services/${type}/` + name.toLowerCase()
+	const chainID = projects[type][name].chainID
 
-	return { name: name, type: type, serviceURL: serviceURL }
+	return { name: name, type: type, serviceURL: serviceURL, chainID: chainID }
 }

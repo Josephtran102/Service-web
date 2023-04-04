@@ -17,6 +17,7 @@ const Installation = props => {
 	const projectName =
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const {
+		chainID,
 		bin,
 		path,
 		peerID,
@@ -33,7 +34,6 @@ const Installation = props => {
 	let wasm = useRef('false')
 	const { theme } = useContext(Context)
 	const [isActive, setIsActive] = useState(styles.pending)
-	const [id, setId] = useState('')
 	const [livePeers, setLivePeers] = useState('')
 	const [blockHeight, setBlockHeight] = useState(null)
 	const [installBin, setInstallBin] = useState(project.installBin)
@@ -55,7 +55,6 @@ const Installation = props => {
 	const status = () => {
 		fetchStatus(name, type)
 			.then(status => {
-				setId(status.node_info.network)
 				setBlockHeight(status.sync_info.latest_block_height)
 				setIsActive(styles.active)
 				if (updHeight) {
@@ -95,7 +94,7 @@ const Installation = props => {
 							i--
 						}
 						port = port.split('').reverse().join('')
-						livePeers.push(`${id}@${ip}:${port}`)
+						livePeers.push(`${chainID}@${ip}:${port}`)
 					}
 				})
 				livePeers.unshift('')
@@ -217,7 +216,7 @@ go version`}
 						code={`# set vars
 echo "export WALLET="${wallet}"" >> $HOME/.bash_profile
 echo "export MONIKER="${moniker}"" >> $HOME/.bash_profile
-echo "export ${VAR}_CHAIN_ID="${id}"" >> $HOME/.bash_profile
+echo "export ${VAR}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
 echo "export ${VAR}_PORT="${port}"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
@@ -227,8 +226,8 @@ ${installBin}
 # config and init app
 ${bin} config node tcp://localhost:\${${VAR}_PORT}657
 ${bin} config keyring-backend test
-${bin} config chain-id ${id}
-${bin} init ${moniker} --chain-id ${id}
+${bin} config chain-id ${chainID}
+${bin} init ${moniker} --chain-id ${chainID}
 
 # download genesis and addrbook
 wget -O $HOME/${path}/config/genesis.json https://files.itrocket.net/${type}/${name}/genesis.json
@@ -327,7 +326,7 @@ ${bin} tx staking create-validator \\
   --min-self-delegation "1" \\
   --pubkey  $(${bin} tendermint show-validator) \\
   --moniker $MONIKER \\
-  --chain-id ${id}
+  --chain-id ${chainID}
   
 # you can add "--website" "--security-contact" "--identity" "--details" flags in it needed
 --website \<YOUR_SITE_URL> \\

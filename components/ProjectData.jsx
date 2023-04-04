@@ -18,7 +18,6 @@ const ProjectData = props => {
 	const projectName =
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const bin = project.bin
-	const guide_links = project.guide_links
 	const path = project.path
 	const peerID = project.peerID
 	const seedID = project.seedID
@@ -28,9 +27,6 @@ const ProjectData = props => {
 	let wasm = useRef('false')
 
 	const { theme } = useContext(Context)
-	const [isActive, setIsActive] = useState(styles.pending)
-	const [blockHeight, setBlockHeight] = useState(null)
-	const [id, setId] = useState('')
 	const [livePeers, setLivePeers] = useState('')
 	const [livePeersCounter, setLivePeersCounter] = useState(null)
 	const [snapHeight, setSnapHeight] = useState(null)
@@ -83,19 +79,6 @@ const ProjectData = props => {
 			title: 'Wasm',
 		},
 	]
-
-	const status = () => {
-		fetchStatus(name, type)
-			.then(status => {
-				setId(status.node_info.network)
-				setBlockHeight(status.sync_info.latest_block_height)
-				setIsActive(styles.active)
-			})
-			.catch(err => {
-				console.log(err)
-				setIsActive(styles.inactive)
-			})
-	}
 
 	const netInfo = () => {
 		fetchNetInfo(name, type)
@@ -157,12 +140,10 @@ const ProjectData = props => {
 	}
 
 	useEffect(() => {
-		status()
 		netInfo()
 		snap()
 
 		setInterval(() => {
-			status()
 			netInfo()
 			snap()
 		}, 10000)
