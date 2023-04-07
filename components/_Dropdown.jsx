@@ -2,12 +2,8 @@ import { DownOutlined } from '@ant-design/icons'
 import { Dropdown } from 'antd'
 import Link from 'next/link'
 import styles from '@styles/_Dropdown.module.scss'
-import { useContext } from 'react'
-import { Context } from '@context/context'
 
 const _Dropdown = props => {
-	const { theme, toggleTheme } = useContext(Context)
-
 	let items = []
 	if (props.type === 'projects') {
 		items = [

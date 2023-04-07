@@ -109,6 +109,7 @@ cd quicksilver
 git fetch
 git checkout v1.2.9-hotfix.0
 make install`,
+			hasBoth: true,
 			updHeight: '1279200',
 			newInstallBin: `cd $HOME
 rm -rf ~/quicksilver
@@ -596,6 +597,7 @@ sudo mv quasarnoded-linux-amd64 $HOME/go/bin/quasarnoded`,
 			ecosystem: 'cosmos',
 			bin: 'quicksilverd',
 			path: '.quicksilverd',
+			hasBoth: 'true',
 			peerID: '2aed12a25bfa92e40ccb95c88692735a9488a17e',
 			seedID: '56fd36257a48f92d0d38df2e7c9699fbccef4d63',
 			explorer: '',

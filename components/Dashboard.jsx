@@ -7,9 +7,11 @@ import { fetchStatus, fetchVersion } from 'utils/fetchProject.js'
 import styles from '@styles/Services.module.scss'
 import { currentProject } from 'utils/currentProjectByURL'
 import { CheckCircleTwoTone, SearchOutlined } from '@ant-design/icons'
+import { useRouter } from 'next/router'
 import { Tooltip } from 'antd'
 
 export default function Dashboard(props) {
+	const router = useRouter()
 	const [opacity, setOpacity] = useState(0)
 	const [name, setName] = useState('')
 	const [isActive, setIsActive] = useState(styles.pending)
@@ -24,7 +26,6 @@ export default function Dashboard(props) {
 		const type = project.type
 		setName(project.name)
 		setExplorer(project.explorer)
-
 		setChainID(project?.chainID)
 
 		fetchStatus(name, type)
@@ -48,7 +49,7 @@ export default function Dashboard(props) {
 					setIsActive(styles.inactive)
 				})
 		}, 10000)
-	}, [])
+	}, [router.pathname])
 
 	useEffect(() => {
 		setTimeout(() => {
