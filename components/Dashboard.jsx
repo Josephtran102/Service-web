@@ -3,7 +3,7 @@ import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import SideMenu from '@components/SideMenu'
-import { fetchStatus, fetchVersion } from 'utils/fetchProject.js'
+import { fetchStatus } from 'utils/fetchProject.js'
 import styles from '@styles/Services.module.scss'
 import { currentProject } from 'utils/currentProjectByURL'
 import { CheckCircleTwoTone, SearchOutlined } from '@ant-design/icons'
@@ -19,6 +19,7 @@ export default function Dashboard(props) {
 	const { theme, toggleTheme } = useContext(Context)
 	const [chainID, setChainID] = useState()
 	const [explorer, setExplorer] = useState(null)
+	const [intervalId, setIntervalId] = useState(null)
 
 	useEffect(() => {
 		const project = currentProject()
@@ -38,7 +39,7 @@ export default function Dashboard(props) {
 				setIsActive(styles.inactive)
 			})
 
-		setInterval(() => {
+		const id = setInterval(() => {
 			fetchStatus(name, type)
 				.then(status => {
 					setBlockHeight(status.sync_info.latest_block_height)
@@ -49,6 +50,14 @@ export default function Dashboard(props) {
 					setIsActive(styles.inactive)
 				})
 		}, 10000)
+
+		setIntervalId(id)
+		console.log(intervalId, 'dash')
+
+		return () => {
+			console.log(intervalId, 'cleat')
+			clearInterval(intervalId)
+		}
 	}, [router.pathname])
 
 	useEffect(() => {
@@ -62,7 +71,7 @@ export default function Dashboard(props) {
 			<Header />
 
 			<div className={styles.container}>
-				<SideMenu />
+				<SideMenu intervalId={intervalId} />
 				<main className={styles.mainColumn__wrapper}>
 					<div
 						className={styles.projectInfoCard}

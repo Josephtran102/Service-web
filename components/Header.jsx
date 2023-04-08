@@ -1,6 +1,6 @@
 import styles from '@styles/Header.module.scss'
 import { Context } from '@context/context'
-import _Dropdown from '@components/_Dropdown'
+import Dropdown from '@components/Dropdown'
 import { motion } from 'framer-motion'
 import { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
@@ -118,10 +118,10 @@ const Header = () => {
 					<nav className={styles.headerNav}>
 						<ul className={theme === 'light' ? 'light' : 'dark'}>
 							<li>
-								<_Dropdown type='projects' trigger='hover' />
+								<Dropdown type='projects' trigger='hover' />
 							</li>
 							<li>
-								<_Dropdown type='explorer' trigger='hover' />
+								<Dropdown type='explorer' trigger='hover' />
 							</li>
 							<li>
 								<Link href='/services' className={styles.link}>
@@ -145,7 +145,6 @@ const Header = () => {
 						>
 							<motion.div
 								className={styles.handle}
-								layout
 								transition={spring}
 								style={{
 									backgroundColor: theme === 'light' ? '#fff' : '#000',

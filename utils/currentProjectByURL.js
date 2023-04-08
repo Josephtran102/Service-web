@@ -1,6 +1,10 @@
 import projects from '@store/projects'
 
 export const currentProject = () => {
+	if (typeof window === 'undefined') {
+		return { error: 'Window object is not available' }
+	}
+
 	const URL = window.location.href
 	let name = ''
 	let type = URL.indexOf('testnet') > -1 ? 'testnet' : 'mainnet'

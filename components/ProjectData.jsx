@@ -8,145 +8,81 @@ import { fetchNetInfo, fetchSnap } from 'utils/fetchProject.js'
 import Head from 'next/head'
 import { Typography } from 'antd'
 import AnimatedSection from './AnimatedSection'
+
 const { Paragraph } = Typography
 
-const ProjectData = props => {
-	const name = props.name
-	const type = props.type
+const ProjectData = ({ name, type }) => {
 	const project = projects[type][name]
 	const explorer = useRef()
 	const projectName =
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const bin = project.bin
-	const path = project.path
-	const peerID = project.peerID
-	const seedID = project.seedID
-	const seedPort = project.seedPort
-	const peerPort = project.peerPort
+	const { bin, path, peerID, seedID, seedPort, peerPort } = project
 	explorer.current = project.explorer
-	let wasm = useRef('false')
-
+	const wasm = useRef('false')
 	const { theme } = useContext(Context)
 	const [livePeers, setLivePeers] = useState('')
 	const [livePeersCounter, setLivePeersCounter] = useState(null)
-	const [snapHeight, setSnapHeight] = useState(null)
-	const [snapSize, setSnapSize] = useState('')
-	const [snapTime, setSnapTime] = useState()
-	const [pruning, setPruning] = useState('')
-	const [indexer, setIndexer] = useState(null)
+	const [intervalId, setIntervalId] = useState(null)
+	const [snapInfo, setSnapInfo] = useState({
+		height: null,
+		size: '',
+		time: '',
+		pruning: '',
+		indexer: '',
+	})
 	const PEERS = peerID
-			? `"${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"`
-			: '""',
-		LIVE_PEERS = peerID ? `${PEERS}` : `"${livePeers.slice(1)}"`,
-		SEEDS = seedID
-			? `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
-			: '""'
-
-	const items = [
-		{
-			key: 'part-1',
-			href: '#about',
-			title: 'About',
-		},
-		{
-			key: 'part-2',
-			href: '#guide',
-			title: 'Guide',
-		},
-		{
-			key: 'part-3',
-			href: '#rpc',
-			title: 'RPC, API, gRPC',
-		},
-		{
-			key: 'part-4',
-			href: '#peer',
-			title: 'Peers, seeds',
-		},
-		{
-			key: 'part-5',
-			href: '#snap',
-			title: 'Snapshot',
-		},
-		{
-			key: 'part-6',
-			href: '#sync',
-			title: 'State Sync',
-		},
-		{
-			key: 'part-7',
-			href: '#wasm',
-			title: 'Wasm',
-		},
-	]
-
-	const netInfo = () => {
-		fetchNetInfo(name, type)
-			.then(info => {
-				const peers = info.peers
-				const livePeers = []
-				const letters = /[a-zA-Z]/
-
-				peers.map(peer => {
-					if (peer.is_outbound === true) {
-						let ip = peer.remote_ip
-						const id = peer.node_info.id
-						const listen_addr = peer.node_info.listen_addr
-
-						if (letters.test(ip)) {
-							ip = `[${ip}]`
-						}
-
-						let i = listen_addr.length - 1
-						let port = ''
-
-						while (listen_addr[i] !== ':') {
-							port += listen_addr[i]
-							i--
-						}
-						port = port.split('').reverse().join('')
-						livePeers.push(`${id}@${ip}:${port}`)
-					}
-				})
-				livePeers.unshift('')
-				setLivePeersCounter(livePeers.length)
-				setLivePeers(livePeers.join())
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
-
-	const snap = () => {
-		fetchSnap(name, type)
-			.then(data => {
-				setSnapHeight(data.SnapshotHeight)
-				setSnapSize(data.SnapshotSize)
-				setPruning(data.pruning)
-				setIndexer(data.indexer)
-
-				if (data.WasmPath !== 'false') {
-					wasm.current = data.WasmPath
-				}
-
-				let time = data.SnapshotBlockTime
-				time = Date.parse(time.concat(':00'))
-				time = Date.now() - time
-				setSnapTime(prettyMilliseconds(time, { compact: true }))
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
+		? `"${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"`
+		: '""'
+	const LIVE_PEERS = peerID ? `${PEERS}` : `"${livePeers.slice(1)}"`
+	const SEEDS = seedID
+		? `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
+		: '""'
 
 	useEffect(() => {
-		netInfo()
-		snap()
+		const fetchData = async () => {
+			try {
+				const netInfoData = await fetchNetInfo(name, type)
+				const snapData = await fetchSnap(name, type)
+				processNetInfo(netInfoData)
+				processSnap(snapData)
+			} catch (err) {
+				console.log(err)
+			}
+		}
 
-		setInterval(() => {
-			netInfo()
-			snap()
-		}, 10000)
+		const processNetInfo = info => {
+			const livePeersData = info.peers
+				.filter(peer => peer.is_outbound)
+				.map(peer => {
+					const ip = /[a-zA-Z]/.test(peer.remote_ip)
+						? `[${peer.remote_ip}]`
+						: peer.remote_ip
+					const port = peer.node_info.listen_addr.split(':').pop()
+					return `${peer.node_info.id}@${ip}:${port}`
+				})
+
+			setLivePeersCounter(livePeersData.length)
+			setLivePeers(',' + livePeersData)
+		}
+
+		const processSnap = data => {
+			const time = Date.now() - Date.parse(data.SnapshotBlockTime.concat(':00'))
+			const snapData = {
+				height: data.SnapshotHeight,
+				size: data.SnapshotSize,
+				time: prettyMilliseconds(time, { compact: true }),
+				pruning: data.pruning,
+				indexer: data.indexer,
+			}
+			if (data.WasmPath !== 'false') wasm.current = data.WasmPath
+			setSnapInfo(snapData)
+		}
+
+		fetchData()
+		const id = setInterval(fetchData, 10000)
+		setIntervalId(id)
+
+		return () => clearInterval(id)
 	}, [])
 
 	return (
@@ -235,14 +171,13 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 				/>
 				<h2 id='snap'>Snapshot </h2>
 				<p className={styles.text_secondary}>
-					height: <b className={styles.bold}>{snapHeight}</b>
+					height: <b className={styles.bold}>{snapInfo.height}</b>
 					{' | '}
-					<b className={styles.bold}>{`${snapTime} ago`}</b>
+					<b className={styles.bold}>{`${snapInfo.time} ago`}</b>
 					{' | '}
-					size: <b className={styles.bold}>{`${snapSize}B | `}</b>
-					pruning: <b className={styles.bold}>{pruning}</b>
-					{' | '}
-					indexer: <b className={styles.bold}>{indexer}</b>
+					size: <b className={styles.bold}>{`${snapInfo.size}B | `}</b>
+					pruning: <b className={styles.bold}>{snapInfo.pruning}</b>
+					{' | '} indexer: <b className={styles.bold}>{snapInfo.indexer}</b>
 				</p>
 				<CodeSnippet
 					theme={theme}

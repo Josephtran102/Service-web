@@ -323,12 +323,27 @@ b.bold {
 	color: #838383;
 }
 
+.light {
+	background-color: #fff;
+}
+.dark {
+	background-color: #171717;
+}
+
 .mainnetColumn {
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: max(15px, 1vw);
 	column-gap: max(30px, 2vw);
 	margin: 10px 0;
+}
+
+.mobileMenu {
+	display: block;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
 }
 
 .testnetColumn {

@@ -1,9 +1,9 @@
 import { DownOutlined } from '@ant-design/icons'
-import { Dropdown } from 'antd'
+import { Dropdown as AntDropdown } from 'antd'
 import Link from 'next/link'
-import styles from '@styles/_Dropdown.module.scss'
+import styles from '@styles/Dropdown.module.scss'
 
-const _Dropdown = props => {
+const Dropdown = props => {
 	let items = []
 	if (props.type === 'projects') {
 		items = [
@@ -57,7 +57,7 @@ const _Dropdown = props => {
 	const trigger = [props.trigger]
 
 	return (
-		<Dropdown
+		<AntDropdown
 			menu={{ items }}
 			trigger={trigger}
 			open={props.open}
@@ -69,8 +69,8 @@ const _Dropdown = props => {
 				{props.type}
 				<DownOutlined />
 			</a>
-		</Dropdown>
+		</AntDropdown>
 	)
 }
 
-export default _Dropdown
+export default Dropdown

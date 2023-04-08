@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 const pageTransition = {
-	duration: 0.3,
+	duration: 0.4,
 	ease: 'easeInOut',
 }
 

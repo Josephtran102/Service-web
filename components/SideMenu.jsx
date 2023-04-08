@@ -7,13 +7,7 @@ import Link from 'next/link.js'
 import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
-import {
-	Tabs,
-	TabsHeader,
-	TabsBody,
-	Tab,
-	TabPanel,
-} from '@material-tailwind/react'
+import { Tabs, TabsHeader, Tab } from '@material-tailwind/react'
 import { useRouter } from 'next/navigation'
 
 function getItem(label, key, icon, children, type) {
@@ -26,7 +20,7 @@ function getItem(label, key, icon, children, type) {
 	}
 }
 
-const SideMenu = () => {
+const SideMenu = ({ intervalId }) => {
 	const router = useRouter()
 	const [openKeys, setOpenKeys] = useState([])
 	const { theme, toggleTheme } = useContext(Context)
@@ -342,6 +336,10 @@ const SideMenu = () => {
 				]
 			),
 		])
+
+		return () => {
+			clearInterval(intervalId)
+		}
 	}, [])
 
 	return (

@@ -1,52 +1,50 @@
-export const fetchStatus = async (name, type) => {
-	const response = await fetch(
-		`https://${name}-${type}-rpc.itrocket.net:443/status`
-	).catch(err => {
-		console.log(err)
-	})
-	const data = await response.json()
-	const status = await data.result
+import axios from 'axios'
 
-	return status
+export const fetchStatus = async (name, type) => {
+	try {
+		const response = await axios.get(
+			`https://${name}-${type}-rpc.itrocket.net:443/status`
+		)
+		return response.data.result
+	} catch (err) {
+		console.log(err)
+	}
 }
 
 export const fetchNetInfo = async (name, type) => {
-	const response = await fetch(
-		`https://${name}-${type}-rpc.itrocket.net:443/net_info`
-	).catch(err => {
+	try {
+		const response = await axios.get(
+			`https://${name}-${type}-rpc.itrocket.net:443/net_info`
+		)
+		return response.data.result
+	} catch (err) {
 		console.log(err)
-	})
-	const data = await response.json()
-	const info = await data.result
-
-	return info
+	}
 }
 
 export const fetchSnap = async (name, type) => {
-	const response = await fetch(
-		`https://files.itrocket.net/${type}/${name}/.current_state.json`,
-		{
-			method: 'GET',
-			headers: {
-				accept: 'application/json',
-			},
-		}
-	).catch(err => {
+	try {
+		const response = await axios.get(
+			`https://files.itrocket.net/${type}/${name}/.current_state.json`,
+			{
+				headers: {
+					accept: 'application/json',
+				},
+			}
+		)
+		return response.data
+	} catch (err) {
 		console.log(err)
-	})
-	const data = await response.json()
-
-	return data
+	}
 }
 
 export const fetchVersion = async (name, type) => {
-	const response = await fetch(
-		`https://${name}-${type}-rpc.itrocket.net:443/abci_info?`
-	).catch(err => {
+	try {
+		const response = await axios.get(
+			`https://${name}-${type}-rpc.itrocket.net:443/abci_info`
+		)
+		return response.data.result.response
+	} catch (err) {
 		console.log(err)
-	})
-	const data = await response.json()
-	const info = await data.result
-
-	return info.response
+	}
 }
