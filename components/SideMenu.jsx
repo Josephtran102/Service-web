@@ -88,6 +88,7 @@ const SideMenu = ({ intervalId }) => {
 	}
 
 	const handleTabClick = href => {
+		clearInterval(intervalId)
 		router.push(href)
 	}
 
@@ -342,7 +343,7 @@ const SideMenu = ({ intervalId }) => {
 		return () => {
 			clearInterval(intervalId)
 		}
-	}, [])
+	}, [router])
 
 	return (
 		<aside
