@@ -9,6 +9,7 @@ import { currentProject } from 'utils/currentProjectByURL'
 import { CheckCircleTwoTone, SearchOutlined } from '@ant-design/icons'
 import { useRouter } from 'next/router'
 import { Tooltip } from 'antd'
+import Tabs from './Tabs'
 
 export default function Dashboard(props) {
 	const router = useRouter()
@@ -125,6 +126,7 @@ export default function Dashboard(props) {
 							</span>
 						</p>
 					</div>
+					<Tabs />
 					{props.children}
 				</main>
 			</div>

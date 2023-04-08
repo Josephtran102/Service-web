@@ -90,7 +90,6 @@ const SideMenu = ({ intervalId }) => {
 	}
 
 	const handleTabClick = href => {
-		setOpenKeys([`services`])
 		setSelectedKeys([])
 		router.push(href)
 	}

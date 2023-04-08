@@ -323,13 +323,6 @@ b.bold {
 	color: #838383;
 }
 
-.light {
-	background-color: #fff;
-}
-.dark {
-	background-color: #171717;
-}
-
 .mainnetColumn {
 	display: flex;
 	flex-wrap: wrap;
@@ -339,7 +332,8 @@ b.bold {
 }
 
 .mobileMenu {
-	display: block;
+	display: none;
+	margin-bottom: 10px;
 
 	@media (max-width: 768px) {
 		display: block;
