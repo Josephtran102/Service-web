@@ -23,6 +23,7 @@ function getItem(label, key, icon, children, type) {
 const SideMenu = ({ intervalId }) => {
 	const router = useRouter()
 	const [openKeys, setOpenKeys] = useState([])
+	const [selectedKeys, setSelectedKeys] = useState([])
 	const { theme, toggleTheme } = useContext(Context)
 	const [items, setItems] = useState([])
 	let rootSubmenuKeys = ['services', 'installation', 'upgrade']
@@ -49,8 +50,9 @@ const SideMenu = ({ intervalId }) => {
 		}
 	}
 
-	const handleClick = (event, targetId) => {
+	const handleClick = (event, targetId, key) => {
 		const targetElement = document.getElementById(targetId)
+		setSelectedKeys(key)
 
 		if (targetElement) {
 			event.preventDefault()
@@ -88,9 +90,14 @@ const SideMenu = ({ intervalId }) => {
 	}
 
 	const handleTabClick = href => {
-		clearInterval(intervalId)
+		setOpenKeys([`services`])
+		setSelectedKeys([])
 		router.push(href)
 	}
+
+	useEffect(() => {
+		setOpenKeys([`services`])
+	}, [])
 
 	useEffect(() => {
 		const project = currentProject()
@@ -101,7 +108,6 @@ const SideMenu = ({ intervalId }) => {
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
 		const imgURL = projects[type][name].imgUrl
-		setOpenKeys([`services`])
 
 		setItems([
 			getItem(
@@ -147,7 +153,7 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '#rpc'}
-								onClick={event => handleClick(event, 'rpc')}
+								onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
 							>
 								RPC, API, GRPC
 							</Link>,
@@ -157,7 +163,7 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '#peer'}
-								onClick={event => handleClick(event, 'peer')}
+								onClick={event => handleClick(event, 'peer', `peer${name}`)}
 							>
 								Peers, Seeds
 							</Link>,
@@ -167,7 +173,7 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '#snap'}
-								onClick={event => handleClick(event, 'snap')}
+								onClick={event => handleClick(event, 'snap', `snap${name}`)}
 							>
 								Snapshot
 							</Link>,
@@ -177,7 +183,7 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '#sync'}
-								onClick={event => handleClick(event, 'sync')}
+								onClick={event => handleClick(event, 'sync', `state${name}`)}
 							>
 								State sync
 							</Link>,
@@ -187,7 +193,7 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '#wasm'}
-								onClick={event => handleClick(event, 'wasm')}
+								onClick={event => handleClick(event, 'wasm', `wasm${name}`)}
 							>
 								Wasm
 							</Link>,
@@ -200,7 +206,9 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '/installation/#installation'}
-								onClick={event => handleClick(event, 'installation')}
+								onClick={event =>
+									handleClick(event, 'installation', `install${name}`)
+								}
 							>
 								Installation
 							</Link>,
@@ -210,7 +218,9 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '/installation/#create-wallet'}
-								onClick={event => handleClick(event, 'create-wallet')}
+								onClick={event =>
+									handleClick(event, 'create-wallet', `wallet${name}`)
+								}
 							>
 								Create Wallet
 							</Link>,
@@ -220,7 +230,9 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '/installation/#create-validator'}
-								onClick={event => handleClick(event, 'create-validator')}
+								onClick={event =>
+									handleClick(event, 'create-validator', `validator${name}`)
+								}
 							>
 								Create Validator
 							</Link>,
@@ -230,7 +242,9 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '/installation/#monitoring'}
-								onClick={event => handleClick(event, 'monitoring')}
+								onClick={event =>
+									handleClick(event, 'monitoring', `Monitoring${name}`)
+								}
 							>
 								Monitoring
 							</Link>,
@@ -240,7 +254,9 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '/installation/#security'}
-								onClick={event => handleClick(event, 'security')}
+								onClick={event =>
+									handleClick(event, 'security', `security${name}`)
+								}
 							>
 								Security
 							</Link>,
@@ -250,7 +266,7 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '/installation/#delete'}
-								onClick={event => handleClick(event, 'delete')}
+								onClick={event => handleClick(event, 'delete', `Delete${name}`)}
 							>
 								Delete node
 							</Link>,
@@ -262,7 +278,7 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '/upgrade/#manual'}
-								onClick={event => handleClick(event, 'manual')}
+								onClick={event => handleClick(event, 'manual', `manual${name}`)}
 							>
 								Manual upgrade
 							</Link>,
@@ -272,7 +288,7 @@ const SideMenu = ({ intervalId }) => {
 						getItem(
 							<Link
 								href={serviceURL + '/upgrade/#auto'}
-								onClick={event => handleClick(event, 'auto')}
+								onClick={event => handleClick(event, 'auto', `auto${name}`)}
 							>
 								Autoupgrade
 							</Link>,
@@ -362,8 +378,8 @@ const SideMenu = ({ intervalId }) => {
 				}}
 				mode='inline'
 				theme={theme}
-				defaultSelectedKeys={['services']}
 				openKeys={openKeys}
+				selectedKeys={selectedKeys}
 				onOpenChange={onOpenChange}
 			/>
 		</aside>
