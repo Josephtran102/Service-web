@@ -332,7 +332,7 @@ b.bold {
 }
 
 .mobileMenu {
-	display: none;
+	display: block;
 	margin-bottom: 10px;
 
 	@media (max-width: 768px) {

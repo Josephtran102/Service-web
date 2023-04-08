@@ -95,10 +95,6 @@ const SideMenu = ({ intervalId }) => {
 	}
 
 	useEffect(() => {
-		setOpenKeys([`services`])
-	}, [])
-
-	useEffect(() => {
 		const project = currentProject()
 		const name = project.name
 		const type = project.type
@@ -107,6 +103,7 @@ const SideMenu = ({ intervalId }) => {
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
 		const imgURL = projects[type][name].imgUrl
+		setOpenKeys([`services`])
 
 		setItems([
 			getItem(
