@@ -95,6 +95,7 @@ const SideMenu = ({ intervalId }) => {
 		const project = currentProject()
 		const name = project.name
 		const type = project.type
+		const reversedType = type === 'testnet' ? 'mainnet' : 'testnet'
 		const serviceURL = project.serviceURL
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
@@ -120,22 +121,23 @@ const SideMenu = ({ intervalId }) => {
 						/>
 						{name.charAt(0).toUpperCase() + name.slice(1)}
 					</div>
-					{projects[type][name].hasBoth && (
-						<Tabs value={type}>
-							<TabsHeader>
-								{data.map(({ label, href, value }) => (
-									<Tab
-										key={label}
-										value={value}
-										onClick={() => handleTabClick(`${href}${name}`)}
-										style={{ margin: '3px' }}
-									>
-										{label}
-									</Tab>
-								))}
-							</TabsHeader>
-						</Tabs>
-					)}
+					{projects[type][name] !== undefined &&
+						projects[reversedType][name] !== undefined && (
+							<Tabs value={type}>
+								<TabsHeader>
+									{data.map(({ label, href, value }) => (
+										<Tab
+											key={label}
+											value={value}
+											onClick={() => handleTabClick(`${href}${name}`)}
+											style={{ margin: '3px' }}
+										>
+											{label}
+										</Tab>
+									))}
+								</TabsHeader>
+							</Tabs>
+						)}
 				</div>,
 				'grpthis',
 				null,
