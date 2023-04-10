@@ -1,17 +1,14 @@
 import { Tabs as MaterialTabs, TabsHeader, Tab } from '@material-tailwind/react'
 import { currentProject } from '@utils/currentProjectByURL'
 import styles from '@styles/Services.module.scss'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 const Tabs = () => {
 	const [data, setData] = useState([])
-	const windowWidth = useRef()
 	const router = useRouter()
 
 	useEffect(() => {
-		windowWidth.current = window.innerWidth
-		console.log(windowWidth.current)
 		const project = currentProject()
 		const name = project.name
 		const type = project.type
@@ -19,7 +16,7 @@ const Tabs = () => {
 			{
 				label: 'Services',
 				value: 'services',
-				href: `/`,
+				href: ``,
 			},
 			{
 				label: 'Installation',
@@ -39,10 +36,7 @@ const Tabs = () => {
 	}
 
 	return (
-		<MaterialTabs
-			className={styles.mobileMenu}
-			value={windowWidth.current < 769 ? 'services' : ''}
-		>
+		<MaterialTabs className={styles.mobileMenu}>
 			<TabsHeader>
 				{data.map(({ label, href, value }) => (
 					<Tab

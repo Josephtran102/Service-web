@@ -103,7 +103,10 @@ const SideMenu = ({ intervalId }) => {
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
 		const imgURL = projects[type][name].imgUrl
-		setOpenKeys([`services`])
+		const URL = window.location.href
+		if (URL.indexOf('installation') > -1) setOpenKeys([`installation`])
+		else if (URL.indexOf('upgrade') > -1) setOpenKeys([`upgrade`])
+		else setOpenKeys([`services`])
 
 		setItems([
 			getItem(
