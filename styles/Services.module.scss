@@ -326,7 +326,7 @@ b.bold {
 .mainnetColumn {
 	display: flex;
 	flex-wrap: wrap;
-	row-gap: max(15px, 1vw);
+	row-gap: max(10px, 1vw);
 	column-gap: max(30px, 2vw);
 	margin: 10px 0;
 }
@@ -350,7 +350,7 @@ b.bold {
 
 	@media (max-width: 768px) {
 		max-height: 70vh;
-		row-gap: 10px;
+		row-gap: 8px;
 	}
 }
 

@@ -45,7 +45,9 @@ const services = () => {
 						useful commands.
 					</p>
 					<br />
-					<h2 id='mainnets'>Mainnets</h2>
+					<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>
+						Mainnets
+					</h2>
 					<div className={styles.mainnetColumn}>
 						{Object.keys(mainnetData).map(item => {
 							const name =
@@ -70,7 +72,7 @@ const services = () => {
 						})}
 					</div>
 					<br />
-					<h2>Testnets</h2>
+					<h2 style={{ marginTop: '0', paddingTop: '5px' }}>Testnets</h2>
 					<div className={styles.testnetColumn}>
 						{Object.keys(testnetData).map(item => {
 							const name =
