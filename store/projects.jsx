@@ -118,6 +118,39 @@ git fetch
 git checkout v1.2.9-hotfix.0
 make install`,
 		},
+		realio: {
+			chainID: 'realionetwork_3301-1',
+			link: 'https://mainnet.itrocket.net/realio/staking',
+			delegate:
+				'https://mainnet.itrocket.net/uptick/staking/uptickvaloper1dx5sfmg4ascplvmkn39stq3rgk0c3vhpv6ysd0',
+			imgUrl: 'realio.svg',
+			desc: 'The Future of Private Equity is Digital',
+			website: 'https://www.realio.fund/',
+			offValDoc: 'https://github.com/realiotech/mainnet/tree/main/realionetwork_3301-1',
+			hardware: '4 Cores, 8GB RAM, 240GB of storage (NVME)',
+                        prHome: '/home/realio',
+                        binHome: '/home/realio/go/bin/realio-networkd',
+                        snapMaxSize: '10',
+                        port: '23',
+                        VAR: 'REALIO',
+                        denom: 'ario',
+                        ecosystem: 'cosmos',
+                        bin: 'realio-networkd',
+                        path: '.realio-network',
+                        peerID: '2815cc1437461f808a7f022c0df679fa27918dbc',
+                        seedID: '',
+                        explorer: '',
+                        peerPort: '23656',
+                        seedPort: '23656',
+                        installBin: `cd $HOME
+rm -rf realio-network
+git clone https://github.com/realiotech/realio-network.git
+cd realio-network
+git checkout tags/v0.8.0-rc4
+make install`,
+      updHeight:'',
+      newInstallBin: ``,
+                },
 		uptick: {
 			chainID: 'uptick_117-1',
 			link: 'https://mainnet.itrocket.net/uptick/staking',
