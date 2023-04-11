@@ -249,7 +249,7 @@ sudo rm CARDCHAIN_latest_linux_amd64.tar.gz`,
 			newInstallBin: ``,
 		},
 		celestia: {
-			chainID: 'mocha',
+			chainID: 'blockspacerace-0',
 			link: 'https://testnet.itrocket.net/celestia/staking',
 			imgUrl: 'celestia.png',
 			desc: 'Celestia is the first modular blockchain network. It is a modular consensus and data network, built to enable anyone to easily deploy their own blockchain with minimal overhead.',
@@ -265,18 +265,17 @@ sudo rm CARDCHAIN_latest_linux_amd64.tar.gz`,
 			ecosystem: 'cosmos',
 			bin: 'celestia-appd',
 			path: '.celestia-app',
-			peerID: '1afcd97b0bf289700378e18b45dc1f927917bba0',
-			seedID: 'e86a9cc8910ef5741f713ce9325d11d758f20375',
+			peerID: '193acd7bf7049b425d7b95c24e02250fce8ad45c',
+			seedID: 'fedea9723696360d429a23792225594779cc7cd7',
 			explorer: '',
 			peerPort: '11656',
 			seedPort: '11656',
-			installBin: `cd $HOME
-rm -rf celestia-app
-rm $HOME/.celestia-app/config/genesis.json
-git clone https://github.com/celestiaorg/celestia-app.git
-cd celestia-app/
-APP_VERSION=v0.11.1
-git checkout tags/$APP_VERSION -b $APP_VERSION
+			installBin: `cd $HOME 
+rm -rf celestia-app 
+git clone https://github.com/celestiaorg/celestia-app.git 
+cd celestia-app/ 
+APP_VERSION=v0.12.2 
+git checkout tags/$APP_VERSION -b $APP_VERSION 
 make install`,
 			updHeight: '',
 			newInstallBin: ``,
