@@ -123,7 +123,7 @@ make install`,
 			link: 'https://mainnet.itrocket.net/realio/staking',
 			delegate:
 				'https://mainnet.itrocket.net/uptick/staking/uptickvaloper1dx5sfmg4ascplvmkn39stq3rgk0c3vhpv6ysd0',
-			imgUrl: 'realio.svg',
+			imgUrl: 'realio.png',
 			desc: 'The Future of Private Equity is Digital',
 			website: 'https://www.realio.fund/',
 			offValDoc: 'https://github.com/realiotech/mainnet/tree/main/realionetwork_3301-1',
