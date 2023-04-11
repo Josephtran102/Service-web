@@ -155,7 +155,7 @@ make install`,
 			chainID: 'uptick_117-1',
 			link: 'https://mainnet.itrocket.net/uptick/staking',
 			delegate:
-				'https://mainnet.itrocket.net/uptick/staking/uptickvaloper1dx5sfmg4ascplvmkn39stq3rgk0c3vhpv6ysd0',
+				'https://mainnet.itrocket.net/realio/staking/realiovaloper1479d25uzwf529kxh9dxme64xlv89c4un676emc',
 			imgUrl: 'uptick.jpg',
 			desc: 'The Business Grade Multi-Chain NFT Infrastructure for Web 3.0',
 			website: 'https://uptick.network/',
