@@ -73,6 +73,38 @@ cd noisd
 git checkout v1.0.0
 make install`,
 		},
+		terp: {
+			chainID: 'morocco-1',
+			link: 'https://mainnet.itrocket.net/terp/staking',
+			imgUrl: 'terp.png',
+			delegate:
+				'https://mainnet.itrocket.net/nois/staking/noisvaloper19yul78yu9jzay9afsyjgmv0pk0k5rl80sa6vlx',
+			desc: 'Decentralized Infrastructure for the Cannabis Community',
+			website: 'https://terp.network/',
+			offValDoc: 'https://github.com/terpnetwork/mainnet/tree/main/morocco-1',
+			hardware: '4 Cores, 8GB RAM, 200GB of storage (NVME)',
+			prHome: '/home/terp',
+			binHome: '/home/terp/go/bin/terpd',
+			snapMaxSize: '10',
+			port: '13',
+			VAR: 'TERP',
+			denom: 'uterp',
+			ecosystem: 'cosmos',
+			bin: 'terpd',
+			path: '.terp',
+			peerID: 'a81dc3bf1bb1c3837b768eeb82659eecc971890b',
+			seedID: 'd8256642afae77264bcce1631d51233a9d00249b',
+			explorer: '',
+			peerPort: '13656',
+			seedPort: '13656',
+			updHeight: '',
+			installBin: `cd $HOME
+rm -rf ~/terp-core
+git clone https://github.com/terpnetwork/terp-core.git
+cd terp-core
+git checkout v1.0.0
+make install`,
+		},
 		forta: {
 			link: 'https://explorer.forta.network/',
 			imgUrl: 'forta.jpg',
