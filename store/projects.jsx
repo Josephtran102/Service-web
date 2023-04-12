@@ -78,7 +78,7 @@ make install`,
 			link: 'https://mainnet.itrocket.net/terp/staking',
 			imgUrl: 'terp.svg',
 			delegate:
-				'https://mainnet.itrocket.net/nois/staking/noisvaloper19yul78yu9jzay9afsyjgmv0pk0k5rl80sa6vlx',
+				'https://mainnet.itrocket.net/terp/staking/terpvaloper1u9nx0mxq30h6dq99w6ptju09pz3m32jxz4672f',
 			desc: 'Decentralized Infrastructure for the Cannabis Community',
 			website: 'https://terp.network/',
 			offValDoc: 'https://github.com/terpnetwork/mainnet/tree/main/morocco-1',
