@@ -76,7 +76,7 @@ make install`,
 		terp: {
 			chainID: 'morocco-1',
 			link: 'https://mainnet.itrocket.net/terp/staking',
-			imgUrl: 'terp.png',
+			imgUrl: 'terp.svg',
 			delegate:
 				'https://mainnet.itrocket.net/nois/staking/noisvaloper19yul78yu9jzay9afsyjgmv0pk0k5rl80sa6vlx',
 			desc: 'Decentralized Infrastructure for the Cannabis Community',
