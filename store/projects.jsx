@@ -609,6 +609,38 @@ make install`,
 			updHeight: '',
 			newInstallBin: ``,
 		},
+		nois: {
+			chainID: 'nois-testnet-005',
+			link: 'https://testnet.itrocket.net/nois/staking',
+			imgUrl: 'nois.png',
+			desc: 'Brings random beacons to Cosmos blockchains without compromising security or usability by leveraging drand and IBC.',
+			website: 'https://nois.network/',
+			offValDoc:
+				'https://docs.nois.network/use-cases/for-validators',
+			hardware: '4 Cores, 8GB RAM, 200GB of storage (NVME)',
+			prHome: '/home/nois',
+			binHome: '/home/nois/go/bin/noisd',
+			snapMaxSize: '10',
+			port: '21',
+			VAR: 'NOIS',
+			denom: 'unois',
+			ecosystem: 'cosmos',
+			bin: 'noisd',
+			path: '.noisd',
+			peerID: '5ecd40831e453845587cbd03534e68a7b9fc3576',
+			seedID: 'da81dd66bca4bba509163dbd06b4a6b2e05c2e12',
+			explorer: '',
+			peerPort: '21656',
+			seedPort: '21656',
+			installBin: `cd $HOME
+rm -rf $HOME/noisd
+git clone https://github.com/noislabs/noisd.git
+cd noisd
+git checkout v0.6.0
+make install`,
+			updHeight: '',
+			newInstallBin: ``,
+		},
 		penumbra: {
 			link: 'https://guide.penumbra.zone/main/pd/join-testnet.html',
 			imgUrl: 'penumbra.webp',
