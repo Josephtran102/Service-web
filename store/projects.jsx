@@ -801,7 +801,7 @@ make install`,
 rm -rf uptick
 git clone https://github.com/UptickNetwork/uptick.git
 cd uptick
-git checkout v0.2.4
+git checkout v0.2.5
 make install`,
 			updHeight: '',
 			newInstallBin: ``,
