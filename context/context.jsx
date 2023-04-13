@@ -16,22 +16,18 @@ export const ContextProvider = props => {
 	useEffect(() => {
 		if (getThemeInStorage() === 'dark') {
 			setTheme('dark')
-			changeStyles('light')
 		} else {
 			setTheme('light')
-			changeStyles('dark')
 		}
 	}, [])
 
-	const toggleTheme = () => {
-		if (theme === 'light') {
-			setTheme(theme => (theme = 'dark'))
-			setThemeInStorage('dark')
-		} else {
-			setTheme(theme => (theme = 'light'))
-			setThemeInStorage('light')
-		}
+	useEffect(() => {
 		changeStyles(theme)
+		setThemeInStorage(theme)
+	}, [theme])
+
+	const toggleTheme = () => {
+		setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
 	}
 
 	return (

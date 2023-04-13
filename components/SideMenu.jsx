@@ -61,32 +61,26 @@ const SideMenu = ({ intervalId }) => {
 	}
 
 	const fillSideMenu = type => {
-		const data = type == 'mainnet' ? projects.mainnet : projects.testnet
-		const allMarkup = []
+		const data = projects[type]
 
-		Object.keys(data).forEach(item => {
-			const name = data[item].name || item
+		return Object.entries(data).map(([item, { name = item, imgUrl }]) => {
 			const id = type + name
-			const serviceURL = `/services/${type}/` + name.toLowerCase()
-			const imgURL = data[item].imgUrl
+			const serviceURL = `/services/${type}/${name.toLowerCase()}`
 
-			allMarkup.push(
-				getItem(
-					<a href={serviceURL} rel='noopener referrer'>
-						{name.charAt(0).toUpperCase() + name.slice(1)}
-					</a>,
-					`grp${id}`,
-					<Image
-						src={require(`../public/${type}/${imgURL}`)}
-						alt='project logo'
-						width='20'
-						height='20'
-						unoptimized={true}
-					/>
-				)
+			return getItem(
+				<a href={serviceURL} rel='noopener referrer'>
+					{name.charAt(0).toUpperCase() + name.slice(1)}
+				</a>,
+				`grp${id}`,
+				<Image
+					src={`/${type}/${imgUrl}`}
+					alt='project logo'
+					width='20'
+					height='20'
+					unoptimized
+				/>
 			)
 		})
-		return allMarkup
 	}
 
 	const handleTabClick = href => {
@@ -95,11 +89,8 @@ const SideMenu = ({ intervalId }) => {
 	}
 
 	useEffect(() => {
-		const project = currentProject()
-		const name = project.name
-		const type = project.type
+		const { name, type, serviceURL } = currentProject()
 		const reversedType = type === 'testnet' ? 'mainnet' : 'testnet'
-		const serviceURL = project.serviceURL
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
 		const imgURL = projects[type][name].imgUrl
@@ -118,7 +109,7 @@ const SideMenu = ({ intervalId }) => {
 							alt='project logo'
 							width='25'
 							height='25'
-							unoptimized={true}
+							unoptimized
 							style={{
 								borderRadius: '50%',
 								backgroundColor: '#fff',
@@ -309,7 +300,7 @@ const SideMenu = ({ intervalId }) => {
 						src={require('../public/icons/website.png')}
 						alt='item'
 						style={{ borderRadius: '50%' }}
-						unoptimized={true}
+						unoptimized
 						width='20'
 						height='20'
 					/>

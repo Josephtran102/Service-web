@@ -9,23 +9,9 @@ import Finished from '@components/Finished.jsx'
 import Link from 'next/link'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
-import { Context } from '@context/context'
 
 const Home = () => {
-	const { theme, toggleTheme } = useContext(Context)
-	const [showing, setShowing] = useState(false)
 	const [opacity, setOpacity] = useState(false)
-
-	const container = {
-		hidden: { opacity: 0 },
-		show: {
-			opacity: 1,
-			transition: {
-				delayChildren: 0.5,
-				staggerDirection: -1,
-			},
-		},
-	}
 
 	const opacityBlock = {
 		visible: {
@@ -39,7 +25,6 @@ const Home = () => {
 	useEffect(() => {
 		const onPageLoad = () => {
 			setOpacity(0)
-			setShowing(true)
 		}
 
 		if (document.readyState === 'complete') {
@@ -53,11 +38,9 @@ const Home = () => {
 
 	return (
 		<>
-			{!showing ? <></> : <></>}
-
 			<Head>
 				<title>
-					ITRocket - Trusted Validator & Interchain Utility Provider!
+					ITRocket - Trusted Validator &amp; Interchain Utility Provider!
 				</title>
 				<meta
 					name='description'
