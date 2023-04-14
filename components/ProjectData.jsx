@@ -67,6 +67,7 @@ const ProjectData = ({ name, type }) => {
 
 		const processSnap = data => {
 			const time = Date.now() - Date.parse(data.SnapshotBlockTime.concat(':00'))
+			console.log(data.SnapshotBlockTime.concat(':00'))
 			const snapData = {
 				height: data.SnapshotHeight,
 				size: data.SnapshotSize,
@@ -136,11 +137,14 @@ const ProjectData = ({ name, type }) => {
 				<div className='flex flex-wrap gap-1 items-center'>
 					<span>Public gRPC: </span>
 					<a
-						href={`${name}-${type}-grpc.itrocket.net:${peerPort}`}
+						href={`${name}-${type}-grpc.itrocket.net:${peerPort.slice(
+							0,
+							2
+						)}090`}
 						target='_blank'
 						rel='noopener referrer'
 					>
-						{`${name}-${type}-grpc.itrocket.net:${peerPort}`}
+						{`${name}-${type}-grpc.itrocket.net:${peerPort.slice(0, 2)}090`}
 					</a>
 					<Paragraph
 						copyable={{
