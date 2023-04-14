@@ -167,7 +167,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 				<p className={styles.text_secondary}>updates every hour</p>
 				<CodeSnippet
 					theme={theme}
-					code={`wget -O $HOME/${path}/config/addrbook.json https://files.itrocket.net/${type}/${name}/addrbook.json`}
+					code={`wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
 				/>
 				<h2 id='snap'>Snapshot </h2>
 				<p className={styles.text_secondary}>
@@ -190,7 +190,7 @@ rm -rf $HOME/${path}/data ${
 							? ''
 							: `$HOME/${path}/wasm`
 					}
-curl https://files.itrocket.net/${type}/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
+curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
 
 mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json
 
@@ -227,7 +227,7 @@ s|^(seeds[[:space:]]+=[[:space:]]+).*$|\\1\\"\\"|" $HOME/${path}/config/config.t
 ${
 	wasm.current !== 'false'
 		? `
-curl https://files.itrocket.net/${type}/${name}/wasm_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasm.current}`
+curl https://${type}-files.itrocket.net/${name}/wasm_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasm.current}`
 		: ``
 }
 mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json
@@ -240,7 +240,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						<p className={styles.text_secondary}>updates every hour</p>
 						<CodeSnippet
 							theme={theme}
-							code={`curl https://files.itrocket.net/${type}/${name}/wasm_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasm.current} 
+							code={`curl https://${type}-files.itrocket.net/${name}/wasm_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasm.current} 
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
 					</>
