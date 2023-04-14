@@ -230,8 +230,8 @@ ${bin} config chain-id ${chainID}
 ${bin} init ${moniker} --chain-id ${chainID}
 
 # download genesis and addrbook
-wget -O $HOME/${path}/config/genesis.json https://files.itrocket.net/${type}/${name}/genesis.json
-wget -O $HOME/${path}/config/addrbook.json https://files.itrocket.net/${type}/${name}/addrbook.json
+wget -O $HOME/${path}/config/genesis.json https://${type}-files.itrocket.net/${name}/genesis.json
+wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json
 
 # set seeds and peers
 SEEDS=${SEEDS}
@@ -281,7 +281,7 @@ EOF
 
 # reset and download snapshot
 ${bin} tendermint unsafe-reset-all --home $HOME/${path}
-curl https://files.itrocket.net/${type}/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
+curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
 
 # enable and start service
 sudo systemctl daemon-reload
