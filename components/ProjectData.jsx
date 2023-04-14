@@ -136,15 +136,15 @@ const ProjectData = ({ name, type }) => {
 				<div className='flex flex-wrap gap-1 items-center'>
 					<span>Public gRPC: </span>
 					<a
-						href={`https://${name}-${type}-grpc.itrocket.net:443`}
+						href={`${name}-${type}-grpc.itrocket.net:${peerPort}`}
 						target='_blank'
 						rel='noopener referrer'
 					>
-						{`https://${name}-${type}-grpc.itrocket.net:443`}
+						{`${name}-${type}-grpc.itrocket.net:${peerPort}`}
 					</a>
 					<Paragraph
 						copyable={{
-							text: `https://${name}-${type}-grpc.itrocket.net:443`,
+							text: `${name}-${type}-grpc.itrocket.net:${peerPort}`,
 							tooltips: false,
 						}}
 					/>
