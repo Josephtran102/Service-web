@@ -25,7 +25,7 @@ export const fetchNetInfo = async (name, type) => {
 export const fetchSnap = async (name, type) => {
 	try {
 		const response = await axios.get(
-			`https://${type}-files.itrocket.net/${type}/${name}/.current_state.json`,
+			`https://${type}-files.itrocket.net/${name}/.current_state.json`,
 			{
 				headers: {
 					accept: 'application/json',
