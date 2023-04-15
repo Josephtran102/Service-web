@@ -143,7 +143,7 @@ const ProjectData = ({ name, type }) => {
 					</a>
 					<Paragraph
 						copyable={{
-							text: `${name}-${type}-grpc.itrocket.net:${gRPC}`,
+							text: `${gRPC}`,
 							tooltips: false,
 						}}
 					/>
