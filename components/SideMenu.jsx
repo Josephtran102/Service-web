@@ -66,9 +66,8 @@ const SideMenu = ({ intervalId }) => {
 		return Object.entries(data).map(([item, { name = item, imgUrl }]) => {
 			const id = type + name
 			const serviceURL = `/services/${type}/${name.toLowerCase()}`
-			// projects[type][item].gas = '--gas auto --gas-adgustment 1.5'
-			// console.log(projects)
-			//123
+			projects[type][item].unsafeReset = 'tendermint unsafe-reset-all'
+			console.log(projects)
 
 			return getItem(
 				<a href={serviceURL} rel='noopener referrer'>

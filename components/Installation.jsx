@@ -30,6 +30,7 @@ const Installation = props => {
 		denom,
 		goVersion,
 		gas,
+		unsafeReset,
 	} = project
 
 	explorer.current = project.explorer
@@ -37,7 +38,6 @@ const Installation = props => {
 	const { theme } = useContext(Context)
 	const [isActive, setIsActive] = useState(styles.pending)
 	const [livePeers, setLivePeers] = useState('')
-	const [blockHeight, setBlockHeight] = useState(null)
 	const [installBin, setInstallBin] = useState(project.installBin)
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
@@ -70,12 +70,10 @@ const Installation = props => {
 				setIsActive(styles.inactive)
 			})
 	}
-
 	const netInfo = () => {
 		fetchNetInfo(name, type)
 			.then(info => {
 				const peers = info.peers
-				const livePeers = []
 				const letters = /[a-zA-Z]/
 
 				peers.map(peer => {
@@ -107,7 +105,6 @@ const Installation = props => {
 				console.log(err)
 			})
 	}
-
 	const snap = () => {
 		fetchSnap(name, type)
 			.then(data => {
@@ -157,12 +154,12 @@ const Installation = props => {
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
 				<>
-					<p className='flex items-center gap-2'>
+					<p className='flex flex-wrap items-center gap-2'>
 						<FileDoneOutlined />{' '}
 						<a href={project.offValDoc} target='_blank' rel='nofollow'>
 							Official Documentation
 						</a>
-						<span className='divider__dot' />
+						<span></span>
 						<span> Recommended Hardware: {project.hardware}</span>
 					</p>
 
@@ -179,23 +176,18 @@ sudo apt install curl git wget htop tmux build-essential jq
 make lz4 gcc unzip -y
 
 # install go, if needed
-cd $HOME
-if ! [ -x "$(command -v go)" ]; then
+cd ~
+! [ -x "$(command -v go)" ] && {
 VER="${goVersion}"
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
-rm -rf  "go$VER.linux-amd64.tar.gz"
-if [ ! -d "$HOME/.bash_profile" ]; then
-touch $HOME/.bash_profile
-source $HOME/.bash_profile
-fi
-echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
-source $HOME/.bash_profile
-fi
-if [ ! -d "$HOME/go/bin" ]; then
-  mkdir -p "$HOME/go/bin"
-fi`}
+rm "go$VER.linux-amd64.tar.gz"
+[ ! -f ~/.bash_profile ] && touch ~/.bash_profile
+echo "export PATH=$PATH:/usr/local/go/bin:/go/bin" >> ~/.bash_profile
+. ~/.bash_profile
+}
+[ ! -d ~/go/bin ] && mkdir -p ~/go/bin`}
 					/>
 					<Space size='middle' style={{ margin: '12px 0', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
@@ -297,7 +289,7 @@ WantedBy=multi-user.target
 EOF
 
 # reset and download snapshot
-${bin} tendermint unsafe-reset-all --home $HOME/${path}
+${bin} ${unsafeReset} --home $HOME/${path}
 curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
 
 # enable and start service

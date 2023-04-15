@@ -16,7 +16,7 @@ const ProjectData = ({ name, type }) => {
 	const explorer = useRef()
 	const projectName =
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const { bin, path, peerID, seedID, seedPort, peerPort } = project
+	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset } = project
 	explorer.current = project.explorer
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
@@ -195,7 +195,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 					code={`sudo systemctl stop ${bin}
 
 cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
-${bin} tendermint unsafe-reset-all --home $HOME/${path}
+${bin} ${unsafeReset} --home $HOME/${path}
 
 peers="${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"  
 SNAP_RPC="https://${name}-${type}-rpc.itrocket.net:443"

@@ -53,10 +53,8 @@ export default function Dashboard(props) {
 		}, 10000)
 
 		setIntervalId(id)
-		console.log(intervalId, 'dash')
 
 		return () => {
-			console.log(intervalId, 'cleat')
 			clearInterval(intervalId)
 		}
 	}, [router.pathname])
