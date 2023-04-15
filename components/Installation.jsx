@@ -173,7 +173,12 @@ const Installation = props => {
 					</p>
 					<CodeSnippet
 						theme={theme}
-						code={`# install go, if needed
+						code={`# install dependencies, if needed
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl git wget htop tmux build-essential jq 
+make lz4 gcc unzip -y
+
+# install go, if needed
 cd $HOME
 if ! [ -x "$(command -v go)" ]; then
 VER="${goVersion}"
@@ -328,11 +333,7 @@ ${bin} query bank balances $WALLET_ADDRESS
 				<h2 id='create-validator'>Create validator</h2>
 				<CodeSnippet
 					theme={theme}
-					code={`# install dependencies, if needed
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
-
-					# create validator
+					code={`# create validator
 ${bin} tx staking create-validator \\
   --amount 1000000${denom} \\
   --from $WALLET \\
