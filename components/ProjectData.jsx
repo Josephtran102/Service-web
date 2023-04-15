@@ -136,18 +136,8 @@ const ProjectData = ({ name, type }) => {
 						}}
 					/>
 				</div>
-				<div className='flex flex-wrap gap-1 items-center'>
-					<span>Public gRPC: </span>
-					<a href={gRPC} target='_blank' rel='noopener referrer'>
-						{gRPC}
-					</a>
-					<Paragraph
-						copyable={{
-							text: `${gRPC}`,
-							tooltips: false,
-						}}
-					/>
-				</div>
+				<h3 id='gRPC'>gRPC:</h3>
+				<CodeSnippet theme={theme} code={`${gRPC}`} />
 				<h3 id='peer'>peers:</h3>
 				<CodeSnippet theme={theme} code={`${PEERS}`} />
 				<h3 id='seed'>seeds:</h3>
