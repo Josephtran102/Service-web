@@ -328,7 +328,11 @@ ${bin} query bank balances $WALLET_ADDRESS
 				<h2 id='create-validator'>Create validator</h2>
 				<CodeSnippet
 					theme={theme}
-					code={`# create validator
+					code={`# install dependencies, if needed
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
+
+					# create validator
 ${bin} tx staking create-validator \\
   --amount 1000000${denom} \\
   --from $WALLET \\
