@@ -158,31 +158,32 @@ make install`,
 			imgUrl: 'realio.png',
 			desc: 'The Future of Private Equity is Digital',
 			website: 'https://www.realio.fund/',
-			offValDoc: 'https://github.com/realiotech/mainnet/tree/main/realionetwork_3301-1',
+			offValDoc:
+				'https://github.com/realiotech/mainnet/tree/main/realionetwork_3301-1',
 			hardware: '4 Cores, 8GB RAM, 240GB of storage (NVME)',
-                        prHome: '/home/realio',
-                        binHome: '/home/realio/go/bin/realio-networkd',
-                        snapMaxSize: '10',
-                        port: '23',
-                        VAR: 'REALIO',
-                        denom: 'ario',
-                        ecosystem: 'cosmos',
-                        bin: 'realio-networkd',
-                        path: '.realio-network',
-                        peerID: '2815cc1437461f808a7f022c0df679fa27918dbc',
-                        seedID: 'a5039f260cd848facfbe7fbe62bf3e8adfce9c98',
-                        explorer: '',
-                        peerPort: '23656',
-                        seedPort: '23656',
-                        installBin: `cd $HOME
+			prHome: '/home/realio',
+			binHome: '/home/realio/go/bin/realio-networkd',
+			snapMaxSize: '10',
+			port: '23',
+			VAR: 'REALIO',
+			denom: 'ario',
+			ecosystem: 'cosmos',
+			bin: 'realio-networkd',
+			path: '.realio-network',
+			peerID: '2815cc1437461f808a7f022c0df679fa27918dbc',
+			seedID: 'a5039f260cd848facfbe7fbe62bf3e8adfce9c98',
+			explorer: '',
+			peerPort: '23656',
+			seedPort: '23656',
+			installBin: `cd $HOME
 rm -rf realio-network
 git clone https://github.com/realiotech/realio-network.git
 cd realio-network
 git checkout tags/v0.8.0-rc4
 make install`,
-      updHeight:'',
-      newInstallBin: ``,
-                },
+			updHeight: '',
+			newInstallBin: ``,
+		},
 		uptick: {
 			chainID: 'uptick_117-1',
 			link: 'https://mainnet.itrocket.net/uptick/staking',
@@ -615,8 +616,7 @@ make install`,
 			imgUrl: 'nois.png',
 			desc: 'Brings random beacons to Cosmos blockchains without compromising security or usability by leveraging drand and IBC.',
 			website: 'https://nois.network/',
-			offValDoc:
-				'https://docs.nois.network/use-cases/for-validators',
+			offValDoc: 'https://docs.nois.network/use-cases/for-validators',
 			hardware: '4 Cores, 8GB RAM, 200GB of storage (NVME)',
 			prHome: '/home/nois',
 			binHome: '/home/nois/go/bin/noisd',
@@ -892,6 +892,19 @@ make install`,
 			imgUrl: 'subspace.jpg',
 		},
 	],
+}
+function updateProjects() {
+	function addGoVersion(obj, goVersion) {
+		for (const key in obj) {
+			if (typeof obj[key] === 'object') {
+				addGoVersion(obj[key], goVersion)
+			}
+		}
+		obj.goVersion = goVersion
+	}
+
+	// Add 'goVersion' to all projects
+	addGoVersion(projects, '1.19.3')
 }
 
 export default projects

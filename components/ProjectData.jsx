@@ -37,6 +37,9 @@ const ProjectData = ({ name, type }) => {
 	const SEEDS = seedID
 		? `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
 		: '""'
+	const gRPC = `${name}-${type}-grpc.itrocket.net:${
+		peerPort ? peerPort.slice(0, 2) : ''
+	}090`
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -136,20 +139,12 @@ const ProjectData = ({ name, type }) => {
 				</div>
 				<div className='flex flex-wrap gap-1 items-center'>
 					<span>Public gRPC: </span>
-					<a
-						href={`${name}-${type}-grpc.itrocket.net:${
-							peerPort ? peerPort.slice(0, 2) : ''
-						}090`}
-						target='_blank'
-						rel='noopener referrer'
-					>
-						{`${name}-${type}-grpc.itrocket.net:${
-							peerPort ? peerPort.slice(0, 2) : ''
-						}090`}
+					<a href={gRPC} target='_blank' rel='noopener referrer'>
+						{gRPC}
 					</a>
 					<Paragraph
 						copyable={{
-							text: `${name}-${type}-grpc.itrocket.net:${peerPort}`,
+							text: `${name}-${type}-grpc.itrocket.net:${gRPC}`,
 							tooltips: false,
 						}}
 					/>
