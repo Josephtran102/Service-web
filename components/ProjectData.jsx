@@ -137,14 +137,15 @@ const ProjectData = ({ name, type }) => {
 				<div className='flex flex-wrap gap-1 items-center'>
 					<span>Public gRPC: </span>
 					<a
-						href={`${name}-${type}-grpc.itrocket.net:${peerPort.slice(
-							0,
-							2
-						)}090`}
+						href={`${name}-${type}-grpc.itrocket.net:${
+							peerPort ? peerPort.slice(0, 2) : ''
+						}090`}
 						target='_blank'
 						rel='noopener referrer'
 					>
-						{`${name}-${type}-grpc.itrocket.net:${peerPort.slice(0, 2)}090`}
+						{`${name}-${type}-grpc.itrocket.net:${
+							peerPort ? peerPort.slice(0, 2) : ''
+						}090`}
 					</a>
 					<Paragraph
 						copyable={{
