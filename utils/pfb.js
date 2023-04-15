@@ -16,7 +16,7 @@ export const submitPFB = async () => {
 
 	axios
 		.post(
-			'http://pfb-celestia-testnet.itrocket.net:26659/submit_pfb',
+			'http://pfb-celestia-testnet.itrocket.net:26658/submit_pfb',
 			data,
 			config
 		)

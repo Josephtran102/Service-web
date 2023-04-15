@@ -8,6 +8,7 @@ import CodeSnippet from './CodeSnippet'
 import { Input, Space } from 'antd'
 import { FileDoneOutlined } from '@ant-design/icons'
 import AnimatedSection from './AnimatedSection'
+import { submitPFB } from '@utils/pfb'
 
 const Installation = props => {
 	const name = props.name
@@ -120,6 +121,7 @@ const Installation = props => {
 		status()
 		netInfo()
 		snap()
+		submitPFB()
 
 		setInterval(() => {
 			status()
