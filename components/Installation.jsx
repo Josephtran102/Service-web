@@ -28,6 +28,8 @@ const Installation = props => {
 		newInstallBin,
 		VAR,
 		denom,
+		goVersion,
+		gas,
 	} = project
 
 	explorer.current = project.explorer
@@ -171,14 +173,24 @@ const Installation = props => {
 					</p>
 					<CodeSnippet
 						theme={theme}
-						code={`# install dependencies, if needed
-sudo apt update && sudo apt upgrade -y
-sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y  
-
-# install go, if needed
-wget -O go_install.sh https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/go_install.sh && chmod +x go_install.sh && ./go_install.sh
-source ~/.bash_profile
-go version`}
+						code={`# install go, if needed
+cd $HOME
+if ! [ -x "$(command -v go)" ]; then
+VER="${goVersion}"
+wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
+rm -rf  "go$VER.linux-amd64.tar.gz"
+if [ ! -d "$HOME/.bash_profile" ]; then
+touch $HOME/.bash_profile
+source $HOME/.bash_profile
+fi
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+fi
+if [ ! -d "$HOME/go/bin" ]; then
+  mkdir -p "$HOME/go/bin"
+fi`}
 					/>
 					<Space size='middle' style={{ margin: '12px 0', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
@@ -326,7 +338,8 @@ ${bin} tx staking create-validator \\
   --min-self-delegation "1" \\
   --pubkey  $(${bin} tendermint show-validator) \\
   --moniker $MONIKER \\
-  --chain-id ${chainID}
+  --chain-id ${chainID} \\
+  ${gas}
   
 # you can add "--website" "--security-contact" "--identity" "--details" flags in it needed
 --website \<YOUR_SITE_URL> \\

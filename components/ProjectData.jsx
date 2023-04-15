@@ -70,7 +70,6 @@ const ProjectData = ({ name, type }) => {
 
 		const processSnap = data => {
 			const time = Date.now() - Date.parse(data.SnapshotBlockTime.concat(':00'))
-			console.log(data.SnapshotBlockTime.concat(':00'))
 			const snapData = {
 				height: data.SnapshotHeight,
 				size: data.SnapshotSize,
