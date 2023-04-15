@@ -23,15 +23,12 @@ let projects = {
 			explorer: '',
 			peerPort: '27656',
 			seedPort: '27656',
-			installBin: `cd $HOME
-rm -rf arkh-blockchain
-git clone https://github.com/vincadian/arkh-blockchain
-cd arkh-blockchain
-git checkout v2.0.0
-go build -o arkhd ./cmd/arkhd
-mv arkhd $HOME/go/bin`,
+			installBin:
+				'cd $HOME\nrm -rf arkh-blockchain\ngit clone https://github.com/vincadian/arkh-blockchain\ncd arkh-blockchain\ngit checkout v2.0.0\ngo build -o arkhd ./cmd/arkhd\nmv arkhd $HOME/go/bin',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		nym: {
 			chainID: '',
@@ -40,6 +37,8 @@ mv arkhd $HOME/go/bin`,
 			imgUrl: 'nym.png',
 			delegate:
 				'https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		nois: {
 			chainID: 'nois-1',
@@ -66,12 +65,10 @@ mv arkhd $HOME/go/bin`,
 			peerPort: '36656',
 			seedPort: '36656',
 			updHeight: '',
-			installBin: `cd $HOME
-rm -rf $HOME/noisd
-git clone https://github.com/noislabs/noisd
-cd noisd
-git checkout v1.0.0
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd\ncd noisd\ngit checkout v1.0.0\nmake install',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		terp: {
 			chainID: 'morocco-1',
@@ -98,17 +95,17 @@ make install`,
 			peerPort: '13656',
 			seedPort: '13656',
 			updHeight: '',
-			installBin: `cd $HOME
-rm -rf ~/terp-core
-git clone https://github.com/terpnetwork/terp-core.git
-cd terp-core
-git checkout v1.0.0
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v1.0.0\nmake install',
+			goVersion: '1.19.3',
+			gas: '--gas 210000 --fees 200000uthiol',
 		},
 		forta: {
 			link: 'https://explorer.forta.network/',
 			imgUrl: 'forta.jpg',
 			delegate: 'https://app.forta.network/nodePool/272/',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		quicksilver: {
 			chainID: 'quicksilver-2',
@@ -134,21 +131,13 @@ make install`,
 			explorer: '',
 			peerPort: '15656',
 			seedPort: '15656',
-			installBin: `cd $HOME
-rm -rf ~/quicksilver
-git clone https://github.com/ingenuity-build/quicksilver
-cd quicksilver
-git fetch
-git checkout v1.2.9-hotfix.0
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.9-hotfix.0\nmake install',
 			updHeight: '1279200',
-			newInstallBin: `cd $HOME
-rm -rf ~/quicksilver
-git clone https://github.com/ingenuity-build/quicksilver
-cd quicksilver
-git fetch
-git checkout v1.2.9-hotfix.0
-make install`,
+			newInstallBin:
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.9-hotfix.0\nmake install',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		realio: {
 			chainID: 'realionetwork_3301-1',
@@ -175,14 +164,12 @@ make install`,
 			explorer: '',
 			peerPort: '23656',
 			seedPort: '23656',
-			installBin: `cd $HOME
-rm -rf realio-network
-git clone https://github.com/realiotech/realio-network.git
-cd realio-network
-git checkout tags/v0.8.0-rc4
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network.git\ncd realio-network\ngit checkout tags/v0.8.0-rc4\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		uptick: {
 			chainID: 'uptick_117-1',
@@ -208,14 +195,12 @@ make install`,
 			explorer: '',
 			peerPort: '10656',
 			seedPort: '35656',
-			installBin: `cd $HOME
-rm -rf uptick
-git clone https://github.com/UptickNetwork/uptick.git
-cd uptick
-git checkout v0.2.4
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.4\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 	},
 	testnet: {
@@ -241,14 +226,12 @@ make install`,
 			explorer: '',
 			peerPort: '29656',
 			seedPort: '30656',
-			installBin: `cd $HOME
-rm -rf andromedad
-git clone https://github.com/andromedaprotocol/andromedad.git
-cd andromedad
-git checkout galileo-3-v1.1.0-beta1
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf andromedad\ngit clone https://github.com/andromedaprotocol/andromedad.git\ncd andromedad\ngit checkout galileo-3-v1.1.0-beta1\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		axelar: {
 			chainID: 'axelar-testnet-lisbon-3',
@@ -272,16 +255,12 @@ make install`,
 			explorer: 'https://testnet.axelarscan.io/validators',
 			peerPort: '24656',
 			seedPort: '24656',
-			installBin: `AXELARD_RELEASE=v0.32.2
-cd $HOME
-rm -rf binaries
-mkdir binaries && cd binaries
-wget https://github.com/axelarnetwork/axelar-core/releases/download/$AXELARD_RELEASE/axelard-linux-amd64-$AXELARD_RELEASE
-mv axelard-linux-amd64-$AXELARD_RELEASE axelard
-chmod +x *
-sudo mv * /usr/bin/`,
+			installBin:
+				'AXELARD_RELEASE=v0.32.2\ncd $HOME\nrm -rf binaries\nmkdir binaries && cd binaries\nwget https://github.com/axelarnetwork/axelar-core/releases/download/$AXELARD_RELEASE/axelard-linux-amd64-$AXELARD_RELEASE\nmv axelard-linux-amd64-$AXELARD_RELEASE axelard\nchmod +x *\nsudo mv * /usr/bin/',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		cardchain: {
 			chainID: 'Testnet3',
@@ -305,14 +284,12 @@ sudo mv * /usr/bin/`,
 			explorer: '',
 			peerPort: '31656',
 			seedPort: '31656',
-			installBin: `cd $HOME
-wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.81/CARDCHAIN_latest_linux_amd64.tar.gz
-tar xzf CARDCHAIN_latest_linux_amd64.tar.gz
-chmod 775 Cardchaind
-sudo mv Cardchaind /usr/local/bin
-sudo rm CARDCHAIN_latest_linux_amd64.tar.gz`,
+			installBin:
+				'cd $HOME\nwget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.81/CARDCHAIN_latest_linux_amd64.tar.gz\ntar xzf CARDCHAIN_latest_linux_amd64.tar.gz\nchmod 775 Cardchaind\nsudo mv Cardchaind /usr/local/bin\nsudo rm CARDCHAIN_latest_linux_amd64.tar.gz',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		celestia: {
 			chainID: 'blockspacerace-0',
@@ -336,18 +313,12 @@ sudo rm CARDCHAIN_latest_linux_amd64.tar.gz`,
 			explorer: '',
 			peerPort: '11656',
 			seedPort: '11656',
-			installBin: `cd $HOME 
-rm -rf celestia-app 
-git clone https://github.com/celestiaorg/celestia-app.git 
-cd celestia-app/ 
-APP_VERSION=v0.12.2 
-git checkout tags/$APP_VERSION -b $APP_VERSION 
-make install
-cd $HOME
-rm -rf networks
-git clone https://github.com/celestiaorg/networks.git`,
+			installBin:
+				'cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v0.12.2 \ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.20',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		defund: {
 			chainID: 'orbit-alpha-1',
@@ -372,14 +343,12 @@ git clone https://github.com/celestiaorg/networks.git`,
 			explorer: '',
 			peerPort: '18656',
 			seedPort: '18656',
-			installBin: `cd $HOME
-rm -rf defund
-git clone https://github.com/defund-labs/defund
-cd defund
-git checkout v0.2.6
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf defund\ngit clone https://github.com/defund-labs/defund\ncd defund\ngit checkout v0.2.6\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		dymension: {
 			chainID: '35-C',
@@ -403,13 +372,12 @@ make install`,
 			explorer: '',
 			peerPort: '32656',
 			seedPort: '32656',
-			installBin: `cd $HOME
-rm -rf dymension
-git clone https://github.com/dymensionxyz/dymension.git --branch v0.2.0-beta
-cd dymension
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf dymension\ngit clone https://github.com/dymensionxyz/dymension.git --branch v0.2.0-beta\ncd dymension\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		haqq: {
 			chainID: 'haqq_54211-3',
@@ -434,14 +402,12 @@ make install`,
 			explorer: '',
 			peerPort: '19656',
 			seedPort: '19656',
-			installBin: `cd $HOME
-rm -rf haqq
-git clone https://github.com/haqq-network/haqq.git
-cd haqq
-git checkout v1.3.1
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf haqq\ngit clone https://github.com/haqq-network/haqq.git\ncd haqq\ngit checkout v1.3.1\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		humans: {
 			chainID: 'testnet-1',
@@ -466,19 +432,18 @@ make install`,
 			explorer: '',
 			peerPort: '19656',
 			seedPort: '19656',
-			installBin: `cd $HOME
-rm -rf ~/humans
-git clone https://github.com/humansdotai/humans
-cd humans
-git checkout v1.0.0
-go build -o humansd cmd/humansd/main.go
-mv humansd ~/go/bin/humansd`,
+			installBin:
+				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout v1.0.0\ngo build -o humansd cmd/humansd/main.go\nmv humansd ~/go/bin/humansd',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		kira: {
 			link: 'https://kirastats.dragonstake.io/',
 			imgUrl: 'kira.svg',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		kyve: {
 			chainID: 'kaon-1',
@@ -502,14 +467,12 @@ mv humansd ~/go/bin/humansd`,
 			explorer: '',
 			peerPort: '28656',
 			seedPort: '28656',
-			installBin: `cd $HOME
-wget https://github.com/KYVENetwork/chain/releases/download/v1.0.0-rc1/kyved_linux_amd64.tar.gz
-tar -xvzf kyved_linux_amd64.tar.gz
-chmod +x ./kyved
-mv kyved $HOME/go/bin/
-rm kyved_linux_amd64.tar.gz`,
+			installBin:
+				'cd $HOME\nwget https://github.com/KYVENetwork/chain/releases/download/v1.0.0-rc1/kyved_linux_amd64.tar.gz\ntar -xvzf kyved_linux_amd64.tar.gz\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm kyved_linux_amd64.tar.gz',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		lava: {
 			chainID: 'lava-testnet-1',
@@ -533,14 +496,12 @@ rm kyved_linux_amd64.tar.gz`,
 			explorer: '',
 			peerPort: '20656',
 			seedPort: '20656',
-			installBin: `cd $HOME
-rm -rf $HOME/lava
-git clone https://github.com/lavanet/lava.git
-cd lava
-git checkout v0.8.1
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.8.1\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		mars: {
 			chainID: 'ares-1',
@@ -565,18 +526,18 @@ make install`,
 			explorer: '',
 			peerPort: '22656',
 			seedPort: '22656',
-			installBin: `cd $HOME
-rm -rf hub
-git clone https://github.com/mars-protocol/hub.git
-cd hub
-git checkout v2.0.0-rc0
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf hub\ngit clone https://github.com/mars-protocol/hub.git\ncd hub\ngit checkout v2.0.0-rc0\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		massa: {
 			link: 'https://massa.net/testnet/',
 			imgUrl: 'massa.jpg',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		ojo: {
 			chainID: 'ojo-devnet',
@@ -601,14 +562,12 @@ make install`,
 			explorer: '',
 			peerPort: '12656',
 			seedPort: '12656',
-			installBin: `cd $HOME
-rm -rf ojo
-git clone https://github.com/ojo-network/ojo.git
-cd ojo
-git checkout v0.1.2
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf ojo\ngit clone https://github.com/ojo-network/ojo.git\ncd ojo\ngit checkout v0.1.2\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		nois: {
 			chainID: 'nois-testnet-005',
@@ -632,18 +591,18 @@ make install`,
 			explorer: '',
 			peerPort: '21656',
 			seedPort: '21656',
-			installBin: `cd $HOME
-rm -rf $HOME/noisd
-git clone https://github.com/noislabs/noisd.git
-cd noisd
-git checkout v0.6.0
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd.git\ncd noisd\ngit checkout v0.6.0\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		penumbra: {
 			link: 'https://guide.penumbra.zone/main/pd/join-testnet.html',
 			imgUrl: 'penumbra.webp',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		quasar: {
 			chainID: 'qsr-questnet-04',
@@ -668,12 +627,12 @@ make install`,
 			explorer: '',
 			peerPort: '17656',
 			seedPort: '29656',
-			installBin: `cd $HOME
-wget https://github.com/quasar-finance/binary-release/raw/main/v0.0.2-alpha-11/quasarnoded-linux-amd64
-chmod +x quasarnoded-linux-amd64
-sudo mv quasarnoded-linux-amd64 $HOME/go/bin/quasarnoded`,
+			installBin:
+				'cd $HOME\nwget https://github.com/quasar-finance/binary-release/raw/main/v0.0.2-alpha-11/quasarnoded-linux-amd64\nchmod +x quasarnoded-linux-amd64\nsudo mv quasarnoded-linux-amd64 $HOME/go/bin/quasarnoded',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		quicksilver: {
 			chainID: 'innuendo-5',
@@ -700,15 +659,12 @@ sudo mv quasarnoded-linux-amd64 $HOME/go/bin/quasarnoded`,
 			explorer: '',
 			peerPort: '37656',
 			seedPort: '37656',
-			installBin: `cd $HOME
-rm -rf ~/quicksilver
-git clone https://github.com/ingenuity-build/quicksilver
-cd quicksilver
-git fetch
-git checkout v1.4.0-rc10.2
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.0-rc10.2\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		realio: {
 			chainID: 'realionetwork_3300-1',
@@ -732,14 +688,12 @@ make install`,
 			explorer: '',
 			peerPort: '23656',
 			seedPort: '23656',
-			installBin: `cd $HOME
-rm -rf realio-network
-git clone https://github.com/realiotech/realio-network
-cd realio-network
-git checkout v0.8.0-rc2
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network\ncd realio-network\ngit checkout v0.8.0-rc2\nmake install',
 			updHeight: '77955',
-			newInstallBin: `new`,
+			newInstallBin: 'new',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		sei: {
 			chainID: 'atlantic-1',
@@ -764,17 +718,18 @@ make install`,
 			explorer: 'https://sei.explorers.guru/',
 			peerPort: '12656',
 			seedPort: '14656',
-			installBin: `cd $HOME
-git clone https://github.com/sei-protocol/sei-chain.git
-cd sei-chain
-git checkout 1.2.2beta-postfix
-make install`,
+			installBin:
+				'cd $HOME\ngit clone https://github.com/sei-protocol/sei-chain.git\ncd sei-chain\ngit checkout 1.2.2beta-postfix\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		starknet: {
 			link: 'https://starkscan.co/',
 			imgUrl: 'starknet.png',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		terp: {
 			chainID: 'athena-4',
@@ -798,14 +753,12 @@ make install`,
 			explorer: '',
 			peerPort: '13656',
 			seedPort: '13656',
-			installBin: `cd $HOME
-rm -rf ~/terp-core
-git clone https://github.com/terpnetwork/terp-core.git
-cd terp-core
-git checkout v0.4.0
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v0.4.0\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 		uptick: {
 			chainID: 'uptick_7000-2',
@@ -829,14 +782,12 @@ make install`,
 			explorer: '',
 			peerPort: '10656',
 			seedPort: '10656',
-			installBin: `cd $HOME
-rm -rf uptick
-git clone https://github.com/UptickNetwork/uptick.git
-cd uptick
-git checkout v0.2.5
-make install`,
+			installBin:
+				'cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.5\nmake install',
 			updHeight: '',
-			newInstallBin: ``,
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
 		},
 	},
 	finished: [
@@ -865,7 +816,6 @@ make install`,
 			link: 'https://ironfish.network/',
 			imgUrl: 'ironfish.png',
 		},
-
 		{
 			name: 'Pontem',
 			link: 'https://pontem.network/',
@@ -892,19 +842,6 @@ make install`,
 			imgUrl: 'subspace.jpg',
 		},
 	],
-}
-function updateProjects() {
-	function addGoVersion(obj, goVersion) {
-		for (const key in obj) {
-			if (typeof obj[key] === 'object') {
-				addGoVersion(obj[key], goVersion)
-			}
-		}
-		obj.goVersion = goVersion
-	}
-
-	// Add 'goVersion' to all projects
-	addGoVersion(projects, '1.19.3')
 }
 
 export default projects
