@@ -416,7 +416,7 @@ let projects = {
 			peerPort: '38656',
 			seedPort: '38656',
 			installBin:
-				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.2.3\nmake install',
+				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout 1b903f59d2555e60bcefd8630ea8046d37e81111\nmake install',
 			updHeight: '116000',
 			newInstallBin: 'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.3.1\nmake install',
 			goVersion: '1.19.3',
