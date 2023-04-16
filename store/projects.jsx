@@ -393,6 +393,41 @@ let projects = {
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
+		elys: {
+			chainID: 'elystestnet-1',
+			link: 'https://testnet.itrocket.net/elys/staking',
+			imgUrl: 'elys.png',
+			desc: 'On Crowd Control you can create and design your own trading cards. Your Cards become a part of the game for everyone.',
+			website: 'https://elys.network/',
+			offValDoc: 'https://github.com/elys-network/elys',
+			hardware: '4 Cores, 8GB RAM, 200GB of storage (NVME)',
+			prHome: '/home/elys',
+			binHome: '/home/elys/go/bin/elysd',
+			snapMaxSize: '10',
+			port: '38',
+			VAR: 'ELYS',
+			denom: 'uelys',
+			ecosystem: 'cosmos',
+			bin: 'elysd',
+			path: '.elys',
+			peerID: '',
+			seedID: '',
+			explorer: '',
+			peerPort: '38656',
+			seedPort: '38656',
+			installBin:
+				'cd $HOME
+rm -rf elys
+git clone https://github.com/elys-network/elys.git
+cd elys
+git checkout v0.3.1
+make install',
+			updHeight: '',
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adgustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+		},
 		haqq: {
 			chainID: 'haqq_54211-3',
 			name: 'HAQQ',
