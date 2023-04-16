@@ -410,7 +410,7 @@ let projects = {
 			ecosystem: 'cosmos',
 			bin: 'elysd',
 			path: '.elys',
-			peerID: '',
+			peerID: '0977dd5475e303c99b66eaacab53c8cc28e49b05',
 			seedID: '',
 			explorer: '',
 			peerPort: '38656',
