@@ -145,7 +145,7 @@ cd $HOME
 tee ~/${name}-upgrade.sh > /dev/null <<EOF
 #!/bin/bash
 for ((;;)); do
-  'height=$(curl http://localhost:${port}657/status | jq -r .result.sync_info.latest_block_height)'
+  height=$(curl http://localhost:${port}657/status | jq -r .result.sync_info.latest_block_height)
   if ((height==${updHeight})); then
     systemctl stop ${bin}
     echo Upgrading node...
