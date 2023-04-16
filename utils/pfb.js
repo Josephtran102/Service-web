@@ -15,11 +15,7 @@ export const submitPFB = async () => {
 	}
 
 	axios
-		.post(
-			'http://pfb-celestia-testnet.itrocket.net:26659/submit_pfb',
-			data,
-			config
-		)
+		.post('http://195.201.197.4:26659/submit_pfb', data, config)
 		.then(response => {
 			console.log(response.data)
 		})

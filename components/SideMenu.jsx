@@ -326,26 +326,26 @@ const SideMenu = ({ intervalId }) => {
 				type: 'divider',
 			},
 
-			getItem(
-				'All projects',
-				`grphide${name}`,
-				<Image
-					src={require('../public/justRocketCrop.png')}
-					alt='logo'
-					width='25'
-					height='25'
-					unoptimized={true}
-					style={{ backgroundColor: 'transparent' }}
-				/>,
-				[
-					getItem('Mainnet', 'grpmain', null, null, 'group'),
-					...mainnet,
-					getItem('Testnet', 'grptest', null, null, 'group'),
-					...testnet,
-					getItem('', 'marginfix', null, null, 'group'),
-					getItem('', 'marginfix1', null, null, 'group'),
-				]
-			),
+			// getItem(
+			// 	'All projects',
+			// 	`grphide${name}`,
+			// 	<Image
+			// 		src={require('../public/justRocketCrop.png')}
+			// 		alt='logo'
+			// 		width='25'
+			// 		height='25'
+			// 		unoptimized={true}
+			// 		style={{ backgroundColor: 'transparent' }}
+			// 	/>,
+			// 	null,
+			// 	'group'
+			// ),
+			getItem('Mainnet', 'grpmain', null, null, 'group'),
+			...mainnet,
+			getItem('Testnet', 'grptest', null, null, 'group'),
+			...testnet,
+			getItem('', 'marginfix', null, null, 'group'),
+			getItem('', 'marginfix1', null, null, 'group'),
 		])
 
 		return () => {

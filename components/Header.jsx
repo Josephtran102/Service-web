@@ -269,6 +269,7 @@ const Header = () => {
 								style={{
 									backgroundColor: theme === 'light' ? '#000' : '#fff',
 									transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
+									width: isOpen ? '100%' : '90%',
 								}}
 							></span>
 							<span
