@@ -397,7 +397,7 @@ let projects = {
 			chainID: 'elystestnet-1',
 			link: 'https://testnet.itrocket.net/elys/staking',
 			imgUrl: 'elys.png',
-			desc: 'On Crowd Control you can create and design your own trading cards. Your Cards become a part of the game for everyone.',
+			desc: '',
 			website: 'https://elys.network/',
 			offValDoc: 'https://github.com/elys-network/elys',
 			hardware: '4 Cores, 8GB RAM, 200GB of storage (NVME)',
