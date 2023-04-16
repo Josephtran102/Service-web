@@ -134,13 +134,9 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
 						<h2 id='auto'>Auto upgrade</h2>
 						<p className={styles.text_secondary}>
-							Don't kill the session with{' '}
-							<code className={styles.kbd}>
-								<kdb>CTRL+C</kdb>
-							</code>{' '}
-							before update completed, if you want to disconnect the session use
-							'CTRL+B D' and when update is completed the session is killed
-							automatically
+							!!!Don't kill the session with 'CTRL+C' before update completed,
+							if you want to disconnect the session use 'CTRL+B D' and when
+							update is completed the session is killed automatically
 						</p>
 						<CodeSnippet
 							theme={theme}
@@ -149,9 +145,9 @@ cd $HOME
 tee ~/${name}-upgrade.sh > /dev/null <<EOF
 #!/bin/bash
 for ((;;)); do
-  'height=$(curl -s localhost:${port}657/status | jq -r .result.sync_info.latest_block_height)'
-  if ((height==$updHeight)); then
-    systemctl stop $bin
+  'height=$(curl http://localhost:${VAR}_PORT}657/status | jq -r .result.sync_info.latest_block_height)'
+  if ((height==${updHeight})); then
+    systemctl stop ${bin}
     echo Upgrading node...
     ${installBin}
     systemctl restart ${bin}

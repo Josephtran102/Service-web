@@ -236,7 +236,7 @@ ${installBin}
 
 # config and init app
 ${bin} config node tcp://localhost:\${${VAR}_PORT}657
-${bin} config keyring-backend test
+${bin} config keyring-backend os
 ${bin} config chain-id ${chainID}
 ${bin} init ${moniker} --chain-id ${chainID}
 
