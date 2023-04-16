@@ -396,7 +396,7 @@ let projects = {
 		elys: {
 			chainID: 'elystestnet-1',
 			link: 'https://testnet.itrocket.net/elys/staking',
-			imgUrl: 'elys.png',
+			imgUrl: 'elys.jpg',
 			desc: '',
 			website: 'https://elys.network/',
 			offValDoc: 'https://github.com/elys-network/elys',
