@@ -411,7 +411,7 @@ let projects = {
 			bin: 'elysd',
 			path: '.elys',
 			peerID: '0977dd5475e303c99b66eaacab53c8cc28e49b05',
-			seedID: '',
+			seedID: 'ae7191b2b922c6a59456588c3a262df518b0d130',
 			explorer: '',
 			peerPort: '38656',
 			seedPort: '38656',
