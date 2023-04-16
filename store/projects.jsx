@@ -419,7 +419,7 @@ let projects = {
 				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.3.1\nmake install',
 			updHeight: '',
 			newInstallBin: '',
-			goVersion: '1.19.3',
+			goVersion: '1.20',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
