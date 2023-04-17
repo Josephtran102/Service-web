@@ -28,7 +28,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		nym: {
@@ -39,7 +39,7 @@ let projects = {
 			delegate:
 				'https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		nois: {
@@ -70,7 +70,7 @@ let projects = {
 			installBin:
 				'cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd\ncd noisd\ngit checkout v1.0.0\nmake install',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		terp: {
@@ -109,7 +109,7 @@ let projects = {
 			imgUrl: 'forta.jpg',
 			delegate: 'https://app.forta.network/nodePool/272/',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		quicksilver: {
@@ -142,7 +142,7 @@ let projects = {
 			newInstallBin:
 				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.9-hotfix.0\nmake install',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		realio: {
@@ -175,7 +175,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		uptick: {
@@ -207,7 +207,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 	},
@@ -239,7 +239,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		axelar: {
@@ -269,7 +269,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		cardchain: {
@@ -299,7 +299,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		celestia: {
@@ -329,7 +329,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.20',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		defund: {
@@ -360,7 +360,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		dymension: {
@@ -390,7 +390,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		elys: {
@@ -420,7 +420,7 @@ let projects = {
 			updHeight: '116000',
 			newInstallBin: 'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.3.1\nmake install',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		haqq: {
@@ -451,7 +451,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		humans: {
@@ -482,14 +482,14 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		kira: {
 			link: 'https://kirastats.dragonstake.io/',
 			imgUrl: 'kira.svg',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		kyve: {
@@ -519,7 +519,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		lava: {
@@ -549,7 +549,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		mars: {
@@ -580,14 +580,14 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		massa: {
 			link: 'https://massa.net/testnet/',
 			imgUrl: 'massa.jpg',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		ojo: {
@@ -618,7 +618,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		nois: {
@@ -648,14 +648,14 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		penumbra: {
 			link: 'https://guide.penumbra.zone/main/pd/join-testnet.html',
 			imgUrl: 'penumbra.webp',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		quasar: {
@@ -686,7 +686,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		quicksilver: {
@@ -719,7 +719,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		realio: {
@@ -749,7 +749,7 @@ let projects = {
 			updHeight: '77955',
 			newInstallBin: 'new',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		sei: {
@@ -780,14 +780,14 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		starknet: {
 			link: 'https://starkscan.co/',
 			imgUrl: 'starknet.png',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		terp: {
@@ -817,7 +817,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 		uptick: {
@@ -847,7 +847,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adgustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 		},
 	},
