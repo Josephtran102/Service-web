@@ -76,6 +76,7 @@ const SideMenu = ({ intervalId }) => {
 				`grp${id}`,
 				<Image
 					src={`/${type}/${imgUrl}`}
+					style={{ borderRadius: '50%' }}
 					alt='project logo'
 					width='20'
 					height='20'
