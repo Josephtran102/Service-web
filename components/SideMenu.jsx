@@ -66,7 +66,7 @@ const SideMenu = ({ intervalId }) => {
 		return Object.entries(data).map(([item, { name = item, imgUrl }]) => {
 			const id = type + name
 			const serviceURL = `/services/${type}/${name.toLowerCase()}`
-			// projects[type][item].unsafeReset = 'tendermint unsafe-reset-all'
+			// projects[type][item].minGasPrice = '0'
 			// console.log(projects)
 
 			return getItem(
@@ -288,6 +288,28 @@ const SideMenu = ({ intervalId }) => {
 							<RightOutlined />
 						),
 					]),
+					// getItem('Cheat sheet', `cheatsheet`, null, [
+					// 	getItem(
+					// 		<Link
+					// 			href={serviceURL + '/upgrade/#manual'}
+					// 			onClick={event => handleClick(event, 'manual', `manual${name}`)}
+					// 		>
+					// 			Manual upgrade
+					// 		</Link>,
+					// 		`manual${name}`,
+					// 		<RightOutlined />
+					// 	),
+					// 	getItem(
+					// 		<Link
+					// 			href={serviceURL + '/upgrade/#auto'}
+					// 			onClick={event => handleClick(event, 'auto', `auto${name}`)}
+					// 		>
+					// 			Autoupgrade
+					// 		</Link>,
+					// 		`auto${name}`,
+					// 		<RightOutlined />
+					// 	),
+					// ]),
 				],
 				'group'
 			),

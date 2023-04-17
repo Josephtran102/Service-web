@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { Context } from '@context/context'
 import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
 import CodeSnippet from './CodeSnippet'
-import { Alert } from 'antd'
+import { Alert, Input, Space } from 'antd'
 import AnimatedSection from './AnimatedSection'
 
 const Upgrade = props => {
@@ -22,6 +22,7 @@ const Upgrade = props => {
 	const { theme } = useContext(Context)
 	const [blockHeight, setBlockHeight] = useState(null)
 	const [port, setPort] = useState(project.port)
+	const [inputStatus, setInputStatus] = useState('')
 
 	const status = () => {
 		fetchStatus(name, type)
@@ -94,6 +95,16 @@ const Upgrade = props => {
 		}, 10000)
 	}, [])
 
+	const handlePort = e => {
+		let onlyNumbers = /^\d+$/
+		if (onlyNumbers.test(e.target.value) || e.target.value === '') {
+			setPort(e.target.value)
+			setInputStatus('')
+		} else {
+			setInputStatus('error')
+		}
+	}
+
 	return (
 		<AnimatedSection>
 			<Head>
@@ -114,7 +125,7 @@ const Upgrade = props => {
 					<>
 						<Alert
 							message={`Upgrade height: ${updHeight}. Please don\`t upgrade before specified height.`}
-							type='warning'
+							type='info'
 							showIcon
 							closable
 							style={{ width: 'fit-content' }}
@@ -132,12 +143,28 @@ const Upgrade = props => {
 							code={`${installBin}
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
+
 						<h2 id='auto'>Auto upgrade</h2>
 						<p className={styles.text_secondary}>
-							!!!Don't kill the session with 'CTRL+C' before update completed,
-							if you want to disconnect the session use 'CTRL+B D' and when
-							update is completed the session is killed automatically
+							!!!Don't kill the session with{' '}
+							<kbd className={styles.kbd}>CTRL+C</kbd> before update completed,
+							if you want to disconnect the session use{' '}
+							<kbd className={styles.kbd}>CTRL+B D</kbd>
+							and when update is completed the session is killed automatically.
 						</p>
+
+						<Space direction='vertical' className='my-2'>
+							<span className={styles}>Port</span>
+							<Input
+								className={styles.input}
+								status={inputStatus}
+								defaultValue={port}
+								maxLength={2}
+								style={{ maxWidth: '45px' }}
+								onChange={handlePort}
+							/>
+						</Space>
+
 						<CodeSnippet
 							theme={theme}
 							code={`# Create update file and run script on tmux session, replace sudo password if needed

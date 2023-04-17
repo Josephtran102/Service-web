@@ -30,6 +30,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		nym: {
 			chainID: '',
@@ -41,6 +42,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		nois: {
 			chainID: 'nois-1',
@@ -72,6 +74,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		terp: {
 			chainID: 'morocco-1',
@@ -103,6 +106,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas 210000 --fees 200000uthiol',
 			unsafeReset: 'unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		forta: {
 			link: 'https://explorer.forta.network/',
@@ -111,6 +115,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		quicksilver: {
 			chainID: 'quicksilver-2',
@@ -144,6 +149,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		realio: {
 			chainID: 'realionetwork_3301-1',
@@ -177,6 +183,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		uptick: {
 			chainID: 'uptick_117-1',
@@ -209,6 +216,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 	},
 	testnet: {
@@ -241,6 +249,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		axelar: {
 			chainID: 'axelar-testnet-lisbon-3',
@@ -271,6 +280,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		cardchain: {
 			chainID: 'Testnet3',
@@ -301,6 +311,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		celestia: {
 			chainID: 'blockspacerace-0',
@@ -331,6 +342,7 @@ let projects = {
 			goVersion: '1.20',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		defund: {
 			chainID: 'orbit-alpha-1',
@@ -362,6 +374,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		dymension: {
 			chainID: '35-C',
@@ -392,6 +405,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		elys: {
 			chainID: 'elystestnet-1',
@@ -418,10 +432,12 @@ let projects = {
 			installBin:
 				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout 1b903f59d2555e60bcefd8630ea8046d37e81111\nmake install',
 			updHeight: '116000',
-			newInstallBin: 'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.3.1\nmake install',
+			newInstallBin:
+				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.3.1\nmake install',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		haqq: {
 			chainID: 'haqq_54211-3',
@@ -453,6 +469,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		humans: {
 			chainID: 'testnet-1',
@@ -484,6 +501,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		kira: {
 			link: 'https://kirastats.dragonstake.io/',
@@ -491,6 +509,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		kyve: {
 			chainID: 'kaon-1',
@@ -521,6 +540,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		lava: {
 			chainID: 'lava-testnet-1',
@@ -551,6 +571,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		mars: {
 			chainID: 'ares-1',
@@ -582,6 +603,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		massa: {
 			link: 'https://massa.net/testnet/',
@@ -589,6 +611,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		ojo: {
 			chainID: 'ojo-devnet',
@@ -620,6 +643,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		nois: {
 			chainID: 'nois-testnet-005',
@@ -650,6 +674,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		penumbra: {
 			link: 'https://guide.penumbra.zone/main/pd/join-testnet.html',
@@ -657,6 +682,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		quasar: {
 			chainID: 'qsr-questnet-04',
@@ -688,6 +714,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		quicksilver: {
 			chainID: 'innuendo-5',
@@ -721,6 +748,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		realio: {
 			chainID: 'realionetwork_3300-1',
@@ -751,6 +779,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		sei: {
 			chainID: 'atlantic-1',
@@ -782,6 +811,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		starknet: {
 			link: 'https://starkscan.co/',
@@ -789,6 +819,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		terp: {
 			chainID: 'athena-4',
@@ -819,6 +850,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 		uptick: {
 			chainID: 'uptick_7000-2',
@@ -849,6 +881,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adgustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
 		},
 	},
 	finished: [
