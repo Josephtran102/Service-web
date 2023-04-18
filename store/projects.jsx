@@ -336,7 +336,7 @@ let projects = {
 			peerPort: '39656',
 			seedPort: '39656',
 			installBin:
-				'cd $HOME\nrm -rf cascadia\ngit clone clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.1\nmake install',
+				'cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.1\nmake install',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
