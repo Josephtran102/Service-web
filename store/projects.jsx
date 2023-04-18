@@ -340,7 +340,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5 --gas-prices=7aCC',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.025',
 		},
