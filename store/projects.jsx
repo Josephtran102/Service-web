@@ -566,8 +566,8 @@ let projects = {
 			seedPort: '20656',
 			installBin:
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.8.1\nmake install',
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '163960',
+			newInstallBin: 'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
