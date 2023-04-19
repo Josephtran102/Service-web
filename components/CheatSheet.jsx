@@ -369,7 +369,7 @@ const CheatSheet = props => {
 --commission-max-change-rate ${commissionMaxChange} \\
 --min-self-delegation 1 \\
 --pubkey $(${bin} tendermint show-validator) \\
---moniker '${moniker}" \\
+--moniker "${moniker}" \\
 --identity "${identity}" \\
 --details "${details}" \\
 --chain-id ${chainID} \\
