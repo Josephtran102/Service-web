@@ -40,7 +40,7 @@ const CheatSheet = props => {
 	const [indexer, setIndexer] = useState(null)
 	const [moniker, setMoniker] = useState('test')
 	const [wallet, setWallet] = useState('wallet')
-	const [amount, setAmount] = useState(0)
+	const [amount, setAmount] = useState(1000000)
 	const [toValoperAddr, setToValoperAddr] = useState('<TO_VALOPER_ADDRESS>')
 	const [toWalletAddr, setToWalletAddr] = useState('<TO_WALLET_ADDRESS>')
 	const [inputStatus, setInputStatus] = useState('')
@@ -49,6 +49,10 @@ const CheatSheet = props => {
 	const [commissionRate, setCommissionRate] = useState(0.1)
 	const [commissionMaxRate, setCommissionMaxRate] = useState(0.2)
 	const [commissionMaxChange, setCommissionMaxChange] = useState(0.01)
+	const [title, setTitle] = useState()
+	const [desc, setDesc] = useState()
+	const [depositDenom, setDepositDenom] = useState()
+
 	let PEERS = '""',
 		SEEDS = '""'
 	if (peerID) {
@@ -211,7 +215,7 @@ const CheatSheet = props => {
 						<div className='flex flex-col gap-y-2'>
 							{GenerateCode(
 								'Check Balance',
-								`${bin} q bank balances $(${bin} keys show wallet -a)`
+								`${bin} q bank balances $(${bin} keys show $WALLET -a)`
 							)}
 							{GenerateCode(
 								'Export Key (save to wallet.backup)',
@@ -232,7 +236,6 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>To valoper address</span>
 							<Input
-								className={styles.input}
 								style={{ minWidth: '280px' }}
 								onChange={e => setToValoperAddr(e.target.value)}
 							/>
@@ -240,7 +243,6 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>To wallet address</span>
 							<Input
-								className={styles.input}
 								style={{ minWidth: '280px' }}
 								onChange={e => setToWalletAddr(e.target.value)}
 							/>
@@ -248,7 +250,7 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Amount, {denom}</span>
 							<Input
-								className={styles.input}
+								defaultValue={amount}
 								style={{ minWidth: '200px' }}
 								onChange={e => setAmount(e.target.value)}
 							/>
@@ -269,11 +271,11 @@ const CheatSheet = props => {
 						)}
 						{GenerateCode(
 							'Delegate',
-							`${bin} tx staking delegate ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID}${gas} --gas auto -y`
+							`${bin} tx staking delegate ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} --gas auto -y`
 						)}
 						{GenerateCode(
 							'Redelegate Stake to Another Validator',
-							`${bin} tx staking redelegate $VALOPER_ADDRESS ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID}${gas} -y`
+							`${bin} tx staking redelegate $VALOPER_ADDRESS ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y`
 						)}
 						{GenerateCode(
 							'Unbond',
@@ -292,7 +294,6 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Moniker</span>
 							<Input
-								className={styles.input}
 								style={{ minWidth: '280px' }}
 								onChange={e => setMoniker(e.target.value)}
 							/>
@@ -300,7 +301,6 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Identity</span>
 							<Input
-								className={styles.input}
 								style={{ minWidth: '280px' }}
 								onChange={e => setIdentity(e.target.value)}
 							/>
@@ -308,7 +308,6 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Details</span>
 							<Input
-								className={styles.input}
 								style={{ minWidth: '280px' }}
 								placeholder={details}
 								onChange={e => setDetails(e.target.value)}
@@ -317,7 +316,6 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Commission rate</span>
 							<Input
-								className={styles.input}
 								style={{ minWidth: '280px' }}
 								placeholder={commissionRate}
 								onChange={e => setCommissionRate(e.target.value)}
@@ -326,7 +324,6 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Commission max rate</span>
 							<Input
-								className={styles.input}
 								style={{ minWidth: '280px' }}
 								placeholder={commissionMaxRate}
 								onChange={e => setCommissionMaxRate(e.target.value)}
@@ -335,9 +332,8 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Commission max change rate</span>
 							<Input
-								className={styles.input}
 								style={{ minWidth: '280px' }}
-								placeholder={commissionMaxChange}
+								defaultValue={commissionMaxChange}
 								onChange={e => setCommissionMaxChange(e.target.value)}
 							/>
 						</Space>
@@ -395,6 +391,45 @@ ${gas} \\
 						)}
 					</div>
 					<h2 id='governance'> Governance 🌐</h2>
+					<Space
+						size='middle'
+						style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}
+					>
+						<Space direction='vertical'>
+							<span>Title</span>
+							<Input
+								style={{ minWidth: '280px' }}
+								onChange={e => setTitle(e.target.value)}
+							/>
+						</Space>
+						<Space direction='vertical'>
+							<span>Description</span>
+							<Input
+								style={{ minWidth: '280px' }}
+								onChange={e => setDesc(e.target.value)}
+							/>
+						</Space>
+						<Space direction='vertical'>
+							<span>Deposit denom</span>
+							<Input
+								style={{ minWidth: '280px' }}
+								onChange={e => setDepositDenom(e.target.value)}
+							/>
+						</Space>
+						<div className='flex flex-col gap-y-2'>
+							{GenerateCode(
+								'Create New Text Proposal',
+								`${bin}  tx gov submit-proposal \\
+--title $TITLE \\
+--description ${desc} \\
+--deposit ${depositDenom}${denom} \\
+--type Text \\
+--from $WALLET \\
+${gas} \\
+-y `
+							)}
+						</div>
+					</Space>
 				</>
 			</div>
 		</AnimatedSection>
