@@ -45,7 +45,7 @@ const CheatSheet = props => {
 	const [toWalletAddr, setToWalletAddr] = useState('<TO_WALLET_ADDRESS>')
 	const [inputStatus, setInputStatus] = useState('')
 	const [details, setDetails] = useState('I love blockchain ❤️')
-	const [identity, setIdentity] = useState('')
+	const [identity, setIdentity] = useState('test')
 	const [commissionRate, setCommissionRate] = useState(0.1)
 	const [commissionMaxRate, setCommissionMaxRate] = useState(0.2)
 	const [commissionMaxChange, setCommissionMaxChange] = useState(0.01)
@@ -237,6 +237,7 @@ const CheatSheet = props => {
 							<span>To valoper address</span>
 							<Input
 								style={{ minWidth: '280px' }}
+								placeholder={toValoperAddr}
 								onChange={e => setToValoperAddr(e.target.value)}
 							/>
 						</Space>
@@ -244,6 +245,7 @@ const CheatSheet = props => {
 							<span>To wallet address</span>
 							<Input
 								style={{ minWidth: '280px' }}
+								placeholder={wallet}
 								onChange={e => setToWalletAddr(e.target.value)}
 							/>
 						</Space>
@@ -295,6 +297,7 @@ const CheatSheet = props => {
 							<span>Moniker</span>
 							<Input
 								style={{ minWidth: '280px' }}
+								defaultValue={moniker}
 								onChange={e => setMoniker(e.target.value)}
 							/>
 						</Space>
@@ -302,6 +305,7 @@ const CheatSheet = props => {
 							<span>Identity</span>
 							<Input
 								style={{ minWidth: '280px' }}
+								defaultValue={identity}
 								onChange={e => setIdentity(e.target.value)}
 							/>
 						</Space>
@@ -309,7 +313,7 @@ const CheatSheet = props => {
 							<span>Details</span>
 							<Input
 								style={{ minWidth: '280px' }}
-								placeholder={details}
+								defaultValue={details}
 								onChange={e => setDetails(e.target.value)}
 							/>
 						</Space>
@@ -317,7 +321,7 @@ const CheatSheet = props => {
 							<span>Commission rate</span>
 							<Input
 								style={{ minWidth: '280px' }}
-								placeholder={commissionRate}
+								defaultValue={commissionRate}
 								onChange={e => setCommissionRate(e.target.value)}
 							/>
 						</Space>
@@ -325,7 +329,7 @@ const CheatSheet = props => {
 							<span>Commission max rate</span>
 							<Input
 								style={{ minWidth: '280px' }}
-								placeholder={commissionMaxRate}
+								defaultValue={commissionMaxRate}
 								onChange={e => setCommissionMaxRate(e.target.value)}
 							/>
 						</Space>
