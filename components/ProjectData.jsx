@@ -203,7 +203,7 @@ SNAP_RPC="https://${name}-${type}-rpc.itrocket.net:443"
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \\"$peers\\"/" $HOME/${path}/config/config.toml 
 
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height);
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 2000));
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 1500));
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash) 
 
 echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH && sleep 2
