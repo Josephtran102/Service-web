@@ -38,20 +38,20 @@ const CheatSheet = props => {
 	const [livePeers, setLivePeers] = useState('')
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
-	const [moniker, setMoniker] = useState('test')
+	const [moniker, setMoniker] = useState('')
 	const [wallet, setWallet] = useState('wallet')
 	const [amount, setAmount] = useState(1000000)
 	const [toValoperAddr, setToValoperAddr] = useState('<TO_VALOPER_ADDRESS>')
 	const [toWalletAddr, setToWalletAddr] = useState('<TO_WALLET_ADDRESS>')
 	const [inputStatus, setInputStatus] = useState('')
 	const [details, setDetails] = useState('I love blockchain ❤️')
-	const [identity, setIdentity] = useState('test')
+	const [identity, setIdentity] = useState('')
 	const [commissionRate, setCommissionRate] = useState(0.1)
 	const [commissionMaxRate, setCommissionMaxRate] = useState(0.2)
 	const [commissionMaxChange, setCommissionMaxChange] = useState(0.01)
-	const [title, setTitle] = useState()
-	const [desc, setDesc] = useState()
-	const [depositDenom, setDepositDenom] = useState()
+	const [title, setTitle] = useState('')
+	const [desc, setDesc] = useState('')
+	const [depositDenom, setDepositDenom] = useState('')
 
 	let PEERS = '""',
 		SEEDS = '""'
@@ -297,7 +297,7 @@ const CheatSheet = props => {
 							<span>Moniker</span>
 							<Input
 								style={{ minWidth: '280px' }}
-								defaultValue={moniker}
+								placeholder={'moniker'}
 								onChange={e => setMoniker(e.target.value)}
 							/>
 						</Space>
@@ -305,7 +305,7 @@ const CheatSheet = props => {
 							<span>Identity</span>
 							<Input
 								style={{ minWidth: '280px' }}
-								defaultValue={identity}
+								placeholder={'identity'}
 								onChange={e => setIdentity(e.target.value)}
 							/>
 						</Space>
@@ -354,9 +354,9 @@ const CheatSheet = props => {
 --commission-max-change-rate ${commissionMaxChange} \\
 --min-self-delegation 1 \\
 --pubkey $(${bin} tendermint show-validator) \\
---moniker ${moniker} \\
---identity ${identity} \\
---details ${details} \\
+--moniker '${moniker}' \\
+--identity '${identity}' \\
+--details '${details}' \\
 --chain-id ${chainID} \\
 ${gas} \\
 -y `
@@ -365,9 +365,9 @@ ${gas} \\
 							'Edit Existing Validator',
 							`${bin} tx staking edit-validator \\
 --commission-rate ${commissionRate} \\
---new-moniker ${moniker} \\
---identity ${identity} \\
---details ${details} \\
+--new-moniker '${moniker}' \\
+--identity '${identity}' \\
+--details '${details}' \\
 --from $WALLET \\
 --chain-id ${chainID} \\
 ${gas} \\
@@ -424,7 +424,7 @@ ${gas} \\
 							{GenerateCode(
 								'Create New Text Proposal',
 								`${bin}  tx gov submit-proposal \\
---title $TITLE \\
+--title ${title} \\
 --description ${desc} \\
 --deposit ${depositDenom}${denom} \\
 --type Text \\
