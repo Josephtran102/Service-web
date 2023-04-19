@@ -41,6 +41,7 @@ const CheatSheet = props => {
 	const [moniker, setMoniker] = useState('')
 	const [wallet, setWallet] = useState('wallet')
 	const [amount, setAmount] = useState(1000000)
+	const [amountCreate, setAmountCreate] = useState(1000000)
 	const [toValoperAddr, setToValoperAddr] = useState('<TO_VALOPER_ADDRESS>')
 	const [toWalletAddr, setToWalletAddr] = useState('<TO_WALLET_ADDRESS>')
 	const [inputStatus, setInputStatus] = useState('')
@@ -312,15 +313,23 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Details</span>
 							<Input
-								style={{ minWidth: '280px' }}
+								style={{ minWidth: '320px' }}
 								defaultValue={details}
 								onChange={e => setDetails(e.target.value)}
 							/>
 						</Space>
 						<Space direction='vertical'>
+							<span>Amount, {denom}</span>
+							<Input
+								style={{ minWidth: '200px' }}
+								defaultValue={amountCreate}
+								onChange={e => setAmountCreate(e.target.value)}
+							/>
+						</Space>
+						<Space direction='vertical'>
 							<span>Commission rate</span>
 							<Input
-								style={{ minWidth: '280px' }}
+								style={{ minWidth: '100px' }}
 								defaultValue={commissionRate}
 								onChange={e => setCommissionRate(e.target.value)}
 							/>
@@ -328,7 +337,7 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Commission max rate</span>
 							<Input
-								style={{ minWidth: '280px' }}
+								style={{ minWidth: '100px' }}
 								defaultValue={commissionMaxRate}
 								onChange={e => setCommissionMaxRate(e.target.value)}
 							/>
@@ -336,7 +345,7 @@ const CheatSheet = props => {
 						<Space direction='vertical'>
 							<span>Commission max change rate</span>
 							<Input
-								style={{ minWidth: '280px' }}
+								style={{ minWidth: '100px' }}
 								defaultValue={commissionMaxChange}
 								onChange={e => setCommissionMaxChange(e.target.value)}
 							/>
@@ -347,7 +356,7 @@ const CheatSheet = props => {
 						{GenerateCode(
 							'Create New Validator',
 							`${bin} tx staking create-validator \\
---amount 1000000${denom} \\
+--amount ${amountCreate}${denom} \\
 --from $WALLET \\
 --commission-rate ${commissionRate} \\
 --commission-max-rate ${commissionMaxRate} \\
