@@ -1,6 +1,5 @@
 import { dracula, CopyBlock, atomOneLight } from 'react-code-blocks'
 import styles from '@styles/CodeSnippet.module.scss'
-import { useEffect } from 'react'
 
 const CodeSnippet = props => {
 	return (
