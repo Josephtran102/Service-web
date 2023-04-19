@@ -239,7 +239,7 @@ ${installBin}
 ${bin} config node tcp://localhost:\${${VAR}_PORT}657
 ${bin} config keyring-backend os
 ${bin} config chain-id ${chainID}
-${bin} init ${moniker} --chain-id ${chainID}
+${bin} init "${moniker}" --chain-id ${chainID}
 
 # download genesis and addrbook
 wget -O $HOME/${path}/config/genesis.json https://${type}-files.itrocket.net/${name}/genesis.json
@@ -337,7 +337,7 @@ ${bin} tx staking create-validator \\
   --commission-rate "0.05" \\
   --min-self-delegation "1" \\
   --pubkey  $(${bin} tendermint show-validator) \\
-  --moniker $MONIKER \\
+  --moniker "$MONIKER" \\
   --chain-id ${chainID} \\
   ${gas}
   
