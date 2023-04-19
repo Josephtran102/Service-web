@@ -267,6 +267,10 @@ const CheatSheet = props => {
 					</Space>
 					<div className='flex flex-col gap-y-2'>
 						{GenerateCode(
+							'Withdraw all rewards',
+							`${bin} tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --chain-id ${chainID} ${gas} -y`
+						)}
+						{GenerateCode(
 							'Withdraw rewards and commission from your validator',
 							`${bin} tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id ${chainID} ${gas} -y`
 						)}
