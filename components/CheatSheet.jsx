@@ -157,7 +157,7 @@ const CheatSheet = props => {
 		return (
 			<div className='flex flex-col'>
 				<p className='w-fit'>{desc}</p>
-				<CodeSnippet className='w-fit' theme={theme} code={code} />
+				<CodeSnippet theme={theme} code={code} />
 			</div>
 		)
 	}
