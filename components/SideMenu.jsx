@@ -9,6 +9,7 @@ import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
 import { Tabs, TabsHeader, Tab } from '@material-tailwind/react'
 import { useRouter } from 'next/navigation'
+import { submitPFB } from '@utils/pfb'
 
 function getItem(label, key, icon, children, type) {
 	return {
@@ -26,7 +27,7 @@ const SideMenu = ({ intervalId }) => {
 	const [selectedKeys, setSelectedKeys] = useState([])
 	const { theme, toggleTheme } = useContext(Context)
 	const [items, setItems] = useState([])
-	let rootSubmenuKeys = ['services', 'installation', 'upgrade']
+	let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet']
 
 	const data = [
 		{
@@ -100,6 +101,7 @@ const SideMenu = ({ intervalId }) => {
 		const URL = window.location.href
 		if (URL.indexOf('installation') > -1) setOpenKeys([`installation`])
 		else if (URL.indexOf('upgrade') > -1) setOpenKeys([`upgrade`])
+		else if (URL.indexOf('cheat') > -1) setOpenKeys([`cheat-sheet`])
 		else setOpenKeys([`services`])
 
 		setItems([
@@ -119,7 +121,9 @@ const SideMenu = ({ intervalId }) => {
 								marginLeft: '2px',
 							}}
 						/>
-						{name.charAt(0).toUpperCase() + name.slice(1)}
+						<span className='font-bold'>
+							{name.charAt(0).toUpperCase() + name.slice(1)}
+						</span>
 					</div>
 					{projects[type][name] !== undefined &&
 						projects[reversedType][name] !== undefined && (
@@ -142,7 +146,7 @@ const SideMenu = ({ intervalId }) => {
 				'grpthis',
 				null,
 				[
-					getItem('Services', `services`, null, [
+					getItem('⚙️ Services', `services`, null, [
 						getItem(
 							<Link
 								href={serviceURL + '#rpc'}
@@ -195,7 +199,7 @@ const SideMenu = ({ intervalId }) => {
 						),
 					]),
 
-					getItem('Installation', `installation`, null, [
+					getItem('📌 Installation', `installation`, null, [
 						getItem(
 							<Link
 								href={serviceURL + '/installation/#installation'}
@@ -267,7 +271,7 @@ const SideMenu = ({ intervalId }) => {
 							<RightOutlined />
 						),
 					]),
-					getItem('Upgrade', `upgrade`, null, [
+					getItem('🔄 Upgrade', `upgrade`, null, [
 						getItem(
 							<Link
 								href={serviceURL + '/upgrade/#manual'}
@@ -289,28 +293,86 @@ const SideMenu = ({ intervalId }) => {
 							<RightOutlined />
 						),
 					]),
-					// getItem('Cheat sheet', `cheatsheet`, null, [
-					// 	getItem(
-					// 		<Link
-					// 			href={serviceURL + '/upgrade/#manual'}
-					// 			onClick={event => handleClick(event, 'manual', `manual${name}`)}
-					// 		>
-					// 			Manual upgrade
-					// 		</Link>,
-					// 		`manual${name}`,
-					// 		<RightOutlined />
-					// 	),
-					// 	getItem(
-					// 		<Link
-					// 			href={serviceURL + '/upgrade/#auto'}
-					// 			onClick={event => handleClick(event, 'auto', `auto${name}`)}
-					// 		>
-					// 			Autoupgrade
-					// 		</Link>,
-					// 		`auto${name}`,
-					// 		<RightOutlined />
-					// 	),
-					// ]),
+					getItem('📝 Cheat sheet', `cheat-sheet`, null, [
+						getItem(
+							<Link
+								href={serviceURL + '/cheat-sheet/#service-operations'}
+								onClick={event =>
+									handleClick(
+										event,
+										'service-operations',
+										`service-operations${name}`
+									)
+								}
+							>
+								Service operations
+							</Link>,
+							`service-operations${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/cheat-sheet/#key-management'}
+								onClick={event =>
+									handleClick(event, 'key-management', `key-management${name}`)
+								}
+							>
+								Key management
+							</Link>,
+							`key-management${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/cheat-sheet/#tokens'}
+								onClick={event => handleClick(event, 'tokens', `tokens${name}`)}
+							>
+								Tokens
+							</Link>,
+							`tokens${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/cheat-sheet/#validator-operations'}
+								onClick={event =>
+									handleClick(
+										event,
+										'validator-operations',
+										`validator-operations${name}`
+									)
+								}
+							>
+								Validator operations
+							</Link>,
+							`validator-operations${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/cheat-sheet/#governance'}
+								onClick={event =>
+									handleClick(event, 'governance', `governance${name}`)
+								}
+							>
+								Governance
+							</Link>,
+							`governance${name}`,
+							<RightOutlined />
+						),
+						getItem(
+							<Link
+								href={serviceURL + '/cheat-sheet/#utility'}
+								onClick={event =>
+									handleClick(event, 'utility', `utility${name}`)
+								}
+							>
+								Utility
+							</Link>,
+							`utility${name}`,
+							<RightOutlined />
+						),
+					]),
 				],
 				'group'
 			),
@@ -343,11 +405,10 @@ const SideMenu = ({ intervalId }) => {
 				'website',
 				null
 			),
-
-			getItem('', 'divider2', null, null, 'group'),
 			{
 				type: 'divider',
 			},
+			getItem('', 'divider2', null, null, 'group'),
 
 			// getItem(
 			// 	'All projects',
@@ -369,11 +430,8 @@ const SideMenu = ({ intervalId }) => {
 			...testnet,
 			getItem('', 'marginfix', null, null, 'group'),
 			getItem('', 'marginfix1', null, null, 'group'),
+			getItem('', 'marginfix2', null, null, 'group'),
 		])
-
-		return () => {
-			clearInterval(intervalId)
-		}
 	}, [router])
 
 	return (

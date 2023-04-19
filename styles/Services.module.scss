@@ -154,8 +154,8 @@ b.bold {
 		display: block;
 		font-size: 32px;
 		border-bottom: 2px solid #ebc52f;
-		padding-top: 85px;
-		margin: -70px 0px 10px;
+		padding-top: 90px;
+		margin: -70px 0px 15px;
 		font-weight: 600;
 		width: fit-content;
 
@@ -174,7 +174,7 @@ b.bold {
 
 		&:first-of-type {
 			padding-top: 107px;
-			margin: -100px 0 10px;
+			margin: -100px 0 15px;
 
 			@media (max-width: 768px) {
 				padding-top: 5px;
@@ -231,6 +231,10 @@ b.bold {
 		color: inherit !important;
 		background-color: inherit !important;
 	}
+}
+
+.w_fit {
+	width: fit-content !important;
 }
 
 .sideColumn {

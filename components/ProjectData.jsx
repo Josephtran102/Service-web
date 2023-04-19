@@ -31,12 +31,12 @@ const ProjectData = ({ name, type }) => {
 		indexer: '',
 	})
 	const PEERS = peerID
-		? `"${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"`
-		: '""'
-	const LIVE_PEERS = peerID ? `${PEERS}` : `"${livePeers.slice(1)}"`
+		? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}`
+		: ''
+	const LIVE_PEERS = peerID ? `"${PEERS}"` : `"${livePeers.slice(1)}"`
 	const SEEDS = seedID
-		? `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
-		: '""'
+		? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}`
+		: ''
 	const gRPC = `${name}-${type}-grpc.itrocket.net:${
 		peerPort ? peerPort.slice(0, 2) : ''
 	}090`
@@ -139,9 +139,9 @@ const ProjectData = ({ name, type }) => {
 				<h3 id='gRPC'>gRPC:</h3>
 				<CodeSnippet theme={theme} code={`${gRPC}`} />
 				<h3 id='peer'>peers:</h3>
-				<CodeSnippet theme={theme} code={`${PEERS}`} />
+				<CodeSnippet theme={theme} code={PEERS} />
 				<h3 id='seed'>seeds:</h3>
-				<CodeSnippet theme={theme} code={`${SEEDS}`} />
+				<CodeSnippet theme={theme} code={SEEDS} />
 				<h3 id='live-peers'>live peers:</h3>
 				<p className={styles.text_secondary}>
 					active peers: {livePeersCounter} (upd. every 10 sec)

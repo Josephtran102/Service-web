@@ -4,7 +4,6 @@
 
 * {
 	box-sizing: border-box;
-
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	word-break: break-word;
@@ -80,7 +79,8 @@ a {
 #guide,
 #installation,
 #auto,
-#mainnets {
+#mainnets,
+#service-operations {
 	border-color: #4ca0ee;
 
 	@media (max-width: 768px) {
@@ -89,17 +89,20 @@ a {
 }
 
 #rpc,
-#create-wallet {
+#create-wallet,
+#validator-operations {
 	border-color: #40e746;
 }
 
 #snap,
-#create-validator {
+#create-validator,
+#governance {
 	border-color: #a03ee0;
 }
 
 #sync,
-#monitoring {
+#monitoring,
+#key-management {
 	border-color: #ee683b;
 }
 #wasm,
@@ -178,7 +181,7 @@ a {
 }
 
 .ant-menu-root {
-	height: calc(100vh - 80px);
+	height: calc(100vh - 30px);
 	overflow-x: hidden;
 	position: -webkit-sticky;
 	position: sticky;

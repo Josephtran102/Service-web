@@ -8,14 +8,8 @@ const data = {
 }
 
 export const submitPFB = async () => {
-	const config = {
-		headers: {
-			'Access-Control-Allow-Origin': '*',
-		},
-	}
-
 	axios
-		.post('http://195.201.197.4:26659/submit_pfb', data, config)
+		.post('http://pfb-celestia-testnet.itrocket.net/submit_pfb', data)
 		.then(response => {
 			console.log(response.data)
 		})
