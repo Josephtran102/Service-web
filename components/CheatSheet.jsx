@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { Context } from '@context/context'
 import { fetchNetInfo, fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 import CodeSnippet from './CodeSnippet'
-import { Input, Space } from 'antd'
+import { Input, Radio, Space } from 'antd'
 import { FileDoneOutlined } from '@ant-design/icons'
 import AnimatedSection from './AnimatedSection'
 
@@ -38,7 +38,7 @@ const CheatSheet = props => {
 	const [livePeers, setLivePeers] = useState('')
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
-	const [moniker, setMoniker] = useState('')
+	const [moniker, setMoniker] = useState('$MONIKER')
 	const [wallet, setWallet] = useState('wallet')
 	const [amount, setAmount] = useState(1000000)
 	const [amountCreate, setAmountCreate] = useState(1000000)
@@ -52,7 +52,9 @@ const CheatSheet = props => {
 	const [commissionMaxChange, setCommissionMaxChange] = useState(0.01)
 	const [title, setTitle] = useState('')
 	const [desc, setDesc] = useState('')
-	const [depositDenom, setDepositDenom] = useState('')
+	const [deposit, setDeposit] = useState(1000000)
+	const [proposalID, setProposalID] = useState(1)
+	const [proposalOption, setProposalOption] = useState('yes')
 
 	let PEERS = '""',
 		SEEDS = '""'
@@ -145,6 +147,10 @@ const CheatSheet = props => {
 		} else {
 			setInputStatus('error')
 		}
+	}
+
+	const onChange = e => {
+		setProposalOption(e.target.value)
 	}
 
 	const GenerateCode = (desc, code) => {
@@ -363,9 +369,9 @@ const CheatSheet = props => {
 --commission-max-change-rate ${commissionMaxChange} \\
 --min-self-delegation 1 \\
 --pubkey $(${bin} tendermint show-validator) \\
---moniker '${moniker}' \\
---identity '${identity}' \\
---details '${details}' \\
+--moniker '${moniker}" \\
+--identity "${identity}" \\
+--details "${details}" \\
 --chain-id ${chainID} \\
 ${gas} \\
 -y `
@@ -374,9 +380,9 @@ ${gas} \\
 							'Edit Existing Validator',
 							`${bin} tx staking edit-validator \\
 --commission-rate ${commissionRate} \\
---new-moniker '${moniker}' \\
---identity '${identity}' \\
---details '${details}' \\
+--new-moniker "${moniker}" \\
+--identity "${identity}" \\
+--details "${details}" \\
 --from $WALLET \\
 --chain-id ${chainID} \\
 ${gas} \\
@@ -423,26 +429,60 @@ ${gas} \\
 							/>
 						</Space>
 						<Space direction='vertical'>
-							<span>Deposit denom</span>
+							<span>Deposit, {denom}</span>
 							<Input
 								style={{ minWidth: '280px' }}
+								defaultValue={deposit}
 								onChange={e => setDepositDenom(e.target.value)}
 							/>
 						</Space>
-						<div className='flex flex-col gap-y-2'>
-							{GenerateCode(
-								'Create New Text Proposal',
-								`${bin}  tx gov submit-proposal \\
---title ${title} \\
---description ${desc} \\
---deposit ${depositDenom}${denom} \\
+					</Space>
+					{GenerateCode(
+						'Create New Text Proposal',
+						`${bin}  tx gov submit-proposal \\
+--title "${title}" \\
+--description "${desc}" \\
+--deposit ${deposit}${denom} \\
 --type Text \\
 --from $WALLET \\
 ${gas} \\
 -y `
-							)}
-						</div>
+					)}
+					{GenerateCode('Proposals List', `${bin} query gov proposals`)}
+
+					<Space
+						size='middle'
+						className='flex flex-wrap content-center'
+						style={{
+							margin: '5px 0 20px',
+						}}
+					>
+						<Space direction='vertical'>
+							<span>Proposal ID</span>
+							<Input
+								style={{ minWidth: '200px' }}
+								defaultValue={proposalID}
+								onChange={e => setProposalID(e.target.value)}
+							/>
+						</Space>
+						<Space direction='vertical'>
+							<span>Proposal option</span>
+							<Radio.Group onChange={onChange} defaultValue='yes'>
+								<Radio.Button value='yes'>Yes</Radio.Button>
+								<Radio.Button value='no'>No</Radio.Button>
+								<Radio.Button value='no_with_veto'>No with veto</Radio.Button>
+								<Radio.Button value='abstain'>Abstain</Radio.Button>
+							</Radio.Group>
+						</Space>
 					</Space>
+					{GenerateCode(
+						'View proposal',
+						`${bin} query gov proposal ${proposalID}`
+					)}
+					{GenerateCode(
+						'Vote',
+						`${bin} tx gov vote ${proposalID} ${proposalOption} --from $WALLET --chain-id ${chainID}  ${gas} -y`
+					)}
 				</>
 			</div>
 		</AnimatedSection>

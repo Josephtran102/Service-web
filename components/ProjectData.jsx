@@ -139,7 +139,10 @@ const ProjectData = ({ name, type }) => {
 				<h3 id='gRPC'>gRPC:</h3>
 				<CodeSnippet theme={theme} code={`${gRPC}`} />
 				<h3 id='peer'>peers:</h3>
-				<CodeSnippet theme={theme} code={PEERS} />
+				<CodeSnippet
+					theme={theme}
+					code={`${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}`}
+				/>
 				<h3 id='seed'>seeds:</h3>
 				<CodeSnippet theme={theme} code={SEEDS} />
 				<h3 id='live-peers'>live peers:</h3>
