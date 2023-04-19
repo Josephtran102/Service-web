@@ -157,7 +157,7 @@ const CheatSheet = props => {
 		return (
 			<div className='flex flex-col'>
 				<p className='w-fit'>{desc}</p>
-				<CodeSnippet className='w-fit' theme={theme} code={`${code}`} />
+				<CodeSnippet className='w-fit' theme={theme} code={code} />
 			</div>
 		)
 	}
@@ -268,7 +268,7 @@ const CheatSheet = props => {
 					<div className='flex flex-col gap-y-2'>
 						{GenerateCode(
 							'Withdraw rewards and commission from your validator',
-							`${bin} tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id ${chainID}${gas} -y`
+							`${bin} tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id ${chainID} ${gas} -y`
 						)}
 						{GenerateCode(
 							'Check your balance',
@@ -276,7 +276,7 @@ const CheatSheet = props => {
 						)}
 						{GenerateCode(
 							'Delegate to Yourself',
-							`${bin} tx staking delegate $(${bin} keys show $WALLET --bech val -a) ${amount}${denom} --from $WALLET --chain-id ${chainID}${gas} -y`
+							`${bin} tx staking delegate $(${bin} keys show $WALLET --bech val -a) ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y`
 						)}
 						{GenerateCode(
 							'Delegate',
@@ -304,7 +304,7 @@ const CheatSheet = props => {
 							<span>Moniker</span>
 							<Input
 								style={{ minWidth: '280px' }}
-								placeholder={'moniker'}
+								placeholder={'$MONIKER'}
 								onChange={e => setMoniker(e.target.value)}
 							/>
 						</Space>

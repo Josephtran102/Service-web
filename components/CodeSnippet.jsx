@@ -15,7 +15,6 @@ const CodeSnippet = props => {
 				language='bash'
 				showLineNumbers={false}
 				theme={props.theme === 'light' ? atomOneLight : dracula}
-				wrapLongLines={true}
 				codeBlock
 			/>
 		</div>
