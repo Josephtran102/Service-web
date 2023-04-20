@@ -105,7 +105,7 @@ let projects = {
 				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v1.0.0\nmake install',
 			goVersion: '1.19.3',
 			gas: '--gas 210000 --fees 200000uthiol',
-			unsafeReset: 'unsafe-reset-all',
+			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
 		},
 		forta: {
