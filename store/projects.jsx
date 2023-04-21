@@ -503,7 +503,7 @@ let projects = {
 			minGasPrice: '0.0',
 		},
 		humans: {
-			chainID: 'testnet-1',
+			chainID: 'humans_3000-1',
 			link: 'https://testnet.itrocket.net/humans/staking',
 			imgUrl: 'humans.jpg',
 			desc: 'We are creating a scalable blockchain providing the economy of the heart driven AI, placing the humans at the facefront of the AI evolution.',
@@ -526,10 +526,10 @@ let projects = {
 			peerPort: '19656',
 			seedPort: '19656',
 			installBin:
-				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout v1.0.0\ngo build -o humansd cmd/humansd/main.go\nmv humansd ~/go/bin/humansd',
+				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.1.0\nmake install',
 			updHeight: '',
 			newInstallBin: '',
-			goVersion: '1.19.3',
+			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
