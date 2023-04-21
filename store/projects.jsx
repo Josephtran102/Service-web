@@ -214,7 +214,7 @@ let projects = {
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--fees 2000000000000000auptick',
+			gas: '--gas 250000 --fees 3000000000000000auptick',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
 		},
