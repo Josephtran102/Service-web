@@ -19,7 +19,7 @@ const CopyButton = ({ code, theme }) => {
 			className={styles.copyButton}
 			style={{
 				backgroundColor: theme == 'dark' ? '#222' : '#fff',
-				borderColor: isClicked ? '#03C04A' : '',
+				borderColor: isClicked ? '#03C04A' : '#8181816a',
 			}}
 		>
 			{isClicked ? (
