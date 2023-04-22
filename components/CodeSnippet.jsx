@@ -1,7 +1,7 @@
-const {
+import {
 	atomOneLight,
 	dracula,
-} = require('react-syntax-highlighter/dist/cjs/styles/hljs')
+} from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter'
 import styles from '@styles/CodeSnippet.module.scss'
 import CopyButton from './CopyButton'
