@@ -5,10 +5,14 @@ import {
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter'
 import styles from '@styles/CodeSnippet.module.scss'
 import CopyButton from './CopyButton'
+import { useContext } from 'react'
+import { Context } from '@context/context'
 
 const CodeSnippet = props => {
+	const { theme, toggleTheme } = useContext(Context)
+
 	const getTheme = () => {
-		switch (props.theme) {
+		switch (theme) {
 			case 'dark':
 				return dracula
 			case 'light':
@@ -20,7 +24,7 @@ const CodeSnippet = props => {
 
 	return (
 		<div className={styles.code__wrapper}>
-			<CopyButton code={props.code} theme={props.theme} />
+			<CopyButton code={props.code} theme={theme} />
 			<SyntaxHighlighter
 				className={styles.code}
 				language='bash'

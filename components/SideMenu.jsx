@@ -9,7 +9,6 @@ import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
 import { Tabs, TabsHeader, Tab } from '@material-tailwind/react'
 import { useRouter } from 'next/navigation'
-import { submitPFB } from '@utils/pfb'
 
 function getItem(label, key, icon, children, type) {
 	return {
