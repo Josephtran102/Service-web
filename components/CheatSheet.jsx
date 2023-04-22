@@ -70,7 +70,7 @@ const CheatSheet = props => {
 					<h2 id='service-operations'>Service operations ⚙️</h2>
 					<div className='flex flex-wrap gap-x-6 mb-3'>
 						<div className='flex flex-col gap-y-2'>
-							{CodeBlockrateCode('Check logs', `sudo journalctl -u ${bin} -f`)}
+							{CodeBlock('Check logs', `sudo journalctl -u ${bin} -f`)}
 							{CodeBlock('Start service', `sudo systemctl start ${bin}`)}
 							{CodeBlock('Stop service', `sudo systemctl stop ${bin}`)}
 							{CodeBlock('Restart service', `sudo systemctl restart ${bin}`)}
