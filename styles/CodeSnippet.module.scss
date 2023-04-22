@@ -1,22 +1,57 @@
 .code__wrapper {
+	position: relative;
 	font-family: 'JetBrains Mono';
-	font-weight: 400;
+	font-weight: 500;
 	margin: 3px 0 7px;
 	font-size: 14px !important;
-
-	code {
-		padding-right: 30px !important;
-	}
-
-	@media (max-width: 1600px) {
-		font-size: 13px !important;
-	}
+	border: 1px solid #82828244;
+	border-radius: 4px;
 
 	span {
 		font-size: 14px !important;
 
-		@media (max-width: 1600px) {
+		@media (max-width: 1024px) {
 			font-size: 13px !important;
 		}
+	}
+
+	&:hover {
+		.copyButton {
+			opacity: 1;
+		}
+	}
+}
+
+.code {
+	padding: 14px 18px !important;
+}
+
+.copyButton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 4px;
+	right: 8px;
+	padding: 5px;
+	border-radius: 7px;
+	user-select: none;
+	border: 1px solid #8181816a;
+	z-index: 10011;
+	transition: all 0.15s;
+	opacity: 0;
+	cursor: pointer;
+
+	svg {
+		width: 15px;
+		height: 15px;
+	}
+
+	@media (max-width: 768px) {
+		opacity: 1;
+	}
+
+	&:hover {
+		border-color: #8c8c8cb3;
 	}
 }

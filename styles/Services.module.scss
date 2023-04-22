@@ -99,13 +99,6 @@ b.bold {
 		}
 	}
 
-	code {
-		font-size: 14px !important;
-		@media (max-width: 768px) {
-			font-size: 13px !important;
-		}
-	}
-
 	span {
 		&::-webkit-scrollbar-thumb {
 			background: #98989894;

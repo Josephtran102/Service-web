@@ -1,22 +1,34 @@
-import { dracula, CopyBlock, atomOneLight } from 'react-code-blocks'
+const {
+	atomOneLight,
+	dracula,
+} = require('react-syntax-highlighter/dist/cjs/styles/hljs')
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter'
 import styles from '@styles/CodeSnippet.module.scss'
+import CopyButton from './CopyButton'
 
 const CodeSnippet = props => {
+	const getTheme = () => {
+		switch (props.theme) {
+			case 'dark':
+				return dracula
+			case 'light':
+				return atomOneLight
+			default:
+				return atomOneLight
+		}
+	}
+
 	return (
-		<div
-			className={styles.code__wrapper}
-			style={{
-				border: '1px solid #82828244',
-				borderRadius: '4px',
-			}}
-		>
-			<CopyBlock
-				text={props.code}
+		<div className={styles.code__wrapper}>
+			<CopyButton code={props.code} theme={props.theme} />
+			<SyntaxHighlighter
+				className={styles.code}
 				language='bash'
+				style={getTheme()}
 				showLineNumbers={false}
-				theme={props.theme === 'light' ? atomOneLight : dracula}
-				codeBlock
-			/>
+			>
+				{props.code}
+			</SyntaxHighlighter>
 		</div>
 	)
 }
