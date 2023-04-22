@@ -8,7 +8,6 @@ import CodeSnippet from './CodeSnippet'
 import { Input, Space } from 'antd'
 import { FileDoneOutlined } from '@ant-design/icons'
 import AnimatedSection from './AnimatedSection'
-import { submitPFB } from '@utils/pfb'
 
 const Installation = props => {
 	const name = props.name
@@ -36,17 +35,23 @@ const Installation = props => {
 	} = project
 
 	explorer.current = project.explorer
-	let wasm = useRef('false')
 	const { theme } = useContext(Context)
 	const [isActive, setIsActive] = useState(styles.pending)
 	const [livePeers, setLivePeers] = useState('')
 	const [installBin, setInstallBin] = useState(project.installBin)
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
-	const [moniker, setMoniker] = useState('test')
-	const [wallet, setWallet] = useState('wallet')
 	const [port, setPort] = useState(project.port)
 	const [inputStatus, setInputStatus] = useState('')
+	const [moniker, setMoniker] = useState('$MONIKER')
+	const [wallet, setWallet] = useState('wallet')
+	const [amountCreate, setAmountCreate] = useState(1000000)
+	const [details, setDetails] = useState('I love blockchain ❤️')
+	const [identity, setIdentity] = useState('')
+	const [commissionRate, setCommissionRate] = useState(0.1)
+	const [commissionMaxRate, setCommissionMaxRate] = useState(0.2)
+	const [commissionMaxChange, setCommissionMaxChange] = useState(0.01)
+
 	let PEERS = '""',
 		SEEDS = '""'
 	if (peerID) {
@@ -122,7 +127,6 @@ const Installation = props => {
 		status()
 		netInfo()
 		snap()
-		submitPFB()
 
 		setInterval(() => {
 			status()
@@ -326,29 +330,88 @@ ${bin} query bank balances $WALLET_ADDRESS
 `}
 				/>
 				<h2 id='create-validator'>Create validator</h2>
-				<CodeSnippet
-					theme={theme}
-					code={`# create validator
-${bin} tx staking create-validator \\
-  --amount 1000000${denom} \\
-  --from $WALLET \\
-  --commission-max-change-rate "0.01" \\
-  --commission-max-rate "0.2" \
-  --commission-rate "0.05" \\
-  --min-self-delegation "1" \\
-  --pubkey  $(${bin} tendermint show-validator) \\
-  --moniker "$MONIKER" \\
-  --chain-id ${chainID} \\
-  ${gas}
-  
-# you can add "--website" "--security-contact" "--identity" "--details" flags in it needed
---website \<YOUR_SITE_URL> \\
---security-contact \<YOUR_CONTACT> \\
---identity \<KEYBASE_IDENTITY> \\
---details \<YOUR_VALIDATOR_DETAILS>
+				<Space
+					size='middle'
+					style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}
+				>
+					<Space direction='vertical'>
+						<span>Moniker</span>
+						<Input
+							style={{ minWidth: '280px' }}
+							placeholder={'$MONIKER'}
+							onChange={e => setMoniker(e.target.value)}
+						/>
+					</Space>
+					<Space direction='vertical'>
+						<span>Identity</span>
+						<Input
+							style={{ minWidth: '280px' }}
+							placeholder={'identity'}
+							onChange={e => setIdentity(e.target.value)}
+						/>
+					</Space>
+					<Space direction='vertical'>
+						<span>Details</span>
+						<Input
+							style={{ minWidth: '320px' }}
+							defaultValue={details}
+							onChange={e => setDetails(e.target.value)}
+						/>
+					</Space>
+					<Space direction='vertical'>
+						<span>Amount, {denom}</span>
+						<Input
+							style={{ minWidth: '200px' }}
+							defaultValue={amountCreate}
+							onChange={e => setAmountCreate(e.target.value)}
+						/>
+					</Space>
+					<Space direction='vertical'>
+						<span>Commission rate</span>
+						<Input
+							style={{ minWidth: '100px' }}
+							defaultValue={commissionRate}
+							onChange={e => setCommissionRate(e.target.value)}
+						/>
+					</Space>
+					<Space direction='vertical'>
+						<span>Commission max rate</span>
+						<Input
+							style={{ minWidth: '100px' }}
+							defaultValue={commissionMaxRate}
+							onChange={e => setCommissionMaxRate(e.target.value)}
+						/>
+					</Space>
+					<Space direction='vertical'>
+						<span>Commission max change rate</span>
+						<Input
+							style={{ minWidth: '100px' }}
+							defaultValue={commissionMaxChange}
+							onChange={e => setCommissionMaxChange(e.target.value)}
+						/>
+					</Space>
+				</Space>
 
-`}
-				/>
+				<div className='flex flex-col gap-y-2'>
+					<CodeSnippet
+						theme={theme}
+						code={`${bin} tx staking create-validator \\
+--amount ${amountCreate}${denom} \\
+--from $WALLET \\
+--commission-rate ${commissionRate} \\
+--commission-max-rate ${commissionMaxRate} \\
+--commission-max-change-rate ${commissionMaxChange} \\
+--min-self-delegation 1 \\
+--pubkey $(${bin} tendermint show-validator) \\
+--moniker "${moniker}" \\
+--identity "${identity}" \\
+--details "${details}" \\
+--chain-id ${chainID} \\
+${gas} \\
+-y`}
+					/>
+				</div>
+
 				<h2 id='monitoring'>Monitoring</h2>
 				<p>
 					If you want to have set up a monitoring and alert system use{' '}
