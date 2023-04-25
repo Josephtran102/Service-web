@@ -462,9 +462,9 @@ let projects = {
 			seedPort: '38656',
 			installBin:
 				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.3.1\nmake install',
-			updHeight: '116000',
+			updHeight: '280000',
 			newInstallBin:
-				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.3.1\nmake install',
+				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.4.0\nmake install',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
