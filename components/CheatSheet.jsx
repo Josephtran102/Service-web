@@ -173,7 +173,7 @@ const CheatSheet = props => {
 						)}
 						{CodeBlock(
 							'Delegate',
-							`${bin} tx staking delegate ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} --gas auto -y`
+							`${bin} tx staking delegate ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y`
 						)}
 						{CodeBlock(
 							'Redelegate Stake to Another Validator',
