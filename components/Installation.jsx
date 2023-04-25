@@ -287,9 +287,10 @@ Description=${projectName} node
 After=network-online.target
 [Service]
 User=$USER
+WorkingDirectory=$HOME/${path}
 ExecStart=$(which ${bin}) start --home $HOME/${path}
 Restart=on-failure
-RestartSec=3
+RestartSec=5
 LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
