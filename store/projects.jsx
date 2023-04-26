@@ -147,7 +147,7 @@ let projects = {
 			newInstallBin:
 				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.9-hotfix.0\nmake install',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
+			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
 		},
