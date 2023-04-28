@@ -516,7 +516,7 @@ let projects = {
 			snapMaxSize: '10',
 			port: '17',
 			VAR: 'HUMANS',
-			denom: 'uheart',
+			denom: 'aheart',
 			ecosystem: 'cosmos',
 			bin: 'humansd',
 			path: '.humansd',
