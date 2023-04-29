@@ -701,7 +701,16 @@ let projects = {
 			installBin:
 				'cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd.git\ncd noisd\ngit checkout v0.6.0\nmake install',
 			updHeight: '',
-			newInstallBin: '',
+			newInstallBin: 'sudo systemctl stop noisd
+rm -r ~/.noisd/wasm/wasm/cache
+cd $HOME
+rm -rf $HOME/noisd
+git clone https://github.com/noislabs/noisd.git
+cd noisd
+git checkout v1.0.2
+make install
+noisd query wasm libwasmvm-version
+',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
