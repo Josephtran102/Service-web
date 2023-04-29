@@ -41,51 +41,78 @@ const ProjectData = ({ name, type }) => {
 		peerPort ? peerPort.slice(0, 2) : ''
 	}090`
 
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const netInfoData = await fetchNetInfo(name, type)
-				const snapData = await fetchSnap(name, type)
-				processNetInfo(netInfoData)
-				processSnap(snapData)
-			} catch (err) {
+	const status = () => {
+		fetchStatus(name, type)
+			.then(status => {
+				setBlockHeight(status.sync_info.latest_block_height)
+				setIsActive(styles.active)
+				if (updHeight) {
+					status.sync_info.latest_block_height >= updHeight
+						? setInstallBin(newInstallBin)
+						: ''
+				}
+			})
+			.catch(err => {
 				console.log(err)
-			}
-		}
+				setIsActive(styles.inactive)
+			})
+	}
+	const netInfo = () => {
+		fetchNetInfo(name, type)
+			.then(info => {
+				const peers = info.peers
+				const letters = /[a-zA-Z]/
 
-		const processNetInfo = info => {
-			const livePeersData = info.peers
-				.filter(peer => peer.is_outbound)
-				.map(peer => {
-					const ip = /[a-zA-Z]/.test(peer.remote_ip)
-						? `[${peer.remote_ip}]`
-						: peer.remote_ip
-					const port = peer.node_info.listen_addr.split(':').pop()
-					return `${peer.node_info.id}@${ip}:${port}`
+				peers.map(peer => {
+					if (peer.is_outbound === true) {
+						let ip = peer.remote_ip
+						const id = peer.node_info.id
+						const listen_addr = peer.node_info.listen_addr
+
+						if (letters.test(ip)) {
+							ip = `[${ip}]`
+						}
+
+						let i = listen_addr.length - 1
+						let port = ''
+
+						while (listen_addr[i] !== ':') {
+							port += listen_addr[i]
+							i--
+						}
+						port = port.split('').reverse().join('')
+						livePeers.push(`${chainID}@${ip}:${port}`)
+					}
 				})
+				livePeers.unshift('')
+				setLivePeersCounter(livePeers.length)
+				setLivePeers(livePeers.join())
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}
+	const snap = () => {
+		fetchSnap(name, type)
+			.then(data => {
+				setPruning(data.pruning)
+				setIndexer(data.indexer)
+			})
+			.catch(err => {
+				console.log(err)
+			})
+	}
 
-			setLivePeersCounter(livePeersData.length)
-			setLivePeers(',' + livePeersData)
-		}
+	useEffect(() => {
+		status()
+		netInfo()
+		snap()
 
-		const processSnap = data => {
-			const time = Date.now() - Date.parse(data.SnapshotBlockTime.concat(':00'))
-			const snapData = {
-				height: data.SnapshotHeight,
-				size: data.SnapshotSize,
-				time: prettyMilliseconds(time, { compact: true }),
-				pruning: data.pruning,
-				indexer: data.indexer,
-			}
-			if (data.WasmPath !== 'false') wasm.current = data.WasmPath
-			setSnapInfo(snapData)
-		}
-
-		fetchData()
-		const id = setInterval(fetchData, 10000)
-		setIntervalId(id)
-
-		return () => clearInterval(id)
+		setInterval(() => {
+			status()
+			netInfo()
+			snap()
+		}, 10000)
 	}, [])
 
 	return (
