@@ -4,7 +4,7 @@ import projects from '@store/projects'
 import prettyMilliseconds from 'pretty-ms'
 import styles from '@styles/Services.module.scss'
 import CodeSnippet from '@components/CodeSnippet.jsx'
-import { fetchNetInfo, fetchSnap } from 'utils/fetchProject.js'
+import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
 import Head from 'next/head'
 import { Typography } from 'antd'
 import AnimatedSection from './AnimatedSection'
@@ -45,7 +45,6 @@ const ProjectData = ({ name, type }) => {
 		fetchStatus(name, type)
 			.then(status => {
 				setBlockHeight(status.sync_info.latest_block_height)
-				setIsActive(styles.active)
 				if (updHeight) {
 					status.sync_info.latest_block_height >= updHeight
 						? setInstallBin(newInstallBin)
@@ -54,7 +53,6 @@ const ProjectData = ({ name, type }) => {
 			})
 			.catch(err => {
 				console.log(err)
-				setIsActive(styles.inactive)
 			})
 	}
 	const netInfo = () => {
