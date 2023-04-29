@@ -698,8 +698,7 @@ let projects = {
 			explorer: '',
 			peerPort: '21656',
 			seedPort: '21656',
-			installBin:
-				'sudo systemctl stop noisd
+			installBin: 'sudo systemctl stop noisd
 rm -r ~/.noisd/wasm/wasm/cache
 cd $HOME
 rm -rf $HOME/noisd
