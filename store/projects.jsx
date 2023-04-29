@@ -876,8 +876,17 @@ let projects = {
 			seedPort: '13656',
 			installBin:
 				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v0.4.0\nmake install',
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '1037222',
+			newInstallBin: `sudo systemctl stop terpd.service
+cd $HOME
+rm -rf ~/terp-core
+git clone https://github.com/terpnetwork/terp-core.git
+cd terp-core
+git checkout v1.0.1
+make install
+curl -s  https://raw.githubusercontent.com/terpnetwork/test-net/master/90u-1/genesis.json > $HOME/.terp/config/genesis.json
+terpd tendermint unsafe-reset-all --home $HOME/.terp --keep-addr-book
+sed -i 's/minimum-gas-prices = "[^"]*"/minimum-gas-prices = "0.0002uthiol"/' $HOME/.terp/config/app.toml`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
