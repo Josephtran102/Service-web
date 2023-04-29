@@ -709,8 +709,7 @@ git clone https://github.com/noislabs/noisd.git
 cd noisd
 git checkout v1.0.2
 make install
-noisd query wasm libwasmvm-version
-',
+noisd query wasm libwasmvm-version',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
