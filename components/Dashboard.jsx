@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState, useRef } from 'react'
 import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -8,8 +8,7 @@ import styles from '@styles/Services.module.scss'
 import { currentProject } from 'utils/currentProjectByURL'
 import { CheckCircleTwoTone, SearchOutlined } from '@ant-design/icons'
 import { useRouter } from 'next/router'
-import { Tooltip } from 'antd'
-import Tabs from './Tabs'
+import { Tooltip, Segmented } from 'antd'
 
 export default function Dashboard(props) {
 	const router = useRouter()
@@ -20,41 +19,54 @@ export default function Dashboard(props) {
 	const { theme, toggleTheme } = useContext(Context)
 	const [chainID, setChainID] = useState()
 	const [explorer, setExplorer] = useState(null)
+	const [value, setValue] = useState()
 	const [intervalId, setIntervalId] = useState(null)
+	const curProjectName = useRef()
+	const curProjectType = useRef()
+
+	const status = (name, type, isCurrent) => {
+		fetchStatus(name, type)
+			.then(status => {
+				if (isCurrent) {
+					setBlockHeight(status.sync_info.latest_block_height)
+					setIsActive(styles.active)
+				}
+			})
+			.catch(err => {
+				if (isCurrent) {
+					console.log(err)
+					setIsActive(styles.inactive)
+				}
+			})
+	}
 
 	useEffect(() => {
+		let isCurrent = true
 		const project = currentProject()
 		const name = project.name
 		const type = project.type
+		curProjectName.current = name
+		curProjectType.current = type
 		setName(project.name)
 		setExplorer(project.explorer)
 		setChainID(project?.chainID)
-
-		fetchStatus(name, type)
-			.then(status => {
-				setBlockHeight(status.sync_info.latest_block_height)
-				setIsActive(styles.active)
-			})
-			.catch(err => {
-				console.log(err)
-				setIsActive(styles.inactive)
-			})
-
-		const id = setInterval(() => {
-			fetchStatus(name, type)
-				.then(status => {
-					setBlockHeight(status.sync_info.latest_block_height)
-					setIsActive(styles.active)
-				})
-				.catch(err => {
-					console.log(err)
-					setIsActive(styles.inactive)
-				})
+		const URL = window.location.href
+		if (URL.indexOf('installation') > -1) {
+			setValue('installation')
+		} else if (URL.indexOf('upgrade') > -1) {
+			setValue('upgrade')
+		} else if (URL.indexOf('cheat') > -1) {
+			setValue('cheat-sheet')
+		} else {
+			setValue('services')
+		}
+		status(name, type, isCurrent)
+		const intervalId = setInterval(() => {
+			status(name, type, isCurrent)
 		}, 10000)
 
-		setIntervalId(id)
-
 		return () => {
+			isCurrent = false
 			clearInterval(intervalId)
 		}
 	}, [router.pathname])
@@ -64,6 +76,12 @@ export default function Dashboard(props) {
 			setOpacity(1)
 		}, 1)
 	}, [])
+
+	const handleTabClick = value => {
+		setValue(value)
+		const href = `/services/${curProjectType.current}/${curProjectName.current}/${value}`
+		router.push(href)
+	}
 
 	return (
 		<div style={{ opacity: opacity }}>
@@ -124,7 +142,13 @@ export default function Dashboard(props) {
 							</span>
 						</p>
 					</div>
-					<Tabs />
+					<Segmented
+						block
+						options={['services', 'installation', 'upgrade', 'cheat-sheet']}
+						onChange={handleTabClick}
+						style={{ marginBottom: '7px' }}
+						className={styles.mobileSegmented}
+					/>
 					{props.children}
 				</main>
 			</div>

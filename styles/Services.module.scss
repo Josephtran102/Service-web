@@ -437,3 +437,10 @@ p.desc {
 		position: relative;
 	}
 }
+
+.mobileSegmented {
+	display: block;
+	@media (min-width: 768px) {
+		display: none !important;
+	}
+}

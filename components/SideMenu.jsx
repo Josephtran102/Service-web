@@ -1,13 +1,12 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState, useRef } from 'react'
 import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
 import projects from '@store/projects'
-import { Menu } from 'antd'
+import { Menu, Segmented } from 'antd'
 import Link from 'next/link.js'
 import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
-import { Tabs, TabsHeader, Tab } from '@material-tailwind/react'
 import { useRouter } from 'next/navigation'
 
 function getItem(label, key, icon, children, type) {
@@ -20,26 +19,15 @@ function getItem(label, key, icon, children, type) {
 	}
 }
 
-const SideMenu = ({ intervalId }) => {
+const SideMenu = () => {
 	const router = useRouter()
 	const [openKeys, setOpenKeys] = useState([])
 	const [selectedKeys, setSelectedKeys] = useState([])
 	const { theme, toggleTheme } = useContext(Context)
 	const [items, setItems] = useState([])
+	const [value, setValue] = useState()
 	let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet']
-
-	const data = [
-		{
-			label: 'mainnet',
-			value: 'mainnet',
-			href: '/services/mainnet/',
-		},
-		{
-			label: 'testnet',
-			value: 'testnet',
-			href: '/services/testnet/',
-		},
-	]
+	const curProject = useRef()
 
 	const onOpenChange = keys => {
 		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
@@ -66,8 +54,6 @@ const SideMenu = ({ intervalId }) => {
 		return Object.entries(data).map(([item, { name = item, imgUrl }]) => {
 			const id = type + name
 			const serviceURL = `/services/${type}/${name.toLowerCase()}`
-			// projects[type][item].minGasPrice = '0'
-			// console.log(projects)
 
 			return getItem(
 				<a href={serviceURL} rel='noopener referrer'>
@@ -86,14 +72,17 @@ const SideMenu = ({ intervalId }) => {
 		})
 	}
 
-	const handleTabClick = href => {
+	const handleTabClick = value => {
+		setValue(value)
 		setSelectedKeys([])
+		const href = `/services/${value}/${curProject.current}`
 		router.push(href)
 	}
 
 	useEffect(() => {
 		const { name, type, serviceURL } = currentProject()
-		const reversedType = type === 'testnet' ? 'mainnet' : 'testnet'
+		setValue(type)
+		curProject.current = name
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
 		const imgURL = projects[type][name].imgUrl
@@ -124,22 +113,13 @@ const SideMenu = ({ intervalId }) => {
 							{name.charAt(0).toUpperCase() + name.slice(1)}
 						</span>
 					</div>
-					{projects[type][name] !== undefined &&
-						projects[reversedType][name] !== undefined && (
-							<Tabs value={type}>
-								<TabsHeader>
-									{data.map(({ label, href, value }) => (
-										<Tab
-											key={label}
-											value={value}
-											onClick={() => handleTabClick(`${href}${name}`)}
-											style={{ margin: '3px' }}
-										>
-											{label}
-										</Tab>
-									))}
-								</TabsHeader>
-							</Tabs>
+					{projects['mainnet'][name] !== undefined &&
+						projects['testnet'][name] !== undefined && (
+							<Segmented
+								block
+								options={['mainnet', 'testnet']}
+								onChange={handleTabClick}
+							/>
 						)}
 				</div>,
 				'grpthis',
@@ -432,6 +412,12 @@ const SideMenu = ({ intervalId }) => {
 			getItem('', 'marginfix2', null, null, 'group'),
 		])
 	}, [router])
+
+	useEffect(() => {
+		const { name, type, serviceURL } = currentProject()
+		setValue('testnet')
+		curProject.current = name
+	}, [])
 
 	return (
 		<aside

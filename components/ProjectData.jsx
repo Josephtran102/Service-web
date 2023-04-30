@@ -16,7 +16,16 @@ const ProjectData = ({ name, type }) => {
 	const explorer = useRef()
 	const projectName =
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset } = project
+	const {
+		bin,
+		path,
+		peerID,
+		seedID,
+		seedPort,
+		peerPort,
+		unsafeReset,
+		chainID,
+	} = project
 	explorer.current = project.explorer
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
@@ -27,7 +36,6 @@ const ProjectData = ({ name, type }) => {
 	const [snapHeight, setSnapHeight] = useState(null)
 	const [snapSize, setSnapSize] = useState('')
 	const [snapTime, setSnapTime] = useState()
-	const [intervalId, setIntervalId] = useState(null)
 
 	const PEERS = peerID
 		? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}`
@@ -45,6 +53,7 @@ const ProjectData = ({ name, type }) => {
 			.then(info => {
 				const peers = info.peers
 				const letters = /[a-zA-Z]/
+				const livePeersArr = []
 
 				peers.map(peer => {
 					if (peer.is_outbound === true) {
@@ -64,12 +73,12 @@ const ProjectData = ({ name, type }) => {
 							i--
 						}
 						port = port.split('').reverse().join('')
-						livePeers.push(`${chainID}@${ip}:${port}`)
+						livePeersArr.push(`${chainID}@${ip}:${port}`)
 					}
 				})
-				livePeers.unshift('')
-				setLivePeersCounter(livePeers.length)
-				setLivePeers(livePeers.join())
+				livePeersArr.unshift('')
+				setLivePeersCounter(livePeersArr.length)
+				setLivePeers(livePeersArr.join())
 			})
 			.catch(err => {
 				console.log(err)
@@ -98,17 +107,20 @@ const ProjectData = ({ name, type }) => {
 			})
 	}
 
-	useEffect(() => {
+	const fetchData = () => {
 		netInfo()
 		snap()
+	}
 
-		setInterval(() => {
-			netInfo()
-			snap()
-		}, 10000)
+	useEffect(() => {
+		snap()
+		fetchData()
+		const intervalId = setInterval(fetchData, 10000)
+
+		return () => {
+			clearInterval(intervalId)
+		}
 	}, [])
-
-	//123
 
 	return (
 		<AnimatedSection>
