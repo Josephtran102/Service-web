@@ -11,6 +11,7 @@ import Footer from '@components/Footer'
 import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
+import { smoothScroll } from '@utils/smoothScroll'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -79,7 +80,11 @@ const Home = () => {
 									</span>
 								</div>
 								<div className={styles.hero__links}>
-									<Link href='#mainnet' className={styles.button}>
+									<Link
+										href='#mainnet'
+										className={styles.button}
+										onClick={smoothScroll}
+									>
 										Delegate
 									</Link>
 									<Link
