@@ -83,7 +83,7 @@ const Home = () => {
 									<Link
 										href='#mainnet'
 										className={styles.button}
-										onClick={smoothScroll}
+										onClick={event => smoothScroll(event)}
 									>
 										Delegate
 									</Link>
