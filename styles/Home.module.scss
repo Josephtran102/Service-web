@@ -53,7 +53,7 @@
 	transition: 0.3s;
 
 	@media (max-width: 768px) {
-		font-size: 16px;
+		font-size: 14px;
 	}
 
 	&:first-child {
@@ -64,7 +64,6 @@
 			#673fd7 64.72%
 		);
 		color: #fbfbfb;
-		border: 0;
 		box-shadow: rgba(80, 63, 205, 0.3) 0 1px 30px;
 
 		&:hover {
@@ -77,6 +76,12 @@
 		color: #e9eef2;
 		background-color: #424242;
 		border-color: rgba(240, 246, 252, 0.1);
+		font-size: 17px;
+		transition: 0.3s;
+
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
 
 		&:hover {
 			background-color: #494949;

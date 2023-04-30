@@ -149,7 +149,10 @@ export default function Dashboard(props) {
 						defaultValue={curProjectType.current}
 						options={['services', 'installation', 'upgrade', 'cheat-sheet']}
 						onChange={handleTabClick}
-						style={{ marginBottom: '7px' }}
+						style={{
+							marginBottom: '10px',
+							backgroundColor: theme === 'dark' ? '#6b6969' : '#e0e0e0',
+						}}
 						className={styles.mobileSegmented}
 					/>
 					{props.children}

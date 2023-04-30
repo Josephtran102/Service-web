@@ -119,11 +119,13 @@ const SideMenu = () => {
 						projects['testnet'][name] !== undefined && (
 							<Segmented
 								block
-								size='large'
 								defaultValue={defValue.current}
 								value={value}
 								options={['mainnet', 'testnet']}
 								onChange={handleTabClick}
+								style={{
+									backgroundColor: theme === 'dark' ? '#6b6969' : '#efefef',
+								}}
 							/>
 						)}
 				</div>,
