@@ -76,7 +76,7 @@ const Home = () => {
 									<span className={styles.hero__desc}>
 										With few simple steps you can delegate funds to our trusted
 										validators or explore our services where you can find guides
-										that will be useful for node operators.
+										that will be useful for node operators and developers.
 									</span>
 								</div>
 								<div className={styles.hero__links}>
