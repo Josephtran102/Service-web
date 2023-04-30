@@ -133,7 +133,7 @@ const CheatSheet = props => {
 							<span>To valoper address</span>
 							<Input
 								style={{ minWidth: '280px' }}
-								defaultValue={toValoperAddr}
+								placeholder={toValoperAddr}
 								onChange={e => setToValoperAddr(e.target.value)}
 							/>
 						</Space>
@@ -141,7 +141,7 @@ const CheatSheet = props => {
 							<span>To wallet address</span>
 							<Input
 								style={{ minWidth: '280px' }}
-								defaultValue={toWalletAddr}
+								placeholder={toWalletAddr}
 								onChange={e => setToWalletAddr(e.target.value)}
 							/>
 						</Space>
