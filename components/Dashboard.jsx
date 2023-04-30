@@ -79,7 +79,8 @@ export default function Dashboard(props) {
 
 	const handleTabClick = value => {
 		setValue(value)
-		const href = `/services/${curProjectType.current}/${curProjectName.current}/${value}`
+		const section = value === 'services' ? '' : value
+		const href = `/services/${curProjectType.current}/${curProjectName.current}/${section}`
 		router.push(href)
 	}
 

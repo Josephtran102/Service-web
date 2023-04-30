@@ -119,6 +119,7 @@ const SideMenu = () => {
 						projects['testnet'][name] !== undefined && (
 							<Segmented
 								block
+								size='large'
 								defaultValue={defValue.current}
 								value={value}
 								options={['mainnet', 'testnet']}
