@@ -598,7 +598,8 @@ let projects = {
 			installBin:
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
 			updHeight: '163960',
-			newInstallBin: 'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
+			newInstallBin:
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -699,7 +700,7 @@ let projects = {
 			peerPort: '21656',
 			seedPort: '21656',
 			installBin:
-		                'cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd.git\ncd noisd\ngit checkout v0.6.0\nmake install',
+				'cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd.git\ncd noisd\ngit checkout v0.6.0\nmake install',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
