@@ -108,6 +108,8 @@ const ProjectData = ({ name, type }) => {
 		}, 10000)
 	}, [])
 
+	//123
+
 	return (
 		<AnimatedSection>
 			<Head>
