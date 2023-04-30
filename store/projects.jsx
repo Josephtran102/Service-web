@@ -877,7 +877,7 @@ let projects = {
 			seedPort: '13656',
 			installBin:
 				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v0.4.0\nmake install',
-			updHeight: '1037222',
+			updHeight: '0',
 			newInstallBin: `sudo systemctl stop terpd.service
 cd $HOME
 rm -rf ~/terp-core
