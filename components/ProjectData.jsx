@@ -22,14 +22,13 @@ const ProjectData = ({ name, type }) => {
 	const { theme } = useContext(Context)
 	const [livePeers, setLivePeers] = useState('')
 	const [livePeersCounter, setLivePeersCounter] = useState(null)
+	const [pruning, setPruning] = useState('')
+	const [indexer, setIndexer] = useState(null)
+	const [snapHeight, setSnapHeight] = useState(null)
+	const [snapSize, setSnapSize] = useState('')
+	const [snapTime, setSnapTime] = useState()
 	const [intervalId, setIntervalId] = useState(null)
-	const [snapInfo, setSnapInfo] = useState({
-		height: null,
-		size: '',
-		time: '',
-		pruning: '',
-		indexer: '',
-	})
+
 	const PEERS = peerID
 		? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}`
 		: ''
@@ -41,20 +40,6 @@ const ProjectData = ({ name, type }) => {
 		peerPort ? peerPort.slice(0, 2) : ''
 	}090`
 
-	const status = () => {
-		fetchStatus(name, type)
-			.then(status => {
-				setBlockHeight(status.sync_info.latest_block_height)
-				if (updHeight) {
-					status.sync_info.latest_block_height >= updHeight
-						? setInstallBin(newInstallBin)
-						: ''
-				}
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
 	const netInfo = () => {
 		fetchNetInfo(name, type)
 			.then(info => {
@@ -90,11 +75,23 @@ const ProjectData = ({ name, type }) => {
 				console.log(err)
 			})
 	}
+
 	const snap = () => {
 		fetchSnap(name, type)
 			.then(data => {
+				setSnapHeight(data.SnapshotHeight)
+				setSnapSize(data.SnapshotSize)
 				setPruning(data.pruning)
 				setIndexer(data.indexer)
+
+				if (data.WasmPath !== 'false') {
+					wasm.current = data.WasmPath
+				}
+
+				let time = data.SnapshotBlockTime
+				time = Date.parse(time.concat(':00'))
+				time = Date.now() - time
+				setSnapTime(prettyMilliseconds(time, { compact: true }))
 			})
 			.catch(err => {
 				console.log(err)
@@ -102,12 +99,10 @@ const ProjectData = ({ name, type }) => {
 	}
 
 	useEffect(() => {
-		status()
 		netInfo()
 		snap()
 
 		setInterval(() => {
-			status()
 			netInfo()
 			snap()
 		}, 10000)
@@ -188,13 +183,13 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 				/>
 				<h2 id='snap'>Snapshot </h2>
 				<p className={styles.text_secondary}>
-					height: <b className={styles.bold}>{snapInfo.height}</b>
+					height: <b className={styles.bold}>{snapHeight}</b>
 					{' | '}
-					<b className={styles.bold}>{`${snapInfo.time} ago`}</b>
+					<b className={styles.bold}>{`${snapTime} ago`}</b>
 					{' | '}
-					size: <b className={styles.bold}>{`${snapInfo.size}B | `}</b>
-					pruning: <b className={styles.bold}>{snapInfo.pruning}</b>
-					{' | '} indexer: <b className={styles.bold}>{snapInfo.indexer}</b>
+					size: <b className={styles.bold}>{`${snapSize}B | `}</b>
+					pruning: <b className={styles.bold}>{pruning}</b>
+					{' | '} indexer: <b className={styles.bold}>{indexer}</b>
 				</p>
 				<CodeSnippet
 					theme={theme}
