@@ -28,6 +28,7 @@ const SideMenu = () => {
 	const [value, setValue] = useState()
 	let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet']
 	const curProject = useRef()
+	const defValue = useRef()
 
 	const onOpenChange = keys => {
 		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
@@ -82,6 +83,7 @@ const SideMenu = () => {
 	useEffect(() => {
 		const { name, type, serviceURL } = currentProject()
 		setValue(type)
+		defValue.current = type
 		curProject.current = name
 		const mainnet = fillSideMenu('mainnet')
 		const testnet = fillSideMenu('testnet')
@@ -117,6 +119,8 @@ const SideMenu = () => {
 						projects['testnet'][name] !== undefined && (
 							<Segmented
 								block
+								defaultValue={defValue.current}
+								value={value}
 								options={['mainnet', 'testnet']}
 								onChange={handleTabClick}
 							/>
@@ -389,20 +393,6 @@ const SideMenu = () => {
 			},
 			getItem('', 'divider2', null, null, 'group'),
 
-			// getItem(
-			// 	'All projects',
-			// 	`grphide${name}`,
-			// 	<Image
-			// 		src={require('../public/justRocketCrop.png')}
-			// 		alt='logo'
-			// 		width='25'
-			// 		height='25'
-			// 		unoptimized={true}
-			// 		style={{ backgroundColor: 'transparent' }}
-			// 	/>,
-			// 	null,
-			// 	'group'
-			// ),
 			getItem('Mainnet', 'grpmain', null, null, 'group'),
 			...mainnet,
 			getItem('Testnet', 'grptest', null, null, 'group'),
@@ -412,12 +402,6 @@ const SideMenu = () => {
 			getItem('', 'marginfix2', null, null, 'group'),
 		])
 	}, [router])
-
-	useEffect(() => {
-		const { name, type, serviceURL } = currentProject()
-		setValue('testnet')
-		curProject.current = name
-	}, [])
 
 	return (
 		<aside

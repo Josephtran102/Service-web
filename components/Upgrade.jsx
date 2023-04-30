@@ -83,16 +83,20 @@ const Upgrade = props => {
 			})
 	}
 
-	useEffect(() => {
+	const fetchData = () => {
 		status()
 		netInfo()
 		snap()
+	}
 
-		setInterval(() => {
-			status()
-			netInfo()
-			snap()
-		}, 10000)
+	useEffect(() => {
+		snap()
+		fetchData()
+		const intervalId = setInterval(fetchData, 10000)
+
+		return () => {
+			clearInterval(intervalId)
+		}
 	}, [])
 
 	const handlePort = e => {

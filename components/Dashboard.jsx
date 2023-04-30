@@ -144,6 +144,8 @@ export default function Dashboard(props) {
 					</div>
 					<Segmented
 						block
+						value={value}
+						defaultValue={curProjectType.current}
 						options={['services', 'installation', 'upgrade', 'cheat-sheet']}
 						onChange={handleTabClick}
 						style={{ marginBottom: '7px' }}

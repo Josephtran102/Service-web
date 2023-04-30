@@ -97,31 +97,27 @@ const CheatSheet = props => {
 						code={`echo $(${bin} tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/${path}/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')`}
 					/>
 					<h2 id='key-management'>Key management 🔐</h2>
-					<div className='flex flex-wrap gap-x-12 gap-y-3 mb-3'>
-						<div className='flex flex-col gap-y-2'>
-							{CodeBlock('Add New Wallet', `${bin} keys add $WALLET`)}
-							{CodeBlock(
-								'Restore executing wallet',
-								`${bin} keys add $WALLET --recover`
-							)}
-							{CodeBlock('List All Wallets', `${bin} keys list`)}
-							{CodeBlock('Delete wallet', `${bin} keys delete $WALLET`)}
-						</div>
 
-						<div className='flex flex-col gap-y-2'>
-							{CodeBlock(
-								'Check Balance',
-								`${bin} q bank balances $(${bin} keys show $WALLET -a)`
-							)}
-							{CodeBlock(
-								'Export Key (save to wallet.backup)',
-								`${bin} keys export $WALLET`
-							)}
-							{CodeBlock(
-								'Import Key (restore from wallet.backup)',
-								`${bin} keys import $WALLET wallet.backup`
-							)}
-						</div>
+					<div className='flex flex-col gap-y-2'>
+						{CodeBlock('Add New Wallet', `${bin} keys add $WALLET`)}
+						{CodeBlock(
+							'Restore executing wallet',
+							`${bin} keys add $WALLET --recover`
+						)}
+						{CodeBlock('List All Wallets', `${bin} keys list`)}
+						{CodeBlock('Delete wallet', `${bin} keys delete $WALLET`)}
+						{CodeBlock(
+							'Check Balance',
+							`${bin} q bank balances $(${bin} keys show $WALLET -a)`
+						)}
+						{CodeBlock(
+							'Export Key (save to wallet.backup)',
+							`${bin} keys export $WALLET`
+						)}
+						{CodeBlock(
+							'Import Key (restore from wallet.backup)',
+							`${bin} keys import $WALLET wallet.backup`
+						)}
 					</div>
 
 					<h2 id='tokens'>Tokens 🪙</h2>
