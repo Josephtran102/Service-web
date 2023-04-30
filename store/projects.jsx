@@ -699,7 +699,7 @@ let projects = {
 			peerPort: '21656',
 			seedPort: '21656',
 			installBin:
-				'cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd.git\ncd noisd\ngit checkout v0.6.0\nmake install',
+		                'cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd.git\ncd noisd\ngit checkout v0.6.0\nmake install',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
