@@ -3,9 +3,9 @@ export const changeStyles = theme => {
 	const antTypography = document.getElementsByClassName('ant-typography')
 	const antMenuLight = document.getElementsByClassName('ant-menu-light')
 	const segmented = document.getElementsByClassName('ant-segmented')
+	const submenu = document.getElementsByClassName('ant-menu-submenu-title')
 	const input = document.getElementsByClassName('ant-input')
 	const radio = document.getElementsByClassName('ant-radio-button-wrapper')
-	const active = document.querySelector(`div[aria-expanded='true']`)
 	const isLight = theme === 'light'
 
 	body.style.backgroundColor = isLight ? '#fbfbfb' : '#171717'
@@ -18,6 +18,11 @@ export const changeStyles = theme => {
 		}
 	}
 
+	for (const el of submenu) {
+		if (el) {
+			el.style.backgroundColor = isLight ? '#F0F0F0' : '#222222'
+		}
+	}
 	for (const el of segmented) {
 		if (el) {
 			el.style.backgroundColor = isLight ? '#e0e0e0' : '#6b6969'
@@ -32,10 +37,6 @@ export const changeStyles = theme => {
 		if (el) {
 			el.style.backgroundColor = isLight ? '#fff' : '#d5d5d5'
 		}
-	}
-
-	if (active) {
-		active.style.backgroundColor = isLight ? '#dbeafe' : '#030329'
 	}
 
 	for (const el of antTypography) {
