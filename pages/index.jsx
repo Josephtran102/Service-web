@@ -9,8 +9,11 @@ import Finished from '@components/Finished.jsx'
 import Link from 'next/link'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
+import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
+import { Context } from '@context/context'
 
 const Home = () => {
+	const { theme, toggleTheme } = useContext(Context)
 	const [opacity, setOpacity] = useState(false)
 
 	const opacityBlock = {
@@ -52,6 +55,7 @@ const Home = () => {
 
 			<main>
 				<section className={styles.hero}>
+					<ParticlesBG />
 					<div className={styles.container} style={{ paddingRight: '0px' }}>
 						<motion.div
 							initial='hidden'
@@ -64,67 +68,28 @@ const Home = () => {
 								id={styles.hero__descStaking}
 							>
 								<div className={styles.hero__columnRoot}>
-									<h3 className={styles.hero__heading}>Staking provider</h3>
-									<div className={styles.hero__dividerWrapper}>
-										<svg
-											width='50'
-											height='20'
-											fill='none'
-											xmlns='http://www.w3.org/2000/svg'
-										>
-											<path
-												d='M2 8.5 6.2 4l7.8 6 6.6-5.55L27.5 10l4.65-5.1L39.2 10'
-												stroke='#5AD3AF'
-												strokeWidth='3'
-											/>
-										</svg>
-									</div>
+									<h3 className={styles.hero__heading}>
+										Trusted Validator &amp; Interchain Utility Provider
+									</h3>
 
 									<span className={styles.hero__desc}>
-										Hi, we are ITRocket team! Hope you are having a great day
-										and welcome aboard! With few simple steps you can{' '}
-										<Link href='/#mainnet' className={styles.link}>
-											delegate funds
-										</Link>{' '}
-										to our trusted validators. With your support we can develop
-										Web3 and create the great feature of decentralized services
-										together!
+										With few simple steps you can delegate funds to our trusted
+										validators or explore services page where you can find
+										guides that will be useful for node operators.
 									</span>
 								</div>
-							</div>
-							<div
-								className={styles.hero__column}
-								id={styles.hero__descServices}
-							>
-								<div className={styles.hero__columnRoot}>
-									<h3 className={styles.hero__heading}>Project support</h3>
-
-									<div className={styles.hero__dividerWrapper}>
-										<svg
-											width='50'
-											height='20'
-											fill='none'
-											xmlns='http://www.w3.org/2000/svg'
-										>
-											<path
-												d='M2 8.5 6.2 4l7.8 6 6.6-5.55L27.5 10l4.65-5.1L39.2 10'
-												stroke='#A655E8'
-												strokeWidth='3'
-											/>
-										</svg>
-									</div>
-
-									<span className={styles.hero__desc}>
-										On{' '}
-										<Link href='/services' className={styles.link}>
-											services page
-										</Link>{' '}
-										you can find guides that will be useful for node operators:
-										installation guides and useful commands. These tools include
-										an API, RPC, gRPC, addrbook (updated on an hourly basis),
-										Snapshot (updated every 4 hours), State Sync Services and
-										IBC Relayers.
-									</span>
+								<div className={styles.hero__links}>
+									<Link href='#mainnet' className={styles.button}>
+										Delegate
+									</Link>
+									<Link
+										href='/services'
+										className={
+											theme === 'light' ? styles.button : styles.button__dark
+										}
+									>
+										Services
+									</Link>
 								</div>
 							</div>
 						</motion.div>

@@ -5,7 +5,7 @@ export const changeStyles = theme => {
 	const active = document.querySelector(`div[aria-expanded='true']`)
 	const isLight = theme === 'light'
 
-	body.style.backgroundColor = isLight ? '#fefefe' : '#171717'
+	body.style.backgroundColor = isLight ? '#fbfbfb' : '#171717'
 	body.style.color = isLight ? '#000' : '#fff'
 
 	for (const el of antMenuLight) {

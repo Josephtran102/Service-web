@@ -1,47 +1,4 @@
-@mixin button {
-	background-color: #fff;
-	border: 1px solid #d0d7de;
-	border-radius: 6px;
-	cursor: pointer;
-	direction: ltr;
-	display: block;
-	font-weight: 400;
-	font-size: 15px;
-	letter-spacing: -0.025em;
-	line-height: 1.4;
-	min-width: 30px;
-	overflow: visible;
-	padding: 4px 15px;
-	text-align: center;
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	white-space: nowrap;
-	z-index: 100 !important;
-
-	&:disabled {
-		cursor: default;
-		opacity: 0.3;
-	}
-
-	&:hover {
-		border-color: #65298d;
-		text-decoration: none;
-	}
-
-	&:focus {
-		box-shadow: #622c8615 0 0 0 2px;
-		outline: none;
-	}
-
-	@media (max-width: 1024px) {
-		font-size: 14px;
-	}
-	@media (max-width: 768px) {
-		font-size: 12px;
-		padding: 3px 7px;
-	}
-}
+@import '../styles/Mixins.scss';
 
 .card {
 	position: relative;
