@@ -857,7 +857,7 @@ wget -O $HOME/.humansd/config/genesis.json https://raw.githubusercontent.com/hum
 			minGasPrice: '0.0',
 		},
 		terp: {
-			chainID: 'athena-4',
+			chainID: '90u-1',
 			link: 'https://testnet.itrocket.net/terp/staking',
 			imgUrl: 'terp.svg',
 			desc: 'Decentralized Infrastructure for the Cannabis Community',
@@ -879,7 +879,7 @@ wget -O $HOME/.humansd/config/genesis.json https://raw.githubusercontent.com/hum
 			peerPort: '13656',
 			seedPort: '13656',
 			installBin:
-				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v0.4.0\nmake install',
+				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v1.0.1\nmake install',
 			updHeight: '0',
 			newInstallBin: `sudo systemctl stop terpd.service
 cd $HOME
