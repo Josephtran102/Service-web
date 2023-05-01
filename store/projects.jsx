@@ -600,9 +600,9 @@ wget -O $HOME/.humansd/config/genesis.json https://raw.githubusercontent.com/hum
 			seedPort: '20656',
 			installBin:
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
-			updHeight: '163960',
+			updHeight: '184620',
 			newInstallBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
