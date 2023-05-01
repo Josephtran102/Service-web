@@ -141,7 +141,7 @@ a {
 }
 
 .ant-menu-title-content {
-	transition: opacity 0s !important;
+	transition: 0s !important;
 	z-index: 10 !important;
 
 	a {
@@ -360,7 +360,7 @@ span.ant-typography,
 a.ant-typography {
 	font-weight: normal;
 	font-size: 17px;
-	margin-bottom: 0;
+	margin-bottom: 5px;
 
 	@media (max-width: 768px) {
 		font-size: 14px;

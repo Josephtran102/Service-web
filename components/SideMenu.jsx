@@ -102,8 +102,8 @@ const SideMenu = () => {
 						<Image
 							src={require(`../public/${type}/${imgURL}`)}
 							alt='project logo'
-							width='25'
-							height='25'
+							width='30'
+							height='30'
 							unoptimized
 							style={{
 								borderRadius: '50%',
