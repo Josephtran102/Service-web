@@ -181,8 +181,11 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 
 								<CodeSnippet
 									theme={theme}
-									code={`# Create update file and run script on tmux session, replace sudo password if needed
+									code={`# Build software
 cd $HOME
+${installBin}
+
+# Set variables
 tee ~/${name}-upgrade.sh > /dev/null <<EOF
 #!/bin/bash
 for ((;;)); do
