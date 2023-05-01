@@ -101,7 +101,7 @@ const Installation = props => {
 							i--
 						}
 						port = port.split('').reverse().join('')
-						livePeers.push(`${chainID}@${ip}:${port}`)
+						livePeers.push(`${id}@${ip}:${port}`)
 					}
 				})
 				livePeers.unshift('')

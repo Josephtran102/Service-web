@@ -73,7 +73,7 @@ const ProjectData = ({ name, type }) => {
 							i--
 						}
 						port = port.split('').reverse().join('')
-						livePeersArr.push(`${chainID}@${ip}:${port}`)
+						livePeersArr.push(`${id}@${ip}:${port}`)
 					}
 				})
 				livePeersArr.unshift('')
