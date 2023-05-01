@@ -527,8 +527,11 @@ let projects = {
 			seedPort: '17656',
 			installBin:
 				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.1.0\nmake install',
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '0',
+			newInstallBin: 
+			           `sudo systemctl stop humansd
+humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
+wget -O $HOME/.humansd/config/genesis.json https://raw.githubusercontent.com/humansdotai/testnets/master/friction/genesis-M1-P2.json`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -854,7 +857,7 @@ let projects = {
 			minGasPrice: '0.0',
 		},
 		terp: {
-			chainID: 'athena-4',
+			chainID: '90u-1',
 			link: 'https://testnet.itrocket.net/terp/staking',
 			imgUrl: 'terp.svg',
 			desc: 'Decentralized Infrastructure for the Cannabis Community',
@@ -876,7 +879,7 @@ let projects = {
 			peerPort: '13656',
 			seedPort: '13656',
 			installBin:
-				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v0.4.0\nmake install',
+				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v1.0.1\nmake install',
 			updHeight: '0',
 			newInstallBin: `sudo systemctl stop terpd.service
 cd $HOME
@@ -887,6 +890,9 @@ git checkout v1.0.1
 make install
 curl -s  https://raw.githubusercontent.com/terpnetwork/test-net/master/90u-1/genesis.json > $HOME/.terp/config/genesis.json
 terpd tendermint unsafe-reset-all --home $HOME/.terp --keep-addr-book
+echo "export TERP_CHAIN_ID="90u-1"" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+terpd config chain-id $TERP_CHAIN_ID
 sed -i 's/minimum-gas-prices = "[^"]*"/minimum-gas-prices = "0.0002uthiol"/' $HOME/.terp/config/app.toml`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
