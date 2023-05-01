@@ -890,6 +890,9 @@ git checkout v1.0.1
 make install
 curl -s  https://raw.githubusercontent.com/terpnetwork/test-net/master/90u-1/genesis.json > $HOME/.terp/config/genesis.json
 terpd tendermint unsafe-reset-all --home $HOME/.terp --keep-addr-book
+echo "export TERP_CHAIN_ID="90u-1"" >> $HOME/.bash_profile
+source $HOME/.bash_profile
+terpd config chain-id $TERP_CHAIN_ID
 sed -i 's/minimum-gas-prices = "[^"]*"/minimum-gas-prices = "0.0002uthiol"/' $HOME/.terp/config/app.toml`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
