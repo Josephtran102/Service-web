@@ -531,7 +531,8 @@ let projects = {
 			newInstallBin: 
 			           `sudo systemctl stop humansd
 humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
-wget -O $HOME/.humansd/config/genesis.json https://raw.githubusercontent.com/humansdotai/testnets/master/friction/genesis-M1-P2.json`,
+wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/genesis-M1-P3.json"
+sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
