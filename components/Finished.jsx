@@ -1,4 +1,4 @@
-import styles from '@styles/CardMain.module.scss'
+import styles from '@styles/Card.module.scss'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import projects from '@store/projects'
@@ -50,7 +50,8 @@ const Finished = () => {
 						<Image
 							src={require('@public/finished/'.concat(item.imgUrl))}
 							alt='project logo'
-							layout='responsive'
+							width={50}
+							height={50}
 							unoptimized={true}
 						/>
 					</div>

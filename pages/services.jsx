@@ -76,7 +76,9 @@ const services = () => {
 						})}
 					</div>
 					<br />
-					<h2 style={{ marginTop: '0', paddingTop: '5px' }}>Testnets</h2>
+					<h2 style={{ marginTop: '0', paddingTop: '5px' }} id='testnets'>
+						Testnets
+					</h2>
 					<div className={styles.testnetColumn}>
 						{Object.keys(testnetData).map(item => {
 							const name =

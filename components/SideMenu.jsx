@@ -115,19 +115,30 @@ const SideMenu = () => {
 							{name.charAt(0).toUpperCase() + name.slice(1)}
 						</span>
 					</div>
-					{projects['mainnet'][name] !== undefined &&
-						projects['testnet'][name] !== undefined && (
-							<Segmented
-								block
-								defaultValue={defValue.current}
-								value={value}
-								options={['mainnet', 'testnet']}
-								onChange={handleTabClick}
-								style={{
-									backgroundColor: theme === 'dark' ? '#6b6969' : '#efefef',
-								}}
-							/>
-						)}
+
+					<Segmented
+						block
+						defaultValue={defValue.current}
+						value={value}
+						options={[
+							{
+								label: 'mainnet',
+								value: 'mainnet',
+								disabled:
+									projects['mainnet'][name] === undefined ? true : false,
+							},
+							{
+								label: 'testnet',
+								value: 'testnet',
+								disabled:
+									projects['testnet'][name] === undefined ? true : false,
+							},
+						]}
+						onChange={handleTabClick}
+						style={{
+							backgroundColor: theme === 'dark' ? '#6b6969' : '#efefef',
+						}}
+					/>
 				</div>,
 				'grpthis',
 				null,

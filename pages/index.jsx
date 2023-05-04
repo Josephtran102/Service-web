@@ -55,9 +55,14 @@ const Home = () => {
 			<Header />
 
 			<main>
-				<section className={styles.hero}>
+				<section
+					className={styles.hero}
+					style={{
+						backgroundColor: theme === 'light' ? '#fff' : '#111',
+					}}
+				>
 					<ParticlesBG />
-					<div className={styles.container} style={{ paddingRight: '0px' }}>
+					<div className={styles.container}>
 						<motion.div
 							initial='hidden'
 							animate='visible'
@@ -75,7 +80,7 @@ const Home = () => {
 
 									<span className={styles.hero__desc}>
 										With few simple steps you can delegate funds to our trusted
-										validators or explore our services where you can find guides
+										validators or explore our services where you can find tools
 										that will be useful for node operators and developers.
 									</span>
 								</div>
@@ -101,46 +106,34 @@ const Home = () => {
 					</div>
 				</section>
 
-				<section id={styles.mainnetSection}>
-					<div className={styles.container}>
-						<div className={styles.card__wrapper}>
-							<h3 className={styles.title} id='mainnet'>
-								Mainnets
-							</h3>
-							<p className={styles.description}>
-								<span>Low commission and </span>
-								<span>24/7 node monitoring.</span>
-								<br />
-								<span>Delegate your tokens to our trusted validator!</span>
-							</p>
-							<CardMain />
-						</div>
-					</div>
-				</section>
-
-				<section id='testnet'>
-					<div className={styles.container}>
-						<div className={styles.card__wrapper}>
-							<h3 className={styles.title}>Active Testnets</h3>
-							<p className={styles.description}>
-								<span>Here are some basic tools for node operators 🛠️</span>
-							</p>
-							<CardTest />
-						</div>
-					</div>
-				</section>
-
 				<section>
 					<div className={styles.container}>
-						<div className={styles.card__wrapper}>
-							<h3 className={styles.title} id='testnet'>
-								Finished Testnets
-							</h3>
+						<div className={styles.card__desc}>
+							<h3 className={styles.title}>Mainnets.</h3>
 							<p className={styles.description}>
-								<span>
-									These are the projects that we proudly took part in.
-								</span>
+								<span>Low commission and 24/7 node monitoring!</span>
 							</p>
+						</div>
+						<CardMain />
+
+						<div className={styles.card__desc}>
+							<h3 className={styles.title}>Testnets.</h3>
+							<p className={styles.description}>
+								<span>Here are some tools for node operators 🛠️</span>
+							</p>
+						</div>
+						<CardTest />
+					</div>
+
+					<div className={styles.container} id='testnet'>
+						<div className={styles.card__wrapper}>
+							<div className={styles.card__desc}>
+								<h3 className={styles.title}>Finished.</h3>
+								<p className={styles.description}>
+									<span>These are the projects we proudly took part in.</span>
+								</p>
+							</div>
+
 							<Finished />
 						</div>
 					</div>

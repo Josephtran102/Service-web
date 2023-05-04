@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '@styles/CardTest.module.scss'
+import styles from '@styles/Card.module.scss'
 import projects from '@store/projects'
 import Link from 'next/link'
 import { Context } from '@context/context'
@@ -32,40 +32,43 @@ const Card = () => {
 					}}
 					onMouseMove={e => handleOnMouseMove(e)}
 				>
-					<h5 className={styles.card__heading}>
-						{data[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
-					</h5>
-					<div className={styles.card__img}>
-						<Image
-							src={require('../public/testnet/'.concat(data[item].imgUrl))}
-							alt='item'
-							layout='responsive'
-						/>
+					<div className={styles.card__desc}>
+						<div className={styles.card__img}>
+							<Image
+								src={require('../public/testnet/'.concat(data[item].imgUrl))}
+								alt='item'
+								width={50}
+								height={50}
+							/>
+						</div>
+						<h5 className={styles.card__heading}>
+							{data[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
+						</h5>
 					</div>
 
-					<div className={styles.button__container}>
+					<div className={styles.button__wrapper}>
+						<Link
+							href={'/services/testnet/' + item.toLowerCase()}
+							className={
+								theme === 'light'
+									? styles.buttonExplorer
+									: styles.buttonExplorer_dark
+							}
+						>
+							Services
+						</Link>
 						<a
 							href={data[item].link}
 							target='_blank'
 							rel='noopener noreferrer'
 							className={
 								theme === 'light'
-									? styles.buttonExplore
-									: styles.buttonExplore_dark
+									? styles.buttonExplorer
+									: styles.buttonExplorer_dark
 							}
 						>
 							Explorer
 						</a>
-						<Link
-							href={'/services/testnet/' + item.toLowerCase()}
-							className={
-								theme === 'light'
-									? styles.buttonSupport
-									: styles.buttonSupport_dark
-							}
-						>
-							Services
-						</Link>
 					</div>
 				</div>
 			))}

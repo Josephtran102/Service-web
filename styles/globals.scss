@@ -54,10 +54,16 @@ section {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	padding-bottom: 120px;
+	padding-top: 50px;
+	padding-bottom: 100px;
 
 	@media (max-width: 768px) {
 		padding-bottom: 40px;
+		padding-top: 20px;
+	}
+
+	&:first-of-type {
+		padding-top: 0;
 	}
 }
 
@@ -76,10 +82,17 @@ a {
 	color: #8a8989;
 }
 
+#testnet {
+	margin-top: 40px;
+
+	@media (max-width: 768px) {
+		margin-top: 20px;
+	}
+}
+
 #guide,
 #installation,
 #auto,
-#mainnets,
 #service-operations {
 	border-color: #4ca0ee;
 
@@ -90,13 +103,15 @@ a {
 
 #rpc,
 #create-wallet,
-#validator-operations {
+#validator-operations,
+#testnets {
 	border-color: #40e746;
 }
 
 #snap,
 #create-validator,
-#governance {
+#governance,
+#mainnets {
 	border-color: #a03ee0;
 }
 
@@ -364,7 +379,6 @@ a.ant-typography {
 
 	@media (max-width: 768px) {
 		font-size: 14px;
-		margin-bottom: 5px;
 	}
 }
 

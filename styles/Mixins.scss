@@ -63,6 +63,9 @@
 		outline: none;
 	}
 
+	@media (max-width: 1600px) {
+		padding: 4px 15px;
+	}
 	@media (max-width: 1024px) {
 		font-size: 14px;
 	}

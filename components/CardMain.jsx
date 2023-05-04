@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '@styles/CardMain.module.scss'
+import styles from '@styles/Card.module.scss'
 import { Context } from '@context/context'
 import projects from '@store/projects'
 import { motion } from 'framer-motion'
@@ -56,21 +56,23 @@ const Card = () => {
 					style={{ backgroundColor: theme === 'dark' ? '#222' : '#fff' }}
 					onMouseMove={e => handleOnMouseMove(e)}
 				>
-					<h5 className={styles.card__heading}>
-						{projects.mainnet[item].name ||
-							item.charAt(0).toUpperCase() + item.slice(1)}
-					</h5>
-					<div className={styles.card__img}>
-						<Image
-							src={require('../public/mainnet/'.concat(
-								projects.mainnet[item].imgUrl
-							))}
-							alt='item'
-							layout='responsive'
-							width='100'
-							height='100'
-						/>
+					<div className={styles.card__desc}>
+						<div className={styles.card__img}>
+							<Image
+								src={require('../public/mainnet/'.concat(
+									projects.mainnet[item].imgUrl
+								))}
+								alt='item'
+								width={50}
+								height={50}
+							/>
+						</div>
+						<h5 className={styles.card__heading}>
+							{projects.mainnet[item].name ||
+								item.charAt(0).toUpperCase() + item.slice(1)}
+						</h5>
 					</div>
+
 					<div className={styles.button__wrapper}>
 						<a
 							href={projects.mainnet[item].delegate}

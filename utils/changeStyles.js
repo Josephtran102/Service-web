@@ -8,7 +8,7 @@ export const changeStyles = theme => {
 	const radio = document.getElementsByClassName('ant-radio-button-wrapper')
 	const isLight = theme === 'light'
 
-	body.style.backgroundColor = isLight ? '#fbfbfb' : '#171717'
+	body.style.backgroundColor = isLight ? '#fafafa' : '#171717'
 	body.style.color = isLight ? '#000' : '#fff'
 	body.style.colorScheme = isLight ? 'light' : 'dark'
 
