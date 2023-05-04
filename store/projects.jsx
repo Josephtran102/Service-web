@@ -600,7 +600,7 @@ sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
 			peerPort: '20656',
 			seedPort: '20656',
 			installBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
 			updHeight: '184620',
 			newInstallBin:
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
