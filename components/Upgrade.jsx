@@ -181,29 +181,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 
 								<CodeSnippet
 									theme={theme}
-									code={`# Create update file and run script on tmux session, replace sudo password if needed
-cd $HOME
-tee ~/${name}-upgrade.sh > /dev/null <<EOF
-#!/bin/bash
-for ((;;)); do
-  height=$(curl http://localhost:${port}657/status | jq -r .result.sync_info.latest_block_height)
-  if ((height==${updHeight})); then
-    systemctl stop ${bin}
-    echo Upgrading node...
-    ${installBin}
-    systemctl restart ${bin}
-    echo ${name} bin updated, restarting...
-    break
-  else
-    echo Height: ${blockHeight}
-  fi
-  sleep 3
-done
-sleep 600
-tmux kill-session
-EOF
-chmod u+x ${name}-upgrade.sh
-tmux new -s ${name}-upgrade "sudo /bin/bash ${name}-upgrade.sh"
+									code={`# coming soon
 `}
 								/>
 							</>

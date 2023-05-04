@@ -531,7 +531,8 @@ let projects = {
 			newInstallBin: 
 			           `sudo systemctl stop humansd
 humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
-wget -O $HOME/.humansd/config/genesis.json https://raw.githubusercontent.com/humansdotai/testnets/master/friction/genesis-M1-P2.json`,
+wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/genesis-M1-P3.json"
+sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -599,10 +600,10 @@ wget -O $HOME/.humansd/config/genesis.json https://raw.githubusercontent.com/hum
 			peerPort: '20656',
 			seedPort: '20656',
 			installBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
-			updHeight: '163960',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
+			updHeight: '184620',
 			newInstallBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.9.8\nmake install',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',

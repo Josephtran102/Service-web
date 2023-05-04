@@ -185,20 +185,7 @@ const Installation = props => {
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl git wget htop tmux build-essential jq 
 make lz4 gcc unzip -y
-
-# install go, if needed
-cd ~
-! [ -x "$(command -v go)" ] && {
-VER="${goVersion}"
-wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
-rm "go$VER.linux-amd64.tar.gz"
-[ ! -f ~/.bash_profile ] && touch ~/.bash_profile
-echo "export PATH=$PATH:/usr/local/go/bin:/go/bin" >> ~/.bash_profile
-. ~/.bash_profile
-}
-[ ! -d ~/go/bin ] && mkdir -p ~/go/bin`}
+`}
 					/>
 					<Space size='middle' style={{ margin: '12px 0', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
@@ -233,7 +220,21 @@ echo "export PATH=$PATH:/usr/local/go/bin:/go/bin" >> ~/.bash_profile
 					</Space>
 					<CodeSnippet
 						theme={theme}
-						code={`# set vars
+						code={`# install go, if needed
+cd ~
+! [ -x "$(command -v go)" ] && {
+VER="${goVersion}"
+wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
+rm "go$VER.linux-amd64.tar.gz"
+[ ! -f ~/.bash_profile ] && touch ~/.bash_profile
+echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
+source ~/.bash_profile
+}
+[ ! -d ~/go/bin ] && mkdir -p ~/go/bin
+
+# set vars
 echo "export WALLET="${wallet}"" >> $HOME/.bash_profile
 echo "export MONIKER="${moniker}"" >> $HOME/.bash_profile
 echo "export ${VAR}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
