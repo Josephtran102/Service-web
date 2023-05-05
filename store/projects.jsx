@@ -367,10 +367,10 @@ let projects = {
 			peerPort: '11656',
 			seedPort: '11656',
 			installBin:
-				'cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v0.12.2 \ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git',
+				'cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v0.13.2 \ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git',
 			updHeight: '',
 			newInstallBin: '',
-			goVersion: '1.20',
+			goVersion: '1.20.1',
 			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
