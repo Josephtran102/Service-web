@@ -4,6 +4,7 @@ import projects from '@store/projects'
 import Link from 'next/link'
 import { Context } from '@context/context'
 import { useContext } from 'react'
+import { StarFilled } from '@ant-design/icons'
 
 const Card = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -70,6 +71,11 @@ const Card = () => {
 							Explorer
 						</a>
 					</div>
+					{projects.testnet[item].fav === true ? (
+						<div className={styles.card__star}>
+							<StarFilled />
+						</div>
+					) : null}
 				</div>
 			))}
 		</div>

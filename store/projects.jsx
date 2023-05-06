@@ -190,6 +190,7 @@ let projects = {
 			link: 'https://mainnet.itrocket.net/uptick/staking',
 			delegate:
 				'https://mainnet.itrocket.net/uptick/staking/uptickvaloper1dx5sfmg4ascplvmkn39stq3rgk0c3vhpv6ysd0',
+			fav: true,
 			imgUrl: 'uptick.jpg',
 			desc: 'The Business Grade Multi-Chain NFT Infrastructure for Web 3.0',
 			website: 'https://uptick.network/',
@@ -286,6 +287,7 @@ let projects = {
 			chainID: 'Testnet3',
 			link: 'https://testnet.itrocket.net/cardchain/staking',
 			imgUrl: 'cardchain.svg',
+			cardchain: true,
 			desc: 'On Crowd Control you can create and design your own trading cards. Your Cards become a part of the game for everyone.',
 			website: 'https://crowdcontrol.network/',
 			offValDoc: 'https://github.com/DecentralCardGame/Testnet',
@@ -348,6 +350,7 @@ let projects = {
 			chainID: 'blockspacerace-0',
 			link: 'https://testnet.itrocket.net/celestia/staking',
 			imgUrl: 'celestia.png',
+			fav: true,
 			desc: 'Celestia is the first modular blockchain network. It is a modular consensus and data network, built to enable anyone to easily deploy their own blockchain with minimal overhead.',
 			website: 'https://celestia.org/',
 			offValDoc: 'https://docs.celestia.org/nodes/overview/',
@@ -412,6 +415,7 @@ let projects = {
 			link: 'https://testnet.itrocket.net/dymension/staking',
 			imgUrl: 'dymension.png',
 			desc: 'Dymension is a home for easily deployable and lightning fast app-chains, called RollApps.',
+			fav: true,
 			website: 'https://dymension.xyz/',
 			offValDoc: 'https://docs.dymension.xyz/validate/dymension-hub/overview/',
 			hardware: '4 Cores, 16GB RAM, 500GB of storage (NVME)',
@@ -475,6 +479,7 @@ let projects = {
 			name: 'HAQQ',
 			link: 'https://testnet.itrocket.net/haqq/staking',
 			imgUrl: 'haqq.png',
+			fav: true,
 			desc: 'The currency of the Haqq ecosystem. Serves The Muslim Community. Promotes Islamic values.',
 			website: 'https://islamiccoin.net/',
 			offValDoc: 'https://github.com/haqq-network/validators-contest',
@@ -506,6 +511,7 @@ let projects = {
 			chainID: 'humans_3000-1',
 			link: 'https://testnet.itrocket.net/humans/staking',
 			imgUrl: 'humans.jpg',
+			fav: true,
 			desc: 'We are creating a scalable blockchain providing the economy of the heart driven AI, placing the humans at the facefront of the AI evolution.',
 			website: 'https://humans.ai/',
 			offValDoc:
@@ -528,8 +534,7 @@ let projects = {
 			installBin:
 				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.1.0\nmake install',
 			updHeight: '0',
-			newInstallBin: 
-			           `sudo systemctl stop humansd
+			newInstallBin: `sudo systemctl stop humansd
 humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
 wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/genesis-M1-P3.json"
 sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
@@ -581,6 +586,7 @@ sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
 			chainID: 'lava-testnet-1',
 			link: 'https://testnet.itrocket.net/lava/staking',
 			imgUrl: 'lava.svg',
+			fav: true,
 			desc: 'Lava pairs Providers with Applications for scalable, private and uncensored access to Web3.',
 			website: 'https://lavanet.xyz/',
 			offValDoc: 'https://docs.lavanet.xyz/testnet',
@@ -724,6 +730,7 @@ sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
 			chainID: 'qsr-questnet-04',
 			link: 'https://testnet.itrocket.net/quasar/staking',
 			imgUrl: 'quasar.webp',
+			fav: true,
 			desc: 'Expand your horizon beyond bridges and simplify the process of building complex DeFi strategies.',
 			website: 'https://www.quasar.fi/',
 			offValDoc:
@@ -821,6 +828,7 @@ sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
 			chainID: 'atlantic-1',
 			link: 'https://testnet.itrocket.net/sei/staking',
 			imgUrl: 'sei.svg',
+			fav: true,
 			desc: 'Sei is the first sector-specific Layer 1 blockchain, specialized for trading to give exchanges an unfair advantage.',
 			website: 'https://www.seinetwork.io/',
 			offValDoc:
@@ -904,6 +912,7 @@ sed -i 's/minimum-gas-prices = "[^"]*"/minimum-gas-prices = "0.0002uthiol"/' $HO
 			chainID: 'uptick_7000-2',
 			link: 'https://testnet.itrocket.net/uptick/staking',
 			imgUrl: 'uptick.jpg',
+			fav: true,
 			desc: 'The Business Grade Multi-Chain NFT Infrastructure for Web 3.0',
 			website: 'https://uptick.network/',
 			offValDoc: 'https://docs.uptick.network/testnet/',

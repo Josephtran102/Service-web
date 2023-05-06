@@ -4,6 +4,7 @@ import { Context } from '@context/context'
 import projects from '@store/projects'
 import { motion } from 'framer-motion'
 import { useContext } from 'react'
+import { StarFilled } from '@ant-design/icons'
 
 const Card = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -72,7 +73,6 @@ const Card = () => {
 								item.charAt(0).toUpperCase() + item.slice(1)}
 						</h5>
 					</div>
-
 					<div className={styles.button__wrapper}>
 						<a
 							href={projects.mainnet[item].delegate}
@@ -87,7 +87,6 @@ const Card = () => {
 						>
 							Delegate
 						</a>
-
 						<a
 							href={projects.mainnet[item].link}
 							target='_blank'
@@ -102,6 +101,11 @@ const Card = () => {
 							Explorer
 						</a>
 					</div>
+					{projects.mainnet[item].fav === true ? (
+						<div className={styles.card__star}>
+							<StarFilled />
+						</div>
+					) : null}
 				</motion.div>
 			))}
 		</motion.div>

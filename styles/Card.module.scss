@@ -59,7 +59,7 @@
 	}
 
 	&:hover {
-		border: 1px solid #cfcfcfda;
+		border: 1px solid #bebebee1;
 		box-shadow: 2px 1px 30px 5px rgba(0, 0, 0, 0.04);
 	}
 
@@ -81,6 +81,20 @@
 
 		@media (max-width: 380px) {
 			gap: 5px;
+		}
+	}
+
+	&__star {
+		position: absolute;
+		top: 5px;
+		right: 12px;
+		color: #6b65ae4f;
+		transition: 0.3s;
+		z-index: 2;
+		cursor: pointer;
+
+		&:hover {
+			color: #6a5fdf;
 		}
 	}
 
