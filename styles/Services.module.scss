@@ -341,7 +341,6 @@ b.bold {
 }
 
 .testnetColumn {
-	max-height: 45vh;
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: 20px;
@@ -349,7 +348,6 @@ b.bold {
 	margin: 10px 0;
 
 	@media (max-width: 768px) {
-		max-height: 70vh;
 		row-gap: 8px;
 	}
 }
@@ -429,7 +427,6 @@ p.desc {
 		font-size: 15px;
 
 		@media (max-width: 768px) {
-			gap: 15px;
 			row-gap: 2px;
 			font-size: 14px;
 		}

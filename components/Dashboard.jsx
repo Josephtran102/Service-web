@@ -144,7 +144,6 @@ export default function Dashboard(props) {
 						</p>
 					</div>
 					<Segmented
-						block
 						value={value}
 						defaultValue={curProjectType.current}
 						options={['services', 'installation', 'upgrade', 'cheat-sheet']}
@@ -152,6 +151,7 @@ export default function Dashboard(props) {
 						style={{
 							marginBottom: '10px',
 							backgroundColor: theme === 'dark' ? '#6b6969' : '#e0e0e0',
+							width: 'fit-content',
 						}}
 						className={styles.mobileSegmented}
 					/>
