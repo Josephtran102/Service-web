@@ -432,6 +432,26 @@ a.ant-typography {
 	}
 }
 
+.link {
+	color: #6d68e4;
+	width: fit-content;
+	text-decoration: underline;
+	text-decoration-color: rgba(109, 104, 228, 0.45);
+	text-decoration-skip: ink;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.2em;
+	cursor: pointer;
+	transition: 0.4s;
+
+	&:hover {
+		text-decoration-color: rgba(109, 104, 228, 0.8);
+	}
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
+}
+
 .ant-anchor-link-title-active {
 	color: #1677ff !important;
 }

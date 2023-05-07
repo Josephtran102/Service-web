@@ -5,6 +5,7 @@ import projects from '@store/projects'
 import { motion } from 'framer-motion'
 import { useContext } from 'react'
 import { StarFilled } from '@ant-design/icons'
+import Link from 'next/link'
 
 const Card = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -73,20 +74,16 @@ const Card = () => {
 								item.charAt(0).toUpperCase() + item.slice(1)}
 						</h5>
 					</div>
+					<a
+						href={projects.mainnet[item].delegate}
+						target='_blank'
+						rel='noopener noreferrer'
+						className='link'
+						style={{ zIndex: 10 }}
+					>
+						Delegate to us
+					</a>
 					<div className={styles.button__wrapper}>
-						<a
-							href={projects.mainnet[item].delegate}
-							target='_blank'
-							rel='noopener noreferrer'
-							className={
-								theme === 'light'
-									? styles.buttonExplorer
-									: styles.buttonExplorer_dark
-							}
-							role='button'
-						>
-							Delegate
-						</a>
 						<a
 							href={projects.mainnet[item].link}
 							target='_blank'
@@ -100,7 +97,18 @@ const Card = () => {
 						>
 							Explorer
 						</a>
+						<Link
+							href={'/services/mainnet/' + item.toLowerCase()}
+							className={
+								theme === 'light'
+									? styles.buttonExplorer
+									: styles.buttonExplorer_dark
+							}
+						>
+							Services
+						</Link>
 					</div>
+
 					{projects.mainnet[item].fav === true ? (
 						<div className={styles.card__star}>
 							<StarFilled />
