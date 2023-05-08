@@ -542,8 +542,7 @@ cd humans
 git checkout tags/v0.2.1
 make install
 humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
-wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-2/genesis-m2-p2.json"
-sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
+wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-2/genesis-m2-p2.json"`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
