@@ -340,7 +340,8 @@ let projects = {
 			installBin:
 				'cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.1\nmake install',
 			updHeight: '0',
-			newInstallBin: 'sudo systemctl stop cascadiad
+			newInstallBin: 
+			        'sudo systemctl stop cascadiad
 cd ~/cascadia
 git fetch
 git checkout v0.1.2
