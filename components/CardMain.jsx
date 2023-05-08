@@ -84,6 +84,16 @@ const Card = () => {
 						Delegate to us
 					</a>
 					<div className={styles.button__wrapper}>
+						<Link
+							href={'/services/mainnet/' + item.toLowerCase()}
+							className={
+								theme === 'light'
+									? styles.buttonExplorer
+									: styles.buttonExplorer_dark
+							}
+						>
+							Services
+						</Link>
 						<a
 							href={projects.mainnet[item].link}
 							target='_blank'
@@ -97,16 +107,6 @@ const Card = () => {
 						>
 							Explorer
 						</a>
-						<Link
-							href={'/services/mainnet/' + item.toLowerCase()}
-							className={
-								theme === 'light'
-									? styles.buttonExplorer
-									: styles.buttonExplorer_dark
-							}
-						>
-							Services
-						</Link>
 					</div>
 
 					{projects.mainnet[item].fav === true ? (
