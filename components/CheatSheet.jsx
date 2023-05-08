@@ -297,6 +297,10 @@ ${gas} \\
 							'Active Validators List',
 							`${bin} q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl`
 						)}
+						{CodeBlock(
+							'Check Validator key',
+							`[[ $(${bin} q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(${bin} status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\nYou ok\n" || echo -e "\nYou lose\n"`
+						)}
 					</div>
 					<h2 id='governance'> Governance 🌐</h2>
 					<Space
