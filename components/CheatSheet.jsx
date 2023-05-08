@@ -299,7 +299,7 @@ ${gas} \\
 						)}
 						{CodeBlock(
 							'Check Validator key',
-							`[[ $(${bin} q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(${bin} status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "\nYou ok\n" || echo -e "\nYou lose\n"`
+							`[[ $(${bin} q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(${bin} status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "You ok" || echo -e "You lose"`
 						)}
 					</div>
 					<h2 id='governance'> Governance 🌐</h2>
