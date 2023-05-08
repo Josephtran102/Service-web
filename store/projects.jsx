@@ -535,8 +535,14 @@ let projects = {
 				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.1.2\nmake install',
 			updHeight: '0',
 			newInstallBin: `sudo systemctl stop humansd
+cd $HOME
+rm -rf ~/humans
+git clone https://github.com/humansdotai/humans
+cd humans
+git checkout tags/v0.2.1
+make install
 humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
-wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/genesis-M1-P3.json"
+wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-2/genesis-m2-p2.json"
 sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
