@@ -339,8 +339,14 @@ let projects = {
 			seedPort: '40656',
 			installBin:
 				'cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.1\nmake install',
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '0',
+			newInstallBin: `sudo systemctl stop cascadiad
+cd $HOME
+rm -rf cascadia
+git clone https://github.com/cascadiafoundation/cascadia
+cd cascadia
+git checkout v0.1.2
+make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5 --gas-prices=7aCC',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -532,12 +538,17 @@ let projects = {
 			peerPort: '17656',
 			seedPort: '17656',
 			installBin:
-				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.1.2\nmake install',
+				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.1\nmake install',
 			updHeight: '0',
 			newInstallBin: `sudo systemctl stop humansd
+cd $HOME
+rm -rf ~/humans
+git clone https://github.com/humansdotai/humans
+cd humans
+git checkout tags/v0.2.1
+make install
 humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
-wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/genesis-M1-P3.json"
-sudo systemctl restart humansd && sudo journalctl -u humansd -f -o cat`,
+wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-2/genesis.json"`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
