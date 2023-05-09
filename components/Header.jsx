@@ -46,7 +46,6 @@ const Header = () => {
 	}
 
 	useEffect(() => {
-		submitData()
 		setTimeout(() => {
 			setOpacity(1)
 		}, 1)
