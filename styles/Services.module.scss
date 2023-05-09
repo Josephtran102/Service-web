@@ -17,7 +17,7 @@
 .container {
 	display: flex;
 	position: relative;
-	padding: 0 20px;
+	padding: 0 25px;
 	margin-top: 60px;
 	margin-bottom: 20px;
 	width: 100%;
@@ -115,7 +115,7 @@ b.bold {
 
 	p {
 		width: 100%;
-		margin: 2px 0 3px;
+		margin: 1px 0 3px;
 
 		@media (max-width: 768px) {
 			width: 100%;
@@ -179,7 +179,7 @@ b.bold {
 	}
 
 	h3 {
-		padding: 70px 0 0;
+		padding: 68px 0 0;
 		margin-top: -60px;
 		font-size: 19px;
 		font-weight: 500;

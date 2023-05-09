@@ -419,14 +419,12 @@ const SideMenu = () => {
 			className={styles.sideColumn}
 			style={{
 				backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a',
-				boxShadow: 'rgba(140, 140, 140, 0.18) 0px 6px 26px 0px',
 			}}
 		>
 			<Menu
 				items={items}
 				style={{
 					width: '100%',
-					borderInlineEnd: '1px solid rgba(140, 140, 140, 0.2)',
 					backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a',
 				}}
 				mode='inline'
