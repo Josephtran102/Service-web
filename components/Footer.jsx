@@ -7,7 +7,7 @@ import { useContext } from 'react'
 
 const Footer = props => {
 	const { theme, toggleTheme } = useContext(Context)
-	//123
+	console.log('123')
 
 	return (
 		<footer
