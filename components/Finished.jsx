@@ -52,7 +52,6 @@ const Finished = () => {
 							alt='project logo'
 							width={50}
 							height={50}
-							unoptimized={true}
 						/>
 					</div>
 				</div>

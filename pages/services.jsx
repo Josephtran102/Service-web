@@ -68,7 +68,6 @@ const services = () => {
 										alt='project logo'
 										width='25'
 										height='25'
-										unoptimized={true}
 									/>
 									{name}
 								</Link>
@@ -95,7 +94,6 @@ const services = () => {
 										alt='project logo'
 										width='25'
 										height='25'
-										unoptimized={true}
 									/>
 									{name}
 								</Link>

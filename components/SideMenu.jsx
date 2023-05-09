@@ -67,7 +67,6 @@ const SideMenu = () => {
 					alt='project logo'
 					width='20'
 					height='20'
-					unoptimized
 				/>
 			)
 		})
@@ -104,7 +103,6 @@ const SideMenu = () => {
 							alt='project logo'
 							width='30'
 							height='30'
-							unoptimized
 							style={{
 								borderRadius: '50%',
 								backgroundColor: '#fff',
@@ -384,7 +382,6 @@ const SideMenu = () => {
 						src={require('../public/icons/website.png')}
 						alt='item'
 						style={{ borderRadius: '50%' }}
-						unoptimized
 						width='20'
 						height='20'
 					/>
