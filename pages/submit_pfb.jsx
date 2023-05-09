@@ -22,6 +22,7 @@ const SubmitPFB = () => {
 		api['info']({
 			message: 'Your request was submitted',
 			description: 'It may take a while. Please do not close the page.',
+			duration: 5.5,
 		})
 	}
 
@@ -80,11 +81,11 @@ const SubmitPFB = () => {
 			<ParticlesBG />
 
 			<Modal
-				closable={true}
 				title='Your request was successfully submitted! 🎉'
 				open={isModalOpen}
 				onOk={handleOk}
 				cancelButtonProps={{ style: { display: 'none' } }}
+				closable={false}
 			>
 				<CodeSnippet code={res} />
 			</Modal>
