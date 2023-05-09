@@ -538,7 +538,7 @@ make install`,
 			peerPort: '17656',
 			seedPort: '17656',
 			installBin:
-				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.1.2\nmake install',
+				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.1\nmake install',
 			updHeight: '0',
 			newInstallBin: `sudo systemctl stop humansd
 cd $HOME
@@ -548,7 +548,7 @@ cd humans
 git checkout tags/v0.2.1
 make install
 humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
-wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-2/genesis-m2-p2.json"`,
+wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-2/genesis.json"`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
