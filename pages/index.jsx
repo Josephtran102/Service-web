@@ -28,7 +28,8 @@ const Home = () => {
 	}
 
 	useEffect(() => {
-		updateAPR()
+		console.log('123')
+		// updateAPR()
 		const onPageLoad = () => {
 			setOpacity(0)
 		}
