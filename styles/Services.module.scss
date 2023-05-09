@@ -155,10 +155,10 @@ b.bold {
 		width: fit-content;
 
 		@media (max-width: 1600px) {
-			font-size: 31px;
+			font-size: 30px;
 		}
 		@media (max-width: 1024px) {
-			font-size: 30px;
+			font-size: 28px;
 		}
 
 		@media (max-width: 768px) {
@@ -181,11 +181,11 @@ b.bold {
 	h3 {
 		padding: 70px 0 0;
 		margin-top: -60px;
-		font-size: 20px;
+		font-size: 19px;
 		font-weight: 500;
 
 		@media (max-width: 1600px) {
-			font-size: 18px;
+			font-size: 17px;
 		}
 		@media (max-width: 768px) {
 			font-size: 16px;

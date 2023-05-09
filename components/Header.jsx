@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { submitData } from '@utils/pfb'
 
 const menuVariants = {
 	hidden: {
@@ -45,6 +46,7 @@ const Header = () => {
 	}
 
 	useEffect(() => {
+		submitData()
 		setTimeout(() => {
 			setOpacity(1)
 		}, 1)

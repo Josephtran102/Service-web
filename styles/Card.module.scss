@@ -105,7 +105,7 @@
 	&__desc {
 		display: flex;
 		align-items: center;
-		gap: 20px;
+		gap: 25px;
 		word-break: break-all;
 
 		@media (max-width: 768px) {
@@ -118,6 +118,10 @@
 		aspect-ratio: 1;
 		background-color: #fff;
 		border-radius: 50%;
+
+		@media (max-width: 1600px) {
+			width: 40px !important;
+		}
 
 		@media (max-width: 768px) {
 			width: 30px !important;

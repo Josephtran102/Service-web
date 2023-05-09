@@ -12,6 +12,7 @@ import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
 import { smoothScroll } from '@utils/smoothScroll'
+import { updateAPR } from '@utils/updateAPR'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -27,6 +28,7 @@ const Home = () => {
 	}
 
 	useEffect(() => {
+		updateAPR()
 		const onPageLoad = () => {
 			setOpacity(0)
 		}
@@ -106,7 +108,7 @@ const Home = () => {
 					</div>
 				</section>
 
-				<section>
+				<section id='mainnet'>
 					<div className={styles.container}>
 						<div className={styles.card__desc}>
 							<h3 className={styles.title}>Mainnets.</h3>
