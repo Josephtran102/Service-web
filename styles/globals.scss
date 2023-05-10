@@ -355,6 +355,12 @@ li[role='menuitem'] {
 	box-shadow: none !important;
 }
 
+.ant-modal {
+	@media (max-width: 768px) {
+		top: 50px !important;
+	}
+}
+
 .ant-menu-dark .ant-menu-submenu-title {
 	background-color: #222 !important;
 	box-shadow: none !important;

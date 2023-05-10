@@ -113,7 +113,7 @@ const SubmitPFB = () => {
 					</p>
 					<TextArea
 						value={JSON.stringify(res, null, 2)}
-						autoSize={{ minRows: 6, maxRows: 10 }}
+						autoSize={{ minRows: 5, maxRows: 10 }}
 					/>
 				</div>
 			</Modal>
