@@ -16,6 +16,7 @@ const SubmitPFB = () => {
 
 	const showModal = () => {
 		setIsModalOpen(true)
+		setLoading(false)
 	}
 
 	const openNotification = () => {
@@ -38,7 +39,6 @@ const SubmitPFB = () => {
 			setRes(JSON.stringify(response))
 			showModal()
 		})
-		setLoading(false)
 	}
 
 	const generateFields = () => {
@@ -123,7 +123,6 @@ const SubmitPFB = () => {
 				>
 					<Input maxLength={200} showCount />
 				</Form.Item>
-
 				<Form.Item>
 					<div className='flex justify-center gap-2'>
 						<Button
