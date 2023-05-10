@@ -1,3 +1,4 @@
+import { QuestionCircleTwoTone } from '@ant-design/icons'
 import CodeSnippet from '@components/CodeSnippet'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { getRandomHex } from '@utils/getRandomHex'
@@ -6,9 +7,12 @@ import { Form, Input, Button, notification, Modal } from 'antd'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 
+const { TextArea } = Input
+
 const SubmitPFB = () => {
 	const [api, contextHolder] = notification.useNotification()
-	const [res, setRes] = useState('initial')
+	const [res, setRes] = useState(null)
+	const [txHash, setTxHash] = useState(null)
 	const [form] = Form.useForm()
 	const [loading, setLoading] = useState(false)
 	const [opacity, setOpacity] = useState(0)
@@ -36,7 +40,9 @@ const SubmitPFB = () => {
 			fee: 2000,
 		}
 		submitData(data).then(response => {
-			setRes(JSON.stringify(response))
+			console.log(response)
+			setRes(response)
+			setTxHash(response.txhash)
 			showModal()
 		})
 	}
@@ -86,8 +92,30 @@ const SubmitPFB = () => {
 				onOk={handleOk}
 				cancelButtonProps={{ style: { display: 'none' } }}
 				closable={false}
+				style={{ minWidth: '50%' }}
 			>
-				<CodeSnippet code={res} />
+				<div className='flex flex-col gap-4'>
+					<p>
+						Your Tx Hash is: <span className='font-bold'>{txHash}</span>
+					</p>
+					<p>
+						<QuestionCircleTwoTone className='align-middle pr-1' />
+						You can check the transaction status here:{' '}
+						<a
+							href={`https://testnet.mintscan.io/celestia-incentivized-testnet/txs/${txHash}`}
+							style={{ color: '#055bd5' }}
+							target='_blank'
+							rel='noopener referrer'
+						>
+							https://testnet.mintscan.io/celestia-incentivized-testnet/txs/
+							{txHash}
+						</a>
+					</p>
+					<TextArea
+						value={JSON.stringify(res, null, 2)}
+						autoSize={{ minRows: 6, maxRows: 10 }}
+					/>
+				</div>
 			</Modal>
 
 			<h1 className='text-3xl font-bold mb-4 tracking-tight'>
@@ -97,7 +125,7 @@ const SubmitPFB = () => {
 			<Form
 				form={form}
 				onFinish={handleSubmit}
-				style={{ minWidth: '40%', opacity: loading === true ? '0.7' : '1' }}
+				style={{ minWidth: '50%', opacity: loading === true ? '0.7' : '1' }}
 				layout='vertical'
 				className='flex flex-col  flex-wrap bg-white p-12 rounded-xl border-solid border-[1px]  border-slate-200 hover:border-slate-300 transition-all'
 			>
