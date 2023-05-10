@@ -342,11 +342,10 @@ let projects = {
 			updHeight: '0',
 			newInstallBin: `sudo systemctl stop cascadiad
 cd $HOME
-rm -rf cascadia
-git clone https://github.com/cascadiafoundation/cascadia
-cd cascadia
-git checkout v0.1.2
-make install`,
+curl -L https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.2/cascadiad-v0.1.2-linux-amd64 -o cascadiad
+chmod +x cascadiad
+sudo mv cascadiad $(which cascadiad)
+sudo systemctl restart cascadiad`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5 --gas-prices=7aCC',
 			unsafeReset: 'tendermint unsafe-reset-all',
