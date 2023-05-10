@@ -514,7 +514,7 @@ make install`,
 			minGasPrice: '0.0',
 		},
 		humans: {
-			chainID: 'humans_3000-2',
+			chainID: 'humans_3000-23',
 			link: 'https://testnet.itrocket.net/humans/staking',
 			imgUrl: 'humans.jpg',
 			fav: true,
