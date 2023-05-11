@@ -342,11 +342,9 @@ let projects = {
 			updHeight: '0',
 			newInstallBin: `sudo systemctl stop cascadiad
 cd $HOME
-rm -rf cascadia
-git clone https://github.com/cascadiafoundation/cascadia
-cd cascadia
-git checkout v0.1.2
-make install`,
+curl -L https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.2/cascadiad-v0.1.2-linux-amd64 -o cascadiad
+chmod +x cascadiad
+sudo mv cascadiad $(which cascadiad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5 --gas-prices=7aCC',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -471,10 +469,13 @@ make install`,
 			peerPort: '38656',
 			seedPort: '38656',
 			installBin:
-				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.4.0\nmake install',
+				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.5.3\nmake install',
 			updHeight: '476500',
-			newInstallBin:
-				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.5.2\nmake install',
+			newInstallBin: `sudo systemctl stop elysd
+cd $HOME/elys
+git fetch --all
+git checkout v0.5.3
+make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
