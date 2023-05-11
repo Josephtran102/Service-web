@@ -469,14 +469,13 @@ sudo mv cascadiad $(which cascadiad)`,
 			peerPort: '38656',
 			seedPort: '38656',
 			installBin:
-				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.4.0\nmake install',
+				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.5.3\nmake install',
 			updHeight: '476500',
 			newInstallBin: `sudo systemctl stop elysd
-cd $HOME
-wget https://github.com/elys-network/elys/releases/download/v0.5.2/elys._v0.5.2_linux_amd64.tar.gz
-tar -xvf "/home/elys/elys._v0.5.2_linux_amd64.tar.gz"
-rm "/home/elys/elys._v0.5.2_linux_amd64.tar.gz"
-sudo mv "/home/elys/elysd" $(which elysd)`,
+cd $HOME/elys
+git fetch --all
+git checkout v0.5.3
+make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
