@@ -472,7 +472,11 @@ sudo mv cascadiad $(which cascadiad)`,
 				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.4.0\nmake install',
 			updHeight: '476500',
 			newInstallBin:
-				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.5.2\nmake install',
+				'cd $HOME
+			wget https://github.com/elys-network/elys/releases/download/v0.5.2/elys._v0.5.2_linux_amd64.tar.gz
+			tar -xvf "/home/elys/elys._v0.5.2_linux_amd64.tar.gz"
+			rm "/home/elys/elys._v0.5.2_linux_amd64.tar.gz"
+			sudo mv "/home/elys/elysd" $(which elysd)',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
