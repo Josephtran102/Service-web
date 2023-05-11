@@ -87,7 +87,7 @@ const CheatSheet = props => {
 						</div>
 
 						<div className='flex flex-col gap-y-2'>
-							{CodeBlock('Synch info', `${bin} status 2>&1 | jq .SyncInfo`)}
+							{CodeBlock('Sync info', `${bin} status 2>&1 | jq .SyncInfo`)}
 							{CodeBlock('Node info', `${bin} status 2>&1 | jq .NodeInfo`)}
 						</div>
 					</div>
