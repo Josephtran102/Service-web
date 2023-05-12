@@ -143,9 +143,9 @@ let projects = {
 			seedPort: '15656',
 			installBin:
 				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.9-hotfix.0\nmake install',
-			updHeight: '1279200',
+			updHeight: '',
 			newInstallBin:
-				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.9-hotfix.0\nmake install',
+				'',
 			goVersion: '1.19.3',
 			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
