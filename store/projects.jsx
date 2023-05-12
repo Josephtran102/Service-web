@@ -899,11 +899,6 @@ sed -i 's/minimum-gas-prices = "[^"]*"/minimum-gas-prices = "0.0002uthiol"/' $HO
 	},
 	finished: [
 		{
-			name: 'Nolus',
-			link: 'https://testnet.itrocket.net/nolus/staking',
-			imgUrl: 'nolus.svg',
-		},
-		{
 			name: 'Sui',
 			link: 'https://explorer.sui.io/',
 			imgUrl: 'sui.svg',
