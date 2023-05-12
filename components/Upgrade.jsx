@@ -17,6 +17,17 @@ const Upgrade = props => {
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const bin = project.bin
 	const installBin = project.newInstallBin
+	const indexOfMv = installBin
+		.split('\n')
+		.findIndex(
+			line => line.trim().startsWith('mv') || line.trim().startsWith('sudo mv')
+		)
+	let mvLine = installBin
+		.split('\n')
+		.find(line => line.trim().startsWith('sudo mv'))
+	const path = indexOfMv !== -1 ? mvLine.split(' ')[2] : ''
+	const beforeMv = installBin.split('\n').slice(0, indexOfMv).join('\n')
+
 	const updHeight = project?.updHeight
 	explorer.current = project.explorer
 	const { theme } = useContext(Context)
@@ -153,21 +164,12 @@ const Upgrade = props => {
 							code={`${installBin}
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
-						{updHeight == 0 ? (
+						{updHeight == 0 || indexOfMv === -1 ? (
 							''
 						) : (
 							<>
 								<h2 id='auto'>Auto upgrade</h2>
-								<p className={styles.text_secondary}>
-									!!!Don't kill the session with{' '}
-									<kbd className={styles.kbd}>CTRL+C</kbd> before update
-									completed, if you want to disconnect the session use{' '}
-									<kbd className={styles.kbd}>CTRL+B D</kbd>
-									and when update is completed the session is killed
-									automatically.
-								</p>
-
-								<Space direction='vertical' className='my-2'>
+								{/* <Space direction='vertical' className='my-2'>
 									<span className={styles}>Port</span>
 									<Input
 										className={styles.input}
@@ -177,12 +179,20 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 										style={{ maxWidth: '45px' }}
 										onChange={handlePort}
 									/>
-								</Space>
-
+								</Space> */}
+								<p className={styles.text_secondary}>Preparing the binary</p>
+								<CodeSnippet theme={theme} code={`${beforeMv}`} />
+								<p className={styles.text_secondary}>
+									‼️ Don't kill the session with{' '}
+									<kbd className={styles.kbd}>CTRL+C</kbd> before update
+									completed, if you want to disconnect the session use{' '}
+									<kbd className={styles.kbd}>CTRL+B D</kbd>
+									and when update is completed the session is killed
+									automatically.
+								</p>
 								<CodeSnippet
 									theme={theme}
-									code={`# coming soon
-`}
+									code={`tmux new -s ${name}-upgrade "bash <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/upgrade.sh) -u "${updHeight}" -b ${bin} -n "${path}" -p ${name}"`}
 								/>
 							</>
 						)}

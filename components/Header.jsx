@@ -156,7 +156,7 @@ const Header = () => {
 			<header
 				className={styles.header}
 				style={{
-					backgroundColor: theme === 'light' ? '#fefefe' : '#161616',
+					backgroundColor: theme === 'dark' ? '#161616' : ' #fefefe',
 					opacity: opacity,
 				}}
 			>
