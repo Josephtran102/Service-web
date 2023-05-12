@@ -111,6 +111,7 @@ let projects = {
 		forta: {
 			link: 'https://explorer.forta.network/',
 			imgUrl: 'forta.jpg',
+			fav: true,
 			delegate: 'https://app.forta.network/nodePool/272/',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
