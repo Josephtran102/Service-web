@@ -17,16 +17,21 @@ const Upgrade = props => {
 		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const bin = project.bin
 	const installBin = project.newInstallBin
-	const indexOfMv = installBin
-		.split('\n')
-		.findIndex(
-			line => line.trim().startsWith('mv') || line.trim().startsWith('sudo mv')
-		)
-	let mvLine = installBin
-		.split('\n')
-		.find(line => line.trim().startsWith('sudo mv'))
-	const path = indexOfMv !== -1 ? mvLine.split(' ')[2] : ''
-	const beforeMv = installBin.split('\n').slice(0, indexOfMv).join('\n')
+	const isEmpty = installBin === undefined ? true : false
+	let indexOfMv, mvLine, path, beforeMv
+	if (!isEmpty) {
+		indexOfMv = installBin
+			.split('\n')
+			.findIndex(
+				line =>
+					line.trim().startsWith('mv') || line.trim().startsWith('sudo mv')
+			)
+		mvLine = installBin
+			.split('\n')
+			.find(line => line.trim().startsWith('sudo mv'))
+		path = indexOfMv !== -1 ? mvLine.split(' ')[2] : ''
+		beforeMv = installBin.split('\n').slice(0, indexOfMv).join('\n')
+	}
 
 	const updHeight = project?.updHeight
 	explorer.current = project.explorer
@@ -156,7 +161,6 @@ const Upgrade = props => {
 								</p>
 							</>
 						)}
-
 						<h2 id='manual'>Manual upgrade</h2>
 						<p className={styles.text_secondary}></p>
 						<CodeSnippet

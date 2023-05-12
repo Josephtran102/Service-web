@@ -468,7 +468,6 @@ let projects = {
 			installBin:
 				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.5.4\nmake install',
 			updHeight: '700000',
-
 			newInstallBin: `cd $HOME/elys
 git fetch --all
 git checkout v0.5.4
