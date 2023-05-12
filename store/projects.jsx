@@ -476,7 +476,7 @@ cd $HOME/elys
 git fetch --all
 git checkout v0.5.4
 make install
-elysd version --long`,
+elysd version head --long`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
