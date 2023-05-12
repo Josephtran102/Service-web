@@ -914,6 +914,11 @@ sed -i 's/minimum-gas-prices = "[^"]*"/minimum-gas-prices = "0.0002uthiol"/' $HO
 			imgUrl: 'blastapi.jpg',
 		},
 		{
+			name: 'Haqq',
+			link: 'https://islamiccoin.net/',
+			imgUrl: 'masa.svg',
+		},
+		{
 			name: 'Masa',
 			link: 'https://www.masa.finance/',
 			imgUrl: 'masa.svg',
