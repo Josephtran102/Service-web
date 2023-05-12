@@ -184,16 +184,23 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 										onChange={handlePort}
 									/>
 								</Space> */}
-								<p className={styles.text_secondary}>Preparing the binary</p>
+								<p style={{ marginTop: '5px' }}>1. Preparing the binary</p>
 								<CodeSnippet theme={theme} code={`${beforeMv}`} />
-								<p className={styles.text_secondary}>
-									‼️ Don't kill the session with{' '}
-									<kbd className={styles.kbd}>CTRL+C</kbd> before update
-									completed, if you want to disconnect the session use{' '}
-									<kbd className={styles.kbd}>CTRL+B D</kbd>
-									and when update is completed the session is killed
-									automatically.
-								</p>
+								<p style={{ marginTop: '5px' }}>2. Run the script </p>
+								<Alert
+									message={
+										<p>
+											Don't kill the session with{' '}
+											<kbd className={styles.kbd}>CTRL+C</kbd> before update
+											completed, if you want to disconnect the session use{' '}
+											<kbd className={styles.kbd}>CTRL+B D</kbd>{' '}
+										</p>
+									}
+									type='warning'
+									showIcon
+									closable
+									style={{ width: 'fit-content', marginBlock: '5px' }}
+								/>
 								<CodeSnippet
 									theme={theme}
 									code={`tmux new -s ${name}-upgrade "bash <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/upgrade.sh) -u "${updHeight}" -b ${bin} -n "${path}" -p ${name}"`}
