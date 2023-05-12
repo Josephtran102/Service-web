@@ -340,13 +340,9 @@ let projects = {
 			peerPort: '40656',
 			seedPort: '40656',
 			installBin:
-				'cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.1\nmake install',
-			updHeight: '0',
-			newInstallBin: `sudo systemctl stop cascadiad
-cd $HOME
-curl -L https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.2/cascadiad-v0.1.2-linux-amd64 -o cascadiad
-chmod +x cascadiad
-sudo mv cascadiad $(which cascadiad)`,
+				'cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.2\nmake install',
+			updHeight: '',
+			newInstallBin: ``,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5 --gas-prices=7aCC',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -509,17 +505,8 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			seedPort: '17656',
 			installBin:
 				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.1\nmake install',
-			updHeight: '0',
-			newInstallBin: `sudo systemctl stop humansd
-cd $HOME
-rm -rf ~/humans
-git clone https://github.com/humansdotai/humans
-cd humans
-git checkout tags/v0.2.1
-make install
-humansd tendermint unsafe-reset-all --home $HOME/.humansd --keep-addr-book
-wget -O $HOME/.humansd/config/genesis.json "https://raw.githubusercontent.com/humansdotai/testnets/master/friction/mission-2/genesis-m2-p2.json"
-humansd config chain-id humans_3000-23`,
+			updHeight: '',
+			newInstallBin: ``,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -581,13 +568,9 @@ humansd config chain-id humans_3000-23`,
 			seedPort: '20656',
 			installBin:
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
-			updHeight: '184620',
+			updHeight: '',
 			newInstallBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
-			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+				'',
 		},
 		mars: {
 			chainID: 'ares-1',
@@ -775,8 +758,8 @@ humansd config chain-id humans_3000-23`,
 			seedPort: '23656',
 			installBin:
 				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network\ncd realio-network\ngit checkout v0.8.0-rc2\nmake install',
-			updHeight: '77955',
-			newInstallBin: 'new',
+			updHeight: '',
+			newInstallBin: '',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -847,20 +830,8 @@ humansd config chain-id humans_3000-23`,
 			seedPort: '13656',
 			installBin:
 				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v1.0.1\nmake install',
-			updHeight: '0',
-			newInstallBin: `sudo systemctl stop terpd.service
-cd $HOME
-rm -rf ~/terp-core
-git clone https://github.com/terpnetwork/terp-core.git
-cd terp-core
-git checkout v1.0.1
-make install
-curl -s  https://raw.githubusercontent.com/terpnetwork/test-net/master/90u-1/genesis.json > $HOME/.terp/config/genesis.json
-terpd tendermint unsafe-reset-all --home $HOME/.terp --keep-addr-book
-echo "export TERP_CHAIN_ID="90u-1"" >> $HOME/.bash_profile
-source $HOME/.bash_profile
-terpd config chain-id $TERP_CHAIN_ID
-sed -i 's/minimum-gas-prices = "[^"]*"/minimum-gas-prices = "0.0002uthiol"/' $HOME/.terp/config/app.toml`,
+			updHeight: '',
+			newInstallBin: ``,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
