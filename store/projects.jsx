@@ -471,8 +471,7 @@ sudo mv cascadiad $(which cascadiad)`,
 			installBin:
 				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.5.4\nmake install',
 			updHeight: '0',
-			newInstallBin: `sudo systemctl stop elysd
-cd $HOME/elys
+			newInstallBin: `cd $HOME/elys
 git fetch --all
 git checkout v0.5.4
 make build
