@@ -282,7 +282,7 @@ const SideMenu = () => {
 								href={serviceURL + '/upgrade/#auto'}
 								onClick={event => handleClick(event, 'auto', `auto${name}`)}
 							>
-								Autoupgrade
+								Auto upgrade
 							</Link>,
 							`auto${name}`,
 							<RightOutlined />
