@@ -475,8 +475,7 @@ sudo mv cascadiad $(which cascadiad)`,
 cd $HOME/elys
 git fetch --all
 git checkout v0.5.4
-make install
-elysd version head --long | grep commit`,
+make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
