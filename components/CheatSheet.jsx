@@ -302,10 +302,6 @@ ${gas} \\
 							`[[ $(${bin} q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(${bin} status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"`
 						)}
 						)}
-						{CodeBlock(
-							'Signing info',
-							`$(${bin} q slashing signing-info $VALOPER_ADDRESS`
-						)}
 					</div>
 					<h2 id='governance'> Governance 🌐</h2>
 					<Space
