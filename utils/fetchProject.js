@@ -29,6 +29,9 @@ export const fetchSnap = async (name, type) => {
 			{
 				headers: {
 					accept: 'application/json',
+					'Cache-Control': 'no-cache',
+					Pragma: 'no-cache',
+					Expires: '0',
 				},
 			}
 		)
