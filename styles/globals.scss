@@ -162,6 +162,10 @@ a {
 	a {
 		display: block !important;
 		z-index: 10 !important;
+
+		&:hover {
+			color: inherit;
+		}
 	}
 }
 
@@ -335,7 +339,7 @@ li[role='menuitem'] {
 
 .ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title {
 	color: inherit !important;
-	background-color: #f0f0f0 !important;
+	background-color: #f2f2f2a9 !important;
 }
 .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title {
 	color: inherit !important;

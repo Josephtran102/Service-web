@@ -2,7 +2,7 @@ import { useContext, useEffect, useState, useRef } from 'react'
 import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
 import projects from '@store/projects'
-import { Menu, Segmented } from 'antd'
+import { Divider, Menu, Segmented } from 'antd'
 import Link from 'next/link.js'
 import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
@@ -95,25 +95,24 @@ const SideMenu = () => {
 
 		setItems([
 			getItem(
-				<div className='flex flex-col gap-2'>
-					<div className='flex gap-2 items-center'>
+				<div className='flex flex-col gap-2 '>
+					<div className='flex gap-2 items-center mb-1'>
 						{' '}
 						<Image
 							src={require(`../public/${type}/${imgURL}`)}
 							alt='project logo'
-							width='30'
-							height='30'
+							width='35'
+							height='35'
 							style={{
 								borderRadius: '50%',
 								backgroundColor: '#fff',
-								marginLeft: '2px',
+								marginLeft: '3	px',
 							}}
 						/>
-						<span className='font-bold'>
+						<span className='font-semibold tracking-wide'>
 							{name.charAt(0).toUpperCase() + name.slice(1)}
 						</span>
 					</div>
-
 					<Segmented
 						block
 						defaultValue={defValue.current}
