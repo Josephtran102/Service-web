@@ -1,4 +1,3 @@
-import { DownOutlined } from '@ant-design/icons'
 import { Dropdown as AntDropdown } from 'antd'
 import Link from 'next/link'
 import styles from '@styles/Dropdown.module.scss'
@@ -14,6 +13,9 @@ const Dropdown = props => {
 						Mainnets
 					</Link>
 				),
+			},
+			{
+				type: 'divider',
 			},
 			{
 				key: '2',
@@ -38,6 +40,9 @@ const Dropdown = props => {
 						Mainnet
 					</a>
 				),
+			},
+			{
+				type: 'divider',
 			},
 			{
 				key: '4',
@@ -65,10 +70,7 @@ const Dropdown = props => {
 				borderRadius: '12px',
 			}}
 		>
-			<a onClick={e => e.preventDefault()}>
-				{props.type}
-				<DownOutlined />
-			</a>
+			<a onClick={e => e.preventDefault()}>{props.type}</a>
 		</AntDropdown>
 	)
 }

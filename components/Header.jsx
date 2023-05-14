@@ -189,12 +189,12 @@ const Header = () => {
 								<Dropdown type='projects' trigger='hover' />
 							</li>
 							<li>
-								<Dropdown type='explorer' trigger='hover' />
-							</li>
-							<li>
 								<Link href='/services' className={styles.link}>
 									Services
 								</Link>
+							</li>
+							<li>
+								<Dropdown type='explorer' trigger='hover' />
 							</li>
 
 							<li>

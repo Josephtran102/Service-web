@@ -2,7 +2,7 @@ import { useContext, useEffect, useState, useRef } from 'react'
 import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
 import projects from '@store/projects'
-import { Divider, Menu, Segmented } from 'antd'
+import { Menu, Segmented } from 'antd'
 import Link from 'next/link.js'
 import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
@@ -49,29 +49,6 @@ const SideMenu = () => {
 		}
 	}
 
-	const fillSideMenu = type => {
-		const data = projects[type]
-
-		return Object.entries(data).map(([item, { name = item, imgUrl }]) => {
-			const id = type + name
-			const serviceURL = `/services/${type}/${name.toLowerCase()}`
-
-			return getItem(
-				<a href={serviceURL} rel='noopener referrer'>
-					{name.charAt(0).toUpperCase() + name.slice(1)}
-				</a>,
-				`grp${id}`,
-				<Image
-					src={`/${type}/${imgUrl}`}
-					style={{ borderRadius: '50%' }}
-					alt='project logo'
-					width='20'
-					height='20'
-				/>
-			)
-		})
-	}
-
 	const handleTabClick = value => {
 		setValue(value)
 		setSelectedKeys([])
@@ -84,8 +61,6 @@ const SideMenu = () => {
 		setValue(type)
 		defValue.current = type
 		curProject.current = name
-		const mainnet = fillSideMenu('mainnet')
-		const testnet = fillSideMenu('testnet')
 		const imgURL = projects[type][name].imgUrl
 		const URL = window.location.href
 		if (URL.indexOf('installation') > -1) setOpenKeys([`installation`])
@@ -428,18 +403,6 @@ const SideMenu = () => {
 				'website',
 				null
 			),
-			{
-				type: 'divider',
-			},
-			getItem('', 'divider2', null, null, 'group'),
-
-			getItem('Mainnet', 'grpmain', null, null, 'group'),
-			...mainnet,
-			getItem('Testnet', 'grptest', null, null, 'group'),
-			...testnet,
-			getItem('', 'marginfix', null, null, 'group'),
-			getItem('', 'marginfix1', null, null, 'group'),
-			getItem('', 'marginfix2', null, null, 'group'),
 		])
 	}, [router])
 

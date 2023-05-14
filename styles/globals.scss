@@ -89,40 +89,40 @@ a {
 		margin-top: 20px;
 	}
 }
-
+#key-management,
 #guide,
-#installation,
 #auto,
 #service-operations {
-	border-color: #4ca0ee;
+	text-decoration-color: #4ca0ee;
 
 	@media (max-width: 768px) {
 		margin-top: 15px;
 	}
 }
 
-#rpc,
+#wasm,
 #create-wallet,
 #validator-operations,
 #testnets {
-	border-color: #40e746;
+	text-decoration-color: #40e746;
 }
 
 #snap,
 #create-validator,
 #governance,
 #mainnets {
-	border-color: #a03ee0;
+	text-decoration-color: #a03ee0;
 }
 
 #sync,
 #monitoring,
-#key-management {
-	border-color: #ee683b;
+#installation {
+	text-decoration-color: #ee683b;
 }
-#wasm,
+
+#rpc,
 #security {
-	border-color: #3b56ee;
+	text-decoration-color: #2982e7;
 }
 
 .social-icon {
@@ -208,6 +208,7 @@ a {
 	padding-right: 10px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	border: 0px !important;
 
 	@media (max-width: 1300px) {
 		padding-right: 0px !important;
