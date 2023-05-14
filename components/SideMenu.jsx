@@ -141,233 +141,263 @@ const SideMenu = () => {
 				'grpthis',
 				null,
 				[
-					getItem('⚙️ Services', `services`, null, [
-						getItem(
-							<Link
-								href={serviceURL + '#rpc'}
-								onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
-							>
-								RPC, API, GRPC
-							</Link>,
-							`rpc${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '#peer'}
-								onClick={event => handleClick(event, 'peer', `peer${name}`)}
-							>
-								Peers, Seeds
-							</Link>,
-							`peer${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '#snap'}
-								onClick={event => handleClick(event, 'snap', `snap${name}`)}
-							>
-								Snapshot
-							</Link>,
-							`snap${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '#sync'}
-								onClick={event => handleClick(event, 'sync', `state${name}`)}
-							>
-								State sync
-							</Link>,
-							`state${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '#wasm'}
-								onClick={event => handleClick(event, 'wasm', `wasm${name}`)}
-							>
-								Wasm
-							</Link>,
-							`wasm${name}`,
-							<RightOutlined />
-						),
-					]),
+					getItem(
+						<Link href={serviceURL}>⚙️ Services</Link>,
+						`services`,
+						null,
+						[
+							getItem(
+								<Link
+									href={serviceURL + '#rpc'}
+									onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
+								>
+									RPC, API, GRPC
+								</Link>,
+								`rpc${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '#peer'}
+									onClick={event => handleClick(event, 'peer', `peer${name}`)}
+								>
+									Peers, Seeds
+								</Link>,
+								`peer${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '#snap'}
+									onClick={event => handleClick(event, 'snap', `snap${name}`)}
+								>
+									Snapshot
+								</Link>,
+								`snap${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '#sync'}
+									onClick={event => handleClick(event, 'sync', `state${name}`)}
+								>
+									State sync
+								</Link>,
+								`state${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '#wasm'}
+									onClick={event => handleClick(event, 'wasm', `wasm${name}`)}
+								>
+									Wasm
+								</Link>,
+								`wasm${name}`,
+								<RightOutlined />
+							),
+						]
+					),
 
-					getItem('📌 Installation', `installation`, null, [
-						getItem(
-							<Link
-								href={serviceURL + '/installation/#installation'}
-								onClick={event =>
-									handleClick(event, 'installation', `install${name}`)
-								}
-							>
-								Installation
-							</Link>,
-							`install${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/installation/#create-wallet'}
-								onClick={event =>
-									handleClick(event, 'create-wallet', `wallet${name}`)
-								}
-							>
-								Create Wallet
-							</Link>,
-							`wallet${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/installation/#create-validator'}
-								onClick={event =>
-									handleClick(event, 'create-validator', `validator${name}`)
-								}
-							>
-								Create Validator
-							</Link>,
-							`validator${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/installation/#monitoring'}
-								onClick={event =>
-									handleClick(event, 'monitoring', `Monitoring${name}`)
-								}
-							>
-								Monitoring
-							</Link>,
-							`Monitoring${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/installation/#security'}
-								onClick={event =>
-									handleClick(event, 'security', `security${name}`)
-								}
-							>
-								Security
-							</Link>,
-							`security${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/installation/#delete'}
-								onClick={event => handleClick(event, 'delete', `Delete${name}`)}
-							>
-								Delete node
-							</Link>,
-							`Delete${name}`,
-							<RightOutlined />
-						),
-					]),
-					getItem('🔄 Upgrade', `upgrade`, null, [
-						getItem(
-							<Link
-								href={serviceURL + '/upgrade/#manual'}
-								onClick={event => handleClick(event, 'manual', `manual${name}`)}
-							>
-								Manual upgrade
-							</Link>,
-							`manual${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/upgrade/#auto'}
-								onClick={event => handleClick(event, 'auto', `auto${name}`)}
-							>
-								Auto upgrade
-							</Link>,
-							`auto${name}`,
-							<RightOutlined />
-						),
-					]),
-					getItem('📝 Cheat sheet', `cheat-sheet`, null, [
-						getItem(
-							<Link
-								href={serviceURL + '/cheat-sheet/#service-operations'}
-								onClick={event =>
-									handleClick(
-										event,
-										'service-operations',
-										`service-operations${name}`
-									)
-								}
-							>
-								Service operations
-							</Link>,
-							`service-operations${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/cheat-sheet/#key-management'}
-								onClick={event =>
-									handleClick(event, 'key-management', `key-management${name}`)
-								}
-							>
-								Key management
-							</Link>,
-							`key-management${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/cheat-sheet/#tokens'}
-								onClick={event => handleClick(event, 'tokens', `tokens${name}`)}
-							>
-								Tokens
-							</Link>,
-							`tokens${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/cheat-sheet/#validator-operations'}
-								onClick={event =>
-									handleClick(
-										event,
-										'validator-operations',
-										`validator-operations${name}`
-									)
-								}
-							>
-								Validator operations
-							</Link>,
-							`validator-operations${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/cheat-sheet/#governance'}
-								onClick={event =>
-									handleClick(event, 'governance', `governance${name}`)
-								}
-							>
-								Governance
-							</Link>,
-							`governance${name}`,
-							<RightOutlined />
-						),
-						getItem(
-							<Link
-								href={serviceURL + '/cheat-sheet/#utility'}
-								onClick={event =>
-									handleClick(event, 'utility', `utility${name}`)
-								}
-							>
-								Utility
-							</Link>,
-							`utility${name}`,
-							<RightOutlined />
-						),
-					]),
+					getItem(
+						<Link href={serviceURL + '/installation'}>📌 Installation</Link>,
+						`installation`,
+						null,
+						[
+							getItem(
+								<Link
+									href={serviceURL + '/installation/#installation'}
+									onClick={event =>
+										handleClick(event, 'installation', `install${name}`)
+									}
+								>
+									Installation
+								</Link>,
+								`install${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/installation/#create-wallet'}
+									onClick={event =>
+										handleClick(event, 'create-wallet', `wallet${name}`)
+									}
+								>
+									Create Wallet
+								</Link>,
+								`wallet${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/installation/#create-validator'}
+									onClick={event =>
+										handleClick(event, 'create-validator', `validator${name}`)
+									}
+								>
+									Create Validator
+								</Link>,
+								`validator${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/installation/#monitoring'}
+									onClick={event =>
+										handleClick(event, 'monitoring', `Monitoring${name}`)
+									}
+								>
+									Monitoring
+								</Link>,
+								`Monitoring${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/installation/#security'}
+									onClick={event =>
+										handleClick(event, 'security', `security${name}`)
+									}
+								>
+									Security
+								</Link>,
+								`security${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/installation/#delete'}
+									onClick={event =>
+										handleClick(event, 'delete', `Delete${name}`)
+									}
+								>
+									Delete node
+								</Link>,
+								`Delete${name}`,
+								<RightOutlined />
+							),
+						]
+					),
+					getItem(
+						<Link href={serviceURL + '/upgrade'}>🔄 Upgrade</Link>,
+						`upgrade`,
+						null,
+						[
+							getItem(
+								<Link
+									href={serviceURL + '/upgrade/#manual'}
+									onClick={event =>
+										handleClick(event, 'manual', `manual${name}`)
+									}
+								>
+									Manual upgrade
+								</Link>,
+								`manual${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/upgrade/#auto'}
+									onClick={event => handleClick(event, 'auto', `auto${name}`)}
+								>
+									Auto upgrade
+								</Link>,
+								`auto${name}`,
+								<RightOutlined />
+							),
+						]
+					),
+					getItem(
+						<Link href={serviceURL + '/cheat-sheet'}>📝 Cheat sheet</Link>,
+						`cheat-sheet`,
+						null,
+						[
+							getItem(
+								<Link
+									href={serviceURL + '/cheat-sheet/#service-operations'}
+									onClick={event =>
+										handleClick(
+											event,
+											'service-operations',
+											`service-operations${name}`
+										)
+									}
+								>
+									Service operations
+								</Link>,
+								`service-operations${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/cheat-sheet/#key-management'}
+									onClick={event =>
+										handleClick(
+											event,
+											'key-management',
+											`key-management${name}`
+										)
+									}
+								>
+									Key management
+								</Link>,
+								`key-management${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/cheat-sheet/#tokens'}
+									onClick={event =>
+										handleClick(event, 'tokens', `tokens${name}`)
+									}
+								>
+									Tokens
+								</Link>,
+								`tokens${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/cheat-sheet/#validator-operations'}
+									onClick={event =>
+										handleClick(
+											event,
+											'validator-operations',
+											`validator-operations${name}`
+										)
+									}
+								>
+									Validator operations
+								</Link>,
+								`validator-operations${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/cheat-sheet/#governance'}
+									onClick={event =>
+										handleClick(event, 'governance', `governance${name}`)
+									}
+								>
+									Governance
+								</Link>,
+								`governance${name}`,
+								<RightOutlined />
+							),
+							getItem(
+								<Link
+									href={serviceURL + '/cheat-sheet/#utility'}
+									onClick={event =>
+										handleClick(event, 'utility', `utility${name}`)
+									}
+								>
+									Utility
+								</Link>,
+								`utility${name}`,
+								<RightOutlined />
+							),
+						]
+					),
 				],
 				'group'
 			),
