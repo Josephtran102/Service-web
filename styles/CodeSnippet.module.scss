@@ -35,25 +35,6 @@
 
 .code {
 	padding: 14px 10px !important;
-
-	&::-webkit-scrollbar-thumb {
-		background: rgba(131, 131, 131, 0.4);
-		border-radius: 6px;
-		max-height: 20px;
-		transition: 0.2s all;
-	}
-
-	&::-webkit-scrollbar {
-		width: 8px;
-		height: 8px;
-		cursor: pointer;
-	}
-
-	&:hover {
-		&::-webkit-scrollbar-thumb {
-			background: rgba(131, 131, 131, 0.55);
-		}
-	}
 }
 
 .copyButton {
