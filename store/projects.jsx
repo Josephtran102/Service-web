@@ -153,7 +153,7 @@ cd quicksilver
 git fetch
 git checkout v1.2.10-pebble-db
 make build
-sudo mv quicksilverd $(which quicksilverd`,
+sudo mv quicksilverd $(which quicksilverd)`,
 			goVersion: '1.19.3',
 			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
