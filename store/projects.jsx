@@ -144,14 +144,14 @@ let projects = {
 			peerPort: '15656',
 			seedPort: '15656',
 			installBin:
-				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.10-hotfix.pebble-db\nmake install',
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.10-hotfix\nmake install',
 			updHeight: '1936600',
 			newInstallBin: `cd $HOME
 rm -rf ~/quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
 git fetch
-git checkout v1.2.10-hotfix.pebble-db
+git checkout v1.2.10-hotfix
 make build
 sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			goVersion: '1.19.3',
