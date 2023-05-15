@@ -6,20 +6,9 @@ import { Context } from '@context/context'
 import Link from 'next/link'
 import Image from 'next/image'
 import Header from '@components/Header'
-import Footer from '@components/Footer'
 
 const services = () => {
 	const { theme, toggleTheme } = useContext(Context)
-
-	useEffect(() => {
-		let typo = document.getElementsByClassName('ant-typography')
-
-		for (let i = 0; i < typo.length; i++) {
-			if (theme === 'light' && typo) typo[i].style.color = '#111'
-			else typo[i].style.color = '#fff'
-		}
-	}, [theme])
-
 	let mainnetData = projects.mainnet
 	let testnetData = projects.testnet
 

@@ -6,8 +6,10 @@ import styles from '@styles/Services.module.scss'
 import CodeSnippet from '@components/CodeSnippet.jsx'
 import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
 import Head from 'next/head'
-import { Typography } from 'antd'
+import { Breadcrumb, Typography } from 'antd'
 import AnimatedSection from './AnimatedSection'
+import Link from 'next/link'
+import { HomeOutlined } from '@ant-design/icons'
 
 const { Paragraph } = Typography
 
@@ -137,6 +139,24 @@ const ProjectData = ({ name, type }) => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
+				<Breadcrumb
+					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
+					items={[
+						{
+							title: (
+								<Link href='/'>
+									<HomeOutlined />
+								</Link>
+							),
+						},
+						{
+							title: <Link href='/services/'>Services</Link>,
+						},
+						{
+							title: `${projectName}`,
+						},
+					]}
+				/>
 				<h2 id='rpc'>RPC, API, gRPC</h2>
 				<div className='flex flex-wrap gap-1 items-center'>
 					<span>Public RPC: </span>

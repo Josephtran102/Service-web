@@ -16,7 +16,6 @@ export const changeStyles = theme => {
 			el.classList.toggle('ant-menu-dark', !isLight)
 		}
 	}
-
 	for (const el of submenu) {
 		if (el) {
 			el.style.backgroundColor = isLight ? '#F0F0F0' : '#222222'
@@ -27,13 +26,11 @@ export const changeStyles = theme => {
 			el.style.backgroundColor = isLight ? '#e0e0e0' : '#6b6969'
 		}
 	}
-
 	for (const el of radio) {
 		if (el) {
 			el.style.backgroundColor = isLight ? '#fff' : '#d5d5d5'
 		}
 	}
-
 	for (const el of antTypography) {
 		if (el) {
 			el.style.color = isLight ? '#000' : '#fff'

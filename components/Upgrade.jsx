@@ -5,8 +5,10 @@ import Head from 'next/head'
 import { Context } from '@context/context'
 import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
 import CodeSnippet from './CodeSnippet'
-import { Alert, Input, Space } from 'antd'
+import { Alert, Breadcrumb, Input, Space } from 'antd'
 import AnimatedSection from './AnimatedSection'
+import Link from 'next/link'
+import { HomeOutlined } from '@ant-design/icons'
 
 const Upgrade = props => {
 	const name = props.name
@@ -139,8 +141,27 @@ const Upgrade = props => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
+				<Breadcrumb
+					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
+					items={[
+						{
+							title: (
+								<Link href='/'>
+									<HomeOutlined />
+								</Link>
+							),
+						},
+						{
+							title: <Link href='/services/'>Services</Link>,
+						},
+						{
+							title: `${projectName}`,
+						},
+					]}
+				/>
+				<></>
 				{!updHeight ? (
-					<p>Project has no upgrades yet</p>
+					<p style={{ marginBlock: '8px' }}>Project has no upgrades yet</p>
 				) : (
 					<>
 						{updHeight == 0 ? (

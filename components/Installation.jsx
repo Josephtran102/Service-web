@@ -5,9 +5,10 @@ import Head from 'next/head'
 import { Context } from '@context/context'
 import { fetchNetInfo, fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 import CodeSnippet from './CodeSnippet'
-import { Input, Space } from 'antd'
-import { FileDoneOutlined } from '@ant-design/icons'
+import { Breadcrumb, Input, Space } from 'antd'
+import { FileDoneOutlined, HomeOutlined } from '@ant-design/icons'
 import AnimatedSection from './AnimatedSection'
+import Link from 'next/link'
 
 const Installation = props => {
 	const name = props.name
@@ -164,8 +165,27 @@ const Installation = props => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
+				<Breadcrumb
+					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
+					items={[
+						{
+							title: (
+								<Link href='/'>
+									<HomeOutlined />
+								</Link>
+							),
+						},
+						{
+							title: <Link href='/services/'>Services</Link>,
+						},
+						{
+							title: `${projectName}`,
+						},
+					]}
+				/>
 				<>
-					<p className='flex flex-wrap items-center gap-2'>
+					<h2 id='installation'>Manual Installation</h2>
+					<p className='flex flex-wrap items-center gap-2 pb-2'>
 						<FileDoneOutlined />{' '}
 						<a href={project.offValDoc} target='_blank' rel='nofollow'>
 							Official Documentation
@@ -173,8 +193,6 @@ const Installation = props => {
 						<span></span>
 						<span> Recommended Hardware: {project.hardware}</span>
 					</p>
-
-					<h2 id='installation'>Manual Installation</h2>
 					<p className={styles.text_secondary}>
 						<b className={styles.bold}>pruning: </b> {pruning} {' | '}
 						<b className={styles.bold}>indexer: </b> {indexer}

@@ -4,9 +4,11 @@ import { useContext, useRef, useState } from 'react'
 import Head from 'next/head'
 import { Context } from '@context/context'
 import CodeSnippet from './CodeSnippet'
-import { Input, Radio, Space } from 'antd'
+import { Breadcrumb, Input, Radio, Space } from 'antd'
 import AnimatedSection from './AnimatedSection'
 import CodeBlock from '@components/CodeBlock'
+import Link from 'next/link'
+import { HomeOutlined } from '@ant-design/icons'
 
 const CheatSheet = props => {
 	const name = props.name
@@ -66,6 +68,24 @@ const CheatSheet = props => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
+				<Breadcrumb
+					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
+					items={[
+						{
+							title: (
+								<Link href='/'>
+									<HomeOutlined />
+								</Link>
+							),
+						},
+						{
+							title: <Link href='/services/'>Services</Link>,
+						},
+						{
+							title: `${projectName}`,
+						},
+					]}
+				/>
 				<>
 					<h2 id='service-operations'>Service operations ⚙️</h2>
 					<div className='flex flex-wrap gap-x-6 mb-3'>

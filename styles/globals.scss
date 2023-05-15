@@ -89,7 +89,7 @@ a {
 		margin-top: 20px;
 	}
 }
-#key-management,
+
 #guide,
 #auto,
 #service-operations {
@@ -116,7 +116,8 @@ a {
 
 #sync,
 #monitoring,
-#installation {
+#installation,
+#key-management {
 	text-decoration-color: #ee683b;
 }
 
@@ -193,14 +194,40 @@ a {
 	}
 }
 
+.ant-modal-content {
+	border-radius: 12px !important;
+}
+
 .ant-menu {
 	@media (max-width: 1024px) {
 		width: 250px;
 	}
 }
 
+.ant-breadcrumb-link {
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: inherit !important;
+	}
+}
+
+.ant-breadcrumb {
+	ol {
+		align-items: center;
+
+		li {
+			color: #808080ad !important;
+
+			&:last-of-type {
+				color: #808080 !important;
+			}
+		}
+	}
+}
+
 .ant-menu-root {
-	height: calc(100vh - 30px);
 	overflow-x: hidden;
 	position: -webkit-sticky;
 	position: sticky;
