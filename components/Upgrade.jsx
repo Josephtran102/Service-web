@@ -224,7 +224,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 								/>
 								<CodeSnippet
 									theme={theme}
-									code={`tmux new -s ${name}-upgrade "bash <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/upgrade.sh) -u "${updHeight}" -b ${bin} -n "${path}" -p ${name}"`}
+									code={`tmux new -s ${name}-upgrade "bash <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/autoupgrade/upgrade.sh) -u "${updHeight}" -b ${bin} -n "${path}" -p ${name}"`}
 								/>
 							</>
 						)}
