@@ -220,7 +220,11 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 									type='warning'
 									showIcon
 									closable
-									style={{ width: 'fit-content', marginTop: '5px' }}
+									style={{
+										width: 'fit-content',
+										marginTop: '10px',
+										marginBottom: '-5px',
+									}}
 								/>
 								<CodeSnippet
 									theme={theme}
