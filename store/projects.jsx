@@ -574,8 +574,15 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			seedPort: '20656',
 			installBin:
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '208115',
+			newInstallBin: `cd $HOME
+rm -rf $HOME/lava
+git clone https://github.com/lavanet/lava.git
+cd lava
+git checkout v0.11.2
+make build
+sudo mv $HOME/lava/build/lavad $(which lavad)`,
+			gas: '--gas auto --gas-adjustment 1.5',
 		},
 		mars: {
 			chainID: 'ares-1',
