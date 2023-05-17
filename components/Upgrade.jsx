@@ -172,7 +172,7 @@ const Upgrade = props => {
 						) : (
 							<>
 								<Alert
-									message={`Upgrade height: ${updHeight}. Please don\`t upgrade before specified height.`}
+									message={`Upgrade height: ${updHeight}. Please don\`t upgrade before the specified height.`}
 									type='info'
 									showIcon
 									closable
