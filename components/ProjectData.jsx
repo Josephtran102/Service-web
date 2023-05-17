@@ -221,7 +221,8 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 					{' | '}
 					<b className={styles.bold}>{`${snapTime} ago`}</b>
 					{' | '}
-					size: <b className={styles.bold}>{`${snapSize}B | `}</b>
+					size: <b className={styles.bold}>{`${snapSize}B`}</b>
+					{' | '}
 					pruning: <b className={styles.bold}>{pruning}</b>
 					{' | '} indexer: <b className={styles.bold}>{indexer}</b>
 				</p>
