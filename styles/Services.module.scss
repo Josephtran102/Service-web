@@ -414,7 +414,7 @@ p.desc {
 
 	@media (max-width: 768px) {
 		gap: 15px;
-		row-gap: 4px;
+		row-gap: 5px;
 	}
 
 	&__name {
@@ -445,11 +445,12 @@ p.desc {
 	z-index: 10;
 
 	@media (max-width: 1300px) {
-		padding-block: 15px;
+		padding-block: 13px;
 	}
 
 	@media (max-width: 768px) {
 		position: relative;
+		padding-block: 10px;
 	}
 }
 
