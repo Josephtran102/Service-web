@@ -1,5 +1,11 @@
 import axios from 'axios'
 
+axios.defaults.headers = {
+	'Cache-Control': 'no-cache',
+	Pragma: 'no-cache',
+	Expires: '0',
+}
+
 export const fetchStatus = async (name, type) => {
 	try {
 		const response = await axios.get(
@@ -25,8 +31,7 @@ export const fetchNetInfo = async (name, type) => {
 export const fetchSnap = async (name, type) => {
 	try {
 		const response = await axios.get(
-			`https://${type}-files.itrocket.net/${name}/.current_state.json`,
-			{ cache: false }
+			`https://${type}-files.itrocket.net/${name}/.current_state.json`
 		)
 		return response.data
 	} catch (err) {

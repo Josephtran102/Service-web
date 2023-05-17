@@ -31,8 +31,11 @@ const Upgrade = props => {
 		mvLine = installBin
 			.split('\n')
 			.find(line => line.trim().startsWith('sudo mv'))
+
 		path = indexOfMv !== -1 ? mvLine.split(' ')[2] : ''
 		beforeMv = installBin.split('\n').slice(0, indexOfMv).join('\n')
+		beforeMv = beforeMv.split('\n').join(' && \\\n')
+		beforeMv = beforeMv + ' && \\\n'
 	}
 
 	const updHeight = project?.updHeight
@@ -173,7 +176,7 @@ const Upgrade = props => {
 									type='info'
 									showIcon
 									closable
-									style={{ width: 'fit-content' }}
+									style={{ width: 'fit-content', marginTop: '5px' }}
 								/>
 								<p className='flex items-center gap-2'>
 									<span></span>
@@ -205,9 +208,10 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 										onChange={handlePort}
 									/>
 								</Space> */}
-								<p style={{ marginTop: '5px' }}>1. Preparing the binary</p>
-								<CodeSnippet theme={theme} code={`${beforeMv}`} />
-								<p style={{ marginTop: '5px' }}>2. Run the script </p>
+								<p style={{ marginTop: '5px' }}>
+									Prepare the binary and run the script
+								</p>
+
 								<Alert
 									message={
 										<p>
@@ -224,7 +228,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 								/>
 								<CodeSnippet
 									theme={theme}
-									code={`tmux new -s ${name}-upgrade "bash <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/upgrade.sh) -u "${updHeight}" -b ${bin} -n "${path}" -p ${name}"`}
+									code={`${beforeMv}tmux new -s ${name}-upgrade "bash <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/autoupgrade/upgrade.sh) -u "${updHeight}" -b ${bin} -n "${path}" -p ${name}"`}
 								/>
 							</>
 						)}
