@@ -370,6 +370,7 @@ p.desc {
 	padding: 5px 14px;
 	cursor: pointer;
 	transition: background-color 0.15s ease-out;
+	z-index: 10;
 
 	img {
 		background-color: #fff;

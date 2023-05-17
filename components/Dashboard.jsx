@@ -133,7 +133,7 @@ export default function Dashboard(props) {
 	const handleLinkClick = e => {
 		e.preventDefault()
 		setIsModalOpen(false)
-		window.location.replace(e.target.href)
+		window.location.replace(e.currentTarget.href)
 	}
 
 	return (
@@ -174,6 +174,7 @@ export default function Dashboard(props) {
 										href={serviceURL}
 										className={styles.chain__wrapper}
 										onClick={handleLinkClick}
+										key={name}
 									>
 										<Image
 											src={require('@public/mainnet/'.concat(
@@ -211,6 +212,7 @@ export default function Dashboard(props) {
 										href={serviceURL}
 										className={styles.chain__wrapper}
 										onClick={handleLinkClick}
+										key={name}
 									>
 										<Image
 											src={require('@public/testnet/'.concat(
