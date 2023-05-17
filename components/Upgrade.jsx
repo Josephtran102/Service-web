@@ -176,7 +176,11 @@ const Upgrade = props => {
 									type='info'
 									showIcon
 									closable
-									style={{ width: 'fit-content', marginTop: '5px' }}
+									style={{
+										width: 'fit-content',
+										marginTop: '10px',
+										marginBottom: '-5px',
+									}}
 								/>
 								<p className='flex items-center gap-2'>
 									<span></span>
@@ -222,8 +226,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 									closable
 									style={{
 										width: 'fit-content',
-										marginTop: '10px',
-										marginBottom: '-5px',
+										marginBlock: '5px',
 									}}
 								/>
 								<CodeSnippet
