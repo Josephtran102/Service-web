@@ -294,6 +294,7 @@ export default function Dashboard(props) {
 						onChange={handleTabClick}
 						style={{
 							marginBottom: '10px',
+							marginLeft: '5px',
 							backgroundColor: theme === 'dark' ? '#6b6969' : '#e0e0e0',
 							width: 'fit-content',
 						}}
