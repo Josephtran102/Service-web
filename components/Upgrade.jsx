@@ -216,7 +216,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 									message={
 										<p>
 											Don't kill the session with{' '}
-											<kbd className={styles.kbd}>CTRL+C</kbd> before update
+											<kbd className={styles.kbd}>CTRL+C</kbd> before update is
 											completed, if you want to disconnect the session use{' '}
 											<kbd className={styles.kbd}>CTRL+B D</kbd>{' '}
 										</p>
