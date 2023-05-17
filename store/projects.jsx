@@ -576,6 +576,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
 			updHeight: '',
 			newInstallBin: '',
+			gas: '--gas auto --gas-adjustment 1.5',
 		},
 		mars: {
 			chainID: 'ares-1',
