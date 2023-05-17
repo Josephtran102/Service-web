@@ -208,10 +208,6 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 										onChange={handlePort}
 									/>
 								</Space> */}
-								<p style={{ marginTop: '5px' }}>
-									Prepare the binary and run the script
-								</p>
-
 								<Alert
 									message={
 										<p>
