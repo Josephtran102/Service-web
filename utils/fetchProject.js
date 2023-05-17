@@ -26,7 +26,7 @@ export const fetchSnap = async (name, type) => {
 	try {
 		const response = await axios.get(
 			`https://${type}-files.itrocket.net/${name}/.current_state.json`,
-			{ cache: false }
+			{ headers: { 'Cache-Control': 'no-cache' } }
 		)
 		return response.data
 	} catch (err) {
