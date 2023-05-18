@@ -51,9 +51,9 @@ let projects = {
 			bin: 'gitopiad',
 			path: '.gitopia',
 			peerID: '',
-			seedID: '',
+			seedID: 'fec95b3fa12a8b213b253d1f41014e2e8ac18ad4',
 			explorer: '',
-			peerPort: '',
+			peerPort: '43656',
 			seedPort: '',
 			installBin:
 				`cd $HOME
