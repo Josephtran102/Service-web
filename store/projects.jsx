@@ -510,9 +510,15 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			peerPort: '17656',
 			seedPort: '17656',
 			installBin:
-				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.1\nmake install',
-			updHeight: '',
-			newInstallBin: ``,
+				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.2\nmake install',
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf ~/humans
+git clone https://github.com/humansdotai/humans
+cd humans
+git checkout tags/v0.2.2
+make build
+sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
