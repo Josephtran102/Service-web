@@ -45,7 +45,7 @@ let projects = {
 			binHome: '/home/gitopia/go/bin/gitopiad',
 			snapMaxSize: '10',
 			port: '43',
-			VAR: 'LORE',
+			VAR: 'GITOPIA',
 			denom: 'ulore',
 			ecosystem: 'cosmos',
 			bin: 'gitopiad',
