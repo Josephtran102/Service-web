@@ -32,6 +32,43 @@ let projects = {
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
 		},
+		gitopia: {
+			chainID: 'gitopia',
+			link: 'https://mainnet.itrocket.net/gitopia/staking',
+			delegate:
+				'https://mainnet.itrocket.net/gitopia/staking/',
+			imgUrl: 'gitopia.png',
+			website: 'https://gitopia.com/',
+			offValDoc: '',
+			hardware: '8 Cores, 32GB RAM, 200GB of storage (NVME)',
+			prHome: '/home/gitopia',
+			binHome: '/home/gitopia/go/bin/gitopiad',
+			snapMaxSize: '10',
+			port: '43',
+			VAR: 'LORE',
+			denom: 'ulore',
+			ecosystem: 'cosmos',
+			bin: 'gitopiad',
+			path: '.gitopia',
+			peerID: '',
+			seedID: 'fec95b3fa12a8b213b253d1f41014e2e8ac18ad4',
+			explorer: '',
+			peerPort: '43656',
+			seedPort: '',
+			installBin:
+				`cd $HOME
+rm -rf gitopia
+git clone https://github.com/gitopia/gitopia.git
+cd gitopia
+git checkout v2.0.0
+make install`,
+			updHeight: ``,
+			newInstallBin: ``,
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
+		},
 		nym: {
 			chainID: '',
 			name: 'NYM',
@@ -510,9 +547,15 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			peerPort: '17656',
 			seedPort: '17656',
 			installBin:
-				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.1\nmake install',
-			updHeight: '',
-			newInstallBin: ``,
+				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.2\nmake install',
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf ~/humans
+git clone https://github.com/humansdotai/humans
+cd humans
+git checkout tags/v0.2.2
+make build
+sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
