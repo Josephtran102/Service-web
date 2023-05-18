@@ -50,11 +50,11 @@ let projects = {
 			ecosystem: 'cosmos',
 			bin: 'gitopiad',
 			path: '.gitopia',
-			peerID: '',
+			peerID: 'e5f3faef143c82f49bc506aea518e93ed4bb901f',
 			seedID: 'fec95b3fa12a8b213b253d1f41014e2e8ac18ad4',
 			explorer: '',
 			peerPort: '43656',
-			seedPort: '',
+			seedPort: '43656',
 			installBin:
 				`cd $HOME
 rm -rf gitopia
