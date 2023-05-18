@@ -56,7 +56,12 @@ let projects = {
 			peerPort: '',
 			seedPort: '',
 			installBin:
-				``,
+				`cd $HOME
+rm -rf gitopia
+git clone https://github.com/gitopia/gitopia.git
+cd gitopia
+git checkout v2.0.0
+make install`,
 			updHeight: ``,
 			newInstallBin: ``,
 			goVersion: '1.19.3',
