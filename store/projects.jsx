@@ -37,7 +37,7 @@ let projects = {
 			link: 'https://mainnet.itrocket.net/gitopia/staking',
 			delegate:
 				'https://mainnet.itrocket.net/gitopia/staking/',
-			imgUrl: 'gitopia.svg',
+			imgUrl: 'gitopia.png',
 			website: 'https://gitopia.com/',
 			offValDoc: '',
 			hardware: '8 Cores, 32GB RAM, 200GB of storage (NVME)',
