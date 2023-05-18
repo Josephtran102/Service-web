@@ -24,10 +24,17 @@ export const fetchNetInfo = async (name, type) => {
 
 export const fetchSnap = async (name, type) => {
 	try {
-		const response = await axios.get(
-			`https://${type}-files.itrocket.net/${name}/.current_state.json`
+		const response = await fetch(
+			`https://${type}-files.itrocket.net/${name}/.current_state.json`,
+			{ cache: 'no-store' }
 		)
-		return response.data
+
+		if (!response.ok) {
+			throw new Error('Network response was not ok')
+		}
+
+		const data = await response.json()
+		return data
 	} catch (err) {
 		console.log(err)
 	}
