@@ -36,7 +36,7 @@ let projects = {
 			chainID: 'gitopia',
 			link: 'https://mainnet.itrocket.net/gitopia/staking',
 			delegate:
-				'https://mainnet.itrocket.net/gitopia/staking/',
+				'https://mainnet.itrocket.net/gitopia/staking/gitopiavaloper1nxse2wau7lm7utsc3mhrpyrh299lppm07ttm4k',
 			imgUrl: 'gitopia.png',
 			website: 'https://gitopia.com/',
 			offValDoc: '',
