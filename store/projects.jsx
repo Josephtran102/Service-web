@@ -297,6 +297,42 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
 		},
+		archway: {
+			chainID: 'constantine-3',
+			link: 'https://testnet.itrocket.net/archway/staking',
+			imgUrl: 'archway.jpg',
+			desc: '',
+			website: 'https://archway.io/',
+			offValDoc: '',
+			hardware: '8 Cores, 16GB RAM, 200GB of storage (NVME)',
+			prHome: '/home/archway',
+			binHome: '/home/archway/go/bin/archwayd',
+			snapMaxSize: '10',
+			port: '44',
+			VAR: 'ARCHWAY',
+			denom: 'aconst',
+			ecosystem: 'cosmos',
+			bin: 'archwayd',
+			path: '.archway',
+			peerID: '',
+			seedID: '',
+			explorer: '',
+			peerPort: '44656',
+			seedPort: '44656',
+			installBin:
+				`cd $HOME
+rm -rf archway
+git clone https://github.com/archway-network/archway.git
+cd archway
+git checkout v0.5.2
+make install`,
+			updHeight: '',
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
+		},
 		axelar: {
 			chainID: 'axelar-testnet-lisbon-3',
 			link: 'https://testnet.itrocket.net/axelar/staking',
