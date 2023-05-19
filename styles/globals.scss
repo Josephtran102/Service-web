@@ -173,22 +173,22 @@ a {
 }
 
 .ant-segmented-item {
-	margin: 3px !important;
+	margin: 2px !important;
 
 	@media (max-width: 360px) {
 		margin: 0px !important;
 	}
 }
 .ant-segmented-item-selected {
-	margin: 3px !important;
+	margin: 2px !important;
 	@media (max-width: 360px) {
 		margin: 0px !important;
 	}
 }
 
 .ant-segmented-thumb {
-	margin: 3px !important;
-	height: calc(100% - 6px) !important;
+	margin: 2px !important;
+	height: calc(100% - 4px) !important;
 	@media (max-width: 360px) {
 		margin: 0px !important;
 	}
