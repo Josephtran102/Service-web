@@ -228,9 +228,9 @@ export default function Dashboard(props) {
 					>
 						<div className={styles.stats}>
 							<div className={styles.chain__wrapper} onClick={showModal}>
-								<span className='flex items-center gap-3 select-none'>
-									<RetweetOutlined />
+								<span className='flex items-center gap-4 select-none'>
 									<b className={styles.bold}>{name.charAt(0).toUpperCase() + name.slice(1)}</b>
+									<RetweetOutlined />
 								</span>
 							</div>
 

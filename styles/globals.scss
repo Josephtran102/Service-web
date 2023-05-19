@@ -149,7 +149,7 @@ a {
 }
 
 .ant-menu-title-content {
-	transition: 0s !important;
+	transition: transform 0.25s !important;
 	z-index: 10 !important;
 
 	a {
@@ -275,7 +275,7 @@ a {
 }
 
 .ant-menu-dark.ant-menu-inline .ant-menu-sub.ant-menu-inline {
-	background: #1b1b1b !important;
+	background: #1b1b1b;
 }
 
 .ant-menu-submenu {
@@ -319,11 +319,14 @@ a {
 }
 
 .ant-menu-item-selected {
-	background: transparent !important;
 	-webkit-box-shadow: 0 0 10px 1px rgb(102 108 255 / 70%) !important;
 	box-shadow: 0 0 10px 1px rgb(102 108 255 / 70%) !important;
 	border-radius: 4px !important;
 	color: inherit !important;
+}
+
+div[aria-expanded='true'] {
+	background-color: #e6f4ff !important;
 }
 
 div[role='menuitem'] {
@@ -345,6 +348,15 @@ li[role='menuitem'] {
 	margin: 2px 0 !important;
 	box-shadow: none !important;
 	transition: 0s !important;
+	background-color: transparent !important;
+
+	&:hover {
+		background-color: #8c8b8b17 !important;
+	}
+}
+
+.ant-menu-item-icon {
+	transition: 0.2s !important;
 }
 
 [data-icon='right'] {
@@ -378,16 +390,16 @@ li[role='menuitem'] {
 
 .ant-menu-light .ant-menu-submenu-selected > .ant-menu-submenu-title {
 	color: inherit !important;
-	background-color: #f2f2f2a9 !important;
+	background-color: #f2f2f2a9;
 }
 .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title {
 	color: inherit !important;
-	background-color: #222 !important;
+	background-color: #222;
 }
 
 .ant-menu-light .ant-menu-submenu-title {
 	background-color: #f2f2f2a9;
-	box-shadow: none !important;
+	box-shadow: none;
 }
 
 .ant-modal {
