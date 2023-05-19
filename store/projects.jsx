@@ -36,7 +36,7 @@ let projects = {
 			chainID: 'gitopia',
 			link: 'https://mainnet.itrocket.net/gitopia/staking',
 			delegate:
-				'https://mainnet.itrocket.net/gitopia/staking/',
+				'https://mainnet.itrocket.net/gitopia/staking/gitopiavaloper1nxse2wau7lm7utsc3mhrpyrh299lppm07ttm4k',
 			imgUrl: 'gitopia.png',
 			website: 'https://gitopia.com/',
 			offValDoc: '',
@@ -45,16 +45,16 @@ let projects = {
 			binHome: '/home/gitopia/go/bin/gitopiad',
 			snapMaxSize: '10',
 			port: '43',
-			VAR: 'LORE',
+			VAR: 'GITOPIA',
 			denom: 'ulore',
 			ecosystem: 'cosmos',
 			bin: 'gitopiad',
 			path: '.gitopia',
-			peerID: '',
+			peerID: 'e5f3faef143c82f49bc506aea518e93ed4bb901f',
 			seedID: 'fec95b3fa12a8b213b253d1f41014e2e8ac18ad4',
 			explorer: '',
 			peerPort: '43656',
-			seedPort: '',
+			seedPort: '43656',
 			installBin:
 				`cd $HOME
 rm -rf gitopia
