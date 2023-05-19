@@ -95,13 +95,13 @@ export default function Dashboard(props) {
 
 		const URL = window.location.href
 		if (URL.indexOf('installation') > -1) {
-			setValue('installation')
+			setValue('Installation')
 		} else if (URL.indexOf('upgrade') > -1) {
-			setValue('upgrade')
+			setValue('Upgrade')
 		} else if (URL.indexOf('cheat') > -1) {
-			setValue('cheat-sheet')
+			setValue('Cheat-Sheet')
 		} else {
-			setValue('services')
+			setValue('API & Sync')
 		}
 		status(name, type, isCurrent)
 
@@ -125,8 +125,8 @@ export default function Dashboard(props) {
 
 	const handleTabClick = value => {
 		setValue(value)
-		const section = value === 'services' ? '' : value
-		const href = `/services/${curProjectType.current}/${curProjectName.current}/${section}`
+		const section = value === 'API & Sync' ? '' : value
+		const href = `/services/${curProjectType.current}/${curProjectName.current}/${section.toLowerCase()}`
 		router.push(href)
 	}
 
@@ -164,7 +164,12 @@ export default function Dashboard(props) {
 
 							return (
 								!isCurrent && (
-									<a href={serviceURL} className={styles.chain__wrapper} onClick={handleLinkClick} key={name}>
+									<a
+										href={serviceURL}
+										className={styles.chain__wrapper}
+										onClick={handleLinkClick}
+										key={name}
+									>
 										<Image
 											src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
 											alt='project logo'
@@ -237,7 +242,8 @@ export default function Dashboard(props) {
 								<b className={styles.bold}>Block Height: </b> {blockHeight}{' '}
 							</span>
 							<span>
-								<b className={styles.bold}>RPC Status:</b> <span className={`${styles.dot} ${isActive}`} />
+								<b className={styles.bold}>RPC Status:</b>{' '}
+								<span className={`${styles.dot} ${isActive}`} />
 							</span>
 							<span>
 								{explorer === undefined ? (
@@ -267,7 +273,7 @@ export default function Dashboard(props) {
 					<Segmented
 						value={value}
 						defaultValue={curProjectType.current}
-						options={['services', 'installation', 'upgrade', 'cheat-sheet']}
+						options={['API & Sync', 'Installation', 'Upgrade', 'Cheat-Sheet']}
 						onChange={handleTabClick}
 						style={{
 							marginBottom: '10px',

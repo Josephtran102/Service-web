@@ -16,11 +16,7 @@ html {
 
 	&::-webkit-scrollbar-thumb {
 		background: rgb(131, 131, 131);
-		background: linear-gradient(
-			0deg,
-			rgba(131, 131, 131, 0.45) 0%,
-			rgba(131, 131, 131, 0.6) 100%
-		);
+		background: linear-gradient(0deg, rgba(131, 131, 131, 0.45) 0%, rgba(131, 131, 131, 0.6) 100%);
 		border-radius: 10px;
 		max-height: 40px;
 	}
@@ -93,10 +89,6 @@ a {
 #guide,
 #service-operations {
 	text-decoration-color: #4ca0ee;
-
-	@media (max-width: 768px) {
-		margin-top: 15px;
-	}
 }
 
 #wasm,
@@ -178,6 +170,28 @@ a {
 
 .ant-segmented-item-disabled {
 	color: rgba(0, 0, 0, 0.18) !important;
+}
+
+.ant-segmented-item {
+	margin: 3px !important;
+
+	@media (max-width: 360px) {
+		margin: 0px !important;
+	}
+}
+.ant-segmented-item-selected {
+	margin: 3px !important;
+	@media (max-width: 360px) {
+		margin: 0px !important;
+	}
+}
+
+.ant-segmented-thumb {
+	margin: 3px !important;
+	height: calc(100% - 6px) !important;
+	@media (max-width: 360px) {
+		margin: 0px !important;
+	}
 }
 
 .ant-dropdown-trigger {
