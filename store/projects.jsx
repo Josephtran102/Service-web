@@ -584,7 +584,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			peerPort: '28656',
 			seedPort: '28656',
 			installBin:
-				'cd $HOME\nwget https://github.com/KYVENetwork/chain/releases/download/v1.0.0-rc1/kyved_linux_amd64.tar.gz\ntar -xvzf kyved_linux_amd64.tar.gz\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm kyved_linux_amd64.tar.gz',
+				'cd $HOME\nwget https://github.com/KYVENetwork/chain/releases/download/1.0.0-beta.9/kyved_linux_amd64.tar.gz\ntar -xvzf kyved_linux_amd64.tar.gz\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm kyved_linux_amd64.tar.gz',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
