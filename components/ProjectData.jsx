@@ -100,7 +100,7 @@ const ProjectData = ({ name, type }) => {
 	}
 
 	useEffect(() => {
-		updateAPR()
+		// updateAPR()
 		snap()
 		fetchData()
 		const intervalId = setInterval(fetchData, 10000)
@@ -176,16 +176,11 @@ const ProjectData = ({ name, type }) => {
 				<h3 id='gRPC'>gRPC:</h3>
 				<CodeSnippet theme={theme} code={`${gRPC}`} />
 				<h3 id='peer'>peers:</h3>
-				<CodeSnippet
-					theme={theme}
-					code={`${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}`}
-				/>
+				<CodeSnippet theme={theme} code={`${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}`} />
 				<h3 id='seed'>seeds:</h3>
 				<CodeSnippet theme={theme} code={SEEDS} />
 				<h3 id='live-peers'>live peers:</h3>
-				<p className={styles.text_secondary}>
-					active peers: {livePeersCounter} (upd. every 10 sec)
-				</p>
+				<p className={styles.text_secondary}>active peers: {livePeersCounter} (upd. every 10 sec)</p>
 				<CodeSnippet
 					theme={theme}
 					code={`PEERS=${LIVE_PEERS}
@@ -216,9 +211,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
 
 rm -rf $HOME/${path}/data ${
-						wasm.current.includes('data') || wasm.current === 'false'
-							? ''
-							: `$HOME/${path}/wasm`
+						wasm.current.includes('data') || wasm.current === 'false' ? '' : `$HOME/${path}/wasm`
 					}
 curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
 
