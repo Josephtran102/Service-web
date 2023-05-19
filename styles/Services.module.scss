@@ -52,7 +52,7 @@ b.bold {
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
-		padding: 5px 0 500px 35px;
+		padding: 5px 0 500px 30px;
 		width: calc(84% - 30px);
 
 		@media (max-width: 1400px) {
