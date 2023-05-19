@@ -250,10 +250,7 @@ a {
 	overflow-x: hidden;
 	overflow-y: scroll;
 	border: 0px !important;
-
-	@media (max-width: 1300px) {
-		padding-right: 0px !important;
-	}
+	padding-right: 0px !important;
 
 	&::-webkit-scrollbar {
 		width: 5px;
