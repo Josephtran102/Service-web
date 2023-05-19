@@ -26,9 +26,9 @@ const Card = () => {
 		show: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.12,
-			},
-		},
+				staggerChildren: 0.12
+			}
+		}
 	}
 
 	const listItem = {
@@ -37,9 +37,9 @@ const Card = () => {
 			opacity: 1,
 			y: 0,
 			transition: {
-				duration: 0.3,
-			},
-		},
+				duration: 0.3
+			}
+		}
 	}
 
 	return (
@@ -61,17 +61,14 @@ const Card = () => {
 					<div className={styles.card__desc}>
 						<div className={styles.card__img}>
 							<Image
-								src={require('../public/mainnet/'.concat(
-									projects.mainnet[item].imgUrl
-								))}
+								src={require('../public/mainnet/'.concat(projects.mainnet[item].imgUrl))}
 								alt='item'
 								width={50}
 								height={50}
 							/>
 						</div>
 						<h5 className={styles.card__heading}>
-							{projects.mainnet[item].name ||
-								item.charAt(0).toUpperCase() + item.slice(1)}
+							{projects.mainnet[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
 						</h5>
 					</div>
 					<a
@@ -86,11 +83,7 @@ const Card = () => {
 					<div className={styles.button__wrapper}>
 						<Link
 							href={'/services/mainnet/' + item.toLowerCase()}
-							className={
-								theme === 'light'
-									? styles.buttonExplorer
-									: styles.buttonExplorer_dark
-							}
+							className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
 						>
 							Services
 						</Link>
@@ -98,11 +91,7 @@ const Card = () => {
 							href={projects.mainnet[item].link}
 							target='_blank'
 							rel='noopener noreferrer'
-							className={
-								theme === 'light'
-									? styles.buttonExplorer
-									: styles.buttonExplorer_dark
-							}
+							className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
 							role='button'
 						>
 							Explorer

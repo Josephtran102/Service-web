@@ -1,9 +1,9 @@
 const nextConfig = {
 	images: {
-		unoptimized: true,
+		unoptimized: true
 	},
 	trailingSlash: true,
-	reactStrictMode: true,
+	reactStrictMode: true
 }
 
 module.exports = nextConfig

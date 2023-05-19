@@ -9,7 +9,7 @@ import Image from 'next/image'
 const menuVariants = {
 	hidden: {
 		y: '-20px',
-		opacity: 0,
+		opacity: 0
 	},
 	visible: {
 		y: 0,
@@ -18,8 +18,8 @@ const menuVariants = {
 			type: 'spring',
 			stiffness: 120,
 			damping: 20,
-			duration: 0.15,
-		},
+			duration: 0.15
+		}
 	},
 	exit: {
 		y: '-20px',
@@ -28,9 +28,9 @@ const menuVariants = {
 			type: 'spring',
 			stiffness: 120,
 			damping: 20,
-			duration: 0.15,
-		},
-	},
+			duration: 0.15
+		}
+	}
 }
 
 const Header = () => {
@@ -41,7 +41,7 @@ const Header = () => {
 	const spring = {
 		type: 'spring',
 		stiffness: 700,
-		damping: 55,
+		damping: 55
 	}
 
 	useEffect(() => {
@@ -93,21 +93,14 @@ const Header = () => {
 		>
 			FAQ
 		</Link>,
-		<div
-			className={styles.switch__wrapper}
-			style={{ backgroundColor: theme === 'dark' ? '#222' : '#f6f6f7' }}
-		>
+		<div className={styles.switch__wrapper} style={{ backgroundColor: theme === 'dark' ? '#222' : '#f6f6f7' }}>
 			<span>Appearance:</span>
-			<div
-				className={styles.switch}
-				data-ison={theme === 'dark'}
-				onClick={toggleTheme}
-			>
+			<div className={styles.switch} data-ison={theme === 'dark'} onClick={toggleTheme}>
 				<motion.div
 					className={styles.handle}
 					transition={spring}
 					style={{
-						backgroundColor: theme === 'light' ? '#fff' : '#000',
+						backgroundColor: theme === 'light' ? '#fff' : '#000'
 					}}
 				>
 					<svg
@@ -137,14 +130,14 @@ const Header = () => {
 						className={styles.moon}
 						data-v-59e4a403=''
 						style={{
-							display: theme === 'dark' ? 'block' : 'none',
+							display: theme === 'dark' ? 'block' : 'none'
 						}}
 					>
 						<path d='M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z'></path>
 					</svg>
 				</motion.div>
 			</div>
-		</div>,
+		</div>
 	]
 
 	useEffect(() => {
@@ -157,7 +150,7 @@ const Header = () => {
 				className={styles.header}
 				style={{
 					backgroundColor: theme === 'dark' ? '#161616' : ' #fefefe',
-					opacity: opacity,
+					opacity: opacity
 				}}
 			>
 				{
@@ -205,17 +198,12 @@ const Header = () => {
 						</ul>
 					</nav>
 
-					<div
-						className={styles.switch}
-						data-ison={theme === 'dark'}
-						onClick={toggleTheme}
-						id={styles.desktopSwitch}
-					>
+					<div className={styles.switch} data-ison={theme === 'dark'} onClick={toggleTheme} id={styles.desktopSwitch}>
 						<motion.div
 							className={styles.handle}
 							transition={spring}
 							style={{
-								backgroundColor: theme === 'light' ? '#fff' : '#000',
+								backgroundColor: theme === 'light' ? '#fff' : '#000'
 							}}
 						>
 							<svg
@@ -245,7 +233,7 @@ const Header = () => {
 								className={styles.moon}
 								data-v-59e4a403=''
 								style={{
-									display: theme === 'dark' ? 'block' : 'none',
+									display: theme === 'dark' ? 'block' : 'none'
 								}}
 							>
 								<path d='M12.1,22c-0.3,0-0.6,0-0.9,0c-5.5-0.5-9.5-5.4-9-10.9c0.4-4.8,4.2-8.6,9-9c0.4,0,0.8,0.2,1,0.5c0.2,0.3,0.2,0.8-0.1,1.1c-2,2.7-1.4,6.4,1.3,8.4c2.1,1.6,5,1.6,7.1,0c0.3-0.2,0.7-0.3,1.1-0.1c0.3,0.2,0.5,0.6,0.5,1c-0.2,2.7-1.5,5.1-3.6,6.8C16.6,21.2,14.4,22,12.1,22zM9.3,4.4c-2.9,1-5,3.6-5.2,6.8c-0.4,4.4,2.8,8.3,7.2,8.7c2.1,0.2,4.2-0.4,5.8-1.8c1.1-0.9,1.9-2.1,2.4-3.4c-2.5,0.9-5.3,0.5-7.5-1.1C9.2,11.4,8.1,7.7,9.3,4.4z'></path>
@@ -261,21 +249,18 @@ const Header = () => {
 						}}
 						className={styles.burgerButton}
 					>
-						<div
-							className={styles.burgerIconWrapper}
-							style={{ gap: isOpen ? '0' : '10px' }}
-						>
+						<div className={styles.burgerIconWrapper} style={{ gap: isOpen ? '0' : '10px' }}>
 							<span
 								style={{
 									backgroundColor: theme === 'light' ? '#000' : '#fff',
 									transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-									width: isOpen ? '100%' : '90%',
+									width: isOpen ? '100%' : '90%'
 								}}
 							></span>
 							<span
 								style={{
 									backgroundColor: theme === 'light' ? '#000' : '#fff',
-									transform: isOpen ? 'rotate(-45deg)' : 'rotate(0deg)',
+									transform: isOpen ? 'rotate(-45deg)' : 'rotate(0deg)'
 								}}
 							></span>
 						</div>
@@ -287,7 +272,7 @@ const Header = () => {
 				className={styles.burgerMenu}
 				style={{
 					backgroundColor: theme === 'dark' ? '#161616' : '#fff',
-					display: isOpen ? 'flex' : 'none',
+					display: isOpen ? 'flex' : 'none'
 				}}
 				initial='hidden'
 				animate={isOpen ? 'visible' : 'hidden'}
@@ -303,25 +288,12 @@ const Header = () => {
 				</nav>
 
 				<div className='socials'>
-					<a
-						href='https://t.me/SEM3gs'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
+					<a href='https://t.me/SEM3gs' target='_blank' rel='noopener noreferrer'>
 						<Image src='/icons/tg.svg' alt='telegram' width={30} height={30} />
 					</a>
 
-					<a
-						href='https://twitter.com/SEM23404846'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						<Image
-							src='/icons/twitter.svg'
-							alt='twitter'
-							width={30}
-							height={30}
-						/>
+					<a href='https://twitter.com/SEM23404846' target='_blank' rel='noopener noreferrer'>
+						<Image src='/icons/twitter.svg' alt='twitter' width={30} height={30} />
 					</a>
 					<a
 						href='https://github.com/itrocket-team'
@@ -329,12 +301,7 @@ const Header = () => {
 						rel='noopener noreferrer'
 						style={{ display: theme === 'light' ? 'block' : 'none' }}
 					>
-						<Image
-							src='/icons/github.svg'
-							alt='github'
-							width={30}
-							height={30}
-						/>
+						<Image src='/icons/github.svg' alt='github' width={30} height={30} />
 					</a>
 					<a
 						href='https://github.com/itrocket-team'
@@ -342,12 +309,7 @@ const Header = () => {
 						rel='noopener noreferrer'
 						style={{ display: theme !== 'light' ? 'block' : 'none' }}
 					>
-						<Image
-							src='/icons/github-white.svg'
-							alt='github'
-							width={30}
-							height={30}
-						/>
+						<Image src='/icons/github-white.svg' alt='github' width={30} height={30} />
 					</a>
 				</div>
 			</motion.div>

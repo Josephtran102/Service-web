@@ -10,24 +10,15 @@ import { Breadcrumb, Typography } from 'antd'
 import AnimatedSection from './AnimatedSection'
 import Link from 'next/link'
 import { HomeOutlined } from '@ant-design/icons'
+import { updateAPR } from '@utils/updateAPR'
 
 const { Paragraph } = Typography
 
 const ProjectData = ({ name, type }) => {
 	const project = projects[type][name]
 	const explorer = useRef()
-	const projectName =
-		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const {
-		bin,
-		path,
-		peerID,
-		seedID,
-		seedPort,
-		peerPort,
-		unsafeReset,
-		chainID,
-	} = project
+	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
+	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset, chainID } = project
 	explorer.current = project.explorer
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
@@ -39,16 +30,10 @@ const ProjectData = ({ name, type }) => {
 	const [snapSize, setSnapSize] = useState('')
 	const [snapTime, setSnapTime] = useState()
 
-	const PEERS = peerID
-		? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}`
-		: ''
+	const PEERS = peerID ? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}` : ''
 	const LIVE_PEERS = peerID ? `"${PEERS}"` : `"${livePeers.slice(1)}"`
-	const SEEDS = seedID
-		? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}`
-		: ''
-	const gRPC = `${name}-${type}-grpc.itrocket.net:${
-		peerPort ? peerPort.slice(0, 2) : ''
-	}090`
+	const SEEDS = seedID ? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}` : ''
+	const gRPC = `${name}-${type}-grpc.itrocket.net:${peerPort ? peerPort.slice(0, 2) : ''}090`
 
 	const netInfo = () => {
 		fetchNetInfo(name, type)
@@ -115,6 +100,7 @@ const ProjectData = ({ name, type }) => {
 	}
 
 	useEffect(() => {
+		updateAPR()
 		snap()
 		fetchData()
 		const intervalId = setInterval(fetchData, 10000)
@@ -128,10 +114,7 @@ const ProjectData = ({ name, type }) => {
 		<AnimatedSection>
 			<Head>
 				<title>{`${projectName} | Services`}</title>
-				<meta
-					name='description'
-					content='ITRocket 🚀 | Crypto Multipurpose Project'
-				/>
+				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 
 			<div
@@ -147,14 +130,14 @@ const ProjectData = ({ name, type }) => {
 								<Link href='/'>
 									<HomeOutlined />
 								</Link>
-							),
+							)
 						},
 						{
-							title: <Link href='/services/'>Services</Link>,
+							title: <Link href='/services/'>Services</Link>
 						},
 						{
-							title: `${projectName}`,
-						},
+							title: `${projectName}`
+						}
 					]}
 				/>
 				<h2 id='rpc'>RPC, API, gRPC</h2>
@@ -170,7 +153,7 @@ const ProjectData = ({ name, type }) => {
 					<Paragraph
 						copyable={{
 							text: `https://${name}-${type}-rpc.itrocket.net:443`,
-							tooltips: false,
+							tooltips: false
 						}}
 					/>
 				</div>
@@ -186,7 +169,7 @@ const ProjectData = ({ name, type }) => {
 					<Paragraph
 						copyable={{
 							text: `https://${name}-${type}-api.itrocket.net:443`,
-							tooltips: false,
+							tooltips: false
 						}}
 					/>
 				</div>
@@ -244,10 +227,7 @@ mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_valida
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 				/>
 				<h2 id='sync'>State Sync</h2>
-				<p>
-					If you don't want to wait for a long synchronization you can use our
-					guide:
-				</p>
+				<p>If you don't want to wait for a long synchronization you can use our guide:</p>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo systemctl stop ${bin}

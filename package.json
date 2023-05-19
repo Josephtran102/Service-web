@@ -3,18 +3,18 @@
 	"version": "0.1.1",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev ",
 		"build": "next build",
 		"export": "next build && next export",
 		"start": "next start",
 		"lint": "next lint"
 	},
 	"dependencies": {
-		"@ant-design/icons": "^5.0.1",
+		"@ant-design/icons": "^5.1.0",
 		"antd": "^5.5.0",
 		"axios": "^1.4.0",
 		"clipboard-copy": "^4.0.1",
-		"framer-motion": "^10.12.11",
+		"framer-motion": "^10.12.12",
 		"next": "13.4.2",
 		"node-fetch": "^3.3.1",
 		"pocketbase": "^0.14.4",

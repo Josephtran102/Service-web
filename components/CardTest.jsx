@@ -29,7 +29,7 @@ const Card = () => {
 					className={styles.card}
 					key={item}
 					style={{
-						backgroundColor: theme === 'dark' ? '#222' : '#fff',
+						backgroundColor: theme === 'dark' ? '#222' : '#fff'
 					}}
 					onMouseMove={e => handleOnMouseMove(e)}
 				>
@@ -50,11 +50,7 @@ const Card = () => {
 					<div className={styles.button__wrapper}>
 						<Link
 							href={'/services/testnet/' + item.toLowerCase()}
-							className={
-								theme === 'light'
-									? styles.buttonExplorer
-									: styles.buttonExplorer_dark
-							}
+							className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
 						>
 							Services
 						</Link>
@@ -62,11 +58,7 @@ const Card = () => {
 							href={data[item].link}
 							target='_blank'
 							rel='noopener noreferrer'
-							className={
-								theme === 'light'
-									? styles.buttonExplorer
-									: styles.buttonExplorer_dark
-							}
+							className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
 						>
 							Explorer
 						</a>

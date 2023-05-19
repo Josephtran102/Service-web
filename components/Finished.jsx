@@ -25,9 +25,9 @@ const Finished = () => {
 		visible: {
 			opacity: 1,
 			y: 0,
-			transition: { duration: 0.4, delay: 0.1 },
+			transition: { duration: 0.4, delay: 0.1 }
 		},
-		hidden: { y: 15, opacity: 0 },
+		hidden: { y: 15, opacity: 0 }
 	}
 
 	return (
@@ -47,12 +47,7 @@ const Finished = () => {
 				>
 					<h5 className={styles.card__heading}>{item.name}</h5>
 					<div className={styles.card__img}>
-						<Image
-							src={require('@public/finished/'.concat(item.imgUrl))}
-							alt='project logo'
-							width={50}
-							height={50}
-						/>
+						<Image src={require('@public/finished/'.concat(item.imgUrl))} alt='project logo' width={50} height={50} />
 					</div>
 				</div>
 			))}

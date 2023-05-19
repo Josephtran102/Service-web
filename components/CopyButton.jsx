@@ -19,14 +19,10 @@ const CopyButton = ({ code, theme }) => {
 			className={styles.copyButton}
 			style={{
 				backgroundColor: theme == 'dark' ? '#222' : '#fff',
-				borderColor: isClicked ? '#03C04A' : '#8181816a',
+				borderColor: isClicked ? '#03C04A' : '#8181816a'
 			}}
 		>
-			{isClicked ? (
-				<CheckOutlined style={{ color: '#03C04A' }} />
-			) : (
-				<CopyOutlined onClick={handleCopyClick} />
-			)}
+			{isClicked ? <CheckOutlined style={{ color: '#03C04A' }} /> : <CopyOutlined onClick={handleCopyClick} />}
 		</div>
 	)
 }

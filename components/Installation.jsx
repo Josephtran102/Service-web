@@ -15,8 +15,7 @@ const Installation = props => {
 	const type = props.type
 	const project = projects[type][name]
 	const explorer = useRef()
-	const projectName =
-		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
+	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const {
 		chainID,
 		bin,
@@ -32,7 +31,7 @@ const Installation = props => {
 		goVersion,
 		gas,
 		unsafeReset,
-		minGasPrice,
+		minGasPrice
 	} = project
 
 	explorer.current = project.explorer
@@ -68,9 +67,7 @@ const Installation = props => {
 				setBlockHeight(status.sync_info.latest_block_height)
 				setIsActive(styles.active)
 				if (updHeight) {
-					status.sync_info.latest_block_height >= updHeight
-						? setInstallBin(newInstallBin)
-						: ''
+					status.sync_info.latest_block_height >= updHeight ? setInstallBin(newInstallBin) : ''
 				}
 			})
 			.catch(err => {
@@ -154,17 +151,10 @@ const Installation = props => {
 		<AnimatedSection>
 			<Head>
 				<title>{`Installation - ${projectName} | Services`}</title>
-				<meta
-					name='description'
-					content='ITRocket 🚀 | Crypto Multipurpose Project'
-				/>
+				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 
-			<div
-				className={styles.mainColumn}
-				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
-			>
+			<div className={styles.mainColumn} id='mainColumn' style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}>
 				<Breadcrumb
 					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
 					items={[
@@ -173,14 +163,14 @@ const Installation = props => {
 								<Link href='/'>
 									<HomeOutlined />
 								</Link>
-							),
+							)
 						},
 						{
-							title: <Link href='/services/'>Services</Link>,
+							title: <Link href='/services/'>Services</Link>
 						},
 						{
-							title: `${projectName}`,
-						},
+							title: `${projectName}`
+						}
 					]}
 				/>
 				<>
@@ -354,49 +344,26 @@ ${bin} query bank balances $WALLET_ADDRESS
 `}
 				/>
 				<h2 id='create-validator'>Create validator</h2>
-				<Space
-					size='middle'
-					style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}
-				>
+				<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 					<Space direction='vertical'>
 						<span>Moniker</span>
-						<Input
-							style={{ minWidth: '280px' }}
-							placeholder={'$MONIKER'}
-							onChange={e => setMoniker(e.target.value)}
-						/>
+						<Input style={{ minWidth: '280px' }} placeholder={'$MONIKER'} onChange={e => setMoniker(e.target.value)} />
 					</Space>
 					<Space direction='vertical'>
 						<span>Identity</span>
-						<Input
-							style={{ minWidth: '280px' }}
-							placeholder={'identity'}
-							onChange={e => setIdentity(e.target.value)}
-						/>
+						<Input style={{ minWidth: '280px' }} placeholder={'identity'} onChange={e => setIdentity(e.target.value)} />
 					</Space>
 					<Space direction='vertical'>
 						<span>Details</span>
-						<Input
-							style={{ minWidth: '320px' }}
-							defaultValue={details}
-							onChange={e => setDetails(e.target.value)}
-						/>
+						<Input style={{ minWidth: '320px' }} defaultValue={details} onChange={e => setDetails(e.target.value)} />
 					</Space>
 					<Space direction='vertical'>
 						<span>Amount, {denom}</span>
-						<Input
-							style={{ minWidth: '200px' }}
-							defaultValue={amountCreate}
-							onChange={e => setAmountCreate(e.target.value)}
-						/>
+						<Input style={{ minWidth: '200px' }} defaultValue={amountCreate} onChange={e => setAmountCreate(e.target.value)} />
 					</Space>
 					<Space direction='vertical'>
 						<span>Commission rate</span>
-						<Input
-							style={{ minWidth: '100px' }}
-							defaultValue={commissionRate}
-							onChange={e => setCommissionRate(e.target.value)}
-						/>
+						<Input style={{ minWidth: '100px' }} defaultValue={commissionRate} onChange={e => setCommissionRate(e.target.value)} />
 					</Space>
 					<Space direction='vertical'>
 						<span>Commission max rate</span>
@@ -439,19 +406,12 @@ ${gas} \\
 				<h2 id='monitoring'>Monitoring</h2>
 				<p>
 					If you want to have set up a monitoring and alert system use{' '}
-					<a
-						href='https://teletype.in/@itrocket/bdJAHvC_q8h'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
+					<a href='https://teletype.in/@itrocket/bdJAHvC_q8h' target='_blank' rel='noopener noreferrer'>
 						our cosmos nodes monitoring guide with tenderduty
 					</a>
 				</p>
 				<h2 id='security'>Security</h2>
-				<p>
-					To protect you keys please don`t share your privkey, mnemonic and
-					follow a basic security rules
-				</p>
+				<p>To protect you keys please don`t share your privkey, mnemonic and follow a basic security rules</p>
 				<h3 id='ssh'>Set up ssh keys for authentication</h3>
 				<p>
 					You can use this{' '}
@@ -462,14 +422,10 @@ ${gas} \\
 					>
 						guide
 					</a>{' '}
-					to configure ssh authentication and disable password authentication on
-					your server
+					to configure ssh authentication and disable password authentication on your server
 				</p>
 				<h3 id='firewall'>Firewall security</h3>
-				<p>
-					Set the default to allow outgoing connections, deny all incoming,
-					allow ssh and node p2p port
-				</p>
+				<p>Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port</p>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo ufw default allow outgoing 

@@ -12,7 +12,7 @@ const Footer = props => {
 		<footer
 			className={styles.footer}
 			style={{
-				backgroundColor: theme === 'light' ? '#fff' : '#171717',
+				backgroundColor: theme === 'light' ? '#fff' : '#171717'
 			}}
 		>
 			<div className={styles.container}>
@@ -43,31 +43,14 @@ const Footer = props => {
 					<span>© 2021-2023 ITRocket Team</span>
 				</div>
 				<div className='socials'>
-					<a
-						href='https://t.me/SEM3gs'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
+					<a href='https://t.me/SEM3gs' target='_blank' rel='noopener noreferrer'>
 						<Image src='/icons/tg.svg' alt='telegram' width={40} height={40} />
 					</a>
 
-					<a
-						href='https://twitter.com/SEM23404846'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						<Image
-							src='/icons/twitter.svg'
-							alt='twitter'
-							width={40}
-							height={40}
-						/>
+					<a href='https://twitter.com/SEM23404846' target='_blank' rel='noopener noreferrer'>
+						<Image src='/icons/twitter.svg' alt='twitter' width={40} height={40} />
 					</a>
-					<a
-						href='https://github.com/itrocket-team'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
+					<a href='https://github.com/itrocket-team' target='_blank' rel='noopener noreferrer'>
 						<Image
 							src='/icons/github.svg'
 							alt='github'

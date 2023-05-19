@@ -15,8 +15,7 @@ const Upgrade = props => {
 	const type = props.type
 	const project = projects[type][name]
 	const explorer = useRef()
-	const projectName =
-		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
+	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const bin = project.bin
 	const installBin = project.newInstallBin
 	const isEmpty = installBin === undefined ? true : false
@@ -24,13 +23,8 @@ const Upgrade = props => {
 	if (!isEmpty) {
 		indexOfMv = installBin
 			.split('\n')
-			.findIndex(
-				line =>
-					line.trim().startsWith('mv') || line.trim().startsWith('sudo mv')
-			)
-		mvLine = installBin
-			.split('\n')
-			.find(line => line.trim().startsWith('sudo mv'))
+			.findIndex(line => line.trim().startsWith('mv') || line.trim().startsWith('sudo mv'))
+		mvLine = installBin.split('\n').find(line => line.trim().startsWith('sudo mv'))
 
 		path = indexOfMv !== -1 ? mvLine.split(' ')[2] : ''
 		beforeMv = installBin.split('\n').slice(0, indexOfMv).join('\n')
@@ -134,10 +128,7 @@ const Upgrade = props => {
 		<AnimatedSection>
 			<Head>
 				<title>{`Upgrade - ${projectName} | Services`}</title>
-				<meta
-					name='description'
-					content='ITRocket 🚀 | Crypto Multipurpose Project'
-				/>
+				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 			<div
 				className={styles.mainColumn}
@@ -152,14 +143,14 @@ const Upgrade = props => {
 								<Link href='/'>
 									<HomeOutlined />
 								</Link>
-							),
+							)
 						},
 						{
-							title: <Link href='/services/'>Services</Link>,
+							title: <Link href='/services/'>Services</Link>
 						},
 						{
-							title: `${projectName}`,
-						},
+							title: `${projectName}`
+						}
 					]}
 				/>
 				<></>
@@ -179,7 +170,7 @@ const Upgrade = props => {
 									style={{
 										width: 'fit-content',
 										marginTop: '10px',
-										marginBottom: '-5px',
+										marginBottom: '-5px'
 									}}
 								/>
 								<p className='flex items-center gap-2'>
@@ -215,8 +206,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 								<Alert
 									message={
 										<p>
-											Don't kill the session with{' '}
-											<kbd className={styles.kbd}>CTRL+C</kbd> before update is
+											Don't kill the session with <kbd className={styles.kbd}>CTRL+C</kbd> before update is
 											completed, if you want to disconnect the session use{' '}
 											<kbd className={styles.kbd}>CTRL+B D</kbd>{' '}
 										</p>
@@ -226,7 +216,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 									closable
 									style={{
 										width: 'fit-content',
-										marginBlock: '5px',
+										marginBlock: '5px'
 									}}
 								/>
 								<CodeSnippet

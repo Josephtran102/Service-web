@@ -30,9 +30,5 @@ export const ContextProvider = props => {
 		setTheme(prev => (prev === 'light' ? 'dark' : 'light'))
 	}
 
-	return (
-		<Context.Provider value={{ theme, toggleTheme }}>
-			{props.children}
-		</Context.Provider>
-	)
+	return <Context.Provider value={{ theme, toggleTheme }}>{props.children}</Context.Provider>
 }

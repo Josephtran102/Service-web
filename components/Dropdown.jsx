@@ -12,10 +12,10 @@ const Dropdown = props => {
 					<Link href='/#mainnet' className={styles.navItem}>
 						Mainnets
 					</Link>
-				),
+				)
 			},
 			{
-				type: 'divider',
+				type: 'divider'
 			},
 			{
 				key: '2',
@@ -23,40 +23,30 @@ const Dropdown = props => {
 					<Link href='/#testnet' className={styles.navItem}>
 						Testnets
 					</Link>
-				),
-			},
+				)
+			}
 		]
 	} else {
 		items = [
 			{
 				key: '3',
 				label: (
-					<a
-						target='_blank'
-						rel='noopener noreferrer'
-						href='https://mainnet.itrocket.net/'
-						className={styles.navItem}
-					>
+					<a target='_blank' rel='noopener noreferrer' href='https://mainnet.itrocket.net/' className={styles.navItem}>
 						Mainnet
 					</a>
-				),
+				)
 			},
 			{
-				type: 'divider',
+				type: 'divider'
 			},
 			{
 				key: '4',
 				label: (
-					<a
-						target='_blank'
-						rel='noopener noreferrer'
-						href='https://testnet.itrocket.net/'
-						className={styles.navItem}
-					>
+					<a target='_blank' rel='noopener noreferrer' href='https://testnet.itrocket.net/' className={styles.navItem}>
 						Testnet
 					</a>
-				),
-			},
+				)
+			}
 		]
 	}
 	const trigger = [props.trigger]
@@ -67,7 +57,7 @@ const Dropdown = props => {
 			trigger={trigger}
 			open={props.open}
 			overlayStyle={{
-				borderRadius: '12px',
+				borderRadius: '12px'
 			}}
 		>
 			<a onClick={e => e.preventDefault()}>{props.type}</a>

@@ -15,10 +15,8 @@ const CheatSheet = props => {
 	const type = props.type
 	const project = projects[type][name]
 	const explorer = useRef()
-	const projectName =
-		project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const { chainID, bin, path, peerID, seedID, seedPort, peerPort, denom, gas } =
-		project
+	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
+	const { chainID, bin, path, peerID, seedID, seedPort, peerPort, denom, gas } = project
 
 	explorer.current = project.explorer
 	const { theme } = useContext(Context)
@@ -57,10 +55,7 @@ const CheatSheet = props => {
 		<AnimatedSection>
 			<Head>
 				<title>{`Installation - ${projectName} | Services`}</title>
-				<meta
-					name='description'
-					content='ITRocket 🚀 | Crypto Multipurpose Project'
-				/>
+				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 
 			<div
@@ -76,14 +71,14 @@ const CheatSheet = props => {
 								<Link href='/'>
 									<HomeOutlined />
 								</Link>
-							),
+							)
 						},
 						{
-							title: <Link href='/services/'>Services</Link>,
+							title: <Link href='/services/'>Services</Link>
 						},
 						{
-							title: `${projectName}`,
-						},
+							title: `${projectName}`
+						}
 					]}
 				/>
 				<>
@@ -97,10 +92,7 @@ const CheatSheet = props => {
 						</div>
 
 						<div className='flex flex-col gap-y-2'>
-							{CodeBlock(
-								'Check service status',
-								`sudo systemctl status ${bin}`
-							)}
+							{CodeBlock('Check service status', `sudo systemctl status ${bin}`)}
 							{CodeBlock('Reload services', `sudo systemctl daemon-reload`)}
 							{CodeBlock('Enable Service', `sudo systemctl enable ${bin}`)}
 							{CodeBlock('Disable Service', `sudo systemctl disable ${bin}`)}
@@ -120,31 +112,16 @@ const CheatSheet = props => {
 
 					<div className='flex flex-col gap-y-2'>
 						{CodeBlock('Add New Wallet', `${bin} keys add $WALLET`)}
-						{CodeBlock(
-							'Restore executing wallet',
-							`${bin} keys add $WALLET --recover`
-						)}
+						{CodeBlock('Restore executing wallet', `${bin} keys add $WALLET --recover`)}
 						{CodeBlock('List All Wallets', `${bin} keys list`)}
 						{CodeBlock('Delete wallet', `${bin} keys delete $WALLET`)}
-						{CodeBlock(
-							'Check Balance',
-							`${bin} q bank balances $(${bin} keys show $WALLET -a)`
-						)}
-						{CodeBlock(
-							'Export Key (save to wallet.backup)',
-							`${bin} keys export $WALLET`
-						)}
-						{CodeBlock(
-							'Import Key (restore from wallet.backup)',
-							`${bin} keys import $WALLET wallet.backup`
-						)}
+						{CodeBlock('Check Balance', `${bin} q bank balances $(${bin} keys show $WALLET -a)`)}
+						{CodeBlock('Export Key (save to wallet.backup)', `${bin} keys export $WALLET`)}
+						{CodeBlock('Import Key (restore from wallet.backup)', `${bin} keys import $WALLET wallet.backup`)}
 					</div>
 
 					<h2 id='tokens'>Tokens 🪙</h2>
-					<Space
-						size='middle'
-						style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}
-					>
+					<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
 							<span>To valoper address</span>
 							<Input
@@ -179,10 +156,7 @@ const CheatSheet = props => {
 							'Withdraw rewards and commission from your validator',
 							`${bin} tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id ${chainID} ${gas} -y`
 						)}
-						{CodeBlock(
-							'Check your balance',
-							`${bin} query bank balances $WALLET_ADDRESS`
-						)}
+						{CodeBlock('Check your balance', `${bin} query bank balances $WALLET_ADDRESS`)}
 						{CodeBlock(
 							'Delegate to Yourself',
 							`${bin} tx staking delegate $(${bin} keys show $WALLET --bech val -a) ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y`
@@ -205,10 +179,7 @@ const CheatSheet = props => {
 						)}
 					</div>
 					<h2 id='validator-operations'> Validator operations 🧑‍💻</h2>
-					<Space
-						size='middle'
-						style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}
-					>
+					<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
 							<span>Moniker</span>
 							<Input
@@ -297,18 +268,12 @@ ${gas} \\
 ${gas} \\
 -y`
 						)}
-						{CodeBlock(
-							'Validator info',
-							`${bin} status 2>&1 | jq .ValidatorInfo`
-						)}
+						{CodeBlock('Validator info', `${bin} status 2>&1 | jq .ValidatorInfo`)}
 						{CodeBlock(
 							'Validator Details',
 							`${bin} q staking validator $(${bin} keys show $WALLET --bech val -a)`
 						)}
-						{CodeBlock(
-							'Jailing info',
-							`${bin} q slashing signing-info $(${bin} tendermint show-validator)`
-						)}
+						{CodeBlock('Jailing info', `${bin} q slashing signing-info $(${bin} tendermint show-validator)`)}
 						{CodeBlock(
 							'Unjail validator',
 							`${bin} tx slashing unjail --broadcast-mode block --from $WALLET --chain-id ${chainID} ${gas} -y`
@@ -321,29 +286,17 @@ ${gas} \\
 							'Check Validator key',
 							`[[ $(${bin} q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(${bin} status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"`
 						)}
-						{CodeBlock(
-							'Signing info',
-							`${bin} q slashing signing-info $(humansd tendermint show-validator)`
-						)}
+						{CodeBlock('Signing info', `${bin} q slashing signing-info $(humansd tendermint show-validator)`)}
 					</div>
 					<h2 id='governance'> Governance 🌐</h2>
-					<Space
-						size='middle'
-						style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}
-					>
+					<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
 							<span>Title</span>
-							<Input
-								style={{ minWidth: '280px' }}
-								onChange={e => setTitle(e.target.value)}
-							/>
+							<Input style={{ minWidth: '280px' }} onChange={e => setTitle(e.target.value)} />
 						</Space>
 						<Space direction='vertical'>
 							<span>Description</span>
-							<Input
-								style={{ minWidth: '280px' }}
-								onChange={e => setDesc(e.target.value)}
-							/>
+							<Input style={{ minWidth: '280px' }} onChange={e => setDesc(e.target.value)} />
 						</Space>
 						<Space direction='vertical'>
 							<span>Deposit, {denom}</span>
@@ -371,7 +324,7 @@ ${gas} \\
 						size='middle'
 						className='flex flex-wrap content-center'
 						style={{
-							margin: '5px 0 20px',
+							margin: '5px 0 20px'
 						}}
 					>
 						<Space direction='vertical'>
@@ -392,10 +345,7 @@ ${gas} \\
 							</Radio.Group>
 						</Space>
 					</Space>
-					{CodeBlock(
-						'View proposal',
-						`${bin} query gov proposal ${proposalID}`
-					)}
+					{CodeBlock('View proposal', `${bin} query gov proposal ${proposalID}`)}
 					{CodeBlock(
 						'Vote',
 						`${bin} tx gov vote ${proposalID} ${proposalOption} --from $WALLET --chain-id ${chainID}  ${gas} -y`

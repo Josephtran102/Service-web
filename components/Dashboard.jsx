@@ -146,40 +146,27 @@ export default function Dashboard(props) {
 				okButtonProps={{ style: { display: 'none' } }}
 				cancelButtonProps={{ style: { display: 'none' } }}
 				style={{
-					minWidth: '70%',
+					minWidth: '70%'
 				}}
 			>
-				<div
-					className={styles.mainColumn}
-					style={{ border: '0px', boxShadow: 'none' }}
-				>
+				<div className={styles.mainColumn} style={{ border: '0px', boxShadow: 'none' }}>
 					<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>
 						Mainnets
 					</h2>
 					<div className={styles.mainnetColumn}>
 						{Object.keys(mainnetData).map(item => {
-							const name =
-								mainnetData[item].name ||
-								item.charAt(0).toUpperCase() + item.slice(1)
+							const name = mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
 							const serviceURL = '/services/mainnet/' + name.toLowerCase()
 							const isCurrent =
-								currentProject().name === name.toLowerCase() &&
-								currentProject().type == 'mainnet'
+								currentProject().name === name.toLowerCase() && currentProject().type == 'mainnet'
 									? true
 									: false
 
 							return (
 								!isCurrent && (
-									<a
-										href={serviceURL}
-										className={styles.chain__wrapper}
-										onClick={handleLinkClick}
-										key={name}
-									>
+									<a href={serviceURL} className={styles.chain__wrapper} onClick={handleLinkClick} key={name}>
 										<Image
-											src={require('@public/mainnet/'.concat(
-												mainnetData[item].imgUrl
-											))}
+											src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
 											alt='project logo'
 											width='25'
 											height='25'
@@ -196,13 +183,10 @@ export default function Dashboard(props) {
 					</h2>
 					<div className={styles.testnetColumn}>
 						{Object.keys(testnetData).map(item => {
-							const name =
-								testnetData[item].name ||
-								item.charAt(0).toUpperCase() + item.slice(1)
+							const name = testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
 							const serviceURL = '/services/testnet/' + name.toLowerCase()
 							const isCurrent =
-								currentProject().name === name.toLowerCase() &&
-								currentProject().type == 'testnet'
+								currentProject().name === name.toLowerCase() && currentProject().type == 'testnet'
 									? true
 									: false
 
@@ -215,9 +199,7 @@ export default function Dashboard(props) {
 										key={name}
 									>
 										<Image
-											src={require('@public/testnet/'.concat(
-												testnetData[item].imgUrl
-											))}
+											src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
 											alt='project logo'
 											width='25'
 											height='25'
@@ -243,9 +225,7 @@ export default function Dashboard(props) {
 							<div className={styles.chain__wrapper} onClick={showModal}>
 								<span className='flex items-center gap-2 select-none'>
 									<RetweetOutlined />
-									<b className={styles.bold}>
-										{name.charAt(0).toUpperCase() + name.slice(1)}
-									</b>
+									<b className={styles.bold}>{name.charAt(0).toUpperCase() + name.slice(1)}</b>
 								</span>
 							</div>
 
@@ -257,16 +237,13 @@ export default function Dashboard(props) {
 								<b className={styles.bold}>Block Height: </b> {blockHeight}{' '}
 							</span>
 							<span>
-								<b className={styles.bold}>RPC Status:</b>{' '}
-								<span className={`${styles.dot} ${isActive}`} />
+								<b className={styles.bold}>RPC Status:</b> <span className={`${styles.dot} ${isActive}`} />
 							</span>
 							<span>
 								{explorer === undefined ? (
 									<a
 										className='flex items-center gap-2 font-medium text-blue-500 transition-colors hover:text-blue-400'
-										href={`https://${
-											currentProject().type
-										}.itrocket.net/${name}/staking`}
+										href={`https://${currentProject().type}.itrocket.net/${name}/staking`}
 										target='_blank'
 										rel='noopener referrer'
 									>
@@ -296,7 +273,7 @@ export default function Dashboard(props) {
 							marginBottom: '10px',
 							marginLeft: '5px',
 							backgroundColor: theme === 'dark' ? '#6b6969' : '#e0e0e0',
-							width: 'fit-content',
+							width: 'fit-content'
 						}}
 						className={styles.mobileSegmented}
 					/>
