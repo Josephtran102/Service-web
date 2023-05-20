@@ -620,7 +620,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			peerPort: '28656',
 			seedPort: '28656',
 			installBin:
-				'cd $HOME\nwget https://github.com/KYVENetwork/chain/releases/download/1.0.0-beta.9/kyved_linux_amd64.tar.gz\ntar -xvzf kyved_linux_amd64.tar.gz\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm kyved_linux_amd64.tar.gz',
+				'cd $HOME\nwget wget https://files.kyve.network/kaon/protocol/tendermint-bsync/1.0.0-beta.9/kyve-linux-arm64.zip\ntar -xvzf $HOME/kyve-linux-arm64.zip\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm $HOME/kyve-linux-arm64.zip',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
