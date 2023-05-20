@@ -265,7 +265,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
 					</>
 				) : (
-					<p>Sorry, this project has no wasm folder yet</p>
+					<p>Sorry, this project doesn't support wasm</p>
 				)}
 			</div>
 		</AnimatedSection>

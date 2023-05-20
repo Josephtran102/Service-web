@@ -4,27 +4,34 @@
 	position: relative;
 	padding: 20px 30px;
 	text-decoration: none;
-	border: 1px solid #eaeaead6;
+	border: 1px solid #d7d7d7d6;
 	border-radius: 10px;
 	width: 21%;
+	gap: 15px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	gap: 15px;
 	height: fit-content;
 	transition: all 0.5s;
+	margin: 10px;
 	box-shadow: 2px 1px 30px 5px rgba(0, 0, 0, 0.02);
 
-	@media (max-width: 1600px) {
-		width: 22%;
+	@media (min-width: 1700px) {
+		width: calc(20% - 20px);
+	}
+	@media (min-width: 1401px) and (max-width: 1699px) {
+		width: calc(25% - 20px);
 		gap: 12px;
 	}
-	@media (max-width: 1440px) {
-		width: 30%;
+	@media (min-width: 769px) and (max-width: 1400px) {
+		width: calc(33.33% - 20px);
 	}
 	@media (max-width: 768px) {
-		width: calc(50% - 6px);
+		width: calc(50% - 20px);
 		padding: 10px 12px;
+	}
+	@media (max-width: 380px) {
+		gap: 5px;
 	}
 	@media (max-width: 380px) {
 		padding: 10px;
@@ -57,7 +64,7 @@
 	}
 
 	&:hover {
-		border: 1px solid #bebebee1;
+		border: 1px solid rgba(176, 176, 176, 0.882);
 		box-shadow: rgba(130, 130, 130, 0.12) 0px 6px 16px -8px, rgba(134, 134, 134, 0.1) 0px 9px 28px,
 			rgba(120, 120, 120, 0.07) 0px 12px 48px 16px;
 
@@ -70,21 +77,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 45px;
+
 		padding: 10px 0 50px;
-
-		@media (max-width: 1600px) {
-			gap: 30px;
-		}
-
-		@media (max-width: 768px) {
-			gap: 10px;
-			padding: 10px 0 35px;
-		}
-
-		@media (max-width: 380px) {
-			gap: 5px;
-		}
 	}
 
 	&__star {
@@ -194,10 +188,8 @@
 
 .finishedRoot {
 	transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
-	gap: 20px;
 
 	@media (max-width: 1024px) {
-		gap: 10px;
 		transform: rotateY(0deg) rotateX(0deg);
 	}
 
@@ -211,24 +203,12 @@
 	}
 }
 .finishedCard {
-	padding: 20px;
-	width: 17%;
-	border-radius: 15px;
-	transform: rotateY(15deg) rotateX(-15deg);
+	transform: rotateY(20deg) rotateX(-20deg);
 	transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 	align-items: center;
 
-	@media (max-width: 1200px) {
-		width: 20%;
-	}
-
 	@media (max-width: 1024px) {
 		transform: rotateY(0deg) rotateX(0deg);
-		width: 25%;
-	}
-
-	@media (max-width: 768px) {
-		width: calc(50% - 10px);
 	}
 }
 

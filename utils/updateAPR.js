@@ -47,7 +47,7 @@ export const countApr = async name => {
 	const bonded_tokens = await fetchBondedTokens(name)
 	if (annual_provisions && community_tax && bonded_tokens) {
 		const aprValue = ((annual_provisions * (1 - community_tax)) / bonded_tokens) * 100
-		const apr = `~${Math.floor(aprValue)}%`
+		const apr = `~${Math.round(aprValue)}%`
 		return apr
 	} else return `soon`
 }

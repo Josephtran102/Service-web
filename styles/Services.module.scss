@@ -156,7 +156,7 @@ b.bold {
 		text-underline-offset: 0.08em;
 		text-decoration-color: #2982e7;
 		padding-top: 95px;
-		margin: -70px 0px 10px;
+		margin: -70px 0px 9px;
 		font-weight: 700;
 		width: fit-content;
 
@@ -364,12 +364,12 @@ p.desc {
 .chain__wrapper {
 	display: flex;
 	align-items: center;
-	gap: 10px;
-	border: 1px solid rgba(150, 150, 150, 0.3);
+	gap: 12px;
+	border: 1px solid rgba(150, 150, 150, 0.35);
 	border-radius: 12px;
-	padding: 5px 14px;
+	padding: 6px 18px;
 	cursor: pointer;
-	transition: background-color 0.15s ease-out;
+	transition: 0.2s !important;
 	z-index: 10;
 
 	img {

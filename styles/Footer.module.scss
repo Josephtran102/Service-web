@@ -4,13 +4,13 @@
 	width: 100%;
 	display: flex;
 	align-items: center;
-	padding: 15px 0;
+	padding: 30px 0;
 	border-top: 1px solid #8a8a8a1b;
 	min-height: 60px;
 	flex: 1;
 
 	@media (max-width: 768px) {
-		padding: 10px 0;
+		padding: 15px 0;
 	}
 
 	&__logo {

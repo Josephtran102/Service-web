@@ -47,7 +47,12 @@ const Finished = () => {
 				>
 					<h5 className={styles.card__heading}>{item.name}</h5>
 					<div className={styles.card__img}>
-						<Image src={require('@public/finished/'.concat(item.imgUrl))} alt='project logo' width={50} height={50} />
+						<Image
+							src={require('@public/finished/'.concat(item.imgUrl))}
+							alt='project logo'
+							width={50}
+							height={50}
+						/>
 					</div>
 				</div>
 			))}
