@@ -86,7 +86,7 @@ const Card = () => {
 								<h5 className={styles.card__heading}>
 									{projects.mainnet[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
 								</h5>
-								<span className='tracking-wide text-xs md:text-sm'>
+								<span className='tracking-wide text-[10px] md:text-sm'>
 									<span>APR: </span>
 									<span style={{ fontFamily: 'JetBrains Mono', color: '#737373' }}>
 										{records && records[index] && records[index].percent}
