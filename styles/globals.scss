@@ -191,6 +191,7 @@ a {
 	height: calc(100% - 4px) !important;
 	@media (max-width: 360px) {
 		margin: 0px !important;
+		height: 100% !important;
 	}
 }
 
