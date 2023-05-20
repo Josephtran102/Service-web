@@ -21,17 +21,6 @@ export const updateAPR = () => {
 	// 	record(data)
 	// })
 
-	const countApr = async name => {
-		const annual_provisions = await fetchAnnualProvisions(name)
-		const community_tax = await fetchCommunityTax(name)
-		const bonded_tokens = await fetchBondedTokens(name)
-		if (annual_provisions && community_tax && bonded_tokens) {
-			const aprValue = ((annual_provisions * (1 - community_tax)) / bonded_tokens) * 100
-			const apr = `${aprValue.toFixed(2)}%`
-			return apr
-		} else return `soon`
-	}
-
 	const fetchData = async () => {
 		const records = await pb.collection('apr').getFullList({ sort: '-created' })
 		for (const record of records) {
@@ -50,4 +39,15 @@ export const getAprRecords = async () => {
 	pb.autoCancellation(false)
 	const records = await pb.collection('apr').getFullList({ sort: 'name' })
 	return records
+}
+
+export const countApr = async name => {
+	const annual_provisions = await fetchAnnualProvisions(name)
+	const community_tax = await fetchCommunityTax(name)
+	const bonded_tokens = await fetchBondedTokens(name)
+	if (annual_provisions && community_tax && bonded_tokens) {
+		const aprValue = ((annual_provisions * (1 - community_tax)) / bonded_tokens) * 100
+		const apr = `~${Math.floor(aprValue)}%`
+		return apr
+	} else return `soon`
 }

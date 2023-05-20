@@ -6,11 +6,13 @@ import { motion } from 'framer-motion'
 import { useContext, useEffect, useState } from 'react'
 import { StarFilled } from '@ant-design/icons'
 import Link from 'next/link'
-import { getAprRecords } from '@utils/updateAPR'
+import { countApr } from '@utils/updateAPR'
+import { Skeleton } from 'antd'
 
 const Card = () => {
 	const { theme, toggleTheme } = useContext(Context)
 	const [records, setRecords] = useState()
+	const [aprValues, setAprValues] = useState({})
 
 	async function getRecords() {
 		const records = await getAprRecords()
@@ -18,10 +20,11 @@ const Card = () => {
 	}
 
 	useEffect(() => {
-		getRecords()
+		Object.entries(projects.mainnet).forEach(async ([item, value]) => {
+			const apr = await countApr(item)
+			setAprValues(prevAprValues => ({ ...prevAprValues, [item]: apr }))
+		})
 	}, [])
-
-	console.log(records)
 
 	const handleOnMouseMove = e => {
 		const { currentTarget: target } = e
@@ -86,12 +89,21 @@ const Card = () => {
 								<h5 className={styles.card__heading}>
 									{projects.mainnet[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
 								</h5>
-								<span className='tracking-wide text-[10px] md:text-sm'>
-									<span>APR: </span>
+								<div className='flex gap-[2px] md:gap-1 items-center tracking-wide text-[10px] md:text-sm '>
+									<div>APR: </div>
 									<span style={{ fontFamily: 'JetBrains Mono', color: '#737373' }}>
-										{records && records[index] && records[index].percent}
+										{aprValues[item] ? (
+											aprValues[item]
+										) : (
+											<Skeleton
+												style={{ maxWidth: '100px' }}
+												active
+												title={false}
+												paragraph={{ rows: 1, width: 45 }}
+											/>
+										)}
 									</span>
-								</span>
+								</div>
 							</div>
 						</div>
 
