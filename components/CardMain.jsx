@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from '@styles/Card.module.scss'
 import { Context } from '@context/context'
-import projects from '@store/projects'
+import projects from 'data/projects'
 import { motion } from 'framer-motion'
 import { useContext, useEffect, useState } from 'react'
 import { StarFilled } from '@ant-design/icons'
@@ -91,7 +91,7 @@ const Card = () => {
 								</h5>
 								<div className='flex gap-[2px] md:gap-1 items-center tracking-wide text-[10px] md:text-sm '>
 									<div>APR: </div>
-									<span className='tracking-wide md:tracking-wide text-gray-500/75'>
+									<span className='tracking-wide md:tracking-wide text-gray-500/80'>
 										{aprValues[item] ? (
 											aprValues[item]
 										) : (

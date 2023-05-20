@@ -30,7 +30,7 @@ let projects = {
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		gitopia: {
 			chainID: 'gitopia',
@@ -55,8 +55,7 @@ let projects = {
 			explorer: '',
 			peerPort: '43656',
 			seedPort: '43656',
-			installBin:
-				`cd $HOME
+			installBin: `cd $HOME
 rm -rf gitopia
 git clone https://github.com/gitopia/gitopia.git
 cd gitopia
@@ -67,20 +66,19 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		nym: {
 			chainID: '',
 			name: 'NYM',
 			link: 'https://mixnet.explorers.guru/',
 			imgUrl: 'nym.png',
-			delegate:
-				'https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5',
+			delegate: 'https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5',
 			fav: true,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		nois: {
 			chainID: 'nois-1',
@@ -112,12 +110,12 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		terp: {
 			chainID: 'morocco-1',
 			link: 'https://mainnet.itrocket.net/terp/staking',
-			imgUrl: 'terp.svg',
+			imgUrl: 'terp.jpg',
 			delegate:
 				'https://mainnet.itrocket.net/terp/staking/terpvaloper1u9nx0mxq30h6dq99w6ptju09pz3m32jxz4672f',
 			desc: 'Decentralized Infrastructure for the Cannabis Community',
@@ -144,7 +142,7 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas 210000 --fees 200000uthiol',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		forta: {
 			link: 'https://explorer.forta.network/',
@@ -154,7 +152,7 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		quicksilver: {
 			chainID: 'quicksilver-2',
@@ -194,7 +192,7 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			goVersion: '1.19.3',
 			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		realio: {
 			chainID: 'realionetwork_3301-1',
@@ -204,8 +202,7 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			imgUrl: 'realio.png',
 			desc: 'The Future of Private Equity is Digital',
 			website: 'https://www.realio.fund/',
-			offValDoc:
-				'https://github.com/realiotech/mainnet/tree/main/realionetwork_3301-1',
+			offValDoc: 'https://github.com/realiotech/mainnet/tree/main/realionetwork_3301-1',
 			hardware: '4 Cores, 8GB RAM, 240GB of storage (NVME)',
 			prHome: '/home/realio',
 			binHome: '/home/realio/go/bin/realio-networkd',
@@ -228,7 +225,7 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		uptick: {
 			chainID: 'uptick_117-1',
@@ -262,8 +259,8 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			goVersion: '1.19.3',
 			gas: '--gas 250000 --fees 3000000000000000auptick',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
-		},
+			minGasPrice: '0.0'
+		}
 	},
 	testnet: {
 		andromeda: {
@@ -295,7 +292,7 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		archway: {
 			chainID: 'constantine-3',
@@ -319,8 +316,7 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			explorer: '',
 			peerPort: '45656',
 			seedPort: '45656',
-			installBin:
-				`cd $HOME
+			installBin: `cd $HOME
 rm -rf archway
 git clone https://github.com/archway-network/archway.git
 cd archway
@@ -331,7 +327,7 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		axelar: {
 			chainID: 'axelar-testnet-lisbon-3',
@@ -362,12 +358,12 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		cardchain: {
 			chainID: 'Testnet3',
 			link: 'https://testnet.itrocket.net/cardchain/staking',
-			imgUrl: 'cardchain.svg',
+			imgUrl: 'cardchain.png',
 			cardchain: true,
 			desc: 'On Crowd Control you can create and design your own trading cards. Your Cards become a part of the game for everyone.',
 			website: 'https://crowdcontrol.network/',
@@ -394,7 +390,7 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		cascadia: {
 			chainID: 'cascadia_6102-1',
@@ -425,7 +421,7 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5 --gas-prices=7aCC',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.025',
+			minGasPrice: '0.025'
 		},
 		celestia: {
 			chainID: 'blockspacerace-0',
@@ -457,7 +453,7 @@ make install`,
 			goVersion: '1.20.1',
 			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		defund: {
 			chainID: 'orbit-alpha-1',
@@ -465,8 +461,7 @@ make install`,
 			imgUrl: 'defund.png',
 			desc: 'DeFund is an L1 blockchain built for building decentralized permissionless, on-chain trading strategies that are packaged into a dETF (decentralized exchange-traded fund) token, tradable within any ecosystem or CEX.',
 			website: 'https://www.defund.app/',
-			offValDoc:
-				'https://github.com/defund-labs/testnet/blob/main/defund-private-4/validators.md',
+			offValDoc: 'https://github.com/defund-labs/testnet/blob/main/defund-private-4/validators.md',
 			hardware: '4 Cores, 16GB RAM, 200GB of storage (NVME)',
 			prHome: '/home/defund',
 			binHome: '/home/defund/go/bin/defundd',
@@ -489,7 +484,7 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--fees 5000ufetf',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		dymension: {
 			chainID: '35-C',
@@ -521,7 +516,7 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		elys: {
 			chainID: 'elystestnet-1',
@@ -556,7 +551,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		humans: {
 			chainID: 'humans_3000-23',
@@ -595,7 +590,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		kyve: {
 			chainID: 'kaon-1',
@@ -626,12 +621,12 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5 --fees 10000tkyve',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		lava: {
 			chainID: 'lava-testnet-1',
 			link: 'https://testnet.itrocket.net/lava/staking',
-			imgUrl: 'lava.svg',
+			imgUrl: 'lava.png',
 			fav: true,
 			desc: 'Lava pairs Providers with Applications for scalable, private and uncensored access to Web3.',
 			website: 'https://lavanet.xyz/',
@@ -661,7 +656,7 @@ cd lava
 git checkout v0.11.2
 make build
 sudo mv $HOME/lava/build/lavad $(which lavad)`,
-			gas: '--gas auto --gas-adjustment 1.5',
+			gas: '--gas auto --gas-adjustment 1.5'
 		},
 		mars: {
 			chainID: 'ares-1',
@@ -669,8 +664,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			imgUrl: 'mars.jpg',
 			desc: 'Lend, borrow and earn with an autonomous credit protocol in the Cosmos universe. Open to all, closed to none.',
 			website: 'https://marsprotocol.io/',
-			offValDoc:
-				'https://validatordocs.marsprotocol.io/TfYZfjcaUzFmiAkWDf7P/infrastructure/validators',
+			offValDoc: 'https://validatordocs.marsprotocol.io/TfYZfjcaUzFmiAkWDf7P/infrastructure/validators',
 			hardware: '8 Cores, 32GB RAM, 2TB of storage (NVME)',
 			prHome: '/home/mars',
 			binHome: '/home/mars/go/bin/marsd',
@@ -693,7 +687,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		ojo: {
 			chainID: 'ojo-devnet',
@@ -701,8 +695,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			imgUrl: 'ojo.png',
 			desc: 'Give your chain access to realtime, decentralized oracles, and stop worrying about your data.',
 			website: 'https://ojo.network/',
-			offValDoc:
-				'https://docs.ojo.network/sauron-testnet/joining-as-a-validator',
+			offValDoc: 'https://docs.ojo.network/sauron-testnet/joining-as-a-validator',
 			hardware: '4 Cores, 8GB RAM, 200GB of storage (NVME)',
 			prHome: '/home/ojo',
 			binHome: '/home/ojo/go/bin/ojod',
@@ -725,7 +718,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		nois: {
 			chainID: 'nois-testnet-005',
@@ -756,7 +749,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		quasar: {
 			chainID: 'qsr-questnet-04',
@@ -765,8 +758,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			fav: true,
 			desc: 'Expand your horizon beyond bridges and simplify the process of building complex DeFi strategies.',
 			website: 'https://www.quasar.fi/',
-			offValDoc:
-				'https://github.com/quasar-finance/questnet/blob/main/docs/Get_quasar.md',
+			offValDoc: 'https://github.com/quasar-finance/questnet/blob/main/docs/Get_quasar.md',
 			hardware: '4 Cores, 16GB RAM, 500GB of storage (NVME)',
 			prHome: '/home/quasar',
 			binHome: '/home/quasar/go/bin/quasarnoded',
@@ -789,7 +781,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		quicksilver: {
 			chainID: 'innuendo-5',
@@ -799,8 +791,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			imgUrl: 'quicksilver.jpg',
 			desc: 'Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.',
 			website: 'https://quicksilver.zone/',
-			offValDoc:
-				'https://github.com/ingenuity-build/testnets/tree/main/innuendo',
+			offValDoc: 'https://github.com/ingenuity-build/testnets/tree/main/innuendo',
 			hardware: '4 Cores, 16GB RAM, 500GB of storage (NVME)',
 			prHome: '/home/quick',
 			binHome: '/home/quick/go/bin/quicksilverd',
@@ -823,7 +814,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		realio: {
 			chainID: 'realionetwork_3300-1',
@@ -854,7 +845,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		sei: {
 			chainID: 'atlantic-1',
@@ -887,7 +878,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		starknet: {
 			link: 'https://starkscan.co/',
@@ -895,12 +886,12 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		terp: {
 			chainID: '90u-1',
 			link: 'https://testnet.itrocket.net/terp/staking',
-			imgUrl: 'terp.svg',
+			imgUrl: 'terp.jpg',
 			desc: 'Decentralized Infrastructure for the Cannabis Community',
 			website: 'https://terp.network/',
 			offValDoc: 'https://github.com/terpnetwork/terp-core',
@@ -926,7 +917,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		uptick: {
 			chainID: 'uptick_7000-2',
@@ -958,55 +949,55 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
-		},
+			minGasPrice: '0.0'
+		}
 	},
 	finished: [
 		{
 			name: 'Sui',
 			link: 'https://explorer.sui.io/',
-			imgUrl: 'sui.svg',
+			imgUrl: 'sui.svg'
 		},
 		{
 			name: 'BlastAPI',
 			link: 'https://houston.blastapi.io/',
-			imgUrl: 'blastapi.jpg',
+			imgUrl: 'blastapi.jpg'
 		},
 		{
 			name: 'Masa',
 			link: 'https://www.masa.finance/',
-			imgUrl: 'masa.svg',
+			imgUrl: 'masa.svg'
 		},
 		{
 			name: 'Ironfish',
 			link: 'https://ironfish.network/',
-			imgUrl: 'ironfish.png',
+			imgUrl: 'ironfish.png'
 		},
 		{
 			name: 'Pontem',
 			link: 'https://pontem.network/',
-			imgUrl: 'pontem.svg',
+			imgUrl: 'pontem.svg'
 		},
 		{
 			name: 'Empower',
 			link: 'https://www.empowerchain.io/',
-			imgUrl: 'empower.png',
+			imgUrl: 'empower.png'
 		},
 		{
 			name: 'DeWeb',
 			link: 'https://deweb.services/',
-			imgUrl: 'deweb.png',
+			imgUrl: 'deweb.png'
 		},
 		{
 			name: 'Bifrost',
 			link: 'https://thebifrost.io/',
-			imgUrl: 'bifrost.png',
+			imgUrl: 'bifrost.png'
 		},
 		{
 			name: 'Subspace',
 			link: 'https://subspace.network/',
-			imgUrl: 'subspace.jpg',
-		},
-	],
+			imgUrl: 'subspace.jpg'
+		}
+	]
 }
 export default projects

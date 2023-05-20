@@ -5,7 +5,7 @@
 			"@components/*": ["components/*"],
 			"@styles/*": ["styles/*"],
 			"@context/*": ["context/*"],
-			"@store/*": ["store/*"],
+			"@data/*": ["data/*"],
 			"@utils/*": ["utils/*"],
 			"@layouts/*": ["layouts/*"],
 			"@public/*": ["public/*"]

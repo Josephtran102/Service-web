@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from '@styles/Card.module.scss'
-import projects from '@store/projects'
+import projects from 'data/projects'
 import Link from 'next/link'
 import { Context } from '@context/context'
 import { useContext } from 'react'

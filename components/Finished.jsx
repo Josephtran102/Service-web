@@ -1,7 +1,7 @@
 import styles from '@styles/Card.module.scss'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import projects from '@store/projects'
+import projects from 'data/projects'
 import { useContext } from 'react'
 import { Context } from '@context/context'
 

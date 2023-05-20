@@ -1,16 +1,15 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { Context } from '@context/context'
-import projects from '@store/projects'
+import projects from 'data/projects'
 import prettyMilliseconds from 'pretty-ms'
 import styles from '@styles/Services.module.scss'
 import CodeSnippet from '@components/CodeSnippet.jsx'
-import { fetchNetInfo, fetchSnap, fetchStatus } from 'utils/fetchProject.js'
+import { fetchNetInfo, fetchSnap } from 'utils/fetchProject.js'
 import Head from 'next/head'
 import { Breadcrumb, Typography } from 'antd'
 import AnimatedSection from './AnimatedSection'
 import Link from 'next/link'
 import { HomeOutlined } from '@ant-design/icons'
-import { updateAPR } from '@utils/updateAPR'
 
 const { Paragraph } = Typography
 

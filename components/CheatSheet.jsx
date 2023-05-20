@@ -1,5 +1,5 @@
 import styles from '@styles/Services.module.scss'
-import projects from '@store/projects'
+import projects from 'data/projects'
 import { useContext, useRef, useState } from 'react'
 import Head from 'next/head'
 import { Context } from '@context/context'
@@ -117,7 +117,10 @@ const CheatSheet = props => {
 						{CodeBlock('Delete wallet', `${bin} keys delete $WALLET`)}
 						{CodeBlock('Check Balance', `${bin} q bank balances $(${bin} keys show $WALLET -a)`)}
 						{CodeBlock('Export Key (save to wallet.backup)', `${bin} keys export $WALLET`)}
-						{CodeBlock('Import Key (restore from wallet.backup)', `${bin} keys import $WALLET wallet.backup`)}
+						{CodeBlock(
+							'Import Key (restore from wallet.backup)',
+							`${bin} keys import $WALLET wallet.backup`
+						)}
 					</div>
 
 					<h2 id='tokens'>Tokens 🪙</h2>
@@ -273,7 +276,10 @@ ${gas} \\
 							'Validator Details',
 							`${bin} q staking validator $(${bin} keys show $WALLET --bech val -a)`
 						)}
-						{CodeBlock('Jailing info', `${bin} q slashing signing-info $(${bin} tendermint show-validator)`)}
+						{CodeBlock(
+							'Jailing info',
+							`${bin} q slashing signing-info $(${bin} tendermint show-validator)`
+						)}
 						{CodeBlock(
 							'Unjail validator',
 							`${bin} tx slashing unjail --broadcast-mode block --from $WALLET --chain-id ${chainID} ${gas} -y`
@@ -286,7 +292,10 @@ ${gas} \\
 							'Check Validator key',
 							`[[ $(${bin} q staking validator $VALOPER_ADDRESS -oj | jq -r .consensus_pubkey.key) = $(${bin} status | jq -r .ValidatorInfo.PubKey.value) ]] && echo -e "Your key status is ok" || echo -e "Your key status is error"`
 						)}
-						{CodeBlock('Signing info', `${bin} q slashing signing-info $(humansd tendermint show-validator)`)}
+						{CodeBlock(
+							'Signing info',
+							`${bin} q slashing signing-info $(humansd tendermint show-validator)`
+						)}
 					</div>
 					<h2 id='governance'> Governance 🌐</h2>
 					<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>

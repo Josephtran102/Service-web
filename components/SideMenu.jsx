@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState, useRef } from 'react'
 import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
-import projects from '@store/projects'
+import projects from 'data/projects'
 import { Menu, Segmented } from 'antd'
 import Link from 'next/link.js'
 import Image from 'next/image.js'

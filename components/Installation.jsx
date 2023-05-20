@@ -1,5 +1,5 @@
 import styles from '@styles/Services.module.scss'
-import projects from '@store/projects'
+import projects from 'data/projects'
 import { useContext, useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import { Context } from '@context/context'
@@ -154,7 +154,11 @@ const Installation = props => {
 				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 
-			<div className={styles.mainColumn} id='mainColumn' style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}>
+			<div
+				className={styles.mainColumn}
+				id='mainColumn'
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+			>
 				<Breadcrumb
 					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
 					items={[
@@ -347,23 +351,43 @@ ${bin} query bank balances $WALLET_ADDRESS
 				<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 					<Space direction='vertical'>
 						<span>Moniker</span>
-						<Input style={{ minWidth: '280px' }} placeholder={'$MONIKER'} onChange={e => setMoniker(e.target.value)} />
+						<Input
+							style={{ minWidth: '280px' }}
+							placeholder={'$MONIKER'}
+							onChange={e => setMoniker(e.target.value)}
+						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Identity</span>
-						<Input style={{ minWidth: '280px' }} placeholder={'identity'} onChange={e => setIdentity(e.target.value)} />
+						<Input
+							style={{ minWidth: '280px' }}
+							placeholder={'identity'}
+							onChange={e => setIdentity(e.target.value)}
+						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Details</span>
-						<Input style={{ minWidth: '320px' }} defaultValue={details} onChange={e => setDetails(e.target.value)} />
+						<Input
+							style={{ minWidth: '320px' }}
+							defaultValue={details}
+							onChange={e => setDetails(e.target.value)}
+						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Amount, {denom}</span>
-						<Input style={{ minWidth: '200px' }} defaultValue={amountCreate} onChange={e => setAmountCreate(e.target.value)} />
+						<Input
+							style={{ minWidth: '200px' }}
+							defaultValue={amountCreate}
+							onChange={e => setAmountCreate(e.target.value)}
+						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Commission rate</span>
-						<Input style={{ minWidth: '100px' }} defaultValue={commissionRate} onChange={e => setCommissionRate(e.target.value)} />
+						<Input
+							style={{ minWidth: '100px' }}
+							defaultValue={commissionRate}
+							onChange={e => setCommissionRate(e.target.value)}
+						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Commission max rate</span>
@@ -411,7 +435,9 @@ ${gas} \\
 					</a>
 				</p>
 				<h2 id='security'>Security</h2>
-				<p>To protect you keys please don`t share your privkey, mnemonic and follow a basic security rules</p>
+				<p>
+					To protect you keys please don`t share your privkey, mnemonic and follow a basic security rules
+				</p>
 				<h3 id='ssh'>Set up ssh keys for authentication</h3>
 				<p>
 					You can use this{' '}
@@ -425,7 +451,9 @@ ${gas} \\
 					to configure ssh authentication and disable password authentication on your server
 				</p>
 				<h3 id='firewall'>Firewall security</h3>
-				<p>Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port</p>
+				<p>
+					Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port
+				</p>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo ufw default allow outgoing 

@@ -1,6 +1,6 @@
 import PocketBase from 'pocketbase'
 import { fetchAnnualProvisions, fetchBondedTokens, fetchCommunityTax } from './fetchCosmosEndpoints'
-import projects from '@store/projects'
+import projects from 'data/projects'
 
 export const updateAPR = () => {
 	const pb = new PocketBase('https://pocket.itrocket.net')
