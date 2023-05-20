@@ -182,7 +182,7 @@ make install`,
 			seedPort: '15656',
 			installBin:
 				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.11\nmake install',
-			updHeight: '0',
+			updHeight: '1',
 			newInstallBin: `cd $HOME
 rm -rf ~/quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
@@ -290,6 +290,42 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			seedPort: '30656',
 			installBin:
 				'cd $HOME\nrm -rf andromedad\ngit clone https://github.com/andromedaprotocol/andromedad.git\ncd andromedad\ngit checkout galileo-3-v1.1.0-beta1\nmake install',
+			updHeight: '',
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0',
+		},
+		archway: {
+			chainID: 'constantine-3',
+			link: 'https://testnet.itrocket.net/archway/staking',
+			imgUrl: 'archway.jpg',
+			desc: '',
+			website: 'https://archway.io/',
+			offValDoc: '',
+			hardware: '8 Cores, 16GB RAM, 200GB of storage (NVME)',
+			prHome: '/home/archway',
+			binHome: '/home/archway/go/bin/archwayd',
+			snapMaxSize: '10',
+			port: '45',
+			VAR: 'ARCHWAY',
+			denom: 'aconst',
+			ecosystem: 'cosmos',
+			bin: 'archwayd',
+			path: '.archway',
+			peerID: '3591dd903e95c9b25618f90c4a6bda63861ab8ec',
+			seedID: '958d9056c6173edb4714b6468bda509e97d0c80c',
+			explorer: '',
+			peerPort: '45656',
+			seedPort: '45656',
+			installBin:
+				`cd $HOME
+rm -rf archway
+git clone https://github.com/archway-network/archway.git
+cd archway
+git checkout v0.5.2
+make install`,
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
@@ -584,7 +620,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			peerPort: '28656',
 			seedPort: '28656',
 			installBin:
-				'cd $HOME\nwget https://github.com/KYVENetwork/chain/releases/download/v1.0.0-rc1/kyved_linux_amd64.tar.gz\ntar -xvzf kyved_linux_amd64.tar.gz\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm kyved_linux_amd64.tar.gz',
+				'cd $HOME\nwget https://github.com/KYVENetwork/chain/releases/download/1.0.0-beta.9/kyved_linux_amd64.tar.gz\ntar -xvzf kyved_linux_amd64.tar.gz\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm kyved_linux_amd64.tar.gz',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
