@@ -15,126 +15,140 @@ import { smoothScroll } from '@utils/smoothScroll'
 import { updateAPR } from '@utils/updateAPR'
 
 const Home = () => {
-   const { theme, toggleTheme } = useContext(Context)
-   const [opacity, setOpacity] = useState(false)
+	const { theme, toggleTheme } = useContext(Context)
+	const [opacity, setOpacity] = useState(false)
 
-   const opacityBlock = {
-      visible: {
-         opacity: 1,
-         y: 0,
-         transition: { duration: 0.6, delay: 0.2 }
-      },
-      hidden: { y: 10, opacity: 0 }
-   }
+	const opacityBlock = {
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 0.6, delay: 0.2 }
+		},
+		hidden: { y: 10, opacity: 0 }
+	}
 
-   useEffect(() => {
-      console.log('12345')
-      // updateAPR()
-      const onPageLoad = () => {
-         setOpacity(0)
-      }
+	useEffect(() => {
+		// updateAPR()
+		const onPageLoad = () => {
+			setOpacity(0)
+		}
 
-      if (document.readyState === 'complete') {
-         onPageLoad()
-      } else {
-         window.addEventListener('load', onPageLoad)
+		if (document.readyState === 'complete') {
+			onPageLoad()
+		} else {
+			window.addEventListener('load', onPageLoad)
 
-         return () => window.removeEventListener('load', onPageLoad)
-      }
-   }, [])
+			return () => window.removeEventListener('load', onPageLoad)
+		}
+	}, [])
 
-   return (
-      <>
-         <Head>
-            <title>ITRocket - Trusted Validator &amp; Interchain Utility Provider!</title>
-            <meta
-               name='description'
-               content='ITRocket 🚀 - Crypto multipurpose project focused on providing best services for Cosmos (and not only) node operators'
-            />
-         </Head>
+	return (
+		<>
+			<Head>
+				<title>ITRocket - Trusted Validator &amp; Interchain Utility Provider!</title>
+				<meta
+					name='description'
+					content='ITRocket 🚀 - Crypto multipurpose project focused on providing best services for Cosmos (and not only) node operators'
+				/>
+			</Head>
 
-         <Header />
+			<Header />
 
-         <main>
-            <section
-               className={styles.hero}
-               style={{
-                  backgroundColor: theme === 'dark' ? '#141414' : ' #fff'
-               }}
-            >
-               <ParticlesBG />
-               <div className={styles.container}>
-                  <motion.div initial='hidden' animate='visible' variants={opacityBlock} className={styles.hero__wrapper}>
-                     <div className={styles.hero__column} id={styles.hero__descStaking}>
-                        <div className={styles.hero__columnRoot}>
-                           <h3 className={styles.hero__heading}>Trusted Validator &amp; Interchain Utility Provider</h3>
+			<main>
+				<section
+					className={styles.hero}
+					style={{
+						backgroundColor: theme === 'dark' ? '#141414' : ' #fff'
+					}}
+				>
+					<ParticlesBG />
+					<div className={styles.container}>
+						<motion.div
+							initial='hidden'
+							animate='visible'
+							variants={opacityBlock}
+							className={styles.hero__wrapper}
+						>
+							<div className={styles.hero__column} id={styles.hero__descStaking}>
+								<div className={styles.hero__columnRoot}>
+									<h3 className={styles.hero__heading}>
+										Trusted Validator &amp; Interchain Utility Provider
+									</h3>
 
-                           <span className={styles.hero__desc}>
-                              With few simple steps you can delegate funds to our trusted validators or explore our services where you can
-                              find tools that will be useful for node operators and developers.
-                           </span>
-                        </div>
-                        <div className={styles.hero__links}>
-                           <Link href='#mainnet' className={styles.button} onClick={event => smoothScroll(event)}>
-                              Delegate
-                           </Link>
-                           <Link href='/services' className={theme === 'light' ? styles.button : styles.button__dark}>
-                              Services
-                           </Link>
-                        </div>
-                     </div>
-                  </motion.div>
-               </div>
-            </section>
+									<span className={styles.hero__desc}>
+										With few simple steps you can delegate funds to our trusted validators or
+										explore our services where you can find tools that will be useful for node
+										operators and developers.
+									</span>
+								</div>
+								<div className={styles.hero__links}>
+									<Link
+										href='#mainnet'
+										className={styles.button}
+										onClick={event => smoothScroll(event)}
+									>
+										Delegate
+									</Link>
+									<Link
+										href='/services'
+										className={theme === 'light' ? styles.button : styles.button__dark}
+									>
+										Services
+									</Link>
+								</div>
+							</div>
+						</motion.div>
+					</div>
+				</section>
 
-            <section id='mainnet'>
-               <div className={styles.container}>
-                  <div className={styles.card__desc}>
-                     <h3 className={styles.title}>Mainnets.</h3>
-                     <p className={styles.description}>
-                        <span>Low commission and 24/7 node monitoring!</span>
-                     </p>
-                  </div>
-                  <CardMain />
+				<section id='mainnet'>
+					<div className={styles.container}>
+						<div className={styles.card__desc}>
+							<h3 className={styles.title}>Mainnets.</h3>
+							<p className={styles.description}>
+								<span>Low commission and 24/7 node monitoring!</span>
+							</p>
+						</div>
+						<CardMain />
 
-                  <div className={styles.card__desc}>
-                     <h3 className={styles.title}>Testnets.</h3>
-                     <p className={styles.description}>
-                        <span>Here are some tools for node operators 🛠️</span>
-                     </p>
-                  </div>
-                  <CardTest />
-               </div>
+						<div className={styles.card__desc}>
+							<h3 className={styles.title}>Testnets.</h3>
+							<p className={styles.description}>
+								<span>Here are some tools for node operators 🛠️</span>
+							</p>
+						</div>
+						<CardTest />
+					</div>
 
-               <div className={styles.container} id='testnet'>
-                  <div className={styles.card__wrapper}>
-                     <div className={styles.card__desc}>
-                        <h3 className={styles.title}>Finished.</h3>
-                        <p className={styles.description}>
-                           <span>These are the projects we proudly took part in.</span>
-                        </p>
-                     </div>
+					<div className={styles.container} id='testnet'>
+						<div className={styles.card__wrapper}>
+							<div className={styles.card__desc}>
+								<h3 className={styles.title}>Finished.</h3>
+								<p className={styles.description}>
+									<span>These are the projects we proudly took part in.</span>
+								</p>
+							</div>
 
-                     <Finished />
-                  </div>
-               </div>
-            </section>
+							<Finished />
+						</div>
+					</div>
+				</section>
 
-            <section>
-               <div className={styles.container}>
-                  <div className={styles.accordion__wrapper}>
-                     <h3 className={styles.hero__heading} id='faq'>
-                        FAQ
-                     </h3>
-                     <Accordion />
-                  </div>
-               </div>
-            </section>
-         </main>
+				<section>
+					<div className={styles.container}>
+						<div className={styles.accordion__wrapper}>
+							<h3 className={styles.hero__heading} id='faq'>
+								FAQ
+							</h3>
+							<Accordion />
+						</div>
+					</div>
+				</section>
+			</main>
 
-         <Footer />
-      </>
-   )
+			<Footer />
+		</>
+	)
 }
 
 export default Home
