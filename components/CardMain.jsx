@@ -82,28 +82,28 @@ const Card = () => {
 									height={50}
 								/>
 							</div>
-							<h5 className={styles.card__heading}>
-								{projects.mainnet[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
-							</h5>
+							<div className='flex flex-col items-start'>
+								<h5 className={styles.card__heading}>
+									{projects.mainnet[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
+								</h5>
+								<span className='tracking-wide text-xs md:text-sm'>
+									<span>APR: </span>
+									<span style={{ fontFamily: 'JetBrains Mono', color: '#737373' }}>
+										{records && records[index] && records[index].percent}
+									</span>
+								</span>
+							</div>
 						</div>
 
-						<div className='flex flex-col'>
-							<span className='tracking-wide'>
-								<span>APR: </span>
-								<span style={{ fontFamily: 'JetBrains Mono', color: '#737373' }}>
-									{records && records[index] && records[index].percent}
-								</span>
-							</span>
-							<a
-								href={projects.mainnet[item].delegate}
-								target='_blank'
-								rel='noopener noreferrer'
-								className='link'
-								style={{ zIndex: 10 }}
-							>
-								Delegate to us
-							</a>
-						</div>
+						<a
+							href={projects.mainnet[item].delegate}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='link'
+							style={{ zIndex: 10 }}
+						>
+							Delegate to us
+						</a>
 
 						{projects.mainnet[item].fav === true ? (
 							<div className={styles.card__star}>
