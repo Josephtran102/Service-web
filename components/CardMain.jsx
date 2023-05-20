@@ -91,7 +91,7 @@ const Card = () => {
 								</h5>
 								<div className='flex gap-[2px] md:gap-1 items-center tracking-wide text-[10px] md:text-sm '>
 									<div>APR: </div>
-									<span style={{ fontFamily: 'JetBrains Mono', color: '#737373' }}>
+									<span className='tracking-wide md:tracking-wide text-gray-500/75'>
 										{aprValues[item] ? (
 											aprValues[item]
 										) : (
