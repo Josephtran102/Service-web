@@ -294,7 +294,7 @@ ${gas} \\
 						)}
 						{CodeBlock(
 							'Signing info',
-							`${bin} q slashing signing-info $(humansd tendermint show-validator)`
+							`${bin} q slashing signing-info $(${bin} tendermint show-validator)`
 						)}
 					</div>
 					<h2 id='governance'> Governance 🌐</h2>
