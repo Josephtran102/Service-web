@@ -595,7 +595,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 		kyve: {
 			chainID: 'kaon-1',
 			link: 'https://testnet.itrocket.net/kyve/staking',
-			imgUrl: 'kyve.svg',
+			imgUrl: 'kyve.png',
 			desc: 'KYVE Network is revolutionizing customized access to on- and off-chain data by providing fast and easy tooling for decentralized data validation, immutability, and retrieval.',
 			website: 'https://www.kyve.network/',
 			offValDoc: 'https://github.com/KYVENetwork/networks/tree/main/kaon-1',
