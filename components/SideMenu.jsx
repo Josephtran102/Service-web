@@ -58,7 +58,6 @@ const SideMenu = () => {
 	}
 
 	useEffect(() => {
-		changeStyles()
 		const { name, type, serviceURL } = currentProject()
 		setValue(type)
 		defValue.current = type
