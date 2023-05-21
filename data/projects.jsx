@@ -554,7 +554,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			minGasPrice: '0.0'
 		},
 		humans: {
-			chainID: 'humans_3000-23',
+			chainID: 'humans_3000-31',
 			link: 'https://testnet.itrocket.net/humans/staking',
 			imgUrl: 'humans.jpg',
 			fav: true,
@@ -579,7 +579,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			seedPort: '17656',
 			installBin:
 				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.2\nmake install',
-			updHeight: '0',
+			updHeight: '',
 			newInstallBin: `cd $HOME
 rm -rf ~/humans
 git clone https://github.com/humansdotai/humans
