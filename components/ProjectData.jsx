@@ -193,7 +193,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 					code={`wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
 				/>
 				<h2 id='snap'>Snapshot </h2>
-				<p className={styles.text_secondary}>
+				<p>
 					height: <b className={styles.bold}>{snapHeight}</b>
 					{' | '}
 					<b className={styles.bold}>{`${snapTime} ago`}</b>
@@ -219,7 +219,9 @@ mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_valida
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 				/>
 				<h2 id='sync'>State Sync</h2>
-				<p>If you don't want to wait for a long synchronization you can use our guide:</p>
+				<p className={styles.text_secondary}>
+					If you don't want to wait for a long synchronization you can use:
+				</p>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo systemctl stop ${bin}
@@ -264,7 +266,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
 					</>
 				) : (
-					<p>Sorry, this project doesn't support wasm</p>
+					<p>Sorry, this project does not support WebAssembly.</p>
 				)}
 			</div>
 		</AnimatedSection>

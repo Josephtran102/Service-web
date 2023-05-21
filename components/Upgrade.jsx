@@ -17,16 +17,18 @@ const Upgrade = props => {
 	const explorer = useRef()
 	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const bin = project.bin
+	const port = project.port
+	const path = project.path
 	const installBin = project.newInstallBin
 	const isEmpty = installBin === undefined ? true : false
-	let indexOfMv, mvLine, path, beforeMv
+	let indexOfMv, mvLine, newPath, beforeMv
 	if (!isEmpty) {
 		indexOfMv = installBin
 			.split('\n')
 			.findIndex(line => line.trim().startsWith('mv') || line.trim().startsWith('sudo mv'))
 		mvLine = installBin.split('\n').find(line => line.trim().startsWith('sudo mv'))
 
-		path = indexOfMv !== -1 ? mvLine.split(' ')[2] : ''
+		newPath = indexOfMv !== -1 ? mvLine.split(' ')[2] : ''
 		beforeMv = installBin.split('\n').slice(0, indexOfMv).join('\n')
 		beforeMv = beforeMv.split('\n').join(' && \\\n')
 		beforeMv = beforeMv + ' && \\\n'
@@ -36,7 +38,6 @@ const Upgrade = props => {
 	explorer.current = project.explorer
 	const { theme } = useContext(Context)
 	const [blockHeight, setBlockHeight] = useState(null)
-	const [port, setPort] = useState(project.port)
 	const [inputStatus, setInputStatus] = useState('')
 
 	const status = () => {
@@ -221,7 +222,9 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 								/>
 								<CodeSnippet
 									theme={theme}
-									code={`${beforeMv}tmux new -s ${name}-upgrade "bash <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/autoupgrade/upgrade.sh) -u "${updHeight}" -b ${bin} -n "${path}" -p ${name}"`}
+									code={`${beforeMv}old_bin_path=$(which ${bin}) && \\
+rpc_port=$(grep -m 1 -oP '^laddr = "\\K[^"]+' "$HOME/${path}/config/config.toml" | cut -d ':' -f 3) && \\
+tmux new -s ${name}-upgrade "sudo bash -c 'curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/autoupgrade/upgrade.sh | bash -s -- -u \\"${updHeight}\\" -b ${bin} -n \\"${newPath}\\" -o \\"$old_bin_path\\" -p ${name} -r \\"$rpc_port\\"'"`}
 								/>
 							</>
 						)}
