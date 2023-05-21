@@ -554,7 +554,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			minGasPrice: '0.0'
 		},
 		humans: {
-			chainID: 'humans_3000-23',
+			chainID: 'humans_3000-31',
 			link: 'https://testnet.itrocket.net/humans/staking',
 			imgUrl: 'humans.jpg',
 			fav: true,
@@ -579,7 +579,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			seedPort: '17656',
 			installBin:
 				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.2\nmake install',
-			updHeight: '0',
+			updHeight: '',
 			newInstallBin: `cd $HOME
 rm -rf ~/humans
 git clone https://github.com/humansdotai/humans
@@ -840,39 +840,6 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			seedPort: '23656',
 			installBin:
 				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network\ncd realio-network\ngit checkout v0.8.0-rc2\nmake install',
-			updHeight: '',
-			newInstallBin: '',
-			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
-		sei: {
-			chainID: 'atlantic-1',
-			link: 'https://testnet.itrocket.net/sei/staking',
-			imgUrl: 'sei.svg',
-			fav: true,
-			desc: 'Sei is the first sector-specific Layer 1 blockchain, specialized for trading to give exchanges an unfair advantage.',
-			website: 'https://www.seinetwork.io/',
-			offValDoc:
-				'https://docs.seinetwork.io/nodes-and-validators/seinami-incentivized-testnet/joining-incentivized-testnet',
-			hardware: '8 Cores, 32GB RAM, 1TB of storage (NVME)',
-			prHome: '/home/sei',
-			binHome: '/home/sei/go/bin/seid',
-			snapMaxSize: '10',
-			port: '14',
-			VAR: 'SEI',
-			denom: 'usei',
-			ecosystem: 'cosmos',
-			bin: 'seid',
-			path: '.sei',
-			peerID: '23566c31c1a4f852eb581cee56ce68b4b77756b1',
-			seedID: '1dd91ce29a1f296a1e5dd9533c06a311b0b604f6',
-			explorer: 'https://sei.explorers.guru/',
-			peerPort: '12656',
-			seedPort: '14656',
-			installBin:
-				'cd $HOME\ngit clone https://github.com/sei-protocol/sei-chain.git\ncd sei-chain\ngit checkout 1.2.2beta-postfix\nmake install',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
