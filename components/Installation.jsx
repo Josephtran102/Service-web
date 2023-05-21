@@ -352,7 +352,7 @@ ${bin} query bank balances $WALLET_ADDRESS
 					<Space direction='vertical'>
 						<span>Moniker</span>
 						<Input
-							style={{ minWidth: '280px' }}
+							style={{ minWidth: '250px' }}
 							placeholder={'$MONIKER'}
 							onChange={e => setMoniker(e.target.value)}
 						/>
@@ -360,15 +360,15 @@ ${bin} query bank balances $WALLET_ADDRESS
 					<Space direction='vertical'>
 						<span>Identity</span>
 						<Input
-							style={{ minWidth: '280px' }}
-							placeholder={'identity'}
+							style={{ minWidth: '250px' }}
+							placeholder={'Identity'}
 							onChange={e => setIdentity(e.target.value)}
 						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Details</span>
 						<Input
-							style={{ minWidth: '320px' }}
+							style={{ minWidth: '300px' }}
 							defaultValue={details}
 							onChange={e => setDetails(e.target.value)}
 						/>
@@ -376,7 +376,7 @@ ${bin} query bank balances $WALLET_ADDRESS
 					<Space direction='vertical'>
 						<span>Amount, {denom}</span>
 						<Input
-							style={{ minWidth: '200px' }}
+							style={{ minWidth: '140px' }}
 							defaultValue={amountCreate}
 							onChange={e => setAmountCreate(e.target.value)}
 						/>
@@ -384,7 +384,7 @@ ${bin} query bank balances $WALLET_ADDRESS
 					<Space direction='vertical'>
 						<span>Commission rate</span>
 						<Input
-							style={{ minWidth: '100px' }}
+							style={{ minWidth: '50px' }}
 							defaultValue={commissionRate}
 							onChange={e => setCommissionRate(e.target.value)}
 						/>
@@ -392,7 +392,7 @@ ${bin} query bank balances $WALLET_ADDRESS
 					<Space direction='vertical'>
 						<span>Commission max rate</span>
 						<Input
-							style={{ minWidth: '100px' }}
+							style={{ minWidth: '50px' }}
 							defaultValue={commissionMaxRate}
 							onChange={e => setCommissionMaxRate(e.target.value)}
 						/>
@@ -400,7 +400,7 @@ ${bin} query bank balances $WALLET_ADDRESS
 					<Space direction='vertical'>
 						<span>Commission max change rate</span>
 						<Input
-							style={{ minWidth: '100px' }}
+							style={{ minWidth: '50px' }}
 							defaultValue={commissionMaxChange}
 							onChange={e => setCommissionMaxChange(e.target.value)}
 						/>

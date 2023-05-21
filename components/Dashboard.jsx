@@ -80,6 +80,7 @@ export default function Dashboard(props) {
 	}, [theme])
 
 	useEffect(() => {
+		changeModalStyles()
 		let isCurrent = true
 		const project = currentProject()
 		const name = project.name

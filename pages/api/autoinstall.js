@@ -8,8 +8,6 @@ source <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/
 
 printLogo
 
-${bin}
-
 printLine
 echo -e "Test: $GREEN Testing autoinstall script $NС"
 printLine

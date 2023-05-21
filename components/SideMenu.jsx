@@ -8,6 +8,7 @@ import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
 import { useRouter } from 'next/navigation'
+import { changeStyles } from '@utils/changeStyles'
 
 function getItem(label, key, icon, children, type) {
 	return {
@@ -57,6 +58,7 @@ const SideMenu = () => {
 	}
 
 	useEffect(() => {
+		changeStyles()
 		const { name, type, serviceURL } = currentProject()
 		setValue(type)
 		defValue.current = type
@@ -74,14 +76,14 @@ const SideMenu = () => {
 					<div className='flex gap-2 md:gap-3 items-center mb-1'>
 						{' '}
 						<Image
+							className='my-1 mx-1'
 							src={require(`../public/${type}/${imgURL}`)}
 							alt='project logo'
 							width='35'
 							height='35'
 							style={{
 								borderRadius: '50%',
-								backgroundColor: '#fff',
-								marginLeft: '3	px'
+								backgroundColor: '#fff'
 							}}
 						/>
 						<span className='font-semibold tracking-wide'>
@@ -330,7 +332,7 @@ const SideMenu = () => {
 			},
 
 			getItem(
-				<p className='flex items-center gap-5 my-0'>
+				<p className='flex items-center gap-4 my-0'>
 					<Image
 						src={require('../public/icons/website.png')}
 						alt='item'
@@ -339,12 +341,7 @@ const SideMenu = () => {
 						height='20'
 					/>
 					<span>
-						<a
-							className='flex items-center gap-2'
-							href={projects[type][name].website}
-							target='_blank'
-							rel='noopener referrer'
-						>
+						<a href={projects[type][name].website} target='_blank' rel='noopener referrer'>
 							Website
 						</a>
 					</span>
