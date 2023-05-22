@@ -147,7 +147,7 @@ make install`,
 		forta: {
 			link: 'https://explorer.forta.network/',
 			imgUrl: 'forta.jpg',
-			delegate: 'https://app.forta.network/nodePool/272/',
+			delegate: 'https://app.forta.network/nodePool/211/',
 			fav: true,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
