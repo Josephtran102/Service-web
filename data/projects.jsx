@@ -180,7 +180,7 @@ make install`,
 			seedPort: '15656',
 			installBin:
 				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.11\nmake install',
-			updHeight: '1',
+			updHeight: '0',
 			newInstallBin: `cd $HOME
 rm -rf ~/quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
