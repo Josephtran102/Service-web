@@ -158,7 +158,7 @@ make install`,
 			chainID: 'quicksilver-2',
 			link: 'https://mainnet.itrocket.net/quicksilver/staking',
 			delegate:
-				'https://wallet.keplr.app/chains/quicksilver?modal=validator&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x&chain=quicksilver-2',
+				'https://mainnet.itrocket.net/quicksilver/staking/quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x',
 			imgUrl: 'quicksilver.jpg',
 			desc: 'Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.',
 			website: 'https://quicksilver.zone/',
