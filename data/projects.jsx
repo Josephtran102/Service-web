@@ -658,6 +658,7 @@ make build
 sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.20.1',
 			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0'
 			gas: '--gas auto --gas-adjustment 1.5'
 		},
 		mars: {
