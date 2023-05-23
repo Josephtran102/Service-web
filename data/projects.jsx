@@ -557,7 +557,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			chainID: 'humans_3000-31',
 			link: 'https://testnet.itrocket.net/humans/staking',
 			imgUrl: 'humans.jpg',
-			fav: true,
+			fav: false,
 			desc: 'We are creating a scalable blockchain providing the economy of the heart driven AI, placing the humans at the facefront of the AI evolution.',
 			website: 'https://humans.ai/',
 			offValDoc:
