@@ -752,7 +752,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
+			minGasPrice: '0.0',
 		},
 		quasar: {
 			chainID: 'qsr-questnet-04',
