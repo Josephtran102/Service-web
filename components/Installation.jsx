@@ -233,7 +233,7 @@ make lz4 gcc unzip -y
 					<CodeSnippet
 						theme={theme}
 						code={`# install go, if needed
-cd ~
+cd $HOME
 ! [ -x "$(command -v go)" ] && {
 VER="${goVersion}"
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
