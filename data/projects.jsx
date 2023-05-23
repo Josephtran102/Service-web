@@ -811,7 +811,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.2-rc7\nmake install',
 			updHeight: '',
 			newInstallBin: '',
-			goVersion: '1.19.3',
+			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
