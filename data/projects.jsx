@@ -647,7 +647,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			peerPort: '20656',
 			seedPort: '20656',
 			installBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.11.2\nmake install',
 			updHeight: '208115',
 			newInstallBin: `cd $HOME
 rm -rf $HOME/lava
