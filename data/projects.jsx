@@ -657,6 +657,7 @@ git checkout v0.11.2
 make build
 sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.20.1',
+			unsafeReset: 'tendermint unsafe-reset-all',
 			gas: '--gas auto --gas-adjustment 1.5'
 		},
 		mars: {
