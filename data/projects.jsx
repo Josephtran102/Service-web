@@ -784,7 +784,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			minGasPrice: '0.0'
 		},
 		quicksilver: {
-			chainID: 'innuendo-5',
+			chainID: 'rhye-1',
 			link: 'https://testnet.itrocket.net/quicksilver/staking',
 			delegate:
 				'https://wallet.keplr.app/chains/quicksilver?modal=validator&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x&chain=quicksilver-2',
@@ -808,7 +808,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			peerPort: '37656',
 			seedPort: '37656',
 			installBin:
-				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.0-rc10.2\nmake install',
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.2-rc7\nmake install',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
