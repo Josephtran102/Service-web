@@ -656,6 +656,7 @@ cd lava
 git checkout v0.11.2
 make build
 sudo mv $HOME/lava/build/lavad $(which lavad)`,
+			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5'
 		},
 		mars: {
@@ -812,7 +813,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.20.1',
-			gas: '--gas auto --gas-adjustment 1.5',
+			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
