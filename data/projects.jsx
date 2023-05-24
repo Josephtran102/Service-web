@@ -147,7 +147,7 @@ make install`,
 		forta: {
 			link: 'https://explorer.forta.network/',
 			imgUrl: 'forta.jpg',
-			delegate: 'https://app.forta.network/nodePool/272/',
+			delegate: 'https://app.forta.network/nodePool/211/',
 			fav: true,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
@@ -158,7 +158,7 @@ make install`,
 			chainID: 'quicksilver-2',
 			link: 'https://mainnet.itrocket.net/quicksilver/staking',
 			delegate:
-				'https://wallet.keplr.app/chains/quicksilver?modal=validator&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x&chain=quicksilver-2',
+				'https://mainnet.itrocket.net/quicksilver/staking/quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x',
 			imgUrl: 'quicksilver.jpg',
 			desc: 'Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.',
 			website: 'https://quicksilver.zone/',
@@ -180,7 +180,7 @@ make install`,
 			seedPort: '15656',
 			installBin:
 				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.11\nmake install',
-			updHeight: '1',
+			updHeight: '0',
 			newInstallBin: `cd $HOME
 rm -rf ~/quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
@@ -557,7 +557,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			chainID: 'humans_3000-31',
 			link: 'https://testnet.itrocket.net/humans/staking',
 			imgUrl: 'humans.jpg',
-			fav: true,
+			fav: false,
 			desc: 'We are creating a scalable blockchain providing the economy of the heart driven AI, placing the humans at the facefront of the AI evolution.',
 			website: 'https://humans.ai/',
 			offValDoc:
@@ -647,7 +647,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			peerPort: '20656',
 			seedPort: '20656',
 			installBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.10.1\nmake install',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.11.2\nmake install',
 			updHeight: '208115',
 			newInstallBin: `cd $HOME
 rm -rf $HOME/lava
@@ -656,7 +656,10 @@ cd lava
 git checkout v0.11.2
 make build
 sudo mv $HOME/lava/build/lavad $(which lavad)`,
-			gas: '--gas auto --gas-adjustment 1.5'
+			goVersion: '1.20.1',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0'
 		},
 		mars: {
 			chainID: 'ares-1',
@@ -749,7 +752,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
+			minGasPrice: '0.0',
 		},
 		quasar: {
 			chainID: 'qsr-questnet-04',
@@ -784,7 +787,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			minGasPrice: '0.0'
 		},
 		quicksilver: {
-			chainID: 'innuendo-5',
+			chainID: 'rhye-1',
 			link: 'https://testnet.itrocket.net/quicksilver/staking',
 			delegate:
 				'https://wallet.keplr.app/chains/quicksilver?modal=validator&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x&chain=quicksilver-2',
@@ -808,11 +811,11 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			peerPort: '37656',
 			seedPort: '37656',
 			installBin:
-				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.0-rc10.2\nmake install',
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.2-rc7\nmake install',
 			updHeight: '',
 			newInstallBin: '',
-			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
+			goVersion: '1.20.1',
+			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
