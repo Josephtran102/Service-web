@@ -93,7 +93,10 @@ const Header = () => {
 		>
 			FAQ
 		</Link>,
-		<div className={styles.switch__wrapper} style={{ backgroundColor: theme === 'dark' ? '#222' : '#f6f6f7' }}>
+		<div
+			className={styles.switch__wrapper}
+			style={{ backgroundColor: theme === 'dark' ? '#222' : '#f6f6f7' }}
+		>
 			<span>Appearance:</span>
 			<div className={styles.switch} data-ison={theme === 'dark'} onClick={toggleTheme}>
 				<motion.div
@@ -198,7 +201,12 @@ const Header = () => {
 						</ul>
 					</nav>
 
-					<div className={styles.switch} data-ison={theme === 'dark'} onClick={toggleTheme} id={styles.desktopSwitch}>
+					<div
+						className={styles.switch}
+						data-ison={theme === 'dark'}
+						onClick={toggleTheme}
+						id={styles.desktopSwitch}
+					>
 						<motion.div
 							className={styles.handle}
 							transition={spring}
@@ -292,7 +300,7 @@ const Header = () => {
 						<Image src='/icons/tg.svg' alt='telegram' width={30} height={30} />
 					</a>
 
-					<a href='https://twitter.com/SEM23404846' target='_blank' rel='noopener noreferrer'>
+					<a href='https://twitter.com/itrocket_team' target='_blank' rel='noopener noreferrer'>
 						<Image src='/icons/twitter.svg' alt='twitter' width={30} height={30} />
 					</a>
 					<a
