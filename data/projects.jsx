@@ -615,7 +615,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			peerPort: '28656',
 			seedPort: '28656',
 			installBin:
-				'cd $HOME\nwget wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint-bsync%401.0.0-beta.10/kyve-linux-arm64.zip\nunzip $HOME/kyve-linux-arm64.zip\nmv kyve-linux-arm64 kyved\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm $HOME/kyve-linux-arm64.zip',
+				'cd $HOME\nwget wget https://github.com/KYVENetwork/kyvejs/releases/download/%40kyvejs%2Ftendermint-bsync%401.0.0-beta.10/kyve-linux-x64.zip\nunzip $HOME/kyve-linux-x64.zip\nmv kyve-linux-x64 kyved\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm $HOME/kyve-linux-arm64.zip',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
