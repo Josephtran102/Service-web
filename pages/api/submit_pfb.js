@@ -10,7 +10,6 @@ export default async function handler(req, res) {
 		const recaptchaValidation = response.data
 
 		if (!recaptchaValidation.success || recaptchaValidation.score < 0.5) {
-			// reCAPTCHA validation failed, return an error
 			return res.status(400).json({ message: 'reCAPTCHA validation failed.' })
 		}
 
