@@ -59,10 +59,16 @@ let projects = {
 rm -rf gitopia
 git clone https://github.com/gitopia/gitopia.git
 cd gitopia
-git checkout v2.0.0
+git checkout v2.1.0
 make install`,
-			updHeight: ``,
-			newInstallBin: ``,
+			updHeight: `0`,
+			newInstallBin: `cd $HOME
+rm -rf gitopia
+git clone https://github.com/gitopia/gitopia.git
+cd gitopia
+git checkout v2.1.0
+make build
+sudo mv $HOME/gitopia/build/gitopiad $(which gitopiad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
