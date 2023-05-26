@@ -767,6 +767,43 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
 		},
+		sao: {
+			chainID: 'sao-testnet1',
+			link: 'https://testnet.itrocket.net/sao/staking',
+			delegate:
+				'https://testnet.itrocket.net/sao/staking/arkhvaloper18u4es3gnjerdqw3u96pjdq6ukclysh3f9wfmqe',
+			imgUrl: 'sao.jpg',
+			website: 'https://www.sao.network/#/',
+			offValDoc: 'https://docs.sao.network/participate-in-sao-network',
+			hardware: '4 Cores, 8GB RAM, 150GB of storage (NVME)',
+			prHome: '/home/sao',
+			binHome: '/home/sao/go/bin/saod',
+			snapMaxSize: '3',
+			port: '19',
+			VAR: 'SAO',
+			denom: 'sao',
+			ecosystem: 'cosmos',
+			bin: 'saod',
+			path: '.sao',
+			peerID: '',
+			seedID: '',
+			explorer: '',
+			peerPort: '19656',
+			seedPort: '19656',
+			installBin:
+				`cd $HOME
+rm -rf sao-consensus
+git clone https://github.com/SaoNetwork/sao-consensus.git
+cd sao-consensus
+git checkout testnet1
+make install`,
+			updHeight: '',
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0'
+		},
 		quasar: {
 			chainID: 'qsr-questnet-04',
 			link: 'https://testnet.itrocket.net/quasar/staking',
