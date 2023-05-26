@@ -59,10 +59,16 @@ let projects = {
 rm -rf gitopia
 git clone https://github.com/gitopia/gitopia.git
 cd gitopia
-git checkout v2.0.0
+git checkout v2.1.0
 make install`,
-			updHeight: ``,
-			newInstallBin: ``,
+			updHeight: `0`,
+			newInstallBin: `cd $HOME
+rm -rf gitopia
+git clone https://github.com/gitopia/gitopia.git
+cd gitopia
+git checkout v2.1.0
+make build
+sudo mv $HOME/gitopia/build/gitopiad $(which gitopiad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -179,14 +185,14 @@ make install`,
 			peerPort: '15656',
 			seedPort: '15656',
 			installBin:
-				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.11\nmake install',
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.12.pebble-db\nmake install',
 			updHeight: '0',
 			newInstallBin: `cd $HOME
 rm -rf ~/quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
 cd quicksilver
 git fetch
-git checkout v1.2.11
+git checkout v1.2.12.pebble-db
 make build
 sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			goVersion: '1.19.3',
@@ -615,7 +621,14 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			peerPort: '28656',
 			seedPort: '28656',
 			installBin:
-				'cd $HOME\nwget wget https://files.kyve.network/kaon/protocol/tendermint-bsync/1.0.0-beta.9/kyve-linux-arm64.zip\ntar -xvzf $HOME/kyve-linux-arm64.zip\nchmod +x ./kyved\nmv kyved $HOME/go/bin/\nrm $HOME/kyve-linux-arm64.zip',
+				`cd $HOME
+rm -rf $HOME/chain
+git clone https://github.com/KYVENetwork/chain.git
+cd chain
+git fetch
+git checkout tags/v1.2.0 -b v1.2.0
+make build ENV=kaon
+mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
@@ -753,6 +766,43 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0',
+		},
+		sao: {
+			chainID: 'sao-testnet1',
+			link: 'https://testnet.itrocket.net/sao/staking',
+			delegate:
+				'https://testnet.itrocket.net/sao/staking/arkhvaloper18u4es3gnjerdqw3u96pjdq6ukclysh3f9wfmqe',
+			imgUrl: 'sao.jpg',
+			website: 'https://www.sao.network/#/',
+			offValDoc: 'https://docs.sao.network/participate-in-sao-network',
+			hardware: '4 Cores, 8GB RAM, 150GB of storage (NVME)',
+			prHome: '/home/sao',
+			binHome: '/home/sao/go/bin/saod',
+			snapMaxSize: '3',
+			port: '19',
+			VAR: 'SAO',
+			denom: 'sao',
+			ecosystem: 'cosmos',
+			bin: 'saod',
+			path: '.sao',
+			peerID: '',
+			seedID: '',
+			explorer: '',
+			peerPort: '19656',
+			seedPort: '19656',
+			installBin:
+				`cd $HOME
+rm -rf sao-consensus
+git clone https://github.com/SaoNetwork/sao-consensus.git
+cd sao-consensus
+git checkout testnet1
+make install`,
+			updHeight: '',
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0'
 		},
 		quasar: {
 			chainID: 'qsr-questnet-04',
