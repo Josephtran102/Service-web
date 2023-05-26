@@ -1,7 +1,7 @@
 module.exports = {
 	apps: [
 		{
-			name: 'Your App Name',
+			name: 'ITRocket',
 			script: 'npm',
 			args: 'start',
 			env_production: {
