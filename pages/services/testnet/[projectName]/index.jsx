@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { getLayout } from '@layouts/dashboard'
 import ProjectData from '@components/ProjectData'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'

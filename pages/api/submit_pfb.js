@@ -5,6 +5,8 @@ export default async function handler(req, res) {
 	if (req.method === 'POST') {
 		const { namespace_id, data, gas_limit, fee, captcha } = req.body
 
+		console.log('POST request received with:', req.body)
+
 		const recaptchaUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captcha}`
 		const response = await axios.post(recaptchaUrl)
 		const recaptchaValidation = response.data
