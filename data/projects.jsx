@@ -74,6 +74,42 @@ sudo mv $HOME/gitopia/build/gitopiad $(which gitopiad)`,
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
+		humans: {
+			chainID: 'humans_1089-1',
+			link: 'https://mainnet.itrocket.net/humans/staking',
+			delegate:
+				'https://mainnet.itrocket.net/humans/staking/humanvaloper1rcu8a8spnuf5hl5n2752la6s9kcjg09e74lal3',
+			imgUrl: 'humans.jpg',
+			website: 'https://humans.ai/',
+			offValDoc: 'https://github.com/humansdotai/mainnets/tree/main/mainnet/1',
+			hardware: '6 Cores, 32GB RAM, 500GB of storage (NVME)',
+			prHome: '/home/humans',
+			binHome: '/home/humans/go/bin/humansd',
+			snapMaxSize: '3',
+			port: '17',
+			VAR: 'HUMANS',
+			denom: 'aheart',
+			ecosystem: 'cosmos',
+			bin: 'humansd',
+			path: '.humansd',
+			peerID: '',
+			seedID: 'f8006da7d742777eeca0194b94586c8f147be4f6',
+			explorer: '',
+			peerPort: '17656',
+			seedPort: '17656',
+			installBin:
+				`cd $HOME
+rm -rf humans
+git clone https://github.com/humansdotai/humans
+cd humans && git checkout tags/v1.0.0
+make install`,
+			updHeight: '',
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0'
+		},
 		nym: {
 			chainID: '',
 			name: 'NYM',
