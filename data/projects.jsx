@@ -665,8 +665,15 @@ git fetch
 git checkout tags/v1.2.0 -b v1.2.0
 make build ENV=kaon
 mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf $HOME/chain
+git clone https://github.com/KYVENetwork/chain.git
+cd chain
+git fetch
+git checkout tags/v1.2.0 -b v1.2.0
+make build ENV=kaon
+mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5 --fees 10000tkyve',
 			unsafeReset: 'tendermint unsafe-reset-all',
