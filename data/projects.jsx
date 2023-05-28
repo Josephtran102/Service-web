@@ -804,7 +804,7 @@ git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
 git checkout v0.1.4
 make build
-sudo mv $HOME/sao-consensus/build/saod $(which saod)`,
+sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
