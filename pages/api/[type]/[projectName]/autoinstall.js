@@ -79,7 +79,7 @@ read -p "Enter WALLET name:" WALLET
 echo 'export WALLET='$WALLET
 read -p "Enter your MONIKER :" MONIKER
 echo 'export MONIKER='$MONIKER
-read -p "Enter your PORT (example 17, default port=26):" PORT
+read -p "Enter your PORT (for example 17, default port=26):" PORT
 echo 'export PORT='$PORT
 
 # set vars
@@ -111,7 +111,7 @@ echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
 source $HOME/.bash_profile
 }
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
-### следующая строчка добавляется
+
 echo $(go version) && sleep 1
 
 source <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/dependencies_install)
