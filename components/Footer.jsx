@@ -39,8 +39,16 @@ const Footer = props => {
 				</div>
 
 				<div className={styles.copyright}>
-					<span>Developed with ❤️ to Web3 community</span>
-					<span>© 2021-2023 ITRocket Team</span>
+					<span>
+						Developed with{' '}
+						<span
+							className='inline-block h-5 w-5 bg-red-400 align-top'
+							aria-hidden='true'
+							style={{ WebkitMask: "url('/icons/heart.svg') 50% 50% no-repeat" }}
+						></span>{' '}
+						for the Web3 community.
+					</span>
+					<span className='text-slate-600'>© ITRocket Team. All rights reserved</span>
 				</div>
 				<div className='socials'>
 					<a href='https://t.me/SEM3gs' target='_blank' rel='noopener noreferrer'>

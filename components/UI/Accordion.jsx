@@ -31,10 +31,18 @@ const Accordion = () => {
 	const accordionItems = [
 		{
 			title: 'About us',
-			content: `ITRocket is a team of DevOps engineers from Armenia 🇦🇲. We are crypto
-        enthusiasts & node operators in various crypto ecosystems. Our main
-        goal is to help millions of people effectively manage their crypto
-        assets!`
+			content: (
+				<span>
+					ITRocket is a team of DevOps engineers from Armenia{' '}
+					<div
+						className='inline-block h-5 w-5 align-top '
+						aria-hidden='true'
+						style={{ background: " center / contain url('/icons/flag_am.svg')  no-repeat" }}
+					></div>{' '}
+					. We are crypto enthusiasts & node operators in various crypto ecosystems. Our main goal is to
+					help millions of people effectively manage their crypto assets!
+				</span>
+			)
 		},
 		{
 			title: 'What about reliability?',

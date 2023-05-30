@@ -132,7 +132,11 @@ const Home = () => {
 					</div>
 				</section>
 
-				<section>
+				<section
+					style={{
+						backgroundColor: theme === 'dark' ? '#141414' : ' #fff'
+					}}
+				>
 					<div className={styles.container}>
 						<div className={styles.accordion__wrapper}>
 							<h3 className={styles.hero__heading} id='faq'>
