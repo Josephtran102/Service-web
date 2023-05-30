@@ -54,14 +54,25 @@ const Card = () => {
 						>
 							Services
 						</Link>
-						<a
-							href={data[item].link}
-							target='_blank'
-							rel='noopener noreferrer'
-							className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
-						>
-							Explorer
-						</a>
+						{data[item].explorer === '' || data[item].explorer === undefined ? (
+							<a
+								href={`https://testnet.itrocket.net/${item.toLowerCase()}/staking`}
+								className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								Explorer
+							</a>
+						) : (
+							<a
+								href={data[item].explorer}
+								target='_blank'
+								rel='noopener noreferrer'
+								className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
+							>
+								Explorer
+							</a>
+						)}
 					</div>
 					{projects.testnet[item].fav === true ? (
 						<div className={styles.card__star}>

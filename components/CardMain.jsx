@@ -129,15 +129,26 @@ const Card = () => {
 							>
 								Services
 							</Link>
-							<a
-								href={projects.mainnet[item].link}
-								target='_blank'
-								rel='noopener noreferrer'
-								className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
-								role='button'
-							>
-								Explorer
-							</a>
+							{projects.mainnet[item].explorer === '' ||
+							projects.mainnet[item].explorer === undefined ? (
+								<a
+									href={`https://mainnet.itrocket.net/${item.toLowerCase()}/staking`}
+									className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
+									target='_blank'
+									rel='noopener noreferrer'
+								>
+									Explorer
+								</a>
+							) : (
+								<a
+									href={projects.mainnet[item].explorer}
+									target='_blank'
+									rel='noopener noreferrer'
+									className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
+								>
+									Explorer
+								</a>
+							)}
 						</div>
 					</motion.div>
 				))}
