@@ -90,10 +90,10 @@ echo "export PORT="$PORT"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 printLine
-echo -e "Moniker:        \e[1m\e[32m$MONIKER\e[0m"
-echo -e "Wallet:         \e[1m\e[32m$WALLET\e[0m"
-echo -e "Chain id:       \e[1m\e[32m$CHAIN_ID\e[0m"
-echo -e "Node custom port:  \e[1m\e[32m$PORT\e[0m"
+echo -e "Moniker:        \\e[1m\\e[32m$MONIKER\\e[0m"
+echo -e "Wallet:         \\e[1m\\e[32m$WALLET\\e[0m"
+echo -e "Chain id:       \\e[1m\\e[32m$CHAIN_ID\\e[0m"
+echo -e "Node custom port:  \\e[1m\\e[32m$PORT\\e[0m"
 printLine
 sleep 1
 
