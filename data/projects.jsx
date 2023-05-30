@@ -128,7 +128,7 @@ make install`,
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
+			gas: '--fees 4000000000000000aheart',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
