@@ -2,7 +2,6 @@ import Image from 'next/image'
 import styles from '@styles/Card.module.scss'
 import { Context } from '@context/context'
 import projects from 'data/projects'
-import { motion } from 'framer-motion'
 import { useContext, useEffect, useState } from 'react'
 import { StarFilled } from '@ant-design/icons'
 import Link from 'next/link'
@@ -37,41 +36,14 @@ const Card = () => {
 		target.style.setProperty('--mouse-y', `${y}px`)
 	}
 
-	const container = {
-		hidden: { opacity: 0 },
-		show: {
-			opacity: 1,
-			transition: {
-				staggerChildren: 0.12
-			}
-		}
-	}
-
-	const listItem = {
-		hidden: { opacity: 0 },
-		show: {
-			opacity: 1,
-			transition: {
-				duration: 0.2
-			}
-		}
-	}
-
 	return (
-		<motion.div
-			className={styles.card__root}
-			initial='hidden'
-			whileInView='show'
-			viewport={{ once: true }}
-			variants={container}
-		>
+		<div className={styles.card__root}>
 			{Object.entries(projects.mainnet)
 				.sort()
 				.map(([item, value], index) => (
-					<motion.div
+					<div
 						className={styles.card}
 						key={item}
-						variants={listItem}
 						style={{ backgroundColor: theme === 'dark' ? '#222' : '#fff' }}
 						onMouseMove={e => handleOnMouseMove(e)}
 					>
@@ -149,9 +121,9 @@ const Card = () => {
 								</a>
 							)}
 						</div>
-					</motion.div>
+					</div>
 				))}
-		</motion.div>
+		</div>
 	)
 }
 
