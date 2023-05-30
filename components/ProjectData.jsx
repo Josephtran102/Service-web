@@ -166,7 +166,7 @@ const ProjectData = ({ name, type }) => {
 						/>
 					</div>
 					<div className='flex flex-wrap gap-1 items-center'>
-						<span>Public API: </span>
+						<>Public API: </>
 						<a
 							href={`https://${name}-${type}-api.itrocket.net:443`}
 							target='_blank'

@@ -201,6 +201,8 @@ const Header = () => {
 						</ul>
 					</nav>
 
+					<div className='divider-vertical'></div>
+
 					<div
 						className={styles.switch}
 						data-ison={theme === 'dark'}

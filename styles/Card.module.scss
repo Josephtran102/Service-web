@@ -7,7 +7,7 @@
 	border: 1px solid #d7d7d7d6;
 	border-radius: 10px;
 	width: 21%;
-	gap: 15px;
+	gap: 16px;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -21,7 +21,7 @@
 	}
 	@media (min-width: 1401px) and (max-width: 1699px) {
 		width: calc(25% - 20px);
-		gap: 12px;
+		gap: 14px;
 	}
 	@media (min-width: 769px) and (max-width: 1400px) {
 		width: calc(33.33% - 20px);
@@ -203,9 +203,23 @@
 	}
 }
 .finishedCard {
-	transform: rotateY(20deg) rotateX(-20deg);
+	transform: rotateY(15deg) rotateX(-15deg);
 	transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
 	align-items: center;
+
+	img {
+		aspect-ratio: 1;
+		background-color: #fff;
+		border-radius: 50%;
+
+		@media (min-width: 769px) {
+			width: 55px !important;
+		}
+
+		@media (max-width: 768px) {
+			width: 35px !important;
+		}
+	}
 
 	@media (max-width: 1024px) {
 		transform: rotateY(0deg) rotateX(0deg);

@@ -16,23 +16,11 @@
 	display: flex;
 	color: inherit;
 	justify-content: space-between;
-	background: linear-gradient(
-		-45deg,
-		#ee765200,
-		#e73c7e00,
-		#23a5d500,
-		#23d5ab00
-	);
+	background: linear-gradient(-45deg, #ee765200, #e73c7e00, #23a5d500, #23d5ab00);
 	background-size: 400% 400%;
 
 	&:hover {
-		background: linear-gradient(
-			-45deg,
-			#ee765214,
-			#e73c7e19,
-			#23a5d510,
-			#23d5ab16
-		);
+		background: linear-gradient(-45deg, #ee765214, #e73c7e19, #23a5d510, #23d5ab16);
 		animation: gradient 15s ease infinite;
 	}
 
@@ -53,9 +41,9 @@
 	}
 
 	&__desc {
-		font-size: 14px;
+		font-size: 15px;
 		width: 100%;
-		line-height: 1.5;
+		line-height: 1.4;
 
 		@media (max-width: 768px) {
 			font-size: 14px;

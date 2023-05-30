@@ -32,7 +32,7 @@ const services = () => {
 					<div className={styles.mainColumn}>
 						<h1 style={{ paddingTop: '0px' }}>Services 🌟</h1>
 						<p className={styles.desc}>
-							Select a project from the list below to view installation guides and useful commands.
+							Pick a project from the list below to view guides and commands.
 						</p>
 						<br />
 						<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>

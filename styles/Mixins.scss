@@ -12,7 +12,7 @@
 
 @mixin card {
 	box-shadow: rgb(120 120 120 / 12%) 0px 3px 22px;
-	border-radius: 12px;
+	border-radius: 14px;
 	padding: 18px 42px;
 	border: 1px solid;
 	border-color: rgba(139, 139, 149, 0.2);
@@ -27,26 +27,25 @@
 }
 
 @mixin button {
-	background-color: #fff;
+	background-color: #fafafa;
 	border: 1px solid #d0d7de;
-	border-radius: 6px;
+	border-radius: 8px;
 	cursor: pointer;
-	direction: ltr;
 	display: block;
-	font-weight: 400;
+	font-weight: 500;
 	font-size: 15px;
 	letter-spacing: -0.025em;
 	line-height: 1.45;
 	min-width: 25px;
 	overflow: visible;
-	padding: 4px 17px;
+	padding: 6px 20px;
 	text-align: center;
 	user-select: none;
 	-webkit-user-select: none;
 	touch-action: manipulation;
 	white-space: nowrap;
 	z-index: 100 !important;
-	transition: 0.3s;
+	transition: 0.3s !important;
 
 	&:disabled {
 		cursor: default;
@@ -54,7 +53,7 @@
 	}
 
 	&:hover {
-		border-color: #65298d;
+		border-color: #848187;
 		text-decoration: none;
 	}
 
@@ -64,7 +63,7 @@
 	}
 
 	@media (max-width: 1600px) {
-		padding: 4px 15px;
+		padding: 5px 18px;
 	}
 	@media (max-width: 1024px) {
 		font-size: 14px;
@@ -72,5 +71,18 @@
 	@media (max-width: 768px) {
 		font-size: 12px;
 		padding: 3px 8px;
+	}
+}
+
+@mixin button-primary {
+	@include button;
+	border: 1px solid #646cff;
+	background-color: #646cff;
+	color: #fbfbfb;
+	transition: 0.2s;
+
+	&:hover {
+		background-color: #787fff;
+		border-color: #787fff;
 	}
 }

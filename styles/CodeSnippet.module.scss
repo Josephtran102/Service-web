@@ -1,9 +1,8 @@
 .code__wrapper {
 	position: relative;
-	font-family: 'JetBrains Mono';
-	font-weight: 500 !important;
 	margin: 8px 0 10px;
 	font-size: 15px !important;
+
 	border: 1px solid #82828267;
 	border-radius: 4px;
 	font-size: 15px !important;
@@ -34,7 +33,15 @@
 }
 
 .code {
-	padding: 14px 10px !important;
+	padding: 16px 15px !important;
+
+	@media (max-width: 1400px) {
+		padding: 14px 12px !important;
+	}
+
+	@media (max-width: 768px) {
+		padding: 12px 8px !important;
+	}
 }
 
 .copyButton {
