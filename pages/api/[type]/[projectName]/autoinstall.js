@@ -98,7 +98,6 @@ printLine
 sleep 1
 
 printGreen "1. Installing go..." && sleep 1
-### подтягиваем код из manual istallation с таким же алгоритмом
 # install go, if needed
 cd $HOME
 ! [ -x "$(command -v go)" ] && {
@@ -118,12 +117,10 @@ echo $(go version) && sleep 1
 source <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/dependencies_install)
 
 printGreen "4. Installing binary..." && sleep 1
-### подтягиваем installBin из конфига, с таким же алгоритмом как в manual installation
 # download binary
 ${installBin}
 
 printGreen "5. Configuring and init app..." && sleep 1
-### осюда тоже используем тот же алгоритм что и в мануал инсталл начиная с "# config and init app" до  "# reset and download snapshot" 
 # config and init app
 ${bin} config node tcp://localhost:\${${VAR}_PORT}657
 ${bin} config keyring-backend os
@@ -191,7 +188,6 @@ WantedBy=multi-user.target
 EOF
 
 printGreen "8. Downloading snapshot and starting node..." && sleep 1
-
 # reset and download snapshot
 ${bin} ${unsafeReset} --home $HOME/${path}
 curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
