@@ -252,7 +252,7 @@ make install`,
 			peerPort: '15656',
 			seedPort: '15656',
 			installBin:
-				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.12.pebble-db\nmake install',
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.13.pebble-db\nmake install',
 			updHeight: '0',
 			newInstallBin: `cd $HOME
 wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.13/quicksilverd-v1.2.13-amd64
