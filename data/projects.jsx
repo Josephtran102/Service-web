@@ -128,7 +128,7 @@ make install`,
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
+			gas: '--fees 4000000000000000aheart',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
@@ -653,12 +653,12 @@ mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
 			seedPort: '20656',
 			installBin:
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.11.2\nmake install',
-			updHeight: '208115',
+			updHeight: '227130',
 			newInstallBin: `cd $HOME
 rm -rf $HOME/lava
 git clone https://github.com/lavanet/lava.git
 cd lava
-git checkout v0.11.2
+git checkout  v0.12.1
 make build
 sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.20.1',
