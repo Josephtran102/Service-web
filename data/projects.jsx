@@ -52,7 +52,7 @@ let projects = {
 			path: '',
 			peerID: '',
 			seedID: '',
-			explorer: '',
+			explorer: 'https://blastapi.io/explorer',
 			peerPort: '',
 			seedPort: '',
 			installBin: ``,
