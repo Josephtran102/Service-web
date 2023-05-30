@@ -48,12 +48,11 @@ const Card = () => {
 	}
 
 	const listItem = {
-		hidden: { opacity: 0, y: 20 },
+		hidden: { opacity: 0 },
 		show: {
 			opacity: 1,
-			y: 0,
 			transition: {
-				duration: 0.3
+				duration: 0.2
 			}
 		}
 	}
