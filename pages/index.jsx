@@ -4,8 +4,8 @@ import { motion } from 'framer-motion'
 import styles from '@styles/Home.module.scss'
 import CardMain from '@components/CardMain.jsx'
 import CardTest from '@components/CardTest.jsx'
-import Accordion from '@components/Accordion.jsx'
-import Finished from '@components/Finished.jsx'
+import Accordion from '@components/UI/Accordion.jsx'
+import CardFinished from '@components/CardFinished.jsx'
 import Link from 'next/link'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -127,7 +127,7 @@ const Home = () => {
 								</p>
 							</div>
 
-							<Finished />
+							<CardFinished />
 						</div>
 					</div>
 				</section>

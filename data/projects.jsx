@@ -35,8 +35,7 @@ let projects = {
 		blastapi: {
 			chainID: '',
 			link: 'https://mainnet.itrocket.net/blastapi/staking',
-			delegate:
-				'https://blastapi.io/explorer/0xf2d011008eb6d0574180d6a39d84bba230f554b9/2',
+			delegate: 'https://blastapi.io/explorer/0xf2d011008eb6d0574180d6a39d84bba230f554b9/2',
 			imgUrl: 'blastapi.jpg',
 			website: 'https://blastapi.io/',
 			offValDoc: '',
@@ -128,8 +127,7 @@ sudo mv $HOME/gitopia/build/gitopiad $(which gitopiad)`,
 			explorer: '',
 			peerPort: '17656',
 			seedPort: '17656',
-			installBin:
-				`cd $HOME
+			installBin: `cd $HOME
 rm -rf humans
 git clone https://github.com/humansdotai/humans
 cd humans && git checkout tags/v1.0.0
@@ -145,6 +143,7 @@ make install`,
 			chainID: '',
 			name: 'NYM',
 			link: 'https://mixnet.explorers.guru/',
+			ecosystem: 'false',
 			imgUrl: 'nym.png',
 			delegate: 'https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5',
 			fav: true,
@@ -221,6 +220,7 @@ make install`,
 			link: 'https://explorer.forta.network/',
 			imgUrl: 'forta.jpg',
 			delegate: 'https://app.forta.network/nodePool/211/',
+			ecosystem: 'false',
 			fav: true,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
@@ -656,8 +656,7 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			explorer: '',
 			peerPort: '28656',
 			seedPort: '28656',
-			installBin:
-				`cd $HOME
+			installBin: `cd $HOME
 rm -rf $HOME/chain
 git clone https://github.com/KYVENetwork/chain.git
 cd chain
@@ -801,7 +800,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0',
+			minGasPrice: '0.0'
 		},
 		sao: {
 			chainID: 'sao-testnet1',
@@ -826,8 +825,7 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			explorer: '',
 			peerPort: '19656',
 			seedPort: '19656',
-			installBin:
-				`cd $HOME
+			installBin: `cd $HOME
 rm -rf sao-consensus
 git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
@@ -946,6 +944,7 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			link: 'https://starkscan.co/',
 			imgUrl: 'starknet.png',
 			goVersion: '1.19.3',
+			ecosystem: 'false',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'

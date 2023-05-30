@@ -1,5 +1,5 @@
 import { QuestionCircleTwoTone } from '@ant-design/icons'
-import CodeSnippet from '@components/CodeSnippet'
+import CodeSnippet from '@components/UI/CodeSnippet'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { getRandomHex } from '@utils/getRandomHex'
 import { submitData } from '@utils/pfb'

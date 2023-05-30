@@ -1,6 +1,6 @@
 import styles from '@styles/Header.module.scss'
 import { Context } from '@context/context'
-import Dropdown from '@components/Dropdown'
+import Dropdown from '@components/UI/Dropdown'
 import { motion } from 'framer-motion'
 import { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'

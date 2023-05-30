@@ -1,4 +1,4 @@
-import CodeSnippet from '@components/CodeSnippet'
+import CodeSnippet from '@components/UI/CodeSnippet'
 import { useContext } from 'react'
 import { Context } from '@context/context'
 

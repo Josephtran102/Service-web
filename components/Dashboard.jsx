@@ -19,9 +19,9 @@ export default function Dashboard(props) {
 	const [opacity, setOpacity] = useState(0)
 	const [name, setName] = useState('')
 	const [isActive, setIsActive] = useState(styles.pending)
+	const [explorer, setExplorer] = useState()
 	const [blockHeight, setBlockHeight] = useState(null)
 	const [chainID, setChainID] = useState()
-	const [explorer, setExplorer] = useState(null)
 	const [value, setValue] = useState()
 	const [intervalId, setIntervalId] = useState(null)
 	const curProjectName = useRef()
@@ -90,7 +90,7 @@ export default function Dashboard(props) {
 
 		if (isCurrent) {
 			setName(project.name)
-			setExplorer(project.explorer)
+			setExplorer(projects[type][name].explorer)
 			setChainID(project?.chainID)
 		}
 
@@ -259,8 +259,8 @@ export default function Dashboard(props) {
 									</a>
 								) : (
 									<a
-										className='flex items-center gap-2'
-										href={`${explorer}`}
+										className='flex items-center gap-2 font-medium text-blue-500 transition-colors hover:text-blue-400'
+										href={explorer}
 										target='_blank'
 										rel='noopener referrer'
 									>
