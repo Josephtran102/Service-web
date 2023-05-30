@@ -43,7 +43,7 @@ const Installation = props => {
 	const [indexer, setIndexer] = useState(null)
 	const [port, setPort] = useState(project.port)
 	const [inputStatus, setInputStatus] = useState('')
-	const [moniker, setMoniker] = useState('$MONIKER')
+	const [moniker, setMoniker] = useState('test')
 	const [wallet, setWallet] = useState('wallet')
 	const [amountCreate, setAmountCreate] = useState(1000000)
 	const [details, setDetails] = useState('I love blockchain ❤️')
