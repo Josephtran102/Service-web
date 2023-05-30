@@ -990,11 +990,6 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			imgUrl: 'sui.svg'
 		},
 		{
-			name: 'BlastAPI',
-			link: 'https://houston.blastapi.io/',
-			imgUrl: 'blastapi.jpg'
-		},
-		{
 			name: 'Masa',
 			link: 'https://www.masa.finance/',
 			imgUrl: 'masa.svg'
