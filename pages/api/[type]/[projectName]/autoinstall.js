@@ -101,7 +101,7 @@ printGreen "1. Installing go..." && sleep 1
 # install go, if needed
 cd $HOME
 ! [ -x "$(command -v go)" ] && {
-VER="1.20.1"
+VER="${goVersion}"
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
 sudo tar -C /usr/local -xzf "go$VER.linux-amd64.tar.gz"
