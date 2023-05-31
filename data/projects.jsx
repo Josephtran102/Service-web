@@ -36,6 +36,7 @@ let projects = {
 			imgUrl: 'blastapi.jpg',
 			website: 'https://blastapi.io/',
 			offValDoc: '',
+			fav: true,
 			hardware: '',
 			prHome: '',
 			binHome: '',
@@ -370,10 +371,16 @@ git clone https://github.com/archway-network/archway.git
 cd archway
 git checkout v0.5.2
 make install`,
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '300331',
+			newInstallBin: `cd $HOME
+rm -rf archway
+git clone https://github.com/archway-network/archway.git
+cd archway
+git checkout v0.6.0
+make build
+sudo mv $HOME/archway/build/archwayd $(which archwaid)`,
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
+			gas: '--fees 180000000000000000aconst',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
@@ -780,12 +787,12 @@ git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
 git checkout testnet1
 make install`,
-			updHeight: '0',
+			updHeight: '4007000',
 			newInstallBin: `cd $HOME
 rm -rf sao-consensus
 git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
-git checkout v0.1.4
+git checkout v0.1.5
 make build
 sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			goVersion: '1.19.3',
@@ -879,15 +886,6 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
-		starknet: {
-			explorer: 'https://starkscan.co/',
-			imgUrl: 'starknet.png',
-			goVersion: '1.19.3',
-			ecosystem: 'false',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
