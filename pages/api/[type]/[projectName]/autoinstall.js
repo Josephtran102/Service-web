@@ -86,7 +86,7 @@ echo 'export PORT='$PORT
 echo "export WALLET="$WALLET"" >> $HOME/.bash_profile
 echo "export MONIKER="$MONIKER"" >> $HOME/.bash_profile
 echo "export ${VAR}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
-echo "export ${VAR}_PORT="${port}"" >> $HOME/.bash_profile
+echo "export ${VAR}_PORT="$PORT"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 printLine
