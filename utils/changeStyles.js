@@ -5,6 +5,7 @@ export const changeStyles = theme => {
 	const input = document.getElementsByClassName('ant-input')
 	const submenu = document.getElementsByClassName('ant-menu-submenu-title')
 	const radio = document.getElementsByClassName('ant-radio-button-wrapper')
+	const links = document.querySelectorAll('ant-menu-title-content > a')
 	const isLight = theme === 'light'
 
 	body.style.backgroundColor = isLight ? '#F8F9FA' : '#171717'
@@ -31,6 +32,14 @@ export const changeStyles = theme => {
 			el.style.color = isLight ? '#000' : '#fff'
 		}
 	}
+	// for (const el of links) {
+	// 	if (el) {
+	// 		isLight ? el.classList.add('dark') : el.classList.remove('dark')
+	// 	}
+	// }
+	isLight
+		? document.documentElement.classList.remove('dark')
+		: document.documentElement.classList.add('dark')
 	for (const el of input) {
 		if (el) {
 			el.style.backgroundColor = isLight ? '#fff' : '#ffffffef'
