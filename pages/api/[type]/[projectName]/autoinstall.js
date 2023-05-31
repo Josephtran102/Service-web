@@ -2,6 +2,8 @@ import projects from 'data/projects'
 import { fetchNetInfo, fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 
 export default function handler(req, res) {
+	res.setHeader('Cache-Control', 'no-store, max-age=0')
+
 	const {
 		query: { type, projectName }
 	} = req
