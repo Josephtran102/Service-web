@@ -92,8 +92,8 @@ source $HOME/.bash_profile
 printLine
 echo -e "Moniker:        \\e[1m\\e[32m$MONIKER\\e[0m"
 echo -e "Wallet:         \\e[1m\\e[32m$WALLET\\e[0m"
-echo -e "Chain id:       \\e[1m\\e[32m${VAR}_CHAIN_ID\\e[0m"
-echo -e "Node custom port:  \\e[1m\\e[32m${VAR}_PORT\\e[0m"
+echo -e "Chain id:       \\e[1m\\e[32m$${VAR}_CHAIN_ID\\e[0m"
+echo -e "Node custom port:  \\e[1m\\e[32m$${VAR}_PORT\\e[0m"
 printLine
 sleep 1
 
