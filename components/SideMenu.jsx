@@ -412,7 +412,7 @@ const SideMenu = () => {
 							className='flex items-center w-fit my-0 action rounded-2xl bg-gray-100 px-2 transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 active:bg-gray-300 dark:bg-zinc-700  dark:text-white dark:hover:bg-zinc-600 dark:focus-visible:bg-zinc-600 dark:active:bg-zinc-500'
 						>
 							<Image
-								className='my-1 mr-2'
+								className='my-1 mr-2 '
 								src={require(`../public/${type}/${imgURL}`)}
 								alt='project logo'
 								width='19'

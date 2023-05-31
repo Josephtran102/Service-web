@@ -85,15 +85,15 @@ echo 'export PORT='$PORT
 # set vars
 echo "export WALLET="$WALLET"" >> $HOME/.bash_profile
 echo "export MONIKER="$MONIKER"" >> $HOME/.bash_profile
-echo "export CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
-echo "export PORT="$PORT"" >> $HOME/.bash_profile
+echo "export ${VAR}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
+echo "export ${VAR}_PORT="${port}"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 printLine
 echo -e "Moniker:        \\e[1m\\e[32m$MONIKER\\e[0m"
 echo -e "Wallet:         \\e[1m\\e[32m$WALLET\\e[0m"
-echo -e "Chain id:       \\e[1m\\e[32m$CHAIN_ID\\e[0m"
-echo -e "Node custom port:  \\e[1m\\e[32m$PORT\\e[0m"
+echo -e "Chain id:       \\e[1m\\e[32m${VAR}_CHAIN_ID\\e[0m"
+echo -e "Node custom port:  \\e[1m\\e[32m${VAR}_PORT\\e[0m"
 printLine
 sleep 1
 
