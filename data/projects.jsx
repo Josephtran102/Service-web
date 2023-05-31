@@ -144,7 +144,8 @@ make install`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
+			minGasPrice: '0.0',
+			website: 'https://nymtech.net/'
 		},
 		nois: {
 			chainID: 'nois-1',
