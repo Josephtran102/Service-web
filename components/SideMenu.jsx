@@ -239,7 +239,19 @@ const SideMenu = () => {
 											href={serviceURL + '/installation/#installation'}
 											onClick={event => handleClick(event, 'installation', `install${name}`)}
 										>
-											Installation
+											Manual Installation
+										</Link>,
+										`install${name}`,
+										<RightOutlined />
+									),
+									getItem(
+										<Link
+											href={serviceURL + '/installation/#auto-installation'}
+											onClick={event =>
+												handleClick(event, 'auto-installation', `auto-install${name}`)
+											}
+										>
+											Automatic Installation
 										</Link>,
 										`install${name}`,
 										<RightOutlined />

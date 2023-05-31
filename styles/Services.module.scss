@@ -53,7 +53,7 @@ b.bold {
 		display: flex;
 		flex-direction: column;
 		padding: 5px 0 500px 25px;
-		width: calc(84% - 30px);
+		width: calc(84% - 35px);
 
 		@media (max-width: 1400px) {
 			padding: 5px 0 500px 15px;
@@ -239,7 +239,7 @@ b.bold {
 	margin-top: 10px;
 	padding: 10px 15px 5px;
 	position: relative;
-	width: calc(16% + 30px);
+	width: calc(16% + 35px);
 	z-index: 100;
 
 	@media (max-width: 1450px) {
