@@ -185,10 +185,10 @@ const Installation = props => {
 						<a href={project.offValDoc} target='_blank' rel='nofollow'>
 							Official Documentation
 						</a>
-						<span></span>
+						<span className='divider-vertical' />
 						<span> Recommended Hardware: {project.hardware}</span>
 					</p>
-					<p className={styles.text_secondary}>
+					<p>
 						<b className={styles.bold}>pruning: </b> {pruning} {' | '}
 						<b className={styles.bold}>indexer: </b> {indexer}
 					</p>
