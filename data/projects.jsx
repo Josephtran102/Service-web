@@ -371,8 +371,14 @@ git clone https://github.com/archway-network/archway.git
 cd archway
 git checkout v0.5.2
 make install`,
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '300331',
+			newInstallBin: `cd $HOME
+rm -rf archway
+git clone https://github.com/archway-network/archway.git
+cd archway
+git checkout v0.6.0
+make build
+sudo mv $HOME/archway/build/archwayd $(which archwaid)`,
 			goVersion: '1.19.3',
 			gas: '--fees 180000000000000000aconst',
 			unsafeReset: 'tendermint unsafe-reset-all',
