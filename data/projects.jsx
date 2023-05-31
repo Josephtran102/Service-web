@@ -36,6 +36,7 @@ let projects = {
 			imgUrl: 'blastapi.jpg',
 			website: 'https://blastapi.io/',
 			offValDoc: '',
+			fav: true,
 			hardware: '',
 			prHome: '',
 			binHome: '',
@@ -879,15 +880,6 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
-		starknet: {
-			explorer: 'https://starkscan.co/',
-			imgUrl: 'starknet.png',
-			goVersion: '1.19.3',
-			ecosystem: 'false',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
