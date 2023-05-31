@@ -51,7 +51,7 @@ const Footer = props => {
 					<span className='text-slate-600'>© ITRocket Team. All rights reserved</span>
 				</div>
 				<div className='socials'>
-					<a href='https://t.me/SEM3gs' target='_blank' rel='noopener noreferrer'>
+					<a href='https://linktr.ee/itrocket_team' target='_blank' rel='noopener noreferrer'>
 						<Image src='/icons/tg.svg' alt='telegram' width={40} height={40} />
 					</a>
 
