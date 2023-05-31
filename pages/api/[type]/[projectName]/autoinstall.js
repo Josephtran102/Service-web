@@ -19,7 +19,8 @@ export default function handler(req, res) {
 		installBin,
 		VAR,
 		minGasPrice,
-		denom
+		denom,
+		goVersion
 	} = project
 	const name = projectName
 	let livePeers = []
