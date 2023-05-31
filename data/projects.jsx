@@ -659,7 +659,7 @@ mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
 			peerPort: '20656',
 			seedPort: '20656',
 			installBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.11.2\nmake install',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.12.1\nmake install',
 			updHeight: '227130',
 			newInstallBin: `cd $HOME
 rm -rf $HOME/lava
