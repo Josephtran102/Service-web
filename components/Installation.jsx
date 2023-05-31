@@ -316,7 +316,11 @@ EOF
 
 # reset and download snapshot
 ${bin} ${unsafeReset} --home $HOME/${path}
-curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
+if curl -s --head curl https://testnet-files.itrocket.net/celestia/snap_celestia.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
+  curl https://testnet-files.itrocket.net/celestia/snap_celestia.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.celestia-app
+    else
+  echo no have snap
+fi
 
 # enable and start service
 sudo systemctl daemon-reload
