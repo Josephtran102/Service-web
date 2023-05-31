@@ -1,8 +1,7 @@
 .code__wrapper {
 	position: relative;
-	margin: 8px 0 10px;
+	margin: 7px 0 10px;
 	font-size: 15px !important;
-
 	border: 1px solid #82828267;
 	border-radius: 4px;
 	font-size: 15px !important;
@@ -33,10 +32,10 @@
 }
 
 .code {
-	padding: 16px 15px !important;
+	padding: 13px 15px !important;
 
 	@media (max-width: 1400px) {
-		padding: 14px 12px !important;
+		padding: 12px !important;
 	}
 
 	@media (max-width: 768px) {
