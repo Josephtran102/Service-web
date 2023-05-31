@@ -555,10 +555,10 @@ sudo mv $HOME/archway/build/archwayd $(which archwaid)`,
 			seedPort: '38656',
 			installBin:
 				'cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.5.4\nmake install',
-			updHeight: '0',
+			updHeight: '818000',
 			newInstallBin: `cd $HOME/elys
 git fetch --all
-git checkout v0.5.4
+git checkout v0.6.0
 make build
 sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			goVersion: '1.19.3',
