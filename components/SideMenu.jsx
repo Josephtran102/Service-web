@@ -98,22 +98,36 @@ const SideMenu = () => {
 						null,
 						'group'
 					),
+					{
+						type: 'divider'
+					},
 					getItem(
-						<p className='flex items-center gap-4 my-0'>
-							<Image
-								src={require('../public/icons/website.png')}
-								alt='item'
-								style={{ borderRadius: '50%' }}
-								width='20'
-								height='20'
-							/>
-							<span>
-								<a href={projects[type][name].website} target='_blank' rel='noopener referrer'>
-									Website
-								</a>
-							</span>
-						</p>,
+						<span class='mb-2 block text-gray-400 dark:text-zinc-500'>Official Resources</span>,
 						'website',
+						null,
+						null
+					),
+					getItem(
+						<a
+							href={projects[type][name].website}
+							target='_blank'
+							rel='noopener referrer'
+							className='flex items-center w-fit my-0 action rounded-2xl bg-gray-100 px-2 transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 active:bg-gray-300'
+						>
+							<Image
+								className='my-1 mr-2'
+								src={require(`../public/${type}/${imgURL}`)}
+								alt='project logo'
+								width='19'
+								height='19'
+								style={{
+									borderRadius: '50%',
+									backgroundColor: '#fff'
+								}}
+							/>
+							<span>Website</span>
+						</a>,
+						'websitepc',
 						null
 					)
 			  ])
@@ -384,23 +398,33 @@ const SideMenu = () => {
 					{
 						type: 'divider'
 					},
-
 					getItem(
-						<p className='flex items-center gap-4 my-0'>
-							<Image
-								src={require('../public/icons/website.png')}
-								alt='item'
-								style={{ borderRadius: '50%' }}
-								width='20'
-								height='20'
-							/>
-							<span>
-								<a href={projects[type][name].website} target='_blank' rel='noopener referrer'>
-									Website
-								</a>
-							</span>
-						</p>,
+						<span class='mb-2 block text-gray-400 dark:text-zinc-500'>Official Resources</span>,
 						'website',
+						null,
+						null
+					),
+					getItem(
+						<a
+							href={projects[type][name].website}
+							target='_blank'
+							rel='noopener referrer'
+							className='flex items-center w-fit my-0 action rounded-2xl bg-gray-100 px-2 transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 active:bg-gray-300'
+						>
+							<Image
+								className='my-1 mr-2'
+								src={require(`../public/${type}/${imgURL}`)}
+								alt='project logo'
+								width='19'
+								height='19'
+								style={{
+									borderRadius: '50%',
+									backgroundColor: '#fff'
+								}}
+							/>
+							<span>Website</span>
+						</a>,
+						'websitepc',
 						null
 					)
 			  ])

@@ -166,7 +166,7 @@ a {
 	z-index: 10 !important;
 
 	a {
-		display: block !important;
+		display: flex;
 		z-index: 10 !important;
 
 		&:hover {
@@ -363,9 +363,17 @@ li[role='menuitem'] {
 	box-shadow: none !important;
 	transition: 0s !important;
 	background-color: transparent !important;
+}
 
+.ant-menu-item {
 	&:hover {
 		background-color: #8c8b8b17 !important;
+	}
+
+	&-only-child {
+		&:hover {
+			background-color: inherit !important;
+		}
 	}
 }
 

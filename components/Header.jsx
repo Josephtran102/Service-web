@@ -201,7 +201,7 @@ const Header = () => {
 						</ul>
 					</nav>
 
-					<div className='divider-vertical'></div>
+					<div className='divider-vertical hidden lg:block'></div>
 
 					<div
 						className={styles.switch}

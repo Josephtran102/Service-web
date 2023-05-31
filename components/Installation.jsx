@@ -160,6 +160,7 @@ const Installation = props => {
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
 				<Breadcrumb
+					separator='>'
 					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
 					items={[
 						{

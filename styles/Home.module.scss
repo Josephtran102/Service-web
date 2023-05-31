@@ -53,6 +53,12 @@
 
 	&:first-child {
 		@include button-primary;
+
+		font-size: 17px;
+
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
 	}
 
 	&__dark {

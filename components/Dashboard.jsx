@@ -24,6 +24,7 @@ export default function Dashboard(props) {
 	const [chainID, setChainID] = useState()
 	const [value, setValue] = useState()
 	const [intervalId, setIntervalId] = useState(null)
+	const [ecosystem, setEcosystem] = useState(null)
 	const curProjectName = useRef()
 	const curProjectType = useRef()
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -92,6 +93,7 @@ export default function Dashboard(props) {
 			setName(project.name)
 			setExplorer(projects[type][name].explorer)
 			setChainID(project?.chainID)
+			setEcosystem(projects[type][name].ecosystem)
 		}
 
 		const URL = window.location.href
@@ -271,19 +273,24 @@ export default function Dashboard(props) {
 							</span>
 						</div>
 					</div>
-					<Segmented
-						value={value}
-						defaultValue={curProjectType.current}
-						options={['API & Sync', 'Installation', 'Upgrade', 'Cheat-Sheet']}
-						onChange={handleTabClick}
-						style={{
-							marginBottom: '10px',
-							marginLeft: '5px',
-							backgroundColor: theme === 'dark' ? '#6b6969' : '#e0e0e0',
-							width: 'fit-content'
-						}}
-						className={styles.mobileSegmented}
-					/>
+					{ecosystem === 'false' ? (
+						''
+					) : (
+						<Segmented
+							value={value}
+							defaultValue={curProjectType.current}
+							options={['API & Sync', 'Installation', 'Upgrade', 'Cheat-Sheet']}
+							onChange={handleTabClick}
+							style={{
+								marginBottom: '10px',
+								marginLeft: '5px',
+								backgroundColor: theme === 'dark' ? '#6b6969' : '#e0e0e0',
+								width: 'fit-content'
+							}}
+							className={styles.mobileSegmented}
+						/>
+					)}
+
 					{props.children}
 				</main>
 			</div>

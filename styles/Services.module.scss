@@ -328,7 +328,7 @@ b.bold {
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: max(10px, 1vw);
-	column-gap: max(30px, 2vw);
+	column-gap: max(15px, 2vw);
 	margin: 10px 0;
 }
 
@@ -409,12 +409,12 @@ p.desc {
 
 	@media (max-width: 1200px) {
 		gap: 20px;
-		row-gap: 5px;
+		row-gap: 10px;
 	}
 
 	@media (max-width: 768px) {
 		gap: 15px;
-		row-gap: 5px;
+		row-gap: 8px;
 	}
 
 	&__name {

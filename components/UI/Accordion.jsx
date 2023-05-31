@@ -34,11 +34,11 @@ const Accordion = () => {
 			content: (
 				<span>
 					ITRocket is a team of DevOps engineers from Armenia{' '}
-					<div
+					<span
 						className='inline-block h-5 w-5 align-top '
 						aria-hidden='true'
 						style={{ background: " center / contain url('/icons/flag_am.svg')  no-repeat" }}
-					></div>{' '}
+					></span>{' '}
 					. We are crypto enthusiasts & node operators in various crypto ecosystems. Our main goal is to
 					help millions of people effectively manage their crypto assets!
 				</span>
