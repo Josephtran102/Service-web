@@ -203,31 +203,40 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 						code={`wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
 					/>
 					<h2 id='snap'>Snapshot </h2>
-					<p>
-						height: <b className={styles.bold}>{snapHeight}</b>
-						{' | '}
-						<b className={styles.bold}>{`${snapTime} ago`}</b>
-						{' | '}
-						size: <b className={styles.bold}>{`${snapSize}B`}</b>
-						{' | '}
-						pruning: <b className={styles.bold}>{pruning}</b>
-						{' | '} indexer: <b className={styles.bold}>{indexer}</b>
-					</p>
-					<CodeSnippet
-						theme={theme}
-						code={`sudo systemctl stop ${bin}
+					{snapHeight == undefined ? (
+						<CodeSnippet theme={theme} code={`## Snapshot is not available yet`} />
+					) : (
+						<>
+							<p>
+								height: <b className={styles.bold}>{snapHeight}</b>
+								{' | '}
+								<b className={styles.bold}>{`${snapTime} ago`}</b>
+								{' | '}
+								size: <b className={styles.bold}>{`${snapSize}B`}</b>
+								{' | '}
+								pruning: <b className={styles.bold}>{pruning}</b>
+								{' | '} indexer: <b className={styles.bold}>{indexer}</b>
+							</p>
+							<CodeSnippet
+								theme={theme}
+								code={`sudo systemctl stop ${bin}
 
 cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
 
 rm -rf $HOME/${path}/data ${
-							wasm.current.includes('data') || wasm.current === 'false' ? '' : `$HOME/${path}/wasm`
-						}
+									wasm.current.includes('data') || wasm.current === 'false'
+										? ''
+										: `$HOME/${path}/wasm`
+								}
 curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
 
 mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json
 
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
-					/>
+							/>
+						</>
+					)}
+
 					<h2 id='sync'>State Sync</h2>
 					<p className={styles.text_secondary}>
 						If you don't want to wait for a long synchronization you can use:
