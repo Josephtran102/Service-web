@@ -59,6 +59,14 @@ const Header = () => {
 		>
 			Projects
 		</Link>,
+		<Link
+			href='/services'
+			onClick={() => {
+				setIsOpen(!isOpen)
+			}}
+		>
+			Services
+		</Link>,
 		<div
 			onClick={() => {
 				setAccordionOpen(!accordionOpen)
@@ -77,14 +85,6 @@ const Header = () => {
 				<a href='https://testnet.itrocket.net/'>Testnet</a>
 			</div>
 		</div>,
-		<Link
-			href='/services'
-			onClick={() => {
-				setIsOpen(!isOpen)
-			}}
-		>
-			Services
-		</Link>,
 		<Link
 			href='/#faq'
 			onClick={() => {
@@ -275,6 +275,34 @@ const Header = () => {
 							></span>
 						</div>
 					</button>
+
+					<div className='divider-vertical hidden lg:block'></div>
+
+					<div className='hidden gap-3 lg:flex'>
+						<a href='https://linktr.ee/itrocket_team' target='_blank' rel='noopener noreferrer'>
+							<Image src='/icons/tg.svg' alt='telegram' width={30} height={30} />
+						</a>
+
+						<a href='https://twitter.com/itrocket_team' target='_blank' rel='noopener noreferrer'>
+							<Image src='/icons/twitter.svg' alt='twitter' width={30} height={30} />
+						</a>
+						<a
+							href='https://github.com/itrocket-team'
+							target='_blank'
+							rel='noopener noreferrer'
+							style={{ display: theme === 'light' ? 'block' : 'none' }}
+						>
+							<Image src='/icons/github.svg' alt='github' width={30} height={30} />
+						</a>
+						<a
+							href='https://github.com/itrocket-team'
+							target='_blank'
+							rel='noopener noreferrer'
+							style={{ display: theme !== 'light' ? 'block' : 'none' }}
+						>
+							<Image src='/icons/github-white.svg' alt='github' width={30} height={30} />
+						</a>
+					</div>
 				</div>
 			</header>
 

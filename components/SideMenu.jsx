@@ -168,9 +168,6 @@ const SideMenu = () => {
 									}
 								]}
 								onChange={handleTabClick}
-								style={{
-									backgroundColor: theme === 'dark' ? '#6b6969' : '#efefef'
-								}}
 							/>
 						</div>,
 						'grpthis',

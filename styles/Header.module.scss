@@ -31,11 +31,11 @@
 
 	&__wrapper {
 		display: flex;
-		gap: 25px;
+		gap: 20px;
 		align-items: center;
 
 		@media (max-width: 768px) {
-			gap: 15px;
+			gap: 13px;
 		}
 	}
 
