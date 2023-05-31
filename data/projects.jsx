@@ -780,12 +780,12 @@ git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
 git checkout testnet1
 make install`,
-			updHeight: '0',
+			updHeight: '4007000',
 			newInstallBin: `cd $HOME
 rm -rf sao-consensus
 git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
-git checkout v0.1.4
+git checkout v0.1.5
 make build
 sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			goVersion: '1.19.3',
