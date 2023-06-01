@@ -285,8 +285,8 @@ a {
 	}
 }
 
-.ant-menu-dark.ant-menu-inline .ant-menu-sub.ant-menu-inline {
-	background: #1b1b1b;
+.ant-menu-sub.ant-menu-inline {
+	background: transparent !important;
 }
 
 .ant-menu-submenu {
@@ -435,11 +435,6 @@ li[role='menuitem'] {
 .ant-btn-primary {
 	background-color: #1677ff;
 	box-shadow: 0 2px 0 rgb(5 5 5 / 10%);
-}
-
-.ant-menu-light.ant-menu-inline .ant-menu-sub.ant-menu-inline {
-	background-color: #ffffff !important;
-	padding-left: 5px;
 }
 
 .ant-menu-dark {

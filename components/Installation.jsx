@@ -329,6 +329,10 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 					/>
 				</>
 				<h2 id='auto-installation'>Automatic Installation ⚙️</h2>
+				<p>
+					<b className={styles.bold}>pruning: </b> {pruning} {' | '}
+					<b className={styles.bold}>indexer: </b> {indexer}
+				</p>
 				<CodeSnippet
 					theme={theme}
 					code={`source <(curl -s https://itrocket.net/api/${type}/${name}/autoinstall/)`}
