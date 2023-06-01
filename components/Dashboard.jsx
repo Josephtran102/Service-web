@@ -166,22 +166,20 @@ export default function Dashboard(props) {
 									: false
 
 							return (
-								!isCurrent && (
-									<a
-										href={serviceURL}
-										className={styles.chain__wrapper}
-										onClick={handleLinkClick}
-										key={name}
-									>
-										<Image
-											src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
-											alt='project logo'
-											width='25'
-											height='25'
-										/>
-										{name}
-									</a>
-								)
+								<a
+									href={serviceURL}
+									className={styles.chain__wrapper}
+									onClick={handleLinkClick}
+									key={name}
+								>
+									<Image
+										src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
+										alt='project logo'
+										width='25'
+										height='25'
+									/>
+									{name}
+								</a>
 							)
 						})}
 					</div>
@@ -199,22 +197,20 @@ export default function Dashboard(props) {
 									: false
 
 							return (
-								!isCurrent && (
-									<Link
-										href={serviceURL}
-										className={styles.chain__wrapper}
-										onClick={handleLinkClick}
-										key={name}
-									>
-										<Image
-											src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
-											alt='project logo'
-											width='25'
-											height='25'
-										/>
-										{name}
-									</Link>
-								)
+								<Link
+									href={serviceURL}
+									className={styles.chain__wrapper}
+									onClick={handleLinkClick}
+									key={name}
+								>
+									<Image
+										src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
+										alt='project logo'
+										width='25'
+										height='25'
+									/>
+									{name}
+								</Link>
 							)
 						})}
 					</div>

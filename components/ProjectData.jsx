@@ -150,39 +150,42 @@ const ProjectData = ({ name, type }) => {
 						]}
 					/>
 					<h2 id='rpc'>RPC, API, gRPC</h2>
-					<div className='flex flex-wrap gap-1 items-center'>
-						<span>Public RPC: </span>
-						<a
-							href={`https://${name}-${type}-rpc.itrocket.net:443`}
-							target='_blank'
-							rel='noopener referrer'
-						>
-							{`https://${name}-${type}-rpc.itrocket.net:443`}
-						</a>
-						<Paragraph
-							copyable={{
-								text: `https://${name}-${type}-rpc.itrocket.net:443`,
-								tooltips: false
-							}}
-						/>
+					<div className='flex flex-col flex-wrap gap-1 mb-1'>
+						<div className='flex flex-wrap gap-1 items-center'>
+							<span>Public RPC: </span>
+							<a
+								href={`https://${name}-${type}-rpc.itrocket.net:443`}
+								target='_blank'
+								rel='noopener referrer'
+							>
+								{`https://${name}-${type}-rpc.itrocket.net:443`}
+							</a>
+							<Paragraph
+								copyable={{
+									text: `https://${name}-${type}-rpc.itrocket.net:443`,
+									tooltips: false
+								}}
+							/>
+						</div>
+						<div className='flex flex-wrap gap-1 items-center'>
+							<>Public API: </>
+							<a
+								href={`https://${name}-${type}-api.itrocket.net:443`}
+								target='_blank'
+								rel='noopener referrer'
+							>
+								{`https://${name}-${type}-api.itrocket.net:443`}
+							</a>
+							<Paragraph
+								copyable={{
+									text: `https://${name}-${type}-api.itrocket.net:443`,
+									tooltips: false
+								}}
+							/>
+						</div>
 					</div>
-					<div className='flex flex-wrap gap-1 items-center'>
-						<>Public API: </>
-						<a
-							href={`https://${name}-${type}-api.itrocket.net:443`}
-							target='_blank'
-							rel='noopener referrer'
-						>
-							{`https://${name}-${type}-api.itrocket.net:443`}
-						</a>
-						<Paragraph
-							copyable={{
-								text: `https://${name}-${type}-api.itrocket.net:443`,
-								tooltips: false
-							}}
-						/>
-					</div>
-					<h3 id='gRPC'>gRPC:</h3>
+
+					<h3 id='grpc'>gRPC:</h3>
 					<CodeSnippet theme={theme} code={`${gRPC}`} />
 					<h3 id='peer'>peers:</h3>
 					<CodeSnippet theme={theme} code={`${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}`} />

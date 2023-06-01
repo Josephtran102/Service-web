@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"@ant-design/icons": "^5.1.0",
+		"@tremor/react": "^2.9.1",
 		"antd": "^5.5.0",
 		"axios": "^1.4.0",
 		"clipboard-copy": "^4.0.1",
