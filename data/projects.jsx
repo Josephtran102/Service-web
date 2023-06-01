@@ -275,7 +275,7 @@ sudo mv quicksilverd-v1.2.13-amd64 $(which quicksilverd)`,
 			peerPort: '23656',
 			seedPort: '23656',
 			installBin:
-				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network.git\ncd realio-network\ngit checkout tags/v0.8.0-rc4\nmake install',
+				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network.git\ncd realio-network\ngit checkout tags/v0.8.1\nmake install',
 			updHeight: '',
 			newInstallBin: '',
 			goVersion: '1.19.3',
