@@ -863,7 +863,7 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			minGasPrice: '0.0'
 		},
 		realio: {
-			chainID: 'realionetwork_3300-1',
+			chainID: 'realionetwork_3301-1',
 			imgUrl: 'realio.png',
 			desc: 'The Future of Private Equity is Digital',
 			website: 'https://www.realio.fund/',
