@@ -31,7 +31,9 @@ const Installation = props => {
 		goVersion,
 		gas,
 		unsafeReset,
-		minGasPrice
+		minGasPrice,
+		newExecStart,
+		newInit
 	} = project
 
 	explorer.current = project.explorer
@@ -51,6 +53,13 @@ const Installation = props => {
 	const [commissionRate, setCommissionRate] = useState(0.1)
 	const [commissionMaxRate, setCommissionMaxRate] = useState(0.2)
 	const [commissionMaxChange, setCommissionMaxChange] = useState(0.01)
+
+	const execStart = newExecStart == undefined ? `$(which ${bin}) start --home $HOME/${path}` : newExecStart
+	let init = ''
+
+	if (newInit !== 'false') {
+		init = newInit == undefined ? `${bin} init "${moniker}" --chain-id ${chainID}` : newInit
+	}
 
 	let PEERS = '""',
 		SEEDS = '""'
@@ -260,7 +269,7 @@ ${installBin}
 ${bin} config node tcp://localhost:\${${VAR}_PORT}657
 ${bin} config keyring-backend os
 ${bin} config chain-id ${chainID}
-${bin} init "${moniker}" --chain-id ${chainID}
+${init}
 
 # download genesis and addrbook
 wget -O $HOME/${path}/config/genesis.json https://${type}-files.itrocket.net/${name}/genesis.json
@@ -305,7 +314,7 @@ After=network-online.target
 [Service]
 User=$USER
 WorkingDirectory=$HOME/${path}
-ExecStart=$(which ${bin}) start --home $HOME/${path}
+ExecStart=${execStart}
 Restart=on-failure
 RestartSec=5
 LimitNOFILE=65535
