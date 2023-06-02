@@ -9,6 +9,7 @@ export default function handler(req, res) {
 	} = req
 
 	const project = projects[type][projectName]
+
 	const {
 		bin,
 		path,
@@ -22,9 +23,19 @@ export default function handler(req, res) {
 		VAR,
 		minGasPrice,
 		denom,
-		goVersion
+		goVersion,
+		newExecStart,
+		newInit
 	} = project
 	const name = projectName
+
+	const execStart = newExecStart == undefined ? `$(which ${bin}) start --home $HOME/${path}` : newExecStart
+	let init = ''
+
+	if (newInit !== 'false') {
+		init = newInit == undefined ? `${bin} init "$MONIKER" --chain-id ${chainID}` : newInit
+	}
+
 	let livePeers = []
 
 	const netInfo = () => {
@@ -128,7 +139,7 @@ printGreen "5. Configuring and init app..." && sleep 1
 ${bin} config node tcp://localhost:\${${VAR}_PORT}657
 ${bin} config keyring-backend os
 ${bin} config chain-id ${chainID}
-${bin} init "$MONIKER" --chain-id ${chainID}
+${init}
 sleep 1
 echo done
 
@@ -182,7 +193,7 @@ After=network-online.target
 [Service]
 User=$USER
 WorkingDirectory=$HOME/${path}
-ExecStart=$(which ${bin}) start --home $HOME/${path}
+ExecStart=${execStart}
 Restart=on-failure
 RestartSec=5
 LimitNOFILE=65535
