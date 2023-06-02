@@ -149,6 +149,7 @@ const ProjectData = ({ name, type }) => {
 							}
 						]}
 					/>
+
 					<h2 id='rpc'>RPC, API, gRPC</h2>
 					<div className='flex flex-col flex-wrap gap-1 mb-1'>
 						<div className='flex flex-wrap gap-1 items-center'>
@@ -184,7 +185,6 @@ const ProjectData = ({ name, type }) => {
 							/>
 						</div>
 					</div>
-
 					<h3 id='grpc'>gRPC:</h3>
 					<CodeSnippet theme={theme} code={`${gRPC}`} />
 					<h3 id='peer'>peers:</h3>
@@ -198,7 +198,6 @@ const ProjectData = ({ name, type }) => {
 						code={`PEERS=${LIVE_PEERS}
 sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/config/config.toml`}
 					/>
-
 					<h3 id='addrbook'>addrbook:</h3>
 					<p className={styles.text_secondary}>updates every hour</p>
 					<CodeSnippet
@@ -239,7 +238,6 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 							/>
 						</>
 					)}
-
 					<h2 id='sync'>State Sync</h2>
 					<p className={styles.text_secondary}>
 						If you don't want to wait for a long synchronization you can use:

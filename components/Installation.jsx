@@ -196,8 +196,7 @@ const Installation = props => {
 						theme={theme}
 						code={`# install dependencies, if needed
 sudo apt update && sudo apt upgrade -y
-sudo apt install curl git wget htop tmux build-essential jq 
-make lz4 gcc unzip -y
+sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
 `}
 					/>
 					<Space size='middle' style={{ margin: '12px 0', flexWrap: 'wrap' }}>
