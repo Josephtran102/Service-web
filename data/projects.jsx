@@ -435,6 +435,7 @@ sudo mv $HOME/archway/build/archwayd $(which archwaid)`,
 			seedID: '42c4a78f39935df1c20b51c4b0d0a21db8f01c88',
 			peerPort: '40656',
 			seedPort: '40656',
+			newExecStart: `$(which cascadiad) start --home $HOME/.cascadiad --trace --log_level info --json-rpc.api eth,txpool,personal,net,debug,web3 --api.enable`
 			installBin:
 				'cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.2\nmake install',
 			updHeight: '',
