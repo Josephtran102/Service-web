@@ -914,6 +914,7 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			explorer: 'https://explorer.zetachain.com/validators',
 			peerPort: '14656',
 			seedPort: '',
+			newInit: `false`,
 			newExecStart: `$(which zetacored) start --home $HOME/.zetacored --log_format json  --log_level info --moniker $MONIKER`,
 			installBin:
 				`cd $HOME
