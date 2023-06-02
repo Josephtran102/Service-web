@@ -890,6 +890,49 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
+		},
+		zetachain: {
+			chainID: 'athens_7001-1',
+			delegate:
+				'https://testnet.itrocket.net/zetachain/staking/',
+			imgUrl: 'zetachain.jpg',
+			website: 'https://www.zetachain.com/',
+			offValDoc: 'https://github.com/zeta-chain/network-athens3/tree/main',
+			hardware: '4 Cores, 16GB RAM, 300GB of storage (NVME)',
+			prHome: '/home/zetachain',
+			binHome: '/home/zetachain/go/bin/zetacored',
+			snapMaxSize: '3',
+			port: '14',
+			VAR: 'ZETACHAIN',
+			denom: 'ZETA',
+			ecosystem: 'cosmos',
+			bin: 'zetacored',
+			path: '.zetacored',
+			peerID: 'd21b103628b0d5d824bbe81b809d8dc457bd2059',
+			seedID: '',
+			explorer: 'https://explorer.zetachain.com/validators',
+			peerPort: '14656',
+			seedPort: '',
+			installBin:
+				`cd $HOME
+mkdir -p $HOME/.zetacored/bin
+mkdir $HOME/.zetacored/config
+wget https://zetachain-external-files.s3.amazonaws.com/binaries/athens3/latest/zetacored-ubuntu-22-amd64
+wget https://zetachain-external-files.s3.amazonaws.com/binaries/athens3/latest/zetaclientd-ubuntu-22-amd64
+chmod +x $HOME/zetacored-ubuntu-22-amd64
+chmod +x $HOME/zetaclientd-ubuntu-22-amd64
+mv zetacored-ubuntu-22-amd64 $HOME/go/bin/zetacored
+mv zetaclientd-ubuntu-22-amd64 $HOME/go/bin/zetaclientd
+wget -O $HOME/.zetacored/config/app.toml https://raw.githubusercontent.com/zeta-chain/network-athens3/main/network_files/config/app.toml
+wget -O $HOME/.zetacored/config/client.toml https://raw.githubusercontent.com/zeta-chain/network-athens3/main/network_files/config/client.toml
+wget -O $HOME/.zetacored/config/config.toml https://raw.githubusercontent.com/zeta-chain/network-athens3/main/network_files/config/config.toml
+wget -O $HOME/.zetacored/config/genesis.json https://raw.githubusercontent.com/zeta-chain/network-athens3/main/network_files/config/genesis.json`,
+			updHeight: '',
+			newInstallBin: '',
+			goVersion: '1.19.3',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0'
 		}
 	},
 	finished: [
