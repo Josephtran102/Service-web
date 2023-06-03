@@ -36,7 +36,6 @@ let projects = {
 			imgUrl: 'blastapi.jpg',
 			website: 'https://blastapi.io/',
 			offValDoc: '',
-			fav: `false`,
 			hardware: '',
 			prHome: '',
 			binHome: '',
