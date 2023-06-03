@@ -37,6 +37,7 @@ let projects = {
 			website: 'https://blastapi.io/',
 			offValDoc: '',
 			hardware: '',
+			fav: true,
 			prHome: '',
 			binHome: '',
 			snapMaxSize: '',
