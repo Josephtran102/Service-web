@@ -282,6 +282,7 @@ sed -i -e "s/^seeds *=.*/seeds = \\"$SEEDS\\"/; s/^persistent_peers *=.*/persist
 
 # set custom ports in app.toml
 sed -i.bak -e "s%:1317%:\${${VAR}_PORT}317%g;
+s%:8080%:\${${VAR}_PORT}080%g;
 s%:9090%:\${${VAR}_PORT}090%g;
 s%:9091%:\${${VAR}_PORT}091%g;
 s%:8545%:\${${VAR}_PORT}545%g;
