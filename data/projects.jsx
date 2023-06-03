@@ -568,6 +568,43 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
+		empower: {
+			chainID: 'circulus-1',
+			delegate:
+				'https://testnet.itrocket.net/empower/staking/',
+			imgUrl: 'empower.png',
+			website: 'https://www.empower.eco/',
+			offValDoc: 'https://docs.empowerchain.io/validators/delegation-program',
+			hardware: '4 Cores, 16GB RAM, 500GB of storage (NVME)',
+			prHome: '/home/empower',
+			binHome: '/home/empower/go/bin/empowerd',
+			snapMaxSize: '3',
+			port: '16',
+			VAR: 'EMPOWER',
+			denom: 'umpwr',
+			ecosystem: 'cosmos',
+			bin: 'empowerd',
+			path: '.empowerchain',
+			peerID: '',
+			seedID: '',
+			explorer: '',
+			peerPort: '',
+			seedPort: '',
+			installBin:
+				`cd $HOME
+rm -rf empowerchain
+git clone https://github.com/EmpowerPlastic/empowerchain
+cd empowerchain
+git checkout v1.0.0-rc1
+cd chain
+make install`,
+			updHeight: '',
+			newInstallBin: '',
+			goVersion: '1.20.3',
+			gas: '--gas auto --gas-adjustment 1.5',
+			unsafeReset: 'tendermint unsafe-reset-all',
+			minGasPrice: '0.0'
+		},
 		humans: {
 			chainID: 'humans_3000-31',
 			imgUrl: 'humans.jpg',
