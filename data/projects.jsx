@@ -585,7 +585,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			path: '.empowerchain',
 			peerID: 'c413d3d16e250ddbd8f8d495204b2de46ef36b63',
 			seedID: 'c597ec01e412d6e0f62c6f5501224b7fb8393912',
-			explorer: '',
+			explorer: 'https://testnet.itrocket.net/empower/staking',
 			peerPort: '16656',
 			seedPort: '16656',
 			installBin: `cd $HOME
