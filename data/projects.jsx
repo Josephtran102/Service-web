@@ -1003,11 +1003,6 @@ wget -O $HOME/.zetacored/config/genesis.json https://raw.githubusercontent.com/z
 			imgUrl: 'pontem.svg'
 		},
 		{
-			name: 'Empower',
-			link: 'https://www.empowerchain.io/',
-			imgUrl: 'empower.png'
-		},
-		{
 			name: 'DeWeb',
 			link: 'https://deweb.services/',
 			imgUrl: 'deweb.png'
