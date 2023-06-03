@@ -281,11 +281,11 @@ PEERS=${PEERS}
 sed -i -e "s/^seeds *=.*/seeds = \\"$SEEDS\\"/; s/^persistent_peers *=.*/persistent_peers = \\"$PEERS\\"/" $HOME/${path}/config/config.toml
 
 # set custom ports in app.toml
-sed -i.bak -e "s%:1317%:\${${VAR}_PORT}317%g;
-s%:9090%:\${${VAR}_PORT}090%g;
-s%:9091%:\${${VAR}_PORT}091%g;
-s%:8545%:\${${VAR}_PORT}545%g;
-s%:8546%:\${${VAR}_PORT}546%g" $HOME/${path}/config/app.toml
+sed -i.bak -e "s%:1317%:\/${${VAR}_PORT}/317%g;
+s%:9090%:\/${${VAR}_PORT}/090%g;
+s%:9091%:\/${${VAR}_PORT}/091%g;
+s%:8545%:\/${${VAR}_PORT}/545%g;
+s%:8546%:\/${${VAR}_PORT}/546%g" $HOME/${path}/config/app.toml
 
 # set custom ports in config.toml file
 sed -i.bak -e "s%^proxy_app = \\"tcp://127.0.0.1:26658\\"%proxy_app = \\"tcp://127.0.0.1:\${${VAR}_PORT}658\\"%; 
