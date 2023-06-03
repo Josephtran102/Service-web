@@ -570,7 +570,6 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 		},
 		empower: {
 			chainID: 'circulus-1',
-			delegate: 'https://testnet.itrocket.net/empower/staking/',
 			imgUrl: 'empower.png',
 			website: 'https://www.empower.eco/',
 			offValDoc: 'https://docs.empowerchain.io/validators/delegation-program',
