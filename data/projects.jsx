@@ -589,6 +589,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			seedID: '6ce9a9acc23594ec75516617647286fe546f83ca',
 			peerPort: '17656',
 			seedPort: '17656',
+			evmRpc: `https://humans-testnet-evm.itrocket.net:443`
 			installBin:
 				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.2\nmake install',
 			updHeight: '',
