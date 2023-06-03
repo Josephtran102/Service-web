@@ -10,14 +10,13 @@ import { Breadcrumb, Typography } from 'antd'
 import AnimatedSection from './AnimatedSection'
 import Link from 'next/link'
 import { HomeOutlined } from '@ant-design/icons'
-
 const { Paragraph } = Typography
 
 const ProjectData = ({ name, type }) => {
 	const project = projects[type][name]
 	const explorer = useRef()
 	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset, chainID, ecosystem } = project
+	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset, chainID, ecosystem, evmRPC } = project
 	explorer.current = project.explorer
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
@@ -184,6 +183,20 @@ const ProjectData = ({ name, type }) => {
 								}}
 							/>
 						</div>
+						{evmRPC !== undefined ? (
+							<div className='flex flex-wrap gap-1 items-center'>
+								<>Public EVM RPC: </>
+								<a href={`${evmRPC}`} target='_blank' rel='noopener referrer'>
+									{`${evmRPC}`}
+								</a>
+								<Paragraph
+									copyable={{
+										text: `${evmRPC}`,
+										tooltips: false
+									}}
+								/>
+							</div>
+						) : null}
 					</div>
 					<h3 id='grpc'>gRPC:</h3>
 					<CodeSnippet theme={theme} code={`${gRPC}`} />

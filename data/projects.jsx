@@ -121,7 +121,7 @@ sudo mv $HOME/gitopia/build/gitopiad $(which gitopiad)`,
 			seedID: 'f8006da7d742777eeca0194b94586c8f147be4f6',
 			peerPort: '17656',
 			seedPort: '17656',
-			evmRpc: `https://humans-mainnet-evm.itrocket.net:443`,
+			evmRPC: `https://humans-mainnet-evm.itrocket.net:443`,
 			installBin: `cd $HOME
 rm -rf humans
 git clone https://github.com/humansdotai/humans
@@ -570,8 +570,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 		},
 		empower: {
 			chainID: 'circulus-1',
-			delegate:
-				'https://testnet.itrocket.net/empower/staking/',
+			delegate: 'https://testnet.itrocket.net/empower/staking/',
 			imgUrl: 'empower.png',
 			website: 'https://www.empower.eco/',
 			offValDoc: 'https://docs.empowerchain.io/validators/delegation-program',
@@ -590,8 +589,7 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 			explorer: '',
 			peerPort: '16656',
 			seedPort: '16656',
-			installBin:
-				`cd $HOME
+			installBin: `cd $HOME
 rm -rf empowerchain
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain
@@ -627,7 +625,7 @@ make install`,
 			seedID: '6ce9a9acc23594ec75516617647286fe546f83ca',
 			peerPort: '17656',
 			seedPort: '17656',
-			evmRpc: `https://humans-testnet-evm.itrocket.net:443`,
+			evmRPC: `https://humans-testnet-evm.itrocket.net:443`,
 			installBin:
 				'cd $HOME\nrm -rf ~/humans\ngit clone https://github.com/humansdotai/humans\ncd humans\ngit checkout tags/v0.2.2\nmake install',
 			updHeight: '',
@@ -936,8 +934,7 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 		},
 		zetachain: {
 			chainID: 'athens_7001-1',
-			delegate:
-				'https://testnet.itrocket.net/zetachain/staking/',
+			delegate: 'https://testnet.itrocket.net/zetachain/staking/',
 			imgUrl: 'zetachain.jpg',
 			website: 'https://www.zetachain.com/',
 			offValDoc: 'https://github.com/zeta-chain/network-athens3/tree/main',
@@ -956,12 +953,11 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			seedID: '',
 			explorer: 'https://explorer.zetachain.com/validators',
 			peerPort: '14656',
-			evmRpc: `https://zetachain-testnet-evm.itrocket.net:443`,
+			evmRPC: `https://zetachain-testnet-evm.itrocket.net:443`,
 			seedPort: '',
 			newInit: `false`,
 			newExecStart: `$(which zetacored) start --home $HOME/.zetacored --log_format json  --log_level info --moniker $MONIKER`,
-			installBin:
-				`cd $HOME
+			installBin: `cd $HOME
 mkdir $HOME/.zetacored/config
 wget https://zetachain-external-files.s3.amazonaws.com/binaries/athens3/latest/zetacored-ubuntu-22-amd64
 wget https://zetachain-external-files.s3.amazonaws.com/binaries/athens3/latest/zetaclientd-ubuntu-22-amd64
