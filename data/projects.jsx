@@ -783,12 +783,15 @@ sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			seedID: '4e6df8dcc080b8c73929fc513443ecd5e0a424f0',
 			peerPort: '19656',
 			seedPort: '19656',
+			newInit: `false`,
 			installBin: `cd $HOME
 rm -rf sao-consensus
 git clone https://github.com/SaoNetwork/sao-consensus.git
 cd sao-consensus
 git checkout V0.1.5
-make install`,
+make install
+wget -O $HOME/.sao/config/app.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.3/app.toml
+wget -O $HOME/.sao/config/config.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.3/config.toml`,
 			updHeight: '4007000',
 			newInstallBin: `cd $HOME
 rm -rf sao-consensus
