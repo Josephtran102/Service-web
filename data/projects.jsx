@@ -925,7 +925,6 @@ sudo mv $HOME/sao-consensus/build/linux/saod $(which saod)`,
 			newExecStart: `$(which zetacored) start --home $HOME/.zetacored --log_format json  --log_level info --moniker $MONIKER`,
 			installBin:
 				`cd $HOME
-mkdir -p $HOME/.zetacored/bin
 mkdir $HOME/.zetacored/config
 wget https://zetachain-external-files.s3.amazonaws.com/binaries/athens3/latest/zetacored-ubuntu-22-amd64
 wget https://zetachain-external-files.s3.amazonaws.com/binaries/athens3/latest/zetaclientd-ubuntu-22-amd64
