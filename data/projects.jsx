@@ -121,6 +121,7 @@ sudo mv $HOME/gitopia/build/gitopiad $(which gitopiad)`,
 			seedID: 'f8006da7d742777eeca0194b94586c8f147be4f6',
 			peerPort: '17656',
 			seedPort: '17656',
+			evmRpc: `https://humans-mainnet-evm.itrocket.net:443`,
 			installBin: `cd $HOME
 rm -rf humans
 git clone https://github.com/humansdotai/humans
