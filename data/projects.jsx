@@ -696,13 +696,13 @@ mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
 			peerPort: '20656',
 			seedPort: '20656',
 			installBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.12.1\nmake install',
-			updHeight: '227130',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout 0.12.1-hf\nmake install',
+			updHeight: '0',
 			newInstallBin: `cd $HOME
 rm -rf $HOME/lava
 git clone https://github.com/lavanet/lava.git
 cd lava
-git checkout  v0.12.1
+git checkout  0.12.1-hf
 make build
 sudo mv $HOME/lava/build/lavad $(which lavad)`,
 			goVersion: '1.20.1',
