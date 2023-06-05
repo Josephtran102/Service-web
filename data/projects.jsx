@@ -699,12 +699,10 @@ mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
 				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout 0.12.1-hf\nmake install',
 			updHeight: '0',
 			newInstallBin: `cd $HOME
-rm -rf $HOME/lava
-git clone https://github.com/lavanet/lava.git
-cd lava
-git checkout  0.12.1-hf
-make build
-sudo mv $HOME/lava/build/lavad $(which lavad)`,
+wget https://github.com/lavanet/lava/releases/download/v0.12.1-hf/lavad-v0.12.1-hf-linux-amd64
+mv lavad-v0.12.1-hf-linux-amd64 lavad
+chmod +x lavad
+sudo mv lavad $(which lavad)`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
