@@ -60,46 +60,6 @@ let projects = {
 			unsafeReset: '',
 			minGasPrice: ''
 		},
-		gitopia: {
-			chainID: 'gitopia',
-			delegate:
-				'https://mainnet.itrocket.net/gitopia/staking/gitopiavaloper1nxse2wau7lm7utsc3mhrpyrh299lppm07ttm4k',
-			imgUrl: 'gitopia.png',
-			website: 'https://gitopia.com/',
-			offValDoc: '',
-			hardware: '8 Cores, 32GB RAM, 200GB of storage (NVME)',
-			prHome: '/home/gitopia',
-			binHome: '/home/gitopia/go/bin/gitopiad',
-			snapMaxSize: '10',
-			port: '43',
-			VAR: 'GITOPIA',
-			denom: 'ulore',
-			ecosystem: 'cosmos',
-			bin: 'gitopiad',
-			path: '.gitopia',
-			peerID: 'e5f3faef143c82f49bc506aea518e93ed4bb901f',
-			seedID: 'fec95b3fa12a8b213b253d1f41014e2e8ac18ad4',
-			peerPort: '43656',
-			seedPort: '43656',
-			installBin: `cd $HOME
-rm -rf gitopia
-git clone https://github.com/gitopia/gitopia.git
-cd gitopia
-git checkout v2.1.0
-make install`,
-			updHeight: `0`,
-			newInstallBin: `cd $HOME
-rm -rf gitopia
-git clone https://github.com/gitopia/gitopia.git
-cd gitopia
-git checkout v2.1.0
-make build
-sudo mv $HOME/gitopia/build/gitopiad $(which gitopiad)`,
-			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
 		humans: {
 			chainID: 'humans_1089-1',
 			delegate:
