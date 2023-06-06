@@ -12,6 +12,7 @@ import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
 import { smoothScroll } from '@utils/smoothScroll'
+import { Tabs } from 'antd'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -39,6 +40,24 @@ const Home = () => {
 			return () => window.removeEventListener('load', onPageLoad)
 		}
 	}, [])
+
+	const items = [
+		{
+			key: '1',
+			label: `Mainnets`,
+			children: <CardMain />
+		},
+		{
+			key: '2',
+			label: `Testnets`,
+			children: <CardTest />
+		},
+		{
+			key: '3',
+			label: `Finished`,
+			children: <CardFinished />
+		}
+	]
 
 	return (
 		<>
@@ -101,34 +120,14 @@ const Home = () => {
 
 				<section id='mainnet'>
 					<div className={styles.container}>
-						<div className={styles.card__desc}>
-							<h3 className={styles.title}>Mainnets.</h3>
-							<p className={styles.description}>
-								<span>Low commission and 24/7 node monitoring!</span>
-							</p>
-						</div>
-						<CardMain />
+						<h3
+							className='text-[16px] md:text-[48px] font-bold text-center mb-4 tracking-wide text-zinc-900 dark:text-white'
+							id='networks'
+						>
+							Networks
+						</h3>
 
-						<div className={styles.card__desc}>
-							<h3 className={styles.title}>Testnets.</h3>
-							<p className={styles.description}>
-								<span>Here are some tools for node operators 🛠️</span>
-							</p>
-						</div>
-						<CardTest />
-					</div>
-
-					<div className={styles.container} id='testnet'>
-						<div className={styles.card__wrapper}>
-							<div className={styles.card__desc}>
-								<h3 className={styles.title}>Finished.</h3>
-								<p className={styles.description}>
-									<span>These are the projects we proudly took part in.</span>
-								</p>
-							</div>
-
-							<CardFinished />
-						</div>
+						<Tabs defaultActiveKey='1' centered size={'large'} animated items={items} />
 					</div>
 				</section>
 

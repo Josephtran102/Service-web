@@ -2,9 +2,11 @@ import Image from 'next/image'
 import styles from '@styles/Card.module.scss'
 import projects from 'data/projects'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { Context } from '@context/context'
 import { useContext } from 'react'
 import { StarFilled } from '@ant-design/icons'
+import { opacityBlock } from '@data/transitions'
 
 const Card = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -23,7 +25,13 @@ const Card = () => {
 	}
 
 	return (
-		<div className={styles.card__root}>
+		<motion.div
+			className={styles.card__root}
+			initial='hidden'
+			whileInView='visible'
+			viewport={{ once: true }}
+			variants={opacityBlock}
+		>
 			{Object.keys(data).map(item => (
 				<div
 					className={styles.card}
@@ -81,7 +89,7 @@ const Card = () => {
 					) : null}
 				</div>
 			))}
-		</div>
+		</motion.div>
 	)
 }
 

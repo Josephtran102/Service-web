@@ -133,11 +133,10 @@
 .hero {
 	position: relative;
 	justify-content: flex-start;
-	margin-bottom: 10px;
-	padding-bottom: 25px;
 	transition: 0s;
 	margin-top: 60px;
 	z-index: 1;
+	height: calc(100vh - 65px);
 
 	&__wrapper {
 		width: 100%;

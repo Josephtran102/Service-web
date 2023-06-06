@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import projects from 'data/projects'
 import { useContext } from 'react'
 import { Context } from '@context/context'
+import { opacityBlock } from '@data/transitions'
 
 const Finished = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -19,15 +20,6 @@ const Finished = () => {
 
 		target.style.setProperty('--mouse-x', `${x}px`)
 		target.style.setProperty('--mouse-y', `${y}px`)
-	}
-
-	const opacityBlock = {
-		visible: {
-			opacity: 1,
-			y: 0,
-			transition: { duration: 0.4, delay: 0.1 }
-		},
-		hidden: { y: 15, opacity: 0 }
 	}
 
 	return (
@@ -61,4 +53,3 @@ const Finished = () => {
 }
 
 export default Finished
-//test

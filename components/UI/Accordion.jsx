@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from '@styles/Accordion.module.scss'
 import { PlusOutlined } from '@ant-design/icons'
-import { transform } from 'framer-motion'
 
 const AccordionItem = ({ title, content }) => {
 	const [isActive, setIsActive] = useState(false)
@@ -13,7 +12,7 @@ const AccordionItem = ({ title, content }) => {
 	}, [isActive])
 
 	return (
-		<div className='rounded-md my-1 border-2 border-slate-500/10'>
+		<div className='rounded-md my-2 border-2 border-slate-500/10'>
 			<div
 				className='bg-[#FAFAFA] dark:bg-zinc-900 w-full flex justify-between p-5 transition-all cursor-pointer'
 				style={{ backgroundColor: isActive ? 'transparent' : '' }}
@@ -37,7 +36,7 @@ const AccordionItem = ({ title, content }) => {
 				style={isActive ? { maxHeight: `${height}px` } : { maxHeight: '0' }}
 			>
 				<p
-					className='mx-4 mt-2 mb-6 text-sm md:text-base transition'
+					className='mx-5 mt-2 mb-6 text-sm md:text-base transition'
 					style={{ opacity: isActive ? 1 : 0 }}
 				>
 					{content}

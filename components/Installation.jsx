@@ -5,10 +5,8 @@ import Head from 'next/head'
 import { Context } from '@context/context'
 import { fetchNetInfo, fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 import CodeSnippet from './UI/CodeSnippet'
-import { Breadcrumb, Input, Space } from 'antd'
-import { FileDoneOutlined, HomeOutlined } from '@ant-design/icons'
+import { Input, Space } from 'antd'
 import AnimatedSection from './AnimatedSection'
-import Link from 'next/link'
 
 const Installation = props => {
 	const name = props.name
@@ -168,38 +166,14 @@ const Installation = props => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
-				<Breadcrumb
-					separator='>'
-					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
-					items={[
-						{
-							title: (
-								<Link href='/'>
-									<HomeOutlined />
-								</Link>
-							)
-						},
-						{
-							title: <Link href='/services/'>Services</Link>
-						},
-						{
-							title: `${projectName}`
-						}
-					]}
-				/>
 				<>
 					<h2 id='installation'>Manual Installation 🛠️</h2>
 					<p className='flex flex-wrap items-center gap-2 pb-2'>
-						<FileDoneOutlined />{' '}
 						<a href={project.offValDoc} target='_blank' rel='nofollow'>
 							Official Documentation
 						</a>
 						<span className='divider-vertical' />
 						<span> Recommended Hardware: {project.hardware}</span>
-					</p>
-					<p>
-						<b className={styles.bold}>pruning: </b> {pruning} {' | '}
-						<b className={styles.bold}>indexer: </b> {indexer}
 					</p>
 					<CodeSnippet
 						theme={theme}
@@ -457,7 +431,9 @@ ${gas} \\
 				<p>
 					To protect you keys please don`t share your privkey, mnemonic and follow a basic security rules
 				</p>
-				<h3 id='ssh'>Set up ssh keys for authentication</h3>
+				<h3 id='ssh' className='font-semibold'>
+					Set up ssh keys for authentication
+				</h3>
 				<p>
 					You can use this{' '}
 					<a
@@ -469,7 +445,9 @@ ${gas} \\
 					</a>{' '}
 					to configure ssh authentication and disable password authentication on your server
 				</p>
-				<h3 id='firewall'>Firewall security</h3>
+				<h3 id='firewall' className='font-semibold'>
+					Firewall security
+				</h3>
 				<p>
 					Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port
 				</p>

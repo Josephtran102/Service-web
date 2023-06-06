@@ -52,7 +52,7 @@ const Header = () => {
 
 	const mobileLinks = [
 		<Link
-			href='/#mainnet'
+			href='/#networks'
 			onClick={() => {
 				setIsOpen(!isOpen)
 			}}
@@ -182,7 +182,7 @@ const Header = () => {
 					<nav className={styles.headerNav}>
 						<ul className={theme === 'light' ? 'light' : 'dark'}>
 							<li>
-								<Link href='/#mainnet' className={styles.link}>
+								<Link href='/#networks' className={styles.link}>
 									Networks
 								</Link>
 							</li>

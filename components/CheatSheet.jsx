@@ -4,11 +4,9 @@ import { useContext, useRef, useState } from 'react'
 import Head from 'next/head'
 import { Context } from '@context/context'
 import CodeSnippet from './UI/CodeSnippet'
-import { Breadcrumb, Input, Radio, Space } from 'antd'
+import { Input, Radio, Space } from 'antd'
 import AnimatedSection from './AnimatedSection'
 import CodeBlock from '@components/UI/CodeBlock'
-import Link from 'next/link'
-import { HomeOutlined } from '@ant-design/icons'
 
 const CheatSheet = props => {
 	const name = props.name
@@ -63,25 +61,6 @@ const CheatSheet = props => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
-				<Breadcrumb
-					separator='>'
-					style={{ color: theme == 'dark' ? '#fff' : '#000' }}
-					items={[
-						{
-							title: (
-								<Link href='/'>
-									<HomeOutlined />
-								</Link>
-							)
-						},
-						{
-							title: <Link href='/services/'>Services</Link>
-						},
-						{
-							title: `${projectName}`
-						}
-					]}
-				/>
 				<>
 					<h2 id='service-operations'>Service operations ⚙️</h2>
 					<div className='flex flex-wrap gap-x-6 mb-3'>
@@ -334,13 +313,13 @@ ${gas} \\
 						size='middle'
 						className='flex flex-wrap content-center'
 						style={{
-							margin: '5px 0 20px'
+							margin: '7px 0 20px'
 						}}
 					>
 						<Space direction='vertical'>
 							<span>Proposal ID</span>
 							<Input
-								style={{ minWidth: '200px' }}
+								className='min-w-[120px]'
 								defaultValue={proposalID}
 								onChange={e => setProposalID(e.target.value)}
 							/>

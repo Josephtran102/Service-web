@@ -1,5 +1,5 @@
 @mixin container {
-	padding: 0px 4rem;
+	padding: 0px 4.5rem;
 
 	@media only screen and (max-width: 1024px) {
 		padding: 0px 2rem;
@@ -55,6 +55,7 @@
 	&:hover {
 		border-color: #848187;
 		text-decoration: none;
+		color: inherit !important;
 	}
 
 	&:focus {

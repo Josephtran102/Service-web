@@ -43,11 +43,8 @@ button {
 }
 
 section {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	padding-top: 50px;
-	padding-bottom: 100px;
+	padding-top: 65px;
+	padding-bottom: 120px;
 
 	@media (max-width: 768px) {
 		padding-bottom: 40px;
@@ -226,29 +223,6 @@ a {
 .ant-menu {
 	@media (max-width: 1024px) {
 		width: 250px;
-	}
-}
-
-.ant-breadcrumb-link {
-	a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: inherit !important;
-	}
-}
-
-.ant-breadcrumb {
-	ol {
-		align-items: center;
-
-		li {
-			color: #808080ad !important;
-
-			&:last-of-type {
-				color: #808080 !important;
-			}
-		}
 	}
 }
 
@@ -458,6 +432,10 @@ a.ant-typography {
 	margin-top: -3px;
 }
 
+code {
+	font-family: 'JetBrains Mono';
+}
+
 .code-box-demo .ant-affix {
 	z-index: 11 !important;
 }
@@ -535,6 +513,10 @@ a.ant-typography {
 	@media (max-width: 400px) {
 		padding: 0 5px !important;
 	}
+}
+
+.ant-tabs-top > .ant-tabs-nav::before {
+	display: none;
 }
 
 .ant-menu-item-divider {

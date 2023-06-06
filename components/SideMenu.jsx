@@ -173,61 +173,70 @@ const SideMenu = () => {
 						'grpthis',
 						null,
 						[
-							getItem(<Link href={serviceURL}>⚙️ API & Sync</Link>, `services`, null, [
-								getItem(
-									<Link
-										href={serviceURL + '#rpc'}
-										onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
-									>
-										RPC, API, GRPC
-									</Link>,
-									`rpc${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '#peer'}
-										onClick={event => handleClick(event, 'peer', `peer${name}`)}
-									>
-										Peers, Seeds
-									</Link>,
-									`peer${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '#snap'}
-										onClick={event => handleClick(event, 'snap', `snap${name}`)}
-									>
-										Snapshot
-									</Link>,
-									`snap${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '#sync'}
-										onClick={event => handleClick(event, 'sync', `state${name}`)}
-									>
-										State sync
-									</Link>,
-									`state${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '#wasm'}
-										onClick={event => handleClick(event, 'wasm', `wasm${name}`)}
-									>
-										Wasm
-									</Link>,
-									`wasm${name}`,
-									<RightOutlined />
-								)
-							]),
+							getItem(
+								<Link href={serviceURL}>
+									<span className='mr-3'>⚙️</span> API & Sync
+								</Link>,
+								`services`,
+								null,
+								[
+									getItem(
+										<Link
+											href={serviceURL + '#rpc'}
+											onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
+										>
+											RPC, API, GRPC
+										</Link>,
+										`rpc${name}`,
+										<RightOutlined />
+									),
+									getItem(
+										<Link
+											href={serviceURL + '#peer'}
+											onClick={event => handleClick(event, 'peer', `peer${name}`)}
+										>
+											Peers, Seeds
+										</Link>,
+										`peer${name}`,
+										<RightOutlined />
+									),
+									getItem(
+										<Link
+											href={serviceURL + '#snap'}
+											onClick={event => handleClick(event, 'snap', `snap${name}`)}
+										>
+											Snapshot
+										</Link>,
+										`snap${name}`,
+										<RightOutlined />
+									),
+									getItem(
+										<Link
+											href={serviceURL + '#sync'}
+											onClick={event => handleClick(event, 'sync', `state${name}`)}
+										>
+											State sync
+										</Link>,
+										`state${name}`,
+										<RightOutlined />
+									),
+									getItem(
+										<Link
+											href={serviceURL + '#wasm'}
+											onClick={event => handleClick(event, 'wasm', `wasm${name}`)}
+										>
+											Wasm
+										</Link>,
+										`wasm${name}`,
+										<RightOutlined />
+									)
+								]
+							),
 
 							getItem(
-								<Link href={serviceURL + '/installation'}>📌 Installation</Link>,
+								<Link href={serviceURL + '/installation'}>
+									<span className='mr-3'>📌</span> Installation
+								</Link>,
 								`installation`,
 								null,
 								[
@@ -305,30 +314,39 @@ const SideMenu = () => {
 									)
 								]
 							),
-							getItem(<Link href={serviceURL + '/upgrade'}>🔄 Upgrade</Link>, `upgrade`, null, [
-								getItem(
-									<Link
-										href={serviceURL + '/upgrade/#manual'}
-										onClick={event => handleClick(event, 'manual', `manual${name}`)}
-									>
-										Manual upgrade
-									</Link>,
-									`manual${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/upgrade/#auto'}
-										onClick={event => handleClick(event, 'auto', `auto${name}`)}
-									>
-										Auto upgrade
-									</Link>,
-									`auto${name}`,
-									<RightOutlined />
-								)
-							]),
 							getItem(
-								<Link href={serviceURL + '/cheat-sheet'}>📝 Cheat sheet</Link>,
+								<Link href={serviceURL + '/upgrade'}>
+									<span className='mr-3'>🔄</span> Upgrade
+								</Link>,
+								`upgrade`,
+								null,
+								[
+									getItem(
+										<Link
+											href={serviceURL + '/upgrade/#manual'}
+											onClick={event => handleClick(event, 'manual', `manual${name}`)}
+										>
+											Manual upgrade
+										</Link>,
+										`manual${name}`,
+										<RightOutlined />
+									),
+									getItem(
+										<Link
+											href={serviceURL + '/upgrade/#auto'}
+											onClick={event => handleClick(event, 'auto', `auto${name}`)}
+										>
+											Auto upgrade
+										</Link>,
+										`auto${name}`,
+										<RightOutlined />
+									)
+								]
+							),
+							getItem(
+								<Link href={serviceURL + '/cheat-sheet'}>
+									<span className='mr-3'>📝</span> Cheat sheet
+								</Link>,
 								`cheat-sheet`,
 								null,
 								[
