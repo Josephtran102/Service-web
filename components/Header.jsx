@@ -57,7 +57,7 @@ const Header = () => {
 				setIsOpen(!isOpen)
 			}}
 		>
-			Projects
+			Networks
 		</Link>,
 		<Link
 			href='/services'
@@ -182,7 +182,9 @@ const Header = () => {
 					<nav className={styles.headerNav}>
 						<ul className={theme === 'light' ? 'light' : 'dark'}>
 							<li>
-								<Dropdown type='projects' trigger='hover' />
+								<Link href='/#mainnet' className={styles.link}>
+									Networks
+								</Link>
 							</li>
 							<li>
 								<Link href='/services' className={styles.link}>
