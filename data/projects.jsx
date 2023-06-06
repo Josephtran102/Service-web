@@ -60,46 +60,6 @@ let projects = {
 			unsafeReset: '',
 			minGasPrice: ''
 		},
-		gitopia: {
-			chainID: 'gitopia',
-			delegate:
-				'https://mainnet.itrocket.net/gitopia/staking/gitopiavaloper1nxse2wau7lm7utsc3mhrpyrh299lppm07ttm4k',
-			imgUrl: 'gitopia.png',
-			website: 'https://gitopia.com/',
-			offValDoc: '',
-			hardware: '8 Cores, 32GB RAM, 200GB of storage (NVME)',
-			prHome: '/home/gitopia',
-			binHome: '/home/gitopia/go/bin/gitopiad',
-			snapMaxSize: '10',
-			port: '43',
-			VAR: 'GITOPIA',
-			denom: 'ulore',
-			ecosystem: 'cosmos',
-			bin: 'gitopiad',
-			path: '.gitopia',
-			peerID: 'e5f3faef143c82f49bc506aea518e93ed4bb901f',
-			seedID: 'fec95b3fa12a8b213b253d1f41014e2e8ac18ad4',
-			peerPort: '43656',
-			seedPort: '43656',
-			installBin: `cd $HOME
-rm -rf gitopia
-git clone https://github.com/gitopia/gitopia.git
-cd gitopia
-git checkout v2.1.0
-make install`,
-			updHeight: `0`,
-			newInstallBin: `cd $HOME
-rm -rf gitopia
-git clone https://github.com/gitopia/gitopia.git
-cd gitopia
-git checkout v2.1.0
-make build
-sudo mv $HOME/gitopia/build/gitopiad $(which gitopiad)`,
-			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
 		humans: {
 			chainID: 'humans_1089-1',
 			delegate:
@@ -344,45 +304,6 @@ sudo mv quicksilverd-v1.2.13-amd64 $(which quicksilverd)`,
 			newInstallBin: '',
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
-		archway: {
-			chainID: 'constantine-3',
-			imgUrl: 'archway.jpg',
-			desc: '',
-			website: 'https://archway.io/',
-			offValDoc: '',
-			hardware: '8 Cores, 16GB RAM, 200GB of storage (NVME)',
-			prHome: '/home/archway',
-			binHome: '/home/archway/go/bin/archwayd',
-			snapMaxSize: '10',
-			port: '45',
-			VAR: 'ARCHWAY',
-			denom: 'aconst',
-			ecosystem: 'cosmos',
-			bin: 'archwayd',
-			path: '.archway',
-			peerID: '3591dd903e95c9b25618f90c4a6bda63861ab8ec',
-			seedID: '958d9056c6173edb4714b6468bda509e97d0c80c',
-			peerPort: '45656',
-			seedPort: '45656',
-			installBin: `cd $HOME
-rm -rf archway
-git clone https://github.com/archway-network/archway.git
-cd archway
-git checkout v0.5.2
-make install`,
-			updHeight: '300331',
-			newInstallBin: `cd $HOME
-rm -rf archway
-git clone https://github.com/archway-network/archway.git
-cd archway
-git checkout v0.6.0
-make build
-sudo mv $HOME/archway/build/archwayd $(which archwaid)`,
-			goVersion: '1.19.3',
-			gas: '--fees 180000000000000000aconst',
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
@@ -639,41 +560,6 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
-		kyve: {
-			chainID: 'kaon-1',
-			imgUrl: 'kyve.png',
-			desc: 'KYVE Network is revolutionizing customized access to on- and off-chain data by providing fast and easy tooling for decentralized data validation, immutability, and retrieval.',
-			website: 'https://www.kyve.network/',
-			offValDoc: 'https://github.com/KYVENetwork/networks/tree/main/kaon-1',
-			hardware: '4 Cores, 8GB RAM, 200GB of storage (NVME)',
-			prHome: '/home/kyve',
-			binHome: '/home/kyve/go/bin/kyved',
-			snapMaxSize: '10',
-			port: '28',
-			VAR: 'KYVE',
-			denom: 'tkyve',
-			ecosystem: 'cosmos',
-			bin: 'kyved',
-			path: '.kyve',
-			peerID: '664e06d2d6110c5ba93f8ecfee66f150bad981bf',
-			seedID: 'de7865a2a4936fd4bb00861ed887f219d8dd73d7',
-			peerPort: '28656',
-			seedPort: '28656',
-			installBin: `cd $HOME
-rm -rf $HOME/chain
-git clone https://github.com/KYVENetwork/chain.git
-cd chain
-git fetch
-git checkout tags/v1.2.0 -b v1.2.0
-make build ENV=kaon
-mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
-			updHeight: '',
-			newInstallBin: ``,
-			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5 --fees 10000tkyve',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
 		lava: {
 			chainID: 'lava-testnet-1',
 			imgUrl: 'lava.png',
@@ -696,15 +582,13 @@ mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
 			peerPort: '20656',
 			seedPort: '20656',
 			installBin:
-				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.12.1\nmake install',
-			updHeight: '227130',
+				'cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout 0.12.1-hf\nmake install',
+			updHeight: '0',
 			newInstallBin: `cd $HOME
-rm -rf $HOME/lava
-git clone https://github.com/lavanet/lava.git
-cd lava
-git checkout  v0.12.1
-make build
-sudo mv $HOME/lava/build/lavad $(which lavad)`,
+wget https://github.com/lavanet/lava/releases/download/v0.12.1-hf/lavad-v0.12.1-hf-linux-amd64
+mv lavad-v0.12.1-hf-linux-amd64 lavad
+chmod +x lavad
+sudo mv lavad $(which lavad)`,
 			goVersion: '1.20.1',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
