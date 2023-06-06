@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from '@styles/Accordion.module.scss'
 import { PlusOutlined } from '@ant-design/icons'
+import { transform } from 'framer-motion'
 
 const AccordionItem = ({ title, content }) => {
 	const [isActive, setIsActive] = useState(false)
@@ -14,12 +15,21 @@ const AccordionItem = ({ title, content }) => {
 	return (
 		<div className='rounded-md my-1 border-2 border-slate-500/10'>
 			<div
-				className='bg-[#FAFAFA] dark:bg-zinc-900 w-full flex justify-between p-4 transition-all cursor-pointer'
+				className='bg-[#FAFAFA] dark:bg-zinc-900 w-full flex justify-between p-5 transition-all cursor-pointer'
 				style={{ backgroundColor: isActive ? 'transparent' : '' }}
 				onClick={() => setIsActive(!isActive)}
 			>
 				<h5 className={styles.button__heading}>{title}</h5>
-				<span className={styles.button__heading}>{<PlusOutlined rotate={!isActive ? 0 : 135} />}</span>
+				<span className={styles.button__heading}>
+					{
+						<PlusOutlined
+							style={{
+								transition: '0.3s !important',
+								transform: isActive ? 'rotate(45deg)' : 'rotate(0deg)'
+							}}
+						/>
+					}
+				</span>
 			</div>
 			<div
 				ref={ref}
@@ -71,7 +81,7 @@ const Accordion = () => {
 	]
 
 	return (
-		<div className='mt-6'>
+		<div className='mt-6 md:mt-8'>
 			{accordionItems.map((item, index) => (
 				<AccordionItem key={index} title={item.title} content={item.content} />
 			))}
