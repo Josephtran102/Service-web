@@ -307,45 +307,6 @@ sudo mv quicksilverd-v1.2.13-amd64 $(which quicksilverd)`,
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
-		archway: {
-			chainID: 'constantine-3',
-			imgUrl: 'archway.jpg',
-			desc: '',
-			website: 'https://archway.io/',
-			offValDoc: '',
-			hardware: '8 Cores, 16GB RAM, 200GB of storage (NVME)',
-			prHome: '/home/archway',
-			binHome: '/home/archway/go/bin/archwayd',
-			snapMaxSize: '10',
-			port: '45',
-			VAR: 'ARCHWAY',
-			denom: 'aconst',
-			ecosystem: 'cosmos',
-			bin: 'archwayd',
-			path: '.archway',
-			peerID: '3591dd903e95c9b25618f90c4a6bda63861ab8ec',
-			seedID: '958d9056c6173edb4714b6468bda509e97d0c80c',
-			peerPort: '45656',
-			seedPort: '45656',
-			installBin: `cd $HOME
-rm -rf archway
-git clone https://github.com/archway-network/archway.git
-cd archway
-git checkout v0.5.2
-make install`,
-			updHeight: '300331',
-			newInstallBin: `cd $HOME
-rm -rf archway
-git clone https://github.com/archway-network/archway.git
-cd archway
-git checkout v0.6.0
-make build
-sudo mv $HOME/archway/build/archwayd $(which archwaid)`,
-			goVersion: '1.19.3',
-			gas: '--fees 180000000000000000aconst',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
 		cardchain: {
 			chainID: 'Testnet3',
 			imgUrl: 'cardchain.png',
