@@ -599,41 +599,6 @@ sudo mv $HOME/humans/build/humansd $(which humansd)`,
 			unsafeReset: 'tendermint unsafe-reset-all',
 			minGasPrice: '0.0'
 		},
-		kyve: {
-			chainID: 'kaon-1',
-			imgUrl: 'kyve.png',
-			desc: 'KYVE Network is revolutionizing customized access to on- and off-chain data by providing fast and easy tooling for decentralized data validation, immutability, and retrieval.',
-			website: 'https://www.kyve.network/',
-			offValDoc: 'https://github.com/KYVENetwork/networks/tree/main/kaon-1',
-			hardware: '4 Cores, 8GB RAM, 200GB of storage (NVME)',
-			prHome: '/home/kyve',
-			binHome: '/home/kyve/go/bin/kyved',
-			snapMaxSize: '10',
-			port: '28',
-			VAR: 'KYVE',
-			denom: 'tkyve',
-			ecosystem: 'cosmos',
-			bin: 'kyved',
-			path: '.kyve',
-			peerID: '664e06d2d6110c5ba93f8ecfee66f150bad981bf',
-			seedID: 'de7865a2a4936fd4bb00861ed887f219d8dd73d7',
-			peerPort: '28656',
-			seedPort: '28656',
-			installBin: `cd $HOME
-rm -rf $HOME/chain
-git clone https://github.com/KYVENetwork/chain.git
-cd chain
-git fetch
-git checkout tags/v1.2.0 -b v1.2.0
-make build ENV=kaon
-mv $HOME/chain/build/kyved $HOME/go/bin/kyved`,
-			updHeight: '',
-			newInstallBin: ``,
-			goVersion: '1.19.3',
-			gas: '--gas auto --gas-adjustment 1.5 --fees 10000tkyve',
-			unsafeReset: 'tendermint unsafe-reset-all',
-			minGasPrice: '0.0'
-		},
 		lava: {
 			chainID: 'lava-testnet-1',
 			imgUrl: 'lava.png',
