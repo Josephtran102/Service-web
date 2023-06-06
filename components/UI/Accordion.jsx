@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import styles from '@styles/Accordion.module.scss'
+import { PlusOutlined } from '@ant-design/icons'
 
 const AccordionItem = ({ title, content }) => {
 	const [isActive, setIsActive] = useState(false)
@@ -11,19 +12,28 @@ const AccordionItem = ({ title, content }) => {
 	}, [isActive])
 
 	return (
-		<>
-			<button className={styles.accordion} onClick={() => setIsActive(!isActive)}>
+		<div className='rounded-md my-1 border-2 border-slate-500/10'>
+			<div
+				className='bg-[#FAFAFA] dark:bg-zinc-900 w-full flex justify-between p-4 transition-all cursor-pointer'
+				style={{ backgroundColor: isActive ? 'transparent' : '' }}
+				onClick={() => setIsActive(!isActive)}
+			>
 				<h5 className={styles.button__heading}>{title}</h5>
-				<span className={styles.button__heading}>{isActive ? '+' : '-'}</span>
-			</button>
+				<span className={styles.button__heading}>{<PlusOutlined rotate={!isActive ? 0 : 135} />}</span>
+			</div>
 			<div
 				ref={ref}
 				className={styles.panel}
 				style={isActive ? { maxHeight: `${height}px` } : { maxHeight: '0' }}
 			>
-				<p className={styles.accordion__desc}>{content}</p>
+				<p
+					className='mx-4 mt-2 mb-6 text-sm md:text-base transition'
+					style={{ opacity: isActive ? 1 : 0 }}
+				>
+					{content}
+				</p>
 			</div>
-		</>
+		</div>
 	)
 }
 
@@ -33,13 +43,14 @@ const Accordion = () => {
 			title: 'About us',
 			content: (
 				<span>
-					ITRocket is a team of DevOps engineers from Armenia{' '}
+					ITRocket is a team of DevOps engineers and Software Developers from Armenia{' '}
 					<span
-						className='inline-block h-5 w-5 align-top '
+						className='inline-block h-5 w-5 align-top mx-1 mt-[2px]'
 						aria-hidden='true'
 						style={{ background: " center / contain url('/icons/flag_am.svg')  no-repeat" }}
 					></span>{' '}
-					. We are crypto enthusiasts & node operators in various crypto ecosystems. Our main goal is to
+					<br />
+					We are crypto enthusiasts and node operators in various crypto ecosystems. Our main goal is to
 					help millions of people effectively manage their crypto assets!
 				</span>
 			)
@@ -60,7 +71,7 @@ const Accordion = () => {
 	]
 
 	return (
-		<div>
+		<div className='mt-6'>
 			{accordionItems.map((item, index) => (
 				<AccordionItem key={index} title={item.title} content={item.content} />
 			))}

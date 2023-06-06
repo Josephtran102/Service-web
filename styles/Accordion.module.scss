@@ -56,19 +56,16 @@
 	padding: 0 18px;
 	overflow: hidden;
 	transition: 0.2s ease-out;
-
-	p {
-		padding: 20px 0;
-	}
 }
 
 .button {
 	&__heading {
 		font-size: 18px;
-		font-weight: 400;
+		font-weight: 500;
 		color: inherit;
 		transition: 0.2 ease-out;
 		padding: 5px 20px;
+		user-select: none;
 
 		@media (max-width: 768px) {
 			font-size: 15px;

@@ -140,7 +140,7 @@ const Home = () => {
 					<div className={styles.container}>
 						<div className={styles.accordion__wrapper}>
 							<h3 className={styles.hero__heading} id='faq'>
-								FAQ
+								Frequently Asked Questions
 							</h3>
 							<Accordion />
 						</div>
