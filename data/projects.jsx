@@ -68,6 +68,7 @@ let projects = {
 			website: 'https://humans.ai/',
 			offValDoc: 'https://github.com/humansdotai/mainnets/tree/main/mainnet/1',
 			hardware: '6 Cores, 32GB RAM, 500GB of storage (NVME)',
+		        fav: true,
 			prHome: '/home/humans',
 			binHome: '/home/humans/go/bin/humansd',
 			snapMaxSize: '3',
