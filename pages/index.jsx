@@ -38,16 +38,16 @@ const Home = () => {
 			label: `All`,
 			children: (
 				<>
-					<h3 className={styles.title}>Mainnets.</h3>
+					<h3 className={styles.title}>Mainnet.</h3>
 					<CardMain />
-					<h3 className={styles.title}>Testnets.</h3>
+					<h3 className={styles.title}>Testnet.</h3>
 					<CardTest />
 				</>
 			)
 		},
 		{
 			key: '2',
-			label: `Mainnets`,
+			label: `Mainnet`,
 			children: (
 				<>
 					<h3 className={styles.title}>Mainnets.</h3>
@@ -57,7 +57,7 @@ const Home = () => {
 		},
 		{
 			key: '3',
-			label: `Testnets`,
+			label: `Testnet`,
 			children: (
 				<>
 					<h3 className={styles.title}>Testnets.</h3>
