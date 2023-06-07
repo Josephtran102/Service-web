@@ -142,10 +142,10 @@
 	height: 100vh;
 
 	@media (max-width: 768px) {
-		margin-top: 5px;
 		padding: 5px;
-		height: 100vh;
+		height: fit-content;
 		width: 100%;
+		align-items: flex-end;
 	}
 
 	&__wrapper {
@@ -154,6 +154,7 @@
 		display: flex;
 		align-content: center;
 		flex-wrap: wrap;
+		margin-block: 15px;
 	}
 
 	&__divider {
