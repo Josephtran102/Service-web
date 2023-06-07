@@ -5,7 +5,6 @@ import styles from '@styles/Home.module.scss'
 import CardMain from '@components/CardMain.jsx'
 import CardTest from '@components/CardTest.jsx'
 import Accordion from '@components/UI/Accordion.jsx'
-import CardFinished from '@components/CardFinished.jsx'
 import Link from 'next/link'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -13,19 +12,11 @@ import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
 import { smoothScroll } from '@utils/smoothScroll'
 import { Tabs } from 'antd'
+import { opacityBlock } from '@data/transitions'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
 	const [opacity, setOpacity] = useState(false)
-
-	const opacityBlock = {
-		visible: {
-			opacity: 1,
-			y: 0,
-			transition: { duration: 0.6, delay: 0.2 }
-		},
-		hidden: { y: 10, opacity: 0 }
-	}
 
 	useEffect(() => {
 		const onPageLoad = () => {
@@ -44,18 +35,35 @@ const Home = () => {
 	const items = [
 		{
 			key: '1',
-			label: `Mainnets`,
-			children: <CardMain />
+			label: `All`,
+			children: (
+				<>
+					<h3 className={styles.title}>Mainnets.</h3>
+					<CardMain />
+					<h3 className={styles.title}>Testnets.</h3>
+					<CardTest />
+				</>
+			)
 		},
 		{
 			key: '2',
-			label: `Testnets`,
-			children: <CardTest />
+			label: `Mainnets`,
+			children: (
+				<>
+					<h3 className={styles.title}>Mainnets.</h3>
+					<CardMain />
+				</>
+			)
 		},
 		{
 			key: '3',
-			label: `Finished`,
-			children: <CardFinished />
+			label: `Testnets`,
+			children: (
+				<>
+					<h3 className={styles.title}>Testnets.</h3>
+					<CardTest />
+				</>
+			)
 		}
 	]
 
@@ -118,18 +126,21 @@ const Home = () => {
 					</div>
 				</section>
 
-				<section id='mainnet'>
+				<motion.section
+					id='networks'
+					initial='hidden'
+					whileInView='visible'
+					viewport={{ once: true }}
+					variants={opacityBlock}
+				>
 					<div className={styles.container}>
-						<h3
-							className='text-[21px] md:text-[48px] font-bold text-center mb-1 md:mb-4 tracking-wide text-zinc-900 dark:text-white'
-							id='networks'
-						>
+						<h3 className='text-[21px] md:text-[48px] font-bold text-center mb-1 md:mb-4 tracking-wide text-zinc-900 dark:text-white'>
 							Networks
 						</h3>
 
 						<Tabs defaultActiveKey='1' centered size={'large'} items={items} />
 					</div>
-				</section>
+				</motion.section>
 
 				<section
 					style={{

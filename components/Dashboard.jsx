@@ -57,31 +57,7 @@ export default function Dashboard(props) {
 			})
 	}
 
-	const changeModalStyles = () => {
-		const modal = document.getElementsByClassName('ant-modal-content')[0]
-		const closeIcon = document.getElementsByClassName('ant-modal-close-icon')[0]
-
-		if (theme === 'dark' && modal) {
-			modal.style.backgroundColor = '#222'
-			modal.style.color = '#fff'
-		} else if (modal) {
-			modal.style.backgroundColor = '#fff'
-			modal.style.color = '#000'
-		}
-
-		if (theme === 'dark' && closeIcon) {
-			closeIcon.style.color = '#fff'
-		} else if (modal && closeIcon) {
-			closeIcon.style.color = '#000'
-		}
-	}
-
 	useEffect(() => {
-		changeModalStyles()
-	}, [theme])
-
-	useEffect(() => {
-		changeModalStyles()
 		let isCurrent = true
 		const project = currentProject()
 		const name = project.name
@@ -119,8 +95,6 @@ export default function Dashboard(props) {
 	}, [router.pathname])
 
 	useEffect(() => {
-		changeModalStyles()
-
 		setTimeout(() => {
 			setOpacity(1)
 		}, 1)
@@ -166,7 +140,7 @@ export default function Dashboard(props) {
 									: false
 
 							return (
-								<a
+								<Link
 									href={serviceURL}
 									className={styles.chain__wrapper}
 									onClick={handleLinkClick}
@@ -179,7 +153,7 @@ export default function Dashboard(props) {
 										height='25'
 									/>
 									{name}
-								</a>
+								</Link>
 							)
 						})}
 					</div>
