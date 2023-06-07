@@ -121,7 +121,7 @@ const Home = () => {
 				<section id='mainnet'>
 					<div className={styles.container}>
 						<h3
-							className='text-[20px] md:text-[48px] font-bold text-center mb-1 md:mb-4 tracking-wide text-zinc-900 dark:text-white'
+							className='text-[21px] md:text-[48px] font-bold text-center mb-1 md:mb-4 tracking-wide text-zinc-900 dark:text-white'
 							id='networks'
 						>
 							Networks

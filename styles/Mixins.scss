@@ -79,10 +79,11 @@
 	@include button;
 	border: 1px solid #646cff;
 	background-color: #646cff;
-	color: #fbfbfb;
+	color: #fbfbfb !important;
 	transition: 0.2s;
 
 	&:hover {
+		color: #fbfbfb !important;
 		background-color: #787fff;
 		border-color: #787fff;
 	}

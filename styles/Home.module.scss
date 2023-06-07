@@ -242,35 +242,3 @@
 		margin-bottom: 15px;
 	}
 }
-
-.text {
-	position: absolute;
-	top: 50px;
-	bottom: 0;
-	animation: rotate 25s linear infinite;
-	animation-delay: 1s;
-
-	@keyframes rotate {
-		0% {
-			transform: rotate(0deg);
-		}
-		100% {
-			transform: rotate(360deg);
-		}
-	}
-}
-
-.rocket {
-	position: absolute;
-
-	top: 40px;
-	bottom: 0;
-}
-
-.rocketWrapper {
-	width: 450px;
-	height: 450px;
-	display: flex;
-	align-items: center;
-	position: relative;
-}
