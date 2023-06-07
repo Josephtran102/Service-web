@@ -137,15 +137,15 @@
 	justify-content: center;
 	align-items: center;
 	transition: 0s;
-	margin-top: 65px;
 	z-index: 1;
+	margin-top: 65px;
+	height: 100vh;
 
 	@media (max-width: 768px) {
-		padding: 15px;
-		height: calc(100vh - 65px);
+		margin-top: 25px;
+		padding: 5px;
+		height: 100vh;
 		width: 100%;
-		margin-block: 15px;
-		margin-top: 65px;
 	}
 
 	&__wrapper {

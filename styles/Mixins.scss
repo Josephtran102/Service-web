@@ -29,7 +29,7 @@
 @mixin button {
 	background-color: #fafafa;
 	border: 1px solid #d0d7de;
-	border-radius: 8px;
+	border-radius: 10px;
 	cursor: pointer;
 	display: block;
 	font-weight: 500;
@@ -71,7 +71,7 @@
 	}
 	@media (max-width: 768px) {
 		font-size: 12px;
-		padding: 3px 8px;
+		padding: 4px 10px;
 	}
 }
 
