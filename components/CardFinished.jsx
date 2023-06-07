@@ -1,10 +1,8 @@
 import styles from '@styles/Card.module.scss'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import projects from 'data/projects'
 import { useContext } from 'react'
 import { Context } from '@context/context'
-import { opacityBlock } from '@data/transitions'
 
 const Finished = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -23,13 +21,7 @@ const Finished = () => {
 	}
 
 	return (
-		<motion.div
-			className={`${styles.card__root} ${styles.finishedRoot}`}
-			initial='hidden'
-			whileInView='visible'
-			viewport={{ once: true }}
-			variants={opacityBlock}
-		>
+		<div className={`${styles.card__root} ${styles.finishedRoot}`}>
 			{data.map(item => (
 				<div
 					className={`${styles.card} ${styles.finishedCard}`}
@@ -48,7 +40,7 @@ const Finished = () => {
 					</div>
 				</div>
 			))}
-		</motion.div>
+		</div>
 	)
 }
 
