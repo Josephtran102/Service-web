@@ -121,13 +121,13 @@ const Home = () => {
 				<section id='mainnet'>
 					<div className={styles.container}>
 						<h3
-							className='text-[16px] md:text-[48px] font-bold text-center mb-4 tracking-wide text-zinc-900 dark:text-white'
+							className='text-[18px] md:text-[48px] font-bold text-center mb-1 md:mb-4 tracking-wide text-zinc-900 dark:text-white'
 							id='networks'
 						>
 							Networks
 						</h3>
 
-						<Tabs defaultActiveKey='1' centered size={'large'} animated items={items} />
+						<Tabs defaultActiveKey='1' centered size={'large'} items={items} />
 					</div>
 				</section>
 
