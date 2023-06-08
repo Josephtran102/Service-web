@@ -21,6 +21,8 @@ const Home = () => {
 	useEffect(() => {
 		const jwt = process.env.JWT_SECRET
 		console.log(jwt)
+		const test = process.env.PUBLIC_NEXT_TEST
+		console.log(test)
 		const onPageLoad = () => {
 			setOpacity(0)
 		}
