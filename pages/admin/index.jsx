@@ -1,15 +1,18 @@
 import { getAdminLayout } from '@layouts/admin'
 import { PrismaClient } from '@prisma/client'
 import { verifyToken } from '@utils/auth'
+import cookie from 'cookie'
 
 const prisma = new PrismaClient()
 
 export async function getServerSideProps(context) {
 	try {
 		const { req } = context
-		const token = req.headers.cookie?.split('=')[1]
+		const cookies = cookie.parse(req.headers.cookie || '')
+		const token = cookies['token']
 
 		if (!token) {
+			console.log('not token')
 			return {
 				redirect: {
 					destination: '/login',
@@ -25,6 +28,7 @@ export async function getServerSideProps(context) {
 		})
 
 		if (currentUser.role !== 'admin') {
+			console.log('not admin role')
 			return {
 				redirect: {
 					destination: '/',
@@ -34,7 +38,7 @@ export async function getServerSideProps(context) {
 		}
 
 		return {
-			props: {} // Will be passed to the page component as props
+			props: {}
 		}
 	} catch (err) {
 		return {
