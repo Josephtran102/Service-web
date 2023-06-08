@@ -203,12 +203,14 @@ make install`,
 			peerPort: '15656',
 			seedPort: '15656',
 			installBin:
-				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.13.pebble-db\nmake install',
+				'cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.2.14\nmake install',
 			updHeight: '0',
 			newInstallBin: `cd $HOME
-wget https://github.com/ingenuity-build/quicksilver/releases/download/v1.2.13/quicksilverd-v1.2.13-amd64
-chmod +x quicksilverd-v1.2.13-amd64
-sudo mv quicksilverd-v1.2.13-amd64 $(which quicksilverd)`,
+rm -rf quicksilver
+git clone https://github.com/ingenuity-build/quicksilver
+git checkout v1.2.14
+make build
+sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			goVersion: '1.19.3',
 			gas: '',
 			unsafeReset: 'tendermint unsafe-reset-all',
