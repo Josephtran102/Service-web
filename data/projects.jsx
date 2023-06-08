@@ -208,6 +208,7 @@ make install`,
 			newInstallBin: `cd $HOME
 rm -rf quicksilver
 git clone https://github.com/ingenuity-build/quicksilver
+cd quicksilver
 git checkout v1.2.14
 make build
 sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
