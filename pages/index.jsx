@@ -19,6 +19,7 @@ const Home = () => {
 	const [opacity, setOpacity] = useState(false)
 
 	useEffect(() => {
+		console.log(process.env.JWT_SECRET)
 		const onPageLoad = () => {
 			setOpacity(0)
 		}
@@ -103,7 +104,7 @@ const Home = () => {
 									<span className={styles.hero__desc}>
 										With few simple steps you can delegate funds to our trusted validators or
 										explore our services where you can find tools that will be useful for node
-										operators and developers. {process.env.JWT_SECRET}
+										operators and developers.
 									</span>
 								</div>
 								<div className={styles.hero__links}>
