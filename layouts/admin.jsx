@@ -1,34 +1,19 @@
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons'
 import { Layout, Menu, theme } from 'antd'
 import React from 'react'
 import projects from '@data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
 const { Header, Content, Footer, Sider } = Layout
+
 const items1 = ['1', '2', '3'].map(key => ({
 	key,
 	label: `nav ${key}`
 }))
-const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
-	const key = String(index + 1)
-	return {
-		key: `sub${key}`,
-		icon: React.createElement(icon),
-		label: `subnav ${key}`,
-		children: new Array(4).fill(null).map((_, j) => {
-			const subKey = index * 4 + j + 1
-			return {
-				key: subKey,
-				label: `option${subKey}`
-			}
-		})
-	}
-})
 
 const mainnetData = projects.mainnet
 const testnetData = projects.testnet
 
-const Dashboard = () => {
+const AdminLayout = ({ children }) => {
 	const {
 		token: { colorBgContainer }
 	} = theme.useToken()
@@ -61,7 +46,7 @@ const Dashboard = () => {
 						width={320}
 						className='border-r-2 px-3'
 					>
-						<div className='flex gap-5'>
+						<div className='flex justify-between'>
 							<div>
 								<h2 id='mainnets' className='font-bold my-2 text-xl'>
 									Mainnets
@@ -70,7 +55,7 @@ const Dashboard = () => {
 									{Object.keys(mainnetData).map(item => {
 										const name =
 											mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
-										const dashboardURL = '/dashboard/mainnet/' + name.toLowerCase()
+										const dashboardURL = '/admin/mainnet/' + name.toLowerCase()
 
 										return (
 											<Link
@@ -99,7 +84,7 @@ const Dashboard = () => {
 									{Object.keys(testnetData).map(item => {
 										const name =
 											testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
-										const dashboardURL = '/dashboard/testnet/' + name.toLowerCase()
+										const dashboardURL = '/admin/testnet/' + name.toLowerCase()
 
 										return (
 											<Link
@@ -126,7 +111,9 @@ const Dashboard = () => {
 							padding: '0 24px',
 							minHeight: 280
 						}}
-					></Content>
+					>
+						{children}
+					</Content>
 				</Layout>
 			</Content>
 			<Footer
@@ -139,4 +126,7 @@ const Dashboard = () => {
 		</Layout>
 	)
 }
-export default Dashboard
+
+export const getAdminLayout = page => <AdminLayout>{page}</AdminLayout>
+
+export default AdminLayout

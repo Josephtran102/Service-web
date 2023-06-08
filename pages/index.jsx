@@ -108,7 +108,7 @@ const Home = () => {
 								</div>
 								<div className={styles.hero__links}>
 									<Link
-										href='#mainnet'
+										href='#networks'
 										className={styles.button}
 										onClick={event => smoothScroll(event)}
 									>
