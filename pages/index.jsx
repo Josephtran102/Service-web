@@ -19,10 +19,8 @@ const Home = () => {
 	const [opacity, setOpacity] = useState(false)
 
 	useEffect(() => {
-		const jwt = process.env.JWT_SECRET
-		console.log(jwt)
-		const test = process.env.PUBLIC_NEXT_TEST
-		console.log(test)
+		console.log(process.env.JWT_SECRET)
+		console.log(process.env.NEXT_PUBLIC_TEST)
 		const onPageLoad = () => {
 			setOpacity(0)
 		}
