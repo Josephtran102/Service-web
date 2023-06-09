@@ -8,7 +8,6 @@ import Image from 'next/image.js'
 import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
 import { useRouter } from 'next/navigation'
-import { changeStyles } from '@utils/changeStyles'
 
 function getItem(label, key, icon, children, type) {
 	return {
@@ -87,9 +86,7 @@ const SideMenu = () => {
 										backgroundColor: '#fff'
 									}}
 								/>
-								<span className='font-semibold tracking-wide'>
-									{name.charAt(0).toUpperCase() + name.slice(1)}
-								</span>
+								<span className='font-semibold tracking-wide'>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
 							</div>
 						</div>,
 						'grpthis',
@@ -147,9 +144,7 @@ const SideMenu = () => {
 										backgroundColor: '#fff'
 									}}
 								/>
-								<span className='font-semibold tracking-wide'>
-									{name.charAt(0).toUpperCase() + name.slice(1)}
-								</span>
+								<span className='font-semibold tracking-wide'>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
 							</div>
 							<Segmented
 								block
@@ -181,50 +176,35 @@ const SideMenu = () => {
 								null,
 								[
 									getItem(
-										<Link
-											href={serviceURL + '#rpc'}
-											onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
-										>
+										<Link href={serviceURL + '#rpc'} onClick={event => handleClick(event, 'rpc', `rpc${name}`)}>
 											RPC, API, GRPC
 										</Link>,
 										`rpc${name}`,
 										<RightOutlined />
 									),
 									getItem(
-										<Link
-											href={serviceURL + '#peer'}
-											onClick={event => handleClick(event, 'peer', `peer${name}`)}
-										>
+										<Link href={serviceURL + '#peer'} onClick={event => handleClick(event, 'peer', `peer${name}`)}>
 											Peers, Seeds
 										</Link>,
 										`peer${name}`,
 										<RightOutlined />
 									),
 									getItem(
-										<Link
-											href={serviceURL + '#snap'}
-											onClick={event => handleClick(event, 'snap', `snap${name}`)}
-										>
+										<Link href={serviceURL + '#snap'} onClick={event => handleClick(event, 'snap', `snap${name}`)}>
 											Snapshot
 										</Link>,
 										`snap${name}`,
 										<RightOutlined />
 									),
 									getItem(
-										<Link
-											href={serviceURL + '#sync'}
-											onClick={event => handleClick(event, 'sync', `state${name}`)}
-										>
+										<Link href={serviceURL + '#sync'} onClick={event => handleClick(event, 'sync', `state${name}`)}>
 											State sync
 										</Link>,
 										`state${name}`,
 										<RightOutlined />
 									),
 									getItem(
-										<Link
-											href={serviceURL + '#wasm'}
-											onClick={event => handleClick(event, 'wasm', `wasm${name}`)}
-										>
+										<Link href={serviceURL + '#wasm'} onClick={event => handleClick(event, 'wasm', `wasm${name}`)}>
 											Wasm
 										</Link>,
 										`wasm${name}`,
@@ -253,9 +233,7 @@ const SideMenu = () => {
 									getItem(
 										<Link
 											href={serviceURL + '/installation/#auto-installation'}
-											onClick={event =>
-												handleClick(event, 'auto-installation', `auto-install${name}`)
-											}
+											onClick={event => handleClick(event, 'auto-installation', `auto-install${name}`)}
 										>
 											Automatic Installation
 										</Link>,
@@ -353,9 +331,7 @@ const SideMenu = () => {
 									getItem(
 										<Link
 											href={serviceURL + '/cheat-sheet/#service-operations'}
-											onClick={event =>
-												handleClick(event, 'service-operations', `service-operations${name}`)
-											}
+											onClick={event => handleClick(event, 'service-operations', `service-operations${name}`)}
 										>
 											Service operations
 										</Link>,
@@ -365,9 +341,7 @@ const SideMenu = () => {
 									getItem(
 										<Link
 											href={serviceURL + '/cheat-sheet/#key-management'}
-											onClick={event =>
-												handleClick(event, 'key-management', `key-management${name}`)
-											}
+											onClick={event => handleClick(event, 'key-management', `key-management${name}`)}
 										>
 											Key management
 										</Link>,
@@ -387,9 +361,7 @@ const SideMenu = () => {
 									getItem(
 										<Link
 											href={serviceURL + '/cheat-sheet/#validator-operations'}
-											onClick={event =>
-												handleClick(event, 'validator-operations', `validator-operations${name}`)
-											}
+											onClick={event => handleClick(event, 'validator-operations', `validator-operations${name}`)}
 										>
 											Validator operations
 										</Link>,

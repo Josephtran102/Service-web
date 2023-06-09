@@ -53,8 +53,7 @@ const AdminLayout = ({ children }) => {
 								</h2>
 								<div>
 									{Object.keys(mainnetData).map(item => {
-										const name =
-											mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
+										const name = mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
 										const dashboardURL = '/admin/mainnet/' + name.toLowerCase()
 
 										return (
@@ -82,8 +81,7 @@ const AdminLayout = ({ children }) => {
 								</h2>
 								<div>
 									{Object.keys(testnetData).map(item => {
-										const name =
-											testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
+										const name = testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
 										const dashboardURL = '/admin/testnet/' + name.toLowerCase()
 
 										return (

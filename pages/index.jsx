@@ -19,8 +19,6 @@ const Home = () => {
 	const [opacity, setOpacity] = useState(false)
 
 	useEffect(() => {
-		console.log(process.env.JWT_SECRET)
-		console.log(process.env.NEXT_PUBLIC_TEST)
 		const onPageLoad = () => {
 			setOpacity(0)
 		}
@@ -90,36 +88,21 @@ const Home = () => {
 				>
 					<ParticlesBG />
 					<div className={styles.container}>
-						<motion.div
-							initial='hidden'
-							animate='visible'
-							variants={opacityBlock}
-							className={styles.hero__wrapper}
-						>
+						<motion.div initial='hidden' animate='visible' variants={opacityBlock} className={styles.hero__wrapper}>
 							<div className={styles.hero__column} id={styles.hero__descStaking}>
 								<div className={styles.hero__columnRoot}>
-									<h3 className={styles.hero__heading}>
-										Trusted Validator &amp; Interchain Utility Provider
-									</h3>
+									<h3 className={styles.hero__heading}>Trusted Validator &amp; Interchain Utility Provider</h3>
 
 									<span className={styles.hero__desc}>
-										With few simple steps you can delegate funds to our trusted validators or
-										explore our services where you can find tools that will be useful for node
-										operators and developers.
+										With few simple steps you can delegate funds to our trusted validators or explore our services where
+										you can find tools that will be useful for node operators and developers.
 									</span>
 								</div>
 								<div className={styles.hero__links}>
-									<Link
-										href='#networks'
-										className={styles.button}
-										onClick={event => smoothScroll(event)}
-									>
+									<Link href='#networks' className={styles.button} onClick={event => smoothScroll(event)}>
 										Delegate
 									</Link>
-									<Link
-										href='/services'
-										className={theme === 'light' ? styles.button : styles.button__dark}
-									>
+									<Link href='/services' className={theme === 'light' ? styles.button : styles.button__dark}>
 										Services
 									</Link>
 								</div>

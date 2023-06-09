@@ -101,13 +101,10 @@ const Card = () => {
 								>
 									Services
 								</Link>
-								{projects.mainnet[item].explorer === '' ||
-								projects.mainnet[item].explorer === undefined ? (
+								{projects.mainnet[item].explorer === '' || projects.mainnet[item].explorer === undefined ? (
 									<a
 										href={`https://mainnet.itrocket.net/${item.toLowerCase()}/staking`}
-										className={
-											theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark
-										}
+										className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
 										target='_blank'
 										rel='noopener noreferrer'
 									>
@@ -118,9 +115,7 @@ const Card = () => {
 										href={projects.mainnet[item].explorer}
 										target='_blank'
 										rel='noopener noreferrer'
-										className={
-											theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark
-										}
+										className={theme === 'light' ? styles.buttonExplorer : styles.buttonExplorer_dark}
 									>
 										Explorer
 									</a>

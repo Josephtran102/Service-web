@@ -5,6 +5,12 @@ import cookie from 'cookie'
 
 const prisma = new PrismaClient()
 
+const Admin = () => {
+	;<>
+		<p>Choose project</p>
+	</>
+}
+
 export async function getServerSideProps(context) {
 	try {
 		const { req } = context
@@ -12,7 +18,7 @@ export async function getServerSideProps(context) {
 		const token = cookies['token']
 
 		if (!token) {
-			console.log('not token')
+			console.log('no token')
 			return {
 				redirect: {
 					destination: '/login',
@@ -22,7 +28,6 @@ export async function getServerSideProps(context) {
 		}
 
 		const user = verifyToken(token)
-
 		const currentUser = await prisma.user.findUnique({
 			where: { id: user.id }
 		})
@@ -48,10 +53,6 @@ export async function getServerSideProps(context) {
 			}
 		}
 	}
-}
-
-const Admin = () => {
-	;<>123</>
 }
 
 Admin.getLayout = getAdminLayout

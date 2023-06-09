@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 
 export default function Register() {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+	const router = useRouter()
 
 	const register = async event => {
 		event.preventDefault()
 		try {
 			const res = await axios.post('/api/register', { email, password })
-			alert('Registration successful!')
+			router.push('/login')
 		} catch (error) {
 			alert(error.response.data.message)
 		}

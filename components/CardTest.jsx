@@ -35,16 +35,9 @@ const Card = () => {
 				>
 					<div className={styles.card__desc}>
 						<div className={styles.card__img}>
-							<Image
-								src={require('../public/testnet/'.concat(data[item].imgUrl))}
-								alt='item'
-								width={50}
-								height={50}
-							/>
+							<Image src={require('../public/testnet/'.concat(data[item].imgUrl))} alt='item' width={50} height={50} />
 						</div>
-						<h5 className={styles.card__heading}>
-							{data[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
-						</h5>
+						<h5 className={styles.card__heading}>{data[item].name || item.charAt(0).toUpperCase() + item.slice(1)}</h5>
 					</div>
 
 					<div className={styles.button__wrapper}>
