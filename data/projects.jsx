@@ -240,9 +240,15 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			peerPort: '23656',
 			seedPort: '23656',
 			installBin:
-				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network.git\ncd realio-network\ngit checkout tags/v0.8.1\nmake install',
-			updHeight: '',
-			newInstallBin: '',
+				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network.git\ncd realio-network\ngit checkout tags/v0.8.2\nmake install',
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf realio-network
+git clone https://github.com/realiotech/realio-network.git
+cd realio-network
+git checkout tags/v0.8.2
+make build
+sudo mv $HOME/realio-network/build/realio-networkd $(which realio-networkd)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
