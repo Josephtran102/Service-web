@@ -522,11 +522,18 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 rm -rf empowerchain
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain
-git checkout v1.0.0-rc1
+git checkout v1.0.0-rc2
+cd chain
+make build
+sudo mv $HOME/empowerchain/chain/build/empowerd $(which empowerd)`,
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf empowerchain
+git clone https://github.com/EmpowerPlastic/empowerchain
+cd empowerchain
+git checkout v1.0.0-rc2
 cd chain
 make install`,
-			updHeight: '',
-			newInstallBin: '',
 			goVersion: '1.20.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
