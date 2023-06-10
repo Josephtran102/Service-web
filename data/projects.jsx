@@ -163,7 +163,15 @@ make install`,
 			seedPort: '13656',
 			updHeight: '',
 			installBin:
-				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v1.0.0\nmake install',
+				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout barberry\nmake install',
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf terp-core
+git clone https://github.com/terpnetwork/terp-core.git
+cd terp-core
+git checkout barberry
+make build
+sudo mv $HOME/terp-core/build/terpd $(which terpd)`,
 			goVersion: '1.19.3',
 			gas: '--gas 210000 --fees 200000uthiol',
 			unsafeReset: 'tendermint unsafe-reset-all',
