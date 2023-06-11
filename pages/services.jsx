@@ -1,17 +1,14 @@
-import { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 import styles from '@styles/Services.module.scss'
 import projects from 'data/projects'
-import { Context } from '@context/context'
 import Link from 'next/link'
 import Image from 'next/image'
 import Header from '@components/Header'
 
-const services = () => {
-	const { theme, toggleTheme } = useContext(Context)
-	let mainnetData = projects.mainnet
-	let testnetData = projects.testnet
+let mainnetData = projects.mainnet
+let testnetData = projects.testnet
 
+const services = () => {
 	return (
 		<>
 			<Head>
@@ -31,9 +28,7 @@ const services = () => {
 				>
 					<div className={styles.mainColumn}>
 						<h1 style={{ paddingTop: '0px' }}>Services 🌟</h1>
-						<p className={styles.desc}>
-							Pick a project from the list below to view guides and commands.
-						</p>
+						<p className={styles.desc}>Pick a project from the list below to view guides and commands.</p>
 						<br />
 						<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>
 							Mainnets
@@ -44,7 +39,7 @@ const services = () => {
 								const serviceURL = '/services/mainnet/' + name.toLowerCase()
 
 								return (
-									<Link href={serviceURL} className={styles.chain__wrapper}>
+									<Link href={serviceURL} key={name} className={styles.chain__wrapper}>
 										<Image
 											src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
 											alt='project logo'
@@ -66,7 +61,7 @@ const services = () => {
 								const serviceURL = '/services/testnet/' + name.toLowerCase()
 
 								return (
-									<Link href={serviceURL} className={styles.chain__wrapper}>
+									<Link href={serviceURL} key={name} className={styles.chain__wrapper}>
 										<Image
 											src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
 											alt='project logo'

@@ -1,9 +1,6 @@
 require('dotenv').config()
 
 const nextConfig = {
-	images: {
-		unoptimized: true
-	},
 	trailingSlash: true,
 	reactStrictMode: true
 }

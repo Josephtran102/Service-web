@@ -237,7 +237,7 @@ const SideMenu = () => {
 										>
 											Automatic Installation
 										</Link>,
-										`install${name}`,
+										`auto-install${name}`,
 										<RightOutlined />
 									),
 									getItem(

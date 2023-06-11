@@ -14,8 +14,9 @@ const AccordionItem = ({ title, content }) => {
 	return (
 		<div className='rounded-md my-2 border-2 border-slate-500/10'>
 			<div
-				className='bg-[#FAFAFA] dark:bg-zinc-900 w-full flex justify-between p-5 transition-all cursor-pointer'
-				style={{ backgroundColor: isActive ? 'transparent' : '' }}
+				className={`bg-[#FAFAFA] dark:bg-zinc-900 w-full flex justify-between p-5 md:p-6 transition-all cursor-pointer ${
+					isActive ? 'bg-transparent' : ''
+				}`}
 				onClick={() => setIsActive(!isActive)}
 			>
 				<h5 className={styles.button__heading}>{title}</h5>
@@ -30,13 +31,9 @@ const AccordionItem = ({ title, content }) => {
 					}
 				</span>
 			</div>
-			<div
-				ref={ref}
-				className={styles.panel}
-				style={isActive ? { maxHeight: `${height}px` } : { maxHeight: '0' }}
-			>
+			<div ref={ref} className={styles.panel} style={isActive ? { maxHeight: `${height}px` } : { maxHeight: '0' }}>
 				<p
-					className='mx-5 mt-2 mb-6 text-sm md:text-base transition'
+					className='mx-5 md:mx-6 mt-4 mb-6 text-sm md:text-base transition'
 					style={{ opacity: isActive ? 1 : 0 }}
 				>
 					{content}
@@ -56,11 +53,11 @@ const Accordion = () => {
 					<span
 						className='inline-block h-5 w-5 align-top mx-1 mt-[2px]'
 						aria-hidden='true'
-						style={{ background: " center / contain url('/icons/flag_am.svg')  no-repeat" }}
+						style={{ background: "center / contain url('/icons/flag_am.svg')  no-repeat" }}
 					></span>{' '}
 					<br />
-					We are crypto enthusiasts and node operators in various crypto ecosystems. Our main goal is to
-					help millions of people effectively manage their crypto assets!
+					We are crypto enthusiasts and node operators in various crypto ecosystems. Our main goal is to help
+					millions of people effectively manage their crypto assets!
 				</span>
 			)
 		},
@@ -80,7 +77,7 @@ const Accordion = () => {
 	]
 
 	return (
-		<div className='mt-6 md:mt-8'>
+		<div className='mt-7 md:mt-10'>
 			{accordionItems.map((item, index) => (
 				<AccordionItem key={index} title={item.title} content={item.content} />
 			))}

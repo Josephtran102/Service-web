@@ -2,7 +2,7 @@
 
 .main {
 	height: 100vh;
-	padding: 4rem 0;
+	padding: 3.5rem 0;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -12,7 +12,6 @@
 
 .container {
 	@include container;
-	padding: 0px 6.5rem;
 }
 
 .logo {
@@ -34,11 +33,11 @@
 .title {
 	margin: 0;
 	line-height: 1.15;
-	font-size: 2.6rem;
+	font-size: 2.2rem;
 	font-weight: 600;
 
 	@media (max-width: 768px) {
-		font-size: 1.7rem;
+		font-size: 1.65rem;
 		line-height: 1.1;
 	}
 }
@@ -192,7 +191,7 @@
 		margin-bottom: 15px;
 
 		@media (max-width: 1600px) {
-			font-size: 47px;
+			font-size: 48px;
 		}
 
 		@media (max-width: 1200px) {

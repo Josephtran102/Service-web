@@ -1,5 +1,5 @@
 import projects from 'data/projects'
-import { fetchNetInfo, fetchSnap, fetchStatus } from '@utils/fetchProject.js'
+import { fetchNetInfo } from '@utils/fetchProject.js'
 
 export default function handler(req, res) {
 	res.setHeader('Cache-Control', 'no-store, max-age=0')
@@ -20,7 +20,7 @@ export default function handler(req, res) {
 		unsafeReset,
 		chainID,
 		installBin,
-		VAR,
+		variable,
 		minGasPrice,
 		denom,
 		goVersion,
@@ -99,15 +99,15 @@ echo 'export PORT='$PORT
 # set vars
 echo "export WALLET="$WALLET"" >> $HOME/.bash_profile
 echo "export MONIKER="$MONIKER"" >> $HOME/.bash_profile
-echo "export ${VAR}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
-echo "export ${VAR}_PORT="$PORT"" >> $HOME/.bash_profile
+echo "export ${variable}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
+echo "export ${variable}_PORT="$PORT"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 printLine
 echo -e "Moniker:        \\e[1m\\e[32m$MONIKER\\e[0m"
 echo -e "Wallet:         \\e[1m\\e[32m$WALLET\\e[0m"
-echo -e "Chain id:       \\e[1m\\e[32m$${VAR}_CHAIN_ID\\e[0m"
-echo -e "Node custom port:  \\e[1m\\e[32m$${VAR}_PORT\\e[0m"
+echo -e "Chain id:       \\e[1m\\e[32m$${variable}_CHAIN_ID\\e[0m"
+echo -e "Node custom port:  \\e[1m\\e[32m$${variable}_PORT\\e[0m"
 printLine
 sleep 1
 
@@ -136,7 +136,7 @@ ${installBin}
 
 printGreen "5. Configuring and init app..." && sleep 1
 # config and init app
-${bin} config node tcp://localhost:\${${VAR}_PORT}657
+${bin} config node tcp://localhost:\${${variable}_PORT}657
 ${bin} config keyring-backend os
 ${bin} config chain-id ${chainID}
 ${init}
@@ -157,21 +157,21 @@ PEERS=${PEERS}
 sed -i -e "s/^seeds *=.*/seeds = \\"$SEEDS\\"/; s/^persistent_peers *=.*/persistent_peers = \\"$PEERS\\"/" $HOME/${path}/config/config.toml
 
 # set custom ports in app.toml
-sed -i.bak -e "s%:1317%:\${${VAR}_PORT}317%g;
-s%:8080%:\${${VAR}_PORT}080%g;
-s%:9090%:\${${VAR}_PORT}090%g;
-s%:9091%:\${${VAR}_PORT}091%g;
-s%:8545%:\${${VAR}_PORT}545%g;
-s%:8546%:\${${VAR}_PORT}546%g" $HOME/${path}/config/app.toml
+sed -i.bak -e "s%:1317%:\${${variable}_PORT}317%g;
+s%:8080%:\${${variable}_PORT}080%g;
+s%:9090%:\${${variable}_PORT}090%g;
+s%:9091%:\${${variable}_PORT}091%g;
+s%:8545%:\${${variable}_PORT}545%g;
+s%:8546%:\${${variable}_PORT}546%g" $HOME/${path}/config/app.toml
 
 
 # set custom ports in config.toml file
-sed -i.bak -e "s%^proxy_app = \\"tcp://127.0.0.1:26658\\"%proxy_app = \\"tcp://127.0.0.1:\${${VAR}_PORT}658\\"%; 
-s%^laddr = \\"tcp://127.0.0.1:26657\\"%laddr = \\"tcp://0.0.0.0:\${${VAR}_PORT}657\\"%; 
-s%^pprof_laddr = \\"localhost:6060\\"%pprof_laddr = \\"localhost:\${${VAR}_PORT}060\\"%;
-s%^laddr = \\"tcp://0.0.0.0:26656\\"%laddr = \\"tcp://0.0.0.0:\${${VAR}_PORT}656\\"%;
-s%^external_address = \\"\\"%external_address = \\"$(wget -qO- eth0.me):\${${VAR}_PORT}656\\"%;
-s%^prometheus_listen_addr = \\":26660\\"%prometheus_listen_addr = \\":\${${VAR}_PORT}660\\"%" $HOME/${path}/config/config.toml
+sed -i.bak -e "s%^proxy_app = \\"tcp://127.0.0.1:26658\\"%proxy_app = \\"tcp://127.0.0.1:\${${variable}_PORT}658\\"%; 
+s%^laddr = \\"tcp://127.0.0.1:26657\\"%laddr = \\"tcp://0.0.0.0:\${${variable}_PORT}657\\"%; 
+s%^pprof_laddr = \\"localhost:6060\\"%pprof_laddr = \\"localhost:\${${variable}_PORT}060\\"%;
+s%^laddr = \\"tcp://0.0.0.0:26656\\"%laddr = \\"tcp://0.0.0.0:\${${variable}_PORT}656\\"%;
+s%^external_address = \\"\\"%external_address = \\"$(wget -qO- eth0.me):\${${variable}_PORT}656\\"%;
+s%^prometheus_listen_addr = \\":26660\\"%prometheus_listen_addr = \\":\${${variable}_PORT}660\\"%" $HOME/${path}/config/config.toml
 
 # config pruning
 sed -i -e "s/^pruning *=.*/pruning = \\"nothing\\"/" $HOME/${path}/config/app.toml

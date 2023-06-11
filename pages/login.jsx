@@ -28,8 +28,7 @@ export default function Login() {
 	const login = async (email, password) => {
 		try {
 			const res = await axios.post('/api/login', { email, password })
-			Cookies.set('token', res.data.token) // Store the token in a cookie
-			// alert('Login successful!')
+			Cookies.set('token', res.data.token)
 			router.push('/admin')
 		} catch (error) {
 			alert(error.response.data.message)

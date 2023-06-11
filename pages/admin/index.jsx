@@ -33,7 +33,6 @@ export async function getServerSideProps(context) {
 		})
 
 		if (currentUser.role !== 'admin') {
-			console.log('not admin role')
 			return {
 				redirect: {
 					destination: '/',

@@ -109,7 +109,7 @@ const ProjectData = ({ name, type }) => {
 	return (
 		<AnimatedSection>
 			<Head>
-				<title>{`${projectName} | Services`}</title>
+				<title>{`${projectName} - Services`}</title>
 				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 
@@ -131,11 +131,7 @@ const ProjectData = ({ name, type }) => {
 					<div className='flex flex-col flex-wrap gap-1 mb-1'>
 						<div className='flex flex-wrap gap-1 items-center'>
 							<span>Public RPC: </span>
-							<a
-								href={`https://${name}-${type}-rpc.itrocket.net:443`}
-								target='_blank'
-								rel='noopener referrer'
-							>
+							<a href={`https://${name}-${type}-rpc.itrocket.net:443`} target='_blank' rel='noopener referrer'>
 								{`https://${name}-${type}-rpc.itrocket.net:443`}
 							</a>
 							<Paragraph
@@ -147,11 +143,7 @@ const ProjectData = ({ name, type }) => {
 						</div>
 						<div className='flex flex-wrap gap-1 items-center'>
 							<>Public API: </>
-							<a
-								href={`https://${name}-${type}-api.itrocket.net:443`}
-								target='_blank'
-								rel='noopener referrer'
-							>
+							<a href={`https://${name}-${type}-api.itrocket.net:443`} target='_blank' rel='noopener referrer'>
 								{`https://${name}-${type}-api.itrocket.net:443`}
 							</a>
 							<Paragraph
@@ -222,11 +214,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 
 cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
 
-rm -rf $HOME/${path}/data ${
-									wasm.current.includes('data') || wasm.current === 'false'
-										? ''
-										: `$HOME/${path}/wasm`
-								}
+rm -rf $HOME/${path}/data ${wasm.current.includes('data') || wasm.current === 'false' ? '' : `$HOME/${path}/wasm`}
 curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
 
 mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json

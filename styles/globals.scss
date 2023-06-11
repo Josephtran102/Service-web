@@ -477,6 +477,7 @@ code {
 	color: #6d68e4;
 	width: fit-content;
 	text-decoration: underline;
+	letter-spacing: 0.02rem;
 	text-decoration-color: rgba(109, 104, 228, 0.45);
 	text-decoration-thickness: 1px;
 	text-underline-offset: 0.2em;
@@ -550,6 +551,18 @@ code {
 		display: flex;
 		align-items: center;
 	}
+}
+
+.ant-tabs-tab {
+	padding: 8px 18px 6px !important;
+}
+
+.ant-tabs-nav {
+	margin: 0 !important;
+}
+
+.ant-tabs-content-holder {
+	@apply bg-white dark:bg-zinc-950/25 p-2 lg:py-5 lg:px-6 rounded lg:rounded-xl;
 }
 
 #tsparticles {

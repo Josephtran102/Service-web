@@ -2,8 +2,6 @@ import { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import styles from '@styles/Home.module.scss'
-import CardMain from '@components/CardMain.jsx'
-import CardTest from '@components/CardTest.jsx'
 import Accordion from '@components/UI/Accordion.jsx'
 import Link from 'next/link'
 import Footer from '@components/Footer'
@@ -13,17 +11,24 @@ import { Context } from '@context/context'
 import { smoothScroll } from '@utils/smoothScroll'
 import { Tabs } from 'antd'
 import { opacityBlock } from '@data/transitions'
+import { useSelector } from 'react-redux'
+import { countApr } from '@utils/updateAPR'
+import CardMain from '@components/cardMain'
+import CardTest from '@components/cardTest'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
 	const [opacity, setOpacity] = useState(false)
+	const projects = useSelector(state => state.projects)
+	const [aprValues, setAprValues] = useState(null)
+	const [projectsCount, setProjectsCount] = useState(null)
 
 	useEffect(() => {
 		const onPageLoad = () => {
 			setOpacity(0)
 		}
 
-		if (document.readyState === 'complete') {
+		if (document.readyState === 'complete' && projects.mainnet) {
 			onPageLoad()
 		} else {
 			window.addEventListener('load', onPageLoad)
@@ -32,40 +37,60 @@ const Home = () => {
 		}
 	}, [])
 
+	useEffect(() => {
+		if (projects.mainnet) {
+			projects.mainnet.forEach(async (item, i) => {
+				const name = projects.mainnet[i].name
+				const apr = await countApr(name)
+				setAprValues(prev => ({ ...prev, [name]: apr }))
+			})
+		}
+		setProjectsCount(prev => ({ ...prev, mainnet: projects.mainnet?.length }))
+		setProjectsCount(prev => ({ ...prev, testnet: projects.testnet?.length }))
+	}, [projects])
+
 	const items = [
 		{
 			key: '1',
 			label: `All`,
 			children: (
 				<>
-					<h3 className={styles.title}>Mainnet.</h3>
-					<CardMain />
-					<h3 className={styles.title}>Testnet.</h3>
+					<h3 className='font-semibold text-xl lg:text-[28px] text-zinc-800 mt-1 dark:text-white/80 mx-2'>
+						Mainnet
+					</h3>
+					<CardMain projects={projects} aprValues={aprValues} />
+					<h3 className='font-semibold text-xl lg:text-[28px] text-zinc-800 mt-1 dark:text-white/80 mx-2'>
+						Testnet
+					</h3>
 					<CardTest />
 				</>
 			)
 		},
 		{
 			key: '2',
-			label: `Mainnet`,
+			label: `Mainnet (${projectsCount?.mainnet})`,
 			children: (
 				<>
-					<h3 className={styles.title}>Mainnet.</h3>
-					<CardMain />
+					{/* <h3 className='font-semibold text-xl lg:text-3xl text-zinc-800 dark:text-white/80'>Mainnet 🪙</h3> */}
+					<CardMain projects={projects} aprValues={aprValues} />
 				</>
 			)
 		},
 		{
 			key: '3',
-			label: `Testnet`,
+			label: `Testnet (${projectsCount?.testnet})`,
 			children: (
 				<>
-					<h3 className={styles.title}>Testnet.</h3>
+					{/* <h3 className='font-semibold text-xl lg:text-3xl text-zinc-800 dark:text-white/80'>Testnet ⚒️</h3> */}
 					<CardTest />
 				</>
 			)
 		}
 	]
+
+	if (!projects.mainnet) {
+		return null
+	}
 
 	return (
 		<>
@@ -88,18 +113,22 @@ const Home = () => {
 				>
 					<ParticlesBG />
 					<div className={styles.container}>
-						<motion.div initial='hidden' animate='visible' variants={opacityBlock} className={styles.hero__wrapper}>
+						<motion.div
+							initial='hidden'
+							animate='visible'
+							variants={opacityBlock}
+							className={styles.hero__wrapper}
+						>
 							<div className={styles.hero__column} id={styles.hero__descStaking}>
 								<div className={styles.hero__columnRoot}>
 									<h3 className={styles.hero__heading}>Trusted Validator &amp; Interchain Utility Provider</h3>
-
 									<span className={styles.hero__desc}>
-										With few simple steps you can delegate funds to our trusted validators or explore our services where
-										you can find tools that will be useful for node operators and developers.
+										With few simple steps you can delegate funds to our trusted validators or explore our services
+										where you can find tools that will be useful for node operators and developers.
 									</span>
 								</div>
 								<div className={styles.hero__links}>
-									<Link href='#networks' className={styles.button} onClick={event => smoothScroll(event)}>
+									<Link href='#networks' className={styles.button} onClick={e => smoothScroll(e, 'networks')}>
 										Delegate
 									</Link>
 									<Link href='/services' className={theme === 'light' ? styles.button : styles.button__dark}>
@@ -119,11 +148,11 @@ const Home = () => {
 					variants={opacityBlock}
 				>
 					<div className={styles.container}>
-						<h3 className='text-[21px] md:text-[48px] font-bold text-center mb-1 md:mb-4 tracking-wide text-zinc-900 dark:text-white'>
+						<h3 className='text-[22px] md:text-[42px] font-bold  mb-1 md:mb-3 tracking-wide text-zinc-900 dark:text-white'>
 							Networks
 						</h3>
 
-						<Tabs defaultActiveKey='1' centered size={'large'} items={items} />
+						<Tabs type='card' defaultActiveKey='1' size={'large'} items={items} />
 					</div>
 				</motion.section>
 
@@ -134,7 +163,10 @@ const Home = () => {
 				>
 					<div className={styles.container}>
 						<div className={styles.accordion__wrapper}>
-							<h3 className={styles.hero__heading} id='faq'>
+							<h3
+								className='text-[22px] md:text-[42px] font-bold  mb-1 md:mb-3 tracking-wide text-zinc-900 dark:text-white'
+								id='faq'
+							>
 								Frequently Asked Questions
 							</h3>
 							<Accordion />

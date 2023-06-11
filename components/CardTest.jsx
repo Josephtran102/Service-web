@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Context } from '@context/context'
 import { useContext } from 'react'
 import { StarFilled } from '@ant-design/icons'
+import { handleMouseMove } from '@utils/handleMouseMove'
 
 const Card = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -12,14 +13,7 @@ const Card = () => {
 	let data = projects.testnet
 
 	const handleOnMouseMove = e => {
-		const { currentTarget: target } = e
-
-		const rect = target.getBoundingClientRect(),
-			x = e.clientX - rect.left,
-			y = e.clientY - rect.top
-
-		target.style.setProperty('--mouse-x', `${x}px`)
-		target.style.setProperty('--mouse-y', `${y}px`)
+		handleMouseMove(e)
 	}
 
 	return (

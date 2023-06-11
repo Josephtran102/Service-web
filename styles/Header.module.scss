@@ -9,7 +9,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 7px 4rem;
+	padding: 7px 3.2rem;
 	border-bottom: 1px solid #8a8a8a24;
 	z-index: 900;
 	box-shadow: rgba(125, 125, 125, 0.06) 0 2px 8px 0;
@@ -85,11 +85,10 @@
 }
 
 .logo {
-	margin: 5px 0;
 	cursor: pointer;
 
 	@media (max-width: 1600px) {
-		max-width: 165px !important;
+		max-width: 175px !important;
 	}
 
 	@media (max-width: 768px) {

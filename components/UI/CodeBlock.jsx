@@ -7,7 +7,7 @@ const GenerateCode = (desc, code) => {
 
 	return (
 		<div className='flex flex-col'>
-			<p className='w-fit text-slate-700'>{desc}</p>
+			<p className='w-fit text-slate-700  dark:text-white'>{desc}</p>
 			<CodeSnippet theme={theme} code={code} />
 		</div>
 	)

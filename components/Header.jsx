@@ -93,10 +93,7 @@ const Header = () => {
 		>
 			FAQ
 		</Link>,
-		<div
-			className={styles.switch__wrapper}
-			style={{ backgroundColor: theme === 'dark' ? '#222' : '#f6f6f7' }}
-		>
+		<div className={styles.switch__wrapper} style={{ backgroundColor: theme === 'dark' ? '#222' : '#f6f6f7' }}>
 			<span>Appearance:</span>
 			<div className={styles.switch} data-ison={theme === 'dark'} onClick={toggleTheme}>
 				<motion.div
@@ -161,8 +158,9 @@ const Header = () => {
 						<Image
 							src='/logo.svg'
 							alt='logo'
-							width={175}
-							height={50}
+							width={180}
+							height={55}
+							priority={true}
 							className={styles.logo}
 							style={{ display: theme === 'light' ? 'block' : 'none' }}
 						/>
@@ -170,8 +168,9 @@ const Header = () => {
 						<Image
 							src='/darkLogo.svg'
 							alt='logo'
-							width={175}
-							height={50}
+							width={180}
+							height={55}
+							priority={true}
 							className={styles.logo}
 							style={{ display: theme === 'dark' ? 'block' : 'none' }}
 						/>
@@ -205,12 +204,7 @@ const Header = () => {
 
 					<div className='divider-vertical hidden lg:block'></div>
 
-					<div
-						className={styles.switch}
-						data-ison={theme === 'dark'}
-						onClick={toggleTheme}
-						id={styles.desktopSwitch}
-					>
+					<div className={styles.switch} data-ison={theme === 'dark'} onClick={toggleTheme} id={styles.desktopSwitch}>
 						<motion.div
 							className={styles.handle}
 							transition={spring}

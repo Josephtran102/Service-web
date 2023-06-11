@@ -1,18 +1,32 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { Provider } from 'react-redux'
+import { createWrapper } from 'next-redux-wrapper'
 import { Context, ContextProvider } from 'context/context'
-import '@styles/globals.scss'
-import { AnimatePresence } from 'framer-motion'
+import store from '@store/store'
 import { ConfigProvider, theme as AntTheme } from 'antd'
+import { fetchPocketbaseProjects } from '@utils/fetchPocketbaseProjects'
+import '@styles/globals.scss'
+
+const makeStore = () => store
+const wrapper = createWrapper(makeStore)
 
 function App({ Component, pageProps, router }) {
 	const getLayout = Component.getLayout || (page => page)
 
+	const dispatch = store.dispatch
+
+	useEffect(() => {
+		fetchPocketbaseProjects().then(fetchedProjects => {
+			dispatch({ type: 'SET_PROJECTS', payload: fetchedProjects })
+		})
+	}, [dispatch])
+
 	return (
-		<AnimatePresence wait>
+		<Provider store={store}>
 			<ContextProvider>
 				<ThemeProvider>{getLayout(<Component {...pageProps} key={router.route} />)}</ThemeProvider>
 			</ContextProvider>
-		</AnimatePresence>
+		</Provider>
 	)
 }
 
@@ -31,4 +45,4 @@ function ThemeProvider({ children }) {
 	)
 }
 
-export default App
+export default wrapper.withRedux(App)

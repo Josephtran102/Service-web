@@ -24,7 +24,7 @@ const Installation = props => {
 		peerPort,
 		updHeight,
 		newInstallBin,
-		VAR,
+		variable,
 		denom,
 		goVersion,
 		gas,
@@ -232,15 +232,15 @@ source $HOME/.bash_profile
 # set vars
 echo "export WALLET="${wallet}"" >> $HOME/.bash_profile
 echo "export MONIKER="${moniker}"" >> $HOME/.bash_profile
-echo "export ${VAR}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
-echo "export ${VAR}_PORT="${port}"" >> $HOME/.bash_profile
+echo "export ${variable}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
+echo "export ${variable}_PORT="${port}"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 # download binary
 ${installBin}
 
 # config and init app
-${bin} config node tcp://localhost:\${${VAR}_PORT}657
+${bin} config node tcp://localhost:\${${variable}_PORT}657
 ${bin} config keyring-backend os
 ${bin} config chain-id ${chainID}
 ${init}
@@ -255,20 +255,20 @@ PEERS=${PEERS}
 sed -i -e "s/^seeds *=.*/seeds = \\"$SEEDS\\"/; s/^persistent_peers *=.*/persistent_peers = \\"$PEERS\\"/" $HOME/${path}/config/config.toml
 
 # set custom ports in app.toml
-sed -i.bak -e "s%:1317%:\${${VAR}_PORT}317%g;
-s%:8080%:\${${VAR}_PORT}080%g;
-s%:9090%:\${${VAR}_PORT}090%g;
-s%:9091%:\${${VAR}_PORT}091%g;
-s%:8545%:\${${VAR}_PORT}545%g;
-s%:8546%:\${${VAR}_PORT}546%g" $HOME/${path}/config/app.toml
+sed -i.bak -e "s%:1317%:\${${variable}_PORT}317%g;
+s%:8080%:\${${variable}_PORT}080%g;
+s%:9090%:\${${variable}_PORT}090%g;
+s%:9091%:\${${variable}_PORT}091%g;
+s%:8545%:\${${variable}_PORT}545%g;
+s%:8546%:\${${variable}_PORT}546%g" $HOME/${path}/config/app.toml
 
 # set custom ports in config.toml file
-sed -i.bak -e "s%^proxy_app = \\"tcp://127.0.0.1:26658\\"%proxy_app = \\"tcp://127.0.0.1:\${${VAR}_PORT}658\\"%; 
-s%^laddr = \\"tcp://127.0.0.1:26657\\"%laddr = \\"tcp://0.0.0.0:\${${VAR}_PORT}657\\"%; 
-s%^pprof_laddr = \\"localhost:6060\\"%pprof_laddr = \\"localhost:\${${VAR}_PORT}060\\"%;
-s%^laddr = \\"tcp://0.0.0.0:26656\\"%laddr = \\"tcp://0.0.0.0:\${${VAR}_PORT}656\\"%;
-s%^external_address = \\"\\"%external_address = \\"$(wget -qO- eth0.me):\${${VAR}_PORT}656\\"%;
-s%^prometheus_listen_addr = \\":26660\\"%prometheus_listen_addr = \\":\${${VAR}_PORT}660\\"%" $HOME/${path}/config/config.toml
+sed -i.bak -e "s%^proxy_app = \\"tcp://127.0.0.1:26658\\"%proxy_app = \\"tcp://127.0.0.1:\${${variable}_PORT}658\\"%; 
+s%^laddr = \\"tcp://127.0.0.1:26657\\"%laddr = \\"tcp://0.0.0.0:\${${variable}_PORT}657\\"%; 
+s%^pprof_laddr = \\"localhost:6060\\"%pprof_laddr = \\"localhost:\${${variable}_PORT}060\\"%;
+s%^laddr = \\"tcp://0.0.0.0:26656\\"%laddr = \\"tcp://0.0.0.0:\${${variable}_PORT}656\\"%;
+s%^external_address = \\"\\"%external_address = \\"$(wget -qO- eth0.me):\${${variable}_PORT}656\\"%;
+s%^prometheus_listen_addr = \\":26660\\"%prometheus_listen_addr = \\":\${${variable}_PORT}660\\"%" $HOME/${path}/config/config.toml
 
 # config pruning
 sed -i -e "s/^pruning *=.*/pruning = \\"nothing\\"/" $HOME/${path}/config/app.toml
@@ -315,10 +315,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 					<b className={styles.bold}>pruning: </b> {pruning} {' | '}
 					<b className={styles.bold}>indexer: </b> {indexer}
 				</p>
-				<CodeSnippet
-					theme={theme}
-					code={`source <(curl -s https://itrocket.net/api/${type}/${name}/autoinstall/)`}
-				/>
+				<CodeSnippet theme={theme} code={`source <(curl -s https://itrocket.net/api/${type}/${name}/autoinstall/)`} />
 				<h2 id='create-wallet'>Create wallet 💰</h2>
 				<CodeSnippet
 					theme={theme}
@@ -346,27 +343,15 @@ ${bin} query bank balances $WALLET_ADDRESS
 				<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 					<Space direction='vertical'>
 						<span>Moniker</span>
-						<Input
-							style={{ minWidth: '250px' }}
-							placeholder={'$MONIKER'}
-							onChange={e => setMoniker(e.target.value)}
-						/>
+						<Input style={{ minWidth: '250px' }} placeholder={'$MONIKER'} onChange={e => setMoniker(e.target.value)} />
 					</Space>
 					<Space direction='vertical'>
 						<span>Identity</span>
-						<Input
-							style={{ minWidth: '250px' }}
-							placeholder={'Identity'}
-							onChange={e => setIdentity(e.target.value)}
-						/>
+						<Input style={{ minWidth: '250px' }} placeholder={'Identity'} onChange={e => setIdentity(e.target.value)} />
 					</Space>
 					<Space direction='vertical'>
 						<span>Details</span>
-						<Input
-							style={{ minWidth: '300px' }}
-							defaultValue={details}
-							onChange={e => setDetails(e.target.value)}
-						/>
+						<Input style={{ minWidth: '300px' }} defaultValue={details} onChange={e => setDetails(e.target.value)} />
 					</Space>
 					<Space direction='vertical'>
 						<span>Amount, {denom}</span>
@@ -428,9 +413,7 @@ ${gas} \\
 					</a>
 				</p>
 				<h2 id='security'>Security 🔒</h2>
-				<p>
-					To protect you keys please don`t share your privkey, mnemonic and follow a basic security rules
-				</p>
+				<p>To protect you keys please don`t share your privkey, mnemonic and follow a basic security rules</p>
 				<h3 id='ssh' className='font-semibold'>
 					Set up ssh keys for authentication
 				</h3>
@@ -448,15 +431,13 @@ ${gas} \\
 				<h3 id='firewall' className='font-semibold'>
 					Firewall security
 				</h3>
-				<p>
-					Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port
-				</p>
+				<p>Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port</p>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo ufw default allow outgoing 
 sudo ufw default deny incoming 
 sudo ufw allow ssh/tcp 
-sudo ufw allow $\{${VAR}_PORT}656/tcp
+sudo ufw allow $\{${variable}_PORT}656/tcp
 sudo ufw enable`}
 				/>
 				<h2 id='delete'>Delete node ❌</h2>
@@ -467,7 +448,7 @@ sudo systemctl disable ${bin}
 sudo rm -rf /etc/systemd/system/${bin}.service
 sudo rm $(which ${bin})
 sudo rm -rf $HOME/${path}
-sed -i "/${VAR}_/d" $HOME/.bash_profile`}
+sed -i "/${variable}_/d" $HOME/.bash_profile`}
 				/>
 			</div>
 		</AnimatedSection>
