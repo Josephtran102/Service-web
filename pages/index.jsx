@@ -13,8 +13,8 @@ import { Tabs } from 'antd'
 import { opacityBlock } from '@data/transitions'
 import { useSelector } from 'react-redux'
 import { countApr } from '@utils/updateAPR'
-import CardMain from '@components/cardMain'
-import CardTest from '@components/cardTest'
+import CardMain from '@components/CardMain'
+import CardTest from '@components/CardTest'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
