@@ -159,7 +159,15 @@ make install`,
 			seedPort: '13656',
 			updHeight: '',
 			installBin:
-				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v1.0.0\nmake install',
+				'cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout barberry\nmake install',
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf terp-core
+git clone https://github.com/terpnetwork/terp-core.git
+cd terp-core
+git checkout barberry
+make build
+sudo mv $HOME/terp-core/build/terpd $(which terpd)`,
 			goVersion: '1.19.3',
 			gas: '--gas 210000 --fees 200000uthiol',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -234,9 +242,15 @@ sudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)`,
 			peerPort: '23656',
 			seedPort: '23656',
 			installBin:
-				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network.git\ncd realio-network\ngit checkout tags/v0.8.1\nmake install',
-			updHeight: '',
-			newInstallBin: '',
+				'cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network.git\ncd realio-network\ngit checkout tags/v0.8.2\nmake install',
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf realio-network
+git clone https://github.com/realiotech/realio-network.git
+cd realio-network
+git checkout tags/v0.8.2
+make build
+sudo mv $HOME/realio-network/build/realio-networkd $(which realio-networkd)`,
 			goVersion: '1.19.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
@@ -509,11 +523,18 @@ sudo mv $HOME/elys/build/elysd $(which elysd)`,
 rm -rf empowerchain
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain
-git checkout v1.0.0-rc1
+git checkout v1.0.0-rc2
 cd chain
 make install`,
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '0',
+			newInstallBin: `cd $HOME
+rm -rf empowerchain
+git clone https://github.com/EmpowerPlastic/empowerchain
+cd empowerchain
+git checkout v1.0.0-rc2
+cd chain
+make build
+sudo mv $HOME/empowerchain/chain/build/empowerd $(which empowerd)`,
 			goVersion: '1.20.3',
 			gas: '--gas auto --gas-adjustment 1.5',
 			unsafeReset: 'tendermint unsafe-reset-all',
