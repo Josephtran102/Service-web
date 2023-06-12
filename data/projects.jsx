@@ -280,8 +280,14 @@ sudo mv $HOME/realio-network/build/realio-networkd $(which realio-networkd)`,
 			seedPort: '35656',
 			installBin:
 				'cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.4\nmake install',
-			updHeight: '',
-			newInstallBin: '',
+			updHeight: '1190080',
+			newInstallBin: `cd $HOME
+rm -rf uptick
+git clone https://github.com/UptickNetwork/uptick.git
+cd uptick
+git checkout v0.2.8
+make build
+sudo mv $HOME/uptick/build/uptickd $(which uptickd)`,
 			goVersion: '1.19.3',
 			gas: '--gas 250000 --fees 3000000000000000auptick',
 			unsafeReset: 'tendermint unsafe-reset-all',
