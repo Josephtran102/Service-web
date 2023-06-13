@@ -555,6 +555,10 @@ code {
 
 .ant-tabs-tab {
 	padding: 8px 18px 6px !important;
+
+	@media (max-width: 768px) {
+		padding: 6px 12px 5px !important;
+	}
 }
 
 .ant-tabs-nav {
@@ -562,7 +566,7 @@ code {
 }
 
 .ant-tabs-content-holder {
-	@apply bg-white dark:bg-zinc-950/25 p-2 lg:py-5 lg:px-6 rounded lg:rounded-xl;
+	@apply bg-white dark:bg-zinc-950/25 p-2 lg:py-5 lg:px-6 rounded lg:rounded-xl border-2 border-zinc-100 dark:border-zinc-800/80;
 }
 
 #tsparticles {

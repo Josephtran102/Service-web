@@ -11,15 +11,14 @@ import { Context } from '@context/context'
 import { smoothScroll } from '@utils/smoothScroll'
 import { Tabs } from 'antd'
 import { opacityBlock } from '@data/transitions'
-import { useSelector } from 'react-redux'
 import { countApr } from '@utils/updateAPR'
 import CardMain from '@components/CardMain'
 import CardTest from '@components/CardTest'
+import projects from 'data/projects'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
 	const [opacity, setOpacity] = useState(false)
-	const projects = useSelector(state => state.projects)
 	const [aprValues, setAprValues] = useState(null)
 	const [projectsCount, setProjectsCount] = useState(null)
 
@@ -28,7 +27,18 @@ const Home = () => {
 			setOpacity(0)
 		}
 
-		if (document.readyState === 'complete' && projects.mainnet) {
+		Object.keys(projects.mainnet).forEach(async (item, i) => {
+			const name = item
+
+			const apr = await countApr(name)
+
+			setAprValues(prev => ({ ...prev, [name]: apr }))
+		})
+
+		setProjectsCount(prev => ({ ...prev, mainnet: Object.entries(projects.mainnet)?.length }))
+		setProjectsCount(prev => ({ ...prev, testnet: Object.entries(projects.testnet)?.length }))
+
+		if (document.readyState === 'complete') {
 			onPageLoad()
 		} else {
 			window.addEventListener('load', onPageLoad)
@@ -36,18 +46,6 @@ const Home = () => {
 			return () => window.removeEventListener('load', onPageLoad)
 		}
 	}, [])
-
-	useEffect(() => {
-		if (projects.mainnet) {
-			projects.mainnet.forEach(async (item, i) => {
-				const name = projects.mainnet[i].name
-				const apr = await countApr(name)
-				setAprValues(prev => ({ ...prev, [name]: apr }))
-			})
-		}
-		setProjectsCount(prev => ({ ...prev, mainnet: projects.mainnet?.length }))
-		setProjectsCount(prev => ({ ...prev, testnet: projects.testnet?.length }))
-	}, [projects])
 
 	const items = [
 		{
@@ -71,7 +69,6 @@ const Home = () => {
 			label: `Mainnet (${projectsCount?.mainnet})`,
 			children: (
 				<>
-					{/* <h3 className='font-semibold text-xl lg:text-3xl text-zinc-800 dark:text-white/80'>Mainnet 🪙</h3> */}
 					<CardMain projects={projects} aprValues={aprValues} />
 				</>
 			)
@@ -81,7 +78,6 @@ const Home = () => {
 			label: `Testnet (${projectsCount?.testnet})`,
 			children: (
 				<>
-					{/* <h3 className='font-semibold text-xl lg:text-3xl text-zinc-800 dark:text-white/80'>Testnet ⚒️</h3> */}
 					<CardTest />
 				</>
 			)
