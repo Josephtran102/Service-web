@@ -364,7 +364,7 @@
       "bin":"celestia-appd",
       "path":".celestia-app",
       "peerID":"193acd7bf7049b425d7b95c24e02250fce8ad45c",
-      "seedID":"fedea9723696360d429a23792225594779cc7cd7",
+      "seedID":"1c35aced6e0350adcb5e1081fdfe6028614b52a1",
       "peerPort":"11656",
       "seedPort":"11656",
       "installBin":"cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v0.11.1 \ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git",
