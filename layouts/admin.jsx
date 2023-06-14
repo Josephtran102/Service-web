@@ -1,8 +1,9 @@
 import { Layout, Menu, theme } from 'antd'
-import React from 'react'
+import React, { useEffect } from 'react'
 import projects from '@data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
+import axios from 'axios'
 const { Header, Content, Footer, Sider } = Layout
 
 const items1 = ['1', '2', '3'].map(key => ({
@@ -14,6 +15,13 @@ const mainnetData = projects.mainnet
 const testnetData = projects.testnet
 
 const AdminLayout = ({ children }) => {
+	useEffect(() => {
+		axios
+			.get('/api/github/read')
+			.then(res => console.log(res.data))
+			.catch(err => console.log(err))
+	}, [])
+
 	const {
 		token: { colorBgContainer }
 	} = theme.useToken()

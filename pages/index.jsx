@@ -14,7 +14,7 @@ import { opacityBlock } from '@data/transitions'
 import { countApr } from '@utils/updateAPR'
 import CardMain from '@components/CardMain'
 import CardTest from '@components/CardTest'
-import projects from 'data/projects'
+import projects from '@data/projects.json'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
