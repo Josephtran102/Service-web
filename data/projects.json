@@ -540,7 +540,7 @@
       "seedPort":"20656",
       "installBin":"cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout 0.12.1-hf\nmake install",
       "updHeight":"",
-      "newInstallBin":``,
+      "newInstallBin":"",
       "goVersion":"1.20.1",
       "gas":"--gas auto --gas-adjustment 1.5",
       "unsafeReset":"tendermint unsafe-reset-all",
