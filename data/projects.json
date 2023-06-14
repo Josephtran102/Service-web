@@ -363,7 +363,7 @@
       "ecosystem":"cosmos",
       "bin":"celestia-appd",
       "path":".celestia-app",
-      "peerID":"193acd7bf7049b425d7b95c24e02250fce8ad45c",
+      "peerID":"767e8500c577e9237054a7842c7d47228fd6d1e8",
       "seedID":"1c35aced6e0350adcb5e1081fdfe6028614b52a1",
       "peerPort":"11656",
       "seedPort":"11656",
