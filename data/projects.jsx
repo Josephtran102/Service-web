@@ -920,3 +920,5 @@ wget -O $HOME/.zetacored/config/genesis.json https://raw.githubusercontent.com/z
 	]
 }
 export default projects
+
+//123
