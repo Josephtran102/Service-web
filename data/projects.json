@@ -347,7 +347,7 @@
       "minGasPrice":"0.025"
     },
     "celestia":{
-      "chainID":"blockspacerace-0",
+      "chainID":"mocha",
       "imgUrl":"celestia.png",
       "fav":"true",
       "desc":"Celestia is the first modular blockchain network. It is a modular consensus and data network, built to enable anyone to easily deploy their own blockchain with minimal overhead.",
@@ -367,7 +367,7 @@
       "seedID":"fedea9723696360d429a23792225594779cc7cd7",
       "peerPort":"11656",
       "seedPort":"11656",
-      "installBin":"cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v0.13.2 \ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git",
+      "installBin":"cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v0.11.1 \ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git",
       "updHeight":"",
       "newInstallBin":"",
       "goVersion":"1.20.1",
