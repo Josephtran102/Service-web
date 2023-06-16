@@ -162,7 +162,8 @@ s%:8080%:\${${variable}_PORT}080%g;
 s%:9090%:\${${variable}_PORT}090%g;
 s%:9091%:\${${variable}_PORT}091%g;
 s%:8545%:\${${variable}_PORT}545%g;
-s%:8546%:\${${variable}_PORT}546%g" $HOME/${path}/config/app.toml
+s%:8546%:\${${variable}_PORT}546%g;
+s%:6065%:\${${variable}_PORT}065%g" $HOME/${path}/config/app.toml
 
 
 # set custom ports in config.toml file
