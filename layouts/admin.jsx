@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import projects from '@data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
-import axios from 'axios'
 const { Header, Content, Footer, Sider } = Layout
 
 const items1 = ['1', '2', '3'].map(key => ({
@@ -15,13 +14,6 @@ const mainnetData = projects.mainnet
 const testnetData = projects.testnet
 
 const AdminLayout = ({ children }) => {
-	useEffect(() => {
-		axios
-			.get('/api/github/read')
-			.then(res => console.log(res.data))
-			.catch(err => console.log(err))
-	}, [])
-
 	const {
 		token: { colorBgContainer }
 	} = theme.useToken()
@@ -56,9 +48,7 @@ const AdminLayout = ({ children }) => {
 					>
 						<div className='flex justify-between'>
 							<div>
-								<h2 id='mainnets' className='font-bold my-2 text-xl'>
-									Mainnets
-								</h2>
+								<h2 className='font-semibold py-3  text-xl '>Mainnet</h2>
 								<div>
 									{Object.keys(mainnetData).map(item => {
 										const name = mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
@@ -84,9 +74,7 @@ const AdminLayout = ({ children }) => {
 							</div>
 
 							<div>
-								<h2 className='font-bold my-2 text-xl' id='testnets'>
-									Testnets
-								</h2>
+								<h2 className='font-semibold py-3 text-xl'>Testnet</h2>
 								<div>
 									{Object.keys(testnetData).map(item => {
 										const name = testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
