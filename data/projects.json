@@ -26,7 +26,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "ARKH",
-      "website": "https://www.arkhadian.com"
+      "website": "https://www.arkhadian.com",
+      "test": "test"
     },
     "blastapi": {
       "chainID": "",
