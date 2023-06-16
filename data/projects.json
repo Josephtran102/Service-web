@@ -27,12 +27,6 @@
       "updHeight": "",
       "variable": "ARKH",
       "website": "https://www.arkhadian.com",
-      "userFields": [
-        {
-          "name": "test",
-          "value": "test"
-        }
-      ]
     },
     "blastapi": {
       "chainID": "",
