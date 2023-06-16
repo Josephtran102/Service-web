@@ -14,7 +14,6 @@
       "installBin": "cd $HOME\nrm -rf arkh-blockchain\ngit clone https://github.com/vincadian/arkh-blockchain\ncd arkh-blockchain\ngit checkout v2.0.0\ngo build -o arkhd ./cmd/arkhd\nmv arkhd $HOME/go/bin",
       "minGasPrice": "0.0",
       "newInstallBin": "",
-      "offValDoc": "",
       "path": ".arkh",
       "peerID": "f3c163dc9c2649fe203bd87afd101869952e685a",
       "peerPort": "27656",
