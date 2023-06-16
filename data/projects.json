@@ -717,7 +717,7 @@
       "minGasPrice":"0.0"
     },
     "uptick":{
-      "chainID":"uptick_7000-2",
+      "chainID":"origin_1170-1",
       "imgUrl":"uptick.jpg",
       "fav":"true",
       "desc":"The Business Grade Multi-Chain NFT Infrastructure for Web 3.0",
@@ -737,7 +737,7 @@
       "seedID":"2c952455a0e425081b54855091ab84c1fe73c4bc",
       "peerPort":"10656",
       "seedPort":"10656",
-      "installBin":"cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.5\nmake install",
+      "installBin":"cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.7-gon\nmake install",
       "updHeight":"",
       "newInstallBin":"",
       "goVersion":"1.19.3",
