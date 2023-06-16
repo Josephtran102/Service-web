@@ -75,7 +75,7 @@ const Card = ({ projects, aprValues }) => {
 								Delegate funds
 							</a>
 
-							{projects.mainnet[item].fav === true ? (
+							{projects.mainnet[item].fav === 'true' ? (
 								<div className={styles.card__star}>
 									<StarFilled />
 								</div>
