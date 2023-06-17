@@ -374,6 +374,18 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0"
     },
+    "chainflip": {
+      "explorer": "https://blocks-perseverance.chainflip.io/",
+      "website": "https://chainflip.io/",
+      "offValDoc": "https://docs.chainflip.io/perseverance-validator-documentation/",
+      "imgUrl": "chainflip.png",
+      "ecosystem": "false",
+      "fav": "true",
+      "goVersion": "1.19.3",
+      "gas": "--gas auto --gas-adjustment 1.5",
+      "unsafeReset": "tendermint unsafe-reset-all",
+      "minGasPrice": "0.0"
+    },
     "defund": {
       "chainID": "orbit-alpha-1",
       "imgUrl": "defund.png",
