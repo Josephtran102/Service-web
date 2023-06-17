@@ -603,6 +603,8 @@
     },
     "taiko": {
       "explorer": "https://explorer.test.taiko.xyz/",
+      "website": "https://taiko.xyz/",
+      "offValDoc": "https://taiko.xyz/docs/guides/run-a-node",
       "imgUrl": "taiko.png",
       "ecosystem": "false",
       "fav": "true",
