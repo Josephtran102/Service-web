@@ -13,22 +13,6 @@ const testnetData = projects.testnet
 const AdminLayout = ({ children }) => {
 	const router = useRouter()
 
-	useEffect(() => {
-		const verifyAdmin = async () => {
-			try {
-				const res = await axios.get('/api/verify-admin')
-				if (!res.data.isAdmin) {
-					router.push('/login')
-				}
-			} catch (err) {
-				console.log(err)
-				router.push('/login')
-			}
-		}
-
-		verifyAdmin()
-	}, [])
-
 	const {
 		token: { colorBgContainer }
 	} = theme.useToken()
@@ -160,3 +144,21 @@ const AdminLayout = ({ children }) => {
 export const getAdminLayout = page => <AdminLayout>{page}</AdminLayout>
 
 export default AdminLayout
+
+export async function getServerSideProps(context) {
+	const sessionToken = context.req.cookies.session
+	const res = await axios.get('/api/verify-admin', { headers: { Authorization: sessionToken } })
+
+	if (!res.data.isAdmin) {
+		return {
+			redirect: {
+				destination: '/login',
+				permanent: false
+			}
+		}
+	}
+
+	return {
+		props: {}
+	}
+}
