@@ -54,7 +54,7 @@ const Project = ({ project }) => {
 		const newValues = { ...values, ...userFields }
 		delete newValues.userFields
 
-		updateProject('mainnet', id, newValues)
+		updateProject('testnet', id, newValues)
 
 		try {
 			const response = await axios.post('/api/github/update', projectsRef.current)
