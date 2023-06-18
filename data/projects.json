@@ -339,11 +339,13 @@
       "seedID": "42c4a78f39935df1c20b51c4b0d0a21db8f01c88",
       "seedPort": "40656",
       "snapMaxSize": "10",
+      "test": "test",
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "CASCADIA",
       "website": "https://www.cascadia.foundation",
-      "test": "test"
+      "test1": "test1",
+      "test2": "twst2"
     },
     "celestia": {
       "chainID": "mocha",
