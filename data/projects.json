@@ -342,7 +342,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "CASCADIA",
-      "website": "https://www.cascadia.foundation"
+      "website": "https://www.cascadia.foundation",
+      "test": "test"
     },
     "celestia": {
       "chainID": "mocha",
