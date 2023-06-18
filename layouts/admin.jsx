@@ -3,17 +3,32 @@ import React, { useEffect } from 'react'
 import projects from '@data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import axios from 'axios'
 const { Header, Content, Footer, Sider } = Layout
-
-const items1 = ['1', '2', '3'].map(key => ({
-	key,
-	label: `nav ${key}`
-}))
 
 const mainnetData = projects.mainnet
 const testnetData = projects.testnet
 
 const AdminLayout = ({ children }) => {
+	const router = useRouter()
+
+	useEffect(() => {
+		const verifyAdmin = async () => {
+			try {
+				const res = await axios.get('/api/verify-admin')
+				if (!res.data.isAdmin) {
+					router.push('/login')
+				}
+			} catch (err) {
+				console.log(err)
+				router.push('/login')
+			}
+		}
+
+		verifyAdmin()
+	})
+
 	const {
 		token: { colorBgContainer }
 	} = theme.useToken()
@@ -24,9 +39,30 @@ const AdminLayout = ({ children }) => {
 					display: 'flex',
 					alignItems: 'center'
 				}}
+				className='flex gap-4 bg-white dark:bg-zinc-800'
 			>
-				<div className='demo-logo' />
-				<Menu theme='dark' mode='horizontal' defaultSelectedKeys={['2']} items={items1} />
+				<Link href='/'>
+					<Image
+						src='/logo.svg'
+						alt='logo'
+						width={180}
+						height={55}
+						priority={true}
+						className='block dark:hidden'
+					/>
+					<Image
+						src='/darkLogo.svg'
+						alt='logo'
+						width={180}
+						height={55}
+						priority={true}
+						className='hidden dark:block'
+					/>
+				</Link>
+
+				<Link href='/admin/upload' className='text-sky-500 ml-4'>
+					Upload Images
+				</Link>
 			</Header>
 			<Content
 				style={{

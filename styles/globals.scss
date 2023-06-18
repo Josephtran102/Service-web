@@ -577,3 +577,10 @@ code {
 	height: 100%;
 	z-index: -1;
 }
+
+.ant-col {
+	label {
+		min-width: 110px !important;
+		margin-left: 10px;
+	}
+}
