@@ -1,6 +1,6 @@
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
 import { getAdminLayout } from '@layouts/admin'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { DeleteOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import { Button, Form, Input, Space, Skeleton, Modal } from 'antd'
@@ -12,17 +12,31 @@ const { TextArea } = Input
 const Project = ({ project }) => {
 	const router = useRouter()
 	const [currentProject, setCurrentProject] = useState()
-	const projectsRef = useRef()
+	const [projects, setProjects] = useState()
 	const [loading, setLoading] = useState(true)
 	const id = project.id
 	const [form] = Form.useForm()
 
 	useEffect(() => {
+		const verifyAdmin = async () => {
+			try {
+				const res = await axios.get('/api/verify-admin')
+				if (!res.data.isAdmin) {
+					router.push('/login')
+				}
+			} catch (err) {
+				console.log(err)
+				router.push('/login')
+			}
+		}
+
+		verifyAdmin()
+
 		const fetchData = async () => {
 			try {
 				const response = await axios.get('/api/github/read')
 				setCurrentProject(response.data[type][id])
-				projectsRef.current = response.data
+				setProjects(response.data)
 				form.setFieldsValue(response.data[type][id])
 				setLoading(false)
 			} catch (err) {
@@ -34,13 +48,15 @@ const Project = ({ project }) => {
 	}, [router])
 
 	const updateProject = (type, projectName, newData) => {
-		let updatedProjects = { ...projectsRef.current }
-		let updatedTypeProjects = { ...updatedProjects[type] }
+		setProjects(prevProjects => {
+			let updatedProjects = { ...prevProjects }
+			let updatedTypeProjects = { ...updatedProjects[type] }
 
-		updatedTypeProjects[projectName] = newData
-		updatedProjects[type] = updatedTypeProjects
+			updatedTypeProjects[projectName] = newData
+			updatedProjects[type] = updatedTypeProjects
 
-		projectsRef.current = updatedProjects
+			return updatedProjects
+		})
 	}
 
 	const onFinish = async values => {
@@ -57,7 +73,8 @@ const Project = ({ project }) => {
 		updateProject('mainnet', id, newValues)
 
 		try {
-			const response = await axios.post('/api/github/update', projectsRef.current)
+			console.log(projects) // remove this if you don't need to log it.
+			const response = await axios.post('/api/github/update', projects)
 
 			if (response.status === 200) {
 				alert('Update successful')

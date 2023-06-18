@@ -144,21 +144,3 @@ const AdminLayout = ({ children }) => {
 export const getAdminLayout = page => <AdminLayout>{page}</AdminLayout>
 
 export default AdminLayout
-
-export async function getServerSideProps(context) {
-	const sessionToken = context.req.cookies.session
-	const res = await axios.get('/api/verify-admin', { headers: { Authorization: sessionToken } })
-
-	if (!res.data.isAdmin) {
-		return {
-			redirect: {
-				destination: '/login',
-				permanent: false
-			}
-		}
-	}
-
-	return {
-		props: {}
-	}
-}

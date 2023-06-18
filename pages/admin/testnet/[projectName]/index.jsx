@@ -18,6 +18,20 @@ const Project = ({ project }) => {
 	const [form] = Form.useForm()
 
 	useEffect(() => {
+		const verifyAdmin = async () => {
+			try {
+				const res = await axios.get('/api/verify-admin')
+				if (!res.data.isAdmin) {
+					router.push('/login')
+				}
+			} catch (err) {
+				console.log(err)
+				router.push('/login')
+			}
+		}
+
+		verifyAdmin()
+
 		const fetchData = async () => {
 			try {
 				const response = await axios.get('/api/github/read')
