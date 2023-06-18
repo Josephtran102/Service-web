@@ -1,6 +1,6 @@
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
 import { getAdminLayout } from '@layouts/admin'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import { DeleteOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import { Button, Form, Input, Space, Skeleton, Modal } from 'antd'
@@ -12,7 +12,7 @@ const { TextArea } = Input
 const Project = ({ project }) => {
 	const router = useRouter()
 	const [currentProject, setCurrentProject] = useState()
-	const [projects, setProjects] = useState()
+	const projectsRef = useRef()
 	const [loading, setLoading] = useState(true)
 	const id = project.id
 	const [form] = Form.useForm()
@@ -22,7 +22,7 @@ const Project = ({ project }) => {
 			try {
 				const response = await axios.get('/api/github/read')
 				setCurrentProject(response.data[type][id])
-				setProjects(response.data)
+				projectsRef.current = response.data
 				form.setFieldsValue(response.data[type][id])
 				setLoading(false)
 			} catch (err) {
@@ -34,15 +34,13 @@ const Project = ({ project }) => {
 	}, [router])
 
 	const updateProject = (type, projectName, newData) => {
-		setProjects(prevProjects => {
-			let updatedProjects = { ...prevProjects }
-			let updatedTypeProjects = { ...updatedProjects[type] }
+		let updatedProjects = { ...projectsRef.current }
+		let updatedTypeProjects = { ...updatedProjects[type] }
 
-			updatedTypeProjects[projectName] = newData
-			updatedProjects[type] = updatedTypeProjects
+		updatedTypeProjects[projectName] = newData
+		updatedProjects[type] = updatedTypeProjects
 
-			return updatedProjects
-		})
+		projectsRef.current = updatedProjects
 	}
 
 	const onFinish = async values => {
@@ -55,14 +53,11 @@ const Project = ({ project }) => {
 
 		const newValues = { ...values, ...userFields }
 		delete newValues.userFields
-		updateProject('mainnet', id, newValues)
-		sendData()
-	}
 
-	const sendData = async () => {
+		updateProject('mainnet', id, newValues)
+
 		try {
-			console.log(projects)
-			const response = await axios.post('/api/github/update', projects)
+			const response = await axios.post('/api/github/update', projectsRef.current)
 
 			if (response.status === 200) {
 				alert('Update successful')

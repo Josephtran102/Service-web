@@ -27,7 +27,7 @@ const AdminLayout = ({ children }) => {
 		}
 
 		verifyAdmin()
-	})
+	}, [])
 
 	const {
 		token: { colorBgContainer }
