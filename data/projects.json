@@ -255,7 +255,7 @@
       "gas": "--gas 250000 --fees 3000000000000000auptick",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0"
-    }
+    },
   },
   "testnet": {
     "andromeda": {
