@@ -33,6 +33,7 @@
 		"react-particles": "^2.10.1",
 		"react-syntax-highlighter": "^15.5.0",
 		"sass": "^1.62.1",
+		"sharp": "^0.32.1",
 		"tsparticles": "^2.10.1"
 	},
 	"devDependencies": {

@@ -8,7 +8,7 @@ import { fieldNames } from '@data/uniqueFieldNames'
 import cosmosFields from '@data/cosmosFields.json'
 import nonCosmosFields from '@data/nonCosmosFields.json'
 
-const type = 'mainnet'
+const type = 'testnet'
 const { TextArea } = Input
 
 const Project = () => {
@@ -106,7 +106,7 @@ const Project = () => {
 					<p className='mt-2 mb-6'>
 						<span className='text-lg '>1. Upload image: </span>
 						<a
-							href='https://github.com/itrocket-am/itrocket/upload/main/public/mainnet'
+							href='https://github.com/itrocket-am/itrocket/upload/main/public/testnet'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='flex gap-2 mt-2 ml-1'
@@ -114,7 +114,7 @@ const Project = () => {
 							<span className='text-sky-500'>
 								<UploadOutlined />
 							</span>
-							Upload image to<span className='text-indigo-500'>mainnet</span> folder
+							Upload image to<span className='text-indigo-500'>testnet</span> folder
 						</a>
 					</p>
 
