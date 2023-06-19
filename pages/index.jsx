@@ -29,9 +29,7 @@ const Home = () => {
 
 		Object.keys(projects.mainnet).forEach(async (item, i) => {
 			const name = item
-
 			const apr = await countApr(name)
-
 			setAprValues(prev => ({ ...prev, [name]: apr }))
 		})
 

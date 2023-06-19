@@ -56,7 +56,6 @@
 	border: 1px solid #8181816a;
 	z-index: 10011;
 	transition: all 0.15s;
-	opacity: 0;
 	cursor: pointer;
 
 	svg {
@@ -64,12 +63,7 @@
 		height: 15px;
 	}
 
-	@media (max-width: 768px) {
-		opacity: 1;
-	}
-
 	&:hover {
 		border-color: #8c8c8cb3;
-		opacity: 1 !important;
 	}
 }

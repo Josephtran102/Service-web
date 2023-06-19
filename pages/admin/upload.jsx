@@ -29,6 +29,50 @@ const UploadComponent = () => {
 		</div>
 	)
 }
+
+export async function getServerSideProps(context) {
+	try {
+		const { req } = context
+		const cookies = cookie.parse(req.headers.cookie || '')
+		const token = cookies['token']
+
+		if (!token) {
+			console.log('no token')
+			return {
+				redirect: {
+					destination: '/login',
+					permanent: false
+				}
+			}
+		}
+
+		const user = verifyToken(token)
+		const currentUser = await prisma.user.findUnique({
+			where: { id: user.id }
+		})
+
+		if (currentUser.role !== 'admin') {
+			return {
+				redirect: {
+					destination: '/',
+					permanent: false
+				}
+			}
+		}
+
+		return {
+			props: {}
+		}
+	} catch (err) {
+		return {
+			redirect: {
+				destination: '/login',
+				permanent: false
+			}
+		}
+	}
+}
+
 UploadComponent.getLayout = getAdminLayout
 
 export default UploadComponent

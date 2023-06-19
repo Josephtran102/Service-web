@@ -188,7 +188,7 @@ sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -
 							<Input
 								className={styles.input}
 								placeholder='test'
-								style={{ minWidth: '250px' }}
+								style={{ minWidth: '220px' }}
 								onChange={e => setMoniker(e.target.value)}
 							/>
 						</Space>
@@ -197,7 +197,7 @@ sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -
 							<Input
 								className={styles.input}
 								placeholder='wallet'
-								style={{ minWidth: '200px' }}
+								style={{ minWidth: '220px' }}
 								onChange={e => setWallet(e.target.value)}
 							/>
 						</Space>
@@ -316,7 +316,10 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 					<b className={styles.bold}>pruning: </b> {pruning} {' | '}
 					<b className={styles.bold}>indexer: </b> {indexer}
 				</p>
-				<CodeSnippet theme={theme} code={`source <(curl -s https://itrocket.net/api/${type}/${name}/autoinstall/)`} />
+				<CodeSnippet
+					theme={theme}
+					code={`source <(curl -s https://itrocket.net/api/${type}/${name}/autoinstall/)`}
+				/>
 				<h2 id='create-wallet'>Create wallet 💰</h2>
 				<CodeSnippet
 					theme={theme}
@@ -344,47 +347,61 @@ ${bin} query bank balances $WALLET_ADDRESS
 				<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 					<Space direction='vertical'>
 						<span>Moniker</span>
-						<Input style={{ minWidth: '250px' }} placeholder={'$MONIKER'} onChange={e => setMoniker(e.target.value)} />
+						<Input
+							style={{ minWidth: '200px' }}
+							placeholder={'$MONIKER'}
+							onChange={e => setMoniker(e.target.value)}
+						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Identity</span>
-						<Input style={{ minWidth: '250px' }} placeholder={'Identity'} onChange={e => setIdentity(e.target.value)} />
+						<Input
+							style={{ minWidth: '200px' }}
+							placeholder={'Identity'}
+							onChange={e => setIdentity(e.target.value)}
+						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Details</span>
-						<Input style={{ minWidth: '300px' }} defaultValue={details} onChange={e => setDetails(e.target.value)} />
+						<Input
+							style={{ minWidth: '250px' }}
+							defaultValue={details}
+							onChange={e => setDetails(e.target.value)}
+						/>
 					</Space>
 					<Space direction='vertical'>
 						<span>Amount, {denom}</span>
 						<Input
-							style={{ minWidth: '140px' }}
+							style={{ minWidth: '100px' }}
 							defaultValue={amountCreate}
 							onChange={e => setAmountCreate(e.target.value)}
 						/>
 					</Space>
-					<Space direction='vertical'>
-						<span>Commission rate</span>
-						<Input
-							style={{ minWidth: '50px' }}
-							defaultValue={commissionRate}
-							onChange={e => setCommissionRate(e.target.value)}
-						/>
-					</Space>
-					<Space direction='vertical'>
-						<span>Commission max rate</span>
-						<Input
-							style={{ minWidth: '50px' }}
-							defaultValue={commissionMaxRate}
-							onChange={e => setCommissionMaxRate(e.target.value)}
-						/>
-					</Space>
-					<Space direction='vertical'>
-						<span>Commission max change rate</span>
-						<Input
-							style={{ minWidth: '50px' }}
-							defaultValue={commissionMaxChange}
-							onChange={e => setCommissionMaxChange(e.target.value)}
-						/>
+					<Space style={{ gap: '15px', display: 'flex', flexWrap: 'wrap' }}>
+						<Space direction='vertical'>
+							<span>Commission rate</span>
+							<Input
+								style={{ minWidth: '40px' }}
+								defaultValue={commissionRate}
+								onChange={e => setCommissionRate(e.target.value)}
+							/>
+						</Space>
+						<Space direction='vertical'>
+							<span>Commission max rate</span>
+							<Input
+								style={{ minWidth: '40px' }}
+								defaultValue={commissionMaxRate}
+								onChange={e => setCommissionMaxRate(e.target.value)}
+							/>
+						</Space>
+						<Space direction='vertical'>
+							<span>Commission max change rate</span>
+							<Input
+								style={{ minWidth: '40px' }}
+								defaultValue={commissionMaxChange}
+								onChange={e => setCommissionMaxChange(e.target.value)}
+							/>
+						</Space>
 					</Space>
 				</Space>
 				<div className='flex flex-col gap-y-2'>

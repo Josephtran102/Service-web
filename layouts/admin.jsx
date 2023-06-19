@@ -44,8 +44,14 @@ const AdminLayout = ({ children }) => {
 					/>
 				</Link>
 
-				<Link href='/admin/upload' className='text-sky-500 ml-4'>
+				<Link href='/admin/upload' className='ml-4 p-1'>
 					Upload Images
+				</Link>
+				<Link href='/admin/mainnet/create' className='ml-4  p-1'>
+					Add Mainnet
+				</Link>
+				<Link href='/admin/testnet/create' className='ml-4 p-1'>
+					Add Testnet
 				</Link>
 			</Header>
 			<Content

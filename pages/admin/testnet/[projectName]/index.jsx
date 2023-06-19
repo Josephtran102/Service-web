@@ -129,25 +129,24 @@ const Project = ({ project }) => {
 					className='min-w-[70vw] lg:min-w-[45vw] bg-white dark:bg-zinc-900 p-3 md:p-7 rounded-xl border-solid border-[1px]  border-slate-200 hover:border-slate-300 transition-all'
 				>
 					{Object.entries(currentProject)
-						.sort()
-						.map(([field, value]) => (
-							<Space
-								key={field}
-								style={{ display: 'flex', marginBottom: 3, width: '100%', gap: '12px' }}
-								align='start'
-							>
-								<Form.Item label={field} name={field} key={field}>
-									<TextArea
-										autoSize={{
-											minRows: 1,
-											maxRows: 6
-										}}
-										className='min-w-[50vw] lg:min-w-[40vw]'
-									/>
-								</Form.Item>
-								<Button onClick={() => removeField(field)} icon={<DeleteOutlined />}></Button>
-							</Space>
-						))}
+					.map(([field, value]) => (
+						<Space
+							key={field}
+							style={{ display: 'flex', marginBottom: 2, width: '100%', gap: '12px' }}
+							align='start'
+						>
+							<Form.Item label={field} name={field} key={field}>
+								<TextArea
+									autoSize={{
+										minRows: 1,
+										maxRows: 6
+									}}
+									className='min-w-[50vw] lg:min-w-[40vw]'
+								/>
+							</Form.Item>
+							<Button onClick={() => removeField(field)} icon={<DeleteOutlined />}></Button>
+						</Space>
+					))}
 					<Form.List name='userFields'>
 						{(fields, { add, remove }) => (
 							<>
