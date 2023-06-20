@@ -4,22 +4,22 @@ import projects from 'data/projects'
 import prettyMilliseconds from 'pretty-ms'
 import styles from '@styles/Services.module.scss'
 import CodeSnippet from '@components/UI/CodeSnippet.jsx'
-import { fetchNetInfo, fetchSnap } from 'utils/fetchProject.js'
+import { fetchNetInfo, fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 import Head from 'next/head'
 import { Typography } from 'antd'
 import AnimatedSection from './AnimatedSection'
+import useNetInfo from 'hooks/useNetInfo'
 const { Paragraph } = Typography
 
 const ProjectData = ({ name, type }) => {
 	const project = projects[type][name]
+	const { livePeers, livePeersCounter } = useNetInfo(name, type)
 	const explorer = useRef()
 	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset, chainID, ecosystem, evmRPC } = project
 	explorer.current = project.explorer
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
-	const [livePeers, setLivePeers] = useState('')
-	const [livePeersCounter, setLivePeersCounter] = useState(null)
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
 	const [snapHeight, setSnapHeight] = useState(null)
@@ -30,43 +30,6 @@ const ProjectData = ({ name, type }) => {
 	const LIVE_PEERS = peerID ? `"${PEERS}"` : `"${livePeers.slice(1)}"`
 	const SEEDS = seedID ? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}` : ''
 	const gRPC = `${name}-${type}-grpc.itrocket.net:${peerPort ? peerPort.slice(0, 2) : ''}090`
-
-	const netInfo = () => {
-		fetchNetInfo(name, type)
-			.then(info => {
-				const peers = info.peers
-				const letters = /[a-zA-Z]/
-				const livePeersArr = []
-
-				peers.map(peer => {
-					if (peer.is_outbound === true) {
-						let ip = peer.remote_ip
-						const id = peer.node_info.id
-						const listen_addr = peer.node_info.listen_addr
-
-						if (letters.test(ip)) {
-							ip = `[${ip}]`
-						}
-
-						let i = listen_addr.length - 1
-						let port = ''
-
-						while (listen_addr[i] !== ':') {
-							port += listen_addr[i]
-							i--
-						}
-						port = port.split('').reverse().join('')
-						livePeersArr.push(`${id}@${ip}:${port}`)
-					}
-				})
-				livePeersArr.unshift('')
-				setLivePeersCounter(livePeersArr.length)
-				setLivePeers(livePeersArr.join())
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
 
 	const snap = () => {
 		fetchSnap(name, type)
@@ -90,13 +53,11 @@ const ProjectData = ({ name, type }) => {
 			})
 	}
 
-	const fetchData = () => {
-		netInfo()
+	const fetchData = async () => {
 		snap()
 	}
 
 	useEffect(() => {
-		// updateAPR()
 		snap()
 		fetchData()
 		const intervalId = setInterval(fetchData, 10000)

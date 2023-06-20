@@ -1,16 +1,18 @@
 import styles from '@styles/Services.module.scss'
 import projects from 'data/projects'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import { Context } from '@context/context'
-import { fetchNetInfo, fetchSnap, fetchStatus } from '@utils/fetchProject.js'
+import { fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 import CodeSnippet from './UI/CodeSnippet'
 import { Input, Space } from 'antd'
 import AnimatedSection from './AnimatedSection'
+import useNetInfo from 'hooks/useNetInfo'
 
 const Installation = props => {
 	const name = props.name
 	const type = props.type
+	const { livePeers } = useNetInfo(name, type)
 	const project = projects[type][name]
 	const explorer = useRef()
 	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
@@ -37,7 +39,6 @@ const Installation = props => {
 	explorer.current = project.explorer
 	const { theme } = useContext(Context)
 	const [isActive, setIsActive] = useState(styles.pending)
-	const [livePeers, setLivePeers] = useState('')
 	const [installBin, setInstallBin] = useState(project.installBin)
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
@@ -82,41 +83,7 @@ const Installation = props => {
 				setIsActive(styles.inactive)
 			})
 	}
-	const netInfo = () => {
-		fetchNetInfo(name, type)
-			.then(info => {
-				const peers = info.peers
-				const letters = /[a-zA-Z]/
 
-				peers.map(peer => {
-					if (peer.is_outbound === true) {
-						let ip = peer.remote_ip
-						const id = peer.node_info.id
-						const listen_addr = peer.node_info.listen_addr
-
-						if (letters.test(ip)) {
-							ip = `[${ip}]`
-						}
-
-						let i = listen_addr.length - 1
-						let port = ''
-
-						while (listen_addr[i] !== ':') {
-							port += listen_addr[i]
-							i--
-						}
-						port = port.split('').reverse().join('')
-						livePeers.push(`${id}@${ip}:${port}`)
-					}
-				})
-				livePeers.unshift('')
-				setLivePeersCounter(livePeers.length)
-				setLivePeers(livePeers.join())
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
 	const snap = () => {
 		fetchSnap(name, type)
 			.then(data => {
@@ -130,7 +97,6 @@ const Installation = props => {
 
 	const fetchData = () => {
 		status()
-		netInfo()
 		snap()
 	}
 
@@ -144,7 +110,7 @@ const Installation = props => {
 		}
 	}, [])
 
-	const handlePort = e => {
+	const handlePort = useCallback(e => {
 		let onlyNumbers = /^\d+$/
 		if (onlyNumbers.test(e.target.value) || e.target.value === '') {
 			setPort(e.target.value)
@@ -152,7 +118,7 @@ const Installation = props => {
 		} else {
 			setInputStatus('error')
 		}
-	}
+	}, [])
 
 	return (
 		<AnimatedSection>

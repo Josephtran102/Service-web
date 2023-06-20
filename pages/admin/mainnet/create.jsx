@@ -7,13 +7,13 @@ import { useRouter } from 'next/router'
 import { fieldNames } from '@data/uniqueFieldNames'
 import cosmosFields from '@data/cosmosFields.json'
 import nonCosmosFields from '@data/nonCosmosFields.json'
+import { getFreePort } from '@utils/projectUtils'
 
 const type = 'mainnet'
 const { TextArea } = Input
 
 const Project = () => {
 	const router = useRouter()
-	const [currentProject, setCurrentProject] = useState()
 	const [id, setId] = useState()
 	const [fields, setFields] = useState()
 	const projectsRef = useRef()
@@ -40,6 +40,9 @@ const Project = () => {
 				projectsRef.current = response.data
 				setFields(cosmosFields)
 				form.setFieldsValue(cosmosFields)
+				form.setFieldsValue({
+					port: getFreePort()
+				})
 				setLoading(false)
 			} catch (err) {
 				console.log(err)
@@ -94,6 +97,9 @@ const Project = () => {
 		} else {
 			form.setFieldsValue(cosmosFields)
 			setFields(cosmosFields)
+			form.setFieldsValue({
+				port: getFreePort()
+			})
 		}
 	}
 
@@ -166,7 +172,7 @@ const Project = () => {
 									<Button onClick={() => removeField(field)} icon={<DeleteOutlined />}></Button>
 								</Space>
 							))}
-						<p className='mb-4 text-lg'>3. Add fields:</p>
+						<p className='mb-4 text-lg'>4. Add fields:</p>
 						<Form.List name='userFields'>
 							{(fields, { add, remove }) => (
 								<>

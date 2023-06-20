@@ -9,9 +9,8 @@ import { currentProject } from 'utils/currentProjectByURL'
 import projects from 'data/projects'
 import { RetweetOutlined, SearchOutlined } from '@ant-design/icons'
 import { useRouter } from 'next/router'
-import { Modal, Segmented } from 'antd'
-import Link from 'next/link'
-import Image from 'next/image'
+import { Segmented } from 'antd'
+import ProjectsModal from './ProjectsModal'
 
 export default function Dashboard(props) {
 	const { theme, toggleTheme } = useContext(Context)
@@ -27,19 +26,6 @@ export default function Dashboard(props) {
 	const [ecosystem, setEcosystem] = useState(null)
 	const curProjectName = useRef()
 	const curProjectType = useRef()
-	const [isModalOpen, setIsModalOpen] = useState(false)
-	const mainnetData = projects.mainnet
-	const testnetData = projects.testnet
-
-	const showModal = () => {
-		setIsModalOpen(true)
-	}
-	const handleOk = () => {
-		setIsModalOpen(false)
-	}
-	const handleCancel = () => {
-		setIsModalOpen(false)
-	}
 
 	const status = (name, type, isCurrent) => {
 		fetchStatus(name, type)
@@ -107,89 +93,8 @@ export default function Dashboard(props) {
 		router.push(href)
 	}
 
-	const handleLinkClick = e => {
-		e.preventDefault()
-		setIsModalOpen(false)
-		window.location.replace(e.currentTarget.href)
-	}
-
 	return (
 		<div style={{ opacity: opacity }}>
-			<Modal
-				centered
-				open={isModalOpen}
-				onOk={handleOk}
-				onCancel={handleCancel}
-				okButtonProps={{ style: { display: 'none' } }}
-				cancelButtonProps={{ style: { display: 'none' } }}
-				style={{
-					minWidth: '70%'
-				}}
-			>
-				<div className={styles.mainColumn} style={{ border: '0px', boxShadow: 'none' }}>
-					<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>
-						Mainnets
-					</h2>
-					<div className={styles.mainnetColumn}>
-						{Object.keys(mainnetData).map(item => {
-							const name = mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
-							const serviceURL = '/services/mainnet/' + name.toLowerCase()
-							const isCurrent =
-								currentProject().name === name.toLowerCase() && currentProject().type == 'mainnet'
-									? true
-									: false
-
-							return (
-								<Link
-									href={serviceURL}
-									className={styles.chain__wrapper}
-									onClick={handleLinkClick}
-									key={name}
-								>
-									<Image
-										src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
-										alt='project logo'
-										width='25'
-										height='25'
-									/>
-									{name}
-								</Link>
-							)
-						})}
-					</div>
-					<br />
-					<h2 style={{ marginTop: '0', paddingTop: '5px' }} id='testnets'>
-						Testnets
-					</h2>
-					<div className={styles.testnetColumn}>
-						{Object.keys(testnetData).map(item => {
-							const name = testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
-							const serviceURL = '/services/testnet/' + name.toLowerCase()
-							const isCurrent =
-								currentProject().name === name.toLowerCase() && currentProject().type == 'testnet'
-									? true
-									: false
-
-							return (
-								<Link
-									href={serviceURL}
-									className={styles.chain__wrapper}
-									onClick={handleLinkClick}
-									key={name}
-								>
-									<Image
-										src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
-										alt='project logo'
-										width='25'
-										height='25'
-									/>
-									{name}
-								</Link>
-							)
-						})}
-					</div>
-				</div>
-			</Modal>
 			<Header />
 
 			<div className={styles.container}>
@@ -200,12 +105,7 @@ export default function Dashboard(props) {
 						style={{ backgroundColor: theme === 'light' ? '#fff' : '#171717' }}
 					>
 						<div className={styles.stats}>
-							<div className={styles.chain__wrapper} onClick={showModal}>
-								<span className='flex items-center gap-4 select-none'>
-									<b className={styles.bold}>{name.charAt(0).toUpperCase() + name.slice(1)}</b>
-									<RetweetOutlined />
-								</span>
-							</div>
+							<ProjectsModal name={name} type='services' />
 
 							<span>
 								<b className={styles.bold}>Chain ID: </b>
@@ -215,8 +115,7 @@ export default function Dashboard(props) {
 								<b className={styles.bold}>Block Height: </b> {blockHeight}{' '}
 							</span>
 							<span>
-								<b className={styles.bold}>RPC Status:</b>{' '}
-								<span className={`${styles.dot} ${isActive}`} />
+								<b className={styles.bold}>RPC Status:</b> <span className={`${styles.dot} ${isActive}`} />
 							</span>
 							<span>
 								{explorer === undefined ? (
