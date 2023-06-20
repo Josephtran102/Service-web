@@ -1,32 +1,16 @@
-import { Layout, Menu, theme } from 'antd'
-import React, { useEffect } from 'react'
 import projects from '@data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import axios from 'axios'
 import ProjectsModal from '@components/ProjectsModal'
-const { Header, Content, Footer, Sider } = Layout
 
 const mainnetData = projects.mainnet
 const testnetData = projects.testnet
 
 const AdminLayout = ({ children }) => {
-	const router = useRouter()
-
-	const {
-		token: { colorBgContainer }
-	} = theme.useToken()
 	return (
 		<>
-			<Layout>
-				<Header
-					style={{
-						display: 'flex',
-						alignItems: 'center'
-					}}
-					className='flex gap-4 bg-white dark:bg-zinc-800'
-				>
+			<div className='flex flex-col gap-3'>
+				<header className='flex items-center py-3 px-4 lg:px-8 gap-4 bg-white dark:bg-zinc-800'>
 					<Link href='/'>
 						<Image
 							src='/logo.svg'
@@ -46,39 +30,23 @@ const AdminLayout = ({ children }) => {
 						/>
 					</Link>
 
-					<Link href='/admin/upload' className='ml-4 p-1'>
+					<Link href='/admin/upload' className='ml-4 p-1 hover:text-sky-500'>
 						Upload Images
 					</Link>
-					<Link href='/admin/mainnet/create' className='ml-4  p-1'>
+					<Link href='/admin/mainnet/create' className='ml-4 p-1 hover:text-indigo-500'>
 						Add Mainnet
 					</Link>
-					<Link href='/admin/testnet/create' className='ml-4 p-1'>
+					<Link href='/admin/testnet/create' className='ml-4 p-1 hover:text-green-500'>
 						Add Testnet
 					</Link>
-				</Header>
-				<Content
-					style={{
-						padding: '20px 50px'
-					}}
-				>
-					<Layout
-						style={{
-							padding: '24px 0',
-							background: colorBgContainer
-						}}
-					>
-						{' '}
-						<Sider
-							style={{
-								background: colorBgContainer
-							}}
-							width={300}
-							breakpoint='md'
-							className='border-r-2 px-3'
-						>
-							<div className='justify-between hidden lg:flex'>
+				</header>
+
+				<main className='w-full lg:w-[96%] lg:mx-[2%] border-solid rounded-lg border-[1px] border-slate-200/90 transition-all'>
+					<div className='flex gap-1 lg:gap-4 rounded-lg bg-white dark:bg-zinc-800 p-2 lg:px-4'>
+						<aside className='border-r-[1px] px-3 min-w-[30px] lg:min-w-[30%] xl:min-w-[28%] 2xl:min-w-[25%]'>
+							<div className='justify-between hidden lg:flex gap-2 px-1 '>
 								<div>
-									<h2 className='font-semibold py-3  text-xl '>Mainnet</h2>
+									<h2 className='font-semibold py-2 lg:text-lg '>Mainnet:</h2>
 									<div>
 										{Object.keys(mainnetData).map(item => {
 											const name = mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
@@ -87,15 +55,15 @@ const AdminLayout = ({ children }) => {
 											return (
 												<Link
 													href={dashboardURL}
-													className='p-2 lg:p-3 flex gap-2 border-2 border-slate-500/12 mb-2'
+													className='text-sm p-2 xl:px-4 xl:py-3 flex gap-2 xl:gap-3 border-[1px] border-slate-500/25 hover:border-slate-500/50 rounded-lg mb-3 transition'
 													style={{ borderRadius: '8px' }}
 													key={name}
 												>
 													<Image
 														src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
 														alt='project logo'
-														width='25'
-														height='25'
+														width='22'
+														height='22'
 													/>
 													{name}
 												</Link>
@@ -105,7 +73,7 @@ const AdminLayout = ({ children }) => {
 								</div>
 
 								<div>
-									<h2 className='font-semibold py-3 text-xl'>Testnet</h2>
+									<h2 className='font-semibold py-2 lg:text-lg'>Testnet:</h2>
 									<div>
 										{Object.keys(testnetData).map(item => {
 											const name = testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
@@ -114,15 +82,15 @@ const AdminLayout = ({ children }) => {
 											return (
 												<Link
 													href={dashboardURL}
-													className='p-2 lg:p-3 flex gap-2 border-2 border-slate-500/12 rounded-lg mb-2'
+													className='text-sm p-2 xl:px-4 xl:py-3 flex gap-2 xl:gap-3 border-[1px] border-slate-500/25 hover:border-slate-500/50 rounded-lg mb-3 transition'
 													key={name}
 													style={{ borderRadius: '8px' }}
 												>
 													<Image
 														src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
 														alt='project logo'
-														width='25'
-														height='25'
+														width='22'
+														height='22'
 													/>
 													{name}
 												</Link>
@@ -131,26 +99,15 @@ const AdminLayout = ({ children }) => {
 									</div>
 								</div>
 							</div>
-							<ProjectsModal type='admin' className='block opacity-100 lg:opacity-0' />
-						</Sider>
-						<Content
-							style={{
-								padding: '0 24px',
-								minHeight: 280
-							}}
-						>
-							{children}
-						</Content>
-					</Layout>
-				</Content>
-				<Footer
-					style={{
-						textAlign: 'center'
-					}}
-				>
-					ITRocket © Admin Dashboard
-				</Footer>
-			</Layout>
+							<div className='block lg:hidden'>
+								<ProjectsModal type='admin' />
+							</div>
+						</aside>
+						<div className='p-2 lg:px-4 xl:px-6 w-full'>{children}</div>
+					</div>
+				</main>
+				<div className='mt-3 min-h-[100px] flex justify-center items-center'>ITRocket © Admin Dashboard</div>
+			</div>
 		</>
 	)
 }

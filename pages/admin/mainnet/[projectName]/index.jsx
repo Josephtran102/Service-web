@@ -125,10 +125,9 @@ const Project = ({ project }) => {
 					onFinishFailed={onFinishFailed}
 					autoComplete='on'
 					layout='horizontal'
-					className='min-w-[70vw] lg:min-w-[45vw] bg-white dark:bg-zinc-900 p-3 md:p-7 rounded-xl border-solid border-[1px]  border-slate-200 hover:border-slate-300 transition-all'
+					className='min-w-[70vw] lg:min-w-[45vw] mt-5 bg-white dark:bg-zinc-900 rounded-xl transition-all'
 				>
-					{Object.entries(currentProject)
-					.map(([field, value]) => (
+					{Object.entries(currentProject).map(([field, value]) => (
 						<Space
 							key={field}
 							style={{ display: 'flex', marginBottom: 2, width: '100%', gap: '12px' }}
@@ -150,7 +149,7 @@ const Project = ({ project }) => {
 						{(fields, { add, remove }) => (
 							<>
 								{fields.map(field => (
-									<Space key={field.key} style={{ display: 'flex', marginBottom: 8 }} align='start'>
+									<Space key={field.key} style={{ display: 'flex', marginBottom: 5 }} align='start'>
 										<Form.Item
 											{...field}
 											name={[field.name, 'name']}

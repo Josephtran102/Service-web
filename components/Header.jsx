@@ -147,7 +147,7 @@ const Header = () => {
 	return (
 		<>
 			<header
-				className={`${styles.header} bg-[#fefefe] dark:bg-[#161616]`}
+				className={`${styles.header} dark:bg-[#161616]`}
 				style={{
 					opacity: opacity
 				}}
