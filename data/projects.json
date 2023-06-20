@@ -800,6 +800,14 @@
       "gas": "--gas auto --gas-adjustment 1.5",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0"
+    },
+    "namada": {
+      "ecosystem": "false",
+      "imgUrl": "namada.jpg",
+      "website": "https://namada.net/",
+      "explorer": "https://namadaexplorer.com/",
+      "fav": "true",
+      "offValDoc": "https://docs.namada.net/"
     }
   },
   "finished": [
