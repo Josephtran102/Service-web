@@ -147,9 +147,8 @@ const Header = () => {
 	return (
 		<>
 			<header
-				className={styles.header}
+				className={`${styles.header} bg-[#fefefe] dark:bg-[#161616]`}
 				style={{
-					backgroundColor: theme === 'dark' ? '#161616' : ' #fefefe',
 					opacity: opacity
 				}}
 			>
@@ -204,7 +203,12 @@ const Header = () => {
 
 					<div className='divider-vertical hidden lg:block'></div>
 
-					<div className={styles.switch} data-ison={theme === 'dark'} onClick={toggleTheme} id={styles.desktopSwitch}>
+					<div
+						className={styles.switch}
+						data-ison={theme === 'dark'}
+						onClick={toggleTheme}
+						id={styles.desktopSwitch}
+					>
 						<motion.div
 							className={styles.handle}
 							transition={spring}
