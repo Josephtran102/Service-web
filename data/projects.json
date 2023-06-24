@@ -274,7 +274,7 @@
       "path": ".empowerchain",
       "peerID": "",
       "peerPort": "",
-      "port": 24,
+      "port": "14",
       "prHome": "/home/empower/",
       "seedID": "",
       "seedPort": "",
