@@ -523,8 +523,7 @@
       "goVersion": "1.20.3",
       "gas": "--gas auto --gas-adjustment 1.5",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "minGasPrice": "0.0",
-      "fav": "true"
+      "minGasPrice": "0.0"
     },
     "humans": {
       "chainID": "humans_3000-31",
