@@ -843,6 +843,14 @@
       "explorer": "https://pre-alpha.opside.info/",
       "fav": "true",
       "offValDoc": "https://docs.opside.network/validators-pos/run-a-validator/ubuntu-recommended/validator-program-v3"
+    },
+    "opside": {
+      "ecosystem": "false",
+      "imgUrl": "opside.jpg",
+      "website": "https://opsi.de/",
+      "explorer": "https://pre-alpha.opside.info/",
+      "fav": "true",
+      "offValDoc": "https://docs.opside.network/validators-pos/run-a-validator/ubuntu-recommended/validator-program-v3"
     }
   },
   "finished": [
