@@ -825,7 +825,7 @@
       "snapMaxSize": "3",
       "port": "14",
       "variable": "ZETACHAIN",
-      "denom": "ZETA",
+      "denom": "azeta",
       "ecosystem": "cosmos",
       "bin": "zetacored",
       "path": ".zetacored",
