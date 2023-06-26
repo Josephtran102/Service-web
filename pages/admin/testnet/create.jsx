@@ -105,6 +105,30 @@ const Project = () => {
 		}
 	}
 
+	const removeField = fieldName => {
+		Modal.confirm({
+			title: 'Confirm delete',
+			content: 'Are you sure you want to delete this field?',
+			okText: 'Yes',
+			okType: 'danger',
+			cancelText: 'No',
+			onOk() {
+				form.setFieldsValue({
+					[fieldName]: undefined
+				})
+
+				setCurrentProject(prevState => {
+					const newState = { ...prevState }
+					delete newState[fieldName]
+					return newState
+				})
+			},
+			onCancel() {
+				console.log('Cancel')
+			}
+		})
+	}
+
 	return (
 		<>
 			{loading ? (
