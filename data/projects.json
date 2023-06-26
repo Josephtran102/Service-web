@@ -840,7 +840,7 @@
       "updHeight": "394563",
       "newInstallBin": "cd $HOME\nwget https://zetachain-external-files.s3.amazonaws.com/binaries/athens3/v2.0.0/zetacored-ubuntu-22-amd64\nchmod +x zetacored-ubuntu-22-amd64\nsudo mv $HOME/zetacored-ubuntu-22-amd64 $(which zetacored)",
       "goVersion": "1.19.3",
-      "gas": "--gas auto --gas-adjustment 1.5",
+      "gas": "--gas auto --gas-adjustment 1.5 --gas-prices=\"0.1azeta\"",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0"
     }
