@@ -57,6 +57,7 @@ const Project = () => {
 
 		updatedTypeProjects[projectName] = newData
 		updatedProjects[type] = updatedTypeProjects
+		updatedProjects[type] = Object.fromEntries(Object.entries(updatedProjects[type]).sort())
 
 		projectsRef.current = updatedProjects
 	}
@@ -73,6 +74,7 @@ const Project = () => {
 		delete newValues.userFields
 
 		updateProject(`${type}`, id, newValues)
+		console.log(projectsRef.current)
 
 		try {
 			const response = await axios.post('/api/github/update', projectsRef.current)

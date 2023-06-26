@@ -57,6 +57,7 @@ const Project = () => {
 
 		updatedTypeProjects[projectName] = newData
 		updatedProjects[type] = updatedTypeProjects
+		updatedProjects[type] = Object.fromEntries(Object.entries(updatedProjects[type]).sort())
 
 		projectsRef.current = updatedProjects
 	}
