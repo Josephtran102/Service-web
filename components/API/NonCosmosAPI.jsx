@@ -140,7 +140,7 @@ docker-compose --version`}
 				<h2 id='security'>Security</h2>
 				{security && security !== 'false' && <CodeSnippet code={`${security}`} />}
 				<h2 id='upgrade'>Upgrade</h2>
-				{updHeight !== 0 && (
+				{updHeight && updHeight !== 0 && (
 					<>
 						<Alert
 							message={`Upgrade height: ${updHeight}. Please, don\`t upgrade before the specified height.`}
