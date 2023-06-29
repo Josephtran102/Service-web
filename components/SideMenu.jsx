@@ -95,6 +95,33 @@ const SideMenu = () => {
 						null,
 						'group'
 					),
+					getItem(
+						<Link
+							href={serviceURL + '#installation'}
+							onClick={event => handleClick(event, 'installation', `installation`)}
+						>
+							<span className='mr-3'>📌</span> Installation
+						</Link>,
+						`installation`
+					),
+					getItem(
+						<Link href={serviceURL + '#security'} onClick={event => handleClick(event, 'security', `security`)}>
+							<span className='mr-3'>🔒</span> Security
+						</Link>,
+						`security`
+					),
+					getItem(
+						<Link href={serviceURL + '#upgrade'} onClick={event => handleClick(event, 'upgrade', `upgrade`)}>
+							<span className='mr-3'>🔄</span> Upgrade
+						</Link>,
+						`upgrade`
+					),
+					getItem(
+						<Link href={serviceURL + '#delete'} onClick={event => handleClick(event, 'delete', `delete`)}>
+							<span className='mr-3'>❌</span> Delete
+						</Link>,
+						`delete`
+					),
 					{
 						type: 'divider'
 					},
