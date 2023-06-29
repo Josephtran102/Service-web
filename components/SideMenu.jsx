@@ -197,7 +197,10 @@ const SideMenu = () => {
 										<RightOutlined />
 									),
 									getItem(
-										<Link href={serviceURL + '#sync'} onClick={event => handleClick(event, 'sync', `state${name}`)}>
+										<Link
+											href={serviceURL + '#sync'}
+											onClick={event => handleClick(event, 'sync', `state${name}`)}
+										>
 											State sync
 										</Link>,
 										`state${name}`,

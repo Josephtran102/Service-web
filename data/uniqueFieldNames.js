@@ -1,4 +1,4 @@
-export const fieldNames = [
+let fieldNames = [
 	'chainID',
 	'imgUrl',
 	'desc',
@@ -33,3 +33,10 @@ export const fieldNames = [
 	'name',
 	'link'
 ]
+
+for (let i = 1; i <= 10; i++) {
+	fieldNames.push(`installBin${i}`)
+	fieldNames.push(`installTitle${i}`)
+}
+
+export default fieldNames

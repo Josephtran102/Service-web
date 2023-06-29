@@ -2,7 +2,7 @@ import CodeSnippet from '@components/UI/CodeSnippet'
 import { useContext } from 'react'
 import { Context } from '@context/context'
 
-const GenerateCode = (desc, code) => {
+const CodeBlock = ({ desc, code }) => {
 	const { theme } = useContext(Context)
 
 	return (
@@ -13,4 +13,4 @@ const GenerateCode = (desc, code) => {
 	)
 }
 
-export default GenerateCode
+export default CodeBlock

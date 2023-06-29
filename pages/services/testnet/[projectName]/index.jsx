@@ -1,11 +1,16 @@
 import { getLayout } from '@layouts/dashboard'
-import ProjectData from '@components/ProjectData'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
+import CosmosAPI from '@components/API/CosmosAPI'
+import NonCosmosAPI from '@components/API/NonCosmosAPI'
 
 const type = 'testnet'
 
 const Project = ({ project }) => {
-	return <ProjectData name={project.id} type={type} />
+	return project.ecosystem == 'false' ? (
+		<NonCosmosAPI name={project.id} type={type} />
+	) : (
+		<CosmosAPI name={project.id} type={type} />
+	)
 }
 
 export async function getStaticPaths() {

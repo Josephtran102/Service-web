@@ -33,6 +33,13 @@ body {
 	font-weight: 400;
 	box-sizing: border-box;
 	background-color: #fdfdfd;
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
+	@media (max-width: 330px) {
+		font-size: 13px;
+	}
 }
 
 button {
@@ -114,7 +121,8 @@ a {
 #snap,
 #create-validator,
 #governance,
-#mainnets {
+#mainnets,
+#delete {
 	text-decoration-color: #a03ee0;
 }
 

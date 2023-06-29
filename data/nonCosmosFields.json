@@ -4,5 +4,21 @@
 	"fav": "",
 	"imgUrl": ".jpg",
 	"offValDoc": "",
-	"website": ""
+	"website": "",
+	"timesyncd": "true",
+	"dependencies": "sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y",
+	"rustCargo": "true",
+	"docker": "true",
+	"security": "# firewall rules\n# open p2p port\nsudo ufw allow 30311/tcp\n# open RPC, websocket pors for some IP addresses (if needed)\nsudo ufw allow from <IP> to any port 25547\nsudo ufw allow from <IP> to any port 25578",
+	"goVersion": "1.20.3",
+	"dockerCompose": "true",
+	"updHeight": "1232",
+	"upgrade": "sudo curl https://dist.forta.network/artifacts/forta -o $(which forta)\nsudo chmod +x $(which forta)\nsudo systemctl restart forta",
+	"deleteNode": "sudo systemctl stop gethd\nsudo systemctl disable gethd\nsudo rm -rf /etc/systemd/system/gethd.service\nsudo rm $(which gethd)\nsudo rm -rf $HOME/.gethd\nsed -i \"/ELYS_/d\" $HOME/.bash_profile",
+	"installBin1": "# install geth\nsudo add-apt-repository -y ppa:ethereum/ethereum\nsudo apt update -y\nsudo apt install ethereum -y\nsudo apt update -y\n\n# Create jwt.hex\nmkdir $HOME/.ethereum\ncd $HOME/.ethereum\nopenssl rand -hex 32 | tr -d \"\n\" > \"jwt.hex\"\n\n# init geth\ngeth account new --datadir $HOME/.ethereum\n\n# create service file\nsudo tee <<EOF >/dev/null /etc/systemd/system/gethd.service\n[Unit]\nDescription=Geth Goerly Execution Layer\nAfter=network.target\n\n[Service]\nUser=$USER\nType=simple\nExecStart=$(which geth)  --goerli --syncmode snap --http --http.api eth,net,web3,engine --http.vhosts '*' --http.addr 0.0.0.0 --http.port 8548 --ws --ws.api eth,web3,net,txpool --ws.addr 0.0.0.0 --ws.port 8549 --port 30308 --discovery.port 30308 --pprof.port 6065 --authrpc.jwtsecret $HOME/.ethereum/jwt.hex --datadir $HOME/.ethereum\nRestart=on-failure\nLimitNOFILE=65535\n\n[Install]\nWantedBy=multi-user.target\nEOF\n\n# enable and start service\nsudo systemctl daemon-reload\nsudo systemctl enable gethd\nsudo systemctl restart gethd && sudo journalctl -u gethd -f",
+	"installTitle1": "title",
+	"installBin2": "",
+	"installTitle2": "",
+	"installBin3": "",
+	"installTitle3": ""
 }

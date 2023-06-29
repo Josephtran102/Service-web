@@ -41,7 +41,7 @@ const AdminLayout = ({ children }) => {
 					</Link>
 				</header>
 
-				<main className='w-full lg:w-[96%] lg:mx-[2%] border-solid rounded-lg border-[1px] border-slate-200/90 transition-all'>
+				<div className='w-full lg:w-[96%] lg:mx-[2%] border-solid rounded-lg border-[1px] border-slate-200/90 transition-all'>
 					<div className='flex gap-1 lg:gap-4 rounded-lg bg-white dark:bg-zinc-900 p-2 lg:px-4'>
 						<aside className='border-r-[1px] px-3 min-w-[30px] lg:min-w-[30%] xl:min-w-[28%] 2xl:min-w-[25%]'>
 							<div className='justify-between hidden lg:flex gap-2 px-1 '>
@@ -105,7 +105,7 @@ const AdminLayout = ({ children }) => {
 						</aside>
 						<div className='p-2 lg:px-4 xl:px-6 w-full'>{children}</div>
 					</div>
-				</main>
+				</div>
 				<div className='mt-3 min-h-[100px] flex justify-center items-center'>ITRocket © Admin Dashboard</div>
 			</div>
 		</>

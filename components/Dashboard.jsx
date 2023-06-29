@@ -107,16 +107,23 @@ export default function Dashboard(props) {
 						<div className={styles.stats}>
 							<ProjectsModal name={name} type='services' />
 
-							<span>
-								<b className={styles.bold}>Chain ID: </b>
-								{chainID}
-							</span>
-							<span>
-								<b className={styles.bold}>Block Height: </b> {blockHeight}{' '}
-							</span>
-							<span>
-								<b className={styles.bold}>RPC Status:</b> <span className={`${styles.dot} ${isActive}`} />
-							</span>
+							{ecosystem == 'false' ? (
+								''
+							) : (
+								<>
+									<span>
+										<b className={styles.bold}>Chain ID: </b>
+										{chainID}
+									</span>
+									<span>
+										<b className={styles.bold}>Block Height: </b> {blockHeight}{' '}
+									</span>
+									<span>
+										<b className={styles.bold}>RPC Status:</b> <span className={`${styles.dot} ${isActive}`} />
+									</span>{' '}
+								</>
+							)}
+
 							<span>
 								{explorer === undefined ? (
 									<a
