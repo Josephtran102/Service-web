@@ -137,9 +137,14 @@ docker-compose --version`}
 					/>
 				)}
 				{elements}
-				<h2 id='security'>Security</h2>
-				{security && security !== 'false' && <CodeSnippet code={`${security}`} />}
-				<h2 id='upgrade'>Upgrade</h2>
+
+				{security && security !== 'false' && (
+					<>
+						<h2 id='security'>Security</h2>
+						<CodeSnippet code={`${security}`} />
+					</>
+				)}
+				{upgrade && upgrade !== 'false' && <h2 id='upgrade'>Upgrade</h2>}
 				{updHeight && updHeight !== 0 && (
 					<>
 						<Alert
@@ -159,8 +164,13 @@ docker-compose --version`}
 					</>
 				)}
 				{upgrade && upgrade !== 'false' && <CodeSnippet code={`${upgrade}`} />}
-				<h2 id='delete'>Delete</h2>
-				{deleteNode && deleteNode !== 'false' && <CodeSnippet code={`${deleteNode}`} />}
+
+				{deleteNode && deleteNode !== 'false' && (
+					<>
+						<h2 id='delete'>Delete</h2>
+						<CodeSnippet code={`${deleteNode}`} />
+					</>
+				)}
 			</div>
 		</AnimatedSection>
 	)
