@@ -95,7 +95,6 @@ const Home = () => {
 					content='ITRocket 🚀 - Crypto multipurpose project focused on providing best services for Cosmos (and not only) node operators'
 				/>
 			</Head>
-
 			<Header />
 
 			<main>
@@ -142,7 +141,7 @@ const Home = () => {
 					variants={opacityBlock}
 				>
 					<div className={styles.container}>
-						<h3 className='text-[22px] md:text-[42px] font-bold  mb-1 md:mb-3 tracking-wide text-zinc-900 dark:text-white'>
+						<h3 className='text-[22px] md:text-[42px] font-bold  mb-2 md:mb-6 tracking-wide text-zinc-900 dark:text-white'>
 							Networks
 						</h3>
 

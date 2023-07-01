@@ -82,15 +82,21 @@
 
 	&__star {
 		position: absolute;
-		top: 7px;
-		right: 15px;
+		top: 8px;
+		right: 16px;
 		color: #aeaa6558;
 		transition: 0.2s;
 		z-index: 2;
-		font-size: 17px;
+		font-size: 18px;
 		cursor: pointer;
 
 		@media (max-width: 768px) {
+			top: 5px;
+			right: 8px;
+			font-size: 15px;
+		}
+
+		@media (max-width: 350px) {
 			top: 2px;
 			right: 5px;
 			font-size: 14px;

@@ -17,12 +17,12 @@ const services = () => {
 			</Head>
 
 			<Header />
-			<div className='w-full p-1 md:p-6'>
+			<div className='w-full p-1 md:p-6 bg-white dark:bg-zinc-900'>
 				<div
 					className={styles.mainColumn__wrapper}
 					style={{
 						width: '100%',
-						padding: '10px 15px 5px 15px',
+						padding: '10px',
 						marginTop: '60px'
 					}}
 				>

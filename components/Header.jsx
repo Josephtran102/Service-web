@@ -147,7 +147,7 @@ const Header = () => {
 	return (
 		<>
 			<header
-				className={`${styles.header} dark:bg-[#161616]`}
+				className={`${styles.header} bg-white dark:bg-[#161616] `}
 				style={{
 					opacity: opacity
 				}}
@@ -259,18 +259,23 @@ const Header = () => {
 						}}
 						className={styles.burgerButton}
 					>
-						<div className={styles.burgerIconWrapper} style={{ gap: isOpen ? '0' : '10px' }}>
+						<div className={styles.burgerIconWrapper} style={{ gap: isOpen ? '0' : '7px' }}>
 							<span
 								style={{
 									backgroundColor: theme === 'light' ? '#000' : '#fff',
-									transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-									width: isOpen ? '100%' : '90%'
+									transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)'
 								}}
 							></span>
 							<span
 								style={{
 									backgroundColor: theme === 'light' ? '#000' : '#fff',
 									transform: isOpen ? 'rotate(-45deg)' : 'rotate(0deg)'
+								}}
+							></span>
+							<span
+								style={{
+									backgroundColor: theme === 'light' ? '#000' : '#fff',
+									display: isOpen ? 'none' : 'block'
 								}}
 							></span>
 						</div>
