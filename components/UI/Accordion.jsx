@@ -51,7 +51,7 @@ const Accordion = () => {
 				<span>
 					ITRocket is a team of DevOps engineers and Software Developers from Armenia{' '}
 					<span
-						className='inline-block h-5 w-5 align-top mx-1 mt-[2px]'
+						className='inline-block h-5 w-5 align-top mx-1 lg:mt-[2px]'
 						aria-hidden='true'
 						style={{ background: "center / contain url('/icons/flag_am.svg')  no-repeat" }}
 					></span>{' '}
