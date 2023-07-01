@@ -10,7 +10,7 @@ const AdminLayout = ({ children }) => {
 	return (
 		<>
 			<div className='flex flex-col gap-3'>
-				<header className='flex items-center py-3 px-4 lg:px-8 gap-4 bg-white dark:bg-zinc-800'>
+				<header className='flex items-center py-1 md:py-3 px-2 lg:px-8 gap-3 lg:gap-16 bg-white dark:bg-zinc-800'>
 					<Link href='/'>
 						<Image
 							src='/logo.svg'
@@ -29,10 +29,6 @@ const AdminLayout = ({ children }) => {
 							className='hidden dark:block'
 						/>
 					</Link>
-
-					<Link href='/admin/upload' className='ml-4 p-1 hover:text-sky-500'>
-						Upload Images
-					</Link>
 					<Link href='/admin/mainnet/create' className='ml-4 p-1 hover:text-indigo-500'>
 						Add Mainnet
 					</Link>
@@ -41,9 +37,9 @@ const AdminLayout = ({ children }) => {
 					</Link>
 				</header>
 
-				<div className='w-full lg:w-[96%] lg:mx-[2%] border-solid rounded-lg border-[1px] border-slate-200/90 transition-all'>
-					<div className='flex gap-1 lg:gap-4 rounded-lg bg-white dark:bg-zinc-900 p-2 lg:px-4'>
-						<aside className='border-r-[1px] px-3 min-w-[30px] lg:min-w-[30%] xl:min-w-[28%] 2xl:min-w-[25%]'>
+				<div className='w-full lg:w-[96%] lg:mx-[2%] border-solid rounded-lg border-[1px] border-slate-200/90 transition-all mt-1 lg:mt-3'>
+					<div className='flex gap-1 lg:gap-8 rounded-lg bg-white dark:bg-zinc-900 p-2 lg:px-4'>
+						<aside className='border-r-[1px] px-2 md:px-3 min-w-[30px] lg:min-w-[30%] xl:min-w-[28%] 2xl:min-w-[25%]'>
 							<div className='justify-between hidden lg:flex gap-2 px-1 '>
 								<div>
 									<h2 className='font-semibold py-2 lg:text-lg '>Mainnet:</h2>

@@ -563,13 +563,16 @@ code {
 		font-size: 13px !important;
 	}
 }
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+	@apply bg-white dark:bg-zinc-800;
+}
 
 .ant-tabs-nav {
 	margin: 0 !important;
 }
 
 .ant-tabs-content-holder {
-	@apply bg-white dark:bg-zinc-950/25 p-2 lg:py-5 lg:px-6 rounded lg:rounded-xl border-2 border-zinc-100 dark:border-zinc-800/80;
+	@apply bg-white dark:bg-zinc-950/10 p-2 lg:py-5 lg:px-6 rounded lg:rounded-xl border-2 border-zinc-100 dark:border-zinc-800/80;
 }
 
 #tsparticles {

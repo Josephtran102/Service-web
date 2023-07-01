@@ -31,12 +31,7 @@ const ProjectsModal = ({ name, type }) => {
 		<>
 			<div className={styles.chain__wrapper} onClick={showModal}>
 				<span className='flex items-center gap-4 select-none'>
-					{type == 'services' ? (
-						<b className={styles.bold}>{name.charAt(0).toUpperCase() + name.slice(1)}</b>
-					) : (
-						<span>Choose project</span>
-					)}
-
+					{type == 'services' && <b className={styles.bold}>{name.charAt(0).toUpperCase() + name.slice(1)}</b>}
 					<RetweetOutlined />
 				</span>
 			</div>
