@@ -264,7 +264,7 @@ const Header = () => {
 								style={{
 									backgroundColor: theme === 'light' ? '#222' : '#fff',
 									transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-									top: isOpen ? '7px' : '0'
+									top: isOpen ? '6px' : '0'
 								}}
 							></span>
 							<span
