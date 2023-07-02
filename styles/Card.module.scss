@@ -33,10 +33,10 @@
 		margin: 5px;
 	}
 	@media (max-width: 420px) {
-		width: calc(50% - 6px);
+		width: calc(50% - 4px);
 		padding: 10px;
 		gap: 5px;
-		margin: 3px;
+		margin: 2px;
 	}
 	@media (min-width: 768px) {
 		&::before {
@@ -78,6 +78,10 @@
 		display: flex;
 		flex-wrap: wrap;
 		padding: 10px 0 50px;
+
+		@media (max-width: 400px) {
+			padding-top: 5px;
+		}
 	}
 
 	&__star {
@@ -123,9 +127,11 @@
 		@media (max-width: 1600px) {
 			width: 40px !important;
 		}
-
 		@media (max-width: 768px) {
 			width: 30px !important;
+		}
+		@media (max-width: 380px) {
+			width: 26px !important;
 		}
 	}
 
