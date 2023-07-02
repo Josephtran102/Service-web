@@ -259,7 +259,7 @@ const Header = () => {
 						}}
 						className={styles.burgerButton}
 					>
-						<div className={styles.burgerIconWrapper} style={{ gap: isOpen ? '0' : '5px' }}>
+						<div className={styles.burgerIconWrapper} style={{ gap: isOpen ? '0' : '6px' }}>
 							<span
 								style={{
 									backgroundColor: theme === 'light' ? '#000' : '#fff',
