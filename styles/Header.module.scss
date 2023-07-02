@@ -15,6 +15,7 @@
 	box-shadow: rgba(125, 125, 125, 0.06) 0 2px 8px 0;
 
 	@media (max-width: 768px) {
+		min-height: 60px;
 		padding: 5px 15px;
 	}
 
@@ -93,13 +94,13 @@
 
 	@media (max-width: 768px) {
 		margin: 0;
-		max-width: 140px !important;
+		max-width: 125px !important;
 	}
 }
 
 .burgerIconWrapper {
 	width: 25px;
-	height: 25px;
+	height: 15px;
 	position: relative;
 	display: flex;
 	flex-direction: column;
