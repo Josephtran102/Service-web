@@ -222,7 +222,7 @@
       "updHeight": "0",
       "newInstallBin": "cd $HOME\nrm -rf realio-network\ngit clone https://github.com/realiotech/realio-network.git\ncd realio-network\ngit checkout tags/v0.8.2\nmake build\nsudo mv $HOME/realio-network/build/realio-networkd $(which realio-networkd)",
       "goVersion": "1.19.3",
-      "gas": "--fees 300000000ario",
+      "gas": " --gas auto --gas-adjustment 1.3 --fees 300000000ario",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0"
     },
