@@ -734,7 +734,7 @@
       "peerPort": "19656",
       "seedPort": "19656",
       "newInit": "false",
-      "installBin": "cd $HOME\nrm -rf sao-consensus\ngit clone https://github.com/SaoNetwork/sao-consensus.git\ncd sao-consensus\ngit checkout v0.1.7\nmake install\nwget -O $HOME/.sao/config/app.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.3/app.toml\nwget -O $HOME/.sao/config/config.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.3/config.toml",
+      "installBin": "cd $HOME\nrm -rf sao-consensus\ngit clone https://github.com/SaoNetwork/sao-consensus.git\ncd sao-consensus\ngit checkout v0.1.7\nmake install\nwget -O $HOME/.sao/config/app.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/app.toml\nwget -O $HOME/.sao/config/config.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/config.toml\nwget -O $HOME/.sao/config/genesis.json https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/genesis.json",
       "updHeight": "",
       "newInstallBin": "",
       "goVersion": "1.19.3",
