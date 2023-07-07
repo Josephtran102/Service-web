@@ -733,7 +733,6 @@
       "seedID": "4e6df8dcc080b8c73929fc513443ecd5e0a424f0",
       "peerPort": "19656",
       "seedPort": "19656",
-      "newInit": "false",
       "installBin": "cd $HOME\nrm -rf sao-consensus\ngit clone https://github.com/SaoNetwork/sao-consensus.git\ncd sao-consensus\ngit checkout v0.1.7\nmake install\nwget -O $HOME/.sao/config/app.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/app.toml\nwget -O $HOME/.sao/config/config.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/config.toml\nwget -O $HOME/.sao/config/genesis.json https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/genesis.json",
       "updHeight": "",
       "newInstallBin": "",
