@@ -730,7 +730,7 @@
       "bin": "saod",
       "path": ".sao",
       "peerID": "08d8f8ae761177ecf95159281d08bca622c7e578",
-      "seedID": "4e6df8dcc080b8c73929fc513443ecd5e0a424f0",
+      "seedID": "4702a9277c3e85afb8c4764b8ee441854d9068de",
       "peerPort": "19656",
       "seedPort": "19656",
       "installBin": "cd $HOME\nrm -rf sao-consensus\ngit clone https://github.com/SaoNetwork/sao-consensus.git\ncd sao-consensus\ngit checkout v0.1.7\nmake install\nsaod init $WALLET --chain-id sao-20230629\nwget -O $HOME/.sao/config/app.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/app.toml\nwget -O $HOME/.sao/config/config.toml https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/config.toml\nwget -O $HOME/.sao/config/genesis.json https://github.com/SAONetwork/sao-consensus/releases/download/v0.1.7/genesis.json",
