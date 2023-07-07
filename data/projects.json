@@ -714,7 +714,7 @@
       "minGasPrice": "0.0"
     },
     "sao": {
-      "chainID": "sao-testnet1",
+      "chainID": "sao-20230629",
       "delegate": "https://testnet.itrocket.net/sao/staking/arkhvaloper18u4es3gnjerdqw3u96pjdq6ukclysh3f9wfmqe",
       "imgUrl": "sao.jpg",
       "website": "https://www.sao.network/#/",
