@@ -45,6 +45,9 @@ b.bold {
 	z-index: 0;
 	position: relative;
 
+	@media only screen and (max-width: 1300px) {
+		padding-top: 15px;
+	}
 	@media only screen and (min-width: 767px) {
 		padding-bottom: 15px;
 	}
@@ -52,11 +55,11 @@ b.bold {
 	&__wrapper {
 		display: flex;
 		flex-direction: column;
-		padding: 5px 0 500px 25px;
+		padding: 5px 0 90px 25px;
 		width: calc(84% - 45px);
 
 		@media (max-width: 1400px) {
-			padding: 5px 0 500px 15px;
+			padding: 5px 0 80px 15px;
 		}
 		@media (max-width: 1024px) {
 			width: 75%;
@@ -75,20 +78,6 @@ b.bold {
 				font-size: 14px;
 			}
 		}
-	}
-
-	&::-webkit-scrollbar {
-		width: 8px;
-	}
-
-	&::-webkit-scrollbar-track {
-		background-color: transparent;
-		border-radius: 10px;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		border-radius: 10px;
-		background-color: rgba(153, 153, 153, 0.5);
 	}
 
 	ul {
@@ -237,7 +226,7 @@ b.bold {
 .sideColumn {
 	@include card;
 	margin-top: 10px;
-	padding: 15px 15px 20px 15px;
+	padding: 5px 15px 25px 15px;
 	position: relative;
 	width: calc(16% + 45px);
 	z-index: 100;
