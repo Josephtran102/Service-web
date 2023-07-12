@@ -393,7 +393,7 @@
       "seedID": "5c82cf33a32f40e2d914da1864927865d8d3824c@",
       "peerPort": "11656",
       "seedPort": "11656",
-      "installBin": "cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v1.0.0-rc7\ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git",
+      "installBin": "cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v1.0.0-rc7\ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git\ncp $HOME/networks/mocha/genesis.json $HOME/.celestia-app/config",
       "updHeight": "",
       "newInstallBin": "",
       "goVersion": "1.20.1",
