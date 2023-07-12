@@ -133,7 +133,7 @@ const Installation = props => {
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
 				<>
-					<h2 id='installation'>Manual Installation 🛠️</h2>
+					<h2 id='installation'>Manual Installation</h2>
 					<p className='flex flex-wrap items-center gap-2 pb-2'>
 						<a href={project.offValDoc} target='_blank' rel='nofollow'>
 							Official Documentation
@@ -277,7 +277,7 @@ sudo systemctl enable ${bin}
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 					/>
 				</>
-				<h2 id='auto-installation'>Automatic Installation ⚙️</h2>
+				<h2 id='auto-installation'>Automatic Installation</h2>
 				<p>
 					<b className={styles.bold}>pruning: </b> {pruning} {' | '}
 					<b className={styles.bold}>indexer: </b> {indexer}
@@ -286,7 +286,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 					theme={theme}
 					code={`source <(curl -s https://itrocket.net/api/${type}/${name}/autoinstall/)`}
 				/>
-				<h2 id='create-wallet'>Create wallet 💰</h2>
+				<h2 id='create-wallet'>Create wallet</h2>
 				<CodeSnippet
 					theme={theme}
 					code={`# to create a new wallet, use the following command. don’t forget to save the mnemonic
@@ -309,7 +309,7 @@ ${bin} status 2>&1 | jq .SyncInfo
 ${bin} query bank balances $WALLET_ADDRESS
 `}
 				/>
-				<h2 id='create-validator'>Create validator 🧑‍💻</h2>
+				<h2 id='create-validator'>Create validator</h2>
 				<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 					<Space direction='vertical'>
 						<span>Moniker</span>
@@ -389,14 +389,14 @@ ${gas} \\
 -y`}
 					/>
 				</div>
-				<h2 id='monitoring'>Monitoring 👀</h2>
+				<h2 id='monitoring'>Monitoring</h2>
 				<p>
 					If you want to have set up a monitoring and alert system use{' '}
 					<a href='https://teletype.in/@itrocket/bdJAHvC_q8h' target='_blank' rel='noopener noreferrer'>
 						our cosmos nodes monitoring guide with tenderduty
 					</a>
 				</p>
-				<h2 id='security'>Security 🔒</h2>
+				<h2 id='security'>Security</h2>
 				<p>To protect you keys please don`t share your privkey, mnemonic and follow a basic security rules</p>
 				<h3 id='ssh' className='font-semibold'>
 					Set up ssh keys for authentication
@@ -424,7 +424,7 @@ sudo ufw allow ssh/tcp
 sudo ufw allow $\{${variable}_PORT}656/tcp
 sudo ufw enable`}
 				/>
-				<h2 id='delete'>Delete node ❌</h2>
+				<h2 id='delete'>Delete node</h2>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo systemctl stop ${bin}

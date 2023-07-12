@@ -88,7 +88,7 @@ const CheatSheet = props => {
 						theme={theme}
 						code={`echo $(${bin} tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/${path}/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')`}
 					/>
-					<h2 id='key-management'>Key management 🔐</h2>
+					<h2 id='key-management'>Key management</h2>
 
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock desc='Add New Wallet' code={`${bin} keys add $WALLET`} />
@@ -103,7 +103,7 @@ const CheatSheet = props => {
 						/>
 					</div>
 
-					<h2 id='tokens'>Tokens 🪙</h2>
+					<h2 id='tokens'>Tokens</h2>
 					<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
 							<span>To valoper address</span>
@@ -161,7 +161,7 @@ const CheatSheet = props => {
 							code={`${bin} tx bank send $WALLET_ADDRESS ${toWalletAddr} ${amount}${denom} ${gas} -y`}
 						/>
 					</div>
-					<h2 id='validator-operations'> Validator operations 🧑‍💻</h2>
+					<h2 id='validator-operations'> Validator operations</h2>
 					<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
 							<span>Moniker</span>
@@ -277,7 +277,7 @@ ${gas} \\
 							code={`${bin} q slashing signing-info $(${bin} tendermint show-validator)`}
 						/>
 					</div>
-					<h2 id='governance'> Governance 🌐</h2>
+					<h2 id='governance'> Governance</h2>
 					<Space size='middle' style={{ margin: '5px 0 20px', display: 'flex', flexWrap: 'wrap' }}>
 						<Space direction='vertical'>
 							<span>Title</span>
