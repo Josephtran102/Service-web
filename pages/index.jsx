@@ -15,6 +15,7 @@ import { countApr } from '@utils/updateAPR'
 import CardMain from '@components/CardMain'
 import CardTest from '@components/CardTest'
 import projects from '@data/projects.json'
+import { UpOutlined } from '@ant-design/icons'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -98,7 +99,7 @@ const Home = () => {
 			<Header />
 
 			<main>
-				<FloatButton.BackTop />
+				<FloatButton.BackTop icon={<UpOutlined />} />
 				<section
 					className={styles.hero}
 					style={{
