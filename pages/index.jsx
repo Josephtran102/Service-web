@@ -16,16 +16,20 @@ import CardMain from '@components/CardMain'
 import CardTest from '@components/CardTest'
 import projects from '@data/projects.json'
 import { UpOutlined } from '@ant-design/icons'
+import Spinner from '@components/UI/Spinner'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
 	const [opacity, setOpacity] = useState(false)
 	const [aprValues, setAprValues] = useState(null)
 	const [projectsCount, setProjectsCount] = useState(null)
+	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
 		const onPageLoad = () => {
 			setOpacity(0)
+
+			setIsLoading(false)
 		}
 
 		Object.keys(projects.mainnet).forEach(async (item, i) => {
@@ -83,8 +87,8 @@ const Home = () => {
 		}
 	]
 
-	if (!projects.mainnet) {
-		return null
+	if (!projects.mainnet || isLoading) {
+		return <Spinner />
 	}
 
 	return (
