@@ -564,7 +564,10 @@ code {
 	}
 }
 .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
-	@apply bg-white dark:bg-zinc-800;
+	@apply bg-white/70 dark:bg-zinc-800;
+}
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active {
+	@apply bg-white dark:bg-zinc-900/80;
 }
 
 .ant-tabs-nav {
