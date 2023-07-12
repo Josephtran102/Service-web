@@ -755,7 +755,7 @@
       "minGasPrice": "0.0"
     },
     "terp": {
-      "chainID": "90u-1",
+      "chainID": "90u-2",
       "imgUrl": "terp.jpg",
       "desc": "Decentralized Infrastructure for the Cannabis Community",
       "website": "https://terp.network/",
@@ -774,7 +774,7 @@
       "seedID": "a6ee57fb457f71530d165afd1901d0d62cd7d7e0",
       "peerPort": "13656",
       "seedPort": "13656",
-      "installBin": "cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v1.0.1\nmake install",
+      "installBin": "cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout barberry\nmake install",
       "updHeight": "",
       "newInstallBin": "",
       "goVersion": "1.19.3",
