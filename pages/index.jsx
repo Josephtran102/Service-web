@@ -9,7 +9,7 @@ import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
 import { smoothScroll } from '@utils/smoothScroll'
-import { Tabs } from 'antd'
+import { FloatButton, Tabs } from 'antd'
 import { opacityBlock } from '@data/transitions'
 import { countApr } from '@utils/updateAPR'
 import CardMain from '@components/CardMain'
@@ -98,6 +98,7 @@ const Home = () => {
 			<Header />
 
 			<main>
+				<FloatButton.BackTop />
 				<section
 					className={styles.hero}
 					style={{
