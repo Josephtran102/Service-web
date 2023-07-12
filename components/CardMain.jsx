@@ -14,10 +14,6 @@ const Card = ({ projects, aprValues }) => {
 		handleMouseMove(e)
 	}
 
-	useEffect(() => {
-		console.log(aprValues)
-	}, [aprValues])
-
 	return (
 		<>
 			<div className={styles.card__root}>
