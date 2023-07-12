@@ -400,7 +400,8 @@
       "gas": "",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0",
-      "newInit": "false"
+      "newInit": "false",
+      "newExecStart": "EVM_ADDRESS=<EVM_ADDRESS>"
     },
     "chainflip": {
       "explorer": "https://blocks-perseverance.chainflip.io/",
