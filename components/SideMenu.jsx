@@ -26,6 +26,7 @@ const SideMenu = () => {
 	const { theme, toggleTheme } = useContext(Context)
 	const [items, setItems] = useState([])
 	const [value, setValue] = useState()
+	const [resources, setResources] = useState()
 	let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet']
 	const curProject = useRef()
 	const defValue = useRef()
@@ -68,6 +69,30 @@ const SideMenu = () => {
 		else if (URL.indexOf('upgrade') > -1) setOpenKeys([`upgrade`])
 		else if (URL.indexOf('cheat') > -1) setOpenKeys([`cheat-sheet`])
 		else setOpenKeys([`services`])
+
+		setResources(
+			<div className='pt-[2px]'>
+				<a
+					href={projects[type][name].website}
+					target='_blank'
+					rel='noopener referrer'
+					className='flex items-center p-1 text-xs lg:text-sm w-fit font-thin my-0 action rounded-2xl bg-gray-100 px-2 transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 active:bg-gray-300 dark:bg-zinc-700  dark:text-white dark:hover:bg-zinc-600 dark:focus-visible:bg-zinc-600 dark:active:bg-zinc-500'
+				>
+					<Image
+						className='my-1 mr-2 '
+						src={require(`../public/${type}/${imgURL}`)}
+						alt='project logo'
+						width='19'
+						height='19'
+						style={{
+							borderRadius: '50%',
+							backgroundColor: '#fff'
+						}}
+					/>
+					<span>Website</span>
+				</a>
+			</div>
+		)
 
 		ecosystem === 'false'
 			? setItems([
@@ -124,36 +149,7 @@ const SideMenu = () => {
 					),
 					{
 						type: 'divider'
-					},
-					getItem(
-						<span class='mb-2 block text-gray-400 dark:text-zinc-500'>Official Resources</span>,
-						'website',
-						null,
-						null
-					),
-					getItem(
-						<a
-							href={projects[type][name].website}
-							target='_blank'
-							rel='noopener referrer'
-							className='flex items-center w-fit my-0 action rounded-2xl bg-gray-100 px-2 transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 active:bg-gray-300 dark:bg-zinc-700  dark:text-white dark:hover:bg-zinc-600 dark:focus-visible:bg-zinc-600 dark:active:bg-zinc-500'
-						>
-							<Image
-								className='my-1 mr-2'
-								src={require(`../public/${type}/${imgURL}`)}
-								alt='project logo'
-								width='19'
-								height='19'
-								style={{
-									borderRadius: '50%',
-									backgroundColor: '#fff'
-								}}
-							/>
-							<span>Website</span>
-						</a>,
-						'websitepc',
-						null
-					)
+					}
 			  ])
 			: setItems([
 					getItem(
@@ -426,36 +422,7 @@ const SideMenu = () => {
 					getItem('', 'divider1', null, null, 'group'),
 					{
 						type: 'divider'
-					},
-					getItem(
-						<span class='mb-2 block text-gray-400 dark:text-zinc-500'>Official Resources</span>,
-						'website',
-						null,
-						null
-					),
-					getItem(
-						<a
-							href={projects[type][name].website}
-							target='_blank'
-							rel='noopener referrer'
-							className='flex items-center w-fit my-0 action rounded-2xl bg-gray-100 px-2 transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 active:bg-gray-300 dark:bg-zinc-700  dark:text-white dark:hover:bg-zinc-600 dark:focus-visible:bg-zinc-600 dark:active:bg-zinc-500'
-						>
-							<Image
-								className='my-1 mr-2 '
-								src={require(`../public/${type}/${imgURL}`)}
-								alt='project logo'
-								width='19'
-								height='19'
-								style={{
-									borderRadius: '50%',
-									backgroundColor: '#fff'
-								}}
-							/>
-							<span>Website</span>
-						</a>,
-						'websitepc',
-						null
-					)
+					}
 			  ])
 	}, [router])
 
@@ -466,18 +433,24 @@ const SideMenu = () => {
 				backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a'
 			}}
 		>
-			<Menu
-				items={items}
-				style={{
-					width: '100%',
-					backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a'
-				}}
-				mode='inline'
-				theme={theme}
-				openKeys={openKeys}
-				selectedKeys={selectedKeys}
-				onOpenChange={onOpenChange}
-			/>
+			<div className={styles.sideColumn__wrapper}>
+				<Menu
+					items={items}
+					style={{
+						width: '100%',
+						backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a'
+					}}
+					mode='inline'
+					theme={theme}
+					openKeys={openKeys}
+					selectedKeys={selectedKeys}
+					onOpenChange={onOpenChange}
+				/>
+				<div className='pl-1 pt-1'>
+					<span className='mb-2 pt-1 block text-[13px] text-gray-400 dark:text-zinc-500'>Official Resources</span>
+					{resources}{' '}
+				</div>
+			</div>
 		</aside>
 	)
 }
