@@ -51,6 +51,9 @@ b.bold {
 	@media only screen and (min-width: 767px) {
 		padding-bottom: 15px;
 	}
+	@media only screen and (max-width: 768px) {
+		padding-top: 5px;
+	}
 
 	&__wrapper {
 		display: flex;
@@ -406,6 +409,7 @@ p.desc {
 	align-items: center;
 	font-family: 'JetBrains Mono';
 	line-height: 1.3;
+	letter-spacing: -0.02em;
 
 	@media (max-width: 1300px) {
 		gap: 20px;
@@ -425,7 +429,8 @@ p.desc {
 		}
 	}
 
-	span {
+	span,
+	a {
 		font-size: 15px;
 
 		@media (max-width: 768px) {
