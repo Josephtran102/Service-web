@@ -399,7 +399,8 @@
       "goVersion": "1.20.1",
       "gas": "",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "minGasPrice": "0.0"
+      "minGasPrice": "0.0",
+      "newInit": "false"
     },
     "chainflip": {
       "explorer": "https://blocks-perseverance.chainflip.io/",
