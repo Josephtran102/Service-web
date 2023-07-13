@@ -357,7 +357,7 @@
       "installBin": "cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.2\nmake install",
       "minGasPrice": "0.025",
       "newExecStart": "$(which cascadiad) start --home $HOME/.cascadiad --trace --log_level info --json-rpc.api eth,txpool,personal,net,debug,web3 --api.enable",
-      "newInstallBin": "",
+      "newInstallBin": "cd $HOME\ncurl -L https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.3/cascadiad-v0.1.3-linux-amd64 -o cascadiad\nchmod +x cascadiad\nsudo mv cascadiad $(which cascadiad)",
       "offValDoc": "https://cascadia.gitbook.io/gitbook/network/configuration",
       "path": ".cascadiad",
       "peerID": "c6e3921222655345d8296353994e917f13a1b4a1",
@@ -368,7 +368,7 @@
       "seedPort": "40656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "",
+      "updHeight": "0",
       "variable": "CASCADIA",
       "website": "https://www.cascadia.foundation"
     },
