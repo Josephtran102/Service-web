@@ -1,5 +1,6 @@
-import { fetchNetInfo } from '@utils/fetchProject'
 import { useState, useEffect } from 'react'
+
+import { fetchNetInfo } from '@utils/fetchProject'
 
 const useNetInfo = (name, type) => {
 	const [livePeers, setLivePeers] = useState('')

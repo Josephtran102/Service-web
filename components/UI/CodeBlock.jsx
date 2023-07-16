@@ -1,5 +1,6 @@
-import CodeSnippet from '@components/UI/CodeSnippet'
 import { useContext } from 'react'
+
+import CodeSnippet from '@components/UI/CodeSnippet'
 import { Context } from '@context/context'
 
 const CodeBlock = ({ desc, code }) => {

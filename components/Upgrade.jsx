@@ -1,11 +1,11 @@
+import { useContext, useRef } from 'react'
 import styles from '@styles/Services.module.scss'
-import projects from 'data/projects'
-import { useContext, useRef, useState } from 'react'
 import Head from 'next/head'
-import { Context } from '@context/context'
-
-import CodeSnippet from './UI/CodeSnippet'
 import { Alert } from 'antd'
+import projects from 'data/projects'
+
+import { Context } from '@context/context'
+import CodeSnippet from './UI/CodeSnippet'
 import AnimatedSection from './AnimatedSection'
 
 const Upgrade = ({ name, type }) => {
@@ -18,9 +18,10 @@ const Upgrade = ({ name, type }) => {
 	const updHeight = project?.updHeight
 	explorer.current = project.explorer
 	const { theme } = useContext(Context)
-	const isEmpty = installBin === undefined ? true : false
+	const isBinEmpty = installBin === undefined
+
 	let indexOfMv, mvLine, newPath, beforeMv
-	if (!isEmpty) {
+	if (!isBinEmpty) {
 		indexOfMv = installBin
 			.split('\n')
 			.findIndex(line => line.trim().startsWith('mv') || line.trim().startsWith('sudo mv'))

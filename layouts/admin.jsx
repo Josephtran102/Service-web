@@ -1,6 +1,7 @@
-import projects from '@data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import projects from '@data/projects'
 import ProjectsModal from '@components/ProjectsModal'
 
 const mainnetData = projects.mainnet

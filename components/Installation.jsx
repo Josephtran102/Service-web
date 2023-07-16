@@ -1,11 +1,12 @@
-import styles from '@styles/Services.module.scss'
-import projects from 'data/projects'
 import { useCallback, useContext, useEffect, useRef, useState } from 'react'
+import styles from '@styles/Services.module.scss'
+import { Input, Space } from 'antd'
 import Head from 'next/head'
+
+import projects from 'data/projects'
 import { Context } from '@context/context'
 import { fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 import CodeSnippet from './UI/CodeSnippet'
-import { Input, Space } from 'antd'
 import AnimatedSection from './AnimatedSection'
 import useNetInfo from 'hooks/useNetInfo'
 

@@ -1,5 +1,6 @@
 import { Dropdown as AntDropdown } from 'antd'
 import Link from 'next/link'
+
 import styles from '@styles/Dropdown.module.scss'
 
 const Dropdown = props => {
@@ -31,7 +32,12 @@ const Dropdown = props => {
 			{
 				key: '3',
 				label: (
-					<a target='_blank' rel='noopener noreferrer' href='https://mainnet.itrocket.net/' className={styles.navItem}>
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://mainnet.itrocket.net/'
+						className={styles.navItem}
+					>
 						Mainnet
 					</a>
 				)
@@ -42,7 +48,12 @@ const Dropdown = props => {
 			{
 				key: '4',
 				label: (
-					<a target='_blank' rel='noopener noreferrer' href='https://testnet.itrocket.net/' className={styles.navItem}>
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href='https://testnet.itrocket.net/'
+						className={styles.navItem}
+					>
 						Testnet
 					</a>
 				)

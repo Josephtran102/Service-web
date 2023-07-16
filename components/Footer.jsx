@@ -1,9 +1,10 @@
+import { useContext } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+
 import { Context } from '@context/context'
 import '@styles/Footer.module.scss'
 import styles from '@styles/Footer.module.scss'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useContext } from 'react'
 
 const Footer = props => {
 	const { theme, toggleTheme } = useContext(Context)

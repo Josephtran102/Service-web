@@ -1,16 +1,17 @@
 import { useContext, useEffect, useState, useRef } from 'react'
+import { useRouter } from 'next/router'
+import { Segmented } from 'antd'
+
+import { currentProject } from 'utils/currentProjectByURL'
+import projects from 'data/projects'
+import { fetchStatus } from 'utils/fetchProject.js'
+import { SearchOutlined } from '@ant-design/icons'
+import styles from '@styles/Services.module.scss'
+import ProjectsModal from './ProjectsModal'
 import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import SideMenu from '@components/SideMenu'
-import { fetchStatus } from 'utils/fetchProject.js'
-import styles from '@styles/Services.module.scss'
-import { currentProject } from 'utils/currentProjectByURL'
-import projects from 'data/projects'
-import { RetweetOutlined, SearchOutlined } from '@ant-design/icons'
-import { useRouter } from 'next/router'
-import { Segmented } from 'antd'
-import ProjectsModal from './ProjectsModal'
 
 export default function Dashboard(props) {
 	const { theme, toggleTheme } = useContext(Context)
@@ -166,7 +167,6 @@ export default function Dashboard(props) {
 							className={styles.mobileSegmented}
 						/>
 					)}
-
 					{props.children}
 				</main>
 			</div>

@@ -1,7 +1,8 @@
-import { UpOutlined } from '@ant-design/icons'
-import Dashboard from '@components/Dashboard'
 import { FloatButton } from 'antd'
 import { AnimatePresence } from 'framer-motion'
+import { UpOutlined } from '@ant-design/icons'
+
+import Dashboard from '@components/Dashboard'
 
 const DashboardLayout = ({ children }) => (
 	<AnimatePresence wait>

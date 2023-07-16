@@ -1,5 +1,6 @@
-import { fetchStatus } from '@utils/fetchProject'
 import { useEffect, useState } from 'react'
+
+import { fetchStatus } from '@utils/fetchProject'
 
 const useStatus = () => {
 	const [blockHeight, setBlockHeight] = useState(null)

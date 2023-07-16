@@ -1,12 +1,13 @@
-import styles from '@styles/Services.module.scss'
-import projects from 'data/projects'
 import { useContext, useRef, useState } from 'react'
 import Head from 'next/head'
+import { Input, Radio, Space } from 'antd'
+
+import CodeBlock from '@components/UI/CodeBlock'
+import styles from '@styles/Services.module.scss'
+import projects from 'data/projects'
 import { Context } from '@context/context'
 import CodeSnippet from './UI/CodeSnippet'
-import { Input, Radio, Space } from 'antd'
 import AnimatedSection from './AnimatedSection'
-import CodeBlock from '@components/UI/CodeBlock'
 
 const CheatSheet = props => {
 	const name = props.name
@@ -20,7 +21,6 @@ const CheatSheet = props => {
 	const { theme } = useContext(Context)
 	const [livePeers, setLivePeers] = useState('')
 	const [moniker, setMoniker] = useState('$MONIKER')
-	const [wallet, setWallet] = useState('wallet')
 	const [amount, setAmount] = useState(1000000)
 	const [amountCreate, setAmountCreate] = useState(1000000)
 	const [toValoperAddr, setToValoperAddr] = useState('<TO_VALOPER_ADDRESS>')

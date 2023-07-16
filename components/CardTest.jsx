@@ -1,11 +1,12 @@
+import { useContext } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
+import { StarFilled } from '@ant-design/icons'
+
+import { handleMouseMove } from '@utils/handleMouseMove'
 import styles from '@styles/Card.module.scss'
 import projects from 'data/projects'
-import Link from 'next/link'
 import { Context } from '@context/context'
-import { useContext } from 'react'
-import { StarFilled } from '@ant-design/icons'
-import { handleMouseMove } from '@utils/handleMouseMove'
 
 const Card = () => {
 	const { theme, toggleTheme } = useContext(Context)

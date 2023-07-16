@@ -1,13 +1,14 @@
 import { useContext, useEffect, useState, useRef } from 'react'
+import { Menu, Segmented } from 'antd'
+import { RightOutlined } from '@ant-design/icons'
+import Link from 'next/link.js'
+import Image from 'next/image.js'
+import { useRouter } from 'next/navigation'
+
 import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
 import projects from 'data/projects'
-import { Menu, Segmented } from 'antd'
-import Link from 'next/link.js'
-import Image from 'next/image.js'
-import { RightOutlined } from '@ant-design/icons'
 import { currentProject } from 'utils/currentProjectByURL'
-import { useRouter } from 'next/navigation'
 
 function getItem(label, key, icon, children, type) {
 	return {

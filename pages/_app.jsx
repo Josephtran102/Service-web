@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
-import { Context, ContextProvider } from 'context/context'
 import { ConfigProvider, theme as AntTheme } from 'antd'
+
+import { Context, ContextProvider } from 'context/context'
 import '@styles/globals.scss'
 
 function App({ Component, pageProps, router }) {

@@ -1,9 +1,10 @@
 import Head from 'next/head'
-import styles from '@styles/Services.module.scss'
-import projects from 'data/projects'
 import Link from 'next/link'
 import Image from 'next/image'
+
+import projects from 'data/projects'
 import Header from '@components/Header'
+import styles from '@styles/Services.module.scss'
 
 let mainnetData = projects.mainnet
 let testnetData = projects.testnet

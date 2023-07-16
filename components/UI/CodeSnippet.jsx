@@ -4,7 +4,6 @@ import styles from '@styles/CodeSnippet.module.scss'
 import CopyButton from './CopyButton'
 import { useContext } from 'react'
 import { Context } from '@context/context'
-import { useHorizontalScroll } from 'hooks/useHorizontalScroll'
 
 const CodeSnippet = props => {
 	const { theme, toggleTheme } = useContext(Context)

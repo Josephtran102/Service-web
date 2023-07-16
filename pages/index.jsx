@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
-import { motion } from 'framer-motion'
-import styles from '@styles/Home.module.scss'
-import Accordion from '@components/UI/Accordion.jsx'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
@@ -17,6 +16,8 @@ import CardTest from '@components/CardTest'
 import projects from '@data/projects.json'
 import { UpOutlined } from '@ant-design/icons'
 import Spinner from '@components/UI/Spinner'
+import styles from '@styles/Home.module.scss'
+import Accordion from '@components/UI/Accordion.jsx'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -28,7 +29,6 @@ const Home = () => {
 	useEffect(() => {
 		const onPageLoad = () => {
 			setOpacity(0)
-
 			setIsLoading(false)
 		}
 

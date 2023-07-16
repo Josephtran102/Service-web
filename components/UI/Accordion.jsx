@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import styles from '@styles/Accordion.module.scss'
 import { PlusOutlined } from '@ant-design/icons'
+
+import styles from '@styles/Accordion.module.scss'
 
 const AccordionItem = ({ title, content }) => {
 	const [isActive, setIsActive] = useState(false)

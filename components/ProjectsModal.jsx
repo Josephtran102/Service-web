@@ -1,10 +1,11 @@
-import projects from 'data/projects'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Modal } from 'antd'
-import { useState } from 'react'
-import styles from '@styles/Services.module.scss'
 import { RetweetOutlined } from '@ant-design/icons'
+
+import projects from 'data/projects'
+import styles from '@styles/Services.module.scss'
 
 const ProjectsModal = ({ name, type }) => {
 	const mainnetData = projects.mainnet
