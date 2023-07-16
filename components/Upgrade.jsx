@@ -1,9 +1,9 @@
 import { useContext, useRef } from 'react'
-import styles from '@styles/Services.module.scss'
 import Head from 'next/head'
 import { Alert } from 'antd'
-import projects from 'data/projects'
 
+import projects from 'data/projects'
+import styles from '@styles/Services.module.scss'
 import { Context } from '@context/context'
 import CodeSnippet from './UI/CodeSnippet'
 import AnimatedSection from './AnimatedSection'
