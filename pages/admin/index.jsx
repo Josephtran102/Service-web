@@ -1,9 +1,7 @@
 import { getAdminLayout } from '@layouts/admin'
-import { PrismaClient } from '@prisma/client'
 import { verifyToken } from '@utils/auth'
+import prismadb from '@utils/prismadb'
 import cookie from 'cookie'
-
-const prisma = new PrismaClient()
 
 const Admin = () => {
 	;<>
@@ -28,7 +26,7 @@ export async function getServerSideProps(context) {
 		}
 
 		const user = verifyToken(token)
-		const currentUser = await prisma.user.findUnique({
+		const currentUser = await prismadb.user.findUnique({
 			where: { id: user.id }
 		})
 

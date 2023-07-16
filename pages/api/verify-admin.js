@@ -1,8 +1,6 @@
-import { PrismaClient } from '@prisma/client'
 import { verifyToken } from '@utils/auth'
+import prismadb from '@utils/prismadb'
 import cookie from 'cookie'
-
-const prisma = new PrismaClient()
 
 export default async function handler(req, res) {
 	const cookies = cookie.parse(req.headers.cookie || '')
@@ -13,7 +11,7 @@ export default async function handler(req, res) {
 	}
 
 	const user = verifyToken(token)
-	const currentUser = await prisma.user.findUnique({ where: { id: user.id } })
+	const currentUser = await prismadb.user.findUnique({ where: { id: user.id } })
 
 	if (currentUser.role !== 'admin') {
 		return res.json({ isAdmin: false })

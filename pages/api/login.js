@@ -1,8 +1,6 @@
-import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcryptjs'
 import { generateToken } from '../../utils/auth'
-
-const prisma = new PrismaClient()
+import prismadb from '@utils/prismadb'
 
 export default async function handler(req, res) {
 	if (req.method !== 'POST') {
@@ -15,7 +13,7 @@ export default async function handler(req, res) {
 		return res.status(400).json({ message: 'Email and password are required' })
 	}
 
-	const user = await prisma.user.findUnique({
+	const user = await prismadb.user.findUnique({
 		where: { email }
 	})
 
