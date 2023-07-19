@@ -280,6 +280,10 @@ a {
 	}
 }
 
+.ant-tabs-heading {
+	@apply font-semibold text-xl lg:text-[28px] text-zinc-800 mt-1 dark:text-white/80 mx-2;
+}
+
 .ant-menu-item {
 	font-size: 14px;
 	font-weight: 400;

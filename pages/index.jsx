@@ -2,22 +2,21 @@ import { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { FloatButton, Tabs } from 'antd'
 
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
 import { smoothScroll } from '@utils/smoothScroll'
-import { FloatButton, Tabs } from 'antd'
 import { opacityBlock } from '@data/transitions'
 import { countApr } from '@utils/updateAPR'
-import CardMain from '@components/CardMain'
-import CardTest from '@components/CardTest'
 import projects from '@data/projects.json'
 import { UpOutlined } from '@ant-design/icons'
 import Spinner from '@components/UI/Spinner'
 import styles from '@styles/Home.module.scss'
 import Accordion from '@components/UI/Accordion.jsx'
+import Card from '@components/UI/Card'
 
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -56,14 +55,10 @@ const Home = () => {
 			label: `All`,
 			children: (
 				<>
-					<h3 className='font-semibold text-xl lg:text-[28px] text-zinc-800 mt-1 dark:text-white/80 mx-2'>
-						Mainnet
-					</h3>
-					<CardMain projects={projects} aprValues={aprValues} />
-					<h3 className='font-semibold text-xl lg:text-[28px] text-zinc-800 mt-1 dark:text-white/80 mx-2'>
-						Testnet
-					</h3>
-					<CardTest />
+					<h3 className='ant-tabs-heading'>Mainnet</h3>
+					<Card data={projects.mainnet} aprValues={aprValues} />
+					<h3 className='ant-tabs-heading'>Testnet</h3>
+					<Card data={projects.testnet} />
 				</>
 			)
 		},
@@ -72,7 +67,7 @@ const Home = () => {
 			label: `Mainnet (${projectsCount?.mainnet})`,
 			children: (
 				<>
-					<CardMain projects={projects} aprValues={aprValues} />
+					<Card data={projects.mainnet} aprValues={aprValues} />
 				</>
 			)
 		},
@@ -81,7 +76,7 @@ const Home = () => {
 			label: `Testnet (${projectsCount?.testnet})`,
 			children: (
 				<>
-					<CardTest />
+					<Card data={projects.testnet} />
 				</>
 			)
 		}
@@ -120,17 +115,27 @@ const Home = () => {
 						>
 							<div className={styles.hero__column} id={styles.hero__descStaking}>
 								<div className={styles.hero__columnRoot}>
-									<h3 className={styles.hero__heading}>Trusted Validator &amp; Interchain Utility Provider</h3>
+									<h3 className={styles.hero__heading}>
+										Trusted Validator &amp; Interchain Utility Provider
+									</h3>
 									<span className={styles.hero__desc}>
-										With few simple steps you can delegate funds to our trusted validators or explore our services
-										where you can find tools that will be useful for node operators and developers.
+										With few simple steps you can delegate funds to our trusted validators or explore our
+										services where you can find tools that will be useful for node operators and
+										developers.
 									</span>
 								</div>
 								<div className={styles.hero__links}>
-									<Link href='#networks' className={styles.button} onClick={e => smoothScroll(e, 'networks')}>
+									<Link
+										href='#networks'
+										className={styles.button}
+										onClick={e => smoothScroll(e, 'networks')}
+									>
 										Delegate
 									</Link>
-									<Link href='/services' className={theme === 'light' ? styles.button : styles.button__dark}>
+									<Link
+										href='/services'
+										className={theme === 'light' ? styles.button : styles.button__dark}
+									>
 										Services
 									</Link>
 								</div>
@@ -155,11 +160,7 @@ const Home = () => {
 					</div>
 				</motion.section>
 
-				<section
-					style={{
-						backgroundColor: theme === 'dark' ? '#141414' : ' #fff'
-					}}
-				>
+				<section className='bg-white dark:bg-[#141414]'>
 					<div className={styles.container}>
 						<div className={styles.accordion__wrapper}>
 							<h3

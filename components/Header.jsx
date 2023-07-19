@@ -6,44 +6,13 @@ import styles from '@styles/Header.module.scss'
 import { Context } from '@context/context'
 import Dropdown from '@components/UI/Dropdown'
 import { motion } from 'framer-motion'
-
-const menuVariants = {
-	hidden: {
-		y: '-20px',
-		opacity: 0
-	},
-	visible: {
-		y: 0,
-		opacity: 1,
-		transition: {
-			type: 'spring',
-			stiffness: 120,
-			damping: 20,
-			duration: 0.15
-		}
-	},
-	exit: {
-		y: '-20px',
-		opacity: 0,
-		transition: {
-			type: 'spring',
-			stiffness: 120,
-			damping: 20,
-			duration: 0.15
-		}
-	}
-}
+import { menuVariants, spring } from '@data/transitions'
 
 const Header = () => {
 	const { theme, toggleTheme } = useContext(Context)
 	const [isOpen, setIsOpen] = useState(false)
 	const [accordionOpen, setAccordionOpen] = useState(false)
 	const [opacity, setOpacity] = useState(0)
-	const spring = {
-		type: 'spring',
-		stiffness: 700,
-		damping: 55
-	}
 
 	useEffect(() => {
 		setTimeout(() => {

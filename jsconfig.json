@@ -8,8 +8,7 @@
 			"@data/*": ["data/*"],
 			"@utils/*": ["utils/*"],
 			"@layouts/*": ["layouts/*"],
-			"@public/*": ["public/*"],
-			"@store/*": ["store/*"]
+			"@public/*": ["public/*"]
 		}
 	}
 }

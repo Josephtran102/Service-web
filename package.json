@@ -19,12 +19,10 @@
 		"clipboard-copy": "^4.0.1",
 		"cookie": "^0.5.0",
 		"dotenv": "^16.3.1",
-		"form-data": "^4.0.0",
 		"framer-motion": "^10.12.18",
 		"js-cookie": "^3.0.5",
 		"jsonwebtoken": "^9.0.1",
 		"next": "^13.4.9",
-		"next-auth": "^4.22.1",
 		"node-fetch": "^3.3.1",
 		"pretty-ms": "^8.0.0",
 		"react": "18.2.0",
@@ -41,6 +39,7 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"postcss": "^8.4.25",
 		"prisma": "^5.0.0",
-		"tailwindcss": "^3.3.2"
+		"tailwindcss": "^3.3.2",
+		"typescript": "^5.1.6"
 	}
 }
