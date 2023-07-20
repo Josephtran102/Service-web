@@ -9,6 +9,7 @@ import { fetchSnap, fetchStatus } from '@utils/fetchProject.js'
 import CodeSnippet from './UI/CodeSnippet'
 import AnimatedSection from './AnimatedSection'
 import useNetInfo from 'hooks/useNetInfo'
+import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
 
 const Installation = props => {
 	const name = props.name
@@ -41,8 +42,6 @@ const Installation = props => {
 	const { theme } = useContext(Context)
 	const [isActive, setIsActive] = useState(styles.pending)
 	const [installBin, setInstallBin] = useState(project.installBin)
-	const [pruning, setPruning] = useState('')
-	const [indexer, setIndexer] = useState(null)
 	const [port, setPort] = useState(project.port)
 	const [inputStatus, setInputStatus] = useState('')
 	const [moniker, setMoniker] = useState('test')
@@ -70,6 +69,8 @@ const Installation = props => {
 		SEEDS = `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
 	}
 
+	const { pruning, indexer } = useFetchSnapInfo(name, type)
+
 	const status = () => {
 		fetchStatus(name, type)
 			.then(status => {
@@ -85,24 +86,11 @@ const Installation = props => {
 			})
 	}
 
-	const snap = () => {
-		fetchSnap(name, type)
-			.then(data => {
-				setPruning(data.pruning)
-				setIndexer(data.indexer)
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
-
 	const fetchData = () => {
 		status()
-		snap()
 	}
 
 	useEffect(() => {
-		snap()
 		fetchData()
 		const intervalId = setInterval(fetchData, 10000)
 

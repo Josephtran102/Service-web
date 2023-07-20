@@ -112,7 +112,9 @@ const SideMenu = () => {
 										backgroundColor: '#fff'
 									}}
 								/>
-								<span className='font-semibold tracking-wide'>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
+								<span className='font-semibold tracking-wide'>
+									{name.charAt(0).toUpperCase() + name.slice(1)}
+								</span>
 							</div>
 						</div>,
 						'grpthis',
@@ -131,7 +133,10 @@ const SideMenu = () => {
 						`installation`
 					),
 					getItem(
-						<Link href={serviceURL + '#security'} onClick={event => handleClick(event, 'security', `security`)}>
+						<Link
+							href={serviceURL + '#security'}
+							onClick={event => handleClick(event, 'security', `security`)}
+						>
 							<span className='mr-3'>🔒</span> Security
 						</Link>,
 						`security`
@@ -156,7 +161,6 @@ const SideMenu = () => {
 					getItem(
 						<div className='flex flex-col gap-2 '>
 							<div className='flex gap-2 md:gap-3 items-center mb-1'>
-								{' '}
 								<Image
 									className='my-1 mx-1'
 									src={require(`../public/${type}/${imgURL}`)}
@@ -168,7 +172,9 @@ const SideMenu = () => {
 										backgroundColor: '#fff'
 									}}
 								/>
-								<span className='font-semibold tracking-wide'>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
+								<span className='font-semibold tracking-wide'>
+									{name.charAt(0).toUpperCase() + name.slice(1)}
+								</span>
 							</div>
 							<Segmented
 								block
@@ -200,21 +206,30 @@ const SideMenu = () => {
 								null,
 								[
 									getItem(
-										<Link href={serviceURL + '#rpc'} onClick={event => handleClick(event, 'rpc', `rpc${name}`)}>
+										<Link
+											href={serviceURL + '#rpc'}
+											onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
+										>
 											RPC, API, GRPC
 										</Link>,
 										`rpc${name}`,
 										<RightOutlined />
 									),
 									getItem(
-										<Link href={serviceURL + '#peer'} onClick={event => handleClick(event, 'peer', `peer${name}`)}>
+										<Link
+											href={serviceURL + '#peer'}
+											onClick={event => handleClick(event, 'peer', `peer${name}`)}
+										>
 											Peers, Seeds
 										</Link>,
 										`peer${name}`,
 										<RightOutlined />
 									),
 									getItem(
-										<Link href={serviceURL + '#snap'} onClick={event => handleClick(event, 'snap', `snap${name}`)}>
+										<Link
+											href={serviceURL + '#snap'}
+											onClick={event => handleClick(event, 'snap', `snap${name}`)}
+										>
 											Snapshot
 										</Link>,
 										`snap${name}`,
@@ -231,7 +246,10 @@ const SideMenu = () => {
 										<RightOutlined />
 									),
 									getItem(
-										<Link href={serviceURL + '#wasm'} onClick={event => handleClick(event, 'wasm', `wasm${name}`)}>
+										<Link
+											href={serviceURL + '#wasm'}
+											onClick={event => handleClick(event, 'wasm', `wasm${name}`)}
+										>
 											Wasm
 										</Link>,
 										`wasm${name}`,
@@ -358,7 +376,9 @@ const SideMenu = () => {
 									getItem(
 										<Link
 											href={serviceURL + '/cheat-sheet/#service-operations'}
-											onClick={event => handleClick(event, 'service-operations', `service-operations${name}`)}
+											onClick={event =>
+												handleClick(event, 'service-operations', `service-operations${name}`)
+											}
 										>
 											Service operations
 										</Link>,
@@ -388,7 +408,9 @@ const SideMenu = () => {
 									getItem(
 										<Link
 											href={serviceURL + '/cheat-sheet/#validator-operations'}
-											onClick={event => handleClick(event, 'validator-operations', `validator-operations${name}`)}
+											onClick={event =>
+												handleClick(event, 'validator-operations', `validator-operations${name}`)
+											}
 										>
 											Validator operations
 										</Link>,
@@ -448,7 +470,9 @@ const SideMenu = () => {
 					onOpenChange={onOpenChange}
 				/>
 				<div className='pl-1 pt-1'>
-					<span className='mb-2 pt-1 block text-[13px] text-gray-400 dark:text-zinc-500'>Official Resources</span>
+					<span className='mb-2 pt-1 block text-[13px] text-gray-400 dark:text-zinc-500'>
+						Official Resources
+					</span>
 					{resources}{' '}
 				</div>
 			</div>

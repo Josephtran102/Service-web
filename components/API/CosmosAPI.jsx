@@ -1,15 +1,15 @@
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useContext, useRef } from 'react'
 import { Context } from '@context/context'
-import projects from 'data/projects'
-import prettyMilliseconds from 'pretty-ms'
-import styles from '@styles/Services.module.scss'
-import CodeSnippet from '@components/UI/CodeSnippet.jsx'
-import { fetchSnap } from '@utils/fetchProject.js'
 import Head from 'next/head'
 import { Typography } from 'antd'
-import AnimatedSection from '../AnimatedSection'
-import useNetInfo from 'hooks/useNetInfo'
 const { Paragraph } = Typography
+
+import projects from 'data/projects'
+import styles from '@styles/Services.module.scss'
+import CodeSnippet from '@components/UI/CodeSnippet.jsx'
+import AnimatedSection from '@components/AnimatedSection'
+import useNetInfo from 'hooks/useNetInfo'
+import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
 
 const CosmosAPI = ({ name, type }) => {
 	const project = projects[type][name]
@@ -20,52 +20,13 @@ const CosmosAPI = ({ name, type }) => {
 	explorer.current = project.explorer
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
-	const [pruning, setPruning] = useState('')
-	const [indexer, setIndexer] = useState(null)
-	const [snapHeight, setSnapHeight] = useState(null)
-	const [snapSize, setSnapSize] = useState('')
-	const [snapTime, setSnapTime] = useState()
 
 	const PEERS = peerID ? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}` : ''
 	const LIVE_PEERS = peerID ? `"${PEERS}"` : `"${livePeers.slice(1)}"`
 	const SEEDS = seedID ? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}` : ''
 	const gRPC = `${name}-${type}-grpc.itrocket.net:${peerPort ? peerPort.slice(0, 2) : ''}090`
 
-	const snap = () => {
-		fetchSnap(name, type)
-			.then(data => {
-				setSnapHeight(data.SnapshotHeight)
-				setSnapSize(data.SnapshotSize)
-				setPruning(data.pruning)
-				setIndexer(data.indexer)
-
-				if (data.WasmPath !== 'false') {
-					wasm.current = data.WasmPath
-				}
-
-				let time = data.SnapshotBlockTime
-				time = Date.parse(time.concat(':00'))
-				time = Date.now() - time
-				setSnapTime(prettyMilliseconds(time, { compact: true }))
-			})
-			.catch(err => {
-				console.log(err)
-			})
-	}
-
-	const fetchData = async () => {
-		snap()
-	}
-
-	useEffect(() => {
-		snap()
-		fetchData()
-		const intervalId = setInterval(fetchData, 10000)
-
-		return () => {
-			clearInterval(intervalId)
-		}
-	}, [])
+	const { snapHeight, snapSize, snapTime, pruning, indexer } = useFetchSnapInfo(name, type)
 
 	return (
 		<AnimatedSection>

@@ -59,16 +59,11 @@ export default function Dashboard(props) {
 			setEcosystem(projects[type][name].ecosystem)
 		}
 
-		const URL = window.location.href
-		if (URL.indexOf('installation') > -1) {
-			setValue('Installation')
-		} else if (URL.indexOf('upgrade') > -1) {
-			setValue('Upgrade')
-		} else if (URL.indexOf('cheat') > -1) {
-			setValue('Cheat-Sheet')
-		} else {
-			setValue('API & Sync')
-		}
+		const section = router.pathname.split('/').pop()
+		const sections = ['installation', 'upgrade', 'cheat']
+		const selectedValue = sections.includes(section) ? section : 'API & Sync'
+		setValue(selectedValue)
+
 		status(name, type, isCurrent)
 
 		const intervalId = setInterval(() => {
@@ -120,7 +115,8 @@ export default function Dashboard(props) {
 										<b className={styles.bold}>Block Height: </b> {blockHeight}{' '}
 									</span>
 									<span>
-										<b className={styles.bold}>RPC Status:</b> <span className={`${styles.dot} ${isActive}`} />
+										<b className={styles.bold}>RPC Status:</b>{' '}
+										<span className={`${styles.dot} ${isActive}`} />
 									</span>{' '}
 								</>
 							)}
