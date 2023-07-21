@@ -1,3 +1,5 @@
+import { fetchAnnualProvisions, fetchBondedTokens, fetchCommunityTax } from './fetchCosmosEndpoints'
+
 export const countApr = async name => {
 	try {
 		const [annual_provisions, community_tax, bonded_tokens] = await Promise.all([
