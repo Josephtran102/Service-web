@@ -10,6 +10,7 @@ import AprValue from '@components/AprValue'
 
 const Card = ({ data, aprValues }) => {
 	const { theme, toggleTheme } = useContext(Context)
+	const type = aprValues ? 'mainnet' : 'testnet'
 
 	const handleOnMouseMove = e => {
 		handleMouseMove(e)
@@ -17,7 +18,7 @@ const Card = ({ data, aprValues }) => {
 
 	const getExplorerLink = item => {
 		return data[item].explorer === '' || data[item].explorer === undefined
-			? `https://mainnet.itrocket.net/${item.toLowerCase()}/staking`
+			? `https://${type}.itrocket.net/${item.toLowerCase()}/staking`
 			: data[item].explorer
 	}
 
@@ -36,12 +37,7 @@ const Card = ({ data, aprValues }) => {
 				>
 					<div className={styles.card__desc}>
 						<div className={styles.card__img}>
-							<Image
-								src={`/${aprValues ? 'mainnet' : 'testnet'}/${data[item].imgUrl}`}
-								alt='item'
-								width={50}
-								height={50}
-							/>
+							<Image src={`/${type}/${data[item].imgUrl}`} alt='item' width={50} height={50} />
 						</div>
 						<div className='flex flex-col items-start'>
 							<h5 className={styles.card__heading}>
@@ -58,7 +54,7 @@ const Card = ({ data, aprValues }) => {
 						</div>
 					</div>
 
-					{data[item].delegate && (
+					{type === 'mainnet' && data[item].delegate && (
 						<a
 							href={getDelegateLink(item)}
 							target='_blank'
