@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FloatButton, Tabs } from 'antd'
+import { UpOutlined } from '@ant-design/icons'
 
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -12,22 +13,27 @@ import { smoothScroll } from '@utils/smoothScroll'
 import { opacityBlock } from '@data/transitions'
 import { countApr } from '@utils/updateAPR'
 import projects from '@data/projects.json'
-import { UpOutlined } from '@ant-design/icons'
 import Spinner from '@components/UI/Spinner'
 import styles from '@styles/Home.module.scss'
 import Accordion from '@components/UI/Accordion.jsx'
 import Card from '@components/UI/Card'
 
+export async function getStaticProps() {
+	return {
+		props: { projects },
+
+		revalidate: 1
+	}
+}
+
 const Home = () => {
 	const { theme, toggleTheme } = useContext(Context)
-	const [opacity, setOpacity] = useState(false)
 	const [aprValues, setAprValues] = useState(null)
 	const [projectsCount, setProjectsCount] = useState(null)
 	const [isLoading, setIsLoading] = useState(true)
 
 	useEffect(() => {
 		const onPageLoad = () => {
-			setOpacity(0)
 			setIsLoading(false)
 		}
 

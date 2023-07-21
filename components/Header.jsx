@@ -12,13 +12,6 @@ const Header = () => {
 	const { theme, toggleTheme } = useContext(Context)
 	const [isOpen, setIsOpen] = useState(false)
 	const [accordionOpen, setAccordionOpen] = useState(false)
-	const [opacity, setOpacity] = useState(0)
-
-	useEffect(() => {
-		setTimeout(() => {
-			setOpacity(1)
-		}, 1)
-	}, [])
 
 	const mobileLinks = [
 		<Link
@@ -118,9 +111,6 @@ const Header = () => {
 		<>
 			<header
 				className={`${styles.header} bg-white dark:bg-[#141414] border-b border-[#00000017] dark:border-[#ffffff0c] `}
-				style={{
-					opacity: opacity
-				}}
 			>
 				{
 					<Link href='/'>
