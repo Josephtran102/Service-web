@@ -100,6 +100,10 @@ const Home = () => {
 					name='description'
 					content='ITRocket 🚀 - Crypto multipurpose project focused on providing best services for Cosmos (and not only) node operators'
 				/>
+				<meta
+					name='keywords'
+					content='ITRocket, it rocket, validator, cosmos, cosmos installation, nodes, blockchain'
+				/>
 			</Head>
 			<Header />
 
