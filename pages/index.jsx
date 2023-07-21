@@ -7,7 +7,7 @@ import { UpOutlined } from '@ant-design/icons'
 
 import Footer from '@components/Footer'
 import Header from '@components/Header'
-import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
+// import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
 import { smoothScroll } from '@utils/smoothScroll'
 import { opacityBlock } from '@data/transitions'
@@ -111,7 +111,7 @@ const Home = () => {
 						backgroundColor: theme === 'dark' ? '#141414' : ' #fff'
 					}}
 				>
-					<ParticlesBG />
+					{/* <ParticlesBG /> */}
 					<div className={styles.container}>
 						<motion.div
 							initial='hidden'
