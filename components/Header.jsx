@@ -218,6 +218,7 @@ const Header = () => {
 							setAccordionOpen(false)
 						}}
 						className={styles.burgerButton}
+						aria-label='burgerButton'
 					>
 						<div className={styles.burgerIconWrapper}>
 							<span
