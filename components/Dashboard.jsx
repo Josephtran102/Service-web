@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
-import { Segmented } from 'antd'
+import { Tabs } from 'antd'
 
 import { currentProject } from 'utils/currentProjectByURL'
 import projects from 'data/projects'
@@ -12,6 +12,9 @@ import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import SideMenu from '@components/SideMenu'
+import Link from 'next/link'
+import services from '@data/services'
+import { usePathname } from 'next/navigation'
 
 export default function Dashboard(props) {
 	const { theme, toggleTheme } = useContext(Context)
@@ -22,7 +25,7 @@ export default function Dashboard(props) {
 	const [explorer, setExplorer] = useState()
 	const [blockHeight, setBlockHeight] = useState(null)
 	const [chainID, setChainID] = useState()
-	const [value, setValue] = useState()
+	const [activeTab, setActiveTab] = useState()
 	const [intervalId, setIntervalId] = useState(null)
 	const [ecosystem, setEcosystem] = useState(null)
 	const curProjectName = useRef()
@@ -46,9 +49,10 @@ export default function Dashboard(props) {
 
 	useEffect(() => {
 		let isCurrent = true
+
 		const project = currentProject()
-		const name = project.name
-		const type = project.type
+		const name = project.name,
+			type = project.type
 		curProjectName.current = name
 		curProjectType.current = type
 
@@ -59,12 +63,19 @@ export default function Dashboard(props) {
 			setEcosystem(projects[type][name].ecosystem)
 		}
 
-		const section = router.pathname.split('/').pop()
-		const sections = ['installation', 'upgrade', 'cheat']
-		const selectedValue = sections.includes(section) ? section : 'API & Sync'
-		setValue(selectedValue)
-
 		status(name, type, isCurrent)
+
+		const sections = []
+		services.map(section => {
+			sections.push(section.key)
+		})
+
+		let currentSection = router.pathname.split('/').filter(Boolean).pop()
+		if (sections.indexOf(currentSection) === -1) {
+			currentSection = 'api'
+		}
+		console.log(currentSection)
+		setActiveTab(() => currentSection)
 
 		const intervalId = setInterval(() => {
 			status(name, type, isCurrent)
@@ -82,10 +93,9 @@ export default function Dashboard(props) {
 		}, 1)
 	}, [])
 
-	const handleTabClick = value => {
-		setValue(value)
-		const section = value === 'API & Sync' ? '' : value
-		const href = `/services/${curProjectType.current}/${curProjectName.current}/${section.toLowerCase()}`
+	const onChange = key => {
+		if (key === 'api') key = ''
+		const href = `/services/${curProjectType.current}/${curProjectName.current}/${key}`
 		router.push(href)
 	}
 
@@ -102,10 +112,7 @@ export default function Dashboard(props) {
 					>
 						<div className={styles.stats}>
 							<ProjectsModal name={name} type='services' />
-
-							{ecosystem == 'false' ? (
-								''
-							) : (
+							{ecosystem == 'cosmos' && (
 								<>
 									<span>
 										<b className={styles.bold}>Chain ID: </b>
@@ -146,21 +153,15 @@ export default function Dashboard(props) {
 							</span>
 						</div>
 					</div>
-					{ecosystem === 'false' ? (
-						''
-					) : (
-						<Segmented
-							value={value}
-							defaultValue={curProjectType.current}
-							options={['API & Sync', 'Installation', 'Upgrade', 'Cheat-Sheet']}
-							onChange={handleTabClick}
-							style={{
-								marginBottom: '10px',
-								marginLeft: '5px',
-								backgroundColor: theme === 'dark' ? '#6b6969' : '#e0e0e0',
-								width: 'fit-content'
-							}}
-							className={styles.mobileSegmented}
+					{ecosystem === 'cosmos' && (
+						<Tabs
+							defaultActiveKey='1'
+							items={services}
+							onChange={onChange}
+							size='small'
+							tabBarGutter={0}
+							activeKey={activeTab}
+							className='hide-tab-panel md:hidden'
 						/>
 					)}
 					{props.children}
