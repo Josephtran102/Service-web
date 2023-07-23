@@ -107,6 +107,43 @@ const Project = ({ project }) => {
 		})
 	}
 
+	const onDeleteProject = async () => {
+		Modal.confirm({
+			title: 'Confirm delete',
+			content: 'Are you sure you want to delete this project?',
+			okText: 'Yes',
+			okType: 'danger',
+			cancelText: 'No',
+			onOk: async () => {
+				try {
+					const response = await axios.get('/api/github/read')
+					const projects = response.data
+
+					if (!projects[type][id]) {
+						alert('Project not found')
+						return
+					}
+
+					delete projects[type][id]
+
+					const updateResponse = await axios.post('/api/github/update', projects)
+
+					if (updateResponse.status === 200) {
+						alert('Project deleted successfully')
+						router.push('/admin')
+					} else {
+						alert('Delete failed')
+					}
+				} catch (error) {
+					alert(error)
+				}
+			},
+			onCancel() {
+				console.log('Cancel')
+			}
+		})
+	}
+
 	const onFinishFailed = errorInfo => {
 		console.log('Failed:', errorInfo)
 	}
@@ -193,6 +230,9 @@ const Project = ({ project }) => {
 						<div className='flex justify-center gap-4'>
 							<Button type='primary' htmlType='submit' className='min-w-[20%]'>
 								Submit
+							</Button>
+							<Button danger onClick={onDeleteProject} className='min-w-[20%]'>
+								Delete Project
 							</Button>
 						</div>
 					</Form.Item>
