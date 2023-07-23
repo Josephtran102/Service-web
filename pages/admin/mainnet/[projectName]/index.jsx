@@ -5,7 +5,7 @@ import axios from 'axios'
 import { DeleteOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import { Button, Form, Input, Space, Skeleton, Modal, Select } from 'antd'
 import { useRouter } from 'next/router'
-import { fieldNames } from '@data/uniqueFieldNames'
+import fieldNames from '@data/uniqueFieldNames'
 
 const type = 'mainnet'
 const { TextArea } = Input
