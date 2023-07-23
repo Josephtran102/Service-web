@@ -1,20 +1,18 @@
 import { useContext, useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
-import { Tabs } from 'antd'
+import { Skeleton, Tabs } from 'antd'
+import { LoadingOutlined, SearchOutlined } from '@ant-design/icons'
 
 import { currentProject } from 'utils/currentProjectByURL'
 import projects from 'data/projects'
 import { fetchStatus } from 'utils/fetchProject.js'
-import { SearchOutlined } from '@ant-design/icons'
 import styles from '@styles/Services.module.scss'
 import ProjectsModal from './ProjectsModal'
 import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import SideMenu from '@components/SideMenu'
-import Link from 'next/link'
 import services from '@data/services'
-import { usePathname } from 'next/navigation'
 
 export default function Dashboard(props) {
 	const { theme, toggleTheme } = useContext(Context)
@@ -74,7 +72,6 @@ export default function Dashboard(props) {
 		if (sections.indexOf(currentSection) === -1) {
 			currentSection = 'api'
 		}
-		console.log(currentSection)
 		setActiveTab(() => currentSection)
 
 		const intervalId = setInterval(() => {
@@ -112,19 +109,25 @@ export default function Dashboard(props) {
 					>
 						<div className={styles.stats}>
 							<ProjectsModal name={name} type='services' />
-							{ecosystem == 'cosmos' && (
+
+							{ecosystem == 'cosmos' && isActive !== styles.pending && (
 								<>
-									<span>
+									<div>
 										<b className={styles.bold}>Chain ID: </b>
 										{chainID}
-									</span>
-									<span>
-										<b className={styles.bold}>Block Height: </b> {blockHeight}{' '}
-									</span>
-									<span>
+									</div>
+									<div className='flex gap-1'>
+										<b className={styles.bold}>Block Height: </b>{' '}
+										{isActive === styles.pending ? (
+											<LoadingOutlined className='ml-5 mr-2' />
+										) : (
+											` ${blockHeight}`
+										)}
+									</div>
+									<div>
 										<b className={styles.bold}>RPC Status:</b>{' '}
 										<span className={`${styles.dot} ${isActive}`} />
-									</span>{' '}
+									</div>
 								</>
 							)}
 
@@ -159,9 +162,10 @@ export default function Dashboard(props) {
 							items={services}
 							onChange={onChange}
 							size='small'
-							tabBarGutter={0}
+							tabBarGutter={1}
 							activeKey={activeTab}
 							className='hide-tab-panel md:hidden'
+							type='card'
 						/>
 					)}
 					{props.children}

@@ -52,7 +52,8 @@ b.bold {
 		padding-bottom: 15px;
 	}
 	@media only screen and (max-width: 768px) {
-		padding-top: 5px;
+		border-radius: 0px;
+		padding-top: 7px;
 	}
 
 	&__wrapper {
@@ -160,7 +161,7 @@ b.bold {
 		}
 
 		@media (max-width: 768px) {
-			font-size: 25px;
+			font-size: 24px;
 			padding-top: 25px;
 			margin-top: 0;
 		}
@@ -419,6 +420,7 @@ p.desc {
 	@media (max-width: 768px) {
 		gap: 15px;
 		row-gap: 8px;
+		font-size: 13px !important;
 	}
 
 	&__name {

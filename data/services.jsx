@@ -1,19 +1,41 @@
+import { ApiOutlined, CloudUploadOutlined, DownloadOutlined, ExperimentOutlined } from '@ant-design/icons'
+
 const services = [
 	{
 		key: 'api',
-		label: `API & Sync`
+		label: (
+			<>
+				<ApiOutlined />
+				API & Sync
+			</>
+		)
 	},
 	{
 		key: 'installation',
-		label: `Installation`
+		label: (
+			<>
+				<DownloadOutlined />
+				Installation
+			</>
+		)
 	},
 	{
 		key: 'upgrade',
-		label: 'Upgrade'
+		label: (
+			<>
+				<CloudUploadOutlined />
+				Upgrade
+			</>
+		)
 	},
 	{
 		key: 'cheat-sheet',
-		label: 'Cheat Sheet'
+		label: (
+			<>
+				<ExperimentOutlined />
+				Cheat Sheet
+			</>
+		)
 	}
 ]
 
