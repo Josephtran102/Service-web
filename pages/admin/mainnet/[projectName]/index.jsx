@@ -1,10 +1,11 @@
-import { generateProjectPaths, getProjects } from '@utils/projectUtils'
-import { getAdminLayout } from '@layouts/admin'
-import { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
+import { useRouter } from 'next/router'
 import { DeleteOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 import { Button, Form, Input, Space, Skeleton, Modal, Select } from 'antd'
-import { useRouter } from 'next/router'
+import { useEffect, useState, useRef } from 'react'
+
+import { generateProjectPaths, getProjects } from '@utils/projectUtils'
+import { getAdminLayout } from '@layouts/admin'
 import fieldNames from '@data/uniqueFieldNames'
 
 const type = 'mainnet'
@@ -149,7 +150,7 @@ const Project = ({ project }) => {
 						{(fields, { add, remove }) => (
 							<>
 								{fields.map(field => (
-									<Space key={field.key} style={{ display: 'flex', marginBottom: 5 }} align='start'>
+									<Space key={field.key} style={{ display: 'flex', marginBottom: 8 }} align='start'>
 										<Form.Item
 											{...field}
 											name={[field.name, 'name']}
@@ -214,4 +215,3 @@ export async function getStaticProps({ params }) {
 
 Project.getLayout = getAdminLayout
 export default Project
-//ci

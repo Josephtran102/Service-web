@@ -3,8 +3,9 @@ import { getAdminLayout } from '@layouts/admin'
 import { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import { DeleteOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
-import { Button, Form, Input, Space, Skeleton, Modal } from 'antd'
+import { Button, Form, Input, Space, Skeleton, Modal, Select } from 'antd'
 import { useRouter } from 'next/router'
+import fieldNames from '@data/uniqueFieldNames'
 
 const type = 'testnet'
 const { TextArea } = Input
@@ -157,7 +158,17 @@ const Project = ({ project }) => {
 											fieldKey={[field.fieldKey, 'name']}
 											rules={[{ required: true, message: 'Missing field name' }]}
 										>
-											<Input placeholder='Field Name' />
+											<Select
+												placeholder='Select a field'
+												onChange={value => form.setFieldsValue({ [field.name]: { name: value } })}
+												allowClear
+											>
+												{fieldNames.map(fieldName => (
+													<Select.Option key={fieldName} value={fieldName}>
+														{fieldName}
+													</Select.Option>
+												))}
+											</Select>
 										</Form.Item>
 										<Form.Item
 											{...field}
