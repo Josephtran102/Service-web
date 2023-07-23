@@ -114,8 +114,9 @@ export default function Dashboard(props) {
 								<>
 									<div>
 										<b className={styles.bold}>Chain ID: </b>
-										{chainID}
+										<span>{chainID}</span>
 									</div>
+
 									<div className='flex gap-1'>
 										<b className={styles.bold}>Block Height: </b>{' '}
 										{isActive === styles.pending ? (

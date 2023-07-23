@@ -1,4 +1,10 @@
-import { ApiOutlined, CloudUploadOutlined, DownloadOutlined, ExperimentOutlined } from '@ant-design/icons'
+import {
+	ApiOutlined,
+	CloudUploadOutlined,
+	DownloadOutlined,
+	ExperimentOutlined,
+	FileDoneOutlined
+} from '@ant-design/icons'
 
 const services = [
 	{
@@ -32,7 +38,7 @@ const services = [
 		key: 'cheat-sheet',
 		label: (
 			<>
-				<ExperimentOutlined />
+				<FileDoneOutlined />
 				Cheat Sheet
 			</>
 		)
