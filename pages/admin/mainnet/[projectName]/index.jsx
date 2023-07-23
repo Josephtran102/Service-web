@@ -214,4 +214,4 @@ export async function getStaticProps({ params }) {
 
 Project.getLayout = getAdminLayout
 export default Project
-//cicd
+//ci
