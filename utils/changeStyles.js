@@ -3,7 +3,7 @@ export const changeStyles = theme => {
 
 	const isLight = theme === 'light'
 
-	body.style.backgroundColor = isLight ? '#F0F0F0' : '#181818'
+	body.style.backgroundColor = isLight ? '#F1F1F1' : '#181818'
 	body.style.color = isLight ? '#000' : 'rgb(241, 245, 249)'
 	body.style.colorScheme = isLight ? 'light' : 'dark'
 
