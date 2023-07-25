@@ -395,7 +395,7 @@
       "seedPort": "11656",
       "installBin": "cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v1.0.0-rc9\ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git\ncelestia-appd init \"test\" --chain-id $CELESTIA_CHAIN_ID\ncp $HOME/networks/mocha/genesis.json $HOME/.celestia-app/config\nsed -i -e \"s|^target_height_duration *=.*|timeout_commit = \\\"11s\\\"|\" $HOME/.celestia-app/config/config.toml",
       "updHeight": "0",
-      "newInstallBin": "cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v1.0.0-rc9\ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install",
+      "newInstallBin": "cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v1.0.0-rc10\ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install",
       "goVersion": "1.20.1",
       "gas": "",
       "unsafeReset": "tendermint unsafe-reset-all",
