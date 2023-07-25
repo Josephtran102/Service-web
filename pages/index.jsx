@@ -2,8 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FloatButton, Tabs } from 'antd'
-import { UpOutlined } from '@ant-design/icons'
+import { Tabs } from 'antd'
 
 import Footer from '@components/Footer'
 import Header from '@components/Header'
@@ -17,6 +16,7 @@ import Spinner from '@components/UI/Spinner'
 import styles from '@styles/Home.module.scss'
 import Accordion from '@components/UI/Accordion.jsx'
 import Card from '@components/UI/Card'
+import FloatButton from '@components/UI/FloatButton'
 
 export async function getStaticProps() {
 	return {
@@ -108,7 +108,7 @@ const Home = () => {
 			<Header />
 
 			<main>
-				<FloatButton.BackTop icon={<UpOutlined />} />
+				<FloatButton />
 				<section
 					className={styles.hero}
 					style={{
