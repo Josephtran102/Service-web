@@ -42,8 +42,9 @@ const Card = ({ data, aprValues }) => {
 								alt='item'
 								width={50}
 								height={50}
+								blurDataURL='URL'
 								placeholder='blur'
-							`/>
+							/>
 						</div>
 						<div className='flex flex-col items-start'>
 							<h4 className={styles.card__heading}>
