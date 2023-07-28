@@ -39,20 +39,19 @@ const Home = () => {
 		}
 
 		const fetchAprValues = async () => {
-			// const entries = Object.entries(projects.mainnet)
-			// const promises = entries.map(async ([name]) => {
-			// 	const apr = await countApr(name)
-			// 	return { name, apr }
-			// })
+			const entries = Object.entries(projects.mainnet)
+			const promises = entries.map(async ([name]) => {
+				const apr = await countApr(name)
+				return { name, apr }
+			})
 
-			// const results = await Promise.all(promises)
-			// const aprValues = results.reduce((acc, { name, apr }) => {
-			// 	acc[name] = apr
-			// 	return acc
-			// }, {})
+			const results = await Promise.all(promises)
+			const aprValues = results.reduce((acc, { name, apr }) => {
+				acc[name] = apr
+				return acc
+			}, {})
 
-			// setAprValues(aprValues)
-			setAprValues('soon')
+			setAprValues(aprValues)
 		}
 
 		fetchAprValues()
@@ -173,7 +172,7 @@ const Home = () => {
 					</div>
 				</section>
 
-				<motion.section
+				{/* <motion.section
 					id='networks'
 					initial='hidden'
 					whileInView='visible'
@@ -187,7 +186,7 @@ const Home = () => {
 
 						<Tabs type='card' defaultActiveKey='1' size={'large'} items={items} />
 					</div>
-				</motion.section>
+				</motion.section> */}
 
 				<section className='bg-white dark:bg-[#141414]'>
 					<div className={styles.container}>
