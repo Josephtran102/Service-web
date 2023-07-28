@@ -254,7 +254,7 @@ const Header = () => {
 							<Image src='/icons/twitter.svg' alt='twitter' width={30} height={30} />
 						</a>
 						<a
-							href='https://github.com/itrocket-team'
+							href='https://github.com/itrocket-am'
 							target='_blank'
 							rel='noopener noreferrer'
 							style={{ display: theme === 'light' ? 'block' : 'none' }}
@@ -262,7 +262,7 @@ const Header = () => {
 							<Image src='/icons/github.svg' alt='github' width={30} height={30} />
 						</a>
 						<a
-							href='https://github.com/itrocket-team'
+							href='https://github.com/itrocket-am'
 							target='_blank'
 							rel='noopener noreferrer'
 							style={{ display: theme !== 'light' ? 'block' : 'none' }}
@@ -301,7 +301,7 @@ const Header = () => {
 						<Image src='/icons/twitter.svg' alt='twitter' width={30} height={30} />
 					</a>
 					<a
-						href='https://github.com/itrocket-team'
+						href='https://github.com/itrocket-am'
 						target='_blank'
 						rel='noopener noreferrer'
 						style={{ display: theme === 'light' ? 'block' : 'none' }}
@@ -309,7 +309,7 @@ const Header = () => {
 						<Image src='/icons/github.svg' alt='github' width={30} height={30} />
 					</a>
 					<a
-						href='https://github.com/itrocket-team'
+						href='https://github.com/itrocket-am'
 						target='_blank'
 						rel='noopener noreferrer'
 						style={{ display: theme !== 'light' ? 'block' : 'none' }}

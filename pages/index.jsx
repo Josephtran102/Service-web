@@ -36,14 +36,31 @@ const Home = () => {
 			setIsLoading(false)
 		}
 
-		Object.keys(projects.mainnet).forEach(async (item, i) => {
-			const name = item
-			const apr = await countApr(name)
-			setAprValues(prev => ({ ...prev, [name]: apr }))
-		})
+		const fetchAprValues = async () => {
+			const entries = Object.entries(projects.mainnet)
+			const promises = entries.map(async ([name]) => {
+				const apr = await countApr(name)
+				return { name, apr }
+			})
 
-		setProjectsCount(prev => ({ ...prev, mainnet: Object.entries(projects.mainnet)?.length }))
-		setProjectsCount(prev => ({ ...prev, testnet: Object.entries(projects.testnet)?.length }))
+			const results = await Promise.all(promises)
+			const aprValues = results.reduce((acc, { name, apr }) => {
+				acc[name] = apr
+				return acc
+			}, {})
+
+			setAprValues(aprValues)
+		}
+
+		fetchAprValues()
+
+		setProjectsCount(prev => ({
+			...prev,
+			mainnet: Object.entries(projects.mainnet)?.length,
+			testnet: Object.entries(projects.testnet)?.length
+		}))
+
+		console.log('%cITRocket 🚀', 'color: purple; font-size: 38px;')
 
 		if (document.readyState === 'complete') {
 			onPageLoad()
@@ -87,7 +104,7 @@ const Home = () => {
 		}
 	]
 
-	if (!projects.mainnet || isLoading) {
+	if (isLoading) {
 		return <Spinner />
 	}
 
@@ -124,7 +141,7 @@ const Home = () => {
 						>
 							<div className={styles.hero__column} id={styles.hero__descStaking}>
 								<div className={styles.hero__columnRoot}>
-									<h1 className={styles.hero__heading}>
+									<h1 className='font-bold  mb-[15px] text-[26px] md:text-[38px] lg:text-[50px]'>
 										Trusted Validator &amp; Interchain Utility Provider
 									</h1>
 									<span className={styles.hero__desc}>

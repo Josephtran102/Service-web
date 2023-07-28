@@ -59,7 +59,7 @@ const Footer = props => {
 					<a href='https://twitter.com/itrocket_team' target='_blank' rel='noopener noreferrer'>
 						<Image src='/icons/twitter.svg' alt='twitter' width={40} height={40} />
 					</a>
-					<a href='https://github.com/itrocket-team' target='_blank' rel='noopener noreferrer'>
+					<a href='https://github.com/itrocket-am' target='_blank' rel='noopener noreferrer'>
 						<Image
 							src='/icons/github.svg'
 							alt='github'

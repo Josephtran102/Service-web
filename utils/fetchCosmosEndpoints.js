@@ -1,20 +1,27 @@
 import axios from 'axios'
 import projects from '@data/projects.json'
 
+const notImplemented = ['quicksilver', 'realio']
+
 const isNotCosmos = name => {
-	if (projects['mainnet'][name].ecosystem !== 'cosmos') {
+	if (projects['mainnet'][name].ecosystem !== 'cosmos' || notImplemented.indexOf(name) > -1) {
 		return true
 	}
 	return false
 }
 
 export const fetchAnnualProvisions = async name => {
-	if (isNotCosmos(name)) return null
-	try {
-		const res = await axios.get(`https://${name}-mainnet-api.itrocket.net/cosmos/mint/v1beta1/annual_provisions`)
-		return res?.data?.annual_provisions
-	} catch (err) {
+	if (isNotCosmos(name)) {
 		return null
+	} else {
+		try {
+			const res = await axios.get(
+				`https://${name}-mainnet-api.itrocket.net/cosmos/mint/v1beta1/annual_provisions`
+			)
+			return res?.data?.annual_provisions
+		} catch (err) {
+			return null
+		}
 	}
 }
 
