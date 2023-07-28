@@ -127,7 +127,7 @@ const Home = () => {
 
 			<main>
 				<FloatButton />
-				<section
+				{/* <section
 					className={styles.hero}
 					style={{
 						backgroundColor: theme === 'dark' ? '#141414' : ' #fff'
@@ -170,9 +170,9 @@ const Home = () => {
 							</div>
 						</motion.div>
 					</div>
-				</section>
+				</section> */}
 
-				{/* <motion.section
+				<motion.section
 					id='networks'
 					initial='hidden'
 					whileInView='visible'
@@ -186,7 +186,7 @@ const Home = () => {
 
 						<Tabs type='card' defaultActiveKey='1' size={'large'} items={items} />
 					</div>
-				</motion.section> */}
+				</motion.section>
 
 				<section className='bg-white dark:bg-[#141414]'>
 					<div className={styles.container}>
