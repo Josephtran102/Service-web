@@ -16,14 +16,12 @@ import projects from '@data/projects.json'
 import Spinner from '@components/UI/Spinner'
 import styles from '@styles/Home.module.scss'
 const Accordion = dynamic(() => import('@components/UI/Accordion.jsx'))
-const Card = dynamic(() => import('@components/UI/Card'))
+import Card from '@components/UI/Card'
 const FloatButton = dynamic(() => import('@components/UI/FloatButton'))
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	return {
-		props: { projects },
-
-		revalidate: 1
+		props: { projects }
 	}
 }
 
