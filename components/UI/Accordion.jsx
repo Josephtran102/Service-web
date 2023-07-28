@@ -20,7 +20,7 @@ const AccordionItem = ({ title, content }) => {
 				}`}
 				onClick={() => setIsActive(!isActive)}
 			>
-				<h5 className={styles.button__heading}>{title}</h5>
+				<h4 className={styles.button__heading}>{title}</h4>
 				<span className={styles.button__heading}>
 					{
 						<PlusOutlined
@@ -32,7 +32,11 @@ const AccordionItem = ({ title, content }) => {
 					}
 				</span>
 			</div>
-			<div ref={ref} className={styles.panel} style={isActive ? { maxHeight: `${height}px` } : { maxHeight: '0' }}>
+			<div
+				ref={ref}
+				className={styles.panel}
+				style={isActive ? { maxHeight: `${height}px` } : { maxHeight: '0' }}
+			>
 				<p
 					className='mx-5 md:mx-6 mt-4 mb-6 text-sm md:text-base transition'
 					style={{ opacity: isActive ? 1 : 0 }}
