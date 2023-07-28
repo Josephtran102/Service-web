@@ -19,9 +19,11 @@ const Footer = dynamic(() => import('@components/Footer'))
 const Accordion = dynamic(() => import('@components/UI/Accordion.jsx'))
 const FloatButton = dynamic(() => import('@components/UI/FloatButton'))
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	return {
-		props: { projects }
+		props: { projects },
+
+		revalidate: 1
 	}
 }
 

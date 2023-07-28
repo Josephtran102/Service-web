@@ -10,6 +10,7 @@ import AprValue from '@components/AprValue'
 
 const Card = ({ data, aprValues }) => {
 	const { theme, toggleTheme } = useContext(Context)
+
 	const type = aprValues ? 'mainnet' : 'testnet'
 
 	const handleOnMouseMove = e => {
@@ -37,7 +38,7 @@ const Card = ({ data, aprValues }) => {
 				>
 					<div className={styles.card__desc}>
 						<div className={styles.card__img}>
-							<Image src={`/${type}/${data[item].imgUrl}`} alt='item' width={50} height={50} />
+							<Image src={`/${type}/${data[item].imgUrl}`} alt='project' width={50} height={50} />
 						</div>
 						<div className='flex flex-col items-start'>
 							<h4 className={styles.card__heading}>

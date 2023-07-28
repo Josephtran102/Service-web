@@ -119,7 +119,7 @@ const Header = () => {
 							alt='logo'
 							width={180}
 							height={55}
-							priority={true}
+							priority
 							className={styles.logo}
 							style={{ display: theme === 'light' ? 'block' : 'none' }}
 						/>
@@ -129,7 +129,7 @@ const Header = () => {
 							alt='logo'
 							width={180}
 							height={55}
-							priority={true}
+							priority
 							className={styles.logo}
 							style={{ display: theme === 'dark' ? 'block' : 'none' }}
 						/>

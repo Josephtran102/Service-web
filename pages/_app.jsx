@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { ConfigProvider, theme as AntTheme } from 'antd'
 
 import { Context, ContextProvider } from 'context/context'
