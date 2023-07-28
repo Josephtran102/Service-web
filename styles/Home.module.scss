@@ -22,29 +22,6 @@
 	cursor: pointer;
 }
 
-.title a {
-	color: #0070f3;
-	text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-	text-decoration: underline;
-}
-
-.title {
-	margin: 0;
-	line-height: 1.15;
-	font-size: 2.2rem;
-	font-weight: 600;
-
-	@media (max-width: 768px) {
-		font-size: 1.65rem;
-		line-height: 1.1;
-	}
-}
-
 .button {
 	@include button;
 	font-size: 17px;
@@ -95,6 +72,7 @@
 		font-size: 14px;
 	}
 }
+
 .link {
 	text-decoration: underline;
 	text-decoration-color: rgb(152, 152, 152);

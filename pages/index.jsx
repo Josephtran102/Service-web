@@ -1,10 +1,11 @@
+import dynamic from 'next/dynamic'
 import { useContext, useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Tabs } from 'antd'
 
-import Footer from '@components/Footer'
+const Footer = dynamic(() => import('@components/Footer'))
 import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
@@ -14,9 +15,9 @@ import { countApr } from '@utils/updateAPR'
 import projects from '@data/projects.json'
 import Spinner from '@components/UI/Spinner'
 import styles from '@styles/Home.module.scss'
-import Accordion from '@components/UI/Accordion.jsx'
-import Card from '@components/UI/Card'
-import FloatButton from '@components/UI/FloatButton'
+const Accordion = dynamic(() => import('@components/UI/Accordion.jsx'))
+const Card = dynamic(() => import('@components/UI/Card'))
+const FloatButton = dynamic(() => import('@components/UI/FloatButton'))
 
 export async function getStaticProps() {
 	return {
