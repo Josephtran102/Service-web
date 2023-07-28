@@ -477,7 +477,7 @@ code {
 }
 
 .link {
-	color: #6d68e4;
+	color: #5753d5;
 	width: fit-content;
 	text-decoration: underline;
 	letter-spacing: 0.02rem;
@@ -583,7 +583,12 @@ code {
 	@apply bg-white/75 dark:bg-zinc-800 border-slate-200 dark:border-slate-800;
 }
 .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active {
-	@apply bg-white dark:bg-zinc-900/80 border-slate-300/80 dark:border-slate-700;
+	@apply bg-white dark:bg-zinc-900/80;
+}
+
+.ant-tabs-tab-active {
+	color: #135dc4 !important;
+	text-shadow: 0 0 0.25px currentcolor !important;
 }
 
 .ant-tabs-nav {
@@ -591,8 +596,9 @@ code {
 }
 
 .ant-tabs-content-holder {
-	@apply bg-white dark:bg-zinc-950/30 p-1 lg:py-5 lg:px-6 rounded lg:rounded-xl border-zinc-200/60 dark:border-zinc-800/60;
-	border-inline-width: 1px;
+	@apply bg-[#fdfdfd] dark:bg-zinc-950/30 p-1 lg:py-5 lg:px-6 rounded lg:rounded border-zinc-200/60 dark:border-zinc-800/60;
+	border-left-width: 1px;
+	border-right-width: 1px;
 	border-bottom-width: 1px;
 }
 

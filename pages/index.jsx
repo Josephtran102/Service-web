@@ -1,11 +1,10 @@
-import dynamic from 'next/dynamic'
 import { useContext, useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Tabs } from 'antd'
 
-const Footer = dynamic(() => import('@components/Footer'))
 import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
@@ -15,8 +14,9 @@ import { countApr } from '@utils/updateAPR'
 import projects from '@data/projects.json'
 import Spinner from '@components/UI/Spinner'
 import styles from '@styles/Home.module.scss'
-const Accordion = dynamic(() => import('@components/UI/Accordion.jsx'))
 import Card from '@components/UI/Card'
+const Footer = dynamic(() => import('@components/Footer'))
+const Accordion = dynamic(() => import('@components/UI/Accordion.jsx'))
 const FloatButton = dynamic(() => import('@components/UI/FloatButton'))
 
 export async function getServerSideProps() {
@@ -124,9 +124,9 @@ const Home = () => {
 						>
 							<div className={styles.hero__column} id={styles.hero__descStaking}>
 								<div className={styles.hero__columnRoot}>
-									<h3 className={styles.hero__heading}>
+									<h1 className={styles.hero__heading}>
 										Trusted Validator &amp; Interchain Utility Provider
-									</h3>
+									</h1>
 									<span className={styles.hero__desc}>
 										With few simple steps you can delegate funds to our trusted validators or explore our
 										services where you can find tools that will be useful for node operators and
@@ -161,9 +161,9 @@ const Home = () => {
 					variants={opacityBlock}
 				>
 					<div className={styles.container}>
-						<h3 className='text-[22px] md:text-[42px] font-bold  mb-2 md:mb-6 tracking-wide text-zinc-900 dark:text-white'>
+						<h2 className='text-[22px] md:text-[42px] font-bold  mb-2 md:mb-6 tracking-wide text-zinc-900 dark:text-white'>
 							Networks
-						</h3>
+						</h2>
 
 						<Tabs type='card' defaultActiveKey='1' size={'large'} items={items} />
 					</div>

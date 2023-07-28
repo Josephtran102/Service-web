@@ -40,13 +40,13 @@ const Card = ({ data, aprValues }) => {
 							<Image src={`/${type}/${data[item].imgUrl}`} alt='item' width={50} height={50} />
 						</div>
 						<div className='flex flex-col items-start'>
-							<h5 className={styles.card__heading}>
+							<h4 className={styles.card__heading}>
 								{data[item].name || item.charAt(0).toUpperCase() + item.slice(1)}
-							</h5>
+							</h4>
 							{aprValues && (
 								<div className='flex gap-[2px] md:gap-1 items-center tracking-wide text-[10px] md:text-sm '>
 									<div>APR: </div>
-									<span className='tracking-wide md:tracking-wide text-gray-500/80'>
+									<span className='tracking-wide md:tracking-wide text-gray-500'>
 										<AprValue aprValue={aprValues[item]} />
 									</span>
 								</div>
