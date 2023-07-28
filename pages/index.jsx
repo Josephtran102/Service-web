@@ -123,9 +123,9 @@ const Home = () => {
 					content='ITRocket, it rocket, validator, cosmos, cosmos installation, nodes, blockchain'
 				/>
 			</Head>
-			<Header />
+			{/* <Header /> */}
 
-			{/* <main>
+			<main>
 				<FloatButton />
 				<section
 					className={styles.hero}
@@ -201,7 +201,7 @@ const Home = () => {
 						</div>
 					</div>
 				</section>
-			</main> */}
+			</main>
 
 			<Footer />
 		</>
