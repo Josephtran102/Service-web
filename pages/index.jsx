@@ -125,9 +125,9 @@ const Home = () => {
 			</Head>
 			<Header />
 
-			<main>
+			{/* <main>
 				<FloatButton />
-				{/* <section
+				<section
 					className={styles.hero}
 					style={{
 						backgroundColor: theme === 'dark' ? '#141414' : ' #fff'
@@ -170,7 +170,7 @@ const Home = () => {
 							</div>
 						</motion.div>
 					</div>
-				</section> */}
+				</section>
 
 				<motion.section
 					id='networks'
@@ -201,7 +201,7 @@ const Home = () => {
 						</div>
 					</div>
 				</section>
-			</main>
+			</main> */}
 
 			<Footer />
 		</>
