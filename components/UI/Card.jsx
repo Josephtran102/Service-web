@@ -37,14 +37,7 @@ const Card = ({ data, aprValues }) => {
 				>
 					<div className={styles.card__desc}>
 						<div className={styles.card__img}>
-							<Image
-								src={`/${type}/${data[item].imgUrl}`}
-								alt='item'
-								width={50}
-								height={50}
-								blurDataURL='URL'
-								placeholder='blur'
-							/>
+							<Image src={`/${type}/${data[item].imgUrl}`} alt='item' width={50} height={50} />
 						</div>
 						<div className='flex flex-col items-start'>
 							<h4 className={styles.card__heading}>
