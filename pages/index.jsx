@@ -123,7 +123,7 @@ const Home = () => {
 					content='ITRocket, it rocket, validator, cosmos, cosmos installation, nodes, blockchain'
 				/>
 			</Head>
-			{/* <Header /> */}
+			<Header />
 
 			<main>
 				<FloatButton />
