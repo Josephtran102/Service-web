@@ -39,19 +39,20 @@ const Home = () => {
 		}
 
 		const fetchAprValues = async () => {
-			const entries = Object.entries(projects.mainnet)
-			const promises = entries.map(async ([name]) => {
-				const apr = await countApr(name)
-				return { name, apr }
-			})
+			// const entries = Object.entries(projects.mainnet)
+			// const promises = entries.map(async ([name]) => {
+			// 	const apr = await countApr(name)
+			// 	return { name, apr }
+			// })
 
-			const results = await Promise.all(promises)
-			const aprValues = results.reduce((acc, { name, apr }) => {
-				acc[name] = apr
-				return acc
-			}, {})
+			// const results = await Promise.all(promises)
+			// const aprValues = results.reduce((acc, { name, apr }) => {
+			// 	acc[name] = apr
+			// 	return acc
+			// }, {})
 
-			setAprValues(aprValues)
+			// setAprValues(aprValues)
+			setAprValues('soon')
 		}
 
 		fetchAprValues()
