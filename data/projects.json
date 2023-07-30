@@ -31,7 +31,7 @@
     "blastapi": {
       "bin": "",
       "chainID": "",
-      "delegate": "https://blastapi.io/explorer/0xf2d011008eb6d0574180d6a39d84bba230f554b9/2",
+      "delegate": "https://blastapi.io/explorer/0xf2d011008eb6d0574180d6a39d84bba230f554b9/8",
       "denom": "",
       "ecosystem": "false",
       "explorer": "https://blastapi.io/explorer",
