@@ -61,7 +61,7 @@
       "bin": "empowerd",
       "binHome": "/home/empower/go/bin/empowerd",
       "chainID": "empowerchain-1",
-      "delegate": "https://mainnet.itrocket.net/empower/staking/",
+      "delegate": "https://mainnet.itrocket.net/empower/staking/empowervaloper1vzwzpe228nzxjyrg3sez2tlg7mmezp0m4xk306",
       "denom": "umpwr",
       "ecosystem": "cosmos",
       "gas": "--fees 5000umpwr",
