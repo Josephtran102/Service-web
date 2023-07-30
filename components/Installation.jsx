@@ -219,6 +219,12 @@ s%:8546%:\${${variable}_PORT}546%g;
 s%:6065%:\${${variable}_PORT}065%g" $HOME/${path}/config/app.toml
 
 # set custom ports in config.toml file
+sed -i.bak -e "s%:26658%:\${${variable}_PORT}658%g;
+s%:26657%:\${${variable}_PORT}657%g;
+s%:6060%:\${${variable}_PORT}060%g;
+s%:26656%:\${${variable}_PORT}656%g;
+s%:external_address = \\"\\"%external_address = \\"$(wget -qO- eth0.me):\${${variable}_PORT}656\\"%;
+s%:26660%:\${${variable}_PORT}660%g" $HOME/${path}/config/config.toml
 sed -i.bak -e "s%^proxy_app = \\"tcp://127.0.0.1:26658\\"%proxy_app = \\"tcp://127.0.0.1:\${${variable}_PORT}658\\"%; 
 s%^laddr = \\"tcp://127.0.0.1:26657\\"%laddr = \\"tcp://0.0.0.0:\${${variable}_PORT}657\\"%; 
 s%^pprof_laddr = \\"localhost:6060\\"%pprof_laddr = \\"localhost:\${${variable}_PORT}060\\"%;
