@@ -804,7 +804,7 @@
       "path": ".zetacored",
       "peerID": "d21b103628b0d5d824bbe81b809d8dc457bd2059",
       "seedID": "c1bbbfe2a5b15674bf24a869b3e8189b6b410ae7",
-      "peerPort": "14656",
+      "peerPort": "16656",
       "evmRPC": "https://zetachain-testnet-evm.itrocket.net:443",
       "seedPort": "14656",
       "newInit": "false",
