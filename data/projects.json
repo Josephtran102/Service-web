@@ -367,7 +367,7 @@
       "updHeight": "1774000",
       "newInstallBin": "cd $HOME\ncurl -L https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.4/cascadiad-v0.1.4-linux-amd64 -o cascadiad\nchmod +x cascadiad\nsudo mv cascadiad $(which cascadiad)",
       "goVersion": "1.19.3",
-      "gas": "--fees 500aCC",
+      "gas": "--gas-prices 7aCC",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.025",
       "desc": ""
