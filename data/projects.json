@@ -276,7 +276,7 @@
       "seedID": "e71bae28852a0b603f7360ec17fe91e7f065f324",
       "peerPort": "10656",
       "seedPort": "35656",
-      "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.4\nmake install",
+      "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.8\nmake install",
       "updHeight": "1190080",
       "newInstallBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.8\nmake build\nsudo mv $HOME/uptick/build/uptickd $(which uptickd)",
       "goVersion": "1.19.3",
