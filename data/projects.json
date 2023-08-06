@@ -365,7 +365,7 @@
       "newExecStart": "$(which cascadiad) start --home $HOME/.cascadiad --trace --log_level info --json-rpc.api eth,txpool,personal,net,debug,web3 --api.enable",
       "installBin": "cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.3\nmake install",
       "updHeight": "1774000",
-      "newInstallBin": "cd $HOME\ncurl -o cascadiad https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.4/cascadiad\nchmod +x $HOME/cascadiad\nsudo mv $HOME/cascadiad $(which cascadiad)",
+      "newInstallBin": "cd $HOME\nwget -O cascadiad https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.4/cascadiad\nchmod +x $HOME/cascadiad\nsudo mv $HOME/cascadiad $(which cascadiad)",
       "goVersion": "1.19.3",
       "gas": "--gas-prices 7aCC",
       "unsafeReset": "tendermint unsafe-reset-all",
