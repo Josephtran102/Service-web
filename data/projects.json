@@ -531,7 +531,7 @@
     "lava": {
       "bin": "lavad",
       "binHome": "/home/lava/go/bin/lavad",
-      "chainID": "lava-testnet-1",
+      "chainID": "lava-testnet-2",
       "denom": "ulava",
       "desc": "Lava pairs Providers with Applications for scalable, private and uncensored access to Web3.",
       "ecosystem": "cosmos",
