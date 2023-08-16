@@ -553,7 +553,7 @@
       "seedPort": "20656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "340195",
+      "updHeight": "0",
       "variable": "LAVA",
       "website": "https://lavanet.xyz/"
     },
