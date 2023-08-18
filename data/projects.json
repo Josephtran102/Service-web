@@ -679,7 +679,7 @@
       "seedID": "78283975c2bee9b95bbf9408cc974cbab7bfe8ef",
       "peerPort": "37656",
       "seedPort": "37656",
-      "installBin": "cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.4-rc.2\nmake install",
+      "installBin": "cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.4-rc.3\nmake install",
       "updHeight": "1772930",
       "newInstallBin": "cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.4-rc.3\nmake build\nsudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)",
       "goVersion": "1.20.1",
