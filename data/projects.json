@@ -1,5 +1,5 @@
 {
-  "mainnet": {
+  "mainnet": { 
     "arkhadian": {
       "bin": "arkhd",
       "binHome": "/home/arkhadian/go/bin/arkhd",
