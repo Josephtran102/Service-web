@@ -152,7 +152,7 @@
       "updHeight": "0",
       "variable": "NOIS",
       "website": "https://nois.network",
-      "newInstallBin": "cd $HOME rm -rf $HOME/noisd git clone https://github.com/noislabs/noisd cd noisd git checkout v1.0.4 make install"
+      "newInstallBin": "cd $HOME\nrm -rf $HOME/noisd\ngit clone https://github.com/noislabs/noisd\ncd noisd\ngit checkout v1.0.4\nmake install"
     },
     "nym": {
       "chainID": "",
