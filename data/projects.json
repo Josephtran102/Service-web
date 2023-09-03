@@ -342,7 +342,7 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "CARDCHAIN",
-      "website": "https://crowdcontrol.network/"
+      "website": "https://crowdcontrol.network"
     },
     "cascadia": {
       "chainID": "cascadia_6102-1",
