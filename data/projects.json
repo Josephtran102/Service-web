@@ -287,6 +287,33 @@
     }
   },
   "testnet": {
+    "Arkeo": {
+      "bin": "arkeod",
+      "binHome": "/home/arkeo/go/bin/arkhd",
+      "chainID": "arkeo",
+      "delegate": "https://testnet.itrocket.net/arkeo/staking",
+      "denom": "uarkeo",
+      "ecosystem": "cosmos",
+      "gas": "--gas auto --gas-adjustment 1.5",
+      "goVersion": "1.19.3",
+      "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
+      "imgUrl": "arkeo.jpg",
+      "installBin": "cd $HOME\nrm -rf arkeo\ngit clone https://github.com/arkeonetwork/arkeo\ncd arkeo\ngit checkout ab05b124336ace257baa2cac07f7d1bfeed9ac02\nmake proto-gen install",
+      "minGasPrice": "0.001",
+      "newInstallBin": "",
+      "path": ".arkh",
+      "peerID": "f3c163dc9c2649fe203bd87afd101869952e685a",
+      "peerPort": "27656",
+      "port": 18,
+      "prHome": "/home/arkeo",
+      "seedID": "30d97270c31601c38e5b89c52fca985901cd8c20",
+      "seedPort": "27656",
+      "snapMaxSize": "10",
+      "unsafeReset": "tendermint unsafe-reset-all",
+      "updHeight": "",
+      "variable": "ARKEO",
+      "website": "https://arkeo.network/"
+    },
     "andromeda": {
       "chainID": "galileo-3",
       "imgUrl": "andromeda.svg",
