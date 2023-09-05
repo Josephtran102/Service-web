@@ -301,7 +301,7 @@
       "installBin": "cd $HOME\nrm -rf arkeo\ngit clone https://github.com/arkeonetwork/arkeo\ncd arkeo\ngit checkout ab05b124336ace257baa2cac07f7d1bfeed9ac02\nmake proto-gen install",
       "minGasPrice": "0.001",
       "newInstallBin": "",
-      "path": ".arkh",
+      "path": ".arkeo",
       "peerID": "f3c163dc9c2649fe203bd87afd101869952e685a",
       "peerPort": "27656",
       "port": 18,
