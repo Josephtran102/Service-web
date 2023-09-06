@@ -547,7 +547,7 @@
       "seedID": "eb7832932626c1c636d16e0beb49e0e4498fbd5e",
       "peerPort": "20656",
       "seedPort": "20656",
-      "installBin": "cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.21.1.2\nmake install",
+      "installBin": "cd $HOME\nrm -rf $HOME/lava\ngit clone https://github.com/lavanet/lava.git\ncd lava\ngit checkout v0.22.0\nmake install",
       "updHeight": "396595",
       "newInstallBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.22.0/lavad-v0.22.0-linux-amd64\nchmod +x $HOME/lavad\nsudo mv $HOME/lavad $(which lavad)",
       "goVersion": "1.20.5",
