@@ -289,9 +289,9 @@
   "testnet": {
     "althea": {
       "bin": "arkhd",
-      "binHome": "/home/arkhadian/go/bin/arkhd",
-      "chainID": "arkh",
-      "delegate": "https://mainnet.itrocket.net/arkhadian/staking/arkhvaloper18u4es3gnjerdqw3u96pjdq6ukclysh3f9wfmqe",
+      "binHome": "/home/althea/go/bin/althea",
+      "chainID": "althea-testnet2v3",
+      "delegate": "https://testnet.itrocket.net/althea/staking",
       "denom": "arkh",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
