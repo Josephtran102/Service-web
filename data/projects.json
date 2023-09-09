@@ -738,7 +738,7 @@
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
-      "variable": "ARKH",
+      "variable": "SOURCE",
       "website": "https://www.sourceprotocol.io/"
     },
     "taiko": {
