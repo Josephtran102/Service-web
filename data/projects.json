@@ -292,7 +292,7 @@
       "binHome": "/home/althea/go/bin/althea",
       "chainID": "althea_417834-3",
       "delegate": "https://testnet.itrocket.net/althea/staking",
-      "denom": "althea",
+      "denom": "aalthea",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
       "goVersion": "1.19.3",
