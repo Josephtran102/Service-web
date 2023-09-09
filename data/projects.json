@@ -298,7 +298,7 @@
       "goVersion": "1.19.3",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
       "imgUrl": "althea.jpg",
-      "installBin": "cd $HOME\nrm -rf althea-L1\ngit clone https://github.com/althea-net/althea-L1.git\ncd althea-L1\ngit checkout v0.5.5\nmake install",
+      "installBin": "cd $HOME\nrm -rf althea-chain\ngit clone https://github.com/althea-net/althea-chain\ncd althea-chain\ngit checkout v0.5.5\nmake install",
       "minGasPrice": "0.0001",
       "newInstallBin": "cd $HOME",
       "path": ".althea",
