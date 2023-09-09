@@ -732,14 +732,14 @@
       "peerID": "a47f3b354e75478c0dfe22ad2b937ad07c9bcf3c",
       "peerPort": "24656",
       "port": 24,
-      "prHome": "/home/arkhadian",
-      "seedID": "30d97270c31601c38e5b89c52fca985901cd8c20",
+      "prHome": "/home/source",
+      "seedID": "eca738b67fd23381f9a72717bea757c1d291ed2b",
       "seedPort": "24656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "ARKH",
-      "website": "https://www.arkhadian.com"
+      "website": "https://www.sourceprotocol.io/"
     },
     "taiko": {
       "explorer": "https://explorer.test.taiko.xyz/",
