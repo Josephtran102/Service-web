@@ -290,7 +290,7 @@
     "althea": {
       "bin": "arkhd",
       "binHome": "/home/althea/go/bin/althea",
-      "chainID": "althea-testnet2v3",
+      "chainID": "althea_417834-3",
       "delegate": "https://testnet.itrocket.net/althea/staking",
       "denom": "arkh",
       "ecosystem": "cosmos",
