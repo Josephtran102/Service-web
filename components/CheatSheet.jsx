@@ -86,7 +86,7 @@ const CheatSheet = props => {
 					<p>Your node peer</p>
 					<CodeSnippet
 						theme={theme}
-						code={`echo $(${bin} tendermint show-node-id)'@'$(curl -s ifconfig.me)':'$(cat $HOME/${path}/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')`}
+						code={`echo $(${bin} tendermint show-node-id)'@'$(wget -qO- eth0.me)':'$(cat $HOME/${path}/config/config.toml | sed -n '/Address to listen for incoming connection/{n;p;}' | sed 's/.*://; s/".*//')`}
 					/>
 					<h2 id='key-management'>Key management</h2>
 
