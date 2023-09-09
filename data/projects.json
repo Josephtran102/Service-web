@@ -288,11 +288,11 @@
   },
   "testnet": {
     "althea": {
-      "bin": "arkhd",
+      "bin": "althea",
       "binHome": "/home/althea/go/bin/althea",
       "chainID": "althea_417834-3",
       "delegate": "https://testnet.itrocket.net/althea/staking",
-      "denom": "arkheo",
+      "denom": "althea",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
       "goVersion": "1.19.3",
