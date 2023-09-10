@@ -191,7 +191,7 @@
       "updHeight": "0",
       "newInstallBin": "cd $HOME\nrm -rf quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit checkout v1.2.16\nmake build\nsudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)",
       "goVersion": "1.19.3",
-      "gas": "--gas-adjustment 1.4 --gas auto --fees 100uqck",
+      "gas": "--fees 100uqck",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0",
       "desc": "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.",
