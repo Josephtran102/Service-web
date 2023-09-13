@@ -445,7 +445,7 @@
       "bin": "celestia-appd",
       "path": ".celestia-app",
       "peerID": "daf2cecee2bd7f1b3bf94839f993f807c6b15fbf",
-      "seedID": "5c82cf33a32f40e2d914da1864927865d8d3824c",
+      "seedID": "5d0bf034d6e6a8b5ee31a2f42f753f1107b3a00e",
       "peerPort": "11656",
       "seedPort": "11656",
       "installBin": "cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v1.0.0-rc14\ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git\ncelestia-appd init \"test\" --chain-id $CELESTIA_CHAIN_ID\ncp $HOME/networks/mocha/genesis.json $HOME/.celestia-app/config\nsed -i -e \"s|^target_height_duration *=.*|timeout_commit = \\\"11s\\\"|\" $HOME/.celestia-app/config/config.toml",
