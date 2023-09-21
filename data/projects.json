@@ -746,7 +746,6 @@
       "offValDoc": "https://taiko.xyz/docs/guides/run-a-node",
       "imgUrl": "taiko.png",
       "ecosystem": "false",
-      "fav": "true",
       "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5",
       "unsafeReset": "tendermint unsafe-reset-all",
