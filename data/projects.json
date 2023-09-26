@@ -599,7 +599,7 @@
       "ecosystem": "cosmos",
       "bin": "mantrachaind",
       "path": ".mantrachain",
-      "peerID": "",
+      "peerID": "1a46b1db53d1ff3dbec56ec93269f6a0d15faeb4",
       "seedID": "a9a71700397ce950a9396421877196ac19e7cde0",
       "peerPort": "22656",
       "seedPort": "22656",
