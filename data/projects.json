@@ -603,7 +603,7 @@
       "seedID": "",
       "peerPort": "22656",
       "seedPort": "22656",
-      "installBin": "cd $HOME\nrm -rf $HOME/lib\nmkdir -p $HOME/lib\ncd $HOME/lib\nwget https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so\necho \"export LD_LIBRARY_PATH=$(eval echo $HOME)/lib:\\$LD_LIBRARY_PATH\" >> $(eval echo $HOME)/.bash_profile\nsource $HOME/.bash_profile\ncd $HOME\nwget https://github.com/MANTRA-Finance/public/raw/main/mantrachain-testnet/mantrachaind-linux-amd64.zip\nunzip mantrachaind-linux-amd64.zip\nrm mantrachaind-linux-amd64.zip\nmv mantrachaind $HOME/go/bin",
+      "installBin": "cd $HOME\nsudo wget -P /usr/lib https://github.com/CosmWasm/wasmvm/releases/download/v1.3.0/libwasmvm.x86_64.so\nwget https://github.com/MANTRA-Finance/public/raw/main/mantrachain-testnet/mantrachaind-linux-amd64.zip\nunzip mantrachaind-linux-amd64.zip\nrm mantrachaind-linux-amd64.zip\nmv mantrachaind $HOME/go/bin",
       "updHeight": "",
       "newInstallBin": "",
       "goVersion": "1.19.3",
