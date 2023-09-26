@@ -595,7 +595,7 @@
       "snapMaxSize": "10",
       "port": 22,
       "variable": "MANTRA",
-      "denom": "mantra",
+      "denom": "uaum",
       "ecosystem": "cosmos",
       "bin": "mantrachaind",
       "path": ".mantrachain",
