@@ -761,7 +761,7 @@
       "seedID": "eca738b67fd23381f9a72717bea757c1d291ed2b",
       "seedPort": "24656",
       "snapMaxSize": "10",
-      "unsafeReset": "tendrmint-unsafe-reset-all",
+      "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "SOURCE",
       "website": "https://www.sourceprotocol.io/"
