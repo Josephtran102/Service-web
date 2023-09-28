@@ -771,7 +771,7 @@
       "binHome": "/home/structs/go/bin/structsd",
       "chainID": "structstestnet-74",
       "delegate": "https://testnet.itrocket.net/structs/staking",
-      "denom": "alpha",
+      "denom": "ualpha",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
       "goVersion": "1.19.3",
