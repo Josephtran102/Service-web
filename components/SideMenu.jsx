@@ -77,7 +77,7 @@ const SideMenu = () => {
 					href={projects[type][name].website}
 					target='_blank'
 					rel='noopener referrer'
-					className='flex items-center p-1 text-xs lg:text-sm w-fit font-thin my-0 action rounded-2xl bg-gray-100 px-2 transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 active:bg-gray-300 dark:bg-zinc-700  dark:text-white dark:hover:bg-zinc-600 dark:focus-visible:bg-zinc-600 dark:active:bg-zinc-500'
+					className='flex items-center p-1 text-xs lg:text-sm w-fit font-thin my-0 action rounded-2xl bg-gray-100 px-2 transition-colors hover:bg-gray-200 focus-visible:bg-gray-200 active:bg-gray-300 dark:bg-zinc-700  dark:text-slate-100 dark:hover:bg-zinc-600 dark:focus-visible:bg-zinc-600 dark:active:bg-zinc-500'
 				>
 					<Image
 						className='my-1 mr-2 '

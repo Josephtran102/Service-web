@@ -18,7 +18,7 @@ const services = () => {
 			</Head>
 
 			<Header />
-			<div className='w-full p-1 md:p-6 bg-white dark:bg-zinc-900'>
+			<div className='w-full p-1 md:p-6 bg-white dark:bg-zinc-900/40'>
 				<div
 					className={styles.mainColumn__wrapper}
 					style={{

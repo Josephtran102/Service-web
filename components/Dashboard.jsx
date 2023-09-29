@@ -105,7 +105,7 @@ export default function Dashboard(props) {
 				<main className={styles.mainColumn__wrapper}>
 					<div
 						className={styles.projectInfoCard}
-						style={{ backgroundColor: theme === 'light' ? '#fff' : '#171717' }}
+						style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 					>
 						<div className={styles.stats}>
 							<ProjectsModal name={name} type='services' />

@@ -128,7 +128,7 @@ const Home = () => {
 				<section
 					className={styles.hero}
 					style={{
-						backgroundColor: theme === 'dark' ? '#141414' : ' #fff'
+						backgroundColor: theme === 'dark' ? '#171717' : ' #fff'
 					}}
 				>
 					<ParticlesBG />

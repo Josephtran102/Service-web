@@ -4,7 +4,7 @@
 	position: relative;
 	padding: 18px 32px;
 	text-decoration: none;
-	border: 1px solid #d7d7d7d6;
+	border: 1px solid #a8a8a84b;
 	border-radius: 10px;
 	width: 21%;
 	gap: 14px;
@@ -65,9 +65,9 @@
 	}
 
 	&:hover {
-		border: 1px solid rgba(176, 176, 176, 0.882);
-		box-shadow: rgba(130, 130, 130, 0.12) 0px 6px 16px -8px, rgba(134, 134, 134, 0.1) 0px 9px 28px,
-			rgba(120, 120, 120, 0.07) 0px 12px 48px 16px;
+		border: 1px solid rgba(176, 176, 176, 0.448);
+		box-shadow: rgba(130, 130, 130, 0.1) 0px 6px 16px -8px, rgba(134, 134, 134, 0.1) 0px 9px 28px,
+			rgba(120, 120, 120, 0.06) 0px 12px 48px 16px;
 
 		.card__star {
 			color: #e7d91e;

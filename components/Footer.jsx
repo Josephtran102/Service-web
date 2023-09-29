@@ -13,7 +13,7 @@ const Footer = props => {
 		<footer
 			className={styles.footer}
 			style={{
-				backgroundColor: theme === 'light' ? '#fff' : '#171717'
+				backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a'
 			}}
 		>
 			<div className={styles.container}>
