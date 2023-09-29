@@ -186,7 +186,7 @@ const Home = () => {
 					</div>
 				</motion.section>
 
-				<section className='bg-white dark:bg-[#141414]'>
+				<section className='bg-white dark:bg-[#191919]'>
 					<div className={styles.container}>
 						<div className={styles.accordion__wrapper}>
 							<h3

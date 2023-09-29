@@ -1,4 +1,4 @@
-import { atomOneLight, dracula } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+import { atomOneLight, dracula, vs2015 } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 import { LightAsync as SyntaxHighlighter } from 'react-syntax-highlighter'
 import styles from '@styles/CodeSnippet.module.scss'
 import CopyButton from './CopyButton'
@@ -14,7 +14,7 @@ const CodeSnippet = props => {
 			<SyntaxHighlighter
 				className={styles.code}
 				language='bash'
-				style={theme === 'dark' ? dracula : atomOneLight}
+				style={theme === 'dark' ? vs2015 : atomOneLight}
 				showLineNumbers={false}
 			>
 				{props.code}

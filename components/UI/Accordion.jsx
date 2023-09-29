@@ -15,7 +15,7 @@ const AccordionItem = ({ title, content }) => {
 	return (
 		<div className='rounded-md my-2 border-2 border-slate-500/10'>
 			<div
-				className={`bg-[#FAFAFA] dark:bg-zinc-900 w-full flex justify-between p-5 md:p-6 transition-all cursor-pointer ${
+				className={`bg-[#FAFAFA] dark:bg-zinc-900/60 w-full flex justify-between p-5 md:p-6 transition-all cursor-pointer ${
 					isActive ? 'bg-transparent' : ''
 				}`}
 				onClick={() => setIsActive(!isActive)}
