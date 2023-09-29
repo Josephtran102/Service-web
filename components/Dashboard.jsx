@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/router'
-import { Skeleton, Tabs } from 'antd'
+import { Tabs } from 'antd'
 import { LoadingOutlined, SearchOutlined } from '@ant-design/icons'
 
 import { currentProject } from 'utils/currentProjectByURL'
@@ -49,8 +49,8 @@ export default function Dashboard(props) {
 		let isCurrent = true
 
 		const project = currentProject()
-		const name = project.name,
-			type = project.type
+		const name = project.name
+		const type = project.type
 		curProjectName.current = name
 		curProjectType.current = type
 

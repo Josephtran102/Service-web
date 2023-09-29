@@ -21,9 +21,7 @@ const FloatButton = dynamic(() => import('@components/UI/FloatButton'))
 
 export async function getStaticProps() {
 	return {
-		props: { projects },
-
-		revalidate: 1
+		props: { projects }
 	}
 }
 

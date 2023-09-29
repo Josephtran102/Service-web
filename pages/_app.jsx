@@ -3,14 +3,9 @@ import { ConfigProvider, theme as AntTheme } from 'antd'
 
 import { Context, ContextProvider } from 'context/context'
 import '@styles/globals.scss'
-import reportWebVitals from '@utils/reportWebVitals'
 
 function App({ Component, pageProps, router }) {
 	const getLayout = Component.getLayout || (page => page)
-
-	useEffect(() => {
-		reportWebVitals(console.log)
-	}, [])
 
 	return (
 		<ContextProvider>
