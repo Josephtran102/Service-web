@@ -85,3 +85,4 @@ const Card = ({ data, aprValues }) => {
 }
 
 export default Card
+//cd
