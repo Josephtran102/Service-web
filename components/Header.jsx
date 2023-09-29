@@ -110,7 +110,7 @@ const Header = () => {
 	return (
 		<>
 			<header
-				className={`${styles.header} bg-white dark:bg-[#181818] border-b border-[#00000017] dark:border-[#ffffff0c] `}
+				className={`${styles.header} bg-white dark:bg-[#191919] border-b border-[#00000017] dark:border-[#ffffff0c] `}
 			>
 				{
 					<Link href='/'>

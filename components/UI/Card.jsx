@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import Image from 'next/image'
 import { StarFilled } from '@ant-design/icons'
 
-import { handleMouseMove } from '@utils/handleMouseMove'
 import styles from '@styles/Card.module.scss'
 import { Context } from '@context/context'
 import Button from '@components/UI/Button'
@@ -12,10 +11,6 @@ const Card = ({ data, aprValues }) => {
 	const { theme, toggleTheme } = useContext(Context)
 
 	const type = aprValues ? 'mainnet' : 'testnet'
-
-	const handleOnMouseMove = e => {
-		handleMouseMove(e)
-	}
 
 	const getExplorerLink = item => {
 		return data[item].explorer === '' || data[item].explorer === undefined
@@ -34,7 +29,6 @@ const Card = ({ data, aprValues }) => {
 					className={styles.card}
 					key={item}
 					style={{ backgroundColor: theme === 'dark' ? '#222' : '#fff' }}
-					onMouseMove={e => handleOnMouseMove(e)}
 				>
 					<div className={styles.card__desc}>
 						<div className={styles.card__img}>
