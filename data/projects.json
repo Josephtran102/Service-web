@@ -550,7 +550,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "ENTANGLE",
-      "website": "https://www.entangle.fi"
+      "website": "https://www.entangle.fi",
+      "newExecStart": " --pruning=nothing --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors"
     },
     "humans": {
       "chainID": "humans_3000-31",
