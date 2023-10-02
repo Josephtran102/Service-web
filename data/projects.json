@@ -538,7 +538,7 @@
       "imgUrl": "entangle.jpg",
       "installBin": "cd $HOME\nrm -rf entangle-blockchain\ngit clone https://github.com/Entangle-Protocol/entangle-blockchain\ncd entangle-blockchain\nmake install",
       "minGasPrice": "0.0001",
-      "newInstallBin": "",
+      "newInstallBin": "cd $HOME",
       "path": ".entangled",
       "peerID": "fe8c954ed37bfc3e5fc5eaf19b861d8a5947b2f5",
       "peerPort": "29656",
@@ -551,8 +551,7 @@
       "updHeight": "",
       "variable": "ENTANGLE",
       "website": "https://www.entangle.fi",
-      "newExecStart": "$(which entangled) start --home $HOME/.entangled --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors",
-      "installBin1": "testtest"
+      "newExecStart": "$(which entangled) start --home $HOME/.entangled --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors"
     },
     "humans": {
       "chainID": "humans_3000-31",
