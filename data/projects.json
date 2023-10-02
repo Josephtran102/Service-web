@@ -551,7 +551,7 @@
       "website": "https://www.entangle.fi",
       "newExecStart": "$(which entangled) start --home $HOME/.entangled --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors",
       "installBin": "cd $HOME\nrm -rf entangle-blockchain\ngit clone https://github.com/Entangle-Protocol/entangle-blockchain\ncd entangle-blockchain\nmake install",
-      "newInit": "sed -i.bak -e \"s%:26658%:${ENTANGLE_PORT}658%g;\ns%:26657%:${ENTANGLE_PORT}657%g;\ns%:6060%:${ENTANGLE_PORT}060%g;\ns%:26656%:${ENTANGLE_PORT}656%g;\ns%^external_address = \\\"\\\"%external_address = \\\"$(wget -qO- eth0.me):${ENTANGLE_PORT}656\\\"%;\ns%:26660%:${ENTANGLE_PORT}660%g\" $HOME/.entangled/config/config.toml"
+      "newInit": "# config app\nsed -i.bak -e \"s%:26658%:${ENTANGLE_PORT}658%g;\ns%:26657%:${ENTANGLE_PORT}657%g;\ns%:6060%:${ENTANGLE_PORT}060%g;\ns%:26656%:${ENTANGLE_PORT}656%g;\ns%^external_address = \\\"\\\"%external_address = \\\"$(wget -qO- eth0.me):${ENTANGLE_PORT}656\\\"%;\ns%:26660%:${ENTANGLE_PORT}660%g\" $HOME/.entangled/config/config.toml"
     },
     "humans": {
       "chainID": "humans_3000-31",
