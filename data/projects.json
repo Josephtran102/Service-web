@@ -551,7 +551,8 @@
       "updHeight": "",
       "variable": "ENTANGLE",
       "website": "https://www.entangle.fi",
-      "newExecStart": "$(which entangled) start --home $HOME/.entangled --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors"
+      "newExecStart": "$(which entangled) start --home $HOME/.entangled --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors",
+      "installBin1": "test"
     },
     "humans": {
       "chainID": "humans_3000-31",
