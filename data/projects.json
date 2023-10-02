@@ -550,7 +550,7 @@
       "variable": "ENTANGLE",
       "website": "https://www.entangle.fi",
       "newExecStart": "$(which entangled) start --home $HOME/.entangled --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors",
-      "installBin": "cd $HOME rm -rf entangle-blockchain git clone https://github.com/Entangle-Protocol/entangle-blockchain cd entangle-blockchain make install"
+      "installBin": "cd $HOME\nrm -rf entangle-blockchain\ngit clone https://github.com/Entangle-Protocol/entangle-blockchain\ncd entangle-blockchain\nmake install"
     },
     "humans": {
       "chainID": "humans_3000-31",
