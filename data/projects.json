@@ -536,7 +536,6 @@
       "goVersion": "1.19.3",
       "hardware": "4 Cores, 16GB RAM, 500GB of storage (NVME)",
       "imgUrl": "entangle.jpg",
-      "installBin": "cd $HOME\nrm -rf entangle-blockchain\ngit clone https://github.com/Entangle-Protocol/entangle-blockchain\ncd entangle-blockchain\nmake install",
       "minGasPrice": "0.0001",
       "newInstallBin": "cd $HOME",
       "path": ".entangled",
