@@ -607,7 +607,7 @@
       "seedID": "eb7832932626c1c636d16e0beb49e0e4498fbd5e",
       "peerPort": "20656",
       "seedPort": "20656",
-      "installBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.23.5/lavad-v0.23.5-linux-amd64\nchmod +x $HOME/lavad\nmv $HOME/lavad $HOME/go/bin/lavad",
+      "installBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.24.0/lavad-v0.24.0-linux-amd64\nchmod +x $HOME/lavad\nmv $HOME/lavad $HOME/go/bin/lavad",
       "updHeight": "472310",
       "newInstallBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.24.0/lavad-v0.24.0-linux-amd64\nchmod +x $HOME/lavad\nsudo mv $HOME/lavad $(which lavad)",
       "desc": "Lava pairs Providers with Applications for scalable, private and uncensored access to Web3.",
