@@ -646,7 +646,8 @@
       "website": "https://namada.net/",
       "explorer": "https://namadaexplorer.com/",
       "fav": "true",
-      "offValDoc": "https://docs.namada.net/"
+      "offValDoc": "https://docs.namada.net/",
+      "installBin1": "sudo apt-get install -y make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler"
     },
     "nois": {
       "chainID": "nois-testnet-005",
