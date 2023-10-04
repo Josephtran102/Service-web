@@ -658,9 +658,9 @@
       "installBin5": "echo \"export ALIAS=\"CHOOSE_A_NAME_FOR_YOUR_VALIDATOR\"\" >> $HOME/.bash_profile\necho \"export WALLET=\"CHOOSE_A_WALLET_NAME\"\" >> $HOME/.bash_profile\necho \"export PUBLIC_IP=$(wget -qO- eth0.me)\" >> $HOME/.bash_profile\necho \"export TM_HASH=\"v0.1.4-abciplus\"\" >> $HOME/.bash_profile\necho \"export CHAIN_ID=\"public-testnet-14.5d79b6958580\"\" >> $HOME/.bash_profile\necho \"export BASE_DIR=\"$HOME/.local/share/namada\"\" >> $HOME/.bash_profile\nsource $HOME/.bash_profile",
       "goVersion": "1.19.4",
       "installTitle6": "Install CometBFT",
-      "installBin6": "cd $HOME git clone https://github.com/cometbft/cometbft.git cd cometbft git checkout v0.37.2 make build sudo cp $HOME/cometbft/build/cometbft /usr/local/bin/ cometbft version",
+      "installBin6": "cd $HOME\ngit clone https://github.com/cometbft/cometbft.git\ncd cometbft\ngit checkout v0.37.2\nmake build\nsudo cp $HOME/cometbft/build/cometbft /usr/local/bin/\ncometbft version",
       "installTitle7": "Download and build namada binaries",
-      "installBin7": "cd $HOME rm -rf $HOME/.masp-params rm -rf namada wget https://github.com/anoma/namada/releases/download/v0.23.0/namada-v0.23.0-Linux-x86_64.tar.gz tar -xvf namada-v0.23.0-Linux-x86_64.tar.gz mv ~/namada-v0.23.0-Linux-x86_64 ~/namada mv ~/namada/namada* ~/go/bin rm namada-v0.23.0-Linux-x86_64.tar.gz mkdir -p $HOME/.local/share/namada cp -r ~/.namada/pre-genesis $BASE_DIR/"
+      "installBin7": "cd $HOME\nrm -rf $HOME/.masp-params\nrm -rf namada\nwget https://github.com/anoma/namada/releases/download/v0.23.0/namada-v0.23.0-Linux-x86_64.tar.gz\ntar -xvf namada-v0.23.0-Linux-x86_64.tar.gz\nmv ~/namada-v0.23.0-Linux-x86_64 ~/namada\nmv ~/namada/namada* ~/go/bin\nrm namada-v0.23.0-Linux-x86_64.tar.gz\nmkdir -p $HOME/.local/share/namada\ncp -r ~/.namada/pre-genesis $BASE_DIR/"
     },
     "nois": {
       "chainID": "nois-testnet-005",
