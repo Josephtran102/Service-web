@@ -662,7 +662,7 @@
       "installTitle7": "Download and build namada binaries",
       "installBin7": "cd $HOME\nrm -rf $HOME/.masp-params\nrm -rf namada\nwget https://github.com/anoma/namada/releases/download/v0.23.0/namada-v0.23.0-Linux-x86_64.tar.gz\ntar -xvf namada-v0.23.0-Linux-x86_64.tar.gz\nmv ~/namada-v0.23.0-Linux-x86_64 ~/namada\n#Check namada version\nnamada --version\nmv ~/namada/namada* ~/go/bin\nrm namada-v0.23.0-Linux-x86_64.tar.gz\nmkdir -p $HOME/.local/share/namada\ncp -r ~/.namada/pre-genesis $BASE_DIR/",
       "installTitle8": "Run node",
-      "installBin8": "cd $HOME namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS"
+      "installBin8": "cd $HOME\nnamada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS"
     },
     "nois": {
       "chainID": "nois-testnet-005",
