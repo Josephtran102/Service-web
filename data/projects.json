@@ -655,7 +655,8 @@
       "installBin3": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
       "installBin4": "source \"$HOME/.cargo/env\"",
       "installTitle5": "Replace your Validator and Wallet name, save and import variables into system",
-      "installBin5": "echo \"export ALIAS=\"CHOOSE_A_NAME_FOR_YOUR_VALIDATOR\"\" >> $HOME/.bash_profile\necho \"export WALLET=\"CHOOSE_A_WALLET_NAME\"\" >> $HOME/.bash_profile\necho \"export PUBLIC_IP=$(wget -qO- eth0.me)\" >> $HOME/.bash_profile\necho \"export TM_HASH=\"v0.1.4-abciplus\"\" >> $HOME/.bash_profile\necho \"export CHAIN_ID=\"public-testnet-14.5d79b6958580\"\" >> $HOME/.bash_profile\necho \"export BASE_DIR=\"$HOME/.local/share/namada\"\" >> $HOME/.bash_profile\nsource $HOME/.bash_profile"
+      "installBin5": "echo \"export ALIAS=\"CHOOSE_A_NAME_FOR_YOUR_VALIDATOR\"\" >> $HOME/.bash_profile\necho \"export WALLET=\"CHOOSE_A_WALLET_NAME\"\" >> $HOME/.bash_profile\necho \"export PUBLIC_IP=$(wget -qO- eth0.me)\" >> $HOME/.bash_profile\necho \"export TM_HASH=\"v0.1.4-abciplus\"\" >> $HOME/.bash_profile\necho \"export CHAIN_ID=\"public-testnet-14.5d79b6958580\"\" >> $HOME/.bash_profile\necho \"export BASE_DIR=\"$HOME/.local/share/namada\"\" >> $HOME/.bash_profile\nsource $HOME/.bash_profile",
+      "goVersion": "1.19.4"
     },
     "nois": {
       "chainID": "nois-testnet-005",
