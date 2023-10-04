@@ -650,7 +650,9 @@
       "installBin1": "sudo apt update && sudo apt upgrade -y\nsudo apt-get install -y make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler",
       "hardware": "CPU: x86_64 or arm64, 8GB DDR4, 500GB SSD (NVMe SSD is recommended. HDD will also work.)",
       "installTitle1": "Update packages and Install dependencies",
-      "installBin2": "wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb"
+      "installBin2": "wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb\nsudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb",
+      "installTitle3": "Install Rust",
+      "installBin3": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
     },
     "nois": {
       "chainID": "nois-testnet-005",
