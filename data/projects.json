@@ -647,9 +647,10 @@
       "explorer": "https://namadaexplorer.com/",
       "fav": "true",
       "offValDoc": "https://docs.namada.net/",
-      "installBin1": "#Update packages and Install dependencies\nsudo apt update && sudo apt upgrade -y\nsudo apt-get install -y make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler",
+      "installBin1": "sudo apt update && sudo apt upgrade -y\nsudo apt-get install -y make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler",
       "hardware": "CPU: x86_64 or arm64, 8GB DDR4, 500GB SSD (NVMe SSD is recommended. HDD will also work.)",
-      "installTitle1": "Update packages and Install dependencies"
+      "installTitle1": "Update packages and Install dependencies",
+      "installBin2": "wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb"
     },
     "nois": {
       "chainID": "nois-testnet-005",
