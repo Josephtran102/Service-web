@@ -664,9 +664,9 @@
       "installTitle8": "Run node",
       "installBin8": "cd $HOME\nnamada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS",
       "installTitle9": "Create Service file",
-      "installBin9": "sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF [Unit] Description=namada After=network-online.target  [Service] User=$USER Environment=NAMADA_CMT_STDOUT=true Environment=TM_LOG_LEVEL=p2p:none,pex:error ExecStart=$(which namada) ledger run Restart=on-failure RestartSec=3 LimitNOFILE=65535  [Install] WantedBy=multi-user.target EOF",
+      "installBin9": "sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF\n[Unit]\nDescription=namada\nAfter=network-online.target\n\n[Service]\nUser=$USER\nEnvironment=NAMADA_CMT_STDOUT=true\nEnvironment=TM_LOG_LEVEL=p2p:none,pex:error\nExecStart=$(which namada) ledger run\nRestart=on-failure\nRestartSec=3\nLimitNOFILE=65535\n\n[Install]\nWantedBy=multi-user.target\nEOF",
       "installTitle10": "Enable and start service",
-      "installBin10": "sudo systemctl daemon-reload sudo systemctl enable namadad sudo systemctl restart namadad && sudo journalctl -u namadad -f"
+      "installBin10": "sudo systemctl daemon-reload\nsudo systemctl enable namadad\nsudo systemctl restart namadad && sudo journalctl -u namadad -f"
     },
     "nois": {
       "chainID": "nois-testnet-005",
