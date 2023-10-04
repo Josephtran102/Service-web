@@ -647,7 +647,7 @@
       "explorer": "https://namadaexplorer.com/",
       "fav": "true",
       "offValDoc": "https://docs.namada.net/",
-      "installBin1": "sudo apt-get install -y make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler"
+      "installBin1": "#Update packages and Install dependencies\nsudo apt update && sudo apt upgrade -y\nsudo apt-get install -y make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler"
     },
     "nois": {
       "chainID": "nois-testnet-005",
