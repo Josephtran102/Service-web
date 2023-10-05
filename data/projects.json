@@ -876,7 +876,7 @@
       "updHeight": "888981",
       "newInstallBin": "cd $HOME\nrm -rf $HOME/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v2.0.0\nmake build\nsudo mv $HOME/terp-core/build/terpd $(which terpd)\n",
       "goVersion": "1.19.3",
-      "gas": "--fees 30000uthiolx",
+      "gas": "--gas auto --gas-adjustment 1.5",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.025"
     },
