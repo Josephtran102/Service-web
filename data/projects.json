@@ -878,7 +878,7 @@
       "goVersion": "1.19.3",
       "gas": "--fees 30000uthiolx",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "minGasPrice": "0.0"
+      "minGasPrice": "0.025"
     },
     "uptick": {
       "chainID": "origin_1170-1",
