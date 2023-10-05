@@ -3,26 +3,27 @@ import { Table, Alert } from 'antd'
 import axios from 'axios'
 import Header from '@components/Header'
 import styles from '@styles/Services.module.scss'
-import prettyMs from 'pretty-ms'
+import prettyMilliseconds from 'pretty-ms'
 import { WarningFilled } from '@ant-design/icons'
+
+const parseTime = snapTime => {
+	snapTime = Date.parse(snapTime.concat(':00'))
+	snapTime = Date.now() - snapTime
+	const time = prettyMilliseconds(snapTime, { compact: true })
+	return `${time} ago`
+}
 
 const PublicRPC = ({ data }) => {
 	const dataArray = Object.keys(data).map((key, index) => ({
 		key: index,
 		endpoint: key,
-		blockHeight: data[key].latest_block_height,
+		latest_block_height: data[key].latest_block_height || 'N/A',
+		earliest_block_height: data[key].earliest_block_height || 'N/A',
 		txIndex: data[key].tx_index,
 		moniker: data[key].moniker,
 		validator: data[key].voting_power,
-		scan_time: data[key].scan_time
+		scan_time: parseTime(data[key].scan_time)
 	}))
-
-	const numberOfNetworks = dataArray.length
-	const truncatedDateStr = dataArray.length ? dataArray[0].scan_time.slice(0, 23) + 'Z' : null
-	const lastScanDate = truncatedDateStr ? new Date(truncatedDateStr) : null
-	const now = new Date()
-	const timeDifference = Math.abs(lastScanDate ? now - lastScanDate : 0)
-	const lastScanTimeHumanReadable = timeDifference ? prettyMs(timeDifference, { compact: true }) : 'N/A'
 
 	const columns = [
 		{
@@ -37,8 +38,9 @@ const PublicRPC = ({ data }) => {
 		},
 		{
 			title: 'Block Height',
-			dataIndex: 'blockHeight',
-			key: 'blockHeight'
+			key: 'blockHeight',
+			align: 'right',
+			render: (_, record) => `${record.earliest_block_height} - ${record.latest_block_height}`
 		},
 		{
 			title: 'Tx Index',
@@ -62,6 +64,11 @@ const PublicRPC = ({ data }) => {
 				) : (
 					'no'
 				)
+		},
+		{
+			title: 'Scan Time',
+			dataIndex: 'scan_time',
+			key: 'scan_time'
 		}
 	]
 
@@ -76,22 +83,27 @@ const PublicRPC = ({ data }) => {
 			<div className='w-full p-1 md:p-6 bg-white dark:bg-zinc-900/40'>
 				<div
 					className={styles.mainColumn__wrapper}
-					style={{
-						width: '100%',
-						padding: '10px',
-						marginTop: '60px'
-					}}
+					style={{ width: '100%', padding: '10px', marginTop: '60px' }}
 				>
 					<div className={styles.mainColumn}>
-						<h1>Public RPC endpoints ({numberOfNetworks})</h1>
-						<h3>The last scan happened {lastScanTimeHumanReadable} ago.</h3>
+						<h1>Public RPC endpoints: ({dataArray.length} active) </h1>
+
 						<Alert
-							message="We don't manage these nodes or validate the accuracy of the data they supply. We recommend using ITRocket managed nodes for more reliable information. Block heights are updated hourly."
+							message="We don't manage these nodes or validate the accuracy of the data they supply. We recommend using ITRocket managed nodes for more reliable information. RPC list is updated every 4h."
 							type='info'
 							showIcon
 							className='!w-fit my-3'
 						/>
-						<Table dataSource={dataArray} columns={columns} pagination={false} bordered />
+						<Table dataSource={dataArray} columns={columns} pagination={false} bordered size='small' />
+						<p className='!my-2'>
+							<a
+								href='https://testnet-files.itrocket.net/source/.rpc_combined.json'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								Raw scan results
+							</a>
+						</p>
 						<Alert
 							message='Validators or public sentries which hold voting power above 0 are marked with warning symbol. Exposed to the public network, endpoints can be used as attack vector to harm the chain. Node operators should be aware of this and have a firewall rules in place to limit the attack surface of their validator infrastructure.'
 							type='warning'

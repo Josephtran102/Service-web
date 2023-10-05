@@ -465,3 +465,8 @@ p.desc {
 		display: none !important;
 	}
 }
+
+.narrowRow .ant-table-row {
+	height: 32px !important;
+	line-height: 32px !important;
+}
