@@ -148,7 +148,7 @@ b.bold {
 		text-decoration: underline;
 		text-underline-offset: 0.1em;
 		text-decoration-color: #2982e7;
-		padding-top: 95px;
+		padding-top: 90px;
 		margin: -70px 0px 10px;
 		font-weight: 600;
 		width: fit-content;
@@ -167,7 +167,7 @@ b.bold {
 		}
 
 		&:first-of-type {
-			padding-top: 108px;
+			padding-top: 105px;
 			margin: -100px 0 10px;
 
 			@media (max-width: 768px) {

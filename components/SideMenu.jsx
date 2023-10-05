@@ -28,7 +28,7 @@ const SideMenu = () => {
 	const [items, setItems] = useState([])
 	const [value, setValue] = useState()
 	const [resources, setResources] = useState()
-	let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet']
+	let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet', 'public-rpc']
 	const curProject = useRef()
 	const defValue = useRef()
 
@@ -69,6 +69,7 @@ const SideMenu = () => {
 		if (URL.indexOf('installation') > -1) setOpenKeys([`installation`])
 		else if (URL.indexOf('upgrade') > -1) setOpenKeys([`upgrade`])
 		else if (URL.indexOf('cheat') > -1) setOpenKeys([`cheat-sheet`])
+		else if (URL.indexOf('public-rpc') > -1) setOpenKeys([`public-rpc`])
 		else setOpenKeys([`services`])
 
 		setResources(
@@ -435,6 +436,25 @@ const SideMenu = () => {
 											Utility
 										</Link>,
 										`utility${name}`,
+										<RightOutlined />
+									)
+								]
+							),
+							getItem(
+								<Link href={serviceURL + '/public-rpc'}>
+									<span className='mr-3'> 🌐</span> Public RPC
+								</Link>,
+								`public-rpc`,
+								null,
+								[
+									getItem(
+										<Link
+											href={serviceURL + '/public-rpc/#public-rpc'}
+											onClick={event => handleClick(event, 'public-rpc', `public-rpc${name}`)}
+										>
+											Public RPC endpoints
+										</Link>,
+										`public-rpc${name}`,
 										<RightOutlined />
 									)
 								]

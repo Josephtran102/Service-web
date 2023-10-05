@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import { Table, Alert } from 'antd'
 import axios from 'axios'
-import Header from '@components/Header'
 import styles from '@styles/Services.module.scss'
 import prettyMilliseconds from 'pretty-ms'
 import { WarningFilled } from '@ant-design/icons'
+import { useRouter } from 'next/router'
+import { getLayout } from '@layouts/dashboard'
 
 const parseTime = snapTime => {
 	snapTime = Date.parse(snapTime.concat(':00'))
@@ -13,7 +14,11 @@ const parseTime = snapTime => {
 	return `${time} ago`
 }
 
+const type = 'mainnet'
+
 const PublicRPC = ({ data }) => {
+	const router = useRouter()
+
 	const dataArray = Object.keys(data).map((key, index) => ({
 		key: index,
 		endpoint: key,
@@ -75,51 +80,45 @@ const PublicRPC = ({ data }) => {
 	return (
 		<>
 			<Head>
-				<title>Services - ITRocket</title>
+				<title>Public RPC - ITRocket</title>
 				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 
-			<Header />
-			<div className='w-full p-1 md:p-6 bg-white dark:bg-zinc-900/40'>
-				<div
-					className={styles.mainColumn__wrapper}
-					style={{ width: '100%', padding: '10px', marginTop: '60px' }}
-				>
-					<div className={styles.mainColumn}>
-						<h1>Public RPC endpoints: ({dataArray.length} active) </h1>
+			<div className={`${styles.mainColumn} bg-[#fff] dark:bg-[#1b1b1b]`}>
+				<h2 id='public-rpc'>Public RPC endpoints: ({dataArray.length} active)</h2>
 
-						<Alert
-							message="We don't manage these nodes or validate the accuracy of the data they supply. We recommend using ITRocket managed nodes for more reliable information. RPC list is updated every 4h."
-							type='info'
-							showIcon
-							className='!w-fit my-3'
-						/>
-						<Table dataSource={dataArray} columns={columns} pagination={false} bordered size='small' />
-						<p className='!my-2'>
-							<a
-								href='https://testnet-files.itrocket.net/source/.rpc_combined.json'
-								target='_blank'
-								rel='noopener noreferrer'
-							>
-								Raw scan results
-							</a>
-						</p>
-						<Alert
-							message='Validators or public sentries which hold voting power above 0 are marked with warning symbol. Exposed to the public network, endpoints can be used as attack vector to harm the chain. Node operators should be aware of this and have a firewall rules in place to limit the attack surface of their validator infrastructure.'
-							type='warning'
-							showIcon
-							className='!w-fit my-3'
-						/>
-					</div>
-				</div>
+				<Alert
+					message="We don't manage these nodes or validate the accuracy of the data they supply. We recommend using ITRocket managed nodes for more reliable information. RPC list is updated every 4h."
+					type='info'
+					showIcon
+					className='!w-fit mb-4'
+				/>
+				<Table dataSource={dataArray} columns={columns} pagination={false} bordered size='small' />
+				<p className='!mt-4 !mb-1'>
+					<a
+						href='https://testnet-files.itrocket.net/source/.rpc_combined.json'
+						target='_blank'
+						rel='noopener noreferrer'
+					>
+						Raw scan results
+					</a>
+				</p>
+				<Alert
+					message='Validators or public sentries which hold voting power above 0 are marked with warning symbol. Exposed to the public network, endpoints can be used as attack vector to harm the chain. Node operators should be aware of this and have a firewall rules in place to limit the attack surface of their validator infrastructure.'
+					type='warning'
+					showIcon
+					className='!w-fit my-3'
+				/>
 			</div>
 		</>
 	)
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+	const projectName = context.params.projectName
+
 	try {
-		const response = await axios.get('https://testnet-files.itrocket.net/source/.rpc_combined.json')
+		const response = await axios.get(`https://${type}-files.itrocket.net/${projectName}/.rpc_combined.json`)
 		return {
 			props: { data: response.data }
 		}
@@ -131,4 +130,5 @@ export async function getServerSideProps() {
 	}
 }
 
+PublicRPC.getLayout = getLayout
 export default PublicRPC
