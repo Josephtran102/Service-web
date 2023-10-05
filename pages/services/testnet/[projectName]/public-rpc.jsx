@@ -18,6 +18,7 @@ const type = 'testnet'
 
 const PublicRPC = ({ data }) => {
 	const router = useRouter()
+	const { projectName } = router.query
 
 	const dataArray = Object.keys(data).map((key, index) => ({
 		key: index,
@@ -80,12 +81,12 @@ const PublicRPC = ({ data }) => {
 	return (
 		<>
 			<Head>
-				<title>Public RPC - ITRocket</title>
+				<title>Public RPC - {projectName.charAt(0).toUpperCase() + projectName.slice(1)} | ITRocket</title>
 				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 
 			<div className={`${styles.mainColumn} bg-[#fff] dark:bg-[#1b1b1b]`}>
-				<h2 id='public-rpc'>Public RPC endpoints: ({dataArray.length} active)</h2>
+				<h2 id='public-rpc'>Public RPC endpoints: {dataArray.length} active</h2>
 
 				<Alert
 					message="We don't manage these nodes or validate the accuracy of the data they supply. We recommend using ITRocket managed nodes for more reliable information. RPC list is updated every 4h."
