@@ -18,7 +18,7 @@ function ThemeProvider({ children }) {
 	const { theme } = useContext(Context)
 	const { defaultAlgorithm, darkAlgorithm } = AntTheme
 
-	const borderColor = theme === 'dark' ? 'rgba(255,255,255, 0.18)' : 'rgba(0, 0, 0, 0.18)'
+	const borderColor = theme === 'dark' ? 'rgba(255,255,255, 0.17)' : 'rgba(0, 0, 0, 0.17)'
 	const colorBgContainer = theme === 'dark' ? 'rgba(31, 31, 31, 1)' : '#fff'
 
 	return (

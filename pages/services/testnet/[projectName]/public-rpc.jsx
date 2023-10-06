@@ -99,6 +99,7 @@ const PublicRPC = ({ data }) => {
 					}}
 					bordered
 					size='small'
+					style={{ maxWidth: '980px' }}
 				/>
 				<p className='!mt-4 !mb-1'>
 					<a
