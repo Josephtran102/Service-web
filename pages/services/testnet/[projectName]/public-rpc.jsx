@@ -47,7 +47,8 @@ const PublicRPC = ({ data }) => {
 		{
 			title: 'Tx Index',
 			dataIndex: 'txIndex',
-			key: 'txIndex'
+			key: 'txIndex',
+			width: 110
 		},
 		{
 			title: 'Moniker',
@@ -65,12 +66,14 @@ const PublicRPC = ({ data }) => {
 					</>
 				) : (
 					'no'
-				)
+				),
+			width: 130
 		},
 		{
 			title: 'Scan Time',
 			dataIndex: 'scan_time',
-			key: 'scan_time'
+			key: 'scan_time',
+			width: 140
 		}
 	]
 
@@ -95,17 +98,19 @@ const PublicRPC = ({ data }) => {
 					columns={columns}
 					pagination={false}
 					scroll={{
-						x: 750
+						x: 750,
+						y: 310
 					}}
 					bordered
 					size='small'
-					style={{ maxWidth: '970px' }}
+					style={{ maxWidth: '1030px' }}
 				/>
 				<p className='!mt-4 !mb-1'>
 					<a
 						href='https://testnet-files.itrocket.net/source/.rpc_combined.json'
 						target='_blank'
 						rel='noopener noreferrer'
+						style={{ color: '#6a6cff' }}
 					>
 						Raw scan results
 					</a>
