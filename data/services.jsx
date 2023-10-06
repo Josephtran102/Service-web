@@ -1,6 +1,7 @@
 import {
 	ApiOutlined,
 	CloudUploadOutlined,
+	CompassOutlined,
 	DownloadOutlined,
 	ExperimentOutlined,
 	FileDoneOutlined
@@ -40,6 +41,15 @@ const services = [
 			<>
 				<FileDoneOutlined />
 				Cheat Sheet
+			</>
+		)
+	},
+	{
+		key: 'public-rpc',
+		label: (
+			<>
+				<CompassOutlined />
+				Public RPC
 			</>
 		)
 	}

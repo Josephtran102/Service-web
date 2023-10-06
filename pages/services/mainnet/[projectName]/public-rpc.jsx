@@ -90,7 +90,16 @@ const PublicRPC = ({ data }) => {
 					showIcon
 					className='!w-fit mb-4'
 				/>
-				<Table dataSource={dataArray} columns={columns} pagination={false} bordered size='small' />
+				<Table
+					dataSource={dataArray}
+					columns={columns}
+					pagination={false}
+					scroll={{
+						x: 750
+					}}
+					bordered
+					size='small'
+				/>
 				<p className='!mt-4 !mb-1'>
 					<a
 						href='https://testnet-files.itrocket.net/source/.rpc_combined.json'
