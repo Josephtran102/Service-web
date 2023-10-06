@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { ConfigProvider, theme as AntTheme } from 'antd'
 
 import { Context, ContextProvider } from 'context/context'
@@ -18,10 +18,20 @@ function ThemeProvider({ children }) {
 	const { theme } = useContext(Context)
 	const { defaultAlgorithm, darkAlgorithm } = AntTheme
 
+	const borderColor = theme === 'dark' ? 'rgba(255,255,255, 0.18)' : 'rgba(0, 0, 0, 0.18)'
+	const colorBgContainer = theme === 'dark' ? 'rgba(31, 31, 31, 1)' : '#fff'
+
 	return (
 		<ConfigProvider
 			theme={{
-				algorithm: theme === 'dark' ? darkAlgorithm : defaultAlgorithm
+				algorithm: theme === 'dark' ? darkAlgorithm : defaultAlgorithm,
+				components: {
+					Table: {
+						borderColor: borderColor,
+						colorBgContainer: colorBgContainer,
+						algorithm: true
+					}
+				}
 			}}
 		>
 			{children}

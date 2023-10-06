@@ -33,7 +33,7 @@ const PublicRPC = ({ data }) => {
 			dataIndex: 'endpoint',
 			key: 'endpoint',
 			render: text => (
-				<a href={`http://${text}`} target='_blank' rel='noopener noreferrer'>
+				<a href={`http://${text}`} className='!font-medium' target='_blank' rel='noopener noreferrer'>
 					{text}
 				</a>
 			)
@@ -99,6 +99,7 @@ const PublicRPC = ({ data }) => {
 					}}
 					bordered
 					size='small'
+					className='!dark:bg-slate-500'
 				/>
 				<p className='!mt-4 !mb-1'>
 					<a

@@ -33,7 +33,7 @@ const PublicRPC = ({ data }) => {
 			dataIndex: 'endpoint',
 			key: 'endpoint',
 			render: text => (
-				<a href={`http://${text}`} target='_blank' rel='noopener noreferrer'>
+				<a href={`http://${text}`} className='!font-medium' target='_blank' rel='noopener noreferrer'>
 					{text}
 				</a>
 			)
