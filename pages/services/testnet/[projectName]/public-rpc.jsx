@@ -4,7 +4,6 @@ import axios from 'axios'
 import styles from '@styles/Services.module.scss'
 import prettyMilliseconds from 'pretty-ms'
 import { WarningFilled } from '@ant-design/icons'
-import { useRouter } from 'next/router'
 import { getLayout } from '@layouts/dashboard'
 
 const parseTime = snapTime => {
@@ -17,9 +16,6 @@ const parseTime = snapTime => {
 const type = 'testnet'
 
 const PublicRPC = ({ data }) => {
-	const router = useRouter()
-	const { projectName } = router.query
-
 	const dataArray = Object.keys(data).map((key, index) => ({
 		key: index,
 		endpoint: key,
@@ -81,7 +77,7 @@ const PublicRPC = ({ data }) => {
 	return (
 		<>
 			<Head>
-				<title>Public RPC - {projectName.charAt(0).toUpperCase() + projectName.slice(1)} | ITRocket</title>
+				<title>Public RPC - ITRocket</title>
 				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 

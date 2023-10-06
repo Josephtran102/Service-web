@@ -4,7 +4,6 @@ import axios from 'axios'
 import styles from '@styles/Services.module.scss'
 import prettyMilliseconds from 'pretty-ms'
 import { WarningFilled } from '@ant-design/icons'
-import { useRouter } from 'next/router'
 import { getLayout } from '@layouts/dashboard'
 
 const parseTime = snapTime => {
@@ -17,8 +16,6 @@ const parseTime = snapTime => {
 const type = 'mainnet'
 
 const PublicRPC = ({ data }) => {
-	const router = useRouter()
-
 	const dataArray = Object.keys(data).map((key, index) => ({
 		key: index,
 		endpoint: key,
@@ -85,7 +82,7 @@ const PublicRPC = ({ data }) => {
 			</Head>
 
 			<div className={`${styles.mainColumn} bg-[#fff] dark:bg-[#1b1b1b]`}>
-				<h2 id='public-rpc'>Public RPC endpoints: ({dataArray.length} active)</h2>
+				<h2 id='public-rpc'>Public RPC endpoints: {dataArray.length} active</h2>
 
 				<Alert
 					message="We don't manage these nodes or validate the accuracy of the data they supply. We recommend using ITRocket managed nodes for more reliable information. RPC list is updated every 4h."
