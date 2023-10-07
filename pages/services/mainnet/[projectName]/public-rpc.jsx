@@ -99,7 +99,7 @@ const PublicRPC = ({ data }) => {
 					pagination={false}
 					scroll={{
 						x: 750,
-						y: 310
+						y: 400
 					}}
 					bordered
 					size='small'
