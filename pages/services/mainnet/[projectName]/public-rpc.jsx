@@ -13,7 +13,7 @@ const parseTime = snapTime => {
 	return `${time} ago`
 }
 
-const type = 'testnet'
+const type = 'mainnet'
 
 const PublicRPC = ({ data }) => {
 	const dataArray = Object.keys(data).map((key, index) => ({
