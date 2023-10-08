@@ -88,7 +88,7 @@ const PublicRPC = ({ data }) => {
 				<h2 id='public-rpc'>Public RPC endpoints: {dataArray.length} active</h2>
 
 				<Alert
-					message="We don't manage these nodes or validate the accuracy of the data they supply. We recommend using ITRocket managed nodes for more reliable information. RPC list is updated every 4h."
+					message="RPC nodes provide real-time chain data. We scan HTTP and HTTPS public RPC nodes every 4h to compile a list of endpoints. We don't manage these nodes or validate their data. Please verify accuracy on your own."
 					type='info'
 					showIcon
 					className='!w-fit mb-4'
