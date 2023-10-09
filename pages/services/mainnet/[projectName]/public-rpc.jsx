@@ -15,7 +15,9 @@ const parseTime = snapTime => {
 
 const type = 'mainnet'
 
-const PublicRPC = ({ data }) => {
+const PublicRPC = ({ data, projectName }) => {
+	const dynamicLink = `https://${type}-files.itrocket.net/${projectName}/.rpc_combined.json`
+
 	const dataArray = Object.keys(data).map((key, index) => ({
 		key: index,
 		endpoint: key,
@@ -106,12 +108,7 @@ const PublicRPC = ({ data }) => {
 					style={{ maxWidth: '1030px' }}
 				/>
 				<p className='!mt-4 !mb-1'>
-					<a
-						href='https://testnet-files.itrocket.net/source/.rpc_combined.json'
-						target='_blank'
-						rel='noopener noreferrer'
-						style={{ color: '#6a6cff' }}
-					>
+					<a href={dynamicLink} target='_blank' rel='noopener noreferrer' style={{ color: '#6a6cff' }}>
 						Raw scan results
 					</a>
 				</p>
@@ -128,16 +125,18 @@ const PublicRPC = ({ data }) => {
 
 export async function getServerSideProps(context) {
 	const projectName = context.params.projectName
-
 	try {
 		const response = await axios.get(`https://${type}-files.itrocket.net/${projectName}/.rpc_combined.json`)
 		return {
-			props: { data: response.data }
+			props: {
+				data: response.data,
+				projectName: projectName
+			}
 		}
 	} catch (error) {
 		console.error('An error occurred while fetching data:', error)
 		return {
-			props: { data: {} }
+			props: { data: {}, projectName: projectName }
 		}
 	}
 }
