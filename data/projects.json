@@ -248,7 +248,7 @@
       "peerPort": "13656",
       "seedPort": "13656",
       "updHeight": "2847602",
-      "installBin": "cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout barberry\nmake install",
+      "installBin": "cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v2.0.0\nmake install",
       "newInstallBin": "cd $HOME\nrm -rf terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v2.0.0\nmake build\nsudo mv $HOME/terp-core/build/terpd $(which terpd)",
       "goVersion": "1.19.3",
       "gas": "--gas 210000 --fees 200000uthiol",
