@@ -230,7 +230,7 @@
       "bin": "sourced",
       "binHome": "/home/source/go/bin/sourced",
       "chainID": "source-1",
-      "delegate": "https://mainnet.itrocket.net/source/staking",
+      "delegate": "https://mainnet.itrocket.net/source/staking/sourcevaloper14cmh6n7gffgfepn6hka5zj7dvh5ghdrzc06s22",
       "denom": "usource",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
