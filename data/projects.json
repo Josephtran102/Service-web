@@ -236,7 +236,7 @@
       "gas": "--gas auto --gas-adjustment 1.5",
       "goVersion": "1.19.3",
       "hardware": "4 Cores, 8GB RAM, 250GB of storage (NVME)",
-      "imgUrl": "arkhadian.jpg",
+      "imgUrl": "source.jpg",
       "installBin": "cd $HOME\nrm -rf source\ngit clone https://github.com/Source-Protocol-Cosmos/source.git\ncd source\ngit checkout v3.0.0\nmake install",
       "minGasPrice": "0.25",
       "newInstallBin": "",
