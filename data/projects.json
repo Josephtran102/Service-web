@@ -251,7 +251,7 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "SOURCE",
-      "website": "https://www"
+      "website": "https://www.sourceprotocol.io/"
     },
     "terp": {
       "chainID": "morocco-1",
