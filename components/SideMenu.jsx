@@ -51,11 +51,18 @@ const SideMenu = () => {
 		}
 	}
 
-	const handleTabClick = value => {
-		setValue(value)
-		setSelectedKeys([])
-		const href = `/services/${value}/${curProject.current}`
-		router.push(href)
+	// const handleTabClick = value => {
+	// 	setValue(value)
+	// 	setSelectedKeys([])
+	// 	const href = `/services/${value}/${curProject.current}`
+	// 	router.push(href)
+	// }
+
+	const openKeysByURL = URL => {
+		if (URL.indexOf('installation') > -1) setOpenKeys([`installation`])
+		else if (URL.indexOf('upgrade') > -1) setOpenKeys([`upgrade`])
+		else if (URL.indexOf('cheat') > -1) setOpenKeys([`cheat-sheet`])
+		else setOpenKeys([`services`])
 	}
 
 	useEffect(() => {
@@ -66,11 +73,7 @@ const SideMenu = () => {
 		const imgURL = projects[type][name].imgUrl
 		const ecosystem = projects[type][name].ecosystem
 		const URL = window.location.href
-		if (URL.indexOf('installation') > -1) setOpenKeys([`installation`])
-		else if (URL.indexOf('upgrade') > -1) setOpenKeys([`upgrade`])
-		else if (URL.indexOf('cheat') > -1) setOpenKeys([`cheat-sheet`])
-		else if (URL.indexOf('public-rpc') > -1) setOpenKeys([`public-rpc`])
-		else setOpenKeys([`services`])
+		openKeysByURL(URL)
 
 		setResources(
 			<div className='pt-[2px]'>
@@ -177,6 +180,7 @@ const SideMenu = () => {
 									{name.charAt(0).toUpperCase() + name.slice(1)}
 								</span>
 							</div>
+
 							{/* <Segmented
 								block
 								defaultValue={defValue.current}
@@ -439,25 +443,6 @@ const SideMenu = () => {
 										<RightOutlined />
 									)
 								]
-							),
-							getItem(
-								<Link href={serviceURL + '/public-rpc'}>
-									<span className='mr-3'> 🌐</span> Public RPC
-								</Link>,
-								`public-rpc`,
-								null,
-								[
-									getItem(
-										<Link
-											href={serviceURL + '/public-rpc/#public-rpc'}
-											onClick={event => handleClick(event, 'public-rpc', `public-rpc${name}`)}
-										>
-											Public RPC endpoints
-										</Link>,
-										`public-rpc${name}`,
-										<RightOutlined />
-									)
-								]
 							)
 						],
 						'group'
@@ -465,7 +450,18 @@ const SideMenu = () => {
 					getItem('', 'divider1', null, null, 'group'),
 					{
 						type: 'divider'
-					}
+					},
+					getItem(
+						<div>
+							<Link className='font-normal text-sm' href={serviceURL + '/public-rpc'}>
+								<span className='mr-2 ml-3 '> 🌐</span> public RPC endpoints
+							</Link>
+						</div>,
+						'public rpc',
+						null,
+						null,
+						'group'
+					)
 			  ])
 	}, [router])
 
