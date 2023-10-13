@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState, useRef } from 'react'
-import { Menu, Segmented } from 'antd'
+import { Menu } from 'antd'
 import { RightOutlined } from '@ant-design/icons'
 import Link from 'next/link.js'
 import Image from 'next/image.js'
@@ -177,7 +177,7 @@ const SideMenu = () => {
 									{name.charAt(0).toUpperCase() + name.slice(1)}
 								</span>
 							</div>
-							<Segmented
+							{/* <Segmented
 								block
 								defaultValue={defValue.current}
 								value={value}
@@ -194,7 +194,7 @@ const SideMenu = () => {
 									}
 								]}
 								onChange={handleTabClick}
-							/>
+							/> */}
 						</div>,
 						'grpthis',
 						null,
