@@ -233,7 +233,7 @@
       "delegate": "https://mainnet.itrocket.net/source/staking/sourcevaloper14cmh6n7gffgfepn6hka5zj7dvh5ghdrzc06s22",
       "denom": "usource",
       "ecosystem": "cosmos",
-      "gas": "--gas auto --gas-adjustment 1.5",
+      "gas": "--gas auto --gas-adjustment 1.5 --fees=50000usource",
       "goVersion": "1.19.3",
       "hardware": "4 Cores, 8GB RAM, 250GB of storage (NVME)",
       "imgUrl": "source.jpg",
