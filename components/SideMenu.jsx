@@ -457,7 +457,7 @@ const SideMenu = () => {
 								className='font-normal text-sm dark:text-[#a7a7a7] fo'
 								href={serviceURL + '/public-rpc'}
 							>
-								<span className='mr-2 ml-3'> 🌐</span> public RPC endpoints
+								<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
 							</Link>
 						</div>,
 						'public rpc',
