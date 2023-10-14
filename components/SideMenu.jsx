@@ -75,6 +75,8 @@ const SideMenu = () => {
 		const URL = window.location.href
 		openKeysByURL(URL)
 
+		const isParams = curProject.current === 'cardchain' ? true : false
+
 		setResources(
 			<div className='pt-[2px]'>
 				<a
@@ -453,12 +455,38 @@ const SideMenu = () => {
 					},
 					getItem(
 						<div>
-							<Link
-								className='font-normal text-sm dark:text-[#a7a7a7] fo'
-								href={serviceURL + '/public-rpc'}
-							>
+							<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/public-rpc'}>
 								<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
 							</Link>
+						</div>,
+						'public rpc',
+						null,
+						null,
+						'group'
+					),
+					isParams
+						? getItem(
+								<div>
+									<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/params'}>
+										<span className='mr-2 ml-3'> ⚒</span> Parameters
+									</Link>
+								</div>,
+								'parameters',
+								null,
+								null,
+								'group'
+						  )
+						: null,
+					getItem(
+						<div className='mb-2'>
+							<a
+								className='font-normal text-sm dark:text-[#a7a7a7]'
+								href={`https://t.me/itrocket_${type}_proposal_bot`}
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<span className='mr-2 ml-3'> 🤖</span> Proposal bot
+							</a>
 						</div>,
 						'public rpc',
 						null,

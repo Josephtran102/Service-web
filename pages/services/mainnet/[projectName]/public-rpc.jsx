@@ -15,7 +15,7 @@ const parseTime = snapTime => {
 
 const type = 'mainnet'
 
-const PublicRPC = ({ data, projectName, paramsData }) => {
+const PublicRPC = ({ data, projectName }) => {
 	const dynamicLink = `https://${type}-files.itrocket.net/${projectName}/.rpc_combined.json`
 
 	const dataArray = Object.keys(data).map((key, index) => ({
@@ -79,29 +79,6 @@ const PublicRPC = ({ data, projectName, paramsData }) => {
 		}
 	]
 
-	let paramsArray = []
-	if (paramsData) {
-		const safeParamsData = paramsData.params || {}
-		paramsArray = Object.keys(safeParamsData).map((key, index) => ({
-			key: index,
-			param: key,
-			value: typeof safeParamsData[key] === 'object' ? JSON.stringify(safeParamsData[key]) : safeParamsData[key]
-		}))
-	}
-
-	const paramsColumns = [
-		{
-			title: 'Parameter',
-			dataIndex: 'param',
-			key: 'param'
-		},
-		{
-			title: 'Value',
-			dataIndex: 'value',
-			key: 'value'
-		}
-	]
-
 	return (
 		<>
 			<Head>
@@ -141,20 +118,6 @@ const PublicRPC = ({ data, projectName, paramsData }) => {
 					showIcon
 					className='!w-fit my-3'
 				/>
-
-				{paramsData && (
-					<>
-						<h2 id='params'>Cardchain Params:</h2>
-						<Table
-							dataSource={paramsArray}
-							columns={paramsColumns}
-							pagination={false}
-							size='small'
-							bordered
-							style={{ maxWidth: '600px' }}
-						/>
-					</>
-				)}
 			</div>
 		</>
 	)
@@ -162,33 +125,18 @@ const PublicRPC = ({ data, projectName, paramsData }) => {
 
 export async function getServerSideProps(context) {
 	const projectName = context.params.projectName
-	let data = {}
-	let paramsData = null
-
 	try {
 		const response = await axios.get(`https://${type}-files.itrocket.net/${projectName}/.rpc_combined.json`)
-		data = response.data
+		return {
+			props: {
+				data: response.data,
+				projectName: projectName
+			}
+		}
 	} catch (error) {
 		console.error('An error occurred while fetching data:', error)
-	}
-
-	if (projectName === 'cardchain') {
-		try {
-			const response = await axios.get(
-				'https://cardchain-testnet-api.itrocket.net/DecentralCardGame/cardchain/cardchain/params'
-			)
-			paramsData = response.data
-		} catch (error) {
-			console.error('An error occurred while fetching params data:', error)
-			paramsData = null
-		}
-	}
-
-	return {
-		props: {
-			data,
-			projectName,
-			paramsData
+		return {
+			props: { data: {}, projectName: projectName }
 		}
 	}
 }
