@@ -617,7 +617,7 @@
       "offValDoc": "https://docs.lavanet.xyz/testnet",
       "ecosystem": "cosmos",
       "goVersion": "1.20.5",
-      "gas": "--gas auto --gas-adjustment 1.5",
+      "gas": "--fees 300ulava",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0",
       "fav": "true",
