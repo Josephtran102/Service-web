@@ -577,7 +577,7 @@
       "updHeight": "",
       "variable": "ENTANGLE",
       "website": "https://www.entangle.fi",
-      "newExecStart": "$(which entangled) start --home $HOME/.entangled --pruning=nothing --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors",
+      "newExecStart": "$(which entangled) start --pruning=nothing --evm.tracer=json --log_level info --minimum-gas-prices=0.0001aNGL --json-rpc.api eth,txpool,personal,net,debug,web3,miner --api.enable --api.enabled-unsafe-cors",
       "installBin": "cd $HOME\nrm -rf entangle-blockchain\ngit clone https://github.com/Entangle-Protocol/entangle-blockchain\ncd entangle-blockchain\nmake install",
       "newInit": "# config app\nsed -i \\\n-e 's/timeout_broadcast_tx_commit = \"10s\"/timeout_broadcast_tx_commit = \"1s\"/g' \\\n-e 's/timeout_propose = \"3s\"/timeout_propose = \"1s\"/g' \\\n-e 's/timeout_propose_delta = \"500ms\"/timeout_propose_delta = \"200ms\"/g' \\\n-e 's/timeout_prevote = \"1s\"/timeout_prevote = \"500ms\"/g' \\\n-e 's/timeout_prevote_delta = \"500ms\"/timeout_prevote_delta = \"200ms\"/g' \\\n-e 's/timeout_precommit = \"1s\"/timeout_precommit = \"500ms\"/g' \\\n-e 's/timeout_precommit_delta = \"500ms\"/timeout_precommit_delta = \"200ms\"/g' \\\n-e 's/timeout_commit = \"5s\"/timeout_commit = \"1s\"/g' \\\n-e 's/create_empty_blocks = true/create_empty_blocks = false/g' \\\n-e 's/create_empty_blocks_interval = \"0s\"/create_empty_blocks_interval = \"30s\"/g' \\\n-e 's/namespace = \"cometbft\"/namespace = \"tendermint\"/g' \"$HOME/.entangled/config/config.toml\""
     },
