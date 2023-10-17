@@ -636,8 +636,8 @@
       "peerPort": "20656",
       "seedPort": "20656",
       "installBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.24.0/lavad-v0.24.0-linux-amd64\nchmod +x $HOME/lavad\nmv $HOME/lavad $HOME/go/bin/lavad",
-      "updHeight": "472310",
-      "newInstallBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.24.0/lavad-v0.24.0-linux-amd64\nchmod +x $HOME/lavad\nsudo mv $HOME/lavad $(which lavad)",
+      "updHeight": "514533",
+      "newInstallBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.25.2/lavad-v0.25.2-linux-amd64\nchmod +x $HOME/lavad\nsudo mv $HOME/lavad $(which lavad)",
       "desc": "Lava pairs Providers with Applications for scalable, private and uncensored access to Web3.",
       "newInit": "lavad init $MONIKER --chain-id $LAVA_CHAIN_ID\nsed -i \\\n  -e 's/timeout_commit = \".*\"/timeout_commit = \"30s\"/g' \\\n  -e 's/timeout_propose = \".*\"/timeout_propose = \"1s\"/g' \\\n  -e 's/timeout_precommit = \".*\"/timeout_precommit = \"1s\"/g' \\\n  -e 's/timeout_precommit_delta = \".*\"/timeout_precommit_delta = \"500ms\"/g' \\\n  -e 's/timeout_prevote = \".*\"/timeout_prevote = \"1s\"/g' \\\n  -e 's/timeout_prevote_delta = \".*\"/timeout_prevote_delta = \"500ms\"/g' \\\n  -e 's/timeout_propose_delta = \".*\"/timeout_propose_delta = \"500ms\"/g' \\\n  -e 's/skip_timeout_commit = \".*\"/skip_timeout_commit = false/g' \\\n  $HOME/.lava/config/config.toml"
     },
