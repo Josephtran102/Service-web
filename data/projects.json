@@ -410,7 +410,7 @@
       "imgUrl": "cardchain.png",
       "installBin": "cd $HOME\nwget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.10.0/Cardchaind\nchmod 775 Cardchaind\nsudo mv Cardchaind /usr/local/bin",
       "minGasPrice": "0.0",
-      "newInstallBin": "",
+      "newInstallBin": "sudo systemctl stop Cardchaind echo \"export CARDCHAIN_CHAIN_ID=\"cardtestnet-5\"\" >> $HOME/.bash_profile source $HOME/.bash_profile wget -O $HOME/.Cardchain/config/genesis.json http://45.136.28.158:3000/genesis.json Cardchaind tendermint unsafe-reset-all --home $HOME/.Cardchain SEEDS=\"\" PEERS=\"109adfd1645cc1289bd2753277d6c5c2a9112b76@45.136.28.158:26656, 447a7af037dc85213d98ef3f4dc07d05191f52e7@202.61.225.157:26656\" sed -i -e \"s/^seeds *=.*/seeds = \\\"$SEEDS\\\"/; s/^persistent_peers *=.*/persistent_peers = \\\"$PEERS\\\"/\" $HOME/.Cardchain/config/config.toml #config and start  Cardchaind config chain-id cardtestnet-5 cd $HOME wget https://github.com/DecentralCardGame/Cardchain/releases/download/v0.10.0/Cardchaind chmod 775 Cardchaind sudo mv Cardchaind /usr/local/bin",
       "offValDoc": "https://github.com/DecentralCardGame/Testnet",
       "path": ".Cardchain",
       "peerID": "99dcfbba34316285fceea8feb0b644c4dc67c53b",
@@ -421,7 +421,7 @@
       "seedPort": "31656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "",
+      "updHeight": "0",
       "variable": "CARDCHAIN",
       "website": "https://crowdcontrol.network"
     },
