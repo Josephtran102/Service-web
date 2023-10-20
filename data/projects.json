@@ -121,7 +121,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "HAQQ",
-      "website": "https://islamiccoin.net"
+      "website": "https://islamiccoin.net",
+      "evmRPC": "https://haqq-mainnet-evm.itrocket.net:443"
     },
     "humans": {
       "chainID": "humans_1089-1",
