@@ -115,7 +115,7 @@
       "peerPort": "25656",
       "port": 25,
       "prHome": "/home/arkhadian",
-      "seedID": "",
+      "seedID": "9bc84e2b4fd1dbe1522fe2e3eecdce77b8398d76",
       "seedPort": "25656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
