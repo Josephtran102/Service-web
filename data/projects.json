@@ -109,7 +109,7 @@
       "imgUrl": "haqq.png",
       "installBin": "cd $HOME\nrm -rf haqq\ngit clone https://github.com/haqq-network/haqq.git\ncd haqq\ngit checkout v1.6.1\nmake install",
       "minGasPrice": "0.0025",
-      "newInstallBin": "cd $HOME\nrm -rf haqq\ngit clone https://github.com/haqq-network/haqq.git\ncd haqq\ngit checkout v1.6.1\nmake install\nsudo mv $HOME/haqq/build/haqqd $(which haqqd)",
+      "newInstallBin": "cd $HOME\nrm -rf haqq\ngit clone https://github.com/haqq-network/haqq.git\ncd haqq\ngit checkout v1.6.1\nmake build\nsudo mv $HOME/haqq/build/haqqd $(which haqqd)",
       "path": ".haqqd",
       "peerID": "826dbf0b1a27225ed972bf59b46e9eda028b9249",
       "peerPort": "25656",
