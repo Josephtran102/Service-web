@@ -109,7 +109,7 @@
       "imgUrl": "haqq.png",
       "installBin": "cd $HOME\nrm -rf haqq\ngit clone https://github.com/haqq-network/haqq.git\ncd haqq\ngit checkout v1.6.1\nmake install",
       "minGasPrice": "0.0025",
-      "newInstallBin": "",
+      "newInstallBin": "cd $HOME rm -rf haqq git clone https://github.com/haqq-network/haqq.git cd haqq git checkout v1.6.2 make build",
       "path": ".haqqd",
       "peerID": "826dbf0b1a27225ed972bf59b46e9eda028b9249",
       "peerPort": "25656",
@@ -119,7 +119,7 @@
       "seedPort": "25656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "",
+      "updHeight": "8193000",
       "variable": "HAQQ",
       "website": "https://islamiccoin.net",
       "evmRPC": "https://haqq-mainnet-evm.itrocket.net:443"
