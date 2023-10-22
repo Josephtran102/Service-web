@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
 	if (projectName === 'cardchain') {
 		try {
 			const response = await axios.get(
-				'https://cardchain-testnet-api.itrocket.net/DecentralCardGame/cardchain/cardchain/params'
+				'https://cardchain-testnet-api.itrocket.net/DecentralCardGame/Cardchain/cardchain/params'
 			)
 			paramsData = response.data
 		} catch (error) {
