@@ -964,7 +964,7 @@
       "newExecStart": "$(which zetacored) start --home $HOME/.zetacored --log_format json  --log_level info --moniker $MONIKER",
       "installBin": "cd $HOME\nmkdir -p $HOME/.zetacored/config\nrm -rf node\ngit clone https://github.com/zeta-chain/node.git\ncd node\ngit checkout v10.0.0\nmake install-testnet",
       "updHeight": "2172950",
-      "newInstallBin": "cd $HOME\nwget -O $HOME/zetacored https://github.com/zeta-chain/node/releases/download/v10.1.0/zetacored-ubuntu-22-amd64\nchmod +x $HOME/zetacored \nsudo mv $HOME/zetacored $(which zetacored)",
+      "newInstallBin": "cd $HOME\nwget -O $HOME/zetacored https://github.com/zeta-chain/node/releases/download/v10.1.0/zetacored_testnet-linux-amd64\nchmod +x $HOME/zetacored \nsudo mv $HOME/zetacored $(which zetacored)",
       "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5 --gas-prices=\"0.1azeta\"",
       "unsafeReset": "tendermint unsafe-reset-all",
