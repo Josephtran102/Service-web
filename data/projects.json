@@ -931,7 +931,7 @@
       "evmRPC": "https://uptick-testnet-evm.itrocket.net:443",
       "peerPort": "10656",
       "seedPort": "10656",
-      "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.12\nmake install",
+      "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.13\nmake install",
       "updHeight": "2555700",
       "newInstallBin": "cd $HOME\nwget https://raw.githubusercontent.com/UptickNetwork/uptick-testnet/main/origin_1170-1/lib/uptickd-linux-amd64-v0.2.13.tar.gz\ntar -zxvf uptickd-linux-amd64-v0.2.13.tar.gz && chmod +x uptickd\nrm -rf uptickd-linux-amd64-v0.2.13.tar.gz\nsudo mv $HOME/uptickd $(which uptickd)",
       "goVersion": "1.19.3",
