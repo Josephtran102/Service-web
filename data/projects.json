@@ -903,7 +903,7 @@
       "seedPort": "13656",
       "installBin": "cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v3.1.0\nmake install",
       "updHeight": "1556462",
-      "newInstallBin": "cd $HOME\nrm -rf $HOME/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v4\nmake build\nsudo mv $HOME/terp-core/build/terpd $(which terpd)",
+      "newInstallBin": "cd $HOME\nrm -rf $HOME/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v4.0.0\nmake build\nsudo mv $HOME/terp-core/build/terpd $(which terpd)",
       "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5",
       "unsafeReset": "tendermint unsafe-reset-all",
