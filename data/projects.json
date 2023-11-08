@@ -662,7 +662,7 @@
       "updHeight": "",
       "newInstallBin": "",
       "goVersion": "1.19.3",
-      "gas": "--gas auto --gas-adjustment 1.5",
+      "gas": "--gas auto --gas-adjustment 1.5 --fees 50uaum",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0",
       "delegate": "https://testnet.itrocket.net/mantra/staking"
