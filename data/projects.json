@@ -664,7 +664,7 @@
       "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5 --fees 50uaum",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "minGasPrice": "0.0",
+      "minGasPrice": "0.0001",
       "delegate": "https://testnet.itrocket.net/mantra/staking"
     },
     "namada": {
