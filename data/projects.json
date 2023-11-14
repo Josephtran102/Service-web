@@ -880,11 +880,10 @@
       "minGasPrice": "0.0"
     },
     "terp": {
-      "chainID": "90u-2",
+      "ecosystem": "cosmos",
       "imgUrl": "terp.jpg",
-      "desc": "Decentralized Infrastructure for the Cannabis Community",
       "website": "https://terp.network/",
-      "offValDoc": "https://github.com/terpnetwork/terp-core",
+      "chainID": "90u-2",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
       "prHome": "/home/terp",
       "binHome": "/home/terp/go/bin/terpd",
@@ -892,7 +891,6 @@
       "port": "13",
       "variable": "TERP",
       "denom": "uterpx",
-      "ecosystem": "cosmos",
       "bin": "terpd",
       "path": ".terp",
       "peerID": "51d48be3809bb8907c1ef5f747e53cdd0c9ded1b",
@@ -905,7 +903,9 @@
       "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "minGasPrice": "0.025"
+      "minGasPrice": "0.025uterpx",
+      "desc": "Decentralized Infrastructure for the Cannabis Community",
+      "offValDoc": "https://github.com/terpnetwork/terp-core"
     },
     "uptick": {
       "chainID": "origin_1170-1",
