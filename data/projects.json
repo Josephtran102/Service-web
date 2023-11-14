@@ -593,7 +593,7 @@
       "imgUrl": "entrypoint.png",
       "installBin": "cd $HOME\nmkdir -p $HOME/entrypoint && cd entrypoint\nwget https://github.com/entrypoint-zone/testnets/releases/download/v1.1.1/entrypointd-v1.1.1-linux-amd64\nchmod +x entrypointd-v1.1.1-linux-amd64\nmv entrypointd-v1.1.1-linux-amd64 $HOME/go/bin/entrypointd",
       "minGasPrice": "0.01ibc/8A138BC76D0FB2665F8937EC2BF01B9F6A714F6127221A0E155106A45E09BCC5",
-      "newInstallBin": "cd $HOME\nwget https://github.com/entrypoint-zone/testnets/releases/download/v1.2.0/entrypointd-1.2.0-linux-amd64.tgz \ntar -xvf $HOME/entrypointd-1.2.0-linux-amd64.tgz \nmv $HOME/build/entrypointd-1.2.0-linux-amd64 $HOME/entrypointd\nrm entrypointd-1.2.0-linux-amd64.tgz\nchmod +x entrypointd\nsudo mv $HOME/entrypointd $(which entrypointd)",
+      "newInstallBin": "cd $HOME\nwget https://github.com/entrypoint-zone/testnets/releases/download/v1.2.0/entrypointd-1.2.0-linux-amd64.tgz \ntar -xvf $HOME/entrypointd-1.2.0-linux-amd64.tgz \nmv $HOME/build/entrypointd-1.2.0-linux-amd64 $HOME/entrypointd\nrm -rf $HOME/build $HOME/entrypointd-1.2.0-linux-amd64.tgz \nchmod +x entrypointd\nsudo mv $HOME/entrypointd $(which entrypointd)",
       "path": ".entrypoint",
       "peerID": "7048ee28300ffa81103cd24b2af3d1af0c378def",
       "peerPort": "34656",
