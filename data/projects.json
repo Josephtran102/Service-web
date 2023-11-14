@@ -593,7 +593,7 @@
       "imgUrl": "entrypoint.png",
       "installBin": "cd $HOME\nmkdir -p $HOME/entrypoint && cd entrypoint\nwget https://github.com/entrypoint-zone/testnets/releases/download/v1.1.1/entrypointd-v1.1.1-linux-amd64\nchmod +x entrypointd-v1.1.1-linux-amd64\nmv entrypointd-v1.1.1-linux-amd64 $HOME/go/bin/entrypointd",
       "minGasPrice": "0.01ibc/8A138BC76D0FB2665F8937EC2BF01B9F6A714F6127221A0E155106A45E09BCC5",
-      "newInstallBin": "",
+      "newInstallBin": "cd $HOME",
       "path": ".entrypoint",
       "peerID": "7048ee28300ffa81103cd24b2af3d1af0c378def",
       "peerPort": "34656",
@@ -603,7 +603,7 @@
       "seedPort": "34656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "",
+      "updHeight": "351000",
       "variable": "ENTRY",
       "website": "https://entrypoint.zone/ "
     },
