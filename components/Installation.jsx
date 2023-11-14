@@ -232,7 +232,7 @@ sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \\"100\\"/" $HOME/$
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \\"50\\"/" $HOME/${path}/config/app.toml
 
 # set minimum gas price, enable prometheus and disable indexing
-sed -i 's/minimum-gas-prices =.*/minimum-gas-prices = "${minGasPrice}${denom}"/g' $HOME/${path}/config/app.toml
+sed -i 's/minimum-gas-prices =.*/minimum-gas-prices = "${minGasPrice}"/g' $HOME/${path}/config/app.toml
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/${path}/config/config.toml
 sed -i -e "s/^indexer *=.*/indexer = \\"null\\"/" $HOME/${path}/config/config.toml
 
