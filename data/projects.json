@@ -908,12 +908,10 @@
       "offValDoc": "https://github.com/terpnetwork/terp-core"
     },
     "uptick": {
-      "chainID": "origin_1170-1",
+      "ecosystem": "cosmos",
       "imgUrl": "uptick.jpg",
-      "fav": "true",
-      "desc": "The Business Grade Multi-Chain NFT Infrastructure for Web 3.0",
       "website": "https://uptick.network/",
-      "offValDoc": "https://docs.uptick.network/testnet/",
+      "chainID": "origin_1170-1",
       "hardware": "4 Cores, 4GB RAM, 100GB of storage (NVME)",
       "prHome": "/home/uptick",
       "binHome": "/home/uptick/go/bin/uptickd",
@@ -921,12 +919,10 @@
       "port": "10",
       "variable": "UPTICK",
       "denom": "auoc",
-      "ecosystem": "cosmos",
       "bin": "uptickd",
       "path": ".uptickd",
       "peerID": "b232825b5b50857c13d2e89a2988eee462ed5462",
       "seedID": "cc4d304a2d2062dfe9f77a7ee0b9aa3aa1ba7869",
-      "evmRPC": "https://uptick-testnet-evm.itrocket.net:443",
       "peerPort": "10656",
       "seedPort": "10656",
       "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.13\nmake install",
@@ -935,7 +931,11 @@
       "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "minGasPrice": "0.0"
+      "minGasPrice": "0.0auoc",
+      "desc": "The Business Grade Multi-Chain NFT Infrastructure for Web 3.0",
+      "offValDoc": "https://docs.uptick.network/testnet/",
+      "fav": "true",
+      "evmRPC": "https://uptick-testnet-evm.itrocket.net:443"
     },
     "zetachain": {
       "chainID": "athens_7001-1",
