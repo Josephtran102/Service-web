@@ -54,18 +54,28 @@ const CosmosAPI = ({ name, type }) => {
 							}}
 						/>
 					</div>
-					<div className='flex flex-wrap gap-1 items-center'>
-						<>Public API: </>
-						<a href={`https://${name}-${type}-api.itrocket.net:443`} target='_blank' rel='noopener referrer'>
-							{`https://${name}-${type}-api.itrocket.net:443`}
-						</a>
-						<Paragraph
-							copyable={{
-								text: `https://${name}-${type}-api.itrocket.net:443`,
-								tooltips: false
-							}}
-						/>
-					</div>
+					{name === 'namada' ? (
+						<></>
+					) : (
+						<>
+							<div className='flex flex-wrap gap-1 items-center'>
+								Public API:
+								<a
+									href={`https://${name}-${type}-api.itrocket.net:443`}
+									target='_blank'
+									rel='noopener referrer'
+								>
+									{`https://${name}-${type}-api.itrocket.net:443`}
+								</a>
+								<Paragraph
+									copyable={{
+										text: `https://${name}-${type}-api.itrocket.net:443`,
+										tooltips: false
+									}}
+								/>
+							</div>
+						</>
+					)}
 					{evmRPC !== undefined ? (
 						<div className='flex flex-wrap gap-1 items-center'>
 							<>Public EVM RPC: </>
@@ -81,8 +91,15 @@ const CosmosAPI = ({ name, type }) => {
 						</div>
 					) : null}
 				</div>
-				<h3 id='grpc'>gRPC:</h3>
-				<CodeSnippet theme={theme} code={`${gRPC}`} />
+				{name === 'namada' ? (
+					<></>
+				) : (
+					<>
+						<h3 id='grpc'>gRPC:</h3>
+						<CodeSnippet theme={theme} code={`${gRPC}`} />
+					</>
+				)}
+
 				<h3 id='peer'>peers:</h3>
 				<CodeSnippet theme={theme} code={`${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}`} />
 				{SEEDS == '' ? (
