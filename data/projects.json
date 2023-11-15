@@ -551,7 +551,7 @@
       "variable": "EMPOWER",
       "website": "https://www.empower.eco/",
       "offValDoc": "https://docs.empowerchain.io/validators/delegation-program",
-      "stateSync": "false"
+      "stateSync": "true"
     },
     "entangle": {
       "bin": "entangled",
