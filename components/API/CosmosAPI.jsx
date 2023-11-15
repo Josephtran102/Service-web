@@ -16,7 +16,7 @@ const CosmosAPI = ({ name, type }) => {
 	const { livePeers, livePeersCounter } = useNetInfo(name, type)
 	const explorer = useRef()
 	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset, evmRPC } = project
+	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset, evmRPC, stateSync } = project
 	explorer.current = project.explorer
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
@@ -136,13 +136,17 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
 					</>
 				)}
-				<h2 id='sync'>State Sync</h2>
-				<p className={styles.text_secondary}>
-					If you don't want to wait for a long synchronization you can use:
-				</p>
-				<CodeSnippet
-					theme={theme}
-					code={`sudo systemctl stop ${bin}
+				{stateSync === 'false' ? (
+					<></>
+				) : (
+					<>
+						<h2 id='sync'>State Sync</h2>
+						<p className={styles.text_secondary}>
+							If you don't want to wait for a long synchronization you can use:
+						</p>
+						<CodeSnippet
+							theme={theme}
+							code={`sudo systemctl stop ${bin}
 
 cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
 ${bin} ${unsafeReset} --home $HOME/${path}
@@ -172,7 +176,10 @@ curl https://${type}-files.itrocket.net/${name}/wasm_${name}.tar.lz4 | lz4 -dc -
 mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json
 
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
-				/>
+						/>
+					</>
+				)}
+
 				<h2 id='wasm'>Wasm</h2>
 				{wasm.current !== 'false' ? (
 					<>

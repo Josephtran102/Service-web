@@ -19,6 +19,7 @@ let fieldNames = [
 	'peerPort',
 	'seedPort',
 	'installBin',
+	'stateSync',
 	'updHeight',
 	'newInstallBin',
 	'goVersion',

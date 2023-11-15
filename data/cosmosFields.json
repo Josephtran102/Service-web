@@ -17,6 +17,7 @@
 	"peerPort": "27656",
 	"port": "27",
 	"prHome": "/home/arkhadian",
+	"stateSync": "true",
 	"seedID": "30d97270c31601c38e5b89c52fca985901cd8c20",
 	"seedPort": "27656",
 	"snapMaxSize": "10",
