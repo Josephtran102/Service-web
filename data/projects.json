@@ -695,7 +695,7 @@
       "website": "https://www.mantrachain.io/"
     },
     "namada": {
-      "bin": "namada",
+      "bin": "namadan",
       "binHome": "/usr/local/bin/namada",
       "chainID": "v0.1.4-abciplus",
       "delegate": "https://mainnet.itrocket.net/namada/staking",
