@@ -258,6 +258,10 @@
 
 	.handle {
 		transform: translate(20px);
+
+		@media (min-width: 1600px) {
+			transform: translate(25px);
+		}
 	}
 
 	&:hover {
