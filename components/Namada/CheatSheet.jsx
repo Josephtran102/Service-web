@@ -71,7 +71,7 @@ const CheatSheet = props => {
 					</div>
 
 					<div className='flex flex-col gap-y-2'>
-						<h2 id='wallet-operations'>Wallet operations ⚙️</h2>
+						<h2 id='wallet-operations'>Wallet operations 💰</h2>
 						<CodeBlock
 							desc='Stake funds'
 							code={`namada client bond \\

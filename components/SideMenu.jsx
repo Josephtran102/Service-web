@@ -225,7 +225,7 @@ const SideMenu = () => {
 						),
 						getItem(
 							<Link href={serviceURL + '/cheat-sheet'}>
-								<span className='mr-3'>📝</span> Cheat sheet
+								<span className='mr-3'>📝</span> Cheat sheet (soon)
 							</Link>,
 							`cheat-sheet`,
 							null,
@@ -273,17 +273,17 @@ const SideMenu = () => {
 				{
 					type: 'divider'
 				},
-				// getItem(
-				// 	<div>
-				// 		<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/public-rpc'}>
-				// 			<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
-				// 		</Link>
-				// 	</div>,
-				// 	'public rpc',
-				// 	null,
-				// 	null,
-				// 	'group'
-				// ),
+				getItem(
+					<div>
+						<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/public-rpc'}>
+							<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
+						</Link>
+					</div>,
+					'public rpc',
+					null,
+					null,
+					'group'
+				),
 				isParams
 					? getItem(
 							<div>
