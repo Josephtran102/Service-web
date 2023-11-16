@@ -71,6 +71,7 @@ const CheatSheet = props => {
 					</div>
 
 					<div className='flex flex-col gap-y-2'>
+						<h2 id='wallet-operations'>Wallet operations ⚙️</h2>
 						<CodeBlock
 							desc='Stake funds'
 							code={`namada client bond \\
@@ -92,6 +93,8 @@ const CheatSheet = props => {
 							code={`curl -s http://localhost:26657/dump_consensus_state | jq '.result.round_state.votes[0].prevotes' | grep $(curl -s http://localhost:26657/status | jq -r '.result.validator_info.address[:12]')`}
 						/>
 					</div>
+
+					<h2 id='sync'>Sync and consensus ⚙️</h2>
 				</>
 			</div>
 		</AnimatedSection>

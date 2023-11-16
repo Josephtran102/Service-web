@@ -46,14 +46,14 @@ const Upgrade = ({ name, type }) => {
 			>
 				<CodeBlock
 					desc='Upgrade to v0.23.2:'
-					code='cd $HOME
-rm -rf namada
-git clone https://github.com/anoma/namada
-cd namada
-git checkout v0.23.2
-make build-release
-sudo mv $HOME/namada/target/release/namada* /usr/local/bin/
-sudo systemctl restart namadad && sudo journalctl -u namadad -f'
+					code={`cd $HOME
+rm -rf namada 
+git clone https://github.com/anoma/namada 
+cd namada 
+git checkout v0.23.2 
+make build-release 
+sudo mv $HOME/namada/target/release/namada* /usr/local/bin/ 
+sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 				></CodeBlock>
 				<Alert
 					className='my-2'

@@ -121,25 +121,6 @@ const SideMenu = () => {
 								{name.charAt(0).toUpperCase() + name.slice(1)}
 							</span>
 						</div>
-
-						{/* <Segmented
-								block
-								defaultValue={defValue.current}
-								value={value}
-								options={[
-									{
-										label: 'mainnet',
-										value: 'mainnet',
-										disabled: projects['mainnet'][name] === undefined ? true : false
-									},
-									{
-										label: 'testnet',
-										value: 'testnet',
-										disabled: projects['testnet'][name] === undefined ? true : false
-									}
-								]}
-								onChange={handleTabClick}
-							/> */}
 					</div>,
 					'grpthis',
 					null,
@@ -203,36 +184,6 @@ const SideMenu = () => {
 								),
 								getItem(
 									<Link
-										href={serviceURL + '/installation/#create-wallet'}
-										onClick={event => handleClick(event, 'create-wallet', `wallet${name}`)}
-									>
-										Create Wallet
-									</Link>,
-									`wallet${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/installation/#create-validator'}
-										onClick={event => handleClick(event, 'create-validator', `validator${name}`)}
-									>
-										Create Validator
-									</Link>,
-									`validator${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/installation/#monitoring'}
-										onClick={event => handleClick(event, 'monitoring', `Monitoring${name}`)}
-									>
-										Monitoring
-									</Link>,
-									`Monitoring${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
 										href={serviceURL + '/installation/#security'}
 										onClick={event => handleClick(event, 'security', `security${name}`)}
 									>
@@ -269,16 +220,6 @@ const SideMenu = () => {
 									</Link>,
 									`manual${name}`,
 									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/upgrade/#auto'}
-										onClick={event => handleClick(event, 'auto', `auto${name}`)}
-									>
-										Auto upgrade
-									</Link>,
-									`auto${name}`,
-									<RightOutlined />
 								)
 							]
 						),
@@ -303,54 +244,24 @@ const SideMenu = () => {
 								),
 								getItem(
 									<Link
-										href={serviceURL + '/cheat-sheet/#key-management'}
-										onClick={event => handleClick(event, 'key-management', `key-management${name}`)}
-									>
-										Key management
-									</Link>,
-									`key-management${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/cheat-sheet/#tokens'}
-										onClick={event => handleClick(event, 'tokens', `tokens${name}`)}
-									>
-										Tokens
-									</Link>,
-									`tokens${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/cheat-sheet/#validator-operations'}
+										href={serviceURL + '/cheat-sheet/#wallet-operations'}
 										onClick={event =>
-											handleClick(event, 'validator-operations', `validator-operations${name}`)
+											handleClick(event, 'wallet-operations', `wallet-operations${name}`)
 										}
 									>
-										Validator operations
+										Wallet operations
 									</Link>,
-									`validator-operations${name}`,
+									`wallet${name}`,
 									<RightOutlined />
 								),
 								getItem(
 									<Link
-										href={serviceURL + '/cheat-sheet/#governance'}
-										onClick={event => handleClick(event, 'governance', `governance${name}`)}
+										href={serviceURL + '/cheat-sheet/#sync'}
+										onClick={event => handleClick(event, 'sync', `sync${name}`)}
 									>
-										Governance
+										Sync and consensus
 									</Link>,
-									`governance${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/cheat-sheet/#utility'}
-										onClick={event => handleClick(event, 'utility', `utility${name}`)}
-									>
-										Utility
-									</Link>,
-									`utility${name}`,
+									`key-management${name}`,
 									<RightOutlined />
 								)
 							]
@@ -362,17 +273,17 @@ const SideMenu = () => {
 				{
 					type: 'divider'
 				},
-				getItem(
-					<div>
-						<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/public-rpc'}>
-							<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
-						</Link>
-					</div>,
-					'public rpc',
-					null,
-					null,
-					'group'
-				),
+				// getItem(
+				// 	<div>
+				// 		<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/public-rpc'}>
+				// 			<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
+				// 		</Link>
+				// 	</div>,
+				// 	'public rpc',
+				// 	null,
+				// 	null,
+				// 	'group'
+				// ),
 				isParams
 					? getItem(
 							<div>
@@ -385,23 +296,23 @@ const SideMenu = () => {
 							null,
 							'group'
 					  )
-					: null,
-				getItem(
-					<div className='mb-2'>
-						<a
-							className='font-normal text-sm dark:text-[#a7a7a7]'
-							href={`https://t.me/itrocket_${type}_proposal_bot`}
-							target='_blank'
-							rel='noopener noreferrer'
-						>
-							<span className='mr-2 ml-3'> 🤖</span> Proposal bot
-						</a>
-					</div>,
-					'public rpc',
-					null,
-					null,
-					'group'
-				)
+					: null
+				// getItem(
+				// 	<div className='mb-2'>
+				// 		<a
+				// 			className='font-normal text-sm dark:text-[#a7a7a7]'
+				// 			href={`https://t.me/itrocket_${type}_proposal_bot`}
+				// 			target='_blank'
+				// 			rel='noopener noreferrer'
+				// 		>
+				// 			<span className='mr-2 ml-3'> 🤖</span> Monitoring bot
+				// 		</a>
+				// 	</div>,
+				// 	'public rpc',
+				// 	null,
+				// 	null,
+				// 	'group'
+				// )
 			]
 		}
 

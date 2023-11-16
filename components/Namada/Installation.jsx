@@ -388,6 +388,15 @@ sudo ufw allow ssh/tcp
 sudo ufw allow $\{${variable}_PORT}656/tcp
 sudo ufw enable`}
 				/>
+				<h2 id='delete'>Delete node</h2>
+				<CodeSnippet
+					code={`sudo systemctl stop namadad
+sudo systemctl disable namadad
+sudo rm -rf /etc/systemd/system/namadad.service
+sudo systemctl daemon-reload
+sudo rm $(which namada)
+sudo rm -rf $HOME/.local/share/namada/public-testnet-14.5d79b6958580`}
+				/>
 			</div>
 		</AnimatedSection>
 	)
