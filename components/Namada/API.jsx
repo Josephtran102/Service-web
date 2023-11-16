@@ -41,7 +41,7 @@ const API = ({ name, type }) => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
-				<h2 id='rpc'>RPC, API</h2>
+				<h2 id='rpc'>RPC, Peers, Seeds, Addrbook, Genesis</h2>
 				<div className='flex flex-col flex-wrap gap-1 mb-1'>
 					<div className='flex flex-wrap gap-1 items-center'>
 						<span>Public RPC: </span>
@@ -96,25 +96,11 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 							<b className={styles.bold}>{`${snapTime} ago`}</b>
 							{' | '}
 							size: <b className={styles.bold}>{`${snapSize}B`}</b>
-							{' | '}
-							pruning: <b className={styles.bold}>{pruning}</b>
-							{' | '} indexer: <b className={styles.bold}>{indexer}</b>
 						</p>
-						<CodeSnippet
-							theme={theme}
-							code={`sudo systemctl stop ${bin}
-
-cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
-
-rm -rf $HOME/${path}/data ${wasm.current.includes('data') || wasm.current === 'false' ? '' : `$HOME/${path}/wasm`}
-curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
-
-mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json
-
-sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
-						/>
 					</>
 				)}
+				<p className={styles.text_secondary}>updated every day</p>
+
 				<CodeBlock
 					desc='Download snapshot:'
 					code={`cd $HOME
@@ -138,46 +124,6 @@ mv $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/priv_valida
 					code={`sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 				/>
 				<CodeBlock desc='Delete snap file:' code={`rm -rf snap_namada.tar`} />
-
-				<>
-					<h2 id='sync'>State Sync</h2>
-					<p className={styles.text_secondary}>
-						If you don't want to wait for a long synchronization you can use:
-					</p>
-					<CodeSnippet
-						theme={theme}
-						code={`sudo systemctl stop ${bin}
-
-cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
-${bin} ${unsafeReset} --home $HOME/${path}
-
-peers="${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}"  
-SNAP_RPC="https://${name}-${type}-rpc.itrocket.net:443"
-
-sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \\"$peers\\"/" $HOME/${path}/config/config.toml 
-
-LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height);
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000));
-TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash) 
-
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH && sleep 2
-
-sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\\1true| ;
-s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\\1\\"$SNAP_RPC,$SNAP_RPC\\"| ;
-s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\\1$BLOCK_HEIGHT| ;
-s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\\1\\"$TRUST_HASH\\"| ;
-s|^(seeds[[:space:]]+=[[:space:]]+).*$|\\1\\"\\"|" $HOME/${path}/config/config.toml
-${
-	wasm.current !== 'false'
-		? `
-curl https://${type}-files.itrocket.net/${name}/wasm_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasm.current}`
-		: ``
-}
-mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json
-
-sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
-					/>
-				</>
 
 				<h2 id='wasm'>Wasm</h2>
 				{wasm.current !== 'false' ? (
