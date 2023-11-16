@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { getLayout } from '@layouts/dashboard'
 import CheatSheet from '@components/CheatSheet'
+import NamadaCheatSheet from '@components/Namada/Upgrade'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
 
 const type = 'testnet'
@@ -9,7 +10,9 @@ const CheatSheetPage = () => {
 	const router = useRouter()
 	const { projectName } = router.query
 
-	return <CheatSheet name={projectName} type='testnet' />
+	const CheatSheetComponent = projectName === 'namada' ? NamadaCheatSheet : CheatSheet
+
+	return <CheatSheetComponent name={projectName} type='testnet' />
 }
 
 export async function getStaticPaths() {

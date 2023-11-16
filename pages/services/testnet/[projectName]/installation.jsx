@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { getLayout } from '@layouts/dashboard'
 import Installation from '@components/Installation'
+import NamadaInstallation from '@components/Namada/Installation'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
 
 const type = 'testnet'
@@ -9,7 +10,9 @@ const InstallationPage = () => {
 	const router = useRouter()
 	const { projectName } = router.query
 
-	return <Installation name={projectName} type='testnet' />
+	const InstallationComponent = projectName === 'namada' ? NamadaInstallation : Installation
+
+	return <InstallationComponent name={projectName} type='testnet' />
 }
 
 export async function getStaticPaths() {
