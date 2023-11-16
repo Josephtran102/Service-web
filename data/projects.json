@@ -722,7 +722,8 @@
       "website": "https://namada.net/",
       "stateSync": "false",
       "delegate": "https://namadaexplorer.com/",
-      "offValDoc": "https://docs.namada.net/testnets/environment-setup.html"
+      "offValDoc": "https://docs.namada.net/testnets/environment-setup.html",
+      "explorer": "https://namadaexplorer.com/"
     },
     "nois": {
       "bin": "noisd",
