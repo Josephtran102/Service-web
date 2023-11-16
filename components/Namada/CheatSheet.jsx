@@ -63,16 +63,11 @@ const CheatSheet = props => {
 			>
 				<>
 					<h2 id='service-operations'>Service operations ⚙️</h2>
-					<div className='flex flex-wrap gap-x-6 mb-3'>
-						<div className='flex flex-col gap-y-2'>
-							<CodeBlock desc='Check logs' code={`sudo journalctl -u namadad -f -f`} />
-							<CodeBlock
-								desc='Check your validator bond status'
-								code={`namada client bonds --owner $ALIAS`}
-							/>
-							<CodeBlock desc='Check all bonded nodes' code={`namada client bonded-stake`} />
-							<CodeBlock desc='Check balance' code={`namada client balance --owner $ALIAS --token NAM`} />
-						</div>
+					<div className='flex flex-col gap-y-2'>
+						<CodeBlock desc='Check logs' code={`sudo journalctl -u namadad -f -f`} />
+						<CodeBlock desc='Check your validator bond status' code={`namada client bonds --owner $ALIAS`} />
+						<CodeBlock desc='Check all bonded nodes' code={`namada client bonded-stake`} />
+						<CodeBlock desc='Check balance' code={`namada client balance --owner $ALIAS --token NAM`} />
 					</div>
 
 					<div className='flex flex-col gap-y-2'>

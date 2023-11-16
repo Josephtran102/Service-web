@@ -2,14 +2,24 @@ import { getLayout } from '@layouts/dashboard'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
 import CosmosAPI from '@components/API/CosmosAPI'
 import NonCosmosAPI from '@components/API/NonCosmosAPI'
+import projects from 'data/projects.json'
+import API from '@components/Namada/API'
+import { useRouter } from 'next/router'
 
 const type = 'testnet'
 
 const Project = ({ project }) => {
-	return project.ecosystem == 'false' ? (
-		<NonCosmosAPI name={project.id} type={type} />
+	const router = useRouter()
+	const { projectName } = router.query
+
+	if (projectName === 'namada') {
+		return <API name={projectName} type={type} />
+	}
+
+	return projects[type][project.id].ecosystem === 'false' ? (
+		<NonCosmosAPI name={projectName} type={type} />
 	) : (
-		<CosmosAPI name={project.id} type={type} />
+		<CosmosAPI name={projectName} type={type} />
 	)
 }
 
