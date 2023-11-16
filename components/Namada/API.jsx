@@ -124,20 +124,6 @@ mv $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/priv_valida
 					code={`sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 				/>
 				<CodeBlock desc='Delete snap file:' code={`rm -rf snap_namada.tar`} />
-
-				<h2 id='wasm'>Wasm</h2>
-				{wasm.current !== 'false' ? (
-					<>
-						<p className={styles.text_secondary}>updates every hour</p>
-						<CodeSnippet
-							theme={theme}
-							code={`curl https://${type}-files.itrocket.net/${name}/wasm_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasm.current} 
-sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
-						/>
-					</>
-				) : (
-					<p>Sorry, this project does not support WebAssembly.</p>
-				)}
 			</div>
 		</AnimatedSection>
 	)
