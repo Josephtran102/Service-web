@@ -721,7 +721,7 @@
       "variable": "NAMADA",
       "website": "https://namada.net/",
       "stateSync": "false",
-      "delegate": "https://mainnet.itrocket.net/namada/staking",
+      "delegate": "https://namadaexplorer.com/",
       "offValDoc": "https://docs.namada.net/testnets/environment-setup.html"
     },
     "nois": {
