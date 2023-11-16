@@ -41,7 +41,7 @@ const API = ({ name, type }) => {
 				id='mainColumn'
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
-				<h2 id='rpc'>RPC, Peers, Seeds, Addrbook, Genesis</h2>
+				<h2 id='rpc'>RPC, Peers, Seed, Addrbook, Genesis</h2>
 				<div className='flex flex-col flex-wrap gap-1 mb-1'>
 					<div className='flex flex-wrap gap-1 items-center'>
 						<span>Public RPC: </span>
@@ -63,7 +63,7 @@ const API = ({ name, type }) => {
 					''
 				) : (
 					<div>
-						<h3 id='seed'>seeds:</h3>
+						<h3 id='seed'>seed:</h3>
 						<CodeSnippet theme={theme} code={SEEDS} />
 					</div>
 				)}
@@ -99,7 +99,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 						</p>
 					</>
 				)}
-				<p className={styles.text_secondary}>updated every day</p>
+				<p className={styles.text_secondary}>updated every 24h</p>
 
 				<CodeBlock
 					desc='Download snapshot:'
