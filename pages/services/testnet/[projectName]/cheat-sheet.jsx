@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { getLayout } from '@layouts/dashboard'
 import CheatSheet from '@components/CheatSheet'
-import NamadaCheatSheet from '@components/Namada/Upgrade'
+import NamadaCheatSheet from '@components/Namada/CheatSheet'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
 
 const type = 'testnet'
