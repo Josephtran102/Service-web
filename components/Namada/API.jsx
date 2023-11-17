@@ -99,7 +99,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 						</p>
 					</>
 				)}
-				<p className={styles.text_secondary}>updated every 24h</p>
+				<p className={styles.text_secondary}>updates every 24h</p>
 
 				<CodeBlock
 					desc='Download snapshot:'
