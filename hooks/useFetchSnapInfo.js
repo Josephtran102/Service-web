@@ -9,6 +9,7 @@ const useFetchSnapInfo = (name, type) => {
 	const [snapTime, setSnapTime] = useState()
 	const [pruning, setPruning] = useState('')
 	const [indexer, setIndexer] = useState(null)
+	const [wasmPath, setWasmPath] = useState('')
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -19,10 +20,7 @@ const useFetchSnapInfo = (name, type) => {
 				setSnapSize(data.SnapshotSize)
 				setPruning(data.pruning)
 				setIndexer(data.indexer)
-
-				if (data.WasmPath !== 'false') {
-					wasm.current = data.WasmPath
-				}
+				setWasmPath(data.WasmPath)
 
 				let snapTime = data.SnapshotBlockTime
 				snapTime = Date.parse(snapTime.concat(':00'))
@@ -41,7 +39,7 @@ const useFetchSnapInfo = (name, type) => {
 		}
 	}, [name, type])
 
-	return { snapHeight, snapSize, snapTime, pruning, indexer }
+	return { snapHeight, snapSize, snapTime, pruning, indexer, wasmPath }
 }
 
 export default useFetchSnapInfo
