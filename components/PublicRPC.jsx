@@ -1,4 +1,3 @@
-// PublicRPC.js
 import { Table, Alert } from 'antd'
 import { WarningFilled } from '@ant-design/icons'
 import styles from '@styles/Services.module.scss'
@@ -31,11 +30,14 @@ const PublicRPC = ({ data, projectName, type }) => {
 			dataIndex: 'endpoint',
 			key: 'endpoint',
 			width: 300,
-			render: text => (
-				<a href={`http://${text}`} className='!font-medium' target='_blank' rel='noopener noreferrer'>
-					{text}
-				</a>
-			)
+			render: text => {
+				const url = text.startsWith('https') ? text : `http://${text}`
+				return (
+					<a href={url} className='!font-medium' target='_blank' rel='noopener noreferrer'>
+						{text}
+					</a>
+				)
+			}
 		},
 		{
 			title: 'Block Height',
@@ -93,11 +95,12 @@ const PublicRPC = ({ data, projectName, type }) => {
 					pagination={false}
 					scroll={{
 						x: 750,
-						y: 340
+						y: 350
 					}}
 					bordered
 					size='small'
 					style={{ maxWidth: '1030px' }}
+					rowClassName={record => (record.endpoint.startsWith('https') ? 'https-row' : '')}
 				/>
 				<p className='!mt-4 !mb-1'>
 					<a href={dynamicLink} target='_blank' rel='noopener noreferrer' style={{ color: '#6a6cff' }}>
