@@ -29,7 +29,7 @@ const PublicRPC = ({ data, projectName, type }) => {
 			title: 'Endpoint',
 			dataIndex: 'endpoint',
 			key: 'endpoint',
-			width: 300,
+			width: 280,
 			render: text => {
 				const url = text.startsWith('https') ? text : `http://${text}`
 				return (
@@ -43,7 +43,8 @@ const PublicRPC = ({ data, projectName, type }) => {
 			title: 'Block Height',
 			key: 'blockHeight',
 			align: 'right',
-			render: (_, record) => `${record.earliest_block_height} - ${record.latest_block_height}`
+			render: (_, record) => `${record.earliest_block_height} - ${record.latest_block_height}`,
+			width: 130
 		},
 		{
 			title: 'Tx Index',
@@ -54,7 +55,8 @@ const PublicRPC = ({ data, projectName, type }) => {
 		{
 			title: 'Moniker',
 			dataIndex: 'moniker',
-			key: 'moniker'
+			key: 'moniker',
+			width: 150
 		},
 		{
 			title: 'Validator',
@@ -74,7 +76,7 @@ const PublicRPC = ({ data, projectName, type }) => {
 			title: 'Scan Time',
 			dataIndex: 'scan_time',
 			key: 'scan_time',
-			width: 140
+			width: 130
 		}
 	]
 
@@ -99,7 +101,7 @@ const PublicRPC = ({ data, projectName, type }) => {
 					}}
 					bordered
 					size='small'
-					style={{ maxWidth: '1030px' }}
+					style={{ maxWidth: '1130px' }}
 					rowClassName={record => (record.endpoint.startsWith('https') ? 'https-row' : '')}
 				/>
 				<p className='!mt-4 !mb-1'>
