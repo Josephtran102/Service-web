@@ -102,7 +102,6 @@ const PublicRPC = ({ data, projectName, type }) => {
 					bordered
 					size='small'
 					style={{ maxWidth: '1130px' }}
-					rowClassName={record => (record.endpoint.startsWith('https') ? 'https-row' : '')}
 				/>
 				<p className='!mt-4 !mb-1'>
 					<a href={dynamicLink} target='_blank' rel='noopener noreferrer' style={{ color: '#6a6cff' }}>
