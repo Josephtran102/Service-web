@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { Context } from '@context/context'
 import Head from 'next/head'
 import { Typography } from 'antd'
@@ -14,11 +14,12 @@ import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
 const CosmosAPI = ({ name, type }) => {
 	const project = projects[type][name]
 	const { livePeers, livePeersCounter } = useNetInfo(name, type)
+
 	const explorer = useRef()
 	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset, evmRPC, stateSync } = project
 	explorer.current = project.explorer
-	const wasm = useRef('false')
+
 	const { theme } = useContext(Context)
 
 	const PEERS = peerID ? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}` : ''
@@ -26,7 +27,7 @@ const CosmosAPI = ({ name, type }) => {
 	const SEEDS = seedID ? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}` : ''
 	const gRPC = `${name}-${type}-grpc.itrocket.net:${peerPort ? peerPort.slice(0, 2) : ''}090`
 
-	const { snapHeight, snapSize, snapTime, pruning, indexer } = useFetchSnapInfo(name, type)
+	const { snapHeight, snapSize, snapTime, pruning, indexer, wasmPath } = useFetchSnapInfo(name, type)
 
 	return (
 		<AnimatedSection>
@@ -99,7 +100,6 @@ const CosmosAPI = ({ name, type }) => {
 						<CodeSnippet theme={theme} code={`${gRPC}`} />
 					</>
 				)}
-
 				<h3 id='peer'>peers:</h3>
 				<CodeSnippet theme={theme} code={`${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}`} />
 				{SEEDS == '' ? (
@@ -144,7 +144,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 
 cp $HOME/${path}/data/priv_validator_state.json $HOME/${path}/priv_validator_state.json.backup
 
-rm -rf $HOME/${path}/data ${wasm.current.includes('data') || wasm.current === 'false' ? '' : `$HOME/${path}/wasm`}
+rm -rf $HOME/${path}/data ${wasmPath?.includes('data') || !wasmPath ? '' : `$HOME/${path}/wasmPath`}
 curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
 
 mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json
@@ -185,9 +185,9 @@ s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\\1$BLOCK_HEIGHT| ;
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\\1\\"$TRUST_HASH\\"| ;
 s|^(seeds[[:space:]]+=[[:space:]]+).*$|\\1\\"\\"|" $HOME/${path}/config/config.toml
 ${
-	wasm.current !== 'false'
+	!wasmPath
 		? `
-curl https://${type}-files.itrocket.net/${name}/wasm_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasm.current}`
+curl https://${type}-files.itrocket.net/${name}/wasmPath_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasmPath}`
 		: ``
 }
 mv $HOME/${path}/priv_validator_state.json.backup $HOME/${path}/data/priv_validator_state.json
@@ -196,14 +196,13 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
 					</>
 				)}
-
 				<h2 id='wasm'>Wasm</h2>
-				{wasm.current !== 'false' ? (
+				{wasmPath !== '' && wasmPath !== 'false' ? (
 					<>
 						<p className={styles.text_secondary}>updates every hour</p>
 						<CodeSnippet
 							theme={theme}
-							code={`curl https://${type}-files.itrocket.net/${name}/wasm_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasm.current} 
+							code={`curl https://${type}-files.itrocket.net/${name}/wasmPath_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${wasmPath} 
 sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 						/>
 					</>

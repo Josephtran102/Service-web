@@ -27,7 +27,7 @@ const API = ({ name, type }) => {
 	const SEEDS = seedID ? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}` : ''
 	const gRPC = `${name}-${type}-grpc.itrocket.net:${peerPort ? peerPort.slice(0, 2) : ''}090`
 
-	const { snapHeight, snapSize, snapTime, pruning, indexer } = useFetchSnapInfo(name, type)
+	const { snapHeight, snapSize, snapTime } = useFetchSnapInfo(name, type)
 
 	return (
 		<AnimatedSection>
@@ -99,7 +99,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 						</p>
 					</>
 				)}
-				<p className={styles.text_secondary}>updated every 24h</p>
+				<p className={styles.text_secondary}>updates every 24h</p>
 
 				<CodeBlock
 					desc='Download snapshot:'
