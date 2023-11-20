@@ -90,9 +90,13 @@ printLogo
 
 read -p "Enter WALLET name:" WALLET
 echo 'export WALLET='$WALLET
-read -p "Enter your MONIKER :" MONIKER
-echo 'export MONIKER='$MONIKER
-read -p "Enter your PORT (for example 17, default port=26):" PORT
+read -p "Enter your ALIAS :" ALIAS
+echo 'export ALIAS='$ALIAS
+PORT=26
+read -p "Enter your PORT (for example 17, 18, 19... default port=$PORT): " input_port
+if [ ! -z "$input_port" ]; then
+    PORT=$input_port
+fi
 echo 'export PORT='$PORT
 
 # set vars
