@@ -361,14 +361,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 					]}
 				/>
 				<h2 id='auto-installation'>Automatic Installation</h2>
-				<p>
-					<b className={styles.bold}>pruning: </b> {pruning} {' | '}
-					<b className={styles.bold}>indexer: </b> {indexer}
-				</p>
-				<CodeSnippet
-					theme={theme}
-					code={`source <(curl -s https://itrocket.net/api/${type}/${name}/autoinstall/)`}
-				/>
+				<CodeSnippet theme={theme} code={`source <(curl -s https://itrocket.net/api/namada/autoinstall/)`} />
 				<h2 id='security'>Security</h2>
 				<p>To protect you keys please don`t share your privkey, mnemonic and follow a basic security rules</p>
 				<h3 id='ssh' className='font-semibold'>

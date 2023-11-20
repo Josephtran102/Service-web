@@ -4,9 +4,8 @@ import { fetchNetInfo } from '@utils/fetchProject.js'
 export default function handler(req, res) {
 	res.setHeader('Cache-Control', 'no-store, max-age=0')
 
-	const {
-		query: { type, projectName }
-	} = req
+	const type = 'testnet'
+	const projectName = 'namada'
 
 	const project = projects[type][projectName]
 
