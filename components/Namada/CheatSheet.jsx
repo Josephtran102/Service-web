@@ -6,7 +6,6 @@ import CodeBlock from '@components/UI/CodeBlock'
 import styles from '@styles/Services.module.scss'
 import projects from 'data/projects'
 import { Context } from '@context/context'
-import CodeSnippet from '../UI/CodeSnippet'
 import AnimatedSection from '../AnimatedSection'
 
 const CheatSheet = props => {
@@ -20,21 +19,6 @@ const CheatSheet = props => {
 	explorer.current = project.explorer
 	const { theme } = useContext(Context)
 	const [livePeers, setLivePeers] = useState('')
-	const [moniker, setMoniker] = useState('$MONIKER')
-	const [amount, setAmount] = useState(1000000)
-	const [amountCreate, setAmountCreate] = useState(1000000)
-	const [toValoperAddr, setToValoperAddr] = useState('<TO_VALOPER_ADDRESS>')
-	const [toWalletAddr, setToWalletAddr] = useState('<TO_WALLET_ADDRESS>')
-	const [details, setDetails] = useState('I love blockchain ❤️')
-	const [identity, setIdentity] = useState('')
-	const [commissionRate, setCommissionRate] = useState(0.1)
-	const [commissionMaxRate, setCommissionMaxRate] = useState(0.2)
-	const [commissionMaxChange, setCommissionMaxChange] = useState(0.01)
-	const [title, setTitle] = useState('')
-	const [desc, setDesc] = useState('')
-	const [deposit, setDeposit] = useState(1000000)
-	const [proposalID, setProposalID] = useState(1)
-	const [proposalOption, setProposalOption] = useState('yes')
 
 	let PEERS = '""',
 		SEEDS = '""'
@@ -43,10 +27,6 @@ const CheatSheet = props => {
 	}
 	if (seedID) {
 		SEEDS = `"${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}"`
-	}
-
-	const onChange = e => {
-		setProposalOption(e.target.value)
 	}
 
 	return (
@@ -80,10 +60,6 @@ const CheatSheet = props => {
   --gas-limit 10000000`}
 						/>
 						<CodeBlock
-							desc='Check Sync status and node info'
-							code={`curl http://127.0.0.1:26657/status | jq`}
-						/>
-						<CodeBlock
 							desc='Check consensus state'
 							code={`curl -s localhost:26657/consensus_state | jq .result.round_state.height_vote_set[0].prevotes_bit_array`}
 						/>
@@ -94,7 +70,21 @@ const CheatSheet = props => {
 						/>
 					</div>
 
-					<h2 id='sync'>Sync and consensus ⚙️</h2>
+					<h2 id='sync'>Sync and consensus 🔄</h2>
+					<CodeBlock
+						desc='Check Sync status and node info'
+						code={`curl http://127.0.0.1:26657/status | jq`}
+					/>
+					<CodeBlock
+						desc='Check consensus state'
+						code={`curl -s localhost:26657/consensus_state | jq .result.round_state.height_vote_set[0].prevotes_bit_array
+`}
+					/>
+					<CodeBlock desc='Full consensus state' code={`curl -s localhost:12657/dump_consensus_state`} />
+					<CodeBlock
+						desc='Your validator votes (prevote)'
+						code={`curl -s http://localhost:26657/dump_consensus_state | jq '.result.round_state.votes[0].prevotes' | grep $(curl -s http://localhost:26657/status | jq -r '.result.validator_`}
+					/>
 				</>
 			</div>
 		</AnimatedSection>
