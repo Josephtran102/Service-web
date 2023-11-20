@@ -142,16 +142,18 @@ printGreen "4. Installing Rust & Cargo..." && sleep 1
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
-printGreen "5. Installing binary..." && sleep 1
+printGreen "5. Installing binaries..." && sleep 1
 # download binary
 cd $HOME
 rm -rf namada
-NAMADA_TAG=v0.23.1
 git clone https://github.com/anoma/namada
 cd namada
-git checkout $NAMADA_TAG
-make build-release
-sudo mv target/release/namada* /usr/local/bin/
+wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Linux-x86_64.tar.gz
+tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
+rm namada-v0.23.1-Linux-x86_64.tar.gz
+cd namada-v0.23.1-Linux-x86_64
+sudo mv namada* /usr/local/bin/
+mkdir -p $HOME/.local/share/namada
 sleep 1
 echo done
 
