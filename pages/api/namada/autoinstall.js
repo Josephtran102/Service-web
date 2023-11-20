@@ -142,20 +142,32 @@ printGreen "4. Installing Rust & Cargo..." && sleep 1
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
 
-printGreen "4. Installing binary..." && sleep 1
+printGreen "5. Installing binary..." && sleep 1
 # download binary
-${installBin}
-
-printGreen "5. Configuring and init app..." && sleep 1
-# config and init app
-${bin} config node tcp://localhost:\${${variable}_PORT}657
-${bin} config keyring-backend os
-${bin} config chain-id ${chainID}
-${init}
+cd $HOME
+rm -rf namada
+NAMADA_TAG=v0.23.1
+git clone https://github.com/anoma/namada
+cd namada
+git checkout $NAMADA_TAG
+make build-release
+sudo mv target/release/namada* /usr/local/bin/
 sleep 1
 echo done
 
-printGreen "6. Downloading genesis and addrbook..." && sleep 1
+printGreen "6. Installing CometBFT..." && sleep 1
+# Install CometBFT
+cd $HOME
+git clone https://github.com/cometbft/cometbft.git
+cd cometbft
+git checkout v0.37.2
+make build
+sudo cp $HOME/cometbft/build/cometbft /usr/local/bin/
+cometbft version
+sleep 1
+echo done
+
+printGreen "7. Downloading genesis and addrbook..." && sleep 1
 # download genesis and addrbook
 wget -O $HOME/${path}/config/genesis.json https://${type}-files.itrocket.net/${name}/genesis.json
 wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json
