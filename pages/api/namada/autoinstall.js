@@ -152,7 +152,7 @@ wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Li
 tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
 rm namada-v0.23.1-Linux-x86_64.tar.gz
 cd namada-v0.23.1-Linux-x86_64
-sudo mv namada[c,n,w] /usr/local/bin/
+sudo mv namadan namadac namadaw /usr/local/bin/
 mkdir -p $HOME/.local/share/namada
 sleep 1
 echo done
