@@ -92,6 +92,7 @@ read -p "Enter WALLET name:" WALLET
 echo 'export WALLET='$WALLET
 read -p "Enter your ALIAS :" ALIAS
 echo 'export ALIAS='$ALIAS
+read -p "Are you a PostGenesis validator? Enter 1 for Yes, 0 for No: " is_post_genesis
 NAMADA_PORT=26
 read -p "Enter your NAMADA_PORT (for example 17, 18, 19... default port=$NAMADA_PORT): " input_port
 if [ ! -z "$input_port" ]; then
@@ -137,87 +138,81 @@ echo $(go version) && sleep 1
 
 source <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/dependencies_install)
 sudo apt-get install -y git-core libssl-dev pkg-config libclang-12-dev protobuf-compiler
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
 
 printGreen "4. Installing binary..." && sleep 1
-# download binary
-${installBin}
+# install binaries
+NAMADA_TAG=v0.23.1
+git clone https://github.com/anoma/namada
+cd namada
+git checkout $NAMADA_TAG
+make build-release
+sudo mv target/release/namada /usr/local/bin/
+sudo mv target/release/namada* /usr/local/bin/
 
-printGreen "5. Configuring and init app..." && sleep 1
-# config and init app
-${bin} config node tcp://localhost:\${${variable}_PORT}657
-${bin} config keyring-backend os
-${bin} config chain-id ${chainID}
-${init}
+printGreen "5. Install CometBFT" && sleep 1
+# Install CometBFT
+cd $HOME
+git clone https://github.com/cometbft/cometbft.git
+cd cometbft
+git checkout v0.37.2
+make build
+sudo cp $HOME/cometbft/build/cometbft /usr/local/bin/
+cometbft version
 sleep 1
 echo done
 
-printGreen "6. Downloading genesis and addrbook..." && sleep 1
-# download genesis and addrbook
-wget -O $HOME/${path}/config/genesis.json https://${type}-files.itrocket.net/${name}/genesis.json
-wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json
+printGreen "6. Joining the network..." && sleep 1
+# joining the network
+if [ "$is_post_genesis" -eq 1 ]; then
+    # Joining network as Pre-Genesis Validator
+    cd $HOME
+    namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS
+else
+    # Joining network as Full Nodes or Post-Genesis Validator
+    namada client utils join-network --chain-id $CHAIN_ID
+fi
 sleep 1
 echo done
 
-printGreen "7. Adding seeds, peers, configuring custom ports, pruning, minimum gas price..." && sleep 1
-# set seeds and peers
-SEEDS=${SEEDS}
-PEERS=${PEERS}
-sed -i -e "s/^seeds *=.*/seeds = \\"$SEEDS\\"/; s/^persistent_peers *=.*/persistent_peers = \\"$PEERS\\"/" $HOME/${path}/config/config.toml
-
-# set custom ports in app.toml
-sed -i.bak -e "s%:1317%:\${${variable}_PORT}317%g;
-s%:8080%:\${${variable}_PORT}080%g;
-s%:9090%:\${${variable}_PORT}090%g;
-s%:9091%:\${${variable}_PORT}091%g;
-s%:8545%:\${${variable}_PORT}545%g;
-s%:8546%:\${${variable}_PORT}546%g;
-s%:6065%:\${${variable}_PORT}065%g" $HOME/${path}/config/app.toml
-
-
-# set custom ports in config.toml file
-sed -i.bak -e "s%:26658%:\${${variable}_PORT}658%g;
-s%:26657%:\${${variable}_PORT}657%g;
-s%:6060%:\${${variable}_PORT}060%g;
-s%:26656%:\${${variable}_PORT}656%g;
-s%^external_address = \\"\\"%external_address = \\"$(wget -qO- eth0.me):\${${variable}_PORT}656\\"%;
-s%:26660%:\${${variable}_PORT}660%g" $HOME/${path}/config/config.toml
-
-# config pruning
-sed -i -e "s/^pruning *=.*/pruning = \\"nothing\\"/" $HOME/${path}/config/app.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \\"100\\"/" $HOME/${path}/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \\"50\\"/" $HOME/${path}/config/app.toml
-
-# set minimum gas price, enable prometheus and disable indexing
-sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "${minGasPrice}"|g' $HOME/${path}/config/app.toml
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/${path}/config/config.toml
-sed -i -e "s/^indexer *=.*/indexer = \\"null\\"/" $HOME/${path}/config/config.toml
+printGreen "7. Seting custom ports in config.toml:..." && sleep 1
+# Set custom ports
+sed -i.bak -e "s%:26658%:${NAMADA_PORT}658%g;
+s%:26657%:${NAMADA_PORT}657%g;
+s%:26656%:${NAMADA_PORT}656%g;
+s%:26545%:${NAMADA_PORT}545%g;
+s%^external_address = ""%external_address = "$(wget -qO- eth0.me):${NAMADA_PORT}656"%;
+s%:26660%:${NAMADA_PORT}660%g" $HOME/.local/share/namada/public-testnet-14.5d79b6958580/config.toml
 sleep 1
 echo done
 
 # create service file
-sudo tee /etc/systemd/system/${bin}.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF
 [Unit]
-Description=${projectName} node
+Description=namada
 After=network-online.target
+
 [Service]
 User=$USER
-WorkingDirectory=$HOME/${path}
-ExecStart=${execStart}
-Restart=on-failure
-RestartSec=5
+WorkingDirectory=$BASE_DIR
+Environment=CMT_LOG_LEVEL=p2p:none,pex:error
+Environment=NAMADA_CMT_STDOUT=true
+Environment=NAMADA_LOG=info
+ExecStart=$(which namada) node ledger run
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=10
 LimitNOFILE=65535
+
 [Install]
 WantedBy=multi-user.target
 EOF
 
 printGreen "8. Downloading snapshot and starting node..." && sleep 1
 # reset and download snapshot
-${bin} ${unsafeReset} --home $HOME/${path}
-if curl -s --head curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
-  curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
-    else
-  echo no have snap
-fi
+
 
 # enable and start service
 sudo systemctl daemon-reload
