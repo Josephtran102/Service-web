@@ -148,7 +148,6 @@ git clone https://github.com/anoma/namada
 cd namada
 git checkout $NAMADA_TAG
 make build-release
-sudo mv target/release/namada /usr/local/bin/
 sudo mv target/release/namada* /usr/local/bin/
 
 printGreen "5. Install CometBFT" && sleep 1
