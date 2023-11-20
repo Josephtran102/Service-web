@@ -158,6 +158,7 @@ echo done
 printGreen "6. Installing CometBFT..." && sleep 1
 # Install CometBFT
 cd $HOME
+rm -rf cometbft
 git clone https://github.com/cometbft/cometbft.git
 cd cometbft
 git checkout v0.37.2
