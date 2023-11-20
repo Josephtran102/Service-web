@@ -172,8 +172,7 @@ cometbft version
 sleep 1
 echo done
 
-printGreen "7. Adding seeds, peers, configuring custom ports, pruning, minimum gas price..." && sleep 1
-# set seeds and peers
+printGreen "7. Joining network..." && sleep 1
 # Executing actions based on the user's response
 if [ "$is_post_genesis" -eq 1 ]; then
     # Joining network as Pre-Genesis Validator
@@ -201,7 +200,7 @@ sleep 1
 echo done
 
 
-printGreen "9. Creating service fila and starting node..." && sleep 1
+printGreen "9. Creating service file and starting node..." && sleep 1
 # create service file
 sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF
 [Unit]
