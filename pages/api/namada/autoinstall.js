@@ -177,6 +177,8 @@ printGreen "7. Adding seeds, peers, configuring custom ports, pruning, minimum g
 # Executing actions based on the user's response
 if [ "$is_post_genesis" -eq 1 ]; then
     # Joining network as Pre-Genesis Validator
+    echo "Please place the pre-genesis folder at this path $HOME/.local/share/namada then press enter"
+    read -p ""
     cd $HOME
     namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS
 else
