@@ -219,14 +219,15 @@ cometbft version
 					<p>Download and build Namada binaries:</p>
 					<CodeSnippet
 						theme={theme}
-						code={`rm -rf namada
+						code={`cd $HOME
+rm -rf $HOME/namada
 git clone https://github.com/anoma/namada
-cd namada
-wget https://github.com/anoma/namada/releases/download/v0.23.2/namada-v0.23.2-Linux-x86_64.tar.gz
-tar -xvf namada-v0.23.2-Linux-x86_64.tar.gz
-mv ~/namada-v0.23.2-Linux-x86_64 ~/namada
-mv ~/namada/namada* /usr/local/bin/
-rm namada-v0.23.2-Linux-x86_64.tar.gz
+cd $HOME/namada
+wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Linux-x86_64.tar.gz
+tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
+rm namada-v0.23.1-Linux-x86_64.tar.gz
+cd namada-v0.23.1-Linux-x86_64
+sudo mv namada namadan namadac namadaw /usr/local/bin/
 mkdir -p $HOME/.local/share/namada
 `}
 					/>
