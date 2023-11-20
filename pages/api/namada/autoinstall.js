@@ -92,7 +92,6 @@ read -p "Enter WALLET name:" WALLET
 echo 'export WALLET='$WALLET
 read -p "Enter your ALIAS :" ALIAS
 echo 'export ALIAS='$ALIAS
-read -p "Are you a PostGenesis validator? Enter 1 for Yes, 0 for No: " is_post_genesis
 NAMADA_PORT=26
 read -p "Enter your NAMADA_PORT (for example 17, 18, 19... default port=$NAMADA_PORT): " input_port
 if [ ! -z "$input_port" ]; then
