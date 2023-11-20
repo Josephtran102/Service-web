@@ -145,9 +145,9 @@ source $HOME/.cargo/env
 printGreen "5. Installing binaries..." && sleep 1
 # download binary
 cd $HOME
-rm -rf namada
+rm -rf $HOME/namada
 git clone https://github.com/anoma/namada
-cd namada
+cd $HOME/namada
 wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Linux-x86_64.tar.gz
 tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
 rm namada-v0.23.1-Linux-x86_64.tar.gz
@@ -160,9 +160,9 @@ echo done
 printGreen "6. Installing CometBFT..." && sleep 1
 # Install CometBFT
 cd $HOME
-rm -rf cometbft
+rm -rf $HOME/cometbft
 git clone https://github.com/cometbft/cometbft.git
-cd cometbft
+cd $HOME/cometbft
 git checkout v0.37.2
 make build
 sudo cp $HOME/cometbft/build/cometbft /usr/local/bin/
