@@ -91,23 +91,30 @@ printLogo
 
 read -p "Enter WALLET name:" WALLET
 echo 'export WALLET='$WALLET
-read -p "Enter your MONIKER :" MONIKER
-echo 'export MONIKER='$MONIKER
-read -p "Enter your PORT (for example 17, default port=26):" PORT
-echo 'export PORT='$PORT
+read -p "Enter your ALIAS :" ALIAS
+echo 'export ALIAS='$ALIAS
+PORT=26
+read -p "Enter your NAMADA_PORT (for example 17, default port=$NAMADA_PORT): " input_port
+if [ ! -z "$input_port" ]; then
+    NAMADA_PORT=$input_port
+fi
+echo 'export NAMADA_PORT='$NAMADA_PORT
 
 # set vars
 echo "export WALLET="$WALLET"" >> $HOME/.bash_profile
-echo "export MONIKER="$MONIKER"" >> $HOME/.bash_profile
-echo "export ${variable}_CHAIN_ID="${chainID}"" >> $HOME/.bash_profile
-echo "export ${variable}_PORT="$PORT"" >> $HOME/.bash_profile
+echo "export ALIAS="$ALIAS"" >> $HOME/.bash_profile
+echo "export NAMADA_PORT="$NAMADA_PORT"" >> $HOME/.bash_profile
+echo "export TM_HASH="v0.1.4-abciplus"" >> $HOME/.bash_profile
+echo "export CHAIN_ID="public-testnet-14.5d79b6958580"" >> $HOME/.bash_profile
+echo "export BASE_DIR="$HOME/.local/share/namada"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 printLine
-echo -e "Moniker:        \\e[1m\\e[32m$MONIKER\\e[0m"
+echo -e "Alias:        \\e[1m\\e[32m$ALIAS\\e[0m"
 echo -e "Wallet:         \\e[1m\\e[32m$WALLET\\e[0m"
-echo -e "Chain id:       \\e[1m\\e[32m$${variable}_CHAIN_ID\\e[0m"
-echo -e "Node custom port:  \\e[1m\\e[32m$${variable}_PORT\\e[0m"
+echo -e "Chain id:       \\e[1m\\e[32m$CHAIN_ID\\e[0m"
+echo -e "Node custom port:  \\e[1m\\e[32m$NAMADA_PORT\\e[0m"
+echo -e "Base directory:  \\e[1m\\e[32m$BASE_DIR\\e[0m"
 printLine
 sleep 1
 
@@ -129,6 +136,7 @@ source $HOME/.bash_profile
 echo $(go version) && sleep 1
 
 source <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/dependencies_install)
+sudo apt-get install -y git-core libssl-dev pkg-config libclang-12-dev protobuf-compiler
 
 printGreen "4. Installing binary..." && sleep 1
 # download binary
