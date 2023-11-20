@@ -297,7 +297,6 @@ EOF`}
 s%:26657%:\${NAMADA_PORT}657%g;
 s%:26656%:\${NAMADA_PORT}656%g;
 s%:26545%:\${NAMADA_PORT}545%g;
-s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):\${NAMADA_PORT}656\"%;
 s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/public-testnet-14.5d79b6958580/config.toml`}				
 				/>
 				<p>Enable and start service:</p>
