@@ -94,17 +94,13 @@ read -p "Enter your ALIAS :" ALIAS
 echo 'export ALIAS='$ALIAS
 # Asking the user if they are a PostGenesis validator
 read -p "Are you a Post-Genesis validator? Enter 1 for Yes, 0 for No: " is_post_genesis
-PORT=26
-read -p "Enter your NAMADA_PORT (for example 17, default port=$NAMADA_PORT) if you want to use default port press enter: " input_port
-if [ ! -z "$input_port" ]; then
-    NAMADA_PORT=$input_port
-fi
-echo 'export NAMADA_PORT='$NAMADA_PORT
+read -p "Enter your PORT (for example 17,18,19... default port=26):" PORT
+echo 'export PORT='$PORT
 
 # set vars
 echo "export WALLET="$WALLET"" >> $HOME/.bash_profile
 echo "export ALIAS="$ALIAS"" >> $HOME/.bash_profile
-echo "export NAMADA_PORT="$NAMADA_PORT"" >> $HOME/.bash_profile
+echo "export PORT="$PORT"" >> $HOME/.bash_profile
 echo "export TM_HASH="v0.1.4-abciplus"" >> $HOME/.bash_profile
 echo "export CHAIN_ID="public-testnet-14.5d79b6958580"" >> $HOME/.bash_profile
 echo "export BASE_DIR="$HOME/.local/share/namada"" >> $HOME/.bash_profile
@@ -114,7 +110,7 @@ printLine
 echo -e "Alias:        \\e[1m\\e[32m$ALIAS\\e[0m"
 echo -e "Wallet:         \\e[1m\\e[32m$WALLET\\e[0m"
 echo -e "Chain id:       \\e[1m\\e[32m$CHAIN_ID\\e[0m"
-echo -e "Node custom port:  \\e[1m\\e[32m$NAMADA_PORT\\e[0m"
+echo -e "Node custom port:  \\e[1m\\e[32m$PORT\\e[0m"
 echo -e "Base directory:  \\e[1m\\e[32m$BASE_DIR\\e[0m"
 printLine
 sleep 1
@@ -190,12 +186,12 @@ echo done
 
 printGreen "8. Configuring custom ports..." && sleep 1
 # Set custom ports in config.toml
-sed -i.bak -e "s%:26658%:\${NAMADA_PORT}658%g;
-s%:26657%:\${NAMADA_PORT}657%g;
-s%:26656%:\${NAMADA_PORT}656%g;
-s%:26545%:\${NAMADA_PORT}545%g;
-s%^external_address = ""%external_address = "$(wget -qO- eth0.me):\${NAMADA_PORT}656"%;
-s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/\${CHAIN_ID}/config.toml
+sed -i.bak -e "s%:26658%:\${PORT}658%g;
+s%:26657%:\${PORT}657%g;
+s%:26656%:\${PORT}656%g;
+s%:26545%:\${PORT}545%g;
+s%^external_address = ""%external_address = "$(wget -qO- eth0.me):\${PORT}656"%;
+s%:26660%:\${PORT}660%g" $HOME/.local/share/namada/\${CHAIN_ID}/config.toml
 sleep 1
 echo done
 
