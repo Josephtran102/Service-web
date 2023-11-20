@@ -172,11 +172,6 @@ source $HOME/.bash_profile
 source $HOME/.cargo/env
 `}
 					/>
-					<CodeSnippet
-						theme={theme}
-						code={`source "$HOME/.cargo/env"
-`}
-					/>
 					<p>
 						Replace your Validator and Wallet name, save and import variables into system. Change default
 						port if needed.
