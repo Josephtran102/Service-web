@@ -227,6 +227,6 @@ EOF
 
 # enable and start service
 sudo systemctl daemon-reload
-sudo systemctl enable ${bin}
-sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`)
+sudo systemctl enable namadad
+sudo systemctl restart namadad && sudo journalctl -u namadad -f`)
 }
