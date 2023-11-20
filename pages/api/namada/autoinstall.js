@@ -154,7 +154,7 @@ wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Li
 tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
 rm namada-v0.23.1-Linux-x86_64.tar.gz
 cd namada-v0.23.1-Linux-x86_64
-sudo mv namadan namadac namadaw /usr/local/bin/
+sudo mv namada namadan namadac namadaw /usr/local/bin/
 mkdir -p $HOME/.local/share/namada
 sleep 1
 echo done
@@ -177,7 +177,7 @@ printGreen "7. Adding seeds, peers, configuring custom ports, pruning, minimum g
 # Executing actions based on the user's response
 if [ "$is_post_genesis" -eq 1 ]; then
     # Joining network as Pre-Genesis Validator
-    printGreen "Please place the pre-genesis folder at this path $HOME/.local/share/namada then press enter"
+    printRed "Please place the pre-genesis folder at this path $HOME/.local/share/namada then press enter"
     read -p ""
     cd $HOME
     namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS
@@ -189,7 +189,7 @@ fi
 sleep 1
 echo done
 
-printGreen "7. Configuring custom ports..." && sleep 1
+printGreen "8. Configuring custom ports..." && sleep 1
 # Set custom ports in config.toml
 sed -i.bak -e "s%:26658%:\${NAMADA_PORT}658%g;
 s%:26657%:\${NAMADA_PORT}657%g;
@@ -200,30 +200,30 @@ s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/\${CHAIN_ID}/config.to
 sleep 1
 echo done
 
+
+printGreen "9. Creating service fila and starting node..." && sleep 1
 # create service file
-sudo tee /etc/systemd/system/${bin}.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF
 [Unit]
-Description=${projectName} node
+Description=namada
 After=network-online.target
+
 [Service]
 User=$USER
-WorkingDirectory=$HOME/${path}
-ExecStart=${execStart}
-Restart=on-failure
-RestartSec=5
+WorkingDirectory=$BASE_DIR
+Environment=CMT_LOG_LEVEL=p2p:none,pex:error
+Environment=NAMADA_CMT_STDOUT=true
+Environment=NAMADA_LOG=info
+ExecStart=$(which namada) node ledger run
+StandardOutput=syslog
+StandardError=syslog
+Restart=always
+RestartSec=10
 LimitNOFILE=65535
+
 [Install]
 WantedBy=multi-user.target
 EOF
-
-printGreen "8. Downloading snapshot and starting node..." && sleep 1
-# reset and download snapshot
-${bin} ${unsafeReset} --home $HOME/${path}
-if curl -s --head curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
-  curl https://${type}-files.itrocket.net/${name}/snap_${name}.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/${path}
-    else
-  echo no have snap
-fi
 
 # enable and start service
 sudo systemctl daemon-reload
