@@ -92,8 +92,10 @@ read -p "Enter WALLET name:" WALLET
 echo 'export WALLET='$WALLET
 read -p "Enter your ALIAS :" ALIAS
 echo 'export ALIAS='$ALIAS
+# Asking the user if they are a PostGenesis validator
+read -p "Are you a Post-Genesis validator? Enter 1 for Yes, 0 for No: " is_post_genesis
 PORT=26
-read -p "Enter your NAMADA_PORT (for example 17, default port=$NAMADA_PORT): " input_port
+read -p "Enter your NAMADA_PORT (for example 17, default port=$NAMADA_PORT) if you want to use default port press enter: " input_port
 if [ ! -z "$input_port" ]; then
     NAMADA_PORT=$input_port
 fi
@@ -172,8 +174,6 @@ echo done
 
 printGreen "7. Adding seeds, peers, configuring custom ports, pruning, minimum gas price..." && sleep 1
 # set seeds and peers
-# Asking the user if they are a PostGenesis validator
-read -p "Are you a PostGenesis validator? Enter 1 for Yes, 0 for No: " is_post_genesis
 # Executing actions based on the user's response
 if [ "$is_post_genesis" -eq 1 ]; then
     # Joining network as Pre-Genesis Validator
