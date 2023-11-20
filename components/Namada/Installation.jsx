@@ -194,16 +194,6 @@ echo "export BASE_DIR="$HOME/.local/share/namada"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 `}
 					/>
-					<p>Set custom ports in config.toml:</p>
-					<CodeSnippet
-						theme={theme}
-						code={`sed -i.bak -e "s%:26658%:\${NAMADA_PORT}658%g;
-s%:26657%:\${NAMADA_PORT}657%g;
-s%:26656%:\${NAMADA_PORT}656%g;
-s%:26545%:\${NAMADA_PORT}545%g;
-s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):\${NAMADA_PORT}656\"%;
-s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/public-testnet-14.5d79b6958580/config.toml`}
-					/>
 					<p>Install CometBFT:</p>
 					<CodeSnippet
 						theme={theme}
@@ -299,6 +289,16 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF`}
+				/>
+					<p>Set custom ports in config.toml:</p>
+					<CodeSnippet
+						theme={theme}
+						code={`sed -i.bak -e "s%:26658%:\${NAMADA_PORT}658%g;
+s%:26657%:\${NAMADA_PORT}657%g;
+s%:26656%:\${NAMADA_PORT}656%g;
+s%:26545%:\${NAMADA_PORT}545%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):\${NAMADA_PORT}656\"%;
+s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/public-testnet-14.5d79b6958580/config.toml`}				
 				/>
 				<p>Enable and start service:</p>
 				<CodeSnippet
