@@ -170,6 +170,23 @@ cometbft version
 sleep 1
 echo done
 
+printGreen "7. Adding seeds, peers, configuring custom ports, pruning, minimum gas price..." && sleep 1
+# set seeds and peers
+# Asking the user if they are a PostGenesis validator
+read -p "Are you a PostGenesis validator? Enter 1 for Yes, 0 for No: " is_post_genesis
+# Executing actions based on the user's response
+if [ "$is_post_genesis" -eq 1 ]; then
+    # Joining network as Pre-Genesis Validator
+    cd $HOME
+    namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS
+else
+    # Joining network as Full Nodes or Post-Genesis Validator
+    cd $HOME
+    namada client utils join-network --chain-id $CHAIN_ID
+fi
+sleep 1
+echo done
+
 printGreen "7. Configuring custom ports..." && sleep 1
 # Set custom ports in config.toml
 sed -i.bak -e "s%:26658%:\${NAMADA_PORT}658%g;
@@ -178,42 +195,6 @@ s%:26656%:\${NAMADA_PORT}656%g;
 s%:26545%:\${NAMADA_PORT}545%g;
 s%^external_address = ""%external_address = "$(wget -qO- eth0.me):\${NAMADA_PORT}656"%;
 s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/\${CHAIN_ID}/config.toml
-sleep 1
-echo done
-
-printGreen "7. Adding seeds, peers, configuring custom ports, pruning, minimum gas price..." && sleep 1
-# set seeds and peers
-SEEDS=${SEEDS}
-PEERS=${PEERS}
-sed -i -e "s/^seeds *=.*/seeds = \\"$SEEDS\\"/; s/^persistent_peers *=.*/persistent_peers = \\"$PEERS\\"/" $HOME/${path}/config/config.toml
-
-# set custom ports in app.toml
-sed -i.bak -e "s%:1317%:\${${variable}_PORT}317%g;
-s%:8080%:\${${variable}_PORT}080%g;
-s%:9090%:\${${variable}_PORT}090%g;
-s%:9091%:\${${variable}_PORT}091%g;
-s%:8545%:\${${variable}_PORT}545%g;
-s%:8546%:\${${variable}_PORT}546%g;
-s%:6065%:\${${variable}_PORT}065%g" $HOME/${path}/config/app.toml
-
-
-# set custom ports in config.toml file
-sed -i.bak -e "s%:26658%:\${${variable}_PORT}658%g;
-s%:26657%:\${${variable}_PORT}657%g;
-s%:6060%:\${${variable}_PORT}060%g;
-s%:26656%:\${${variable}_PORT}656%g;
-s%^external_address = \\"\\"%external_address = \\"$(wget -qO- eth0.me):\${${variable}_PORT}656\\"%;
-s%:26660%:\${${variable}_PORT}660%g" $HOME/${path}/config/config.toml
-
-# config pruning
-sed -i -e "s/^pruning *=.*/pruning = \\"nothing\\"/" $HOME/${path}/config/app.toml
-sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \\"100\\"/" $HOME/${path}/config/app.toml
-sed -i -e "s/^pruning-interval *=.*/pruning-interval = \\"50\\"/" $HOME/${path}/config/app.toml
-
-# set minimum gas price, enable prometheus and disable indexing
-sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "${minGasPrice}"|g' $HOME/${path}/config/app.toml
-sed -i -e "s/prometheus = false/prometheus = true/" $HOME/${path}/config/config.toml
-sed -i -e "s/^indexer *=.*/indexer = \\"null\\"/" $HOME/${path}/config/config.toml
 sleep 1
 echo done
 
