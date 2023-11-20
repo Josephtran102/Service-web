@@ -186,11 +186,11 @@ echo done
 
 printGreen "8. Configuring custom ports..." && sleep 1
 # Set custom ports in config.toml
-sed -i.bak -e "s%:26658%:\${PORT}658%g;
-s%:26657%:\${PORT}657%g;
-s%:26656%:\${PORT}656%g;
-s%:26545%:\${PORT}545%g;
-s%^external_address = ""%external_address = "$(wget -qO- eth0.me):\${PORT}656"%;
+sed -i.bak -e "s%:26658%:\${PORT}658%g; \
+s%:26657%:\${PORT}657%g; \
+s%:26656%:\${PORT}656%g; \
+s%:26545%:\${PORT}545%g; \
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):\${PORT}656\"%; \
 s%:26660%:\${PORT}660%g" $HOME/.local/share/namada/\${CHAIN_ID}/config.toml
 sleep 1
 echo done
