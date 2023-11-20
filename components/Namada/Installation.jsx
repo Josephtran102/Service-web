@@ -168,8 +168,8 @@ source $HOME/.bash_profile
 					<p>Install Rust:</p>
 					<CodeSnippet
 						theme={theme}
-						code={`sudo apt install curl -y
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+						code={`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
 `}
 					/>
 					<CodeSnippet
