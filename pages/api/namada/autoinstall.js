@@ -144,18 +144,18 @@ source $HOME/.cargo/env
 
 printGreen "5. Installing binaries..." && sleep 1
 # download binary
-cd $HOME
-rm -rf namada
-git clone https://github.com/anoma/namada
-cd namada
-wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Linux-x86_64.tar.gz
-tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
-rm namada-v0.23.1-Linux-x86_64.tar.gz
-cd namada-v0.23.1-Linux-x86_64
-sudo mv namadan namadac namadaw /usr/local/bin/
-mkdir -p $HOME/.local/share/namada
-sleep 1
-echo done
+#cd $HOME
+#rm -rf namada
+#git clone https://github.com/anoma/namada
+#cd namada
+#wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Linux-x86_64.tar.gz
+#tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
+#rm namada-v0.23.1-Linux-x86_64.tar.gz
+#cd namada-v0.23.1-Linux-x86_64
+#sudo mv namadan namadac namadaw /usr/local/bin/
+#mkdir -p $HOME/.local/share/namada
+#sleep 1
+#echo done
 
 printGreen "6. Installing CometBFT..." && sleep 1
 # Install CometBFT
