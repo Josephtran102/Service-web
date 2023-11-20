@@ -187,6 +187,7 @@ s%:26660%:${NAMADA_PORT}660%g" $HOME/.local/share/namada/public-testnet-14.5d79b
 sleep 1
 echo done
 
+printGreen "8. Creating service file and starting node..." && sleep 1
 # create service file
 sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF
 [Unit]
@@ -210,12 +211,8 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 
-printGreen "8. Downloading snapshot and starting node..." && sleep 1
-# reset and download snapshot
-
-
 # enable and start service
 sudo systemctl daemon-reload
-sudo systemctl enable ${bin}
-sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`)
+sudo systemctl enable namadad
+sudo systemctl restart namadad && sudo journalctl -u namadad -f`)
 }
