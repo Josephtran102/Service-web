@@ -137,6 +137,11 @@ echo $(go version) && sleep 1
 source <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/dependencies_install)
 sudo apt-get install -y git-core libssl-dev pkg-config libclang-12-dev protobuf-compiler
 
+printGreen "4. Installing Rust & Cargo..." && sleep 1
+# install rust and cargo
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
+
 printGreen "4. Installing binary..." && sleep 1
 # download binary
 ${installBin}
