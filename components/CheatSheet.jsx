@@ -261,6 +261,10 @@ ${gas} \\
 							code={`${bin} q slashing signing-info $(${bin} tendermint show-validator)`}
 						/>
 						<CodeBlock
+							desc='Slashing parameters'
+							code={`${bin} q slashing params`}
+						/>
+						<CodeBlock
 							desc='Unjail validator'
 							code={`${bin} tx slashing unjail --from $WALLET --chain-id ${chainID} ${gas} -y`}
 						/>
