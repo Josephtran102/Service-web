@@ -7,8 +7,8 @@ const CodeBlock = ({ desc, code }) => {
 	const { theme } = useContext(Context)
 
 	return (
-		<div className='flex flex-col'>
-			<p className='w-fit'>{desc}</p>
+		<div className='flex flex-col mb-1'>
+			<p className='w-fit '>{desc}</p>
 			<CodeSnippet theme={theme} code={code} />
 		</div>
 	)

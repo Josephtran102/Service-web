@@ -51,6 +51,19 @@ const SideMenu = () => {
 		}
 	}
 
+	const generateLinkItem = (serviceURL, name, linkKey, displayName) => {
+		const keyName = `${linkKey}${name}`
+		const href = `${serviceURL}/cheat-sheet/#${linkKey}`
+
+		return getItem(
+			<Link href={href} onClick={event => handleClick(event, linkKey, keyName)}>
+				{displayName}
+			</Link>,
+			keyName,
+			<RightOutlined />
+		)
+	}
+
 	// const handleTabClick = value => {
 	// 	setValue(value)
 	// 	setSelectedKeys([])
@@ -237,45 +250,16 @@ const SideMenu = () => {
 						),
 						getItem(
 							<Link href={serviceURL + '/cheat-sheet'}>
-								<span className='mr-3'>📝</span> Cheat sheet (soon)
+								<span className='mr-3'>📝</span> Cheat sheet
 							</Link>,
 							`cheat-sheet`,
 							null,
 							[
-								getItem(
-									<Link
-										href={serviceURL + '/cheat-sheet/#service-operations'}
-										onClick={event =>
-											handleClick(event, 'service-operations', `service-operations${name}`)
-										}
-									>
-										Service operations
-									</Link>,
-									`service-operations${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/cheat-sheet/#wallet-operations'}
-										onClick={event =>
-											handleClick(event, 'wallet-operations', `wallet-operations${name}`)
-										}
-									>
-										Wallet operations
-									</Link>,
-									`wallet${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/cheat-sheet/#sync'}
-										onClick={event => handleClick(event, 'sync', `sync${name}`)}
-									>
-										Sync and consensus
-									</Link>,
-									`key-management${name}`,
-									<RightOutlined />
-								)
+								generateLinkItem(serviceURL, name, 'wallet-operations', 'Wallet operations'),
+								generateLinkItem(serviceURL, name, 'multisign', 'Multisign'),
+								generateLinkItem(serviceURL, name, 'masp', 'Masp'),
+								generateLinkItem(serviceURL, name, 'validator-operations', 'Validator Operations'),
+								generateLinkItem(serviceURL, name, 'sync-and-consensus', 'Sync and Consensus')
 							]
 						)
 					],
