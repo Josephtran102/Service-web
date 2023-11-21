@@ -262,7 +262,7 @@ ${gas} \\
 						/>
 						<CodeBlock
 							desc='Unjail validator'
-							code={`${bin} tx slashing unjail --broadcast-mode block --from $WALLET --chain-id ${chainID} ${gas} -y`}
+							code={`${bin} tx slashing unjail --from $WALLET --chain-id ${chainID} ${gas} -y`}
 						/>
 						<CodeBlock
 							desc='Active Validators List'
