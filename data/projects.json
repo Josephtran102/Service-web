@@ -904,7 +904,7 @@
       "updHeight": "1556462",
       "newInstallBin": "cd $HOME\nrm -rf $HOME/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v4.0.0\nmake build\nsudo mv $HOME/terp-core/build/terpd $(which terpd)",
       "goVersion": "1.19.3",
-      "gas": "--gas auto --gas-adjustment 1.5",
+      "gas": "--fees 5000uterpx",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.025uterpx",
       "desc": "Decentralized Infrastructure for the Cannabis Community",
