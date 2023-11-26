@@ -24,7 +24,7 @@ const MonitoringPage = () => {
 			id='mainColumn'
 			style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 		>
-			<Head``>
+			<Head>
 				<title>{`Monitoring - ${projectName} | Services`}</title>
 				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
