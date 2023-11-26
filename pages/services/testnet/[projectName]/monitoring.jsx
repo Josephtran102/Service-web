@@ -9,6 +9,7 @@ import { useContext } from 'react'
 import { Context } from '@context/context'
 import CodeBlock from '@components/UI/CodeBlock'
 import CodeSnippet from '@components/UI/CodeSnippet'
+import Head from 'next/head'
 
 const type = 'testnet'
 
@@ -23,7 +24,7 @@ const MonitoringPage = () => {
 			id='mainColumn'
 			style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 		>
-			<Head>
+			<Head``>
 				<title>{`Monitoring - ${projectName} | Services`}</title>
 				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
