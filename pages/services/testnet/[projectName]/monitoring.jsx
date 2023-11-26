@@ -24,7 +24,7 @@ const MonitoringPage = () => {
 			style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 		>
 			<Head>
-				<title>{`Ьщтшещкштп - ${projectName} | Services`}</title>
+				<title>{`Monitoring - ${projectName} | Services`}</title>
 				<meta name='description' content='ITRocket 🚀 | Crypto Multipurpose Project' />
 			</Head>
 			<h2 id='monitoring'>Node Monitoring Script</h2>

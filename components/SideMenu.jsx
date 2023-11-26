@@ -283,7 +283,7 @@ const SideMenu = () => {
 				getItem(
 					<div className='mb-2'>
 						<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/monitoring'}>
-							<span className='mr-2 ml-3'> 🤖</span> Monitoring bot
+							<span className='mr-2 ml-3'> 🤖</span> Monitoring script
 						</Link>
 					</div>,
 					'public rpc',
