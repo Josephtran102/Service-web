@@ -31,7 +31,7 @@ const MonitoringPage = () => {
 			<h2 id='monitoring'>Node Monitoring Script</h2>
 			<Paragraph className='!mb-4'>
 				<ul>
-					<li>Periodically retrieves and displays validator information.</li>
+					<li>Periodically tracks validator status, missed blocks, voting power, and sends alerts.</li>
 					<li>Checks node status, restarts if unresponsive.</li>
 					<li>Compares block height with an external server and restarts when significantly out of sync.</li>
 					<li>Sends alerts and status updates via Telegram. </li>
