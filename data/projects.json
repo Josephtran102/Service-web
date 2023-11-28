@@ -518,7 +518,7 @@
       "seedPort": "38656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "",
+      "updHeight": "0",
       "variable": "ELYS",
       "website": "https://elys.network/",
       "desc": "",
