@@ -49,7 +49,7 @@ const Card = ({ data, aprValues }) => {
 						</div>
 					</div>
 
-					{type === 'mainnet' && data[item].delegate && (
+					{data[item].delegate && (
 						<a
 							href={getDelegateLink(item)}
 							target='_blank'
