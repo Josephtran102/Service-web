@@ -199,7 +199,7 @@ const Project = ({ project }) => {
 												onChange={value => form.setFieldsValue({ [field.name]: { name: value } })}
 												allowClear
 											>
-												{fieldNames.map(fieldName => (
+												{fieldNames.sort().map(fieldName => (
 													<Select.Option key={fieldName} value={fieldName}>
 														{fieldName}
 													</Select.Option>
