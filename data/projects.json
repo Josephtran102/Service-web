@@ -265,7 +265,7 @@
       "imgUrl": "terp.jpg",
       "installBin": "cd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v3.1.0\nmake install",
       "minGasPrice": "0.0uterp",
-      "newInstallBin": "cd $HOME\nrm -rf $HOME/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd $HOME/terp-core\ngit checkout v4.1.0\nmake build\n$HOME/terp-core/build/terpd version --long | grep \"cosmos_sdk_veresion/|commit\\|version:\"\n# commit: c249b43efb65e253caa77b8a73a5c311810ea540\nsudo mv $HOME/terp-core/build/terpd $(which terpd)",
+      "newInstallBin": "cd $HOME\nrm -rf $HOME/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd $HOME/terp-core\ngit checkout v4.1.0\nmake build\nsudo mv $HOME/terp-core/build/terpd $(which terpd)",
       "path": ".terp",
       "peerID": "a81dc3bf1bb1c3837b768eeb82659eecc971890b",
       "peerPort": "13656",
