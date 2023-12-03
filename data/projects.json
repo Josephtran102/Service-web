@@ -955,7 +955,7 @@
       "docker": "true",
       "security": "",
       "dockerCompose": "true",
-      "upgrade": "",
+      "upgrade": "./run_x1_testnet.sh update",
       "deleteNode": "",
       "installBin1": "cd $HOME\nrm -rf $HOME/x1-node\nmkdir -p ./x1-node && cd ./x1-node\nwget https://static.okex.org/cdn/chain/x1/snapshot/run_x1_testnet.sh && chmod +x run_x1_testnet.sh && ./run_x1_testnet.sh init && cp ./testnet/example.env ./testnet/.env",
       "installTitle1": "Download the installation script",
@@ -968,9 +968,7 @@
       "installTitle5": "Stopping",
       "installBin5": "./run_x1_testnet.sh stop",
       "installTitle6": "Restarting",
-      "installBin6": "./run_x1_testnet.sh restart",
-      "installTitle7": "Updating",
-      "installBin7": "./run_x1_testnet.sh update"
+      "installBin6": "./run_x1_testnet.sh restart"
     },
     "zetachain": {
       "chainID": "athens_7001-1",
