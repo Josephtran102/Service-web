@@ -969,7 +969,8 @@
       "installBin5": "./run_x1_testnet.sh stop",
       "installTitle6": "Restarting",
       "installBin6": "./run_x1_testnet.sh restart",
-      "evmRPC": "https://x1-testnet-rpc.itrocket.net:443"
+      "evmRPC": "https://x1-testnet-rpc.itrocket.net:443",
+      "hardware": "16GB RAM, 4-core CPU, 20GB Storage"
     },
     "zetachain": {
       "chainID": "athens_7001-1",
