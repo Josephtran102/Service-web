@@ -953,7 +953,7 @@
       "dependencies": "sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y",
       "rustCargo": "false",
       "docker": "true",
-      "security": "# firewall rules\n# open p2p port\nsudo ufw allow 30311/tcp\n# open RPC, websocket pors for some IP addresses (if needed)\nsudo ufw allow from <IP> to any port 25547\nsudo ufw allow from <IP> to any port 25578",
+      "security": "",
       "dockerCompose": "true",
       "upgrade": "",
       "deleteNode": "",
