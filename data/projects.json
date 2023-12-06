@@ -452,7 +452,8 @@
       "variable": "CASCADIA",
       "website": "https://www.cascadia.foundation",
       "offValDoc": "https://cascadia.gitbook.io/gitbook/network/configuration",
-      "evmRPC": "https://cascadia-testnet-jsonrpc.itrocket.net:443"
+      "evmRPC": "https://cascadia-testnet-jsonrpc.itrocket.net:443",
+      "newExecStart": "$(which cascadiad) start --chain-id cascadia_11029-1"
     },
     "celestia": {
       "bin": "celestia-appd",
