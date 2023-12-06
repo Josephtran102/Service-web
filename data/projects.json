@@ -428,7 +428,7 @@
       "bin": "cascadiad",
       "binHome": "/home/cascadia/go/bin/cascadiad",
       "chainID": "cascadia_11029-1",
-      "delegate": "https://testnet.itrocket.net/cascadia/staking/",
+      "delegate": "https://testnet.itrocket.net/cascadia/staking/https://testnet.itrocket.net/cascadia/staking/cascadiavaloper1v2guhhn4v6gcjrp8wuy286fdpm6vfyyzqhausm",
       "denom": "aCC",
       "ecosystem": "cosmos",
       "gas": "--gas-prices 7aCC",
