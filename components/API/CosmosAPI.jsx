@@ -44,7 +44,7 @@ const CosmosAPI = ({ name, type }) => {
 				<h2 id='rpc'>RPC, API, gRPC</h2>
 				<div className='flex flex-col flex-wrap gap-1 mb-1'>
 					<div className='flex flex-wrap gap-1 items-center'>
-						<span>Public RPC: </span>
+						<span>RPC: </span>
 						<a href={`https://${name}-${type}-rpc.itrocket.net:443`} target='_blank' rel='noopener referrer'>
 							{`https://${name}-${type}-rpc.itrocket.net:443`}
 						</a>
@@ -60,7 +60,7 @@ const CosmosAPI = ({ name, type }) => {
 					) : (
 						<>
 							<div className='flex flex-wrap gap-1 items-center'>
-								Public API:
+								API:
 								<a
 									href={`https://${name}-${type}-api.itrocket.net:443`}
 									target='_blank'
@@ -79,7 +79,7 @@ const CosmosAPI = ({ name, type }) => {
 					)}
 					{evmRPC !== undefined ? (
 						<div className='flex flex-wrap gap-1 items-center'>
-							<>Public EVM RPC: </>
+							<>JSON-RPC: </>
 							<a href={`${evmRPC}`} target='_blank' rel='noopener referrer'>
 								{`${evmRPC}`}
 							</a>
