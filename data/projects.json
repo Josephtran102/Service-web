@@ -451,7 +451,7 @@
       "website": "https://www.cascadia.foundation",
       "desc": "",
       "offValDoc": "https://cascadia.gitbook.io/gitbook/network/configuration",
-      "newExecStart": "$(which cascadiad) start --home $HOME/.cascadiad --trace --log_level info --json-rpc.api eth,txpool,personal,net,debug,web3 --api.enable"
+      "newExecStart": "$(which cascadiad) start --chain-id cascadia_11029-1"
     },
     "celestia": {
       "bin": "celestia-appd",
