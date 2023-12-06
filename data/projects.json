@@ -436,6 +436,7 @@
       "imgUrl": "cascadia.png",
       "installBin": "cd $HOME\nrm -rf cascadia\ngit clone https://github.com/cascadiafoundation/cascadia\ncd cascadia\ngit checkout v0.1.9\nmake install",
       "minGasPrice": "0.025aCC",
+      "evmRPC": "https://cascadia-testnet-jsonrpc.itrocket.net:443",
       "newInstallBin": "cd $HOME\nsed -i -e \"s/^timeout_propose =.*/timeout_propose = '2.7s'/\" \\\n       -e \"s/^timeout_prevote =.*/timeout_prevote = '0.9s'/\" \\\n       -e \"s/^timeout_precommit =.*/timeout_precommit = '0.9s'/\" \\\n       -e \"s/^timeout_commit =.*/timeout_commit = '3.6s'/\" $HOME/.cascadiad/config/config.toml\nwget -O cascadiad https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.8/cascadiad\nchmod +x $HOME/cascadiad\nsudo mv $HOME/cascadiad $(which cascadiad)",
       "path": ".cascadiad",
       "peerID": "c6e3921222655345d8296353994e917f13a1b4a1",
