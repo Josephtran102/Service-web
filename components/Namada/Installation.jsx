@@ -205,10 +205,14 @@ cometbft version
 					<CodeSnippet
 						theme={theme}
 						code={`cd $HOME
-NAMADA_TAG=v0.28.0
-curl -L -o namada.tar.gz https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz
-tar -xvf namada.tar.gz
-sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/
+rm -rf $HOME/namada
+git clone https://github.com/anoma/namada
+cd $HOME/namada
+wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Linux-x86_64.tar.gz
+tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
+rm namada-v0.23.1-Linux-x86_64.tar.gz
+cd namada-v0.23.1-Linux-x86_64
+sudo mv namada namadan namadac namadaw /usr/local/bin/
 mkdir -p $HOME/.local/share/namada
 `}
 					/>
