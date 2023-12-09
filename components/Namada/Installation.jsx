@@ -205,8 +205,8 @@ cometbft version
 					<CodeSnippet
 						theme={theme}
 						code={`cd $HOME
-NAMADA_TAG="v0.28.0"
-curl -L -o namada.tar.gz "https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz"
+NAMADA_TAG=v0.28.0
+curl -L -o namada.tar.gz https://github.com/anoma/namada/releases/download/$NAMADA_TAG/namada-${NAMADA_TAG}-Linux-x86_64.tar.gz
 tar -xvf namada.tar.gz
 sudo mv namada-${NAMADA_TAG}-Linux-x86_64/* /usr/local/bin/
 mkdir -p $HOME/.local/share/namada
