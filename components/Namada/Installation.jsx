@@ -208,10 +208,10 @@ cometbft version
 rm -rf $HOME/namada
 git clone https://github.com/anoma/namada
 cd $HOME/namada
-wget https://github.com/anoma/namada/releases/download/v0.23.1/namada-v0.23.1-Linux-x86_64.tar.gz
-tar -xvf namada-v0.23.1-Linux-x86_64.tar.gz
-rm namada-v0.23.1-Linux-x86_64.tar.gz
-cd namada-v0.23.1-Linux-x86_64
+wget https://github.com/anoma/namada/releases/download/v0.28.0/namada-v0.28.0-Linux-x86_64.tar.gz
+tar -xvf namada-v0.28.0-Linux-x86_64.tar.gz
+rm namada-v0.28.0-Linux-x86_64.tar.gz
+cd namada-v0.28.0-Linux-x86_64
 sudo mv namada namadan namadac namadaw /usr/local/bin/
 mkdir -p $HOME/.local/share/namada
 `}
