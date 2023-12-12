@@ -193,7 +193,7 @@ source $HOME/.bash_profile
 					<CodeSnippet
 						theme={theme}
 						code={`cd $HOME
-curl -L -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v24.4/protoc-v24.4-linux-x86_64.zip
+curl -L -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v24.4/protoc-24.4-linux-x86_64.zip
 mkdir protobuf_temp && unzip protobuf.zip -d protobuf_temp/
 sudo cp protobuf_temp/bin/protoc /usr/local/bin/
 sudo cp -r protobuf_temp/include/* /usr/local/include/
