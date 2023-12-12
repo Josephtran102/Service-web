@@ -189,6 +189,18 @@ echo "export BASE_DIR="$HOME/.local/share/namada"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 `}
 					/>
+					<p>Protocol Buffers:</p>
+					<CodeSnippet
+						theme={theme}
+						code={`cd $HOME
+PROTOBUF_TAG=v24.4
+curl -L -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/$PROTOBUF_TAG/protoc-${PROTOBUF_TAG#v}-linux-x86_64.zip
+mkdir protobuf_temp && unzip protobuf.zip -d protobuf_temp/
+sudo cp protobuf_temp/bin/protoc /usr/local/bin/
+sudo cp -r protobuf_temp/include/* /usr/local/include/
+rm -rf protobuf_temp protobuf.zip
+`}
+					/>
 					<p>Install CometBFT:</p>
 					<CodeSnippet
 						theme={theme}
