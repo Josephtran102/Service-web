@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
 import { Alert } from 'antd'
 
@@ -7,6 +7,7 @@ import styles from '@styles/Services.module.scss'
 import { Context } from '@context/context'
 import CodeSnippet from './UI/CodeSnippet'
 import AnimatedSection from './AnimatedSection'
+import axios from 'axios'
 
 const Upgrade = ({ name, type }) => {
 	const project = projects[type][name]
@@ -19,6 +20,48 @@ const Upgrade = ({ name, type }) => {
 	explorer.current = project.explorer
 	const { theme } = useContext(Context)
 	const isBinEmpty = installBin === undefined
+	const [upgradeID, setUpgradeID] = useState()
+
+	useEffect(() => {
+		fetchLastUpgradeId().then(proposals => {
+			if (proposals) {
+				for (const proposal of proposals) {
+					console.log(proposal)
+					const isUpgrade =
+						proposal?.messages?.[0]?.hasOwnProperty('plan') ||
+						proposal?.content?.hasOwnProperty('plan') ||
+						proposal?.messages?.[0]?.content?.hasOwnProperty('plan')
+
+					if (isUpgrade) {
+						const id = proposal.id || proposal.proposal_id
+						setUpgradeID(() => id)
+						break
+					}
+				}
+			}
+		})
+	}, [])
+
+	const fetchLastUpgradeId = async () => {
+		const url = `https://${name}-${type}-api.itrocket.net/cosmos/gov/v1/proposals`
+
+		try {
+			const response = await axios.get(url, {
+				params: {
+					'pagination.limit': 20,
+					'pagination.count_total': true,
+					'pagination.reverse': true
+				}
+			})
+
+			const proposals = response.data.proposals
+
+			return proposals
+		} catch (error) {
+			console.log(error)
+			return null
+		}
+	}
 
 	let indexOfMv, mvLine, newPath, beforeMv
 	if (!isBinEmpty) {
@@ -103,7 +146,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 									code={`${beforeMv}old_bin_path=$(which ${bin}) && \\
 home_path=$HOME && \\
 rpc_port=$(grep -m 1 -oP '^laddr = "\\K[^"]+' "$HOME/${path}/config/config.toml" | cut -d ':' -f 3) && \\
-tmux new -s ${name}-upgrade "sudo bash -c 'curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/autoupgrade/upgrade.sh | bash -s -- -u \\"${updHeight}\\" -b ${bin} -n \\"${newPath}\\" -o \\"$old_bin_path\\" -h \\"$home_path\\" -p ${name} -r \\"$rpc_port\\"'"`}
+tmux new -s ${name}-upgrade "sudo bash -c 'curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/autoupgrade/upgrade.sh | bash -s -- -u \\"${updHeight}\\" -b ${bin} -n \\"${newPath}\\" -o \\"$old_bin_path\\" -h \\"$home_path\\" -p ${upgradeID} -r \\"$rpc_port\\"'"`}
 								/>
 							</>
 						)}
