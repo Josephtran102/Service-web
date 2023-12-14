@@ -22,8 +22,44 @@ const Upgrade = ({ name, type }) => {
 	const isBinEmpty = installBin === undefined
 	const [upgradeID, setUpgradeID] = useState()
 
+	const fetchLastUpgradeId = async () => {
+		const baseUrl = `https://${name}-${type}-api.itrocket.net/cosmos/gov/v1`
+		const alternativeUrl = `https://${name}-${type}-api.itrocket.net/cosmos/gov/v1beta1`
+
+		try {
+			let response = await tryFetch(baseUrl, 'v1')
+			if (!response) {
+				response = await tryFetch(alternativeUrl, 'v1beta1')
+			}
+			return { proposals: response?.data.proposals || [], version: response?.version }
+		} catch (error) {
+			console.log(error)
+			return null
+		}
+	}
+
+	const tryFetch = async (url, version) => {
+		try {
+			const response = await axios.get(`${url}/proposals`, {
+				params: {
+					'pagination.limit': 20,
+					'pagination.count_total': true,
+					'pagination.reverse': true
+				}
+			})
+			return response ? { data: response.data, version } : null
+		} catch {
+			return null
+		}
+	}
+
+	const setFormattedUpgradeID = (id, version) => {
+		const formattedLink = `https://${name}-${type}-api.itrocket.net/cosmos/gov/${version}/proposals/${id}`
+		setUpgradeID(() => formattedLink)
+	}
+
 	useEffect(() => {
-		fetchLastUpgradeId().then(proposals => {
+		fetchLastUpgradeId().then(({ proposals, version }) => {
 			if (proposals) {
 				for (const proposal of proposals) {
 					console.log(proposal)
@@ -34,34 +70,13 @@ const Upgrade = ({ name, type }) => {
 
 					if (isUpgrade) {
 						const id = proposal.id || proposal.proposal_id
-						setUpgradeID(() => id)
+						setFormattedUpgradeID(id, version)
 						break
 					}
 				}
 			}
 		})
 	}, [])
-
-	const fetchLastUpgradeId = async () => {
-		const url = `https://${name}-${type}-api.itrocket.net/cosmos/gov/v1/proposals`
-
-		try {
-			const response = await axios.get(url, {
-				params: {
-					'pagination.limit': 20,
-					'pagination.count_total': true,
-					'pagination.reverse': true
-				}
-			})
-
-			const proposals = response.data.proposals
-
-			return proposals
-		} catch (error) {
-			console.log(error)
-			return null
-		}
-	}
 
 	let indexOfMv, mvLine, newPath, beforeMv
 	if (!isBinEmpty) {
