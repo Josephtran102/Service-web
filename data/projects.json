@@ -620,7 +620,7 @@
       "goVersion": "1.20.3",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
       "imgUrl": "entrypoint.png",
-      "installBin": "cd $HOME\nmkdir -p $HOME/entrypoint && cd entrypoint\nwget https://github.com/entrypoint-zone/testnets/releases/download/v1.2.0/entrypointd-v1.2.0-linux-amd64\nchmod +x entrypointd-v1.2.0-linux-amd64\nmv entrypointd-v1.2.0-linux-amd64 $HOME/go/bin/entrypointd",
+      "installBin": "cd $HOME\nmkdir -p $HOME/entrypoint && cd entrypoint\nwget -O entrypointd https://github.com/entrypoint-zone/testnets/releases/download/v1.3.0/entrypointd-1.3.0-linux-amd64\nchmod +x entrypointd\ncp entrypointd $HOME/go/bin/entrypointd",
       "minGasPrice": "0.01ibc/8A138BC76D0FB2665F8937EC2BF01B9F6A714F6127221A0E155106A45E09BCC5",
       "newInstallBin": "cd $HOME\nwget -O entrypointd https://github.com/entrypoint-zone/testnets/releases/download/v1.3.0/entrypointd-1.3.0-linux-amd64\nchmod +x entrypointd\nsudo mv $HOME/entrypointd $(which entrypointd)",
       "path": ".entrypoint",
