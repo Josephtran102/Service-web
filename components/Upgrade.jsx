@@ -161,7 +161,7 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 									code={`${beforeMv}old_bin_path=$(which ${bin}) && \\
 home_path=$HOME && \\
 rpc_port=$(grep -m 1 -oP '^laddr = "\\K[^"]+' "$HOME/${path}/config/config.toml" | cut -d ':' -f 3) && \\
-tmux new -s ${name}-upgrade "sudo bash -c 'curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/autoupgrade/upgrade.sh | bash -s -- -u \\"${updHeight}\\" -b ${bin} -n \\"${newPath}\\" -o \\"$old_bin_path\\" -h \\"$home_path\\" -p ${upgradeID} -r \\"$rpc_port\\"'"`}
+tmux new -s ${name}-upgrade "sudo bash -c 'curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/autoupgrade/upgrade.sh | bash -s -- -u \\"${updHeight}\\" -b ${bin} -n \\"${newPath}\\" -o \\"$old_bin_path\\" -h \\"$home_path\\" -p \\${upgradeID}\\ -r \\"$rpc_port\\"'"`}
 								/>
 							</>
 						)}
