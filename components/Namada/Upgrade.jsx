@@ -57,7 +57,7 @@ cd namada-v0.28.0-Linux-x86_64
 sudo mv namada namadan namadac namadaw /usr/local/bin/
 sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 				></CodeBlock>
-				<Alert
+				{/* <Alert
 					className='my-2'
 					message='If your node halt, try the following steps. If not, ignore it.'
 					type='warning'
@@ -98,7 +98,7 @@ EOF`}
 					code={`sudo systemctl daemon-reload
 sudo systemctl enable namadad
 sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
-				/>
+				/> */}
 			</div>
 		</AnimatedSection>
 	)
