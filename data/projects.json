@@ -78,7 +78,8 @@
       "updHeight": "2697000",
       "variable": "EMPOWER",
       "website": "https://docs.empowerchain.io/",
-      "offValDoc": "https://docs.empowerchain.io/validators/intro"
+      "offValDoc": "https://docs.empowerchain.io/validators/intro",
+      "path": ".empowerchain"
     },
     "forta": {
       "explorer": "https://explorer.forta.network/",
