@@ -135,10 +135,33 @@ echo $(go version) && sleep 1
 source <(curl -s https://raw.githubusercontent.com/itrocket-team/testnet_guides/main/utils/dependencies_install)
 sudo apt-get install -y git-core libssl-dev pkg-config libclang-12-dev protobuf-compiler
 
-printGreen "4. Installing Rust & Cargo..." && sleep 1
+printGreen "2. Installing Rust & Cargo..." && sleep 1
 # install rust and cargo
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source $HOME/.cargo/env
+
+printGreen "3. Installing Protocol Buffers..." && sleep 1
+cd $HOME
+curl -L -o protobuf.zip https://github.com/protocolbuffers/protobuf/releases/download/v24.4/protoc-24.4-linux-x86_64.zip
+mkdir protobuf_temp && unzip protobuf.zip -d protobuf_temp/
+sudo cp protobuf_temp/bin/protoc /usr/local/bin/
+sudo cp -r protobuf_temp/include/* /usr/local/include/
+rm -rf protobuf_temp protobuf.zip
+sleep 1
+echo done
+
+printGreen "4. Installing CometBFT..." && sleep 1
+# Install CometBFT
+cd $HOME
+rm -rf $HOME/cometbft
+git clone https://github.com/cometbft/cometbft.git
+cd $HOME/cometbft
+git checkout v0.37.2
+make build
+sudo cp $HOME/cometbft/build/cometbft /usr/local/bin/
+cometbft version
+sleep 1
+echo done
 
 printGreen "5. Installing binaries..." && sleep 1
 # download binary
@@ -157,20 +180,7 @@ fi
 sleep 1
 echo done
 
-printGreen "6. Installing CometBFT..." && sleep 1
-# Install CometBFT
-cd $HOME
-rm -rf $HOME/cometbft
-git clone https://github.com/cometbft/cometbft.git
-cd $HOME/cometbft
-git checkout v0.37.2
-make build
-sudo cp $HOME/cometbft/build/cometbft /usr/local/bin/
-cometbft version
-sleep 1
-echo done
-
-printGreen "7. Joining network..." && sleep 1
+printGreen "6. Joining network..." && sleep 1
 # Executing actions based on the user's response
 if [ "$is_post_genesis" -eq 1 ]; then
     # Joining network as Pre-Genesis Validator
@@ -186,7 +196,7 @@ fi
 sleep 1
 echo done
 
-printGreen "8. Configuring custom ports..." && sleep 1
+printGreen "7. Configuring custom ports..." && sleep 1
 # Set custom ports in config.toml
 sed -i.bak -e "s%:26658%:\${PORT}658%g; \
 s%:26657%:\${PORT}657%g; \
@@ -197,7 +207,7 @@ sleep 1
 echo done
 
 
-printGreen "9. Creating service file and starting node..." && sleep 1
+printGreen "8. Creating service file and starting node..." && sleep 1
 # create service file
 sudo tee /etc/systemd/system/namadad.service > /dev/null <<EOF
 [Unit]
