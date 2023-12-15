@@ -306,6 +306,7 @@ EOF`}
 s%:26657%:\${NAMADA_PORT}657%g;
 s%:26656%:\${NAMADA_PORT}656%g;
 s%:26545%:\${NAMADA_PORT}545%g;
+s%:8545%:\${NAMADA_PORT}545%g;
 s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/config.toml`}				
 				/>
 				<p>Enable and start service:</p>
