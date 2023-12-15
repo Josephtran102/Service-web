@@ -224,7 +224,9 @@ tar -xvf namada-v0.28.0-Linux-x86_64.tar.gz
 rm namada-v0.28.0-Linux-x86_64.tar.gz
 cd namada-v0.28.0-Linux-x86_64
 sudo mv namada namadan namadac namadaw /usr/local/bin/
-mkdir -p $HOME/.local/share/namada
+if [ ! -d "$HOME/.local/share/namada" ]; then
+    mkdir -p "$HOME/.local/share/namada"
+fi
 `}
 					/>
 					<p>Check Namada version:</p>
