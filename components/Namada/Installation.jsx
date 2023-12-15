@@ -184,7 +184,7 @@ echo "export ALIAS="CHOOSE_A_NAME_FOR_YOUR_VALIDATOR"" >> $HOME/.bash_profile
 echo "export WALLET="CHOOSE_A_WALLET_NAME"" >> $HOME/.bash_profile
 echo "export PUBLIC_IP=$(wget -qO- eth0.me)" >> $HOME/.bash_profile
 echo "export TM_HASH="v0.1.4-abciplus"" >> $HOME/.bash_profile
-echo "export CHAIN_ID="public-testnet-14.5d79b6958580"" >> $HOME/.bash_profile
+echo "export CHAIN_ID="public-testnet-15.0dacadb8d663"" >> $HOME/.bash_profile
 echo "export BASE_DIR="$HOME/.local/share/namada"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 `}
@@ -303,7 +303,7 @@ EOF`}
 s%:26657%:\${NAMADA_PORT}657%g;
 s%:26656%:\${NAMADA_PORT}656%g;
 s%:26545%:\${NAMADA_PORT}545%g;
-s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/public-testnet-14.5d79b6958580/config.toml`}				
+s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/config.toml`}				
 				/>
 				<p>Enable and start service:</p>
 				<CodeSnippet
@@ -403,7 +403,7 @@ sudo systemctl disable namadad
 sudo rm -rf /etc/systemd/system/namadad.service
 sudo systemctl daemon-reload
 sudo rm $(which namada)
-sudo rm -rf $HOME/.local/share/namada/public-testnet-14.5d79b6958580`}
+sudo rm -rf $HOME/.local/share/namada/public-testnet-15.0dacadb8d663`}
 				/>
 			</div>
 		</AnimatedSection>
