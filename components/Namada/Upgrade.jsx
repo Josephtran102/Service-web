@@ -49,10 +49,12 @@ const Upgrade = ({ name, type }) => {
 					code={`cd $HOME
 rm -rf namada 
 git clone https://github.com/anoma/namada 
-cd namada 
-git checkout v0.23.2 
-make build-release 
-sudo mv $HOME/namada/target/release/namada* /usr/local/bin/ 
+cd namada
+wget https://github.com/anoma/namada/releases/download/v0.28.0/namada-v0.28.0-Linux-x86_64.tar.gz
+tar -xvf namada-v0.28.0-Linux-x86_64.tar.gz
+rm namada-v0.28.0-Linux-x86_64.tar.gz
+cd namada-v0.28.0-Linux-x86_64
+sudo mv namada namadan namadac namadaw /usr/local/bin/
 sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 				></CodeBlock>
 				<Alert
