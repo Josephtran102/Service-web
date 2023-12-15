@@ -102,7 +102,7 @@ echo "export WALLET="$WALLET"" >> $HOME/.bash_profile
 echo "export ALIAS="$ALIAS"" >> $HOME/.bash_profile
 echo "export PORT="$PORT"" >> $HOME/.bash_profile
 echo "export TM_HASH="v0.1.4-abciplus"" >> $HOME/.bash_profile
-echo "export CHAIN_ID="public-testnet-14.5d79b6958580"" >> $HOME/.bash_profile
+echo "export CHAIN_ID="public-testnet-15.0dacadb8d663"" >> $HOME/.bash_profile
 echo "export BASE_DIR="$HOME/.local/share/namada"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
