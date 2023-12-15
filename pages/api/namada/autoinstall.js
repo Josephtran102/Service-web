@@ -187,10 +187,12 @@ if [ "$is_post_genesis" -eq 1 ]; then
     printRed "Please place the pre-genesis folder at this path $HOME/.local/share/namada then press enter"
     read -p ""
     cd $HOME
+    rm -rf $HOME/.local/share/namada/\${CHAIN_ID}
     namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS
 else
     # Joining network as Full Nodes or Post-Genesis Validator
     cd $HOME
+    rm -rf $HOME/.local/share/namada/\${CHAIN_ID}
     namada client utils join-network --chain-id $CHAIN_ID
 fi
 sleep 1
