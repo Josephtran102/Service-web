@@ -72,13 +72,13 @@ const API = ({ name, type }) => {
 				<CodeSnippet
 					theme={theme}
 					code={`PEERS=${LIVE_PEERS}
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/config/config.toml`}
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/cometbft/config/config.toml`}
 				/>
 				<h3 id='addrbook'>addrbook:</h3>
 				<p className={styles.text_secondary}>updates every hour</p>
 				<CodeSnippet
 					theme={theme}
-					code={`wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
+					code={`wget -O $HOME/${path}/cometbft/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
 				/>
 				<h3 id='genesis'>genesis</h3>
 				<CodeSnippet
@@ -110,7 +110,7 @@ wget -O snap_namada.tar https://testnet-files.itrocket.net/namada/snap_namada.ta
 				<CodeBlock
 					desc='Stop node and unpack snapshot:'
 					code={`sudo systemctl stop namadad
-cp $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/data/priv_validator_state.json $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/priv_validator_state.json.backup
+cp $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/data/priv_validator_state.json $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/priv_validator_state.json.backup
 tar -xvf snap_namada.tar -C $HOME/.local/share/namada/public-testnet-15.0dacadb8d663
 rm -rf $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/db $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/data
 cd $HOME
