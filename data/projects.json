@@ -726,7 +726,7 @@
     "namada": {
       "bin": "namada",
       "binHome": "/usr/local/bin/namada",
-      "chainID": "v0.1.4-abciplus",
+      "chainID": "public-testnet-15.0dacadb8d663",
       "denom": "nam",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
