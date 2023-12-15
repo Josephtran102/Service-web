@@ -736,7 +736,7 @@
       "installBin": "cd $HOME\nrm -rf arkh-blockchain\ngit clone https://github.com/vincadian/arkh-blockchain\ncd arkh-blockchain\ngit checkout v2.0.0\ngo build -o arkhd ./cmd/arkhd\nmv arkhd $HOME/go/bin",
       "minGasPrice": "0.0",
       "newInstallBin": "",
-      "path": ".local/share/namada/public-testnet-14.5d79b6958580/cometbft",
+      "path": ".local/share/namada/public-testnet-15.0dacadb8d663/cometbft",
       "peerID": "4c3c2f8da072b419123ab3ecf625a567d0017f2d",
       "peerPort": "33656",
       "port": 33,
