@@ -72,17 +72,17 @@ const API = ({ name, type }) => {
 				<CodeSnippet
 					theme={theme}
 					code={`PEERS=${LIVE_PEERS}
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/cometbft/config/config.toml`}
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/config/config.toml`}
 				/>
 				<h3 id='addrbook'>addrbook:</h3>
 				<p className={styles.text_secondary}>updates every hour</p>
 				<CodeSnippet
 					theme={theme}
-					code={`wget -O $HOME/${path}/cometbft/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
+					code={`wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
 				/>
 				<h3 id='genesis'>genesis</h3>
 				<CodeSnippet
-					code={`wget -O $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/config/genesis.json https://testnet-files.itrocket.net/namada/addrbook.jsongenesis.json`}
+					code={`wget -O $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/config/genesis.json https://testnet-files.itrocket.net/namada/addrbook.jsongenesis.json`}
 				/>
 
 				<h2 id='snap'>Snapshot </h2>
