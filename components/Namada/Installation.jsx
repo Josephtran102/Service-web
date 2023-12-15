@@ -282,7 +282,7 @@ After=network-online.target
 [Service]
 User=$USER
 WorkingDirectory=$BASE_DIR
-Environment=CMT_LOG_LEVEL=p2p:none,pex:error
+Environment=CMT_LOG_LEVEL=p2p:none,pex:error namada node ledger run
 Environment=NAMADA_CMT_STDOUT=true
 Environment=NAMADA_LOG=info
 ExecStart=$(which namada) node ledger run
