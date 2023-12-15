@@ -204,6 +204,7 @@ rm -rf protobuf_temp protobuf.zip
 					<CodeSnippet
 						theme={theme}
 						code={`cd $HOME
+rm -rf cometbft
 git clone https://github.com/cometbft/cometbft.git
 cd cometbft
 git checkout v0.37.2
