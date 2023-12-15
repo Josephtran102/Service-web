@@ -82,7 +82,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 				/>
 				<h3 id='genesis'>genesis</h3>
 				<CodeSnippet
-					code={`wget -O $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/config/genesis.json https://testnet-files.itrocket.net/namada/addrbook.jsongenesis.json`}
+					code={`wget -O $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/config/genesis.json https://testnet-files.itrocket.net/namada/addrbook.jsongenesis.json`}
 				/>
 
 				<h2 id='snap'>Snapshot </h2>
@@ -110,12 +110,12 @@ wget -O snap_namada.tar https://testnet-files.itrocket.net/namada/snap_namada.ta
 				<CodeBlock
 					desc='Stop node and unpack snapshot:'
 					code={`sudo systemctl stop namadad
-cp $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/data/priv_validator_state.json $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/priv_validator_state.json.backup
-tar -xvf snap_namada.tar -C $HOME/.local/share/namada/public-testnet-14.5d79b6958580
-rm -rf $HOME/.local/share/namada/public-testnet-14.5d79b6958580/db $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/data
+cp $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/data/priv_validator_state.json $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/priv_validator_state.json.backup
+tar -xvf snap_namada.tar -C $HOME/.local/share/namada/public-testnet-15.0dacadb8d663
+rm -rf $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/db $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/data
 cd $HOME
-tar -xvf snap_namada.tar -C $HOME/.local/share/namada/public-testnet-14.5d79b6958580
-mv $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/priv_validator_state.json.backup $HOME/.local/share/namada/public-testnet-14.5d79b6958580/cometbft/data/priv_validator_state.json
+tar -xvf snap_namada.tar -C $HOME/.local/share/namada/public-testnet-15.0dacadb8d663
+mv $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/priv_validator_state.json.backup $HOME/.local/share/namada/public-testnet-15.0dacadb8d663/cometbft/data/priv_validator_state.json
 
 `}
 				/>
