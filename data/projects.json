@@ -390,8 +390,8 @@
       "updHeight": "",
       "variable": "ANDROMEDA",
       "website": "https://andromedaprotocol.io/",
-      "desc": "Andromeda is an application platform layer that connects all public blockchains in the Cosmos ecosystem. Through our vast library of no-code smart contracts, users can harness the power of web3.",
-      "offValDoc": ""
+      "offValDoc": "",
+      "desc": "Andromeda is an application platform layer that connects all public blockchains in the Cosmos ecosystem. Through our vast library of no-code smart contracts, users can harness the power of web3.."
     },
     "arkeo": {
       "bin": "arkeod",
