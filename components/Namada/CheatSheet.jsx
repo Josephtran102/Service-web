@@ -187,6 +187,9 @@ const CheatSheet = props => {
 							desc='withdrawing unbonded tokens:'
 							code={`namada client withdraw --source aliace --validator $ALIAS`}
 						/>
+							desc='Check slashes:'
+							code={`namada client slashes`}
+						/>
 					</div>
 					<h2 id='sync-and-consensus'>Sync and Consensus</h2>
 					<div className='flex flex-col gap-y-2'>
