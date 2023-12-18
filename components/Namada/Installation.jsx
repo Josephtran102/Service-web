@@ -351,7 +351,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									<span>Get address:</span>
 									<CodeSnippet
 										theme={theme}
-										code={`WALLET_ADDRESS=$(namada wallet address find --alias $ALIAS)`}
+										code={`WALLET_ADDRESS=$(namada wallet address find --alias $ALIAS | awk '{\'print $NF\'}')`}
 									/>
 									<span>Init validator:</span>
 									<CodeSnippet
