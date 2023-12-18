@@ -361,7 +361,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									<span>Stake your funds:</span>
 									<CodeSnippet
 										theme={theme}
-										code={`namada bond \\
+										code={`namadac bond \\
   --source $ALIAS \\
   --validator $ALIAS \\
   --amount 1500`}
