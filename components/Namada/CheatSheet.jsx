@@ -167,7 +167,7 @@ const CheatSheet = props => {
 						<CodeBlock desc='check keys:' code={`namada wallet key list`} />
 						<CodeBlock
 							desc='stake funds:'
-							code={`namada client bond --validator $ALIAS  --amount 1500 --gas-limit 10000000`}
+							code={`namadac bond --source $ALIAS --validator $ALIAS --amount 1000`}
 						/>
 						<CodeBlock
 							desc='check your validator bond status:'
