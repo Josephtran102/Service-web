@@ -187,6 +187,7 @@ const CheatSheet = props => {
 							desc='withdrawing unbonded tokens:'
 							code={`namada client withdraw --source aliace --validator $ALIAS`}
 						/>
+						<CodeBlock
 							desc='Check slashes:'
 							code={`namada client slashes`}
 						/>
