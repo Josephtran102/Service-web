@@ -358,10 +358,10 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									<span>Stake your funds:</span>
 									<CodeSnippet
 										theme={theme}
-										code={`namada client bond \\
+										code={`namada bond \\
+  --source $ALIAS \\
   --validator $ALIAS \\
-  --amount 1500 \\
-  --gas-limit 10000000`}
+  --amount 1500`}
 									/>
 									<span>Waiting more than 2 epoch and check your status:</span>
 									<CodeSnippet theme={theme} code={`namada client bonds --owner $ALIAS`} />
