@@ -351,11 +351,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									<span>Init validator:</span>
 									<CodeSnippet
 										theme={theme}
-										code={`namada client init-validator \\
-  --alias $ALIAS \\
-  --source $WALLET \\
-  --commission-rate 0.1 \\
-  --max-commission-rate-change 0.01`}
+										code={`namadaw address add --alias $ALIAS --address $(namada wallet address find --alias $ALIAS)</CodeSnippet>`}
 									/>
 									<span>Stake your funds:</span>
 									<CodeSnippet
