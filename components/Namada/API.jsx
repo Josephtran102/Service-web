@@ -24,7 +24,7 @@ const API = ({ name, type }) => {
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
 
-	const PEERS = peerID ? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${tcpLivePeers}` : ''
+	const PEERS = peerID ? `tcp://${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${tcpLivePeers}` : ''
 	const LIVE_PEERS = peerID ? `"${PEERS}"` : `"${tcpLivePeers.slice(1)}"`
 	const SEEDS = seedID ? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}` : ''
 	const gRPC = `${name}-${type}-grpc.itrocket.net:${peerPort ? peerPort.slice(0, 2) : ''}090`
