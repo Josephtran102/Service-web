@@ -350,11 +350,6 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									/>
 									<span>Check your balance:</span>
 									<CodeSnippet theme={theme} code={`namada client balance --owner $WALLET`} />
-									<span>Get address:</span>
-									<CodeSnippet
-										theme={theme}
-										code={`WALLET_ADDRESS=$(namada wallet address find --alias $ALIAS | awk '{print $NF}')`}
-									/>
 									<span>Init validator:</span>
 									<CodeSnippet
 										theme={theme}
