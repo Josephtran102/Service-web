@@ -737,7 +737,7 @@
       "minGasPrice": "0.0",
       "newInstallBin": "",
       "path": ".local/share/namada/public-testnet-15.0dacadb8d663/cometbft",
-      "peerID": "4c3c2f8da072b419123ab3ecf625a567d0017f2d",
+      "peerID": "7fbacf229dcc1c0710f1d9ba78f4d5be18f94c18",
       "peerPort": "33656",
       "port": 33,
       "prHome": "/home/namada",
