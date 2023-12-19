@@ -82,7 +82,7 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 				/>
 				<h3 id='genesis'>genesis</h3>
 				<CodeSnippet
-					code={`wget -O $HOME/${path}/config/genesis.json https://testnet-files.itrocket.net/namada/addrbook.jsongenesis.json`}
+					code={`wget -O $HOME/${path}/config/genesis.json https://testnet-files.itrocket.net/namada/genesis.json`}
 				/>
 
 				<h2 id='snap'>Snapshot </h2>
