@@ -362,7 +362,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
  --signing-keys $WALLET \\
  --commission-rate 0.1 \\
  --max-commission-rate-change 0.1 \\
- --email ${EMAIL}`}
+ --email $EMAIL`}
 									/>
 									<span>Stake your funds:</span>
 									<CodeSnippet
