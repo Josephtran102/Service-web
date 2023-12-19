@@ -192,8 +192,8 @@ const CheatSheet = props => {
 							code={`namadac find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address) --node localhost:26657`}
 						/>
 						<CodeBlock
-							desc='Check slashes:'
-							code={`namada client slashes`}
+							desc='Check epoch:'
+							code={`namada client epoch`}
 						/>
 					</div>
 					<h2 id='sync-and-consensus'>Sync and Consensus</h2>
