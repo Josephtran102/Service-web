@@ -349,7 +349,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 										code={`curl http://127.0.0.1:26657/status | jq .result.sync_info.catching_up`}
 									/>
 									<span>Check your balance:</span>
-									<CodeSnippet theme={theme} code={`namada client balance --owner $ALIAS`} />
+									<CodeSnippet theme={theme} code={`namada client balance --owner $WALLET`} />
 									<span>Get address:</span>
 									<CodeSnippet
 										theme={theme}
