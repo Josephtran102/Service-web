@@ -356,15 +356,21 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									<span>Init validator:</span>
 									<CodeSnippet
 										theme={theme}
-										code={`namadaw address add --alias $ALIAS --address $WALLET_ADDRESS`}
+										code={`namada client init-validator \\
+ --alias $ALIAS \\
+ --account-keys $WALLET \\
+ --signing-keys $WALLET \\
+ --commission-rate 0.1 \\
+ --max-commission-rate-change 0.1 \\
+ --email ${EMAIL}`}
 									/>
 									<span>Stake your funds:</span>
 									<CodeSnippet
 										theme={theme}
-										code={`namadac bond \\
-  --source $ALIAS \\
-  --validator $ALIAS \\
-  --amount 1500`}
+										code={`namada client bond \\
+ --source $WALLET \
+ --validator $ALIAS \
+ --amount 1000`}
 									/>
 									<span>Waiting more than 2 epoch and check your status:</span>
 									<CodeSnippet theme={theme} code={`namada client bonds --owner $ALIAS`} />
