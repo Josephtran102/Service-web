@@ -11,10 +11,12 @@ import AnimatedSection from '@components/AnimatedSection'
 import useNetInfo from 'hooks/useNetInfo'
 import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
 import CodeBlock from '@components/UI/CodeBlock'
+import { split } from 'postcss/lib/list'
 
 const API = ({ name, type }) => {
 	const project = projects[type][name]
 	const { livePeers, livePeersCounter } = useNetInfo(name, type)
+	const tcpLivePeers = livePeers.split(',').map(s => (s ? 'tcp://' + s : ''))
 	const explorer = useRef()
 	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
 	const { bin, path, peerID, seedID, seedPort, peerPort, unsafeReset, evmRPC, stateSync } = project
@@ -22,8 +24,8 @@ const API = ({ name, type }) => {
 	const wasm = useRef('false')
 	const { theme } = useContext(Context)
 
-	const PEERS = peerID ? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${livePeers}` : ''
-	const LIVE_PEERS = peerID ? `"${PEERS}"` : `"${livePeers.slice(1)}"`
+	const PEERS = peerID ? `${peerID}@${name}-${type}-peer.itrocket.net:${peerPort}${tcpLivePeers}` : ''
+	const LIVE_PEERS = peerID ? `"${PEERS}"` : `"${tcpLivePeers.slice(1)}"`
 	const SEEDS = seedID ? `${seedID}@${name}-${type}-seed.itrocket.net:${seedPort}` : ''
 	const gRPC = `${name}-${type}-grpc.itrocket.net:${peerPort ? peerPort.slice(0, 2) : ''}090`
 

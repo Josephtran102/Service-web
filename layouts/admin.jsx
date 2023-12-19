@@ -12,7 +12,7 @@ const AdminLayout = ({ children }) => {
 		<>
 			<div className='flex flex-col gap-3'>
 				<header className='flex items-center py-1 md:py-3 px-2 lg:px-8 gap-3 lg:gap-16 bg-white dark:bg-zinc-800'>
-					<Link href='/'>
+			~		<Link href='/'>
 						<Image
 							src='/logo.svg'
 							alt='logo'
