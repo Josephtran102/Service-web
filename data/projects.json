@@ -833,7 +833,7 @@
       "path": ".pryzm",
       "peerID": "",
       "peerPort": "27656",
-      "port": 39,
+      "port": "41",
       "prHome": "/home/pryzm",
       "stateSync": "true",
       "seedID": "",
