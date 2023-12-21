@@ -544,7 +544,7 @@
       "port": 39,
       "prHome": "/home/dora",
       "stateSync": "true",
-      "seedID": "",
+      "seedID": "dcf2d8132162293de52ca474eee308a03689ef75",
       "seedPort": "39656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
