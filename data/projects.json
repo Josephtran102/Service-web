@@ -769,7 +769,7 @@
       "peerPort": "33656",
       "port": 33,
       "prHome": "/home/namada",
-      "seedID": "9fe77aadae28a19e51c51bf43f2d6fab862e4d5f",
+      "seedID": "fffcb0ce9211be7650b6b74ce4e005b2e55cc3a5",
       "seedPort": "33656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
