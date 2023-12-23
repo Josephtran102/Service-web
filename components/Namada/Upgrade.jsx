@@ -45,7 +45,7 @@ const Upgrade = ({ name, type }) => {
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
 				<CodeBlock
-					desc='Upgrade to v0.28.1:'
+					desc='Upgrade to v0.28.1-10-g2377d67:'
 					code={`cd $HOME
 rm -rf namada 
 git clone https://github.com/anoma/namada 
