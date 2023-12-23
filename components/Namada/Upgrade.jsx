@@ -50,10 +50,10 @@ const Upgrade = ({ name, type }) => {
 rm -rf namada 
 git clone https://github.com/anoma/namada 
 cd namada
-wget https://github.com/anoma/namada/releases/download/v0.28.1/namada-v0.28.1-Linux-x86_64.tar.gz
-tar -xvf namada-v0.28.1-Linux-x86_64.tar.gz
-rm namada-v0.28.1-Linux-x86_64.tar.gz
-cd namada-v0.28.1-Linux-x86_64
+wget https://cdn.discordapp.com/attachments/982270280619687946/1187794236008046754/binaries-2377d672786ffe06ba51c98cfe00e0a4b216c856.zip
+unzip $HOME/namada/binaries-2377d672786ffe06ba51c98cfe00e0a4b216c856.zip
+rm binaries-2377d672786ffe06ba51c98cfe00e0a4b216c856.zip
+chmod +x $HOME/namada/namad*
 sudo mv namada namadan namadac namadaw /usr/local/bin/
 sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 				></CodeBlock>
