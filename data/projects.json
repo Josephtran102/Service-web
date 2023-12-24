@@ -895,7 +895,7 @@
       "seedPort": "37656",
       "installBin": "cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit fetch\ngit checkout v1.4.5-rc1\nmake install",
       "updHeight": "0",
-      "newInstallBin": "cd $HOME\nwget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.4.5-rc1/quicksilverd-v1.4.5-rc1-amd64\nchmod +x quicksilverd\nmv $HOME/quicksilverd $(which quicksilverd)\nquicksilverd config chain-id rhye-2\nwget -O ~/.quicksilverd/config/genesis.json https://raw.githubusercontent.com/obajay/nodes-Guides/main/Projects/Quicksilver/Tetstnet/genesis.json\npeers=\"e6bf55bc9f08958b7518bea455423375db78d1ef@65.108.13.176:26656,8e14e58b054248a04be96e4a40d6359e93b636ac@65.108.65.94:26656,5a3c424c19d9ab694190a7805a2b1a146460d752@65.108.2.27:26656\"\nsed -i.bak -e \"s/^persistent_peers *=.*/persistent_peers = \\\"$peers\\\"/\" $HOME/.quicksilverd/config/config.toml\nsed -i.bak -E \"s|^(enable[[:space:]]+=[[:space:]]+).*$|\\1false|\" ~/.quicksilverd/config/config.toml\nquicksilverd tendermint unsafe-reset-all --home $HOME/.quicksilverd",
+      "newInstallBin": "",
       "goVersion": "1.20.1",
       "gas": "",
       "unsafeReset": "tendermint unsafe-reset-all",
