@@ -843,8 +843,9 @@
       "updHeight": "1103200",
       "variable": "OJO",
       "newInstallBin": "cd $HOME\nrm -rf ojo\ngit clone https://github.com/ojo-network/ojo.git\ncd ojo\ngit checkout  v0.3.0-rc4\nmake build\nsudo mv $HOME/ojo/build/ojod $(which ojod)",
+      "desc": "Give your chain access to realtime, decentralized oracles, and stop worrying about your data.",
       "offValDoc": "https://docs.ojo.network/sauron-testnet/joining-as-a-validator",
-      "desc": "Give your chain access to realtime, decentralized oracles, and stop worrying about your data."
+      "delegate": "https://testnet.itrocket.net/ojo/staking/ojovaloper1l0zkd0c52expz54khpkfe0pxl6u8jn0z7cvx80"
     },
     "opside": {
       "ecosystem": "false",
