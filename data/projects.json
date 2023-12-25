@@ -531,7 +531,6 @@
       "bin": "dorad",
       "binHome": "/home/dora/go/bin/dorad",
       "chainID": "vota-vk",
-      "delegate": "https://testnet.itrocket.net/dora/staking",
       "denom": "peaka",
       "ecosystem": "cosmos",
       "gas": "--fees 20000000000000000peaka",
@@ -546,14 +545,15 @@
       "peerPort": "43656",
       "port": "43",
       "prHome": "/home/dora",
-      "stateSync": "true",
       "seedID": "dcf2d8132162293de52ca474eee308a03689ef75",
       "seedPort": "39656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "DORA",
-      "website": ""
+      "website": "",
+      "delegate": "https://testnet.itrocket.net/dora/staking/doravaloper16yazemxnx6kk9gcv9wpujk6e27v78ttsjraq0z",
+      "stateSync": "true"
     },
     "elys": {
       "ecosystem": "cosmos",
