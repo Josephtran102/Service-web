@@ -612,7 +612,8 @@
       "snapMaxSize": "3",
       "updHeight": "2790000",
       "variable": "EMPOWER",
-      "stateSync": "true"
+      "stateSync": "true",
+      "delegate": "https://testnet.itrocket.net/empower/staking/empowervaloper1wz9qcvpyl852slxnzfkw7k3chnpstd009sxynj"
     },
     "entangle": {
       "bin": "entangled",
