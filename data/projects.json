@@ -419,7 +419,7 @@
       "updHeight": "",
       "variable": "ARKEO",
       "website": "https://arkeo.network/",
-      "delegate": "https://testnet.itrocket.net/arkeo/staking"
+      "delegate": "https://testnet.itrocket.net/andromeda/staking/andrvaloper1j9nskr6gfk0duka7xvk585qlcxqq2kej4dufph"
     },
     "cardchain": {
       "bin": "Cardchaind",
