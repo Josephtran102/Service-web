@@ -1038,7 +1038,7 @@
     },
     "zetachain": {
       "chainID": "athens_7001-1",
-      "delegate": "https://testnet.itrocket.net/zetachain/staking/",
+      "delegate": "https://testnet.itrocket.net/zetachain/staking/zetavaloper17d6ttmqffr5pwt9fd7uuj8px27quv4nljf3s8j",
       "imgUrl": "zetachain.jpg",
       "website": "https://www.zetachain.com/",
       "offValDoc": "https://github.com/zeta-chain/network-athens3/tree/main",
