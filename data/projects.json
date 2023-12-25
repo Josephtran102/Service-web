@@ -888,7 +888,7 @@
       "website": "https://quicksilver.zone/",
       "offValDoc": "https://github.com/ingenuity-build/testnets/tree/main/innuendo",
       "chainID": "rhye-2",
-      "delegate": "https://wallet.keplr.app/chains/quicksilver?modal=validator&validator_address=quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x&chain=quicksilver-2",
+      "delegate": "https://testnet.itrocket.net/quicksilver/staking/quickvaloper14tt8yda92r2j0umtqyrzlyywgg3y3ndtmtgh59",
       "desc": "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.",
       "hardware": "4 Cores, 16GB RAM, 500GB of storage (NVME)",
       "prHome": "/home/quick",
