@@ -515,17 +515,18 @@
       "delegate": "https://testnet.itrocket.net/celestia/staking/celestiavaloper1n94ezezjz99knnpla7a6p8xftnlr23zacsaxht"
     },
     "chainflip": {
-      "explorer": "https://blocks-perseverance.chainflip.io/",
-      "website": "https://chainflip.io/",
-      "offValDoc": "https://docs.chainflip.io/perseverance-validator-documentation/",
-      "imgUrl": "chainflip.png",
       "ecosystem": "false",
-      "fav": "true",
-      "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5",
-      "unsafeReset": "tendermint unsafe-reset-all",
+      "goVersion": "1.19.3",
+      "imgUrl": "chainflip.png",
       "minGasPrice": "0.0",
-      "desc": "test"
+      "unsafeReset": "tendermint unsafe-reset-all",
+      "website": "https://chainflip.io/",
+      "explorer": "https://blocks-perseverance.chainflip.io/",
+      "offValDoc": "https://docs.chainflip.io/perseverance-validator-documentation/",
+      "fav": "true",
+      "desc": "test",
+      "delegate": "https://blocks-perseverance.chainflip.io/validators/cFMeHpPHwvKksraBYuFvgKyUhqCnuf7s29SomPwL8J5uZw5QX"
     },
     "dora": {
       "bin": "dorad",
