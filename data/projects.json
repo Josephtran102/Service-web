@@ -583,7 +583,8 @@
       "snapMaxSize": "10",
       "updHeight": "4640500",
       "variable": "ELYS",
-      "newExecStart": "$(which elysd) start --minimum-gas-prices=\"0.0018ibc/2180E84E20F5679FCC760D8C165B60F42065DEF7F46A72B447CFF1B7DC6C0A65,0.00025ibc/E2D2F6ADCC68AA3384B2F5DFACCA437923D137C14E86FB8A10207CF3BED0C8D4,0.00025uelys\" --home $HOME/.elys"
+      "newExecStart": "$(which elysd) start --minimum-gas-prices=\"0.0018ibc/2180E84E20F5679FCC760D8C165B60F42065DEF7F46A72B447CFF1B7DC6C0A65,0.00025ibc/E2D2F6ADCC68AA3384B2F5DFACCA437923D137C14E86FB8A10207CF3BED0C8D4,0.00025uelys\" --home $HOME/.elys",
+      "delegate": "https://testnet.itrocket.net/elys/staking/elysvaloper1udyzuu9asrr4vhrut8yge887kakxvs7clvqs55"
     },
     "empower": {
       "ecosystem": "cosmos",
