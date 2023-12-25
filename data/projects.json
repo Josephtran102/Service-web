@@ -448,7 +448,8 @@
       "website": "https://crowdcontrol.network",
       "cardchain": "true",
       "desc": "On Crowd Control you can create and design your own trading cards. Your Cards become a part of the game for everyone.",
-      "offValDoc": "https://github.com/DecentralCardGame/Testnet"
+      "offValDoc": "https://github.com/DecentralCardGame/Testnet",
+      "delegate": "https://testnet.itrocket.net/cardchain/staking/ccvaloper1klsyj8ptejt4ufy86drxd8vm3vsas8hhjwhf9r"
     },
     "cascadia": {
       "bin": "cascadiad",
