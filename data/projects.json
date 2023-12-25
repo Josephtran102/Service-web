@@ -508,10 +508,11 @@
       "updHeight": "0",
       "variable": "CELESTIA",
       "website": "https://celestia.org/",
-      "desc": "Celestia is the first modular blockchain network. It is a modular consensus and data network, built to enable anyone to easily deploy their own blockchain with minimal overhead.",
       "offValDoc": "https://docs.celestia.org/nodes/overview/",
+      "newInit": "false",
+      "desc": "Celestia is the first modular blockchain network. It is a modular consensus and data network, built to enable anyone to easily deploy their own blockchain with minimal overhead.",
       "fav": "true",
-      "newInit": "false"
+      "delegate": "https://testnet.itrocket.net/celestia/staking/celestiavaloper1n94ezezjz99knnpla7a6p8xftnlr23zacsaxht"
     },
     "chainflip": {
       "explorer": "https://blocks-perseverance.chainflip.io/",
