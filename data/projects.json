@@ -146,7 +146,7 @@
       "updHeight": "",
       "variable": "HUMANS",
       "website": "https://humans.ai/",
-      "evmRPC": "https://humans-mainnet-evm.itrocket.net:443",
+      "evmRPC": "https://humans-mainnet-evm.itrocket.net",
       "offValDoc": "https://github.com/humansdotai/mainnets/tree/main/mainnet/1"
     },
     "nois": {
