@@ -45,12 +45,12 @@ const CosmosAPI = ({ name, type }) => {
 				<div className='flex flex-col flex-wrap gap-1 mb-1'>
 					<div className='flex flex-wrap gap-1 items-center'>
 						<span>RPC: </span>
-						<a href={`https://${name}-${type}-rpc.itrocket.net:443`} target='_blank' rel='noopener referrer'>
-							{`https://${name}-${type}-rpc.itrocket.net:443`}
+						<a href={`https://${name}-${type}-rpc.itrocket.net`} target='_blank' rel='noopener referrer'>
+							{`https://${name}-${type}-rpc.itrocket.net`}
 						</a>
 						<Paragraph
 							copyable={{
-								text: `https://${name}-${type}-rpc.itrocket.net:443`,
+								text: `https://${name}-${type}-rpc.itrocket.net`,
 								tooltips: false
 							}}
 						/>
@@ -62,15 +62,15 @@ const CosmosAPI = ({ name, type }) => {
 							<div className='flex flex-wrap gap-1 items-center'>
 								API:
 								<a
-									href={`https://${name}-${type}-api.itrocket.net:443`}
+									href={`https://${name}-${type}-api.itrocket.net`}
 									target='_blank'
 									rel='noopener referrer'
 								>
-									{`https://${name}-${type}-api.itrocket.net:443`}
+									{`https://${name}-${type}-api.itrocket.net`}
 								</a>
 								<Paragraph
 									copyable={{
-										text: `https://${name}-${type}-api.itrocket.net:443`,
+										text: `https://${name}-${type}-api.itrocket.net`,
 										tooltips: false
 									}}
 								/>
