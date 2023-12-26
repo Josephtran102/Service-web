@@ -1034,7 +1034,8 @@
       "offValDoc": "https://docs.uptick.network/testnet/",
       "fav": "true",
       "evmRPC": "https://uptick-testnet-evm.itrocket.net:443",
-      "delegate": "https://testnet.itrocket.net/uptick/staking/uptickvaloper1hdsu709g60g475ufnr0yklgtecs8xj0vm8rqh7"
+      "delegate": "https://testnet.itrocket.net/uptick/staking/uptickvaloper1hdsu709g60g475ufnr0yklgtecs8xj0vm8rqh7",
+      "newExecStart": "$(which uptickd) start --home $HOME/.uptickd --chain-id origin_1170-1"
     },
     "zetachain": {
       "chainID": "athens_7001-1",
