@@ -12,7 +12,7 @@ const AdminLayout = ({ children }) => {
 		<>
 			<div className='flex flex-col gap-3'>
 				<header className='flex items-center py-1 md:py-3 px-2 lg:px-8 gap-3 lg:gap-16 bg-white dark:bg-zinc-800'>
-			~		<Link href='/'>
+					<Link href='/'>
 						<Image
 							src='/logo.svg'
 							alt='logo'
@@ -46,7 +46,8 @@ const AdminLayout = ({ children }) => {
 									<h2 className='font-semibold py-2 lg:text-lg '>Mainnet:</h2>
 									<div>
 										{Object.keys(mainnetData).map(item => {
-											const name = mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
+											const name =
+												mainnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
 											const dashboardURL = '/admin/mainnet/' + name.toLowerCase()
 
 											return (
@@ -73,7 +74,8 @@ const AdminLayout = ({ children }) => {
 									<h2 className='font-semibold py-2 lg:text-lg'>Testnet:</h2>
 									<div>
 										{Object.keys(testnetData).map(item => {
-											const name = testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
+											const name =
+												testnetData[item].name || item.charAt(0).toUpperCase() + item.slice(1)
 											const dashboardURL = '/admin/testnet/' + name.toLowerCase()
 
 											return (
