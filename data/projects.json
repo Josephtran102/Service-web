@@ -1018,7 +1018,7 @@
       "chainID": "origin_1170-1",
       "denom": "auoc",
       "hardware": "4 Cores, 4GB RAM, 100GB of storage (NVME)",
-      "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.15-origin\nmake install",
+      "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.16-origin\nmake install",
       "path": ".uptickd",
       "peerID": "b232825b5b50857c13d2e89a2988eee462ed5462",
       "peerPort": "10656",
