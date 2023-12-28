@@ -876,9 +876,9 @@
       "seedID": "fbfd48af73cd1f6de7f9102a0086ac63f46fb911",
       "seedPort": "41656",
       "snapMaxSize": "10",
-      "updHeight": "",
+      "updHeight": "316000",
       "variable": "PRYZM",
-      "newInstallBin": "",
+      "newInstallBin": "cd $HOME\nwget https://storage.googleapis.com/pryzm-resources/pryzmd-0.9.0-linux-amd64.tar.gz\ntar -xzvf pryzmd-0.10.0-linux-amd64.tar.gz\nsudo mv pryzmd $HOME/go/bin",
       "delegate": "https://testnet.itrocket.net/pryzm/staking/pryzmvaloper1g5l7ha0rng0s726y75l8mwqlqcgsg7nqn5ml5j",
       "stateSync": "true"
     },
