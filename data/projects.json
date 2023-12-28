@@ -878,7 +878,7 @@
       "snapMaxSize": "10",
       "updHeight": "316000",
       "variable": "PRYZM",
-      "newInstallBin": "cd $HOME\nwget https://storage.googleapis.com/pryzm-resources/pryzmd-0.10.0-linux-amd64.tar.gz\ntar -xzvf pryzmd-0.10.0-linux-amd64.tar.gz\nsudo mv pryzmd $(which pryzmd)",
+      "newInstallBin": "cd $HOME\nwget -O pryzmd https://storage.googleapis.com/pryzm-zone/core/0.10.0/pryzmd-0.10.0-linux-amd64\nchmod +x $HOME/pryzmd\nsudo mv pryzmd $(which pryzmd)",
       "delegate": "https://testnet.itrocket.net/pryzm/staking/pryzmvaloper1g5l7ha0rng0s726y75l8mwqlqcgsg7nqn5ml5j",
       "stateSync": "true"
     },
