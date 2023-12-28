@@ -867,7 +867,7 @@
       "chainID": "indigo-1",
       "denom": "upryzm",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
-      "installBin": "cd $HOME\nwget https://storage.googleapis.com/pryzm-resources/pryzmd-0.9.0-linux-amd64.tar.gz\ntar -xzvf pryzmd-0.9.0-linux-amd64.tar.gz\nmv pryzmd $HOME/go/bin",
+      "installBin": "cd $HOME\nwget https://storage.googleapis.com/pryzm-zone/core/0.10.0/pryzmd-0.10.0-linux-amd64.tar.gz\ntar -xzvf $HOME/pryzmd-0.10.0-linux-amd64.tar.gz\nmv pryzmd $HOME/go/bin",
       "path": ".pryzm",
       "peerID": "713307ce72306d9e86b436fc69a03a0ab96b678f",
       "peerPort": "41656",
