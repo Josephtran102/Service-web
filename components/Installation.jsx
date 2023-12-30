@@ -172,7 +172,6 @@ sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -
 						theme={theme}
 						code={`# install go, if needed
 cd $HOME
-! [ -x "$(command -v go)" ] && {
 VER="${goVersion}"
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
 sudo rm -rf /usr/local/go
@@ -181,7 +180,6 @@ rm "go$VER.linux-amd64.tar.gz"
 [ ! -f ~/.bash_profile ] && touch ~/.bash_profile
 echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
 source $HOME/.bash_profile
-}
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 
 # set vars
@@ -227,7 +225,7 @@ s%^external_address = \\"\\"%external_address = \\"$(wget -qO- eth0.me):\${${var
 s%:26660%:\${${variable}_PORT}660%g" $HOME/${path}/config/config.toml
 
 # config pruning
-sed -i -e "s/^pruning *=.*/pruning = \\"nothing\\"/" $HOME/${path}/config/app.toml
+sed -i -e "s/^pruning *=.*/pruning = \\"custom\\"/" $HOME/${path}/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \\"100\\"/" $HOME/${path}/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \\"50\\"/" $HOME/${path}/config/app.toml
 
