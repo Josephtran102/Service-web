@@ -132,7 +132,7 @@
       "hardware": "6 Cores, 32GB RAM, 500GB of storage (NVME)",
       "imgUrl": "humans.jpg",
       "installBin": "cd $HOME\nrm -rf humans\ngit clone https://github.com/humansdotai/humans\ncd humans && git checkout tags/v1.0.0\nmake install",
-      "minGasPrice": "0.0aheart",
+      "minGasPrice": "1800000000aheart",
       "newInstallBin": "",
       "path": ".humansd",
       "peerID": "5e51671241340f1d1e1409a9e0cc4474820bf782",
