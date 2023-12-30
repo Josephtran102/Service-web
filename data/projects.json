@@ -64,9 +64,10 @@
       "goVersion": "1.21.3",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
       "imgUrl": "empower.png",
-      "installBin": "cd $HOME\nwget https://github.com/EmpowerPlastic/empowerchain/releases/download/v2.0.0/empowerd-v2.0.0-linux-amd64.zip\nunzip empowerd-v2.0.0-linux-amd64.zip\nrm empowerd-v2.0.0-linux-amd64.zip\nchmod +x empowerd\nmv $HOME/empowerd $(which empowerd)",
+      "installBin": "cd $HOME\nwget https://github.com/EmpowerPlastic/empowerchain/releases/download/v2.0.0/empowerd-v2.0.0-linux-amd64.zip\nunzip empowerd-v2.0.0-linux-amd64.zip\nrm empowerd-v2.0.0-linux-amd64.zip\nchmod +x empowerd\nmv $HOME/empowerd $HOME/go/bin",
       "minGasPrice": "0.025umpwr",
       "newInstallBin": "cd $HOME\nwget https://github.com/EmpowerPlastic/empowerchain/releases/download/v2.0.0/empowerd-v2.0.0-linux-amd64.zip\nunzip empowerd-v2.0.0-linux-amd64.zip\nrm $HOME/empowerd-v2.0.0-linux-amd64.zip\nchmod +x empowerd\nsudo mv $HOME/empowerd $(which empowerd)",
+      "path": ".empowerchain",
       "peerID": "d363c61e28adabc85a25139682900df8054f059e",
       "peerPort": "14656",
       "port": "14",
@@ -78,8 +79,7 @@
       "updHeight": "2697000",
       "variable": "EMPOWER",
       "website": "https://docs.empowerchain.io/",
-      "offValDoc": "https://docs.empowerchain.io/validators/intro",
-      "path": ".empowerchain"
+      "offValDoc": "https://docs.empowerchain.io/validators/intro"
     },
     "forta": {
       "explorer": "https://explorer.forta.network/",
