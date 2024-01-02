@@ -725,7 +725,7 @@
       "snapMaxSize": "10",
       "updHeight": "711251",
       "variable": "LAVA",
-      "newInstallBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.32.0/lavad-v0.32.0-linux-amd64\nchmod +x $HOME/lavad\nwget -O lavap https://github.com/lavanet/lava/releases/download/v0.32.1/lavap-v0.32.1-linux-amd64\nchmod +x lavap\nsudo mv $HOME/lavad $(which lavad)",
+      "newInstallBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.32.0/lavad-v0.32.0-linux-amd64\nchmod +x $HOME/lavad\nwget -O lavap https://github.com/lavanet/lava/releases/download/v0.32.6/lavap-v0.32.6-linux-amd64\nchmod +x lavap\nsudo mv $HOME/lavad $(which lavad)",
       "fav": "true",
       "desc": "Lava pairs Providers with Applications for scalable, private and uncensored access to Web3.",
       "offValDoc": "https://docs.lavanet.xyz/testnet",
