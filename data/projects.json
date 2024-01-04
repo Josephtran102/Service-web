@@ -998,7 +998,7 @@
       "seedPort": "10656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "3251501",
+      "updHeight": "0",
       "variable": "UPTICK",
       "website": "https://uptick.network/",
       "desc": "The Business Grade Multi-Chain NFT Infrastructure for Web 3.0",
