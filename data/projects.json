@@ -1006,7 +1006,7 @@
       "delegate": "https://testnet.itrocket.net/uptick/staking/uptickvaloper1hdsu709g60g475ufnr0yklgtecs8xj0vm8rqh7",
       "fav": "true",
       "evmRPC": "https://uptick-testnet-evm.itrocket.net:443",
-      "newExecStart": "$(which uptickd) start --home $HOME/.uptickd --chain-id origin_1170-1"
+      "newExecStart": "$(which uptickd) start --home $HOME/.uptickd --chain-id origin_1170-2"
     },
     "zetachain": {
       "chainID": "athens_7001-1",
