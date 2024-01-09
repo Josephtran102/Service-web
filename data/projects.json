@@ -219,7 +219,8 @@
       "variable": "QUICKSILVER",
       "website": "https://quicksilver.zone/",
       "offValDoc": "https://github.com/ingenuity-build/mainnet",
-      "desc": "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem."
+      "desc": "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.",
+      "explorer": "https://quicksilver.explorers.guru/"
     },
     "realio": {
       "bin": "realio-networkd",
