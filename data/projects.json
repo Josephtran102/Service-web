@@ -944,6 +944,7 @@
       "website": "https://taiko.xyz/",
       "offValDoc": "https://taiko.xyz/docs/guides/run-a-node",
       "imgUrl": "taiko.png",
+      "fav": "true",
       "ecosystem": "false",
       "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5",
