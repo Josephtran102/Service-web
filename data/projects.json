@@ -990,7 +990,7 @@
       "imgUrl": "uptick.jpg",
       "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.11\nmake install",
       "minGasPrice": "10000000000auoc",
-      "newInstallBin": "cd $HOME\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.16\nmake build\nsudo mv $HOME/uptick/build/uptickd $(which uptickd)",
+      "newInstallBin": "cd $HOME\nrm -rf $HOME/uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.16\nmake build\nsudo mv $HOME/uptick/build/uptickd $(which uptickd)",
       "path": ".uptickd",
       "peerID": "b232825b5b50857c13d2e89a2988eee462ed5462",
       "peerPort": "10656",
