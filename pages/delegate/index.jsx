@@ -71,13 +71,13 @@ const About = () => {
 						</p>
 						<br />
 						<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>
-							Mainnets
+							Mainnet
 						</h2>
 						<Table dataSource={mainnetData} columns={columns} pagination={false} bordered />
 
 						<br />
 						<h2 style={{ marginTop: '0', paddingTop: '5px' }} id='testnets'>
-							Testnets
+							Testnet
 						</h2>
 						<Table dataSource={testnetData} columns={columns} pagination={false} bordered />
 					</div>
