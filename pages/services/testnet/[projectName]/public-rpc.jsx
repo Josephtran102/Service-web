@@ -1,4 +1,3 @@
-// [projectName].js
 import Head from 'next/head'
 import axios from 'axios'
 
