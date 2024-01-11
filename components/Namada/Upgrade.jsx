@@ -45,15 +45,15 @@ const Upgrade = ({ name, type }) => {
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
 			>
 				<CodeBlock
-					desc='Upgrade to v0.28.1-10-g2377d67:'
+					desc='Upgrade to v0.28.2'
 					code={`cd $HOME
 rm -rf namada 
 git clone https://github.com/anoma/namada 
 cd namada
-wget https://cdn.discordapp.com/attachments/982270280619687946/1187794236008046754/binaries-2377d672786ffe06ba51c98cfe00e0a4b216c856.zip
-unzip $HOME/namada/binaries-2377d672786ffe06ba51c98cfe00e0a4b216c856.zip
-rm binaries-2377d672786ffe06ba51c98cfe00e0a4b216c856.zip
-chmod +x $HOME/namada/namad*
+wget https://github.com/anoma/namada/releases/download/v0.28.2/namada-v0.28.2-Linux-x86_64.tar.gz
+tar -xvf namada-v0.28.2-Linux-x86_64.tar.gz
+rm namada-v0.28.2-Linux-x86_64.tar.gz
+cd namada-v0.28.2-Linux-x86_64
 sudo mv namada namadan namadac namadaw /usr/local/bin/
 sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 				></CodeBlock>
