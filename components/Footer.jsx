@@ -79,7 +79,7 @@ const Footer = props => {
 						</a>
 					</div>
 					<div className='flex items-center justify-center'>
-						<Link href='/delegate' className='text-sm opacity-75 hover:opacity-90'>
+						<Link href='/delegate' className='text-xs opacity-60 hover:opacity-85'>
 							ITRocket validator links
 						</Link>
 					</div>
