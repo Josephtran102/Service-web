@@ -51,30 +51,38 @@ const Footer = props => {
 					</span>
 					<span className='text-slate-600'>© ITRocket Team. All rights reserved</span>
 				</div>
-				<div className='socials'>
-					<a href='https://linktr.ee/itrocket_team' target='_blank' rel='noopener noreferrer'>
-						<Image src='/icons/tg.svg' alt='telegram' width={40} height={40} />
-					</a>
 
-					<a href='https://twitter.com/itrocket_team' target='_blank' rel='noopener noreferrer'>
-						<Image src='/icons/twitter.svg' alt='twitter' width={40} height={40} />
-					</a>
-					<a href='https://github.com/itrocket-am' target='_blank' rel='noopener noreferrer'>
-						<Image
-							src='/icons/github.svg'
-							alt='github'
-							width={40}
-							height={40}
-							style={{ display: theme === 'light' ? 'block' : 'none' }}
-						/>
-						<Image
-							src='/icons/github-white.svg'
-							alt='github'
-							width={40}
-							height={40}
-							style={{ display: theme === 'dark' ? 'block' : 'none' }}
-						/>
-					</a>
+				<div className='flex flex-col gap-2'>
+					<div className='socials'>
+						<a href='https://linktr.ee/itrocket_team' target='_blank' rel='noopener noreferrer'>
+							<Image src='/icons/tg.svg' alt='telegram' width={35} height={35} />
+						</a>
+
+						<a href='https://twitter.com/itrocket_team' target='_blank' rel='noopener noreferrer'>
+							<Image src='/icons/twitter.svg' alt='twitter' width={35} height={35} />
+						</a>
+						<a href='https://github.com/itrocket-am' target='_blank' rel='noopener noreferrer'>
+							<Image
+								src='/icons/github.svg'
+								alt='github'
+								width={35}
+								height={35}
+								style={{ display: theme === 'light' ? 'block' : 'none' }}
+							/>
+							<Image
+								src='/icons/github-white.svg'
+								alt='github'
+								width={35}
+								height={35}
+								style={{ display: theme === 'dark' ? 'block' : 'none' }}
+							/>
+						</a>
+					</div>
+					<div className='flex items-center justify-center'>
+						<Link href='/delegate' className='text-sm opacity-75 hover:opacity-90'>
+							ITRocket validator links
+						</Link>
+					</div>
 				</div>
 			</div>
 		</footer>

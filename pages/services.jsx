@@ -32,7 +32,7 @@ const services = () => {
 						<p className={styles.desc}>Pick a project from the list below to view guides and commands.</p>
 						<br />
 						<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>
-							Mainnets
+							Mainnet
 						</h2>
 						<div className={styles.mainnetColumn}>
 							{Object.keys(mainnetData).map(item => {
@@ -54,7 +54,7 @@ const services = () => {
 						</div>
 						<br />
 						<h2 style={{ marginTop: '0', paddingTop: '5px' }} id='testnets'>
-							Testnets
+							Testnet
 						</h2>
 						<div className={styles.testnetColumn}>
 							{Object.keys(testnetData).map(item => {
@@ -74,6 +74,13 @@ const services = () => {
 								)
 							})}
 						</div>
+						<h2 id='delegate' className='mt-20'>
+							Validator links
+						</h2>
+						<p>
+							<span>ITRocket validator links - </span>
+							<Link href='/delegate'>https://itrocket.net/delegate</Link>
+						</p>
 					</div>
 				</div>
 			</div>
