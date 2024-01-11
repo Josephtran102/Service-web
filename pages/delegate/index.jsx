@@ -34,7 +34,8 @@ const About = () => {
 		{
 			title: 'Name',
 			dataIndex: 'name',
-			key: 'name'
+			key: 'name',
+			width: 100
 		},
 		{
 			title: 'Delegate Link',
