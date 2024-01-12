@@ -19,7 +19,7 @@ const Card = ({ data, aprValues }) => {
 	}
 
 	const getDelegateLink = item => {
-		return data[item].delegate || ''
+		return data[item].delegate || 'Not supported'
 	}
 
 	return (
@@ -49,7 +49,7 @@ const Card = ({ data, aprValues }) => {
 						</div>
 					</div>
 
-					{data[item].delegate && (
+					{data[item].delegate ? (
 						<a
 							href={getDelegateLink(item)}
 							target='_blank'
@@ -59,6 +59,8 @@ const Card = ({ data, aprValues }) => {
 						>
 							Delegate funds
 						</a>
+					) : (
+						<span>{getDelegateLink(item)}</span>
 					)}
 
 					{data[item].fav === 'true' && (
