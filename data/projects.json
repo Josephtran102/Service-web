@@ -923,7 +923,8 @@
       "fav": "true",
       "website": "https://opsi.de/",
       "explorer": "https://pre-alpha.opside.info/",
-      "offValDoc": "https://docs.opside.network/validators-pos/run-a-validator/ubuntu-recommended/validator-program-v3"
+      "offValDoc": "https://docs.opside.network/validators-pos/run-a-validator/ubuntu-recommended/validator-program-v3",
+      "delegate": "https://lumoz.org/validator/0xa516ae2afb64244ba470743519c859c19e8adfe65f41f33c0c8b1684072772ab8c8d46b8c34f7d3a8d256926699831d4"
     },
     "pryzm": {
       "ecosystem": "cosmos",
