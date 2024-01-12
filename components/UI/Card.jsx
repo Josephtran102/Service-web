@@ -60,7 +60,7 @@ const Card = ({ data, aprValues }) => {
 							Delegate funds
 						</a>
 					) : (
-						<span>{getDelegateLink(item)}</span>
+						<span className='text-[13px] lg:text-[14px]'>{getDelegateLink(item)}</span>
 					)}
 
 					{data[item].fav === 'true' && (
