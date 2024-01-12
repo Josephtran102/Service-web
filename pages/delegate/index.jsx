@@ -1,51 +1,63 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Head from 'next/head'
-import { Typography, Table } from 'antd'
-import Image from 'next/image'
+import { Table } from 'antd'
 
-import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import styles from '@styles/Services.module.scss'
 import projects from 'data/projects'
-
-const { Title, Paragraph, Text, Link } = Typography
+import Image from 'next/image'
 
 const About = () => {
-	const { theme, toggleTheme } = useContext(Context)
+	const prepareData = (data, type) => {
+		return Object.keys(data).map(key => {
+			const project = data[key]
+			const name = project.name || key.charAt(0).toUpperCase() + key.slice(1)
+			const delegate = project.delegate || ''
+			const imgUrl = project.imgUrl
 
-	const prepareData = data => {
-		return Object.keys(data)
-			.filter(key => data[key].delegate)
-			.map(key => {
-				const name = data[key].name || key.charAt(0).toUpperCase() + key.slice(1)
-				return {
-					key,
-					name,
-					delegate: data[key].delegate
-				}
-			})
+			console.log(key, name, delegate, imgUrl, type)
+
+			return {
+				key,
+				name,
+				delegate,
+				imgUrl,
+				type
+			}
+		})
 	}
 
-	let mainnetData = prepareData(projects.mainnet)
-	let testnetData = prepareData(projects.testnet)
-
+	let mainnetData = prepareData(projects.mainnet, 'mainnet')
+	let testnetData = prepareData(projects.testnet, 'testnet')
 	const columns = [
 		{
 			title: 'Name',
 			dataIndex: 'name',
 			key: 'name',
-			width: 100
+			render: (text, record) => {
+				const imgUrl = `/${record.type}/${record.imgUrl}`
+				return (
+					<div className='flex items-center'>
+						<Image src={imgUrl} alt='project logo' width='25' height='25' />
+						<span className='ml-2 w-24 md:w-32'>{text}</span>
+					</div>
+				)
+			}
 		},
+
 		{
 			title: 'Delegate Link',
 			dataIndex: 'delegate',
 			key: 'delegate',
-			render: delegate => (
-				<a href={delegate} target='_blank' rel='noopener noreferrer'>
-					{delegate}
-				</a>
-			)
+			render: delegate =>
+				delegate ? (
+					<a href={delegate} target='_blank' rel='noopener noreferrer'>
+						{delegate}
+					</a>
+				) : (
+					<span>Not supported</span>
+				)
 		}
 	]
 
