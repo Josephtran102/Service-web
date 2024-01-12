@@ -436,7 +436,7 @@
       "port": 30,
       "prHome": "/home/arkhadian",
       "stateSync": "true",
-      "seedID": "30d97270c31601c38e5b89c52fca985901cd8c20",
+      "seedID": "8d0c626443a970034dc12df960ae1b1012ccd96a",
       "seedPort": "30656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
