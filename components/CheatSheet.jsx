@@ -97,6 +97,7 @@ const CheatSheet = props => {
 						<CodeBlock desc='Delete wallet' code={`${bin} keys delete $WALLET`} />
 						<CodeBlock desc='Check Balance' code={`${bin} q bank balances $(${bin} keys show $WALLET -a)`} />
 						<CodeBlock desc='Export Key (save to wallet.backup)' code={`${bin} keys export $WALLET`} />
+						<CodeBlock desc='View EVM Prived Key' code={`${bin} keys unsafe-export-eth-key $WALLET)`} />
 						<CodeBlock
 							desc='Import Key (restore from wallet.backup)'
 							code={`${bin} keys import $WALLET wallet.backup`}
