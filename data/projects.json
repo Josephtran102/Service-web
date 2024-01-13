@@ -226,7 +226,7 @@
       "goVersion": "1.21.1",
       "hardware": "4 Cores, 16GB RAM, 500GB of storage (NVME)",
       "imgUrl": "quicksilver.jpg",
-      "installBin": "cd $HOME\nrm -rf quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit checkout v1.4.5\nmake install",
+      "installBin": "cd $HOME\nrm -rf quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit checkout v1.4.6\nmake install",
       "minGasPrice": "0.0001uqck",
       "newInstallBin": "cd $HOME\nwget -O quicksilverd https://github.com/ingenuity-build/quicksilver/releases/download/v1.4.6/quicksilverd-v1.4.6-amd64\nchmod +x quicksilverd\nsudo mv $HOME/quicksilverd $(which quicksilverd)",
       "path": ".quicksilverd",
