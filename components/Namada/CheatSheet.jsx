@@ -199,6 +199,10 @@ const CheatSheet = props => {
 							desc='Check epoch:'
 							code={`namada client epoch`}
 						/>
+						<CodeBlock
+							desc='Unjail, you need to wait 2 epochs after jail:'
+							code={`namadac unjail-validator --validator <Your_validator_address> --node tcp://127.0.0.1:26657`}
+						/>
 					</div>
 					<h2 id='sync-and-consensus'>Sync and Consensus</h2>
 					<div className='flex flex-col gap-y-2'>
