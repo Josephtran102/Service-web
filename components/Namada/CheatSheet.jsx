@@ -200,7 +200,7 @@ const CheatSheet = props => {
 							code={`namada client epoch`}
 						/>
 						<CodeBlock
-							desc='Unjail, you need to wait 2 epochs after jail:'
+							desc='Unjail, you need to wait 2 epochs:'
 							code={`namadac unjail-validator --validator <Your_validator_address> --node tcp://127.0.0.1:26657`}
 						/>
 					</div>
