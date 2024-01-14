@@ -188,8 +188,12 @@ const CheatSheet = props => {
 							code={`namada client withdraw --source aliace --validator $ALIAS`}
 						/>
 						<CodeBlock
-							desc='Find Your Validator:'
+							desc='Find your validator address:'
 							code={`namadac find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address) --node localhost:26657`}
+						/>
+						<CodeBlock
+							desc='Find your validator status:'
+							code={`namada client validator-state --validator <Your_validator_address>`}
 						/>
 						<CodeBlock
 							desc='Check epoch:'
