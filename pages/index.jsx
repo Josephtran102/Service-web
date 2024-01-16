@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Tabs } from 'antd'
 
+import videoSrc from '/public/videos/star.webm'
 import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
@@ -140,6 +141,7 @@ const Home = () => {
 					}}
 				>
 					<ParticlesBG />
+
 					<motion.video
 						autoPlay
 						loop
@@ -149,8 +151,9 @@ const Home = () => {
 						animate='visible'
 						variants={videoFadeIn}
 						className='absolute w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 -z-10'
-						src='/videos/star-video.webm'
+						src={videoSrc}
 					/>
+
 					<div className='absolute w-full h-full bg-black opacity-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'></div>
 
 					<div className={styles.container}>
