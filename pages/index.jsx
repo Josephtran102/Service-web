@@ -113,7 +113,7 @@ const Home = () => {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
-			transition: { duration: 2.5, delay: 0.1 }
+			transition: { duration: 2.5, delay: 0.6 }
 		}
 	}
 
@@ -146,7 +146,7 @@ const Home = () => {
 						autoPlay
 						loop
 						muted
-						lazy
+						playsInline
 						initial='hidden'
 						animate='visible'
 						variants={videoFadeIn}
