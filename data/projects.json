@@ -1063,9 +1063,9 @@
       "seedID": "eca738b67fd23381f9a72717bea757c1d291ed2b",
       "seedPort": "24656",
       "snapMaxSize": "10",
-      "updHeight": "",
+      "updHeight": "0",
       "variable": "SOURCE",
-      "newInstallBin": "",
+      "newInstallBin": "cd $HOME\nrm -rf source\ngit clone https://github.com/Source-Protocol-Cosmos/source.git\ncd source\ngit checkout v3.0.1\nmake install",
       "delegate": "https://testnet.itrocket.net/source/staking/sourcevaloper14cmh6n7gffgfepn6hka5zj7dvh5ghdrzc06s22"
     },
     "structs": {
