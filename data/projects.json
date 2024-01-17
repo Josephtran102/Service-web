@@ -464,7 +464,7 @@
       "port": 39,
       "prHome": "/home/babylon",
       "stateSync": "true",
-      "seedID": "",
+      "seedID": "cf36fd32c32e0bb89682e8b8e82c03049a0f0121",
       "seedPort": "39656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
