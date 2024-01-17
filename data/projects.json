@@ -471,7 +471,8 @@
       "updHeight": "",
       "variable": "BABYLON",
       "website": "https://babylonchain.io/",
-      "offValDoc": "https://docs.babylonchain.io/docs/user-guides/btc-timestamping-testnet/become-validator"
+      "offValDoc": "https://docs.babylonchain.io/docs/user-guides/btc-timestamping-testnet/become-validator",
+      "newInit": "babylond init $MONIKER --chain-id $BABYLON_CHAIN_ID"
     },
     "cardchain": {
       "bin": "Cardchaind",
