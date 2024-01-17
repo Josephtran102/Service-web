@@ -110,18 +110,6 @@
 	justify-content: center;
 }
 
-.twoColumnWrapper {
-	margin-top: 10px;
-	display: flex;
-	justify-content: space-around;
-	gap: 5%;
-}
-
-#hero__linksColumn,
-#hero__servicesColumn {
-	flex-basis: 45%;
-}
-
 .hero {
 	position: relative;
 	justify-content: flex-start;
@@ -142,12 +130,10 @@
 	}
 
 	&__wrapper {
-		width: fit-content;
+		width: 100%;
 		height: fit-content;
 		display: flex;
 		align-content: center;
-		align-items: center;
-		justify-content: center;
 		flex-wrap: wrap;
 		margin-block: 15px;
 
@@ -162,38 +148,13 @@
 		justify-content: center;
 		margin-bottom: 15px;
 	}
-	.hero__column {
-		position: relative;
-		width: 80%;
+	&__column {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-		backdrop-filter: blur(16px);
-		-webkit-backdrop-filter: blur(16px);
-		border-radius: 10px;
-		border: 1px solid rgba(255, 255, 255, 0.18);
-		@apply p-4 lg:p-12 bg-black/15;
-	}
-
-	.hero__column::before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.06) 100%);
-		opacity: 0.1;
-		transition: opacity 0.45s cubic-bezier(0.6, 0.6, 0, 1);
-		border-radius: 10px; /* Match parent's border-radius */
-		z-index: -1;
-	}
-
-	.hero__column:hover::before {
-		opacity: 0.6;
 	}
 
 	&__links {
@@ -205,6 +166,7 @@
 	}
 
 	&__columnRoot {
+		width: 80%;
 		justify-content: center;
 	}
 
@@ -213,7 +175,6 @@
 		line-height: 1.7;
 		font-weight: 400;
 		font-size: 18px;
-		color: white !important;
 
 		@media (max-width: 1600px) {
 			font-size: 17px;

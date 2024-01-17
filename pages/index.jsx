@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Tabs } from 'antd'
 
-import videoSrc from '/public/videos/star.webm'
 import Header from '@components/Header'
 import ParticlesBG from '@components/ParticlesBG/ParticlesBG'
 import { Context } from '@context/context'
@@ -109,18 +108,10 @@ const Home = () => {
 		return <Spinner />
 	}
 
-	const videoFadeIn = {
-		hidden: { opacity: 0 },
-		visible: {
-			opacity: 1,
-			transition: { duration: 2.5, delay: 0.6 }
-		}
-	}
-
 	return (
 		<>
 			<Head>
-				<title>ITRocket - Welcome aboard!</title>
+				<title>ITRocket - Trusted Validator &amp; Interchain Utility Provider!</title>
 				<meta
 					name='description'
 					content='ITRocket 🚀 - Crypto multipurpose project focused on providing best services for Cosmos (and not only) node operators'
@@ -141,22 +132,6 @@ const Home = () => {
 					}}
 				>
 					<ParticlesBG />
-
-					<motion.video
-						autoPlay
-						loop
-						muted
-						playsInline
-						initial='hidden'
-						animate='visible'
-						variants={videoFadeIn}
-						className='absolute w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 -z-10'
-					>
-						<source src={videoSrc} type='video/webm' />
-					</motion.video>
-
-					<div className='absolute w-full h-full bg-black opacity-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'></div>
-
 					<div className={styles.container}>
 						<motion.div
 							initial='hidden'
@@ -166,7 +141,7 @@ const Home = () => {
 						>
 							<div className={styles.hero__column} id={styles.hero__descStaking}>
 								<div className={styles.hero__columnRoot}>
-									<h1 className='font-bold  mb-[15px] text-[26px] md:text-[38px] lg:text-[50px] text-white'>
+									<h1 className='font-bold  mb-[15px] text-[26px] md:text-[38px] lg:text-[50px]'>
 										Trusted Validator &amp; Interchain Utility Provider
 									</h1>
 									<span className={styles.hero__desc}>
