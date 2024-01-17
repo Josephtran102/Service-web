@@ -1054,7 +1054,7 @@
       "chainID": "sourcetest-1",
       "denom": "usource",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
-      "installBin": "cd $HOME\nrm -rf source\ngit clone https://github.com/Source-Protocol-Cosmos/source.git\ncd source\ngit checkout v3.0.0\nmake install",
+      "installBin": "cd $HOME\nrm -rf source\ngit clone https://github.com/Source-Protocol-Cosmos/source.git\ncd source\ngit checkout v3.0.1\nmake install",
       "path": ".source",
       "peerID": "a47f3b354e75478c0dfe22ad2b937ad07c9bcf3c",
       "peerPort": "24656",
