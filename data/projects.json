@@ -429,7 +429,7 @@
       "imgUrl": "artela.jpg",
       "installBin": "cd $HOME\nrm -rf artela\ngit clone https://github.com/artela-network/artela\ncd artela\ngit checkout v0.4.7-rc6\nmake install",
       "minGasPrice": "0.025art",
-      "newInstallBin": "cd $HOME\nrm -rf artela\ngit clone https://github.com/artela-network/artela\ncd artela\ngit checkout v0.4.7-rc6\nmake install",
+      "newInstallBin": "cd $HOME\nrm -rf artela\ngit clone https://github.com/artela-network/artela\ncd artela\ngit checkout v0.4.7-rc6\nmake install\nsed -E 's/^pool-size[[:space:]]*=[[:space:]]*[0-9]+$/apply-pool-size = 10\\nquery-pool-size = 30/' ~/.artelad/config/app.toml > ~/.artelad/config/temp.app.toml && mv ~/.artelad/config/temp.app.toml ~/.artelad/config/app.toml",
       "path": ".artelad",
       "peerID": "5c9b1bc492aad27a0197a6d3ea3ec9296504e6fd",
       "peerPort": "30656",
