@@ -72,7 +72,7 @@
       "port": 42,
       "prHome": "/home/dorafactory",
       "stateSync": "true",
-      "seedID": "",
+      "seedID": "246b22222c20c4fde332a040e94dd0bc2a85cec3",
       "seedPort": "42656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
