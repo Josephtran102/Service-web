@@ -63,7 +63,7 @@
       "goVersion": "1.20.3",
       "hardware": "8 Cores, 32GB RAM, 1TB of storage (NVME)",
       "imgUrl": "dorafactory.jpg",
-      "installBin": "cd $HOME\nrm -rf doravota\ngit clone git clone https://github.com/DoraFactory/doravota.git\ncd doravota\ngit checkout 0.2.0\nmake install",
+      "installBin": "cd $HOME\nrm -rf doravota\ngit clone https://github.com/DoraFactory/doravota.git\ncd doravota\ngit checkout 0.2.0\nmake install",
       "minGasPrice": "100000000000peaka",
       "newInstallBin": "",
       "path": ".dora",
