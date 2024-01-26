@@ -56,7 +56,7 @@
       "bin": "dorad",
       "binHome": "/home/dorafactory/go/bin/dorad",
       "chainID": "vota-ash",
-      "delegate": "",
+      "delegate": "https://mainnet.itrocket.net/doravota/staking/doravaloper1gh8j89jtc2vx6d3y4ehllcdlvluwa49w6xmjsm",
       "denom": "peaka",
       "ecosystem": "cosmos",
       "gas": "--gas-prices 100000000000peaka --gas auto --gas-adjustment 1.5",
