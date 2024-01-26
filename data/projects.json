@@ -52,7 +52,7 @@
       "installTitle3": "",
       "delegate": "https://blastapi.io/explorer/0xf2d011008eb6d0574180d6a39d84bba230f554b9/12"
     },
-    "dorafactory": {
+    "doravota": {
       "bin": "dorad",
       "binHome": "/home/dorafactory/go/bin/dorad",
       "chainID": "vota-ash",
