@@ -59,7 +59,7 @@
       "delegate": "https://mainnet.itrocket.net/doravota/staking/doravaloper1gh8j89jtc2vx6d3y4ehllcdlvluwa49w6xmjsm",
       "denom": "peaka",
       "ecosystem": "cosmos",
-      "gas": "--gas-prices 100000000000peaka --gas auto --gas-adjustment 1.5",
+      "gas": "--gas auto --gas-adjustment 1.5 --gas-prices 100000000000peaka",
       "goVersion": "1.20.3",
       "hardware": "8 Cores, 32GB RAM, 1TB of storage (NVME)",
       "imgUrl": "doravota.jpg",
