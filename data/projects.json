@@ -57,7 +57,7 @@
       "binHome": "/home/dorafactory/go/bin/dorad",
       "chainID": "vota-ash",
       "delegate": "",
-      "denom": "dora",
+      "denom": "peaka",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
       "goVersion": "1.20.3",
