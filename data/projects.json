@@ -772,7 +772,7 @@
       "offValDoc": "https://github.com/humansdotai/docs-humans/blob/master/run-nodes/testnet/joining-testnet.md",
       "fav": false,
       "desc": "We are creating a scalable blockchain providing the economy of the heart driven AI, placing the humans at the facefront of the AI evolution",
-      "evmRPC": "https://humans-testnet-evm.itrocket.net:443"
+      "evmRPC": "https://humans-testnet-evm.itrocket.net"
     },
     "lamina1": {
       "ecosystem": "false",
