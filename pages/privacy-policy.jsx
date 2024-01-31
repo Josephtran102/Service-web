@@ -34,9 +34,8 @@ const PrivacyPolicy = () => {
 							this Privacy Policy.
 							<br />
 							<br />
-							We do not store, use, and share personal data. In case of any changes, this notification and
-							the date when last updated will be revised, and the terms below will become applicable to data
-							processing.
+							We do not store, use, and share personal data. In case of any changes, the date when last
+							updated and the terms below will be revised.
 						</p>
 
 						<h3 id='data-collection'>1. Data Collection</h3>
