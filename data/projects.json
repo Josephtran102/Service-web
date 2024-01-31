@@ -644,7 +644,7 @@
       "chainID": "elystestnet-1",
       "denom": "uelys",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
-      "installBin": "cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.28.1\nmake install",
+      "installBin": "cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.29.0\nmake install",
       "newInstallBin": "cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout v0.29.0\nmake build\nsudo mv $HOME/elys/build/elysd $(which elysd)",
       "path": ".elys",
       "peerID": "0977dd5475e303c99b66eaacab53c8cc28e49b05",
