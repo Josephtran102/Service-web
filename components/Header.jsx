@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { useContext, useEffect, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
 
-import Dropdown from '@components/UI/Dropdown'
-import { Context } from '@context/context'
-import { menuVariants, spring } from '@data/transitions'
 import styles from '@styles/Header.module.scss'
+import { Context } from '@context/context'
+import Dropdown from '@components/UI/Dropdown'
 import { motion } from 'framer-motion'
+import { menuVariants, spring } from '@data/transitions'
 
 const Header = () => {
 	const { theme, toggleTheme } = useContext(Context)
@@ -246,7 +246,7 @@ const Header = () => {
 					<div className='divider-vertical hidden lg:block'></div>
 
 					<div className='hidden gap-3 lg:flex'>
-						<a href='https://t.me/itrocket_en' target='_blank' rel='noopener noreferrer'>
+						<a href='https://linktr.ee/itrocket_team' target='_blank' rel='noopener noreferrer'>
 							<Image src='/icons/tg.svg' alt='telegram' width={30} height={30} />
 						</a>
 
@@ -293,7 +293,7 @@ const Header = () => {
 				</nav>
 
 				<div className='socials'>
-					<a href='https://t.me/itrocket_en' target='_blank' rel='noopener noreferrer'>
+					<a href='https://linktr.ee/itrocket_team' target='_blank' rel='noopener noreferrer'>
 						<Image src='/icons/tg.svg' alt='telegram' width={30} height={30} />
 					</a>
 
