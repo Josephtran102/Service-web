@@ -1,9 +1,8 @@
-import { useRouter } from 'next/router'
-import { getLayout } from '@layouts/dashboard'
 import Installation from '@components/Installation'
 import NamadaInstallation from '@components/Namada/Installation'
-import NamadaSEInstallation from '@components/Namada-se/Installation' // Importing the Namada-se Installation component
+import { getLayout } from '@layouts/dashboard'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
+import { useRouter } from 'next/router'
 
 const type = 'testnet'
 
@@ -11,12 +10,9 @@ const InstallationPage = () => {
 	const router = useRouter()
 	const { projectName } = router.query
 
-	// Determine which installation component to use based on the projectName
 	let InstallationComponent
 	if (projectName === 'namada') {
 		InstallationComponent = NamadaInstallation
-	} else if (projectName === 'namada-se') {
-		InstallationComponent = NamadaSEInstallation // Handling the 'namada-se' case
 	} else {
 		InstallationComponent = Installation
 	}

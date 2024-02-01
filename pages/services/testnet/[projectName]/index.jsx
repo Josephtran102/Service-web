@@ -4,7 +4,6 @@ import CosmosAPI from '@components/API/CosmosAPI'
 import NonCosmosAPI from '@components/API/NonCosmosAPI'
 import projects from 'data/projects.json'
 import API from '@components/Namada/API'
-import API_SE from '@components/Namada-se/API'
 import { useRouter } from 'next/router'
 
 const type = 'testnet'
@@ -15,9 +14,6 @@ const Project = ({ project }) => {
 
 	if (projectName === 'namada') {
 		return <API name={projectName} type={type} />
-	}
-	if (projectName === 'namada-se') {
-		return <API_SE name={projectName} type={type} />
 	}
 
 	return projects[type][project.id].ecosystem === 'false' ? (
