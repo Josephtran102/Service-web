@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
 				>
 					<div className={styles.mainColumn}>
 						<h1 style={{ paddingTop: '0px' }}>Privacy Policy </h1>
-						<p className={styles.text_secondary}>Last Updated: February 1, 2024</p>
+						<p className={styles.text_secondary}>Last Updated: December 30, 2023</p>
 						<p className='font-bold pt-1 pb-5'>
 							{' '}
 							This Privacy Policy describes the way ITRocket (“we”, “us” or “our”) may collect, process, or
@@ -34,50 +34,69 @@ const PrivacyPolicy = () => {
 							this Privacy Policy.
 							<br />
 							<br />
-							We do not store, use, and share personal data. In case of any changes, the date when last
-							updated and the terms below will be revised.
+							We do not store, use, and share personal data. In case of any changes, this notification and
+							the date when last updated will be revised, and the terms below will become applicable to data
+							processing.
 						</p>
-
 						<h3 id='data-collection'>1. Data Collection</h3>
-						<p>
-							Aligned with our core commitment to privacy, we do not collect any user data. This approach is
-							fundamental to our belief in the power of privacy to foster freedom and innovation. By
-							refraining from collecting any personal information, we ensure our users' privacy is not just
-							protected but completely guaranteed.
-						</p>
+						<p>While providing our Services, we may collect the following categories of data:</p>
+						<ul>
+							<li>
+								<strong>Personal Data:</strong> your name, email address, social media account details;
+							</li>
+							<li>
+								<strong>Technical Information:</strong> IP address, operating system, browser type;
+							</li>
+							<li>
+								<strong>Usage Data:</strong> information on the way you interact with our Services;
+							</li>
+							<li>
+								<strong>Blockchain Request Data.</strong> This data is not used to reveal your identity.
+								However, remember that blockchain transactions are publicly available and can be traced.
+							</li>
+						</ul>
+
 						<h3 id='data-use'>2. Data Use</h3>
-						<p>
-							Given our policy of not collecting personal data, there is no use of such data for any
-							purposes. This ensures the utmost respect for user privacy and freedom.
-						</p>
+						<p>Your personal data may be used in the following purposes:</p>
+						<ul>
+							<li>Providing our Services and enhancing them;</li>
+							<li>Sending notifications via social media and communicating about the Services;</li>
+							<li>Safeguarding our rights, property, and ensuring our terms;</li>
+							<li>Adhering to relevant laws and regulations.</li>
+						</ul>
+
 						<h3 id='data-security'>3. Data Security</h3>
 						<p>
-							In line with our no data collection policy, there are no personal data security measures
-							necessary. We focus on maintaining a secure environment that respects and upholds user privacy
-							at all times.
+							We have established necessary security measures to safeguard your personal data against
+							unauthorized access, use, or disclosure.
 						</p>
+
 						<h3 id='data-sharing'>4. Data Sharing</h3>
-						<p>
-							Since we do not collect any personal data, there is no possibility of sharing personal data
-							under any circumstances. Our commitment to privacy ensures complete confidentiality for our
-							users.
-						</p>
+						<p>Your personal data may be shared under these circumstances:</p>
+						<ul>
+							<li>With your consent or as per your instructions;</li>
+							<li>If required by law, or in response to a legal request;</li>
+							<li>With service providers which we cooperate with;</li>
+							<li>In case of any corporate changes, including merger, sale, or transfer of assets;</li>
+						</ul>
+						<p>We do not share personal information with third parties for their marketing purposes.</p>
+
 						<h3 id='data-subject-rights'>5. Data Subject Rights</h3>
 						<p>
-							As no personal data is collected, users do not need to exercise any rights regarding personal
-							data protection, providing a hassle-free experience while respecting privacy laws.
+							Legal rights concerning your personal data, such as accessing, correcting, or deleting it, may
+							be available to you based on your location and relevant regulations.
 						</p>
+
 						<h3 id='international-data-transmissions'>6. International Data Transmissions</h3>
 						<p>
-							The absence of personal data collection eliminates any concerns regarding the international
-							transmission of such data. Our approach ensures compliance with privacy laws across
-							jurisdictions, aligning with the evolving legal landscape concerning data protection.
+							By using our Service, you consent to сollection, use and sharing of your personal data in any
+							country where we operate or involve service providers.
 						</p>
-						<h3 id='legal-compliance'>7. Compliance with Privacy Laws</h3>
+
+						<h3 id='policy-changes'>7. Policy Changes</h3>
 						<p>
-							Despite not collecting personal data, we remain committed to complying with all applicable
-							privacy laws and regulations across jurisdictions. This adherence confirms our dedication to
-							upholding the highest standards of data protection and privacy.
+							We have the right to change our Privacy Policy. In case of any changes, you will notify you by
+							updating the date when last updated.
 						</p>
 					</div>
 				</div>
