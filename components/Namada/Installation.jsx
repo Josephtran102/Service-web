@@ -307,6 +307,7 @@ s%:26657%:\${NAMADA_PORT}657%g;
 s%:26656%:\${NAMADA_PORT}656%g;
 s%:26545%:\${NAMADA_PORT}545%g;
 s%:8545%:\${NAMADA_PORT}545%g;
+s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${NAMADA_PORT}656\"%;
 s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/shielded-expedition.b40d8e9055/config.toml`}
 				/>
 				<p>Enable and start service:</p>
