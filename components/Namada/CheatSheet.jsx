@@ -87,7 +87,7 @@ const CheatSheet = props => {
 						<CodeBlock desc='generate key_2 and etc:' code={`namada wallet gen --alias ${WALLET}1`} />
 						<CodeBlock
 							desc='init non-multisig account (single signer):'
-							code={`namada client init-account --alias ${WALLET}-multisig --public-keys "<your public key>" --signing-keys $WALLET`}
+							code={`namada client init-account --alias ${WALLET}-multisig --public-keys <your-public-key> --signing-keys $WALLET`}
 						/>
 						<CodeBlock
 							desc='init multisig account (at least 2 signers):'
