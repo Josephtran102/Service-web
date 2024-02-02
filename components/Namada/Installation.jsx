@@ -324,11 +324,11 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 							children: (
 								<div className='flex flex-col'>
 									<span>Create wallet:</span>
-									<CodeSnippet theme={theme} code={`namada wallet address gen --alias $WALLET`} />
+									<CodeSnippet theme={theme} code={`namadaw gen --alias $WALLET`} />
 									<span>Or restore wallet:</span>
-									<CodeSnippet theme={theme} code={`namada wallet key derive --alias $WALLET --hd-path default`} />
-									<span>Check wallet list:</span>
-									<CodeSnippet theme={theme} code={`namada wallet key list`} />
+									<CodeSnippet theme={theme} code={`namadaw derive --alias $WALLET`} />
+									<span>Find your wallet address:</span>
+									<CodeSnippet theme={theme} code={`namadaw find --alias $WALLET`} />
 									<span>
 										Fund your wallet from{' '}
 										<a href='https://faucet.heliax.click/' target='_blank' rel='noopener noreferrer'>
