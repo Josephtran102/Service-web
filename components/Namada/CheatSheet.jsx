@@ -71,23 +71,28 @@ const CheatSheet = props => {
 							desc='restore executed key:'
 							code={`namada wallet derive --alias $WALLET --hd-path default`}
 						/>
-						<CodeBlock desc='view your address:' code={`namada wallet find --alias $WALLET`} />
+						<CodeBlock desc='view all your keys:' code={`namada wallet list --keys`} />
+						<CodeBlock desc='view your address:' code={`namada wallet address find --alias $KEY_ALIAS`} />
 						<CodeBlock desc='add some tokens using faucet:' code={`https://faucet.heliax.click/`} />
-						<CodeBlock desc='check balance:' code={`namada client balance --owner $WALLET`} />
-						<CodeBlock desc='check keys:' code={`namada wallet list`} />
+						<CodeBlock desc='check balance:' code={`namada client balance --owner $KEY_ALIAS`} />
+						<CodeBlock desc='check keys:' code={`namada wallet key list`} />
 						<CodeBlock
-							desc='send payment from your address to another address:'
-							code={`namada client transfer --source $WALLET --target ${WALLET}1 --token NAAN --amount 1 --signing-keys $WALLET --memo $MEMO`}
+							desc='send payment from your address to validator-1:'
+							code={`namada client transfer --source <SENDER_ADDRESS> --target <RECEIVER_ADDRESS> --token NAM --amount 10 --signing-keys $KEY_ALIAS`}
 						/>
 					</div>
 
 					<h2 id='multisign'>Multisign</h2>
 					<div className='flex flex-col gap-y-2'>
-						<CodeBlock desc='generate key_1:' code={`namada wallet gen --alias $WALLET`} />
-						<CodeBlock desc='generate key_2 and etc:' code={`namada wallet gen --alias ${WALLET}1`} />
+						<CodeBlock desc='generate key_1:' code={`namadaw key gen --alias my-key1`} />
+						<CodeBlock desc='generate key_2 and etc:' code={`namadaw key gen --alias my-key2`} />
+						<CodeBlock
+							desc='an implicit address can also be generated:'
+							code={`namadaw address gen --alias my-address`}
+						/>
 						<CodeBlock
 							desc='init non-multisig account (single signer):'
-							code={`namada client init-account --alias ${WALLET}-multisig --public-keys <your-public-key> --signing-keys $WALLET`}
+							code={`namadac init-account --alias my-multisig-alias --public-keys my-key1 --signing-keys my-key1`}
 						/>
 						<CodeBlock
 							desc='init multisig account (at least 2 signers):'
