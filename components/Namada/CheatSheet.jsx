@@ -77,7 +77,7 @@ const CheatSheet = props => {
 						<CodeBlock desc='check keys:' code={`namada wallet list`} />
 						<CodeBlock
 							desc='send payment from one address to another:'
-							code={`namada client transfer --source $WALLET --target $WALLET1 --token NAAN --amount 1 --signing-keys $WALLET`}
+							code={`namada client transfer --source $WALLET --target $WALLET1 --token NAAN --amount 1 --signing-keys $WALLET --memo $MEMO`}
 						/>
 					</div>
 
