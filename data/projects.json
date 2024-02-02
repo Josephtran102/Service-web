@@ -859,7 +859,7 @@
     "namada": {
       "bin": "namada",
       "binHome": "/usr/local/bin/namada",
-      "chainID": "public-testnet-15.0dacadb8d663",
+      "chainID": "shielded-expedition.b40d8e9055",
       "denom": "nam",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
