@@ -333,7 +333,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									</span>
 									<CodeSnippet
 										theme={theme}
-										code={`curl http://127.0.0.1:26657/status | jq .result.sync_info.catching_up`}
+										code={`curl http://127.0.0.1:26657/status | jq `}
 									/>
 								</div>
 							)
