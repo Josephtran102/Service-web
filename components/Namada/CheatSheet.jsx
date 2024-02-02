@@ -71,14 +71,13 @@ const CheatSheet = props => {
 							desc='restore executed key:'
 							code={`namada wallet derive --alias $WALLET --hd-path default`}
 						/>
-						<CodeBlock desc='view all your keys:' code={`namada wallet list --keys`} />
-						<CodeBlock desc='view your address:' code={`namada wallet address find --alias $KEY_ALIAS`} />
+						<CodeBlock desc='view your address:' code={`namada wallet find --alias $WALLET`} />
 						<CodeBlock desc='add some tokens using faucet:' code={`https://faucet.heliax.click/`} />
-						<CodeBlock desc='check balance:' code={`namada client balance --owner $KEY_ALIAS`} />
-						<CodeBlock desc='check keys:' code={`namada wallet key list`} />
+						<CodeBlock desc='check balance:' code={`namada client balance --owner $WALLET`} />
+						<CodeBlock desc='check keys:' code={`namada wallet list`} />
 						<CodeBlock
-							desc='send payment from your address to validator-1:'
-							code={`namada client transfer --source <SENDER_ADDRESS> --target <RECEIVER_ADDRESS> --token NAM --amount 10 --signing-keys $KEY_ALIAS`}
+							desc='send payment from one address to another:'
+							code={`namada client transfer --source $WALLET --target $WALLET1 --token NAAN --amount 1 --signing-keys $WALLET`}
 						/>
 					</div>
 
