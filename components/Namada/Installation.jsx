@@ -201,19 +201,6 @@ sudo cp -r protobuf_temp/include/* /usr/local/include/
 rm -rf protobuf_temp protobuf.zip
 `}
 					/>
-					<p>Install CometBFT:</p>
-					<CodeSnippet
-						theme={theme}
-						code={`cd $HOME
-rm -rf cometbft
-git clone https://github.com/cometbft/cometbft.git
-cd cometbft
-git checkout v0.37.2
-make build
-sudo cp $HOME/cometbft/build/cometbft /usr/local/bin/
-cometbft version
-`}
-					/>
 					<p>Download and build Namada binaries:</p>
 					<CodeSnippet
 						theme={theme}
