@@ -1,15 +1,15 @@
-import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import styles from '@styles/Services.module.scss'
-import { Input, Space, Collapse, Divider } from 'antd'
+import { Collapse } from 'antd'
 import Head from 'next/head'
+import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 
-import projects from 'data/projects'
 import { Context } from '@context/context'
-import { fetchSnap, fetchStatus } from '@utils/fetchProject.js'
-import CodeSnippet from '../UI/CodeSnippet'
-import AnimatedSection from '../AnimatedSection'
-import useNetInfo from 'hooks/useNetInfo'
 import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
+import { fetchStatus } from '@utils/fetchProject.js'
+import projects from 'data/projects'
+import useNetInfo from 'hooks/useNetInfo'
+import AnimatedSection from '../AnimatedSection'
+import CodeSnippet from '../UI/CodeSnippet'
 
 const Installation = props => {
 	const name = props.name
@@ -299,15 +299,15 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF`}
 				/>
-					<p>Set custom ports in config.toml:</p>
-					<CodeSnippet
-						theme={theme}
-						code={`sed -i.bak -e "s%:26658%:\${NAMADA_PORT}658%g;
+				<p>Set custom ports in config.toml:</p>
+				<CodeSnippet
+					theme={theme}
+					code={`sed -i.bak -e "s%:26658%:\${NAMADA_PORT}658%g;
 s%:26657%:\${NAMADA_PORT}657%g;
 s%:26656%:\${NAMADA_PORT}656%g;
 s%:26545%:\${NAMADA_PORT}545%g;
 s%:8545%:\${NAMADA_PORT}545%g;
-s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/shielded-expedition.b40d8e9055/config.toml`}				
+s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/shielded-expedition.b40d8e9055/config.toml`}
 				/>
 				<p>Enable and start service:</p>
 				<CodeSnippet
@@ -320,26 +320,35 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 					items={[
 						{
 							key: '1',
-							label: '🔗 Create Post-Genesis Validator (skip this if you are a pre-genesis validator)',
+							label: '🔎 Create and fund wallet',
 							children: (
 								<div className='flex flex-col'>
 									<span>Create wallet:</span>
 									<CodeSnippet theme={theme} code={`namadaw gen --alias $WALLET`} />
-									<span>Or restore wallet:</span>
+									<span>Restore existing wallet:</span>
 									<CodeSnippet theme={theme} code={`namadaw derive --alias $WALLET`} />
 									<span>Find your wallet address:</span>
 									<CodeSnippet theme={theme} code={`namadaw find --alias $WALLET`} />
+									<span className='text_secondary'>
+										Copy the implicit address (starts with tnam...) for the next step
+									</span>
 									<span>
 										Fund your wallet from{' '}
-										<a href='https://faucet.heliax.click/' target='_blank' rel='noopener noreferrer'>
+										<a
+											href='https://faucet.housefire.luminara.icu/'
+											target='_blank'
+											rel='noopener noreferrer'
+										>
 											faucet
 										</a>
 									</span>
-									<span>Create validator:</span>
-									<span className='text_secondary'>
-										(!) before creating a validator, you need to check the balance and make sure that the
-										node is synched
-									</span>
+									<span>After a couple of minutes, check the balance</span>
+									<CodeSnippet theme={theme} code={`namadac balance --owner $WALLET`} />
+									<span>List known keys and addresses in the wallet</span>
+									<CodeSnippet theme={theme} code={`namadaw list`} />
+									<span>Delete wallet</span>
+									<CodeSnippet theme={theme} code={`namadaw remove --alias $WALLET --do-it`} />
+
 									<span>
 										Check Sync status, once your node is fully synced, the output from above will say
 										<kbd className={`${styles.kbd} dark:bg-slate-600`}>false</kbd>
@@ -348,34 +357,82 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 										theme={theme}
 										code={`curl http://127.0.0.1:26657/status | jq .result.sync_info.catching_up`}
 									/>
-									<span>Check your balance:</span>
-									<CodeSnippet theme={theme} code={`namada client balance --owner $WALLET`} />
-									<span>Init validator:</span>
+								</div>
+							)
+						},
+						{
+							key: '2',
+							label: '🧑‍🎓 Turn your full node into a validator',
+							children: (
+								<div className='flex flex-col'>
+									<span>Initiate a validator</span>
 									<CodeSnippet
 										theme={theme}
-										code={`namada client init-validator \\
- --alias $ALIAS \\
- --account-keys $WALLET \\
- --signing-keys $WALLET \\
- --commission-rate 0.1 \\
- --max-commission-rate-change 0.1 \\
- --email $EMAIL`}
+										established
+										code={`namadac init-validator --commission-rate 0.07 --max-commission-rate-change 1 --signing-keys $WALLET --alias $ALIAS --email <EMAIL_ADDRESS> --account-keys $WALLET --memo $MEMO`}
 									/>
-									<span>Stake your funds:</span>
+									<span>
+										Find your <kbd className={`${styles.kbd} dark:bg-slate-600`}>established</kbd>
+										validator address
+									</span>
 									<CodeSnippet
 										theme={theme}
-										code={`namada client bond \\
- --source $WALLET \
- --validator $ALIAS \
- --amount 1000`}
+										code={`namadaw list | grep -A 1 "\"$ALIAS\"" | grep "Established"`}
 									/>
-									<span>Waiting more than 2 epoch and check your status:</span>
-									<CodeSnippet theme={theme} code={`namada client bonds --owner $ALIAS`} />
+									<span>Replace your Validator address, save and import variables into system</span>
+									<CodeSnippet
+										theme={theme}
+										code={`VALIDATOR_ADDRESS=$(namadaw list | grep -A 1 "\"$ALIAS\"" | grep "Established" | awk '{print $3}') 
+echo "export VALIDATOR_ADDRESS="$VALIDATOR_ADDRESS"" >> $HOME/.bash_profile 
+source $HOME/.bash_profile`}
+									/>
+									<span>Restart the node and wait for 2 epochs</span>
+									<CodeSnippet
+										theme={theme}
+										code={`sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
+									/>
+									<span>Check epoch</span>
+									<CodeSnippet theme={theme} code={`namada client epoch`} />
+									<span>Delegate tokens</span>
+									<CodeSnippet
+										theme={theme}
+										code={`namadac bond --validator $ALIAS --source $WALLET --amount 1000 --memo $MEMO`}
+									/>
+									<span>Wait for 3 epochs and check validator is in the consensus set</span>
+									<CodeSnippet theme={theme} code={`namadac validator-state --validator $ALIAS`} />
+									<span>Check your validator bond status</span>
+									<CodeSnippet theme={theme} code={`namada client bonds --owner $WALLET`} />
+									<span>Find your validator status</span>
+									<CodeSnippet
+										theme={theme}
+										code={`namada client validator-state --validator $VALIDATOR_ADDRESS`}
+									/>
+									<span>Add stake</span>
+									<CodeSnippet
+										theme={theme}
+										code={`namadac bond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 1000`}
+									/>
+									<span>Query the set of validators</span>
+									<CodeSnippet theme={theme} code={`namadac bonded-stake`} />
+									<span>Unbond the tokens</span>
+									<CodeSnippet
+										theme={theme}
+										code={`namadac unbond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 1000`}
+									/>
+									<span>Wait for 6 epochs, then check when the unbonded tokens can be withdrawed</span>
+									<CodeSnippet theme={theme} code={`namadac bonds --owner $WALLET`} />
+
+									<span>Withdraw the unbonded tokens</span>
+									<CodeSnippet
+										theme={theme}
+										code={`namadac withdraw --source $WALLET --validator $VALIDATOR_ADDRESS`}
+									/>
 								</div>
 							)
 						}
 					]}
 				/>
+
 				<h2 id='auto-installation'>Automatic Installation</h2>
 				<CodeSnippet theme={theme} code={`source <(curl -s https://itrocket.net/api/namada/autoinstall/)`} />
 				<h2 id='security'>Security</h2>
