@@ -83,19 +83,19 @@ const CheatSheet = props => {
 
 					<h2 id='multisign'>Multisign</h2>
 					<div className='flex flex-col gap-y-2'>
-						<CodeBlock desc='generate key_1:' code={`namadaw key gen --alias my-key1`} />
-						<CodeBlock desc='generate key_2 and etc:' code={`namadaw key gen --alias my-key2`} />
+						<CodeBlock desc='generate key_1:' code={`namada wallet gen --alias $WALLET`} />
+						<CodeBlock desc='generate key_2 and etc:' code={`namada wallet gen --alias $\{WALLET\}1`} />
 						<CodeBlock
-							desc='an implicit address can also be generated:'
-							code={`namadaw address gen --alias my-address`}
-						/>
+							desc='chech your public key:'
+							code={`namada wallet find --alias $WALLET | awk '/Public key:/ {print $3}'`}
+       						/>		
 						<CodeBlock
 							desc='init non-multisig account (single signer):'
-							code={`namadac init-account --alias my-multisig-alias --public-keys my-key1 --signing-keys my-key1`}
+							code={`namada client init-account --alias $\{WALLET\}-multisig --public-keys <WALLET-public-key> --signing-keys $WALLET --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='init multisig account (at least 2 signers):'
-							code={`namadac init-account --alias my-multisig-alias --public-keys my-key1,my-key2 --signing-keys my-key1,my-key2 --threshold 2`}
+							code={`namada client init-account --alias $\{WALLET\}1-multisig --public-keys <WALLET-public-key>,<WALLET1-public-key> --signing-keys $WALLET,$\{WALLET\}1 --threshold 2 --memo $MEMO`}
 						/>
 						<CodeBlock desc='submitting a multisignature transaction:' code={`mkdir tx_dumps`} />
 						<CodeBlock
