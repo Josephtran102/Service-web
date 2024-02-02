@@ -247,22 +247,11 @@ namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS
 							}
 						]}
 					/>
-					<Collapse
-						items={[
-							{
-								key: '1',
-								label: '🔗 Join-network as Full Nodes or Post-Genesis Validator',
-								children: (
-									<p>
-										<CodeSnippet
-											theme={theme}
-											code={`namada client utils join-network --chain-id $CHAIN_ID`}
-										/>
-									</p>
-								)
-							}
-						]}
-					/>
+					<p>Join-network as Full Nodes or Post-Genesis Validator:</p>
+					<CodeSnippet
+						theme={theme}
+						code={`namada client utils join-network --chain-id $CHAIN_ID`}
+					/>					
 				</div>
 				<p>Create Service file:</p>
 				<CodeSnippet
