@@ -226,8 +226,8 @@ tar -xvf namada-v0.31.0-Linux-x86_64.tar.gz
 rm namada-v0.31.0-Linux-x86_64.tar.gz
 cd namada-v0.31.0-Linux-x86_64
 sudo mv namad* /usr/local/bin/
-if [ ! -d "$HOME/.local/share/namada" ]; then
-    mkdir -p "$HOME/.local/share/namada"
+if [ ! -d "$BASE_DIR" ]; then
+    mkdir -p "$BASE_DIR"
 fi
 `}
 					/>
