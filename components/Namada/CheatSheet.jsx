@@ -65,11 +65,11 @@ const CheatSheet = props => {
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock
 							desc='create a new keypair:'
-							code={`KEY_ALIAS="keysha"; namada wallet key gen --alias $KEY_ALIAS`}
+							code={`namada wallet key gen --alias $WALLET`}
 						/>
 						<CodeBlock
 							desc='restore executed key:'
-							code={`namada wallet key restore --alias $KEY_ALIAS --hd-path default`}
+							code={`namada wallet key restore --alias $WALLET --hd-path default`}
 						/>
 						<CodeBlock desc='view your address:' code={`namada wallet address find --alias $KEY_ALIAS`} />
 						<CodeBlock desc='add some tokens using faucet:' code={`https://faucet.heliax.click/`} />
