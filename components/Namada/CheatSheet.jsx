@@ -164,44 +164,52 @@ const CheatSheet = props => {
 							code={`curl http://127.0.0.1:26657/status | jq`}
 						/>
 						<CodeBlock desc='check balance:' code={`namada client balance --owner $ALIAS`} />
-						<CodeBlock desc='check keys:' code={`namada wallet key list`} />
+						<CodeBlock desc='check keys:' code={`namada wallet list`} />
+						<CodeBlock
+							desc='find your validator address:'
+							code={`namada client find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address) --node localhost:26657`}
+						/>
 						<CodeBlock
 							desc='stake funds:'
-							code={`namadac bond --source $ALIAS --validator $ALIAS --amount 1000`}
+							code={`namadac bond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 10 --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='self-bonding:'
+							code={`namadac bond --validator $VALIDATOR_ADDRESS --amount 10 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='check your validator bond status:'
 							code={`namada client bonds --owner $ALIAS`}
 						/>
+						<CodeBlock
+							desc='check your user bonds:'
+							code={`namada client bonds --owner $WALLET`}
+						/>
 						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake`} />
 						<CodeBlock desc='find all the slashes:' code={`namada client slashes`} />
 						<CodeBlock
-							desc='non-self unbonding:'
-							code={`namada client unbond --source aliace --validator $ALIAS --amount 1.2`}
+							desc='non-self unbonding (validator address can be used instead of alias):'
+							code={`namada client unbond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 1.5 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='self-unbonding:'
-							code={`namada client unbond --validator $ALIAS --amount 0.3`}
+							code={`namada client unbond --validator $VALIDATOR_ADDRESS --amount 1.5 --memo $MEMO`}
 						/>
 						<CodeBlock
-							desc='withdrawing unbonded tokens:'
-							code={`namada client withdraw --source aliace --validator $ALIAS`}
+							desc='withdrawing unbonded tokens (available 6 epochs after unbonding):'
+							code={`namada client withdraw --source $WALLET --validator $VALIDATOR_ADDRESS --memo $MEMO`}
 						/>
 						<CodeBlock
-							desc='Find your validator address:'
-							code={`namadac find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address) --node localhost:26657`}
+							desc='find your validator status:'
+							code={`namada client validator-state --validator $VALIDATOR_ADDRESS`}
 						/>
 						<CodeBlock
-							desc='Find your validator status:'
-							code={`namada client validator-state --validator <Your_validator_address>`}
-						/>
-						<CodeBlock
-							desc='Check epoch:'
+							desc='check epoch:'
 							code={`namada client epoch`}
 						/>
 						<CodeBlock
-							desc='Unjail, you need to wait 2 epochs:'
-							code={`namadac unjail-validator --validator <Your_validator_address> --node tcp://127.0.0.1:26657`}
+							desc='unjail, you need to wait 2 epochs:'
+							code={`namada client unjail-validator --validator $VALIDATOR_ADDRESS --node tcp://127.0.0.1:26657 --memo $MEMO`}
 						/>
 					</div>
 					<h2 id='sync-and-consensus'>Sync and Consensus</h2>
