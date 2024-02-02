@@ -74,7 +74,7 @@ const API = ({ name, type }) => {
 				<CodeSnippet
 					theme={theme}
 					code={`PEERS=${LIVE_PEERS}
-sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/config/config.toml`}
+sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/config.toml`}
 				/>
 				<h3 id='addrbook'>addrbook:</h3>
 				<p className={styles.text_secondary}>updates every hour</p>
