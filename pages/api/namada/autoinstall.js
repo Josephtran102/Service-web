@@ -92,8 +92,8 @@ read -p "Enter WALLET name:" WALLET
 echo 'export WALLET='$WALLET
 read -p "Enter your ALIAS :" ALIAS
 echo 'export ALIAS='$ALIAS
-# Asking the user if they are a PostGenesis validator
-read -p "Are you a Post-Genesis validator? Enter 1 for Yes, 0 for No: " is_post_genesis
+# Asking the user if they are a Pre-Genesis Validator
+read -p "Are you a Pre-Genesis Validator? Enter 1 for Yes, 0 for No: " is_post_genesis
 read -p "Enter your PORT (for example 17,18,19... default port=26):" PORT
 echo 'export PORT='$PORT
 
