@@ -165,13 +165,6 @@ source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 `}
 					/>
-					<p>Install Rust:</p>
-					<CodeSnippet
-						theme={theme}
-						code={`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source $HOME/.cargo/env
-`}
-					/>
 					<p>
 						Replace your Validator and Wallet name, save and import variables into system. Change default
 						port if needed.
@@ -188,6 +181,13 @@ echo "export TM_HASH="v0.1.4-abciplus"" >> $HOME/.bash_profile
 echo "export CHAIN_ID="shielded-expedition.b40d8e9055"" >> $HOME/.bash_profile
 echo "export BASE_DIR="$HOME/.local/share/namada"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
+`}
+					/>
+					<p>Install Rust:</p>
+					<CodeSnippet
+						theme={theme}
+						code={`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source $HOME/.cargo/env
 `}
 					/>
 					<p>Install CometBFT:</p>
