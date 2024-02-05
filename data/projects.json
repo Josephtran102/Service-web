@@ -66,6 +66,7 @@
       "installBin": "cd $HOME\nrm -rf doravota\ngit clone https://github.com/DoraFactory/doravota.git\ncd doravota\ngit checkout 0.3.0\nmake install",
       "minGasPrice": "100000000000peaka",
       "newInstallBin": "",
+      "fav": "true",
       "path": ".dora",
       "peerID": "d6edfdb5eae3565a4af1ce35fd2c03084b8c3ef1",
       "peerPort": "44656",
