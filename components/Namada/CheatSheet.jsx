@@ -137,24 +137,32 @@ const CheatSheet = props => {
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock
 							desc='randomly generate a new spending key:'
-							code={`namadaw masp gen-key --alias <your-spending-key-alias>`}
+							code={`namada wallet gen --shielded --alias $\{WALLET\}-shielded`}
 						/>
 						<CodeBlock
 							desc='create a new payment address:'
-							code={`namadaw masp gen-addr  --key <your-spending-key-alias> --alias <your-payment-address-alias>`}
+							code={`namada wallet gen-payment-addr --key $\{WALLET\}-shielded --alias $\{WALLET\}-shielded-addr`}
 						/>
 						<CodeBlock
-							desc='send your shielding transfer:'
-							code={`namadac transfer --source <your-established-account-alias>  --target <your-payment-address-alias>  --token btc --amount <amount-to-shield>`}
+							desc='send a shielding transfer:'
+							code={`namada client transfer --source $WALLET --target $\{WALLET\}-shielded-addr --token NAAN --amount 5 --memo $MEMO`}
 						/>
-						<CodeBlock desc='view balance:' code={`namadac balance --owner <your-spending-key-alias>`} />
+						<CodeBlock desc='view balance:' code={`namada client balance --owner $\{WALLET\}-shielded`} />
+						<CodeBlock
+							desc='generate another spending key:'
+							code={`namada wallet gen --shielded --alias $\{WALLET\}1-shielded`}
+						/>
+						<CodeBlock
+							desc='create a payment address:'
+							code={`namada wallet gen-payment-addr --key $\{WALLET\}1-shielded --alias $\{WALLET\}1-shielded-addr`}
+						/>
 						<CodeBlock
 							desc='shielded transfers (once the user has a shielded balance, it can be transferred to another shielded address):'
-							code={`namadac transfer  --source <your-spending-key-alias> --target <destination-payment-address>  --token btc --amount <amount-to-transfer> --signing-keys <your-implicit-account-alias>`}
+							code={`namada client transfer  --source $\{WALLET\}-shielded --target $\{WALLET\}1-shielded-addr --token NAAN --amount 5 --signing-keys <your-implicit-account-alias> --memo $MEMO`}
 						/>
 						<CodeBlock
-							desc='unshielding transfers (it is also possible to transfer the balance to a transparent account):'
-							code={`namadac transfer --source <your-spending-key-alias> --target <some-transparent-address-alias> --token btc  --amount <amount-to-unshield> --signing-keys <your-implicit-account-alias>`}
+							desc='unshielding transfers (from a shielded to a transparent account):'
+							code={`namada client transfer --source $\{WALLET\}-shielded --target $WALLET --token NAAN --amount 5 --signing-keys <your-implicit-account-alias> --memo $MEMO`}
 						/>
 					</div>
 
