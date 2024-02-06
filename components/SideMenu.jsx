@@ -322,7 +322,6 @@ const SideMenu = () => {
 							</div>,
 							'grpthis',
 							null,
-
 							null,
 							'group'
 						),
@@ -359,6 +358,13 @@ const SideMenu = () => {
 							</Link>,
 							`delete`
 						),
+						name === 'nym' &&
+							getItem(
+								<Link href='/nym-itrocket' onClick={event => handleClick(event, 'delegate', `delegate`)}>
+									<span className='mr-3'>💰</span> Delegate
+								</Link>,
+								`delegate`
+							),
 						{
 							type: 'divider'
 						}

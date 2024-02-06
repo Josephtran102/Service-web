@@ -42,8 +42,8 @@ const PrivacyPolicy = () => {
 						As Trusted Validator & Interchain Utility Provider, we prioritize the security and efficiency of
 						our node. <br />
 						<br />
-						<p className='font-semibold pt-1'>Key features:</p>
-						<ol className='space-y-3 lg:space-y-4 ml-4'>
+						<h3 className='font-semibold pt-1'>Key features:</h3>
+						<ol className='space-y-3 lg:space-y-4 ml-4 mt-1'>
 							<li className='list-decimal mt-1'>
 								<span className='font-semibold'>Decentralization Advocates:</span>
 								<br />
@@ -68,7 +68,7 @@ const PrivacyPolicy = () => {
 								network.
 							</li>
 						</ol>
-						<span className='font-semibold pt-8'>
+						<span className='font-semibold pt-7'>
 							Delegate to our node with confidence here:{' '}
 							<a
 								href='https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5'
