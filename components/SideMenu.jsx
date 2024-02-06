@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState, useRef } from 'react'
-import { Menu } from 'antd'
 import { RightOutlined } from '@ant-design/icons'
-import Link from 'next/link.js'
+import { Menu } from 'antd'
 import Image from 'next/image.js'
+import Link from 'next/link.js'
 import { useRouter } from 'next/navigation'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
@@ -259,6 +259,7 @@ const SideMenu = () => {
 								generateLinkItem(serviceURL, name, 'multisign', 'Multisign'),
 								generateLinkItem(serviceURL, name, 'masp', 'Masp'),
 								generateLinkItem(serviceURL, name, 'validator-operations', 'Validator Operations'),
+								generateLinkItem(serviceURL, name, 'governance', 'Governance'),
 								generateLinkItem(serviceURL, name, 'sync-and-consensus', 'Sync and Consensus')
 							]
 						)

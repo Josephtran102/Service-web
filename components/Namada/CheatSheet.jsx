@@ -63,10 +63,7 @@ const CheatSheet = props => {
 					</div>
 					<h2 id='wallet-operations'>Wallet operations</h2>
 					<div className='flex flex-col gap-y-2'>
-						<CodeBlock
-							desc='create a new keypair:'
-							code={`namada wallet gen --alias $WALLET`}
-						/>
+						<CodeBlock desc='create a new keypair:' code={`namada wallet gen --alias $WALLET`} />
 						<CodeBlock
 							desc='restore executed key:'
 							code={`namada wallet derive --alias $WALLET --hd-path default`}
@@ -88,7 +85,7 @@ const CheatSheet = props => {
 						<CodeBlock
 							desc='chech your public key:'
 							code={`namada wallet find --alias $WALLET | awk '/Public key:/ {print $3}'`}
-       						/>		
+						/>
 						<CodeBlock
 							desc='init non-multisig account (single signer):'
 							code={`namada client init-account --alias $\{WALLET\}-multisig --public-keys <WALLET-public-key> --signing-keys $WALLET --memo $MEMO`}
@@ -185,10 +182,7 @@ const CheatSheet = props => {
 							desc='check your validator bond status:'
 							code={`namada client bonds --owner $ALIAS`}
 						/>
-						<CodeBlock
-							desc='check your user bonds:'
-							code={`namada client bonds --owner $WALLET`}
-						/>
+						<CodeBlock desc='check your user bonds:' code={`namada client bonds --owner $WALLET`} />
 						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake`} />
 						<CodeBlock desc='find all the slashes:' code={`namada client slashes`} />
 						<CodeBlock
@@ -207,13 +201,18 @@ const CheatSheet = props => {
 							desc='find your validator status:'
 							code={`namada client validator-state --validator $VALIDATOR_ADDRESS`}
 						/>
-						<CodeBlock
-							desc='check epoch:'
-							code={`namada client epoch`}
-						/>
+						<CodeBlock desc='check epoch:' code={`namada client epoch`} />
 						<CodeBlock
 							desc='unjail, you need to wait 2 epochs:'
 							code={`namada client unjail-validator --validator $VALIDATOR_ADDRESS --node tcp://127.0.0.1:26657 --memo $MEMO`}
+						/>
+					</div>
+					<h2 id='governance'>Governance</h2>
+					<div className='flex flex-col gap-y-2'>
+						<CodeBlock desc='All proposals list:' code={`namadac query-proposal`} />
+						<CodeBlock
+							desc='Vote:'
+							code={`namadac vote-proposal --proposal-id <PROPOSAL_ID> --vote yay --address $ADDRESS`}
 						/>
 					</div>
 					<h2 id='sync-and-consensus'>Sync and Consensus</h2>
