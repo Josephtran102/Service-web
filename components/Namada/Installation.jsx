@@ -347,17 +347,17 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									<CodeSnippet
 										theme={theme}
 										established
-										code={`namadac init-validator \/
-	                                                                        --commission-rate 0.07 \/
-									        --max-commission-rate-change 1 \/
-		                                                                --signing-keys $WALLET \/
-								                --alias $ALIAS \/
-			                                                        --email <EMAIL_ADDRESS> \/
-							                        --website <WEBSITE> \/ 
-			                                                        --discord-handle <DISCORD> \/
-							                        --account-keys $WALLET \/
-			                                                        --memo $MEMO`}
-									/>
+										code={`namadac init-validator \\
+		--commission-rate 0.07 \\
+		--max-commission-rate-change 1 \\
+		--signing-keys $WALLET \\
+		--alias $ALIAS \\
+		--email <EMAIL_ADDRESS> \\
+		--website <WEBSITE> \\ 
+		--discord-handle <DISCORD> \\
+		--account-keys $WALLET \\
+		--memo $MEMO`}
+/>
 									<span>
 										Find your <kbd className={`${styles.kbd} dark:bg-slate-600`}>established</kbd>
 										validator address
