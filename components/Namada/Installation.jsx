@@ -356,7 +356,6 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 		--website <WEBSITE> \\ 
 		--discord-handle <DISCORD> \\
 		--account-keys $WALLET \\
-                --avatar <AVATAR_URL> \\
 		--memo $MEMO`}
 />
 									<span>
