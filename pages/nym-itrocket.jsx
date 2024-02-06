@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
 						<span className='font-semibold pt-8'>
 							Delegate to our node with confidence here:{' '}
 							<a
-								href='https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5.'
+								href='https://mixnet.explorers.guru/mixnode/6L1geN6S9n7SMvgajjptj6p96sCSMfxWmbR8dJ3G3f5'
 								target='_blank'
 								rel='noopener noreferrer'
 							>
