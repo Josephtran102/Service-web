@@ -369,7 +369,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 									<span>Replace your Validator address, save and import variables into system</span>
 									<CodeSnippet
 										theme={theme}
-										code={`VALIDATOR_ADDRESS=$(namadaw list | grep -A 1 "\"$ALIAS\"" | grep "Established" | awk '{print $3}') 
+										code={`VALIDATOR_ADDRESS=$(namadaw list | grep -A 1 "\\"$ALIAS\\"" | grep "Established" | awk '{print $3}') 
 echo "export VALIDATOR_ADDRESS="$VALIDATOR_ADDRESS"" >> $HOME/.bash_profile 
 source $HOME/.bash_profile`}
 									/>
