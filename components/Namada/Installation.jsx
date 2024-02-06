@@ -178,7 +178,7 @@ echo "export MEMO="CHOOSE_YOUR_tpknam_ADDRESS"" >> $HOME/.bash_profile
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
 echo "export PUBLIC_IP=$(wget -qO- eth0.me)" >> $HOME/.bash_profile
 echo "export TM_HASH="v0.1.4-abciplus"" >> $HOME/.bash_profile
-echo "export CHAIN_ID="shielded-expedition.b40d8e9055"" >> $HOME/.bash_profile
+echo "export CHAIN_ID="shielded-expedition.88f17d1d14"" >> $HOME/.bash_profile
 echo "export BASE_DIR="$HOME/.local/share/namada"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 `}
@@ -285,7 +285,7 @@ s%:26657%:\${NAMADA_PORT}657%g;
 s%:26656%:\${NAMADA_PORT}656%g;
 s%:26545%:\${NAMADA_PORT}545%g;
 s%:8545%:\${NAMADA_PORT}545%g;
-s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/shielded-expedition.b40d8e9055/config.toml`}
+s%:26660%:\${NAMADA_PORT}660%g" $HOME/.local/share/namada/shielded-expedition.88f17d1d14/config.toml`}
 				/>
 				<p>Enable and start service:</p>
 				<CodeSnippet
