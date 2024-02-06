@@ -97,38 +97,42 @@ const CheatSheet = props => {
 							desc='init multisig account (at least 2 signers):'
 							code={`namada client init-account --alias $\{WALLET\}1-multisig --public-keys <WALLET-public-key>,<WALLET1-public-key> --signing-keys $WALLET,$\{WALLET\}1 --threshold 2 --memo $MEMO`}
 						/>
-						<CodeBlock desc='submitting a multisignature transaction:' code={`mkdir tx_dumps`} />
+						<CodeBlock desc='create a folder for a transaction:' code={`mkdir tx_dumps`} />
 						<CodeBlock
 							desc='create transaction:'
-							code={`namadac transfer --source my-multisig-alias --target some-established-account-alias --token NAM --amount 100 --signing-keys my-key1 --dump-tx --output-folder-path tx_dumps`}
+							code={`namada client transfer --source $\{WALLET\}1-multisig --target $\{WALLET\}1 --token NAAN --amount 10 --signing-keys $WALLET,$\{WALLET\}1 --dump-tx --output-folder-path tx_dumps --memo $MEMO`}
 						/>
 						<CodeBlock
-							desc='signing the transaction:'
-							code={`namadac sign-tx --tx-path "<path-to-file>" --signing-keys my-key1 --owner my-multisig-alias`}
+							desc='sign the transaction:'
+							code={`namada client sign-tx --tx-path "<path-to-.tx-file>" --signing-keys $WALLET,$\{WALLET\}1 --owner $\{WALLET\}1-multisig --memo $MEMO`}
 						/>
 						<CodeBlock
-							desc='save as a variable offline_signature:'
-							code={`export SIGNATURE_ONE="offline_signature_FB7246E3FC43F59D8AEEC234EBFDB9DF1AC9BB7B14E536D05A7E2617CA41D4CD_0.tx"`}
+							desc='save as a variable offline_signature 1:'
+							code={`export SIGNATURE_ONE="<signature-file-name>"`}
+						/>
+						<CodeBlock
+							desc='save as a variable offline_signature 2:'
+							code={`export SIGNATURE_TWO="<signature-2-file-name>"`}
 						/>
 						<CodeBlock
 							desc='submit transaction:'
-							code={`namadac tx --tx-path "tx_dumps/a45ef98a817290d6fc0efbd480bf66647ea8061aee1628ce09b4af4f4eeed1c2.tx" --signatures $SIGNATURE_ONE --signatures $SIGNATURE_TWO --owner my-multisig-alias --gas-payer my-key1`}
+							code={`namada client tx --tx-path "<path-to-.tx-file>" --signatures $SIGNATURE_ONE,$SIGNATURE_TWO --owner $\{WALLET\}1-multisig --gas-payer $WALLET --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='changing the multisig threshold:'
-							code={`namadac update-account --address my-multisig-address --threshold 1 --signing-keys my-key1,my-key2`}
+							code={`namada client update-account --address $\{WALLET\}1-multisig --threshold 1 --signing-keys $WALLET,$\{WALLET\}1 --memo $MEMO`}
 						/>
 						<CodeBlock
-							desc='one can check that the threshold has been updated correctly by running:'
-							code={`namadac query-account --owner my-multisig-address`}
+							desc='check that the threshold has been updated correctly by running:'
+							code={`namada client query-account --owner $\{WALLET\}1-multisig`}
 						/>
 						<CodeBlock
 							desc='changing the public keys of a multisig account:'
-							code={`namadac update-account --address my-multisig-address --public-keys my-key3,my-key4,my-key5 --signing-keys my-key1,my-key2`}
+							code={`namada client update-account --address $\{WALLET\}1-multisig --public-keys $\{WALLET\}2,$\{WALLET\}3,$\{WALLET\}4 --signing-keys $WALLET,$\{WALLET\}1 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='initialize an established account:'
-							code={`namada client init-account --alias establishment --public-keys keysha  --signing-keys keysha  --threshold 1`}
+							code={`namada client init-account --alias $\{WALLET\}1-multisig --public-keys $\{WALLET\}2,$\{WALLET\}3,$\{WALLET\}4  --signing-keys $WALLET,$\{WALLET\}1  --threshold 1 --memo $MEMO`}
 						/>
 					</div>
 
