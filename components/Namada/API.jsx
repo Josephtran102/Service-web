@@ -112,12 +112,12 @@ wget -O snap_namada.tar https://testnet-files.itrocket.net/namada/snap_namada.ta
 				<CodeBlock
 					desc='Stop node and unpack snapshot:'
 					code={`sudo systemctl stop namadad
-cp $HOME/.local/share/namada/shielded-expedition.b40d8e9055/cometbft/data/priv_validator_state.json $HOME/.local/share/namada/shielded-expedition.b40d8e9055/cometbft/priv_validator_state.json.backup
-tar -xvf snap_namada.tar -C $HOME/.local/share/namada/shielded-expedition.b40d8e9055
-rm -rf $HOME/.local/share/namada/shielded-expedition.b40d8e9055/db $HOME/.local/share/namada/shielded-expedition.b40d8e9055/cometbft/data
+cp $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/data/priv_validator_state.json $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/priv_validator_state.json.backup
+tar -xvf snap_namada.tar -C $HOME/.local/share/namada/shielded-expedition.88f17d1d14
+rm -rf $HOME/.local/share/namada/shielded-expedition.88f17d1d14/db $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/data
 cd $HOME
-tar -xvf snap_namada.tar -C $HOME/.local/share/namada/shielded-expedition.b40d8e9055
-mv $HOME/.local/share/namada/shielded-expedition.b40d8e9055/cometbft/priv_validator_state.json.backup $HOME/.local/share/namada/shielded-expedition.b40d8e9055/cometbft/data/priv_validator_state.json
+tar -xvf snap_namada.tar -C $HOME/.local/share/namada/shielded-expedition.88f17d1d14
+mv $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/priv_validator_state.json.backup $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/data/priv_validator_state.json
 
 `}
 				/>
