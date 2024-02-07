@@ -92,8 +92,8 @@ const CheatSheet = props => {
 						<CodeBlock
 							desc='export variables:'
 							code={`echo "export VAL_ALIAS="$VAL_ALIAS"" >> $HOME/.bash_profile \\
-       echo "export VAL_ADDRESS="$VAL_ADDRESS"" >> $HOME/.bash_profile \\
-       source $HOME/.bash_profile`}
+echo "export VAL_ADDRESS="$VAL_ADDRESS"" >> $HOME/.bash_profile \\
+source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
 							desc='stake funds:'
