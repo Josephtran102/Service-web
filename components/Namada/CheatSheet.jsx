@@ -82,17 +82,17 @@ const CheatSheet = props => {
 					<h2 id='Staking'>Staking</h2>
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock
-							desc='add a variable with validator alias'
+							desc='add a variable with validator alias:'
 							code={`VAL_ALIAS="itrocket" # alias of validator you want to stake to`}
 						/>
 						<CodeBlock
-							desc='or with validator address'
+							desc='or with validator address:'
 							code={`VAL_ADDRESS="tnam1qxkapjmrhxta0w75majjawv0ulc8g4trtqdt0tnc" # address of validator you want to stake to`}
 						/>
 						<CodeBlock
-							desc='export variables'
-							code={`echo "export VAL_ALIAS="$VAL_ALIAS"" >> $HOME/.bash_profile \
-							echo "export VAL_ADDRESS="$VAL_ADDRESS"" >> $HOME/.bash_profile \
+							desc='export variables:'
+							code={`echo "export VAL_ALIAS="$VAL_ALIAS"" >> $HOME/.bash_profile \\
+							echo "export VAL_ADDRESS="$VAL_ADDRESS"" >> $HOME/.bash_profile \\
 							source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
