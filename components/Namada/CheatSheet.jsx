@@ -81,6 +81,9 @@ const CheatSheet = props => {
 
 					<h2 id='Staking'>Staking</h2>
 					<div className='flex flex-col gap-y-2'>
+						<span>
+							If you find this guide helpful, you can stake to our validator. We would really appreciate it!
+						</span>
 						<CodeBlock
 							desc='add a variable with validator alias:'
 							code={`VAL_ALIAS="itrocket" # alias of validator you want to stake to`}
