@@ -80,7 +80,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "CELESTIA",
-      "website": "https://celestia.org/"
+      "website": "https://celestia.org/",
+      "newInit": "false"
     },
     "doravota": {
       "bin": "dorad",
