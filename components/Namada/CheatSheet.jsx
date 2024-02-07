@@ -79,6 +79,38 @@ const CheatSheet = props => {
 						<CodeBlock desc='remove keys:' code={`namada wallet remove --alias $WALLET --do-it`} />
 					</div>
 
+					<h2 id='Staking'>Staking</h2>
+					<div className='flex flex-col gap-y-2'>
+						<CodeBlock
+							desc='add a variable with validator alias'
+							code={`VAL_ALIAS="itrocket" # alias of validator you want to stake to`}
+						/>
+						<CodeBlock
+							desc='or with validator address'
+							code={`VAL_ADDRESS="tnam1qxkapjmrhxta0w75majjawv0ulc8g4trtqdt0tnc" # address of validator you want to stake to`}
+						/>
+						<CodeBlock
+							desc='export variables'
+							code={`echo "export VAL_ALIAS="$VAL_ALIAS"" >> $HOME/.bash_profile \
+							echo "export VAL_ADDRESS="$VAL_ADDRESS"" >> $HOME/.bash_profile \
+							source $HOME/.bash_profile`}
+						/>
+						<CodeBlock
+							desc='stake funds:'
+							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 10 --memo $MEMO`}
+						/>
+						<CodeBlock desc='check your user bonds:' code={`namada client bonds --owner $WALLET`} />
+						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake`} />
+						<CodeBlock
+							desc='unbonding (validator alias can be used instead of address):'
+							code={`namada client unbond --source $WALLET --validator $VAL_ADDRESS --amount 1.5 --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='withdrawing unbonded tokens (available 6 epochs after unbonding):'
+							code={`namada client withdraw --source $WALLET --validator $VAL_ADDRESS --memo $MEMO`}
+						/>
+					</div>
+					
 					<h2 id='multisign'>Multisign</h2>
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock desc='generate key_1:' code={`namada wallet gen --alias $WALLET`} />
@@ -195,7 +227,7 @@ const CheatSheet = props => {
 						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake`} />
 						<CodeBlock desc='find all the slashes:' code={`namada client slashes`} />
 						<CodeBlock
-							desc='non-self unbonding (validator address can be used instead of alias):'
+							desc='non-self unbonding (validator alias can be used instead of address):'
 							code={`namada client unbond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 1.5 --memo $MEMO`}
 						/>
 						<CodeBlock
