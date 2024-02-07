@@ -60,6 +60,7 @@
       "delegate": "",
       "denom": "utia",
       "ecosystem": "cosmos",
+      "fav": "true",
       "gas": "--gas auto --gas-adjustment 1.5 --gas-prices 0.005utia",
       "goVersion": "1.21.3",
       "hardware": "6 Cores, 8GB RAM, 500GB of storage (NVME)",
