@@ -101,17 +101,17 @@ source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
 							desc='stake funds:'
-							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 10 --memo $MEMO`}
+							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 10 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
 						/>
-						<CodeBlock desc='check your user bonds:' code={`namada client bonds --owner $WALLET --node https://namada-testnet-rpc.itrocket.net`} />
-						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake`} />
+						<CodeBlock desc='check your user bonds:' code={`namada client bonds --owner $WALLET --node tcp://namada-testnet-tcprpc.itrocket.net:33657`} />
+						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake --node tcp://namada-testnet-tcprpc.itrocket.net:33657`} />
 						<CodeBlock
 							desc='unbonding:'
-							code={`namada client unbond --source $WALLET --validator $VAL_ADDRESS --amount 1.5 --memo $MEMO`}
+							code={`namada client unbond --source $WALLET --validator $VAL_ADDRESS --amount 1.5 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='withdrawing unbonded tokens (available 6 epochs after unbonding):'
-							code={`namada client withdraw --source $WALLET --validator $VAL_ADDRESS --memo $MEMO`}
+							code={`namada client withdraw --source $WALLET --validator $VAL_ADDRESS --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
 						/>
 					</div>
 
