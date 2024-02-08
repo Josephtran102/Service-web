@@ -50,11 +50,14 @@ const API = ({ name, type }) => {
 						<a href={`https://${name}-${type}-rpc.itrocket.net:443`} target='_blank' rel='noopener referrer'>
 							{`https://${name}-${type}-rpc.itrocket.net:443`}
 						</a>
-						<br />
-						<span>Public RPC: </span>
-						<a href={`https://${name}-${type}-rpc.itrocket.net:443`} target='_blank' rel='noopener referrer'>
-							{`https://${name}-${type}-rpc.itrocket.net:443`}
-						</a>
+						</div>
+                                        <div>
+                                                <span>Public RPC: </span>
+                                                <a href={`https://${name}-${type}-rpc.itrocket.net:443`} target='_blank' rel='noopener noreferrer'>
+                                                    {`https://${name}-${type}-rpc.itrocket.net:443`}
+                                                </a>
+                                                </div>
+                                        </div>
 						<Paragraph
 							copyable={{
 								text: `https://${name}-${type}-rpc.itrocket.net:443`,
