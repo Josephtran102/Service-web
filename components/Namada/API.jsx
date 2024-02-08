@@ -116,14 +116,13 @@ cp $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/data/priv_v
 rm -rf $HOME/.local/share/namada/shielded-expedition.88f17d1d14/db $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/data
 tar -xvf $HOME/snap_namada.tar -C $HOME/.local/share/namada/shielded-expedition.88f17d1d14
 mv $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/priv_validator_state.json.backup $HOME/.local/share/namada/shielded-expedition.88f17d1d14/cometbft/data/priv_validator_state.json
-
 `}
 				/>
 				<CodeBlock
 					desc='Restart node:'
 					code={`sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 				/>
-				<CodeBlock desc='Delete snap file:' code={`rm -rf snap_namada.tar`} />
+				<CodeBlock desc='Delete snap file:' code={`rm -rf $HOME/snap_namada.tar`} />
 			</div>
 		</AnimatedSection>
 	)
