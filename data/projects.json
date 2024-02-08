@@ -902,10 +902,9 @@
       "minGasPrice": "0.0",
       "newInstallBin": "",
       "path": ".local/share/namada/shielded-expedition.b40d8e9055",
-      "peerID": "eaa32ae2d3751065c3c971ac144017971fff8059",
+      "peerID": "3aaba2c749072cb49a42d34a14296d05c27aaea9",
       "peerPort": "33656",
       "port": 33,
-      "fav": "true",
       "prHome": "/home/namada",
       "seedID": "fd5073f30457198be3c7062dca6623b51c7e74ee",
       "seedPort": "33656",
@@ -914,9 +913,10 @@
       "updHeight": "",
       "variable": "NAMADA",
       "website": "https://namada.net/",
-      "stateSync": "false",
       "delegate": "https://namadaexplorer.com/",
       "offValDoc": "https://docs.namada.net/testnets/environment-setup.html",
+      "fav": "true",
+      "stateSync": "false",
       "explorer": "https://namadaexplorer.com/"
     },
     "nois": {
