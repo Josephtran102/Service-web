@@ -1,11 +1,13 @@
-import { useContext, useRef, useState } from 'react'
 import Head from 'next/head'
-import { Input, Radio, Space } from 'antd'
+import { useContext, useRef, useState } from 'react'
+
+import { Typography } from 'antd'
+const { Paragraph } = Typography
 
 import CodeBlock from '@components/UI/CodeBlock'
+import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
 import projects from 'data/projects'
-import { Context } from '@context/context'
 import AnimatedSection from '../AnimatedSection'
 
 const CheatSheet = props => {
@@ -79,11 +81,15 @@ const CheatSheet = props => {
 						<CodeBlock desc='remove keys:' code={`namada wallet remove --alias $WALLET --do-it`} />
 					</div>
 
-					<h2 id='Staking'>Staking</h2>
+					<h2 id='staking'>Staking</h2>
 					<div className='flex flex-col gap-y-2'>
-						<span>
-							If you find this guide helpful, you can stake to our validator. We would really appreciate it!
-						</span>
+						<Paragraph>
+							<pre>
+								If you find this guide helpful, you can stake to our validator. <br />
+								We would really appreciate it! 🚀
+							</pre>
+						</Paragraph>
+
 						<CodeBlock
 							desc='add a variable with validator alias:'
 							code={`VAL_ALIAS="itrocket" # alias of validator you want to stake to`}
@@ -113,7 +119,7 @@ source $HOME/.bash_profile`}
 							code={`namada client withdraw --source $WALLET --validator $VAL_ADDRESS --memo $MEMO`}
 						/>
 					</div>
-					
+
 					<h2 id='multisign'>Multisign</h2>
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock desc='generate key_1:' code={`namada wallet gen --alias $WALLET`} />

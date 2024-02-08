@@ -256,6 +256,7 @@ const SideMenu = () => {
 							null,
 							[
 								generateLinkItem(serviceURL, name, 'wallet-operations', 'Wallet operations'),
+								generateLinkItem(serviceURL, name, 'staking', 'Staking'),
 								generateLinkItem(serviceURL, name, 'multisign', 'Multisign'),
 								generateLinkItem(serviceURL, name, 'masp', 'Masp'),
 								generateLinkItem(serviceURL, name, 'validator-operations', 'Validator Operations'),
