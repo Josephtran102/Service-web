@@ -95,11 +95,6 @@ const CheatSheet = props => {
 							code={`VAL_ADDRESS="tnam1qxkapjmrhxta0w75majjawv0ulc8g4trtqdt0tnc" # address of validator you want to stake to`}
 						/>
 						<CodeBlock
-							desc='export the variable:'
-							code={`echo "export VAL_ADDRESS="$VAL_ADDRESS"" >> $HOME/.bash_profile \\
-source $HOME/.bash_profile`}
-						/>
-						<CodeBlock
 							desc='stake funds:'
 							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 10 --memo $MEMO`}
 						/>
