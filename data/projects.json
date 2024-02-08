@@ -901,7 +901,7 @@
       "installBin": "cd $HOME\nrm -rf arkh-blockchain\ngit clone https://github.com/vincadian/arkh-blockchain\ncd arkh-blockchain\ngit checkout v2.0.0\ngo build -o arkhd ./cmd/arkhd\nmv arkhd $HOME/go/bin",
       "minGasPrice": "0.0",
       "newInstallBin": "",
-      "path": ".local/share/namada/shielded-expedition.b40d8e9055",
+      "path": ".local/share/namada/shielded-expedition.88f17d1d14",
       "peerID": "3aaba2c749072cb49a42d34a14296d05c27aaea9",
       "peerPort": "33656",
       "port": 33,
