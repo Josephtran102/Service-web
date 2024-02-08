@@ -80,11 +80,11 @@ sed -i 's|^persistent_peers *=.*|persistent_peers = "'$PEERS'"|' $HOME/${path}/c
 				<p className={styles.text_secondary}>updates every hour</p>
 				<CodeSnippet
 					theme={theme}
-					code={`wget -O $HOME/${path}/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
+					code={`wget -O $HOME/${path}/cometbft/config/addrbook.json https://${type}-files.itrocket.net/${name}/addrbook.json`}
 				/>
 				<h3 id='genesis'>genesis</h3>
 				<CodeSnippet
-					code={`wget -O $HOME/${path}/config/genesis.json https://testnet-files.itrocket.net/namada/genesis.json`}
+					code={`wget -O $HOME/${path}/cometbft/config/genesis.json https://testnet-files.itrocket.net/namada/genesis.json`}
 				/>
 
 				<h2 id='snap'>Snapshot </h2>
