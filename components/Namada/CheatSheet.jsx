@@ -91,17 +91,12 @@ const CheatSheet = props => {
 						</Paragraph>
 
 						<CodeBlock
-							desc='add a variable with validator alias:'
-							code={`VAL_ALIAS="itrocket" # alias of validator you want to stake to`}
-						/>
-						<CodeBlock
-							desc='or with validator address:'
+							desc='add a variable with the validator address:'
 							code={`VAL_ADDRESS="tnam1qxkapjmrhxta0w75majjawv0ulc8g4trtqdt0tnc" # address of validator you want to stake to`}
 						/>
 						<CodeBlock
-							desc='export variables:'
-							code={`echo "export VAL_ALIAS="$VAL_ALIAS"" >> $HOME/.bash_profile \\
-echo "export VAL_ADDRESS="$VAL_ADDRESS"" >> $HOME/.bash_profile \\
+							desc='export the variable:'
+							code={`echo "export VAL_ADDRESS="$VAL_ADDRESS"" >> $HOME/.bash_profile \\
 source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
@@ -111,7 +106,7 @@ source $HOME/.bash_profile`}
 						<CodeBlock desc='check your user bonds:' code={`namada client bonds --owner $WALLET`} />
 						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake`} />
 						<CodeBlock
-							desc='unbonding (validator alias can be used instead of address):'
+							desc='unbonding:'
 							code={`namada client unbond --source $WALLET --validator $VAL_ADDRESS --amount 1.5 --memo $MEMO`}
 						/>
 						<CodeBlock
