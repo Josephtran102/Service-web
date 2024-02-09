@@ -57,7 +57,7 @@
       "bin": "celestia-appd",
       "binHome": "/home/celestia/go/bin/celestia-appd",
       "chainID": "celestia",
-      "delegate": "",
+      "delegate": "https://mainnet.itrocket.net/celestia/staking/celestiavaloper1gl0rg3g0pkcpr8umj2hvlhha06ecjd65yt96z5",
       "denom": "utia",
       "ecosystem": "cosmos",
       "fav": "true",
