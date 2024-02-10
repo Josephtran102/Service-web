@@ -1,17 +1,16 @@
-import { useContext, useRef } from 'react'
 import { Context } from '@context/context'
-import Head from 'next/head'
 import { Typography } from 'antd'
+import Head from 'next/head'
+import { useContext, useRef } from 'react'
 const { Paragraph } = Typography
 
-import projects from 'data/projects'
-import styles from '@styles/Services.module.scss'
-import CodeSnippet from '@components/UI/CodeSnippet.jsx'
 import AnimatedSection from '@components/AnimatedSection'
-import useNetInfo from 'hooks/useNetInfo'
-import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
 import CodeBlock from '@components/UI/CodeBlock'
-import { split } from 'postcss/lib/list'
+import CodeSnippet from '@components/UI/CodeSnippet.jsx'
+import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
+import styles from '@styles/Services.module.scss'
+import projects from 'data/projects'
+import useNetInfo from 'hooks/useNetInfo'
 
 const API = ({ name, type }) => {
 	const project = projects[type][name]
@@ -59,12 +58,16 @@ const API = ({ name, type }) => {
 					</div>
 					<div className='flex flex-wrap gap-1 items-center'>
 						<span>Public RPC (node operations): </span>
-						<a href={`https://${name}-${type}-rpc.itrocket.net:443`} target='_blank' rel='noopener referrer'>
+						<a
+							href={`tcp://${name}-${type}-tcprpc.itrocket.net:33657`}
+							target='_blank'
+							rel='noopener referrer'
+						>
 							{`tcp://${name}-${type}-tcprpc.itrocket.net:33657`}
 						</a>
 						<Paragraph
 							copyable={{
-								text: `https://${name}-${type}-rpc.itrocket.net:443`,
+								text: `tcp://${name}-${type}-tcprpc.itrocket.net:33657`,
 								tooltips: false
 							}}
 						/>
