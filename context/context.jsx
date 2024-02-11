@@ -11,7 +11,7 @@ const getThemeInStorage = () => {
 }
 
 export const ContextProvider = props => {
-	const [theme, setTheme] = useState('light')
+	const [theme, setTheme] = useState('dark')
 
 	useEffect(() => {
 		if (getThemeInStorage() === 'dark') {
