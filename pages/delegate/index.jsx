@@ -1,22 +1,22 @@
-import React from 'react'
-import Head from 'next/head'
 import { Table } from 'antd'
+import Head from 'next/head'
 
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import styles from '@styles/Services.module.scss'
 import projects from 'data/projects'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 const About = () => {
+	const [opacity, setOpacity] = useState(0)
+
 	const prepareData = (data, type) => {
 		return Object.keys(data).map(key => {
 			const project = data[key]
 			const name = project.name || key.charAt(0).toUpperCase() + key.slice(1)
 			const delegate = project.delegate || ''
 			const imgUrl = project.imgUrl
-
-			console.log(key, name, delegate, imgUrl, type)
 
 			return {
 				key,
@@ -56,10 +56,16 @@ const About = () => {
 						{delegate}
 					</a>
 				) : (
-					<span>Not supported</span>
+					<span>Not supported yet</span>
 				)
 		}
 	]
+
+	useEffect(() => {
+		setTimeout(() => {
+			setOpacity(1)
+		}, 1)
+	}, [])
 
 	return (
 		<>
@@ -70,7 +76,7 @@ const About = () => {
 
 			<Header />
 
-			<div className='w-full p-1 md:p-6 bg-white dark:bg-zinc-900/40'>
+			<div className='w-full p-1 md:p-6 bg-white dark:bg-zinc-900/40' style={{ opacity: opacity }}>
 				<div
 					className={styles.mainColumn__wrapper}
 					style={{ width: '100%', padding: '10px', marginTop: '60px' }}
