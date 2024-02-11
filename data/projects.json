@@ -427,7 +427,7 @@
       "delegate": "",
       "denom": "azeta",
       "ecosystem": "cosmos",
-      "gas": "--gas auto --gas-adjustment 1.5",
+      "gas": "--gas auto --gas-adjustment 1.5 --gas-prices=0.1azeta",
       "goVersion": "1.20.3",
       "hardware": "6 Cores, 16GB RAM, 500GB of storage (NVME)",
       "imgUrl": "zetachain.jpg",
