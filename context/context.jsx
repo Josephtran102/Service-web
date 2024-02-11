@@ -1,5 +1,5 @@
+import { createContext, useEffect, useState } from 'react'
 import { changeStyles } from 'utils/changeStyles'
-import { useState, createContext, useEffect } from 'react'
 
 export const Context = createContext()
 
@@ -11,7 +11,7 @@ const getThemeInStorage = () => {
 }
 
 export const ContextProvider = props => {
-	const [theme, setTheme] = useState('dark')
+	const [theme, setTheme] = useState('light')
 
 	useEffect(() => {
 		if (getThemeInStorage() === 'dark') {

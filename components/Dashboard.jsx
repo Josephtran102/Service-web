@@ -109,14 +109,12 @@ export default function Dashboard(props) {
 					>
 						<div className={styles.stats}>
 							<ProjectsModal name={name} type='services' />
-
 							{ecosystem == 'cosmos' && isActive !== styles.pending && (
 								<>
 									<div>
 										<b className={styles.bold}>Chain ID: </b>
 										<span>{chainID}</span>
 									</div>
-
 									<div className='flex gap-1'>
 										<b className={styles.bold}>Block Height: </b>{' '}
 										{isActive === styles.pending ? (
@@ -131,7 +129,6 @@ export default function Dashboard(props) {
 									</div>
 								</>
 							)}
-
 							<span>
 								{explorer === undefined ? (
 									<a
