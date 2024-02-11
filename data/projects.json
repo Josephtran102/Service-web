@@ -155,7 +155,7 @@
       "bin": "haqqd",
       "binHome": "/home/haqq/go/bin/haqqd",
       "chainID": "haqq_11235-1",
-      "delegate": "https://shell.haqq.network/staking/validator/haqqvaloper1x0fyxnnwv5fkekeuu8rjd8z3frqynh26fp9ush",
+      "delegate": "https://mainnet.itrocket.net/haqq/staking/haqqvaloper1x0fyxnnwv5fkekeuu8rjd8z3frqynh26fp9ush",
       "denom": "aISLM",
       "ecosystem": "cosmos",
       "gas": "--gas-adjustment=1.15 --gas auto --gas-prices \"27500000000aISLM\"",
