@@ -433,7 +433,7 @@
       "imgUrl": "zetachain.jpg",
       "fav": "true",
       "installBin": "cd $HOME\nwget https://github.com/zeta-chain/node/releases/download/v12.2.4/zetacored-linux-amd64\nchmod +x $HOME/zetacored-linux-amd64\nmv $HOME/zetacored-linux-amd64 $HOME/go/bin/zetacored",
-      "minGasPrice": "0.0",
+      "minGasPrice": "0.0azeta",
       "newInstallBin": "",
       "path": ".zetacored",
       "peerID": "",
