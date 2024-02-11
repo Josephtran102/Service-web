@@ -447,7 +447,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "ZETACHAIN",
-      "website": "https://www.zetachain.com/"
+      "website": "https://www.zetachain.com/",
+      "newInit": "zetacored init $MONIKER --chain-id zetachain_7000-1"
     }
   },
   "testnet": {
