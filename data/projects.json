@@ -436,7 +436,7 @@
       "minGasPrice": "0.0azeta",
       "newInstallBin": "",
       "path": ".zetacored",
-      "peerID": "",
+      "peerID": "372e9c80f723491daf2b05b3aa368865f6bc3492",
       "peerPort": "39656",
       "port": "39",
       "prHome": "/home/zetachain",
