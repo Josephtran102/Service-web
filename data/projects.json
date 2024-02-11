@@ -424,7 +424,7 @@
       "bin": "zetacored",
       "binHome": "/home/zetachain/go/bin/zetacored",
       "chainID": "zetachain_7000-1",
-      "delegate": "",
+      "delegate": "https://mainnet.itrocket.net/zetachain/staking/zetavaloper17d6ttmqffr5pwt9fd7uuj8px27quv4nljf3s8j",
       "denom": "azeta",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5 --gas-prices=0.1azeta",
