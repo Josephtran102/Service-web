@@ -711,7 +711,7 @@
       "port": "38",
       "prHome": "/home/elys",
       "seedID": "ae7191b2b922c6a59456588c3a262df518b0d130",
-      "seedPort": "38656",
+      "seedPort": "54656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "5775587",
