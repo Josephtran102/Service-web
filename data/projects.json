@@ -1252,7 +1252,7 @@
       "newExecStart": "$(which zetacored) start --home $HOME/.zetacored --log_format json  --log_level info --moniker $MONIKER",
       "installBin": "cd $HOME\nmkdir -p $HOME/.zetacored/config\ncd $HOME\nwget -O $HOME/zetacored https://github.com/zeta-chain/node/releases/download/v12.2.1-testnet-hotfix/zetacored-linux-amd64\nchmod +x $HOME/zetacored \nmv $HOME/zetacored  $HOME/go/bin",
       "updHeight": "3563480",
-      "newInstallBin": "cd $HOME\nwget -O $HOME/zetacored https://github.com/zeta-chain/node/releases/download/v12.2.1-testnet-hotfix/zetacored-linux-amd64\nchmod +x $HOME/zetacored \nsudo mv $HOME/zetacored $(which zetacored)",
+      "newInstallBin": "cd $HOME\nwget -O $HOME/zetacored https://github.com/zeta-chain/node/releases/download/v12.2.1/zetacored-linux-amd64\nchmod +x $HOME/zetacored \nsudo mv $HOME/zetacored $(which zetacored)",
       "goVersion": "1.19.3",
       "gas": "--gas auto --gas-adjustment 1.5 --gas-prices=\"0.1azeta\"",
       "unsafeReset": "tendermint unsafe-reset-all",
