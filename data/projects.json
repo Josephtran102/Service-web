@@ -877,7 +877,7 @@
       "chainID": "lava-testnet-2",
       "denom": "ulava",
       "hardware": "4 Cores, 8GB RAM, 100GB of storage (NVME)",
-      "installBin": "cd $HOME\nwget -O lavad https://binary.lavanet.xyz/v0.34.0/linux-amd64/lavad\nchmod +x $HOME/lavad\nmv $HOME/lavad $HOME/go/bin/lavad",
+      "installBin": "cd $HOME\nwget -O lavad https://binary.lavanet.xyz/v0.35.0/linux-amd64/lavad\nchmod +x $HOME/lavad\nmv $HOME/lavad $HOME/go/bin/lavad",
       "newInstallBin": "cd $HOME\nwget -O lavad https://github.com/lavanet/lava/releases/download/v0.35.0/lavad-v0.35.0-linux-amd64\nchmod +x $HOME/lavad\nsudo mv $HOME/lavad $(which lavad)",
       "path": ".lava",
       "peerID": "3693ea5a8a9c0590440a7d6c9a98a022ce3b2455",
