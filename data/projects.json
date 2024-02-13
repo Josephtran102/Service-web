@@ -164,7 +164,7 @@
       "imgUrl": "haqq.png",
       "installBin": "cd $HOME\nrm -rf haqq\ngit clone https://github.com/haqq-network/haqq.git\ncd haqq\ngit checkout v1.7.1\nmake install",
       "minGasPrice": "0.0025aISLM",
-      "newInstallBin": "cd $HOME\nrm -rf haqq\nmkdir haqq\ncd haqq\nwget https://github.com/haqq-network/haqq/releases/download/v1.7.1/haqq_1.7.1_Linux_x86_64.tar.gz\ntar -xvf haqq_1.7.1_Linux_x86_64.tar.gz\nrm haqq_1.7.1_Linux_x86_64.tar.gz\nchmod +x $HOME/haqq/bin/haqqd\nsudo mv $HOME/haqq/bin/haqqd $(which haqqd)",
+      "newInstallBin": "cd $HOME\nrm -rf haqq\nmkdir haqq\ncd haqq\nwget https://github.com/haqq-network/haqq/releases/download/v1.7.2/haqq_1.7.2_Linux_x86_64.tar.gz\ntar -xvf haqq_1.7.2_Linux_x86_64.tar.gz\nrm haqq_1.7.2_Linux_x86_64.tar.gz\nchmod +x $HOME/haqq/bin/haqqd\nsudo mv $HOME/haqq/bin/haqqd $(which haqqd)",
       "path": ".haqqd",
       "peerID": "826dbf0b1a27225ed972bf59b46e9eda028b9249",
       "peerPort": "25656",
@@ -174,7 +174,7 @@
       "seedPort": "25656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "9774000",
+      "updHeight": "9862000",
       "variable": "HAQQ",
       "website": "https://islamiccoin.net",
       "evmRPC": "https://haqq-mainnet-evm.itrocket.net:443"
