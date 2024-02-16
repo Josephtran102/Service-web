@@ -279,7 +279,7 @@
       "bin": "quicksilverd",
       "binHome": "/home/quick/go/bin/quicksilverd",
       "chainID": "quicksilver-2",
-      "delegate": "https://mainnet.itrocket.net/quicksilver/staking/quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x",
+      "delegate": "https://www.mintscan.io/quicksilver/validators/quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x",
       "denom": "uqck",
       "ecosystem": "cosmos",
       "gas": "--fees 100uqck",
