@@ -290,10 +290,18 @@ source $HOME/.bash_profile`}
 					</div>
 					<h2 id='governance'>Governance</h2>
 					<div className='flex flex-col gap-y-2'>
-						<CodeBlock desc='All proposals list:' code={`namadac query-proposal`} />
+						<CodeBlock desc='all proposals list:' code={`namadac query-proposal`} />
+						<CodeBlock desc='edit proposal:' code={`namadac query-proposal --proposal-id <PROPOSAL_ID>`} />
+						<CodeBlock desc='save wallet address:' code={`WALLET_ADDRESS=$(namadaw find --alias $WALLET | grep "Implicit" | awk '{print $3}')`} />
+						<CodeBlock desc='import the variable into system:' code={`echo "export WALLET_ADDRESS="$WALLET_ADDRESS"" >> $HOME/.bash_profile \
+source $HOME/.bash_profile`}
 						<CodeBlock
-							desc='Vote:'
-							code={`namadac vote-proposal --proposal-id <PROPOSAL_ID> --vote yay --address $ADDRESS`}
+							desc='vote:'
+							code={`namadac vote-proposal --proposal-id <proposal-id> --vote yay --address $WALLET_ADDRESS --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='vote for PGF proposal:'
+							code={`namadac vote-proposal --proposal-id <proposal-id-of-steward-proposal> --vote yay --signing-keys $WALLET --memo $MEMO`}
 						/>
 					</div>
 					<h2 id='sync-and-consensus'>Sync and Consensus</h2>
