@@ -65,20 +65,20 @@ const CheatSheet = props => {
 					</div>
 					<h2 id='wallet-operations'>Wallet operations</h2>
 					<div className='flex flex-col gap-y-2'>
-						<CodeBlock desc='create a new keypair:' code={`namada wallet gen --alias $WALLET`} />
+						<CodeBlock desc='create a new keypair:' code={`namadaw gen --alias $WALLET`} />
 						<CodeBlock
-							desc='restore executed key:'
+							desc='restore existing wallet:'
 							code={`namada wallet derive --alias $WALLET --hd-path default`}
 						/>
-						<CodeBlock desc='view your address:' code={`namada wallet find --alias $WALLET`} />
+						<CodeBlock desc='find your wallet address:' code={`namadaw find --alias $WALLET`} />
 						<CodeBlock desc='add some tokens using faucet:' code={`https://faucet.heliax.click/`} />
-						<CodeBlock desc='check balance:' code={`namada client balance --owner $WALLET`} />
-						<CodeBlock desc='check keys:' code={`namada wallet list`} />
+						<CodeBlock desc='check balance:' code={`namadac balance --owner $WALLET`} />
+						<CodeBlock desc='check all known keys and addresses in the wallet:' code={`namadaw list`} />
 						<CodeBlock
 							desc='send payment from one address to another:'
-							code={`namada client transfer --source $WALLET --target $\{WALLET\}1 --token NAAN --amount 1 --signing-keys $WALLET --memo $MEMO`}
+							code={`namadac transfer --source $WALLET --target $\{WALLET\}1 --token NAAN --amount 1 --signing-keys $WALLET --memo $MEMO`}
 						/>
-						<CodeBlock desc='remove keys:' code={`namada wallet remove --alias $WALLET --do-it`} />
+						<CodeBlock desc='remove keys:' code={`namadaw remove --alias $WALLET --do-it`} />
 					</div>
 
 					<h2 id='staking'>Staking</h2>
@@ -100,45 +100,65 @@ const CheatSheet = props => {
 source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
-							desc='stake funds:'
-							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 10 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							desc='delegate tokens:'
+							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 500 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
 						/>
-						<CodeBlock desc='check your user bonds:' code={`namada client bonds --owner $WALLET --node tcp://namada-testnet-tcprpc.itrocket.net:33657`} />
-						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake --node tcp://namada-testnet-tcprpc.itrocket.net:33657`} />
+						<CodeBlock desc='check your user bonds:' code={`namadac bonds --owner $WALLET --node tcp://namada-testnet-tcprpc.itrocket.net:33657`} />
+						<CodeBlock desc='check all bonded nodes:' code={`namadac bonded-stake --node tcp://namada-testnet-tcprpc.itrocket.net:33657`} />
 						<CodeBlock
-							desc='unbonding:'
-							code={`namada client unbond --source $WALLET --validator $VAL_ADDRESS --amount 1.5 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							desc='add stake:'
+							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 500 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
 						/>
 						<CodeBlock
-							desc='withdrawing unbonded tokens (available 6 epochs after unbonding):'
-							code={`namada client withdraw --source $WALLET --validator $VAL_ADDRESS --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							desc='unbond the tokens:'
+							code={`namadac unbond --source $WALLET --validator $VAL_ADDRESS --amount 15 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='wait for 6 epochs, then check when the unbonded tokens can be withdrawed:'
+							code={`namadac bonds --owner $WALLET --node tcp://namada-testnet-tcprpc.itrocket.net:33657`}
+						/>
+						<CodeBlock
+							desc='withdraw unbonded tokens:'
+							code={`namadac withdraw --source $WALLET --validator $VAL_ADDRESS --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='redelegate:'
+							code={`namadac redelegate --owner $WALLET --source-validator $VAL_ADDRESS --destination-validator <destination-validator-address> --amount 10 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='claim rewards:'
+							code={`namadac claim-rewards --source $WALLET --validator $VAL_ADDRESS --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='query the pending reward tokens without claiming:'
+							code={`namadac rewards --source $WALLET --validator $VAL_ADDRESS --node tcp://namada-testnet-tcprpc.itrocket.net:33657`}
 						/>
 					</div>
 
 					<h2 id='multisign'>Multisign</h2>
 					<div className='flex flex-col gap-y-2'>
-						<CodeBlock desc='generate key_1:' code={`namada wallet gen --alias $WALLET`} />
-						<CodeBlock desc='generate key_2 and etc:' code={`namada wallet gen --alias $\{WALLET\}1`} />
+						<CodeBlock desc='generate key_1:' code={`namadaw gen --alias $WALLET`} />
+						<CodeBlock desc='generate key_2 and etc:' code={`namadaw gen --alias $\{WALLET\}1`} />
 						<CodeBlock
 							desc='chech your public key:'
-							code={`namada wallet find --alias $WALLET | awk '/Public key:/ {print $3}'`}
+							code={`namadaw find --alias $WALLET | awk '/Public key:/ {print $3}'`}
 						/>
 						<CodeBlock
 							desc='init non-multisig account (single signer):'
-							code={`namada client init-account --alias $\{WALLET\}-multisig --public-keys <WALLET-public-key> --signing-keys $WALLET --memo $MEMO`}
+							code={`namadac init-account --alias $\{WALLET\}-multisig --public-keys $WALLET --signing-keys $WALLET --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='init multisig account (at least 2 signers):'
-							code={`namada client init-account --alias $\{WALLET\}1-multisig --public-keys <WALLET-public-key>,<WALLET1-public-key> --signing-keys $WALLET,$\{WALLET\}1 --threshold 2 --memo $MEMO`}
+							code={`namadac init-account --alias $\{WALLET\}1-multisig --public-keys $WALLET,$\{WALLET\}1 --signing-keys $WALLET,$\{WALLET\}1 --threshold 2 --memo $MEMO`}
 						/>
 						<CodeBlock desc='create a folder for a transaction:' code={`mkdir tx_dumps`} />
 						<CodeBlock
 							desc='create transaction:'
-							code={`namada client transfer --source $\{WALLET\}1-multisig --target $\{WALLET\}1 --token NAAN --amount 10 --signing-keys $WALLET,$\{WALLET\}1 --dump-tx --output-folder-path tx_dumps --memo $MEMO`}
+							code={`namadac transfer --source $\{WALLET\}1-multisig --target $\{WALLET\}1 --token NAAN --amount 10 --signing-keys $WALLET,$\{WALLET\}1 --dump-tx --output-folder-path tx_dumps --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='sign the transaction:'
-							code={`namada client sign-tx --tx-path "<path-to-.tx-file>" --signing-keys $WALLET,$\{WALLET\}1 --owner $\{WALLET\}1-multisig --memo $MEMO`}
+							code={`namadac sign-tx --tx-path "<path-to-.tx-file>" --signing-keys $WALLET,$\{WALLET\}1 --owner $\{WALLET\}1-multisig --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='save as a variable offline_signature 1:'
@@ -150,23 +170,23 @@ source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
 							desc='submit transaction:'
-							code={`namada client tx --tx-path "<path-to-.tx-file>" --signatures $SIGNATURE_ONE,$SIGNATURE_TWO --owner $\{WALLET\}1-multisig --gas-payer $WALLET --memo $MEMO`}
+							code={`namadac tx --tx-path "<path-to-.tx-file>" --signatures $SIGNATURE_ONE,$SIGNATURE_TWO --owner $\{WALLET\}1-multisig --gas-payer $WALLET --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='changing the multisig threshold:'
-							code={`namada client update-account --address $\{WALLET\}1-multisig --threshold 1 --signing-keys $WALLET,$\{WALLET\}1 --memo $MEMO`}
+							code={`namadac update-account --address $\{WALLET\}1-multisig --threshold 1 --signing-keys $WALLET,$\{WALLET\}1 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='check that the threshold has been updated correctly by running:'
-							code={`namada client query-account --owner $\{WALLET\}1-multisig`}
+							code={`namadac query-account --owner $\{WALLET\}1-multisig`}
 						/>
 						<CodeBlock
 							desc='changing the public keys of a multisig account:'
-							code={`namada client update-account --address $\{WALLET\}1-multisig --public-keys $\{WALLET\}2,$\{WALLET\}3,$\{WALLET\}4 --signing-keys $WALLET,$\{WALLET\}1 --memo $MEMO`}
+							code={`namadac update-account --address $\{WALLET\}1-multisig --public-keys $\{WALLET\}2,$\{WALLET\}3,$\{WALLET\}4 --signing-keys $WALLET,$\{WALLET\}1 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='initialize an established account:'
-							code={`namada client init-account --alias $\{WALLET\}1-multisig --public-keys $\{WALLET\}2,$\{WALLET\}3,$\{WALLET\}4  --signing-keys $WALLET,$\{WALLET\}1  --threshold 1 --memo $MEMO`}
+							code={`namadac init-account --alias $\{WALLET\}1-multisig --public-keys $\{WALLET\}2,$\{WALLET\}3,$\{WALLET\}4  --signing-keys $WALLET,$\{WALLET\}1  --threshold 1 --memo $MEMO`}
 						/>
 					</div>
 
@@ -174,32 +194,32 @@ source $HOME/.bash_profile`}
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock
 							desc='randomly generate a new spending key:'
-							code={`namada wallet gen --shielded --alias $\{WALLET\}-shielded`}
+							code={`namadaw gen --shielded --alias $\{WALLET\}-shielded`}
 						/>
 						<CodeBlock
 							desc='create a new payment address:'
-							code={`namada wallet gen-payment-addr --key $\{WALLET\}-shielded --alias $\{WALLET\}-shielded-addr`}
+							code={`namadaw gen-payment-addr --key $\{WALLET\}-shielded --alias $\{WALLET\}-shielded-addr`}
 						/>
 						<CodeBlock
 							desc='send a shielding transfer:'
-							code={`namada client transfer --source $WALLET --target $\{WALLET\}-shielded-addr --token NAAN --amount 5 --memo $MEMO`}
+							code={`namadac transfer --source $WALLET --target $\{WALLET\}-shielded-addr --token NAAN --amount 10 --memo $MEMO`}
 						/>
-						<CodeBlock desc='view balance:' code={`namada client balance --owner $\{WALLET\}-shielded`} />
+						<CodeBlock desc='view balance:' code={`namadac balance --owner $\{WALLET\}-shielded`} />
 						<CodeBlock
 							desc='generate another spending key:'
-							code={`namada wallet gen --shielded --alias $\{WALLET\}1-shielded`}
+							code={`namadaw gen --shielded --alias $\{WALLET\}1-shielded`}
 						/>
 						<CodeBlock
 							desc='create a payment address:'
-							code={`namada wallet gen-payment-addr --key $\{WALLET\}1-shielded --alias $\{WALLET\}1-shielded-addr`}
+							code={`namadaw gen-payment-addr --key $\{WALLET\}1-shielded --alias $\{WALLET\}1-shielded-addr`}
 						/>
 						<CodeBlock
 							desc='shielded transfers (once the user has a shielded balance, it can be transferred to another shielded address):'
-							code={`namada client transfer  --source $\{WALLET\}-shielded --target $\{WALLET\}1-shielded-addr --token NAAN --amount 5 --signing-keys <your-implicit-account-alias> --memo $MEMO`}
+							code={`namadac transfer  --source $\{WALLET\}-shielded --target $\{WALLET\}1-shielded-addr --token NAAN --amount 4 --signing-keys <your-implicit-account-alias> --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='unshielding transfers (from a shielded to a transparent account):'
-							code={`namada client transfer --source $\{WALLET\}-shielded --target $WALLET --token NAAN --amount 5 --signing-keys <your-implicit-account-alias> --memo $MEMO`}
+							code={`namadac transfer --source $\{WALLET\}-shielded --target $WALLET --token NAAN --amount 4 --signing-keys <your-implicit-account-alias> --memo $MEMO`}
 						/>
 					</div>
 
@@ -209,11 +229,11 @@ source $HOME/.bash_profile`}
 							desc='check sync status and node info:'
 							code={`curl http://127.0.0.1:26657/status | jq`}
 						/>
-						<CodeBlock desc='check balance:' code={`namada client balance --owner $ALIAS`} />
-						<CodeBlock desc='check keys:' code={`namada wallet list`} />
+						<CodeBlock desc='check balance:' code={`namadac balance --owner $ALIAS`} />
+						<CodeBlock desc='check keys:' code={`namadaw list`} />
 						<CodeBlock
 							desc='find your validator address:'
-							code={`namada client find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address) --node localhost:26657`}
+							code={`namadac find-validator --tm-address=$(curl -s localhost:26657/status | jq -r .result.validator_info.address) --node localhost:26657`}
 						/>
 						<CodeBlock
 							desc='stake funds:'
@@ -225,31 +245,47 @@ source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
 							desc='check your validator bond status:'
-							code={`namada client bonds --owner $ALIAS`}
+							code={`namadac bonds --owner $ALIAS`}
 						/>
-						<CodeBlock desc='check your user bonds:' code={`namada client bonds --owner $WALLET`} />
-						<CodeBlock desc='check all bonded nodes:' code={`namada client bonded-stake`} />
-						<CodeBlock desc='find all the slashes:' code={`namada client slashes`} />
+						<CodeBlock desc='check your user bonds:' code={`namadac bonds --owner $WALLET`} />
+						<CodeBlock desc='check all bonded nodes:' code={`namadac bonded-stake`} />
+						<CodeBlock desc='find all the slashes:' code={`namadac slashes`} />
 						<CodeBlock
 							desc='non-self unbonding (validator alias can be used instead of address):'
-							code={`namada client unbond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 1.5 --memo $MEMO`}
+							code={`namadac unbond --source $WALLET --validator $VALIDATOR_ADDRESS --amount 1.5 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='self-unbonding:'
-							code={`namada client unbond --validator $VALIDATOR_ADDRESS --amount 1.5 --memo $MEMO`}
+							code={`namadac unbond --validator $VALIDATOR_ADDRESS --amount 1.5 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='withdrawing unbonded tokens (available 6 epochs after unbonding):'
-							code={`namada client withdraw --source $WALLET --validator $VALIDATOR_ADDRESS --memo $MEMO`}
+							code={`namadac withdraw --source $WALLET --validator $VALIDATOR_ADDRESS --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='find your validator status:'
-							code={`namada client validator-state --validator $VALIDATOR_ADDRESS`}
+							code={`namadac validator-state --validator $VALIDATOR_ADDRESS`}
 						/>
 						<CodeBlock desc='check epoch:' code={`namada client epoch`} />
 						<CodeBlock
 							desc='unjail, you need to wait 2 epochs:'
 							code={`namada client unjail-validator --validator $VALIDATOR_ADDRESS --node tcp://127.0.0.1:26657 --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='change validator commission rate:'
+							code={`namadac change-commission-rate --validator $VALIDATOR_ADDRESS --commission-rate <commission-rate> --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='change validator metadata:'
+							code={`namadac change-metadata --validator $VALIDATOR_ADDRESS --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='deactivate validator:'
+							code={`namadac deactivate-validator --validator $VALIDATOR_ADDRESS --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='reactivate validator:'
+							code={`namadac reactivate-validator --validator $VALIDATOR_ADDRESS --memo $MEMO`}
 						/>
 					</div>
 					<h2 id='governance'>Governance</h2>
