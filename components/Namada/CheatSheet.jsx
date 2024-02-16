@@ -288,6 +288,7 @@ source $HOME/.bash_profile`}
 							code={`namadac reactivate-validator --validator $VALIDATOR_ADDRESS --memo $MEMO`}
 						/>
 					</div>
+					
 					<h2 id='governance'>Governance</h2>
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock desc='all proposals list:' code={`namadac query-proposal`} />
@@ -295,6 +296,7 @@ source $HOME/.bash_profile`}
 						<CodeBlock desc='save wallet address:' code={`WALLET_ADDRESS=$(namadaw find --alias $WALLET | grep "Implicit" | awk '{print $3}')`} />
 						<CodeBlock desc='import the variable into system:' code={`echo "export WALLET_ADDRESS="$WALLET_ADDRESS"" >> $HOME/.bash_profile \
 source $HOME/.bash_profile`}
+						/>
 						<CodeBlock
 							desc='vote:'
 							code={`namadac vote-proposal --proposal-id <proposal-id> --vote yay --address $WALLET_ADDRESS --memo $MEMO`}
