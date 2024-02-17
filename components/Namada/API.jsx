@@ -73,6 +73,18 @@ const API = ({ name, type }) => {
 							}}
 						/>
 					</div>
+					<div className='flex flex-wrap gap-1 items-center'>
+						<span>Public RPC: </span>
+						<a href={`https://${name}-${type}-rpc.itrocket.net:443`} target='_blank' rel='noopener referrer'>
+							{`https://${name}-${type}-rpc.itrocket.net:443`}
+						</a>
+						<Paragraph
+							copyable={{
+								text: `https://${name}-${type}-rpc.itrocket.net:443`,
+								tooltips: false
+							}}
+						/>
+					</div>
 				</div>
 
 				<h3 id='peer'>peers:</h3>
