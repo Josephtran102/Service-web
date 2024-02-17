@@ -63,7 +63,6 @@ const API = ({ name, type }) => {
 							target='_blank'
 							rel='noopener referrer'
 						>
-						<span>Public RPC (node operations): </span>
 							{`tcp://${name}-${type}-tcprpc.itrocket.net:33657`}
 						</a>
 						<Paragraph
@@ -75,7 +74,11 @@ const API = ({ name, type }) => {
 					</div>
 					<div className='flex flex-wrap gap-1 items-center'>
 						<span>Public indexer: </span>
-						<a href={`https://${name}-${type}-indexer.itrocket.net/block/last`} target='_blank' rel='noopener referrer'>
+						<a
+							href={`https://${name}-${type}-indexer.itrocket.net/block/last`}
+							target='_blank'
+							rel='noopener referrer'
+						>
 							{`https://${name}-${type}-indexer.itrocket.net/block/last`}
 						</a>
 						<Paragraph
