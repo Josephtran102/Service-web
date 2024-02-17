@@ -75,12 +75,12 @@ const API = ({ name, type }) => {
 					</div>
 					<div className='flex flex-wrap gap-1 items-center'>
 						<span>Public indexer: </span>
-						<a href={`https://${name}-${type}-indexer.itrocket.net:443`} target='_blank' rel='noopener referrer'>
+						<a href={`https://${name}-${type}-indexer.itrocket.net/block/last`} target='_blank' rel='noopener referrer'>
 							{`https://${name}-${type}-indexer.itrocket.net/block/last`}
 						</a>
 						<Paragraph
 							copyable={{
-								text: `https://${name}-${type}-indexer.itrocket.net:443`,
+								text: `https://${name}-${type}-indexer.itrocket.net/block/last`,
 								tooltips: false
 							}}
 						/>
