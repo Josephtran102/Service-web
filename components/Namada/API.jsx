@@ -63,6 +63,12 @@ const API = ({ name, type }) => {
 							target='_blank'
 							rel='noopener referrer'
 						>
+						<span>Public RPC (node operations): </span>
+						<a
+							href={`tcp://${name}-${type}-tcprpc.itrocket.net:33657`}
+							target='_blank'
+							rel='noopener referrer'
+						>
 							{`tcp://${name}-${type}-tcprpc.itrocket.net:33657`}
 						</a>
 						<Paragraph
