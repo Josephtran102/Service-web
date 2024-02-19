@@ -1120,7 +1120,7 @@
       "port": 45,
       "prHome": "/home/side",
       "stateSync": "true",
-      "seedID": "",
+      "seedID": "9c14080752bdfa33f4624f83cd155e2d3976e303",
       "seedPort": "45656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
