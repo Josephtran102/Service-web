@@ -1115,7 +1115,7 @@
       "minGasPrice": "0.005uside",
       "newInstallBin": "",
       "path": ".sidechain",
-      "peerID": "",
+      "peerID": "bbbf623474e377664673bde3256fc35a36ba0df1",
       "peerPort": "45656",
       "port": 45,
       "prHome": "/home/side",
