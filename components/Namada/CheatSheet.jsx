@@ -299,11 +299,7 @@ source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
 							desc='vote:'
-							code={`namadac vote-proposal --proposal-id <proposal-id> --vote yay --address $WALLET_ADDRESS --memo $MEMO`}
-						/>
-						<CodeBlock
-							desc='vote for PGF proposal:'
-							code={`namadac vote-proposal --proposal-id <proposal-id-of-steward-proposal> --vote yay --signing-keys $WALLET --memo $MEMO`}
+							code={`namadac vote-proposal --proposal-id <proposal-id> --vote yay --address $WALLET_ADDRESS --signing-keys $WALLET --memo $MEMO`}
 						/>
 					</div>
 					<h2 id='sync-and-consensus'>Sync and Consensus</h2>
