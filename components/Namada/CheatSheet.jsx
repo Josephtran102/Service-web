@@ -294,7 +294,7 @@ source $HOME/.bash_profile`}
 						<CodeBlock desc='all proposals list:' code={`namadac query-proposal`} />
 						<CodeBlock desc='edit proposal:' code={`namadac query-proposal --proposal-id <PROPOSAL_ID>`} />
 						<CodeBlock desc='save wallet address:' code={`WALLET_ADDRESS=$(namadaw find --alias $WALLET | grep "Implicit" | awk '{print $3}')`} />
-						<CodeBlock desc='import the variable into system:' code={`echo "export WALLET_ADDRESS="$WALLET_ADDRESS"" >> $HOME/.bash_profile \\
+						<CodeBlock desc='import the variable into system:' code={`echo "export WALLET_ADDRESS="$WALLET_ADDRESS"" >> $HOME/.bash_profile
 source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
