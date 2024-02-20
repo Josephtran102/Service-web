@@ -661,7 +661,7 @@
       "seedPort": "39656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "",
+      "updHeight": "0",
       "variable": "DORA",
       "website": "",
       "delegate": "https://testnet.itrocket.net/dora/staking/doravaloper16yazemxnx6kk9gcv9wpujk6e27v78ttsjraq0z",
