@@ -245,7 +245,7 @@ source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
 							desc='check your validator bond status:'
-							code={`namadac bonds --owner $ALIAS`}
+							code={`namadac bonds --validator $VALIDATOR_ADDRESS`}
 						/>
 						<CodeBlock desc='check your user bonds:' code={`namadac bonds --owner $WALLET`} />
 						<CodeBlock desc='check all bonded nodes:' code={`namadac bonded-stake`} />
