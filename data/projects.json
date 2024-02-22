@@ -1114,7 +1114,7 @@
       "installBin": "cd $HOME\nrm -rf side\ngit clone https://github.com/sideprotocol/side.git\ncd side\ngit checkout v0.6.0\nmake install",
       "minGasPrice": "0.005uside",
       "newInstallBin": "",
-      "path": ".sidechain",
+      "path": ".side",
       "peerID": "bbbf623474e377664673bde3256fc35a36ba0df1",
       "peerPort": "45656",
       "port": 45,
