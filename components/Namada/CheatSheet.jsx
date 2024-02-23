@@ -269,15 +269,7 @@ source $HOME/.bash_profile`}
 						<CodeBlock desc='check epoch:' code={`namada client epoch`} />
 						<CodeBlock
 							desc='unjail, you need to wait 2 epochs:'
-							code={`namada client unjail-validator --validator $VALIDATOR_ADDRESS --node tcp://127.0.0.1:26657 --memo $MEMO`}
-						/>
-						<CodeBlock
-							desc='change validator commission rate:'
-							code={`namadac change-commission-rate --validator $VALIDATOR_ADDRESS --commission-rate <commission-rate> --memo $MEMO`}
-						/>
-						<CodeBlock
-							desc='change validator metadata:'
-							code={`namadac change-metadata --validator $VALIDATOR_ADDRESS --memo $MEMO`}
+							code={`namada client unjail-validator --validator $VALIDATOR_ADDRESS --node http://127.0.0.1:26657 --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='deactivate validator:'
@@ -286,6 +278,22 @@ source $HOME/.bash_profile`}
 						<CodeBlock
 							desc='reactivate validator:'
 							code={`namadac reactivate-validator --validator $VALIDATOR_ADDRESS --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='Change consensus key:'
+							code={`namadac change-consensus-key --validator $VALIDATOR_ADDRESS --memo $MEMO --signing-keys $WALLET --node http://127.0.0.1:26657`}
+						/>
+						<CodeBlock
+							desc='Generate priv_validator_key:'
+							code={`namadaw convert --alias <consensus_key_name>`}
+						/>
+						<CodeBlock
+							desc='change validator commission rate:'
+							code={`namadac change-commission-rate --validator $VALIDATOR_ADDRESS --commission-rate <commission-rate> --memo $MEMO`}
+						/>
+						<CodeBlock
+							desc='change validator metadata:'
+							code={`namadac change-metadata --validator $VALIDATOR_ADDRESS --memo $MEMO`}
 						/>
 					</div>
 					
