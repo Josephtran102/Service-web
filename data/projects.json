@@ -656,7 +656,7 @@
       "path": "testnet",
       "peerID": "",
       "peerPort": "27656",
-      "port": "46",
+      "port": "35",
       "prHome": "/home/crossfi",
       "stateSync": "true",
       "seedID": "",
