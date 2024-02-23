@@ -666,7 +666,7 @@
       "updHeight": "",
       "variable": "CROSSFI",
       "website": "https://crossfi.org/",
-      "newInit": "cd $HOME"
+      "newInit": "git clone https://github.com/crossfichain/testnet.git"
     },
     "dora": {
       "bin": "dorad",
