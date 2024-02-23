@@ -277,10 +277,10 @@ sudo systemctl restart ${bin} && sudo journalctl -u ${bin} -f`}
 				<CodeSnippet
 					theme={theme}
 					code={`# to create a new wallet, use the following command. don’t forget to save the mnemonic
-${bin} keys add $WALLET --home $HOME/${path}
+${bin} keys add $WALLET
 
 # to restore exexuting wallet, use the following command
-${bin} keys add $WALLET --recover --home $HOME/${path}
+${bin} keys add $WALLET --recover
 
 # save wallet and validator address
 WALLET_ADDRESS=$(${bin} keys show $WALLET -a)
