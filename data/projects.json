@@ -666,7 +666,7 @@
       "updHeight": "",
       "variable": "CROSSFI",
       "website": "https://crossfi.org/",
-      "newInit": "rm -rf testnet\ngit clone https://github.com/crossfichain/testnet.git\nmv $HOME/testnet $HOME/.mineplex-chain/"
+      "newInit": "rm -rf testnet ~/.mineplex-chain\ngit clone https://github.com/crossfichain/testnet.git\nmv $HOME/testnet/ $HOME/.mineplex-chain/"
     },
     "dora": {
       "bin": "dorad",
