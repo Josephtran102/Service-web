@@ -659,7 +659,7 @@
       "port": "35",
       "prHome": "/home/crossfi",
       "stateSync": "true",
-      "seedID": "dd83e3c7c4e783f8a46dbb010ec8853135d29df",
+      "seedID": "dd83e3c7c4e783f8a46dbb010ec8853135d29df0",
       "seedPort": "36656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
