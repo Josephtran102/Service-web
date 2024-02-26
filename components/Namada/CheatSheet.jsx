@@ -92,7 +92,7 @@ const CheatSheet = props => {
 
 						<CodeBlock
 							desc='add a variable with the validator address:'
-							code={`VAL_ADDRESS="tnam1qxkapjmrhxta0w75majjawv0ulc8g4trtqdt0tnc" # address of validator you want to stake to`}
+							code={`VAL_ADDRESS="tnam1q8vhe85yc5ttt7mveds58gyqzavfwnn9eqhfxpgc" # address of validator you want to stake to`}
 						/>
 						<CodeBlock
 							desc='export the variable:'
