@@ -563,7 +563,7 @@
       "variable": "BABYLON",
       "website": "https://babylonchain.io/",
       "offValDoc": "https://docs.babylonchain.io/docs/user-guides/btc-timestamping-testnet/become-validator",
-      "newInit": "babylond init $MONIKER --chain-id $BABYLON_CHAIN_ID\nsed -i -e \"s/^timeout_commit *=.*/timeout_commit = \\\"10s\\\"/\" $HOME/.babylond/config/config.toml"
+      "newInit": "babylond init $MONIKER --chain-id $BABYLON_CHAIN_ID\nsed -i -e \"s/^timeout_commit *=.*/timeout_commit = \\\"30s\\\"/\" $HOME/.babylond/config/config.toml\nsed -i -e \"s|^\\(network = \\).*|\\1\\\"signet\\\"|\" $HOME/.babylond/config/app.toml"
     },
     "cardchain": {
       "bin": "Cardchaind",
