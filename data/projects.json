@@ -22,7 +22,7 @@
       "seedID": "30d97270c31601c38e5b89c52fca985901cd8c20",
       "seedPort": "27656",
       "snapMaxSize": "10",
-      "unsafeReset": "tendermint unsafe-reset-all",
+      "unsafeReset": "unsafe-reset-all",
       "updHeight": "",
       "variable": "ARKH",
       "website": "https://www.arkhadian.com",
