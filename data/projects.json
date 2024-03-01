@@ -568,7 +568,7 @@
     "cardchain": {
       "bin": "Cardchaind",
       "binHome": "/usr/local/bin/Cardchaind",
-      "chainID": "cardtestnet-9",
+      "chainID": "cardtestnet-10",
       "denom": "ubpf",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
