@@ -321,6 +321,10 @@ source $HOME/.bash_profile`}
 							desc='check consensus state:'
 							code={`curl -s localhost:26657/consensus_state | jq .result.round_state.height_vote_set[0].prevotes_bit_array`}
 						/>
+						<CodeBlock
+							desc='check consensus state:'
+							code={`curl -s localhost:26657/consensus_state | jq .result.round_state.height_vote_set[-2].prevotes_bit_array`}
+						/>
 						<CodeBlock desc='full consensus state:' code={`curl -s localhost:12657/dump_consensus_state`} />
 						<CodeBlock
 							desc='your validator votes (prevote):'
