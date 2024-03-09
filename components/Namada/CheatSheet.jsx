@@ -309,6 +309,10 @@ source $HOME/.bash_profile`}
 							desc='vote:'
 							code={`namadac vote-proposal --proposal-id <proposal-id> --vote yay --address $WALLET_ADDRESS --signing-keys $WALLET --memo $MEMO`}
 						/>
+						<CodeBlock
+							desc='Check your vote:'
+							code={`namadac query-proposal-votes --proposal-id <proposal_id> --voter $WALLET_ADDRESS`}
+						/>
 					</div>
 					<h2 id='sync-and-consensus'>Sync and Consensus</h2>
 					<div className='flex flex-col gap-y-2'>
