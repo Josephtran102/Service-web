@@ -101,37 +101,37 @@ source $HOME/.bash_profile`}
 						/>
 						<CodeBlock
 							desc='delegate tokens:'
-							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 500 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 500  --memo $MEMO`}
 						/>
-						<CodeBlock desc='check your user bonds:' code={`namadac bonds --owner $WALLET --node tcp://namada-testnet-tcprpc.itrocket.net:33657`} />
-						<CodeBlock desc='check all bonded nodes:' code={`namadac bonded-stake --node tcp://namada-testnet-tcprpc.itrocket.net:33657`} />
+						<CodeBlock desc='check your user bonds:' code={`namadac bonds --owner $WALLET `} />
+						<CodeBlock desc='check all bonded nodes:' code={`namadac bonded-stake `} />
 						<CodeBlock
 							desc='add stake:'
-							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 500 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							code={`namadac bond --source $WALLET --validator $VAL_ADDRESS --amount 500  --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='unbond the tokens:'
-							code={`namadac unbond --source $WALLET --validator $VAL_ADDRESS --amount 15 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							code={`namadac unbond --source $WALLET --validator $VAL_ADDRESS --amount 15  --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='wait for 6 epochs, then check when the unbonded tokens can be withdrawed:'
-							code={`namadac bonds --owner $WALLET --node tcp://namada-testnet-tcprpc.itrocket.net:33657`}
+							code={`namadac bonds --owner $WALLET `}
 						/>
 						<CodeBlock
 							desc='withdraw unbonded tokens:'
-							code={`namadac withdraw --source $WALLET --validator $VAL_ADDRESS --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							code={`namadac withdraw --source $WALLET --validator $VAL_ADDRESS  --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='redelegate:'
-							code={`namadac redelegate --owner $WALLET --source-validator $VAL_ADDRESS --destination-validator <destination-validator-address> --amount 10 --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							code={`namadac redelegate --owner $WALLET --source-validator $VAL_ADDRESS --destination-validator <destination-validator-address> --amount 10  --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='claim rewards:'
-							code={`namadac claim-rewards --source $WALLET --validator $VAL_ADDRESS --node tcp://namada-testnet-tcprpc.itrocket.net:33657 --memo $MEMO`}
+							code={`namadac claim-rewards --source $WALLET --validator $VAL_ADDRESS  --memo $MEMO`}
 						/>
 						<CodeBlock
 							desc='query the pending reward tokens without claiming:'
-							code={`namadac rewards --source $WALLET --validator $VAL_ADDRESS --node tcp://namada-testnet-tcprpc.itrocket.net:33657`}
+							code={`namadac rewards --source $WALLET --validator $VAL_ADDRESS `}
 						/>
 					</div>
 
