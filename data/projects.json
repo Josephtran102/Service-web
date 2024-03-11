@@ -401,7 +401,7 @@
       "goVersion": "1.19.3",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
       "imgUrl": "uptick.jpg",
-      "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.18\nmake install",
+      "installBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.19\nmake install",
       "minGasPrice": "0.0025auptick",
       "newInstallBin": "cd $HOME\nrm -rf uptick\ngit clone https://github.com/UptickNetwork/uptick.git\ncd uptick\ngit checkout v0.2.19\nmake build\nsudo mv $HOME/uptick/build/uptickd $(which uptickd)",
       "path": ".uptickd",
