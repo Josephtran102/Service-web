@@ -1218,7 +1218,7 @@
       "minGasPrice": "0.0025uward",
       "newInstallBin": "",
       "path": ".warden",
-      "peerID": "",
+      "peerID": "f995c84635c099329bfaaa255389d63e052cb0ac",
       "peerPort": "18656",
       "port": 18,
       "prHome": "/home/warden",
