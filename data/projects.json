@@ -1216,7 +1216,7 @@
       "imgUrl": "warden.png",
       "installBin": "cd $HOME\nrm -rf wardenprotocol\ngit clone --depth 1 --branch v0.1.0 https://github.com/warden-protocol/wardenprotocol/\ncd  wardenprotocol/warden/cmd/wardend\ngo build\nmv wardend $HOME/go/bin",
       "minGasPrice": "0.0025uward",
-      "newInstallBin": "cd $HOME",
+      "newInstallBin": "",
       "path": ".warden",
       "peerID": "",
       "peerPort": "18656",
@@ -1229,7 +1229,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "WARDEN",
-      "website": "https://wardenprotocol.org/"
+      "website": "https://wardenprotocol.org/",
+      "newInit": "wardend init $MONIKER"
     },
     "zetachain": {
       "chainID": "athens_7001-1",
