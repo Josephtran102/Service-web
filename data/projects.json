@@ -1223,7 +1223,7 @@
       "port": 18,
       "prHome": "/home/warden",
       "stateSync": "true",
-      "seedID": "",
+      "seedID": "ff0885377c44d58164f29d356b9d3d3a755c6213",
       "seedPort": "18656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
