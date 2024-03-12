@@ -1208,7 +1208,7 @@
       "binHome": "/home/warden/go/bin/wardend",
       "chainID": "alfama",
       "delegate": "",
-      "denom": "warden",
+      "denom": "uward",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
       "goVersion": "1.21.3",
