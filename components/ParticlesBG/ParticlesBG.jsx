@@ -9,14 +9,7 @@ const ParticlesBG = () => {
 	}, [])
 
 	const particlesLoaded = useCallback(async container => {}, [])
-	return (
-		<Particles
-			id='tsparticles'
-			init={particlesInit}
-			loaded={particlesLoaded}
-			options={particlesConfig}
-		/>
-	)
+	return <Particles id='tsparticles' init={particlesInit} loaded={particlesLoaded} options={particlesConfig} />
 }
 
 export default ParticlesBG
