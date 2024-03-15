@@ -1134,7 +1134,7 @@
       "bin": "swisstronikd",
       "binHome": "/home/arkhadian/go/bin/arkhd",
       "chainID": "swisstronik_1291-1",
-      "delegate": "",
+      "delegate": "https://testnet.itrocket.net/swisstronik/staking/swtrvaloper1g3uvuu73km4lwzw4d62z7jedpv9vgwsc9eyqz4",
       "denom": "uswtr",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
