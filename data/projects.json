@@ -1130,7 +1130,7 @@
       "newInstallBin": "",
       "delegate": "https://testnet.itrocket.net/structs/staking/structsvaloper1jgyy6zdzx8rj579vejgw4x8h6vkj9nnr9egl8x"
     },
-    "swisstronic": {
+    "swisstronik": {
       "bin": "swisstronikd",
       "binHome": "/home/arkhadian/go/bin/arkhd",
       "chainID": "swisstronik_1291-1",
