@@ -609,7 +609,7 @@
       "updHeight": "",
       "variable": "CROSSFI",
       "website": "https://crossfi.org/",
-      "newInit": "rm -rf testnet ~/.mineplex-chain\ngit clone https://github.com/crossfichain/testnet.git\nmv $HOME/testnet/ $HOME/.mineplex-chain/\nsed -i '99,114 s/^\\( *enable =\\).*/\\1 \"false\"/' $HOME/.mineplex-chain/config/config.toml\nsed -i -e \"s/^indexer *=.*/indexer = \\\"null\\\"/\" $HOME/.mineplex-chain/config/config.toml",
+      "newInit": "rm -rf testnet ~/.mineplex-chain\ngit clone https://github.com/crossfichain/testnet.git\nmv $HOME/testnet/ $HOME/.mineplex-chain/\nsed -i '99,114 s/^\\( *enable =\\).*/\\1 \"false\"/' $HOME/.mineplex-chain/config/config.toml",
       "evmRPC": "https://crossfi-testnet-jsonrpc.itrocket.net"
     },
     "dora": {
