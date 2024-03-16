@@ -275,7 +275,7 @@
       "minGasPrice": "0.0",
       "website": "https://nymtech.net/"
     },
-    "quicksilver": {
+    "quicksilverm": {
       "bin": "quicksilverd",
       "binHome": "/home/quick/go/bin/quicksilverd",
       "chainID": "quicksilver-2",
