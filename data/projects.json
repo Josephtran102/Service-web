@@ -687,7 +687,7 @@
       "seedPort": "54656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "6531810",
+      "updHeight": "6527087",
       "variable": "ELYS",
       "website": "https://elys.network/",
       "delegate": "https://testnet.itrocket.net/elys/staking/elysvaloper1udyzuu9asrr4vhrut8yge887kakxvs7clvqs55",
