@@ -677,7 +677,7 @@
       "imgUrl": "elys.jpg",
       "installBin": "cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout build/rocksdb\ngit tag v0.29.26 -d\ngit tag v0.29.26\nmake install",
       "minGasPrice": "0.0018ibc/2180E84E20F5679FCC760D8C165B60F42065DEF7F46A72B447CFF1B7DC6C0A65,0.00025ibc/E2D2F6ADCC68AA3384B2F5DFACCA437923D137C14E86FB8A10207CF3BED0C8D4,0.00025uelys",
-      "newInstallBin": "cd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout build/rocksdb\ngit tag v0.29.26 -d\ngit tag v0.29.26\nmake build\nsudo mv $HOME/elys/build/elysd $(which elysd)",
+      "newInstallBin": "ROCKSDB_VERSION=8.9.1\nsudo apt install -y libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev libzstd-dev\ncd /tmp\nwget https://github.com/facebook/rocksdb/archive/refs/tags/v${ROCKSDB_VERSION}.tar.gz\ntar -xvf v${ROCKSDB_VERSION}.tar.gz && cd rocksdb-${ROCKSDB_VERSION} || return\nexport CXXFLAGS='-Wno-error=deprecated-copy -Wno-error=pessimizing-move -Wno-error=class-memaccess'\nmake shared_lib\nsudo make install-shared INSTALL_PATH=/usr\nrm -rf /tmp/rocksdb-${ROCKSDB_VERSION} /tmp/v${ROCKSDB_VERSION}.tar.gz\ncd $HOME\nrm -rf elys\ngit clone https://github.com/elys-network/elys.git\ncd elys\ngit checkout build/rocksdb\ngit tag v0.29.26 -d\ngit tag v0.29.26\nmake build\nsudo mv $HOME/elys/build/elysd $(which elysd)",
       "path": ".elys",
       "peerID": "0977dd5475e303c99b66eaacab53c8cc28e49b05",
       "peerPort": "38656",
