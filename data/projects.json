@@ -1203,7 +1203,7 @@
       "bin": "uniond",
       "binHome": "/home/union/go/bin/uniond",
       "chainID": "union-testnet-6",
-      "delegate": "",
+      "delegate": "https://testnet.itrocket.net/union/staking/unionvaloper10g8npdhdcjyn7528gz3v34v9t4tm6hlpyv0jf0",
       "denom": "muno",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5",
