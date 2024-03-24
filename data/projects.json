@@ -1255,7 +1255,7 @@
       "updHeight": "",
       "variable": "UNION",
       "website": "https://union.build/",
-      "newInit": "cd $HOME\nuniond --home $HOME/.union init STAVR_guide --chain-id union-testnet-6"
+      "newInit": "uniond --home $HOME/.union init STAVR_guide --chain-id union-testnet-6"
     },
     "uptick": {
       "bin": "uptickd",
