@@ -1199,7 +1199,7 @@
       "offValDoc": "https://github.com/terpnetwork/terp-core",
       "delegate": "https://testnet.itrocket.net/terp/staking/terpvaloper1u9nx0mxq30h6dq99w6ptju09pz3m32jxz4672f"
     },
-    "union": {
+    "undefined": {
       "bin": "uniond",
       "binHome": "/home/union/go/bin/uniond",
       "chainID": "union-testnet-6",
@@ -1255,7 +1255,7 @@
       "updHeight": "",
       "variable": "UNION",
       "website": "https://union.build/",
-      "newInit": "uniond --home $HOME/.union init STAVR_guide --chain-id union-testnet-6"
+      "newInit": "uniond --home $HOME/.union init $MONIKER --chain-id union-testnet-6"
     },
     "uptick": {
       "bin": "uptickd",
