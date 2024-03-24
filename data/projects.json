@@ -1243,7 +1243,7 @@
       "minGasPrice": "0.0muno",
       "newInstallBin": "",
       "path": ".union",
-      "peerID": "",
+      "peerID": "90fee63abf62a60a7eb7ebd010007b5afbd2b26d",
       "peerPort": "23656",
       "port": "23",
       "prHome": "/home/union",
