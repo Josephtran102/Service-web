@@ -1248,7 +1248,7 @@
       "port": "23",
       "prHome": "/home/union",
       "stateSync": "true",
-      "seedID": "",
+      "seedID": "2812a4ae3ebfba02973535d05d2bbcc80b7d215f",
       "seedPort": "23656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all --home $HOME/.union",
