@@ -1199,7 +1199,7 @@
       "offValDoc": "https://github.com/terpnetwork/terp-core",
       "delegate": "https://testnet.itrocket.net/terp/staking/terpvaloper1u9nx0mxq30h6dq99w6ptju09pz3m32jxz4672f"
     },
-    "undefined": {
+    "union": {
       "bin": "uniond",
       "binHome": "/home/union/go/bin/uniond",
       "chainID": "union-testnet-6",
