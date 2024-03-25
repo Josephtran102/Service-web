@@ -1183,7 +1183,7 @@
       "seedID": "a6ee57fb457f71530d165afd1901d0d62cd7d7e0",
       "seedPort": "13656",
       "snapMaxSize": "10",
-      "updHeight": "",
+      "updHeight": "0",
       "variable": "TERP",
       "newInstallBin": "sudo systemctl stop terpd\ncp $HOME/.terp/data/priv_validator_state.json $HOME/.terp/priv_validator_state.json.backup\ncd $HOME\nrm -rf ~/terp-core\ngit clone https://github.com/terpnetwork/terp-core.git\ncd terp-core\ngit checkout v4.2.0\nmake install\nterpd tendermint unsafe-reset-all --home $HOME/.terp \nwget -O $HOME/.terp/config/genesis.json https://raw.githubusercontent.com/hard-nett/networks/90u-3/testnet/90u-3/genesis.json\nterpd config chain-id 90u-3\nSEEDS=\"e3f7a6a37f9b1bc7648603360b24312493c031f1@testnet-peer.terp.network:26656\"\nPEERS=\"e3f7a6a37f9b1bc7648603360b24312493c031f1@testnet-peer.terp.network:26656,51d48be3809bb8907c1ef5f747e53cdd0c9ded1b@65.109.92.79:13656,e3f7a6a37f9b1bc7648603360b24312493c031f1@142.93.145.77:26656,2f0f98eb3965cc9949073b1f0e75a5e55be44ed2@65.109.28.177:21856\"\nsed -i -e \"s/^seeds *=.*/seeds = \\\"$SEEDS\\\"/; s/^persistent_peers *=.*/persistent_peers = \\\"$PEERS\\\"/\" $HOME/.terp/config/config.toml\nsudo systemctl restart terpd && sudo journalctl -u terpd -f",
       "desc": "Decentralized Infrastructure for the Cannabis Community",
