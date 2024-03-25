@@ -1264,7 +1264,7 @@
       "imgUrl": "warden.png",
       "installBin": "cd $HOME\nrm -rf wardenprotocol\ngit clone --depth 1 --branch v0.1.0 https://github.com/warden-protocol/wardenprotocol/\ncd  wardenprotocol/warden/cmd/wardend\ngo build\nmv wardend $HOME/go/bin",
       "minGasPrice": "0.0025uward",
-      "newInstallBin": "добавляю код в nreinstallbin warden\ncd $HOME\nrm -rf $HOME/download\nmkdir $HOME/download\ncd $HOME/download\nwget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.2.0/wardend_Linux_x86_64.zip\nunzip $HOME/download/wardend_Linux_x86_64.zip\nrm -rf $HOME/download/wardend_Linux_x86_64.zip\nchmod +x $HOME/download/wardend\nsudo mv $HOME/download/wardend $(which wardend)",
+      "newInstallBin": "cd $HOME\nrm -rf $HOME/download\nmkdir $HOME/download\ncd $HOME/download\nwget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.2.0/wardend_Linux_x86_64.zip\nunzip $HOME/download/wardend_Linux_x86_64.zip\nrm -rf $HOME/download/wardend_Linux_x86_64.zip\nchmod +x $HOME/download/wardend\nsudo mv $HOME/download/wardend $(which wardend)",
       "path": ".warden",
       "peerID": "f995c84635c099329bfaaa255389d63e052cb0ac",
       "peerPort": "18656",
