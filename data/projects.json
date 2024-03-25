@@ -917,11 +917,11 @@
       "updHeight": "",
       "variable": "NAMADA",
       "website": "https://namada.net/",
-      "delegate": "https://namadaexplorer.com/",
+      "delegate": "https://explorer.node75.org/namada/validators/tnam1q8vhe85yc5ttt7mveds58gyqzavfwnn9eqhfxpgc",
       "offValDoc": "https://docs.namada.net/testnets/environment-setup.html",
       "fav": "true",
       "stateSync": "false",
-      "explorer": "https://explorer.node75.org/namada/validators/tnam1q8vhe85yc5ttt7mveds58gyqzavfwnn9eqhfxpgc"
+      "explorer": "https://namadaexplorer.com/"
     },
     "nois": {
       "ecosystem": "cosmos",
