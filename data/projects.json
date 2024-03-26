@@ -1052,7 +1052,7 @@
       "imgUrl": "side.jpg",
       "installBin": "cd $HOME\nrm -rf side\ngit clone https://github.com/sideprotocol/side.git\ncd side\ngit checkout v0.6.0\nmake install",
       "minGasPrice": "0.005uside",
-      "newInstallBin": "",
+      "newInstallBin": "sudo systemctl stop sided\ncp $HOME/.side/data/priv_validator_state.json $HOME/.side/priv_validator_state.json.backup\nsided tendermint unsafe-reset-all --home $HOME/.side\nwget https://github.com/sideprotocol/testnet/raw/main/side-testnet-3/genesis.json -O ~/.side/config/genesis.json\nSEEDS=\"00170c0c23c3e97c740680a7f881511faf68289a@202.182.119.24:26656,00170c0c23c3e97c740680a7f881511faf68289a@202.182.119.24:26656\"\nPEERS=\"dcb4494c545f450ba38d60cfcba6c92dc55ebef2@80.85.242.149:34656,53e164d1b28ba845da0cec828b4f69fe1e8bf78a@65.108.153.66:26656,e9ee4fb923d5aab89207df36ce660ff1b882fc72@136.243.33.177:21656\"\nsed -i -e \"s/^seeds *=.*/seeds = \\\"$SEEDS\\\"/; s/^persistent_peers *=.*/persistent_peers = \\\"$PEERS\\\"/\" $HOME/.side/config/config.toml\nsided config chain-id side-testnet-3\ncd $HOME\nrm -rf side\ngit clone https://github.com/sideprotocol/side.git\ncd side\ngit checkout v0.7.0\nmake build\nsudo mv $HOME/side/build/sided $(which sided)",
       "path": ".side",
       "peerID": "bbbf623474e377664673bde3256fc35a36ba0df1",
       "peerPort": "45656",
@@ -1063,7 +1063,7 @@
       "seedPort": "45656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "",
+      "updHeight": "0",
       "variable": "SIDE",
       "website": "https://side.one/"
     },
