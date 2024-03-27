@@ -641,6 +641,7 @@
       "stateSync": "true"
     },
     "eigenlayer": {
+      "delegate": "https://holesky.eigenlayer.xyz/operator/0xfee8f29af67cb48286b83715b6365bfaa3f95dc7",
       "ecosystem": "false",
       "goVersion": "",
       "imgUrl": "eigenlayer.jpeg",
@@ -662,8 +663,7 @@
       "installBin2": "",
       "installTitle2": "",
       "installBin3": "",
-      "installTitle3": "",
-      "delegate": "https://goerli.eigenlayer.xyz/operator/0xfee8f29af67cb48286b83715b6365bfaa3f95dc7"
+      "installTitle3": ""
     },
     "elys": {
       "bin": "elysd",
