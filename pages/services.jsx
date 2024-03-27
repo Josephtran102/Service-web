@@ -87,11 +87,7 @@ const services = () => {
 										style={{ background: "center / contain url('/testnet/eigenlayer.jpeg')  no-repeat" }}
 									></span>{' '}
 									EigenLayer testnet. Please consider staking to our{' '}
-									<a
-										href='https://goerli.eigenlayer.xyz/operator/0xfee8f29af67cb48286b83715b6365bfaa3f95dc7'
-										target='_blank'
-										rel='noopener noreferrer'
-									>
+									<a href={testnetData.eigenlayer.delegate} target='_blank' rel='noopener noreferrer'>
 										operator
 									</a>{' '}
 									to boost your earnings and support us 🚀
