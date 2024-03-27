@@ -1043,7 +1043,7 @@
       "bin": "sided",
       "binHome": "/home/arkhadian/go/bin/arkhd",
       "chainID": "side-testnet-3",
-      "delegate": "https://testnet.itrocket.net/side/staking/sidevaloper1zscp69etlwq6ut5047h70v7d9hna937zt57gr5",
+      "delegate": "https://testnet.itrocket.net/side/staking/bcvaloper1vdqz6t9fqyzcf5xf6r6an06ztr5q0jfghpc36m",
       "denom": "uside",
       "ecosystem": "cosmos",
       "gas": "--gas auto --fees 1000uside",
