@@ -1,13 +1,13 @@
-import { useContext, useEffect, useRef, useState } from 'react'
-import Head from 'next/head'
 import { Alert } from 'antd'
+import Head from 'next/head'
+import { useContext, useEffect, useRef, useState } from 'react'
 
-import projects from 'data/projects'
-import styles from '@styles/Services.module.scss'
 import { Context } from '@context/context'
-import CodeSnippet from './UI/CodeSnippet'
-import AnimatedSection from './AnimatedSection'
+import styles from '@styles/Services.module.scss'
 import axios from 'axios'
+import projects from 'data/projects'
+import AnimatedSection from './AnimatedSection'
+import CodeSnippet from './UI/CodeSnippet'
 
 const Upgrade = ({ name, type }) => {
 	const project = projects[type][name]
@@ -112,7 +112,19 @@ const Upgrade = ({ name, type }) => {
 						) : (
 							<>
 								<Alert
-									message={`Upgrade height: ${updHeight}. Please don\`t upgrade before the specified height.`}
+									message={
+										<span>
+											Upgrade height:{' '}
+											<a
+												href={`https://${type}.itrocket.net/${name}/block/${updHeight}`}
+												target='_blank'
+												rel='noopener noreferrer'
+											>
+												{updHeight}
+											</a>
+											. Please don`t upgrade before the specified height
+										</span>
+									}
 									type='info'
 									showIcon
 									closable
