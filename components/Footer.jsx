@@ -1,6 +1,6 @@
-import { useContext } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useContext } from 'react'
 
 import { Context } from '@context/context'
 import '@styles/Footer.module.scss'
@@ -54,7 +54,7 @@ const Footer = props => {
 
 				<div className='flex flex-col gap-2'>
 					<div className='socials'>
-						<a href='https://linktr.ee/itrocket_team' target='_blank' rel='noopener noreferrer'>
+						<a href='https://t.me/itrocket_en' target='_blank' rel='noopener noreferrer'>
 							<Image src='/icons/tg.svg' alt='telegram' width={35} height={35} />
 						</a>
 
