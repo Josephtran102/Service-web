@@ -806,7 +806,8 @@
       "updHeight": "",
       "variable": "GALACTICA",
       "website": "https://galactica.com/",
-      "newExecStart": "$(which galacticad) start --home $HOME/.galactica --chain-id galactica_9301-1"
+      "newExecStart": "$(which galacticad) start --home $HOME/.galactica --chain-id galactica_9301-1",
+      "evmRPC": "https://galactica-testnet-jsonrpc.itrocket.net"
     },
     "humans": {
       "bin": "humansd",
