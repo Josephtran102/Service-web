@@ -806,7 +806,7 @@
       "updHeight": "",
       "variable": "GALACTICA",
       "website": "https://galactica.com/",
-      "newExecStart": "ExecStart=$(which galacticad) start --home $HOME/.galactica --chain-id galactica_9301-1"
+      "newExecStart": "$(which galacticad) start --home $HOME/.galactica --chain-id galactica_9301-1"
     },
     "humans": {
       "bin": "humansd",
