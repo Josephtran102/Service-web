@@ -783,7 +783,7 @@
       "bin": "galacticad",
       "binHome": "/home/galactica/go/bin/galacticad",
       "chainID": "galactica_9301-1",
-      "delegate": "",
+      "delegate": "https://testnet.itrocket.net/galactica/staking/galavaloper17najw6de43d06u206w42v3pzfu9ll436qn3ezc",
       "denom": "agnet",
       "ecosystem": "cosmos",
       "gas": "--gas-prices 10agnet",
