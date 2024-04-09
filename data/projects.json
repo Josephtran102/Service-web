@@ -990,7 +990,7 @@
       "denom": "aevmos",
       "ecosystem": "cosmos",
       "gas": "--gas 500000 --gas-prices 99999aevmos",
-      "goVersion": "1.21.3",
+      "goVersion": "1.22.2",
       "hardware": "8 Cores, 16GB RAM, 260GB of storage (NVME)",
       "imgUrl": "og.jpg",
       "installBin": "cd $HOME\nrm -rf 0g-evmos\ngit clone https://github.com/0glabs/0g-evmos.git\ncd 0g-evmos\ngit checkout v1.0.0-testnet\nmake build\nmv $HOME/0g-evmos/build/evmosd $HOME/go/bin/",
