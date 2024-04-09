@@ -792,7 +792,7 @@
       "imgUrl": "galactica.jpg",
       "installBin": "cd $HOME\nrm -rf galactica\ngit clone https://github.com/Galactica-corp/galactica\ncd galactica\ngit checkout v0.1.2\nmake build\nmv $HOME/galactica/build/galacticad $HOME/go/bin",
       "minGasPrice": "10agnet",
-      "newInstallBin": "cd $HOME\nrm -rf galactica\ngit clone https://github.com/Galactica-corp/galactica\ncd galactica\ngit fetch --all --tags\ngit checkout v0.1.2\nmake build\nsudo mv $HOME/galactica/build/galacticad $(which galacticad)",
+      "newInstallBin": "sudo systemctl stop galacticad\ncd $HOME\nrm -rf galactica\ngit clone https://github.com/Galactica-corp/galactica\ncd galactica\ngit fetch --all --tags\ngit checkout v0.1.2\nmake build\ncp $HOME/.galactica/data/priv_validator_state.json $HOME/.galactica/priv_validator_state.json.backup\ngalacticad tendermint unsafe-reset-all --home $HOME/.galactica\ngalacticad config chain-id galactica_9302-1\nmv $HOME/.galactica/priv_validator_state.json.backup $HOME/.galactica/data/priv_validator_state.json\nwget https://raw.githubusercontent.com/Galactica-corp/networks/main/galactica_9302-1/genesis.json -O ~/.galactica/config/genesis.json\nwget https://raw.githubusercontent.com/Galactica-corp/networks/main/galactica_9302-1/seeds.txt -O ~/.galactica/config/seeds.txt\nseeds=$(cat ~/.galactica/config/seeds.txt | tr '\\n' ',' | sed 's/,$//')\nsed -i '' \"s/seeds = \\\"\\\"/seeds = \\\"$seeds\\\"/\" ~/.galactica/config/config.toml\nsudo mv $HOME/galactica/build/galacticad $(which galacticad)",
       "path": ".galactica",
       "peerID": "c9993c738bec6a10cfb8bb30ac4e9ae6f8286a5b",
       "peerPort": "11656",
