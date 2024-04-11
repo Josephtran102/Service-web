@@ -418,7 +418,8 @@
       "website": "https://uptick.network/",
       "desc": "The Business Grade Multi-Chain NFT Infrastructure for Web 3.0",
       "offValDoc": "https://docs.uptick.network/mainnet/",
-      "fav": "true"
+      "fav": "true",
+      "newExecStart": "$(which uptickd) start --home $HOME/.uptickd --chain-id uptick_117-1"
     },
     "zetachain": {
       "bin": "zetacored",
