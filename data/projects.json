@@ -1063,9 +1063,9 @@
       "seedID": "fbfd48af73cd1f6de7f9102a0086ac63f46fb911",
       "seedPort": "41656",
       "snapMaxSize": "10",
-      "updHeight": "525100",
+      "updHeight": "1865300",
       "variable": "PRYZM",
-      "newInstallBin": "cd $HOME\nwget -O pryzmd https://storage.googleapis.com/pryzm-zone/core/0.11.1/pryzmd-0.11.1-linux-amd64\nchmod +x $HOME/pryzmd\nsudo mv $HOME/pryzmd $(which pryzmd)",
+      "newInstallBin": "cd $HOME\nwget -O pryzmd https://storage.googleapis.com/pryzm-zone/core/0.12.0/pryzmd-0.12.0-linux-amd64\nchmod +x $HOME/pryzmd\nsudo mv $HOME/pryzmd $(which pryzmd)",
       "delegate": "https://testnet.itrocket.net/pryzm/staking/pryzmvaloper1g5l7ha0rng0s726y75l8mwqlqcgsg7nqn5ml5j",
       "stateSync": "true"
     },
