@@ -86,7 +86,7 @@
     "crossfi": {
       "bin": "crossfid",
       "binHome": "/home/crossfi/go/bin/crossfid",
-      "chainID": "crossfi-mainnet-1",
+      "chainID": "mineplex-mainnet-1",
       "delegate": "",
       "denom": "mpx",
       "ecosystem": "cosmos",
