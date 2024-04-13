@@ -87,7 +87,7 @@
       "bin": "crossfid",
       "binHome": "/home/crossfi/go/bin/crossfid",
       "chainID": "mineplex-mainnet-1",
-      "delegate": "",
+      "delegate": "https://mainnet.itrocket.net/crossfi/staking/mxvaloper1436ds0a87xt4d28v9v0e82e2zcyg5mmc8gsyqt",
       "denom": "mpx",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.5 --gas-prices 10000000000000mpx",
