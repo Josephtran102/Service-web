@@ -110,7 +110,8 @@
       "updHeight": "",
       "variable": "CROSSFI",
       "website": "https://crossfi.org/",
-      "evmRPC": "https://crossfi-testnet-jsonrpc.itrocket.net"
+      "evmRPC": "https://crossfi-testnet-jsonrpc.itrocket.net",
+      "newInit": "rm -rf testnet ~/.mineplex-chain"
     },
     "doravota": {
       "bin": "dorad",
