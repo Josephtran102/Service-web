@@ -94,7 +94,7 @@
       "goVersion": "1.21.3",
       "hardware": "6 Cores, 32GB RAM, 500GB-2TB of storage (NVME)",
       "imgUrl": "crossfi.jpg",
-      "installBin": "cd $HOME\nwget https://github.com/crossfichain/crossfi-node/releases/download/v0.1.1/mineplex-2-node._v0.1.1_linux_amd64.tar.gz && tar -xf mineplex-2-node._v0.1.1_linux_amd64.tar.gz\ntar -xvf mineplex-2-node._v0.1.1_linux_amd64.tar.gz\nchmod +x $HOME/bin/mineplex-chaind\nmv $HOME/mineplex-chaind $HOME/go/bin\nrm mineplex-2-node._v0.1.1_linux_amd64.tar.gz",
+      "installBin": "cd $HOME\nwget https://github.com/crossfichain/crossfi-node/releases/download/v0.1.1/mineplex-2-node._v0.1.1_linux_amd64.tar.gz && tar -xf mineplex-2-node._v0.1.1_linux_amd64.tar.gz\ntar -xvf mineplex-2-node._v0.1.1_linux_amd64.tar.gz\nchmod +x $HOME/mineplex-chaind\nmv $HOME/mineplex-chaind $HOME/go/bin\nrm mineplex-2-node._v0.1.1_linux_amd64.tar.gz",
       "minGasPrice": "10000000000000mpx",
       "newInstallBin": "",
       "path": ".mineplex-chain",
