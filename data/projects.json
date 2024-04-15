@@ -57,7 +57,7 @@
       "bin": "blockxd",
       "binHome": "/home/blockx/go/bin/blockxd",
       "chainID": "blockx_100-1",
-      "delegate": "",
+      "delegate": "https://mainnet.itrocket.net/blockx/staking/blockxvaloper1k90xser7de97hcg26ph4uq7durgdlupgdt4szy",
       "denom": "abcx",
       "ecosystem": "cosmos",
       "gas": "--gas=300000 --gas-prices=1000000000abcx",
