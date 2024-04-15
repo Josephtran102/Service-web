@@ -58,7 +58,7 @@
       "binHome": "/home/blockx/go/bin/blockxd",
       "chainID": "blockx_100-1",
       "delegate": "",
-      "denom": "bcx",
+      "denom": "abcx",
       "ecosystem": "cosmos",
       "gas": "--gas=300000 --gas-prices=1000000000abcx",
       "goVersion": "1.21.3",
