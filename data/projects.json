@@ -79,7 +79,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "BLOCKX",
-      "website": "https://www.blockxnet.com/"
+      "website": "https://www.blockxnet.com/",
+      "evmRPC": "blockx-mainnet-jsonrpc.itrocket.net:443"
     },
     "celestia": {
       "bin": "celestia-appd",
