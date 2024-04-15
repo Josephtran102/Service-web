@@ -80,7 +80,7 @@
       "updHeight": "",
       "variable": "BLOCKX",
       "website": "https://www.blockxnet.com/",
-      "evmRPC": "blockx-mainnet-jsonrpc.itrocket.net:443"
+      "evmRPC": "https://blockx-mainnet-jsonrpc.itrocket.net"
     },
     "celestia": {
       "bin": "celestia-appd",
