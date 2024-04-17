@@ -1152,7 +1152,7 @@
       "installBin": "cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit checkout v1.5.4\nmake install",
       "updHeight": "1460500",
       "newInstallBin": "cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit checkout v1.5.4\nmake build\nsudo mv $HOME/quicksilver/build/quicksilverd $(which quicksilverd)",
-      "goVersion": "1.20.1",
+      "goVersion": "1.21.3",
       "gas": "",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0uqck"
