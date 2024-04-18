@@ -1372,7 +1372,7 @@
     "warden": {
       "bin": "wardend",
       "binHome": "/home/warden/go/bin/wardend",
-      "chainID": "alfama",
+      "chainID": "buenavista-1",
       "delegate": "https://testnet.itrocket.net/warden/staking/wardenvaloper10t2hn2d85pl76wvdahcre46n54cnkkkx2st9d4",
       "denom": "uward",
       "ecosystem": "cosmos",
