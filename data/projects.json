@@ -1389,7 +1389,7 @@
       "port": 18,
       "prHome": "/home/warden",
       "stateSync": "true",
-      "seedID": "ff0885377c44d58164f29d356b9d3d3a755c6213",
+      "seedID": "8288657cb2ba075f600911685670517d18f54f3b",
       "seedPort": "18656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
