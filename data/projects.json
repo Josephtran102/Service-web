@@ -1384,7 +1384,7 @@
       "minGasPrice": "0.0025uward",
       "newInstallBin": "cd $HOME\nrm -rf $HOME/download\nmkdir $HOME/download\ncd $HOME/download\nwget https://github.com/warden-protocol/wardenprotocol/releases/download/v0.3.0/wardend_Linux_x86_64.zip\nunzip $HOME/download/wardend_Linux_x86_64.zip\nrm -rf $HOME/download/wardend_Linux_x86_64.zip\nchmod +x $HOME/download/wardend\nsudo mv $HOME/download/wardend $(which wardend)",
       "path": ".warden",
-      "peerID": "f995c84635c099329bfaaa255389d63e052cb0ac",
+      "peerID": "b14f35c07c1b2e58c4a1c1727c89a5933739eeea",
       "peerPort": "18656",
       "port": 18,
       "prHome": "/home/warden",
