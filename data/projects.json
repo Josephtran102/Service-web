@@ -540,7 +540,7 @@
       "updHeight": "",
       "variable": "ALIGNEDLAYER",
       "website": "https://alignedlayer.com/",
-      "newInit": "cd $HOME"
+      "newInit": "cd $HOME\ncurl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y\nsource $HOME/.cargo/env"
     },
     "althea": {
       "bin": "althea",
