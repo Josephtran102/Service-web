@@ -539,7 +539,8 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "ALIGNEDLAYER",
-      "website": "https://alignedlayer.com/"
+      "website": "https://alignedlayer.com/",
+      "newInit": "cd $HOME"
     },
     "althea": {
       "bin": "althea",
