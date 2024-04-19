@@ -517,7 +517,7 @@
       "bin": "alignedlayerd",
       "binHome": "/home/aligned/go/bin/alignedlayerd",
       "chainID": "alignedlayer",
-      "delegate": "",
+      "delegate": "https://testnet.itrocket.net/alignedlayer/staking/alignedvaloper1r9gqluskqegkfcz9522kl2cs8un87d3njge7yf",
       "denom": "stake",
       "ecosystem": "cosmos",
       "gas": "--fees 50stake",
