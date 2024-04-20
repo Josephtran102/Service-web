@@ -463,6 +463,6 @@ sed -i "/${variable}_/d" $HOME/.bash_profile`}
 			</div>
 		</AnimatedSection>
 	)
-}
+} //
 
 export default Installation
