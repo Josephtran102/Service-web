@@ -1424,7 +1424,8 @@
       "updHeight": "386352",
       "variable": "WARDEN",
       "website": "https://wardenprotocol.org/",
-      "newInit": "wardend init $MONIKER"
+      "newInit": "wardend init $MONIKER",
+      "node": "${bin} query bank balances $WALLET_ADDRESS —node http://127.0.0.1:${WARDEN_PORT}657"
     },
     "zetachain": {
       "chainID": "athens_7001-1",
