@@ -411,7 +411,7 @@ echo "{
 ${bin} tx staking create-validator validator.json \\
     --from \$WALLET \\
     --chain-id ${chainID} \\
-    --fees ${gas}`}
+    ${gas}`}
 						/>
 					)}
 				</div>
