@@ -401,7 +401,7 @@ echo "{
     \\"identity\\": \\"${identity}\\",
     \\"website\\": \\"${website}\\",
     \\"security\\": \\"\\",
-    \\"details\\": \\"Trusted Validator & Interchain Utility Provider\\",
+    \\"details\\": \\"${details}\\",
     \\"commission-rate\\": \\"${commissionRate}\\",
     \\"commission-max-rate\\": \\"${commissionMaxRate}\\",
     \\"commission-max-change-rate\\": \\"${commissionMaxChange}\\",
