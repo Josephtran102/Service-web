@@ -540,7 +540,7 @@
       "updHeight": "",
       "variable": "ALIGNEDLAYER",
       "website": "https://alignedlayer.com/",
-      "newInit": "alignedlayerd init $MONIKER --chain-id alignedlayer",
+      "newInit": "alignedlayerd init $MONIKER --chain-id alignedlayer\nsed -i -e \"s/^node *=.*/node = \\\"tcp://localhost:${ALIGNEDLAYER_PORT}657\\\"/\" $HOME/.alignedlayer/config/app.toml",
       "newCreateValidator": "JSON"
     },
     "althea": {
