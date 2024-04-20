@@ -1,5 +1,5 @@
-import projects from 'data/projects'
 import { fetchNetInfo } from '@utils/fetchProject.js'
+import projects from 'data/projects'
 
 export default function handler(req, res) {
 	res.setHeader('Cache-Control', 'no-store, max-age=0')
@@ -32,9 +32,13 @@ export default function handler(req, res) {
 	const execStart = newExecStart == undefined ? `$(which ${bin}) start --home $HOME/${path}` : newExecStart
 	let init = ''
 
-	if (newInit !== 'false') {
-		init = newInit == undefined ? `${bin} init "$MONIKER" --chain-id ${chainID}` : newInit
-	}
+	init =
+		newInit && newInit !== 'false'
+			? newInit
+			: `${bin} config node tcp://localhost:\${${variable}_PORT}657
+${bin} config keyring-backend os
+${bin} config chain-id ${chainID}
+${bin} init "${moniker}" --chain-id ${chainID}`
 
 	let livePeers = []
 
@@ -134,9 +138,6 @@ ${installBin}
 
 printGreen "5. Configuring and init app..." && sleep 1
 # config and init app
-${bin} config node tcp://localhost:\${${variable}_PORT}657
-${bin} config keyring-backend os
-${bin} config chain-id ${chainID}
 ${init}
 sleep 1
 echo done
