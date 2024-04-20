@@ -1,13 +1,13 @@
-import { useContext, useRef, useState } from 'react'
-import Head from 'next/head'
 import { Input, Radio, Space } from 'antd'
+import Head from 'next/head'
+import { useContext, useRef, useState } from 'react'
 
 import CodeBlock from '@components/UI/CodeBlock'
+import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
 import projects from 'data/projects'
-import { Context } from '@context/context'
-import CodeSnippet from './UI/CodeSnippet'
 import AnimatedSection from './AnimatedSection'
+import CodeSnippet from './UI/CodeSnippet'
 
 const CheatSheet = props => {
 	const name = props.name
@@ -15,7 +15,7 @@ const CheatSheet = props => {
 	const project = projects[type][name]
 	const explorer = useRef()
 	const projectName = project?.name || name.charAt(0).toUpperCase() + name.slice(1)
-	const { chainID, bin, path, peerID, seedID, seedPort, peerPort, denom, gas } = project
+	const { chainID, bin, path, peerID, seedID, seedPort, peerPort, denom, gas, node } = project
 
 	explorer.current = project.explorer
 	const { theme } = useContext(Context)
@@ -79,8 +79,7 @@ const CheatSheet = props => {
 						</div>
 
 						<div className='flex flex-col gap-y-2'>
-							<CodeBlock desc='Sync info' code={`${bin} status 2>&1 | jq .SyncInfo`} />
-							<CodeBlock desc='Node info' code={`${bin} status 2>&1 | jq .NodeInfo`} />
+							<CodeBlock desc='Node info' code={`${bin} status ${node ? node + ' ' : ''}2>&1 | jq`} />
 						</div>
 					</div>
 					<p>Your node peer</p>
@@ -95,7 +94,10 @@ const CheatSheet = props => {
 						<CodeBlock desc='Restore executing wallet' code={`${bin} keys add $WALLET --recover`} />
 						<CodeBlock desc='List All Wallets' code={`${bin} keys list`} />
 						<CodeBlock desc='Delete wallet' code={`${bin} keys delete $WALLET`} />
-						<CodeBlock desc='Check Balance' code={`${bin} q bank balances $(${bin} keys show $WALLET -a)`} />
+						<CodeBlock
+							desc='Check Balance'
+							code={`${bin} q bank balances $WALLET_ADDRESS ${node ? node : ''}`}
+						/>
 						<CodeBlock desc='Export Key (save to wallet.backup)' code={`${bin} keys export $WALLET`} />
 						<CodeBlock desc='View EVM Prived Key' code={`${bin} keys unsafe-export-eth-key $WALLET`} />
 						<CodeBlock
@@ -134,32 +136,46 @@ const CheatSheet = props => {
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock
 							desc='Withdraw all rewards'
-							code={`${bin} tx distribution withdraw-all-rewards --from $WALLET --chain-id ${chainID} ${gas}`}
+							code={`${bin} tx distribution withdraw-all-rewards --from $WALLET --chain-id ${chainID} ${gas} ${
+								node ? node : ''
+							}`}
 						/>
 						<CodeBlock
 							desc='Withdraw rewards and commission from your validator'
-							code={`${bin} tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id ${chainID} ${gas} -y`}
+							code={`${bin} tx distribution withdraw-rewards $VALOPER_ADDRESS --from $WALLET --commission --chain-id ${chainID} ${gas} -y ${
+								node ? node : ''
+							}`}
 						/>
 						<CodeBlock desc='Check your balance' code={`${bin} query bank balances $WALLET_ADDRESS`} />
 						<CodeBlock
 							desc='Delegate to Yourself'
-							code={`${bin} tx staking delegate $(${bin} keys show $WALLET --bech val -a) ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y`}
+							code={`${bin} tx staking delegate $(${bin} keys show $WALLET --bech val -a) ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y ${
+								node ? node : ''
+							}`}
 						/>
 						<CodeBlock
 							desc='Delegate'
-							code={`${bin} tx staking delegate ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y`}
+							code={`${bin} tx staking delegate ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y ${
+								node ? node : ''
+							}	`}
 						/>
 						<CodeBlock
 							desc='Redelegate Stake to Another Validator'
-							code={`${bin} tx staking redelegate $VALOPER_ADDRESS ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y`}
+							code={`${bin} tx staking redelegate $VALOPER_ADDRESS ${toValoperAddr} ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y ${
+								node ? node : ''
+							}`}
 						/>
 						<CodeBlock
 							desc='Unbond'
-							code={`${bin} tx staking unbond $(${bin} keys show $WALLET --bech val -a) ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y`}
+							code={`${bin} tx staking unbond $(${bin} keys show $WALLET --bech val -a) ${amount}${denom} --from $WALLET --chain-id ${chainID} ${gas} -y ${
+								node ? node : ''
+							}`}
 						/>
 						<CodeBlock
 							desc='Transfer Funds'
-							code={`${bin} tx bank send $WALLET_ADDRESS ${toWalletAddr} ${amount}${denom} ${gas} -y`}
+							code={`${bin} tx bank send $WALLET_ADDRESS ${toWalletAddr} ${amount}${denom} ${gas} -y ${
+								node ? node : ''
+							}`}
 						/>
 					</div>
 					<h2 id='validator-operations'> Validator operations</h2>
@@ -238,7 +254,8 @@ const CheatSheet = props => {
 --details "${details}" \\
 --chain-id ${chainID} \\
 ${gas} \\
--y`}
+-y \\
+${node ? node : ''}`}
 						/>
 						<CodeBlock
 							desc='Edit Existing Validator'
@@ -250,28 +267,34 @@ ${gas} \\
 --from $WALLET \\
 --chain-id ${chainID} \\
 ${gas} \\
--y`}
+-y \\
+${node ? node : ''}`}
 						/>
-						<CodeBlock desc='Validator info' code={`${bin} status 2>&1 | jq .ValidatorInfo`} />
+						<CodeBlock desc='Validator info' code={`${bin} status ${node ? node + ' ' : ''}2>&1 | jq`} />
 						<CodeBlock
 							desc='Validator Details'
-							code={`${bin} q staking validator $(${bin} keys show $WALLET --bech val -a)`}
+							code={`${bin} q staking validator $(${bin} keys show $WALLET --bech val -a) ${
+								node ? node : ''
+							}`}
 						/>
 						<CodeBlock
 							desc='Jailing info'
-							code={`${bin} q slashing signing-info $(${bin} tendermint show-validator)`}
+							code={`${bin} q slashing signing-info $(${bin} tendermint show-validator) ${
+								node ? node : ''
+							}`}
 						/>
-						<CodeBlock
-							desc='Slashing parameters'
-							code={`${bin} q slashing params`}
-						/>
+						<CodeBlock desc='Slashing parameters' code={`${bin} q slashing params ${node ? node : ''}`} />
 						<CodeBlock
 							desc='Unjail validator'
-							code={`${bin} tx slashing unjail --from $WALLET --chain-id ${chainID} ${gas} -y`}
+							code={`${bin} tx slashing unjail --from $WALLET --chain-id ${chainID} ${gas} -y ${
+								node ? node : ''
+							}`}
 						/>
 						<CodeBlock
 							desc='Active Validators List'
-							code={`${bin} q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl`}
+							code={`${bin} q staking validators -oj --limit=2000 | jq '.validators[] | select(.status=="BOND_STATUS_BONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl ${
+								node ? node : ''
+							}`}
 						/>
 						<CodeBlock
 							desc='Check Validator key'
@@ -279,7 +302,9 @@ ${gas} \\
 						/>
 						<CodeBlock
 							desc='Signing info'
-							code={`${bin} q slashing signing-info $(${bin} tendermint show-validator)`}
+							code={`${bin} q slashing signing-info $(${bin} tendermint show-validator) ${
+								node ? node : ''
+							}`}
 						/>
 					</div>
 					<h2 id='governance'> Governance</h2>
@@ -310,9 +335,10 @@ ${gas} \\
 --type Text \\
 --from $WALLET \\
 ${gas} \\
--y `}
+-y \\
+${node ? node : ''} `}
 					/>
-					<CodeBlock desc='Proposals List' code={`${bin} query gov proposals`} />
+					<CodeBlock desc='Proposals List' code={`${bin} query gov proposals ${node ? node : ''}`} />
 
 					<Space
 						size='middle'
@@ -339,10 +365,15 @@ ${gas} \\
 							</Radio.Group>
 						</Space>
 					</Space>
-					<CodeBlock desc='View proposal' code={`${bin} query gov proposal ${proposalID}`} />
+					<CodeBlock
+						desc='View proposal'
+						code={`${bin} query gov proposal ${proposalID} ${node ? node : ''}`}
+					/>
 					<CodeBlock
 						desc='Vote'
-						code={`${bin} tx gov vote ${proposalID} ${proposalOption} --from $WALLET --chain-id ${chainID}  ${gas} -y`}
+						code={`${bin} tx gov vote ${proposalID} ${proposalOption} --from $WALLET --chain-id ${chainID}  ${gas} -y ${
+							node ? node : ''
+						}`}
 					/>
 				</>
 			</div>
