@@ -990,7 +990,7 @@
       "gas": "--gas auto --gas-adjustment 1.5 --fees 50uom",
       "goVersion": "1.21.3",
       "imgUrl": "mantra.jpg",
-      "minGasPrice": "0.0001uaum",
+      "minGasPrice": "0.0002uom",
       "unsafeReset": "tendermint unsafe-reset-all",
       "website": "https://www.mantrachain.io/",
       "bin": "mantrachaind",
