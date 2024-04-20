@@ -38,7 +38,7 @@ export default function handler(req, res) {
 			: `${bin} config node tcp://localhost:\${${variable}_PORT}657
 ${bin} config keyring-backend os
 ${bin} config chain-id ${chainID}
-${bin} init "${moniker}" --chain-id ${chainID}`
+${bin} init $MONIKER --chain-id ${chainID}`
 
 	let livePeers = []
 
