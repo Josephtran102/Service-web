@@ -1,15 +1,15 @@
-import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 import styles from '@styles/Services.module.scss'
 import { Input, Space } from 'antd'
 import Head from 'next/head'
+import { useCallback, useContext, useEffect, useRef, useState } from 'react'
 
-import projects from 'data/projects'
 import { Context } from '@context/context'
-import { fetchSnap, fetchStatus } from '@utils/fetchProject.js'
-import CodeSnippet from './UI/CodeSnippet'
-import AnimatedSection from './AnimatedSection'
-import useNetInfo from 'hooks/useNetInfo'
 import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
+import { fetchStatus } from '@utils/fetchProject.js'
+import projects from 'data/projects'
+import useNetInfo from 'hooks/useNetInfo'
+import AnimatedSection from './AnimatedSection'
+import CodeSnippet from './UI/CodeSnippet'
 
 const Installation = props => {
 	const name = props.name
@@ -56,9 +56,13 @@ const Installation = props => {
 	const execStart = newExecStart == undefined ? `$(which ${bin}) start --home $HOME/${path}` : newExecStart
 	let init = ''
 
-	if (newInit !== 'false') {
-		init = newInit == undefined ? `${bin} init "${moniker}" --chain-id ${chainID}` : newInit
-	}
+	init =
+		newInit && newInit !== 'false'
+			? newInit
+			: `${bin} config node tcp://localhost:\${${variable}_PORT}657
+${bin} config keyring-backend os
+${bin} config chain-id ${chainID}
+${bin} init "${moniker}" --chain-id ${chainID}`
 
 	let PEERS = '""',
 		SEEDS = '""'
@@ -193,9 +197,6 @@ source $HOME/.bash_profile
 ${installBin}
 
 # config and init app
-${bin} config node tcp://localhost:\${${variable}_PORT}657
-${bin} config keyring-backend os
-${bin} config chain-id ${chainID}
 ${init}
 
 # download genesis and addrbook
