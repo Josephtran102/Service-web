@@ -11,6 +11,7 @@
 	"imgUrl": "arkhadian.jpg",
 	"installBin": "cd $HOME\nrm -rf arkh-blockchain\ngit clone https://github.com/vincadian/arkh-blockchain\ncd arkh-blockchain\ngit checkout v2.0.0\ngo build -o arkhd ./cmd/arkhd\nmv arkhd $HOME/go/bin",
 	"minGasPrice": "0.0",
+	"node": "${bin} query bank balances $WALLET_ADDRESS —node http://127.0.0.1:${WARDEN_PORT}657",
 	"newInstallBin": "",
 	"path": ".arkh",
 	"peerID": "f3c163dc9c2649fe203bd87afd101869952e685a",
