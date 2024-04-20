@@ -540,7 +540,7 @@
       "updHeight": "",
       "variable": "ALIGNEDLAYER",
       "website": "https://alignedlayer.com/",
-      "newInit": "alignedlayerd init $MONIKER --chain-id $ALIGNEDLAYER_CHAIN_ID",
+      "newInit": "alignedlayerd init $MONIKER --chain-id alignedlayer",
       "newCreateValidator": "JSON"
     },
     "althea": {
