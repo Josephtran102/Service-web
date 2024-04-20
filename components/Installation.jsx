@@ -409,7 +409,7 @@ echo "{
 }" > validator.json
 # Create a validator using the JSON configuration
 ${bin} tx staking create-validator validator.json \\
-    --from  \$WALLET \\
+    --from \$WALLET \\
     --chain-id ${chainID} \\
     --fees ${gas}`}
 						/>
