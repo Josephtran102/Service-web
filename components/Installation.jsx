@@ -410,7 +410,8 @@ echo "{\\"pubkey\\":{\\"@type\\":\\"/cosmos.crypto.ed25519.PubKey\\",\\"key\\":\
 ${bin} tx staking create-validator validator.json \\
     --from \$WALLET \\
     --chain-id ${chainID} \\
-	${gas}`}
+	${gas}
+	${node ? node : ''}`}
 						/>
 					)}
 				</div>
