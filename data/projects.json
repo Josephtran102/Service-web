@@ -1426,9 +1426,9 @@
       "updHeight": "386352",
       "variable": "WARDEN",
       "website": "https://wardenprotocol.org/",
-      "newInit": "wardend init $MONIKER",
-      "node": "--node http://127.0.0.1:${WARDEN_PORT}657",
-      "newCreateValidator": "JSON"
+      "newInit": "wardend init $MONIKER\nsed -i -e \"s|^node *=.*|node = \\\"tcp://localhost:${WARDEN_PORT}657\\\"|\" $HOME/.warden/config/client.toml",
+      "newCreateValidator": "JSON",
+      "node": "--node http://127.0.0.1:${WARDEN_PORT}657"
     },
     "zetachain": {
       "chainID": "athens_7001-1",
