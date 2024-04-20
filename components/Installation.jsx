@@ -28,6 +28,7 @@ const Installation = props => {
 		peerPort,
 		updHeight,
 		newInstallBin,
+		newCreateValidator,
 		variable,
 		denom,
 		goVersion,
@@ -53,6 +54,7 @@ const Installation = props => {
 	const [commissionRate, setCommissionRate] = useState(0.1)
 	const [commissionMaxRate, setCommissionMaxRate] = useState(0.2)
 	const [commissionMaxChange, setCommissionMaxChange] = useState(0.01)
+	const [website, setWebsite] = useState('')
 
 	const execStart = newExecStart == undefined ? `$(which ${bin}) start --home $HOME/${path}` : newExecStart
 	let init = ''
@@ -357,12 +359,21 @@ ${bin} query bank balances $WALLET_ADDRESS ${node ? node : ''}
 								onChange={e => setCommissionMaxChange(e.target.value)}
 							/>
 						</Space>
+						<Space direction='vertical'>
+							<span>Website</span>
+							<Input
+								style={{ minWidth: '40px' }}
+								defaultValue={''}
+								onChange={e => setWebsite(e.target.value)}
+							/>
+						</Space>
 					</Space>
 				</Space>
 				<div className='flex flex-col gap-y-2'>
-					<CodeSnippet
-						theme={theme}
-						code={`${bin} tx staking create-validator \\
+					{newCreateValidator?.toUpperCase() !== 'JSON' ? (
+						<CodeSnippet
+							theme={theme}
+							code={`${bin} tx staking create-validator \\
 --amount ${amountCreate}${denom} \\
 --from $WALLET \\
 --commission-rate ${commissionRate} \\
@@ -372,11 +383,37 @@ ${bin} query bank balances $WALLET_ADDRESS ${node ? node : ''}
 --pubkey $(${bin} tendermint show-validator) \\
 --moniker "${moniker}" \\
 --identity "${identity}" \\
+--website "${website}" \\
 --details "${details}" \\
 --chain-id ${chainID} \\
 ${gas} \\
 -y`}
-					/>
+						/>
+					) : (
+						<CodeSnippet
+							theme={theme}
+							code={`cd $HOME
+# Create validator.json file
+echo "{
+    \\"pubkey\\": {\\"@type\\": \\"/cosmos.crypto.ed25519.PubKey\\", \\"key\\": \\"$(wardend comet show-validator | grep -Po '"key":\\s*"\\K[^"]*')\\"},
+    \\"amount\\": \\"${amountCreate}${denom}\\",
+    \\"moniker\\": \\"${moniker}\\",
+    \\"identity\\": \\"${identity}\\",
+    \\"website\\": \\"${website}\\",
+    \\"security\\": \\"\\",
+    \\"details\\": \\"Trusted Validator & Interchain Utility Provider\\",
+    \\"commission-rate\\": \\"${commissionRate}\\",
+    \\"commission-max-rate\\": \\"${commissionMaxRate}\\",
+    \\"commission-max-change-rate\\": \\"${commissionMaxChange}\\",
+    \\"min-self-delegation\\": \\"1\\"
+}" > validator.json
+# Create a validator using the JSON configuration
+wardend tx staking create-validator validator.json \\
+    --from <key-name> \\
+    --chain-id buenavista-1 \\
+    --fees 500uward`}
+						/>
+					)}
 				</div>
 				<h2 id='monitoring'>Monitoring</h2>
 				<p>
