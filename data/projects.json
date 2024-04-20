@@ -539,7 +539,9 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "ALIGNEDLAYER",
-      "website": "https://alignedlayer.com/"
+      "website": "https://alignedlayer.com/",
+      "newInit": "alignedlayerd init $MONIKER --chain-id $ALIGNEDLAYER_CHAIN_ID",
+      "newCreateValidator": "json"
     },
     "althea": {
       "bin": "althea",
