@@ -395,7 +395,7 @@ ${gas} \\
 							code={`cd $HOME
 # Create validator.json file
 echo "{
-    \\"pubkey\\": {\\"@type\\": \\"/cosmos.crypto.ed25519.PubKey\\", \\"key\\": \\"$(wardend comet show-validator | grep -Po '"key":\\s*"\\K[^"]*')\\"},
+    \\"pubkey\\": {\\"@type\\": \\"/cosmos.crypto.ed25519.PubKey\\", \\"key\\": \\"$(${bin} comet show-validator | grep -Po '"key":\\s*"\\K[^"]*')\\"},
     \\"amount\\": \\"${amountCreate}${denom}\\",
     \\"moniker\\": \\"${moniker}\\",
     \\"identity\\": \\"${identity}\\",
@@ -408,10 +408,10 @@ echo "{
     \\"min-self-delegation\\": \\"1\\"
 }" > validator.json
 # Create a validator using the JSON configuration
-wardend tx staking create-validator validator.json \\
-    --from <key-name> \\
-    --chain-id buenavista-1 \\
-    --fees 500uward`}
+${bin} tx staking create-validator validator.json \\
+    --from ${wallet} \\
+    --chain-id ${chainID} \\
+    --fees ${gas}`}
 						/>
 					)}
 				</div>
