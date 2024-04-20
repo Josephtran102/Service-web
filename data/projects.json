@@ -541,7 +541,7 @@
       "variable": "ALIGNEDLAYER",
       "website": "https://alignedlayer.com/",
       "newInit": "alignedlayerd init $MONIKER --chain-id $ALIGNEDLAYER_CHAIN_ID",
-      "newCreateValidator": "json"
+      "newCreateValidator": "JSON"
     },
     "althea": {
       "bin": "althea",
