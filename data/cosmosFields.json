@@ -13,6 +13,7 @@
 	"minGasPrice": "0.0",
 	"node": "${bin} query bank balances $WALLET_ADDRESS —node http://127.0.0.1:${WARDEN_PORT}657",
 	"newInstallBin": "",
+	"newCreateValidator": "JSON",
 	"path": ".arkh",
 	"peerID": "f3c163dc9c2649fe203bd87afd101869952e685a",
 	"peerPort": "27656",

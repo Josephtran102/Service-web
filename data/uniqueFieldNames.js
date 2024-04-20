@@ -17,6 +17,7 @@ let fieldNames = [
 	'peerID',
 	'seedID',
 	'peerPort',
+	'newCreateValidator',
 	'seedPort',
 	'installBin',
 	'stateSync',
