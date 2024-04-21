@@ -46,7 +46,7 @@ const ProjectsModal = ({ name, type }) => {
 				okButtonProps={{ style: { display: 'none' } }}
 				cancelButtonProps={{ style: { display: 'none' } }}
 				style={{
-					minWidth: '70%'
+					minWidth: '75%'
 				}}
 			>
 				<div className={styles.mainColumn} style={{ border: '0px', boxShadow: 'none' }}>
