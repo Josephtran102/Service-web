@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { Modal } from 'antd'
 import { RetweetOutlined } from '@ant-design/icons'
+import { Modal } from 'antd'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
-import projects from 'data/projects'
 import styles from '@styles/Services.module.scss'
+import projects from 'data/projects'
 
 const ProjectsModal = ({ name, type }) => {
 	const mainnetData = projects.mainnet
@@ -30,7 +30,7 @@ const ProjectsModal = ({ name, type }) => {
 
 	return (
 		<>
-			<div className={styles.chain__wrapper} onClick={showModal}>
+			<div className={`${styles.chain__wrapper} bg-zinc-50/80 dark:bg-zinc-800`} onClick={showModal}>
 				<span className='flex items-center gap-2 md:gap-4 select-none'>
 					{type == 'services' && (
 						<b className={styles.bold}>{name.charAt(0).toUpperCase() + name.slice(1)}</b>
@@ -51,7 +51,7 @@ const ProjectsModal = ({ name, type }) => {
 			>
 				<div className={styles.mainColumn} style={{ border: '0px', boxShadow: 'none' }}>
 					<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>
-						Mainnets
+						Mainnet
 					</h2>
 					<div className={styles.mainnetColumn}>
 						{Object.keys(mainnetData).map(item => {
@@ -62,7 +62,12 @@ const ProjectsModal = ({ name, type }) => {
 									: '/admin/mainnet/' + name.toLowerCase()
 
 							return (
-								<Link href={URL} className={styles.chain__wrapper} onClick={handleLinkClick} key={name}>
+								<Link
+									href={URL}
+									className={`${styles.chain__wrapper} bg-zinc-50/80 dark:bg-zinc-800`}
+									onClick={handleLinkClick}
+									key={name}
+								>
 									<Image
 										src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
 										alt='project logo'
@@ -76,7 +81,7 @@ const ProjectsModal = ({ name, type }) => {
 					</div>
 					<br />
 					<h2 style={{ marginTop: '0', paddingTop: '5px' }} id='testnets'>
-						Testnets
+						Testnet
 					</h2>
 					<div className={styles.testnetColumn}>
 						{Object.keys(testnetData).map(item => {
@@ -87,7 +92,12 @@ const ProjectsModal = ({ name, type }) => {
 									: '/admin/testnet/' + name.toLowerCase()
 
 							return (
-								<Link href={URL} className={styles.chain__wrapper} onClick={handleLinkClick} key={name}>
+								<Link
+									href={URL}
+									className={`${styles.chain__wrapper} bg-zinc-50/80 dark:bg-zinc-800`}
+									onClick={handleLinkClick}
+									key={name}
+								>
 									<Image
 										src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
 										alt='project logo'
