@@ -254,7 +254,7 @@ const CheatSheet = props => {
 --details "${details}" \\
 --chain-id ${chainID} \\
 ${gas} \\
--y \\
+-y ${node ? '\\' : ''}
 ${node ? node : ''}`}
 						/>
 						<CodeBlock
@@ -267,7 +267,7 @@ ${node ? node : ''}`}
 --from $WALLET \\
 --chain-id ${chainID} \\
 ${gas} \\
--y \\
+-y ${node ? '\\' : ''}
 ${node ? node : ''}`}
 						/>
 						<CodeBlock desc='Validator info' code={`${bin} status ${node ? node + ' ' : ''}2>&1 | jq`} />
@@ -335,8 +335,8 @@ ${node ? node : ''}`}
 --type Text \\
 --from $WALLET \\
 ${gas} \\
--y \\
-${node ? node : ''} `}
+-y ${node ? '\\' : ''}
+${node ? node : ''}`}
 					/>
 					<CodeBlock desc='Proposals List' code={`${bin} query gov proposals ${node ? node : ''}`} />
 
