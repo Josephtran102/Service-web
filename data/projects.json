@@ -288,7 +288,8 @@
       "installBin2": "",
       "installTitle2": "",
       "installBin3": "",
-      "installTitle3": ""
+      "installTitle3": "",
+      "delegate": "https://explorer.massa.net/mainnet/address/AU12QJgCbmgDhucquSJhhBe9iqHuEWbpnXZNWabq63WDWquxdE58c"
     },
     "nois": {
       "bin": "noisd",
