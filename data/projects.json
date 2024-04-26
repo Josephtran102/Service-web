@@ -1276,7 +1276,7 @@
       "delegate": "https://testnet.itrocket.net/swisstronik/staking/swtrvaloper1g3uvuu73km4lwzw4d62z7jedpv9vgwsc9eyqz4",
       "denom": "uswtr",
       "ecosystem": "cosmos",
-      "gas": "--gas auto --gas-adjustment 1.5",
+      "gas": "--keyring-backend test --gas-prices 300000uswtr",
       "goVersion": "1.21.3",
       "hardware": "Intel CPU which supports SGX via SPS, 32GB RAM, 500 GB SSD",
       "imgUrl": "swisstronic.jpg",
