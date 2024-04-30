@@ -1365,7 +1365,7 @@
       "updHeight": "",
       "variable": "UNION",
       "website": "https://union.build/",
-      "newInit": "uniond --home $HOME/.union init $MONIKER --chain-id union-testnet-6"
+      "newInit": "uniond --home $HOME/.union init $MONIKER --chain-id union-testnet-8"
     },
     "uptick": {
       "bin": "uptickd",
