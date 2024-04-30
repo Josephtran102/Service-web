@@ -1341,7 +1341,7 @@
     "union": {
       "bin": "uniond",
       "binHome": "/home/union/go/bin/uniond",
-      "chainID": "union-testnet-6",
+      "chainID": "union-testnet-8",
       "delegate": "https://testnet.itrocket.net/union/staking/unionvaloper10g8npdhdcjyn7528gz3v34v9t4tm6hlpyv0jf0",
       "denom": "muno",
       "ecosystem": "cosmos",
