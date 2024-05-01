@@ -1298,7 +1298,7 @@
       "website": "https://linktr.ee/swisstronik"
     },
     "taiko": {
-      "explorer": "https://explorer.test.taiko.xyz/",
+      "explorer": "https://hekla.taikoscan.network/",
       "website": "https://taiko.xyz/",
       "offValDoc": "https://docs.taiko.xyz/guides/run-a-taiko-node/",
       "imgUrl": "taiko.png",
