@@ -1300,7 +1300,7 @@
     "taiko": {
       "explorer": "https://explorer.test.taiko.xyz/",
       "website": "https://taiko.xyz/",
-      "offValDoc": "https://taiko.xyz/docs/guides/run-a-node",
+      "offValDoc": "https://docs.taiko.xyz/guides/run-a-taiko-node/",
       "imgUrl": "taiko.png",
       "fav": "true",
       "ecosystem": "false",
