@@ -1311,10 +1311,10 @@
     },
     "terp": {
       "ecosystem": "cosmos",
-      "gas": "--fees 5000uterpx",
+      "gas": "--fees 10000uthiolx",
       "goVersion": "1.21.3",
       "imgUrl": "terp.jpg",
-      "minGasPrice": "0.025uterpx",
+      "minGasPrice": "0.025uthiolx",
       "unsafeReset": "tendermint unsafe-reset-all",
       "website": "https://terp.network/",
       "bin": "terpd",
