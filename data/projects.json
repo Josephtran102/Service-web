@@ -138,7 +138,7 @@
       "updHeight": "",
       "variable": "CROSSFI",
       "website": "https://crossfi.org/",
-      "evmRPC": "https://crossfi-testnet-jsonrpc.itrocket.net",
+      "evmRPC": "https://crossfi-mainnet-jsonrpc.itrocket.net",
       "newInit": "rm -rf testnet ~/.mineplex-chain\ngit clone https://github.com/crossfichain/mainnet.git\nmv $HOME/mainnet/ $HOME/.mineplex-chain/\nsed -i '99,114 s/^\\( *enable =\\).*/\\1 \"false\"/' $HOME/.mineplex-chain/config/config.toml"
     },
     "doravota": {
