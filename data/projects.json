@@ -1154,7 +1154,7 @@
       "seedPort": "37656",
       "installBin": "cd $HOME\nrm -rf ~/quicksilver\ngit clone https://github.com/ingenuity-build/quicksilver\ncd quicksilver\ngit checkout v1.6.0-beta1\nmake install",
       "updHeight": "2089850",
-      "newInstallBin": "cd $HOME\nwget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.6.0-rc0/quicksilverd-v1.6.0-rc0-amd64\nsudo mv $HOME/quicksilverd $(which quicksilverd)",
+      "newInstallBin": "cd $HOME\nwget -O quicksilverd https://github.com/quicksilver-zone/quicksilver/releases/download/v1.6.0-rc0/quicksilverd-v1.6.0-rc0-amd64\nchmod +x $HOME/quicksilverd\nsudo mv $HOME/quicksilverd $(which quicksilverd)",
       "goVersion": "1.22.0",
       "gas": "",
       "unsafeReset": "tendermint unsafe-reset-all",
