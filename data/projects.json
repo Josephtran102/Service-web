@@ -1225,7 +1225,7 @@
       "website": "https://www.playstructs.com/",
       "bin": "structsd",
       "binHome": "/home/structs/go/bin/structsd",
-      "chainID": "structstestnet-74",
+      "chainID": "structstestnet-88",
       "denom": "alpha",
       "hardware": "4 Cores, 8GB RAM, 200GB of storage (NVME)",
       "installBin": "cd $HOME\nwget -O $HOME/structsd https://testnet-files.itrocket.net/structs/structsd\nchmod +x $HOME/structsd\nmv $HOME/structsd $HOME/go/bin",
