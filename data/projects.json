@@ -526,9 +526,7 @@
       "imgUrl": "airchains.jpg",
       "installBin": "cd $HOME\nwget -O junctiond https://github.com/airchains-network/junction/releases/download/v0.1.0/junctiond\nchmod +x junctiond\nmv junctiond $HOME/go/bin/",
       "minGasPrice": "0.001amf",
-      "node": "",
       "newInstallBin": "",
-      "newCreateValidator": "JSON",
       "path": ".junction",
       "peerID": "",
       "peerPort": "",
@@ -541,7 +539,10 @@
       "unsafeReset": "tendermint unsafe-reset-all",
       "updHeight": "",
       "variable": "AIRCHAIN",
-      "website": "https://www.airchains.io/"
+      "website": "https://www.airchains.io/",
+      "newCreateValidator": "JSON",
+      "node": "",
+      "newInit": "alignedlayerd init $MONIKER --chain-id alignedlayer sed -i -e \"s|^node *=.*|node = \\\"tcp://localhost:${ALIGNEDLAYER_PORT}657\\\"|\" $HOME/.alignedlayer/config/client.toml"
     },
     "alignedlayer": {
       "bin": "alignedlayerd",
