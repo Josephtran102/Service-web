@@ -94,7 +94,7 @@
       "hardware": "6 Cores, 8GB RAM, 500GB of storage (NVME)",
       "imgUrl": "celestia.png",
       "installBin": "cd $HOME \nrm -rf celestia-app \ngit clone https://github.com/celestiaorg/celestia-app.git \ncd celestia-app/ \nAPP_VERSION=v1.7.0\ngit checkout tags/$APP_VERSION -b $APP_VERSION \nmake install\ncd $HOME\nrm -rf networks\ngit clone https://github.com/celestiaorg/networks.git\ncelestia-appd init $MONIKER --chain-id $CELESTIA_CHAIN_ID",
-      "minGasPrice": "0.005utia",
+      "minGasPrice": "0.002utia",
       "newInstallBin": "",
       "path": ".celestia-app",
       "peerID": "d535cbf8d0efd9100649aa3f53cb5cbab33ef2d6",
