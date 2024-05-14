@@ -963,7 +963,7 @@
       "updHeight": "",
       "variable": "INITIA",
       "website": "https://initia.xyz/",
-      "offValDoc": "https://docs.initia.xyz/run-initia-node/running-initia-node"
+      "newInit": "initiad init $MONIKER"
     },
     "lamina1": {
       "ecosystem": "false",
