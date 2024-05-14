@@ -963,7 +963,7 @@
       "updHeight": "",
       "variable": "INITIA",
       "website": "https://initia.xyz/",
-      "newInit": "initiad init $MONIKER"
+      "newInit": "initiad init $MONIKER\nsed -i -e \"s|^node *=.*|node = \\\"tcp://localhost:${INITIA_PORT}657\\\"|\" $HOME/.initia/config/client.toml"
     },
     "lamina1": {
       "ecosystem": "false",
