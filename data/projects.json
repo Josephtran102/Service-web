@@ -942,7 +942,7 @@
       "denom": "uinit",
       "ecosystem": "cosmos",
       "gas": "--gas auto --fees 80000uinit",
-      "goVersion": "1.21.3",
+      "goVersion": "1.22.2",
       "hardware": "4 Cores, 16GB RAM, 1TB of storage (NVME)",
       "imgUrl": "initia.jpg",
       "installBin": "cd $HOME\nrm -rf initia\ngit clone https://github.com/initia-labs/initia.git\ncd initia\ngit checkout v0.2.12\nmake install",
