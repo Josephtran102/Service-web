@@ -960,7 +960,7 @@
       "seedPort": "51656",
       "snapMaxSize": "10",
       "unsafeReset": "tendermint unsafe-reset-all",
-      "updHeight": "",
+      "updHeight": "0",
       "variable": "INITIA",
       "website": "https://initia.xyz/",
       "newInit": "initiad init $MONIKER\nsed -i -e \"s|^node *=.*|node = \\\"tcp://localhost:${INITIA_PORT}657\\\"|\" $HOME/.initia/config/client.toml",
