@@ -542,7 +542,7 @@
       "website": "https://www.airchains.io/",
       "newCreateValidator": "JSON",
       "node": "",
-      "newInit": "junctiond init $MONIKER --chain-id $AIRCHAIN_CHAIN_ID \nsed -i -e \"s|^node *=.*|node = \\\"tcp://localhost:${AIRCHAIN_PORT}657\\\"|\" $HOME/.junction//config/client.toml"
+      "newInit": "junctiond init $MONIKER --chain-id $AIRCHAIN_CHAIN_ID \nsed -i -e \"s|^node *=.*|node = \\\"tcp://localhost:${AIRCHAIN_PORT}657\\\"|\" $HOME/.junction/config/client.toml"
     },
     "alignedlayer": {
       "bin": "alignedlayerd",
