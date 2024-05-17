@@ -963,7 +963,7 @@
       "updHeight": "0",
       "variable": "INITIA",
       "website": "https://initia.xyz/",
-      "newInit": "initiad init $MONIKER\nsed -i -e \"s|^node *=.*|node = \\\"tcp://localhost:${INITIA_PORT}657\\\"|\" $HOME/.initia/config/client.toml",
+      "newInit": "initiad init $MONIKER\ninitiad config set client chain-id initiation-1\ninitiad config set client node tcp://localhost:${INITIA_PORT}657\nsed -i -e \"s|^node *=.*|node = \\\"tcp://localhost:${INITIA_PORT}657\\\"|\" $HOME/.initia/config/client.toml",
       "explorer": "https://scan.testnet.initia.xyz/initiation-1/validators"
     },
     "lamina1": {
