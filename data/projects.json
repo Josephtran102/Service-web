@@ -516,6 +516,7 @@
       "bin": "junctiond",
       "binHome": "/home/airchain/go/bin/arkhd",
       "chainID": "junction",
+      "fav": "true",
       "delegate": "https://testnet.itrocket.net/airchains/staking/airvaloper1xxvqf72fq9epet0v26ng0d9tv4s6myj67s9kzf",
       "denom": "amf",
       "ecosystem": "cosmos",
