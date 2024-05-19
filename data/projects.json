@@ -36,7 +36,6 @@
       "explorer": "https://blastapi.io/explorer",
       "offValDoc": "",
       "timesyncd": "true",
-      "fav": "true",
       "dependencies": "sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y",
       "rustCargo": "false",
       "docker": "false",
