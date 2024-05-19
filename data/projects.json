@@ -338,7 +338,7 @@
       "bin": "quicksilverd",
       "binHome": "/home/quick/go/bin/quicksilverd",
       "chainID": "quicksilver-2",
-      "delegate": "https://www.mintscan.io/quicksilver/validators/quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x",
+      "delegate": "https://mainnet.itrocket.net/quicksilver/staking/quickvaloper1jlh8cttv96kyxu0j0r2ppv4sga6ju4uzxa3c2x",
       "denom": "uqck",
       "ecosystem": "cosmos",
       "gas": "--gas auto --gas-adjustment 1.6 --fees 200uqck",
@@ -361,8 +361,7 @@
       "variable": "QUICKSILVER",
       "website": "https://quicksilver.zone/",
       "offValDoc": "https://github.com/ingenuity-build/mainnet",
-      "desc": "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem.",
-      "explorer": "https://quicksilver.explorers.guru/"
+      "desc": "Quicksilver is a permissionless, sovereign Cosmos SDK zone providing liquid staking for the entire Cosmos Ecosystem."
     },
     "realio": {
       "bin": "realio-networkd",
