@@ -198,12 +198,11 @@
       "offValDoc": "https://docs.empowerchain.io/validators/intro"
     },
     "forta": {
-      "explorer": "https://explorer.forta.network/",
-      "imgUrl": "forta.jpg",
-      "delegate": "https://app.forta.network/nodePool/211/",
       "ecosystem": "false",
-      "fav": "true",
       "goVersion": "1.19.3",
+      "imgUrl": "forta.jpg",
+      "explorer": "https://explorer.forta.network/",
+      "delegate": "https://app.forta.network/nodePool/211/",
       "gas": "--gas auto --gas-adjustment 1.5",
       "unsafeReset": "tendermint unsafe-reset-all",
       "minGasPrice": "0.0"
