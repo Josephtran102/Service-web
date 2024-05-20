@@ -164,10 +164,10 @@ AUTH_TOKEN=$(celestia $NODE_TYPE auth admin --p2p.network mocha)`}
 				<p>Then you can get the peerId of your node with the following curl command:</p>
 				<CodeSnippet
 					theme={theme}
-					code={`curl -X POST \
-     -H "Authorization: Bearer $AUTH_TOKEN" \
-     -H 'Content-Type: application/json' \
-     -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' \
+					code={`curl -X POST \\
+     -H "Authorization: Bearer $AUTH_TOKEN" \\
+     -H 'Content-Type: application/json' \\
+     -d '{"jsonrpc":"2.0","id":0,"method":"p2p.Info","params":[]}' \\
      http://localhost:26658`}
 				/>
 
