@@ -5,7 +5,7 @@ import { getItem } from './getItem'
 
 const generateLinkItem = (serviceURL, name, linkKey, displayName, handleClick, basePath = '') => {
 	const keyName = `${linkKey}${name}`
-	const href = `${serviceURL}${basePath}/#${linkKey}`
+	const href = `${serviceURL}${basePath}/${linkKey ? '#' + linkKey : ''}`
 
 	return getItem(
 		<Link href={href} onClick={event => handleClick(event, linkKey, keyName)}>
