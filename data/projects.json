@@ -947,7 +947,7 @@
       "minGasPrice": "0.15uinit,0.01uusdc",
       "node": "",
       "newInstallBin": "cd $HOME\nrm -rf initia\ngit clone https://github.com/initia-labs/initia.git\ncd initia\ngit checkout v0.2.14\nmake build\nsudo mv $HOME/initia/build/initiad $(which initiad)",
-      "newCreateValidator": "initiad tx staking create-validator ",
+      "newCreateValidator": "",
       "path": ".initia",
       "peerID": "aee7083ab11910ba3f1b8126d1b3728f13f54943",
       "peerPort": "11656",
