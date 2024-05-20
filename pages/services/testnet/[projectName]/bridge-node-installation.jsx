@@ -1,11 +1,9 @@
-import projects from 'data/projects.json'
 import { useRouter } from 'next/router'
 
-import CosmosAPI from '@components/API/CosmosAPI'
-import NonCosmosAPI from '@components/API/NonCosmosAPI'
-import NamadaAPI from '@components/Namada/API'
+import BridgeNodeInstallation from '@components/Celestia/BridgeNodeInstallation'
 import { getLayout } from '@layouts/dashboard'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
+import FourOhFour from 'pages/_error'
 
 const type = 'testnet'
 
@@ -13,15 +11,11 @@ const Project = ({ project }) => {
 	const router = useRouter()
 	const { projectName } = router.query
 
-	if (projectName === 'namada') {
-		return <NamadaAPI name={projectName} type={type} />
+	if (projectName !== 'celestia') {
+		return <FourOhFour />
 	}
 
-	return projects[type][project.id].ecosystem === 'false' ? (
-		<NonCosmosAPI name={projectName} type={type} />
-	) : (
-		<CosmosAPI name={projectName} type={type} />
-	)
+	return <BridgeNodeInstallation />
 }
 
 export async function getStaticPaths() {

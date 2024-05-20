@@ -7,18 +7,13 @@ import { useContext, useEffect, useRef, useState } from 'react'
 
 import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
+import { getCelestiaMenuItems } from '@utils/sidebarMenu/getCelestiaMenu'
+import { getItem } from '@utils/sidebarMenu/getItem'
+import { getNamadaMenuItems } from '@utils/sidebarMenu/getNamadaMenu'
 import projects from 'data/projects'
 import { currentProject } from 'utils/currentProjectByURL'
 
-function getItem(label, key, icon, children, type) {
-	return {
-		key,
-		icon,
-		children,
-		label,
-		type
-	}
-}
+let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet', 'public-rpc']
 
 const SideMenu = () => {
 	const router = useRouter()
@@ -28,18 +23,8 @@ const SideMenu = () => {
 	const [items, setItems] = useState([])
 	const [value, setValue] = useState()
 	const [resources, setResources] = useState()
-	let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet', 'public-rpc']
 	const curProject = useRef()
 	const defValue = useRef()
-
-	const onOpenChange = keys => {
-		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
-		if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
-			setOpenKeys(keys)
-		} else {
-			setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
-		}
-	}
 
 	const handleClick = (event, targetId, key) => {
 		const targetElement = document.getElementById(targetId)
@@ -51,16 +36,26 @@ const SideMenu = () => {
 		}
 	}
 
-	const generateLinkItem = (serviceURL, name, linkKey, displayName) => {
+	const onOpenChange = keys => {
+		const latestOpenKey = keys.find(key => openKeys.indexOf(key) === -1)
+		if (rootSubmenuKeys.indexOf(latestOpenKey) === -1) {
+			setOpenKeys(keys)
+		} else {
+			setOpenKeys(latestOpenKey ? [latestOpenKey] : [])
+		}
+	}
+
+	const generateLinkItem = (serviceURL, name, linkKey, displayName, basePath = '') => {
 		const keyName = `${linkKey}${name}`
-		const href = `${serviceURL}/cheat-sheet/#${linkKey}`
+		const href = `${serviceURL}${basePath}/#${linkKey}`
 
 		return getItem(
 			<Link href={href} onClick={event => handleClick(event, linkKey, keyName)}>
 				{displayName}
 			</Link>,
 			keyName,
-			<RightOutlined />
+			<RightOutlined />,
+			null
 		)
 	}
 
@@ -114,190 +109,10 @@ const SideMenu = () => {
 			</div>
 		)
 
-		function getNamadaMenuItems() {
-			return [
-				getItem(
-					<div className='flex flex-col gap-2 '>
-						<div className='flex gap-2 md:gap-3 items-center mb-1'>
-							<Image
-								className='my-1 mx-1'
-								src={require(`../public/${type}/${imgURL}`)}
-								alt='project logo'
-								width='35'
-								height='35'
-								style={{
-									borderRadius: '50%',
-									backgroundColor: '#fff'
-								}}
-							/>
-							<span className='font-semibold tracking-wide'>
-								{name.charAt(0).toUpperCase() + name.slice(1)}
-							</span>
-						</div>
-					</div>,
-					'grpthis',
-					null,
-					[
-						getItem(
-							<Link href={serviceURL}>
-								<span className='mr-3'>⚙️</span> API & Sync
-							</Link>,
-							`services`,
-							null,
-							[
-								getItem(
-									<Link
-										href={serviceURL + '#rpc'}
-										onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
-									>
-										RPC, Peers, Seeds
-									</Link>,
-									`rpc${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '#addrbook'}
-										onClick={event => handleClick(event, 'addrbook', `addrbook${name}`)}
-									>
-										Addrbook, Genesis
-									</Link>,
-									`addrbook${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '#snap'}
-										onClick={event => handleClick(event, 'snap', `snap${name}`)}
-									>
-										Snapshot
-									</Link>,
-									`snap${name}`,
-									<RightOutlined />
-								)
-							]
-						),
-
-						getItem(
-							<Link href={serviceURL + '/installation'}>
-								<span className='mr-3'>📌</span> Installation
-							</Link>,
-							`installation`,
-							null,
-							[
-								getItem(
-									<Link
-										href={serviceURL + '/installation/#installation'}
-										onClick={event => handleClick(event, 'installation', `install${name}`)}
-									>
-										Manual Installation
-									</Link>,
-									`install${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/installation/#auto-installation'}
-										onClick={event =>
-											handleClick(event, 'auto-installation', `auto-installation${name}`)
-										}
-									>
-										Auto Installation
-									</Link>,
-									`install${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/installation/#security'}
-										onClick={event => handleClick(event, 'security', `security${name}`)}
-									>
-										Security
-									</Link>,
-									`security${name}`,
-									<RightOutlined />
-								),
-								getItem(
-									<Link
-										href={serviceURL + '/installation/#delete'}
-										onClick={event => handleClick(event, 'delete', `Delete${name}`)}
-									>
-										Delete node
-									</Link>,
-									`Delete${name}`,
-									<RightOutlined />
-								)
-							]
-						),
-						getItem(
-							<Link href={serviceURL + '/upgrade'}>
-								<span className='mr-3'>🔄</span> Upgrade
-							</Link>,
-							`upgrade`,
-							null,
-							[
-								getItem(
-									<Link
-										href={serviceURL + '/upgrade/#manual'}
-										onClick={event => handleClick(event, 'manual', `manual${name}`)}
-									>
-										Manual upgrade
-									</Link>,
-									`manual${name}`,
-									<RightOutlined />
-								)
-							]
-						),
-						getItem(
-							<Link href={serviceURL + '/cheat-sheet'}>
-								<span className='mr-3'>📝</span> Cheat sheet
-							</Link>,
-							`cheat-sheet`,
-							null,
-							[
-								generateLinkItem(serviceURL, name, 'wallet-operations', 'Wallet operations'),
-								generateLinkItem(serviceURL, name, 'staking', 'Staking'),
-								generateLinkItem(serviceURL, name, 'multisign', 'Multisign'),
-								generateLinkItem(serviceURL, name, 'masp', 'Masp'),
-								generateLinkItem(serviceURL, name, 'validator-operations', 'Validator Operations'),
-								generateLinkItem(serviceURL, name, 'governance', 'Governance'),
-								generateLinkItem(serviceURL, name, 'sync-and-consensus', 'Sync and Consensus')
-							]
-						)
-					],
-					'group'
-				),
-				getItem('', 'divider1', null, null, 'group'),
-				{
-					type: 'divider'
-				},
-				getItem(
-					<div>
-						<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/public-rpc'}>
-							<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
-						</Link>
-					</div>,
-					'public rpc',
-					null,
-					null,
-					'group'
-				),
-				getItem(
-					<div className='mb-2'>
-						<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/monitoring'}>
-							<span className='mr-2 ml-3'> 🤖</span> Monitoring script
-						</Link>
-					</div>,
-					'public rpc',
-					null,
-					null,
-					'group'
-				)
-			]
-		}
-
 		if (name === 'namada') {
-			setItems(getNamadaMenuItems())
+			setItems(getNamadaMenuItems(type, imgURL, serviceURL, name, handleClick))
+		} else if (name === 'celestia') {
+			setItems(getCelestiaMenuItems(type, imgURL, serviceURL, name, handleClick))
 		} else {
 			ecosystem === 'false'
 				? setItems([
@@ -326,45 +141,47 @@ const SideMenu = () => {
 							null,
 							'group'
 						),
-						getItem(
-							<Link
-								href={serviceURL + '#installation'}
-								onClick={event => handleClick(event, 'installation', `installation`)}
-							>
+						generateLinkItem(
+							serviceURL,
+							name,
+							'installation',
+							<span>
 								<span className='mr-3'>📌</span> Installation
-							</Link>,
-							`installation`
+							</span>
 						),
-						getItem(
-							<Link
-								href={serviceURL + '#security'}
-								onClick={event => handleClick(event, 'security', `security`)}
-							>
+						generateLinkItem(
+							serviceURL,
+							name,
+							'security',
+							<span>
 								<span className='mr-3'>🔒</span> Security
-							</Link>,
-							`security`
+							</span>
 						),
-						getItem(
-							<Link
-								href={serviceURL + '#upgrade'}
-								onClick={event => handleClick(event, 'upgrade', `upgrade`)}
-							>
+						generateLinkItem(
+							serviceURL,
+							name,
+							'upgrade',
+							<span>
 								<span className='mr-3'>🔄</span> Upgrade
-							</Link>,
-							`upgrade`
+							</span>
 						),
-						getItem(
-							<Link href={serviceURL + '#delete'} onClick={event => handleClick(event, 'delete', `delete`)}>
+						generateLinkItem(
+							serviceURL,
+							name,
+							'delete',
+							<span>
 								<span className='mr-3'>❌</span> Delete
-							</Link>,
-							`delete`
+							</span>
 						),
 						name === 'nym' &&
-							getItem(
-								<Link href='/nym-itrocket' onClick={event => handleClick(event, 'delegate', `delegate`)}>
+							generateLinkItem(
+								'/nym-itrocket',
+								name,
+								'delegate',
+								<span>
 									<span className='mr-3'>💰</span> Delegate
-								</Link>,
-								`delegate`
+								</span>,
+								''
 							),
 						{
 							type: 'divider'
@@ -389,7 +206,6 @@ const SideMenu = () => {
 										{name.charAt(0).toUpperCase() + name.slice(1)}
 									</span>
 								</div>
-
 								{/* <Segmented
 								block
 								defaultValue={defValue.current}
@@ -419,56 +235,11 @@ const SideMenu = () => {
 									`services`,
 									null,
 									[
-										getItem(
-											<Link
-												href={serviceURL + '#rpc'}
-												onClick={event => handleClick(event, 'rpc', `rpc${name}`)}
-											>
-												RPC, API, GRPC
-											</Link>,
-											`rpc${name}`,
-											<RightOutlined />
-										),
-										getItem(
-											<Link
-												href={serviceURL + '#peer'}
-												onClick={event => handleClick(event, 'peer', `peer${name}`)}
-											>
-												Peers, Seeds
-											</Link>,
-											`peer${name}`,
-											<RightOutlined />
-										),
-										getItem(
-											<Link
-												href={serviceURL + '#snap'}
-												onClick={event => handleClick(event, 'snap', `snap${name}`)}
-											>
-												Snapshot
-											</Link>,
-											`snap${name}`,
-											<RightOutlined />
-										),
-										getItem(
-											<Link
-												href={serviceURL + '#sync'}
-												onClick={event => handleClick(event, 'sync', `state${name}`)}
-											>
-												State sync
-											</Link>,
-											`state${name}`,
-											<RightOutlined />
-										),
-										getItem(
-											<Link
-												href={serviceURL + '#wasm'}
-												onClick={event => handleClick(event, 'wasm', `wasm${name}`)}
-											>
-												Wasm
-											</Link>,
-											`wasm${name}`,
-											<RightOutlined />
-										)
+										generateLinkItem(serviceURL, name, 'rpc', 'RPC, API, GRPC'),
+										generateLinkItem(serviceURL, name, 'peer', 'Peers, Seeds'),
+										generateLinkItem(serviceURL, name, 'snap', 'Snapshot'),
+										generateLinkItem(serviceURL, name, 'sync', 'State sync'),
+										generateLinkItem(serviceURL, name, 'wasm', 'Wasm')
 									]
 								),
 
@@ -479,77 +250,47 @@ const SideMenu = () => {
 									`installation`,
 									null,
 									[
-										getItem(
-											<Link
-												href={serviceURL + '/installation/#installation'}
-												onClick={event => handleClick(event, 'installation', `install${name}`)}
-											>
-												Manual Installation
-											</Link>,
-											`install${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/installation',
+											name,
+											'installation',
+											<span>Manual Installation</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/installation/#auto-installation'}
-												onClick={event =>
-													handleClick(event, 'auto-installation', `auto-install${name}`)
-												}
-											>
-												Automatic Installation
-											</Link>,
-											`auto-install${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/installation',
+											name,
+											'auto-installation',
+											<span>Automatic Installation</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/installation/#create-wallet'}
-												onClick={event => handleClick(event, 'create-wallet', `wallet${name}`)}
-											>
-												Create Wallet
-											</Link>,
-											`wallet${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/installation',
+											name,
+											'create-wallet',
+											<span>Create Wallet</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/installation/#create-validator'}
-												onClick={event => handleClick(event, 'create-validator', `validator${name}`)}
-											>
-												Create Validator
-											</Link>,
-											`validator${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/installation',
+											name,
+											'create-validator',
+											<span>Create Validator</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/installation/#monitoring'}
-												onClick={event => handleClick(event, 'monitoring', `Monitoring${name}`)}
-											>
-												Monitoring
-											</Link>,
-											`Monitoring${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/installation',
+											name,
+											'monitoring',
+											<span>Monitoring</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/installation/#security'}
-												onClick={event => handleClick(event, 'security', `security${name}`)}
-											>
-												Security
-											</Link>,
-											`security${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/installation',
+											name,
+											'security',
+											<span>Security</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/installation/#delete'}
-												onClick={event => handleClick(event, 'delete', `Delete${name}`)}
-											>
-												Delete node
-											</Link>,
-											`Delete${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/installation',
+											name,
+											'delete',
+											<span>Delete node</span>
 										)
 									]
 								),
@@ -560,26 +301,13 @@ const SideMenu = () => {
 									`upgrade`,
 									null,
 									[
-										getItem(
-											<Link
-												href={serviceURL + '/upgrade/#manual'}
-												onClick={event => handleClick(event, 'manual', `manual${name}`)}
-											>
-												Manual upgrade
-											</Link>,
-											`manual${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/upgrade',
+											name,
+											'manual',
+											<span>Manual upgrade</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/upgrade/#auto'}
-												onClick={event => handleClick(event, 'auto', `auto${name}`)}
-											>
-												Auto upgrade
-											</Link>,
-											`auto${name}`,
-											<RightOutlined />
-										)
+										generateLinkItem(serviceURL + '/upgrade', name, 'auto', <span>Auto upgrade</span>)
 									]
 								),
 								getItem(
@@ -589,72 +317,32 @@ const SideMenu = () => {
 									`cheat-sheet`,
 									null,
 									[
-										getItem(
-											<Link
-												href={serviceURL + '/cheat-sheet/#service-operations'}
-												onClick={event =>
-													handleClick(event, 'service-operations', `service-operations${name}`)
-												}
-											>
-												Service operations
-											</Link>,
-											`service-operations${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/cheat-sheet',
+											name,
+											'service-operations',
+											<span>Service operations</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/cheat-sheet/#key-management'}
-												onClick={event =>
-													handleClick(event, 'key-management', `key-management${name}`)
-												}
-											>
-												Key management
-											</Link>,
-											`key-management${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/cheat-sheet',
+											name,
+											'key-management',
+											<span>Key management</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/cheat-sheet/#tokens'}
-												onClick={event => handleClick(event, 'tokens', `tokens${name}`)}
-											>
-												Tokens
-											</Link>,
-											`tokens${name}`,
-											<RightOutlined />
+										generateLinkItem(serviceURL + '/cheat-sheet', name, 'tokens', <span>Tokens</span>),
+										generateLinkItem(
+											serviceURL + '/cheat-sheet',
+											name,
+											'validator-operations',
+											<span>Validator operations</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/cheat-sheet/#validator-operations'}
-												onClick={event =>
-													handleClick(event, 'validator-operations', `validator-operations${name}`)
-												}
-											>
-												Validator operations
-											</Link>,
-											`validator-operations${name}`,
-											<RightOutlined />
+										generateLinkItem(
+											serviceURL + '/cheat-sheet',
+											name,
+											'governance',
+											<span>Governance</span>
 										),
-										getItem(
-											<Link
-												href={serviceURL + '/cheat-sheet/#governance'}
-												onClick={event => handleClick(event, 'governance', `governance${name}`)}
-											>
-												Governance
-											</Link>,
-											`governance${name}`,
-											<RightOutlined />
-										),
-										getItem(
-											<Link
-												href={serviceURL + '/cheat-sheet/#utility'}
-												onClick={event => handleClick(event, 'utility', `utility${name}`)}
-											>
-												Utility
-											</Link>,
-											`utility${name}`,
-											<RightOutlined />
-										)
+										generateLinkItem(serviceURL + '/cheat-sheet', name, 'utility', <span>Utility</span>)
 									]
 								)
 							],
