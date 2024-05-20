@@ -14,23 +14,23 @@ const BridgeNodeInstallation = () => {
 	return (
 		<AnimatedSection>
 			<Head>
-				<title>Celestia Bridge Node Setup for Mocha Race Testnet — mocha-4</title>
+				<title>Celestia Bridge Node Setup for Mocha Testnet — mocha-4</title>
 				<meta name='description' content='Celestia Bridge Node Setup instructions for Mocha Race Testnet.' />
 			</Head>
 
 			<div
 				className={styles.mainColumn}
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b', gap: '3px' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b', gap: '4px' }}
 			>
-				<h1 style={{ display: 'flex' }}>Celestia Bridge node Setup for Mocha Race Testnet (mocha-4)</h1>
+				<h1>Celestia Bridge Node Setup for Mocha Testnet (mocha-4)</h1>
 
 				<p className='flex flex-wrap items-center gap-2 pb-2'>
 					<a href='https://docs.celestia.org/nodes/bridge-node/' target='_blank' rel='noopener noreferrer'>
 						Official documentation
 					</a>
 				</p>
-				<h2 className='hardware'>Hardware Requirements</h2>
-				<ul>
+				<h4 className='hardware'>Hardware Requirements:</h4>
+				<ul className='!m-1'>
 					<li>Memory: 8 GB RAM</li>
 					<li>CPU: 6 cores</li>
 					<li>Disk: 500 GB SSD Storage</li>
@@ -46,7 +46,7 @@ const BridgeNodeInstallation = () => {
 					</blockquote>
 				</Paragraph>
 
-				<h4>Update packages and Install dependencies</h4>
+				<h4>Update packages and Install dependencies:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo apt update && sudo apt upgrade -y
@@ -60,6 +60,7 @@ sudo apt install curl git wget htop tmux build-essential jq make gcc tar clang p
 						aria-hidden='true'
 						style={{ background: "center / contain url('/icons/go-blue.svg')  no-repeat" }}
 					></span>
+					:
 				</h4>
 				<CodeSnippet
 					theme={theme}
@@ -78,7 +79,7 @@ source ~/.bash_profile
 go version`}
 				/>
 
-				<h4>Install Celestia-node</h4>
+				<h4>Install Celestia-node:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`cd $HOME
@@ -91,7 +92,7 @@ sudo make install
 make cel-key`}
 				/>
 
-				<h4>Install Celestia-app</h4>
+				<h4>Install Celestia-app:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`cd $HOME
@@ -102,7 +103,7 @@ git checkout tags/v1.9.0 -b v1.9.0
 make install`}
 				/>
 
-				<h4>Config and init app</h4>
+				<h4>Config and init app:</h4>
 				<CodeSnippet theme={theme} code={`celestia bridge init --core.ip <RPC_NODE_IP> --p2p.network mocha`} />
 
 				<p>
@@ -116,10 +117,18 @@ make install`}
 ./cel-key list --node.type bridge --keyring-backend test --p2p.network mocha`}
 				/>
 
-				<h4>Reset node</h4>
+				<h4>Reset node:</h4>
 				<CodeSnippet theme={theme} code={`celestia bridge unsafe-reset-store --p2p.network mocha`} />
 
-				<h4>Add your Full node RPC and gRPC ports</h4>
+				<h4 className='flex items-center'>
+					Add your Full node RPC and{' '}
+					<span
+						className='inline-block h-6 w-6 lg:h-8 lg:w-8 align-top m-1'
+						aria-hidden='true'
+						style={{ background: "center / contain url('/icons/grpc-logo.svg')  no-repeat" }}
+					></span>{' '}
+					ports:
+				</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`RPC_IP="<PUT_FULL_NODE_RPC_IP>"
@@ -127,7 +136,7 @@ RPC_PORT="<PUT_FULL_NODE_RPC_PORT>"
 GRPC_PORT="<PUT_FULL_NODE_GRPC_PORT>"`}
 				/>
 
-				<h4>Create Service file</h4>
+				<h4>Create Service file:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo tee /etc/systemd/system/celestia-bridge.service > /dev/null <<EOF
@@ -147,7 +156,7 @@ WantedBy=multi-user.target
 EOF`}
 				/>
 
-				<h4>Enable and start service</h4>
+				<h4>Enable and start service:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo systemctl daemon-reload
@@ -155,8 +164,8 @@ sudo systemctl enable celestia-bridge
 sudo systemctl restart celestia-bridge && sudo journalctl -u celestia-bridge -f`}
 				/>
 
-				<h4>Get your node's peerId information</h4>
-				<p>NOTE: You can only generate an auth token after initializing and starting your celestia-node.</p>
+				<h4>Get your node's peerId information:</h4>
+				<p>❗NOTE: You can only generate an auth token after initializing and starting your celestia-node.</p>
 				<CodeSnippet
 					theme={theme}
 					code={`NODE_TYPE=bridge
@@ -174,7 +183,7 @@ AUTH_TOKEN=$(celestia $NODE_TYPE auth admin --p2p.network mocha)`}
 				/>
 
 				<h2 id='cheat-sheet'>Useful commands</h2>
-				<h4>Check bridge wallet balance</h4>
+				<h4>Check bridge wallet balance:</h4>
 				<CodeSnippet theme={theme} code={`celestia state balance --node.store ~/.celestia-bridge-mocha-4/`} />
 
 				<h4>Check bridge node status</h4>
@@ -183,14 +192,14 @@ AUTH_TOKEN=$(celestia $NODE_TYPE auth admin --p2p.network mocha)`}
 					code={`celestia header sync-state --node.store "/home/celbridge/.celestia-bridge-mocha-4/"`}
 				/>
 
-				<h4>Get Node ID</h4>
+				<h4>Get Node ID:</h4>
 				<CodeSnippet theme={theme} code={`celestia p2p info --node.store ~/.celestia-bridge-mocha-4/`} />
 
-				<h4>(Optional) Add permissions for transferring keys to another server</h4>
+				<h4>(Optional) Add permissions for transferring keys to another server:</h4>
 				<CodeSnippet theme={theme} code={`chmod -R 700 .celestia-bridge-mocha-4`} />
 
 				<h2 id='upgrade'>Upgrade</h2>
-				<h4>Stop bridge node</h4>
+				<h4>Stop bridge node:</h4>
 				<CodeSnippet theme={theme} code={`sudo systemctl stop celestia-bridge`} />
 
 				<h4>Download binary</h4>
@@ -206,10 +215,10 @@ sudo make install
 make cel-key`}
 				/>
 
-				<h4>Update</h4>
+				<h4>Update:</h4>
 				<CodeSnippet theme={theme} code={`celestia bridge config-update --p2p.network mocha`} />
 
-				<h4>Start bridge node</h4>
+				<h4>Start bridge node:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo systemctl restart celestia-bridge && sudo journalctl -u celestia-bridge -f`}
