@@ -1,12 +1,9 @@
 import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
-import { Typography } from 'antd'
 import Head from 'next/head'
 import { useContext } from 'react'
 import AnimatedSection from '../AnimatedSection'
 import CodeSnippet from '../UI/CodeSnippet'
-
-const { Paragraph } = Typography
 
 const BridgeNodeInstallation = () => {
 	const { theme } = useContext(Context)
@@ -39,12 +36,6 @@ const BridgeNodeInstallation = () => {
 
 				<h2 id='installation'>Set up a Celestia bridge node</h2>
 				<h3>Manual installation</h3>
-				<Paragraph>
-					<blockquote>
-						In this case, Full node and bridge node are located on the same server. If you want to install on
-						different servers, change the value <code>localhost</code> to your full node IP address.
-					</blockquote>
-				</Paragraph>
 
 				<h4>Update packages and Install dependencies:</h4>
 				<CodeSnippet
