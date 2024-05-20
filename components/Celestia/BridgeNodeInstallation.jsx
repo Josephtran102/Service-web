@@ -35,8 +35,6 @@ const BridgeNodeInstallation = () => {
 				</ul>
 
 				<h2 id='installation'>Set up a Celestia bridge node</h2>
-				<h3>Manual installation</h3>
-
 				<h4>Update packages and Install dependencies:</h4>
 				<CodeSnippet
 					theme={theme}
