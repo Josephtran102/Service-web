@@ -241,7 +241,9 @@ const CheatSheet = props => {
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock
 							desc='Create New Validator'
-							code={`${bin} tx staking create-validator \\
+							code={`${bin} tx ${
+								projectName.toLowerCase() === 'initia' ? 'mstaking' : 'staking'
+							} create-validator \\
 --amount ${amountCreate}${denom} \\
 --from $WALLET \\
 --commission-rate ${commissionRate} \\

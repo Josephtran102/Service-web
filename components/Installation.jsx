@@ -373,7 +373,9 @@ ${bin} query bank balances $WALLET_ADDRESS ${node ? node : ''}
 					{newCreateValidator?.toUpperCase() !== 'JSON' ? (
 						<CodeSnippet
 							theme={theme}
-							code={`${bin} tx staking create-validator \\
+							code={`${bin} tx ${
+								projectName.toLowerCase() === 'initia' ? 'mstaking' : 'staking'
+							} create-validator \\
 --amount ${amountCreate}${denom} \\
 --from $WALLET \\
 --commission-rate ${commissionRate} \\
