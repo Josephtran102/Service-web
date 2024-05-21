@@ -41,7 +41,15 @@ const LightNodeInstallation = () => {
 sudo apt install curl git wget htop tmux build-essential jq make gcc tar clang pkg-config libssl-dev ncdu -y`}
 				/>
 
-				<h4>Install Go:</h4>
+				<h4>
+					Install{' '}
+					<span
+						className='inline-block h-6 w-6 lg:h-8 lg:w-8 align-top m-1'
+						aria-hidden='true'
+						style={{ background: "center / contain url('/icons/go-blue.svg')  no-repeat" }}
+					></span>
+					:
+				</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`cd ~
@@ -97,14 +105,19 @@ cd ~/celestia-node
 					code={`cd $HOME/celestia-node
 ./cel-key list --node.type light --keyring-backend test --p2p.network mocha`}
 				/>
-
-				<h4>Create Service file and replace FULL node ip, RPC and gRPC ports:</h4>
+				<h4>Create Service file Replace FULL node ip, RPC and gRPC portsЖ</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`CORE_IP="<PUT_FULL_NODE_RPC_IP>"
 CORE_RPC_PORT="<PUT_FULL_NODE_RPC_PORT>"
 CORE_GRPC_PORT="<PUT_FULL_NODE_GRPC_PORT>"
-KEY_NAME="my_celes_key"
+KEY_NAME="my_celes_key"`}
+				/>
+
+				<h4>Create Service file and replace FULL node ip, RPC and gRPC ports:</h4>
+				<CodeSnippet
+					theme={theme}
+					code={`
 sudo tee /etc/systemd/system/celestia-light.service > /dev/null <<EOF
 [Unit]
 Description=celestia light

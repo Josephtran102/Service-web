@@ -11,15 +11,15 @@ const FullStorageNodeSetup = () => {
 	return (
 		<AnimatedSection>
 			<Head>
-				<title>Celestia Full Storage Node Setup for Mocha Race Testnet — mocha-4</title>
+				<title>Celestia Full Storage Node Setup for Mocha Testnet — mocha-4</title>
 				<meta
 					name='description'
-					content='Setup instructions for Celestia Full Storage Node on the Mocha Race Testnet.'
+					content='Setup instructions for Celestia Full Storage Node on the Mocha Testnet.'
 				/>
 			</Head>
 
 			<div className={styles.mainColumn} style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}>
-				<h1>Celestia Full Storage Node Setup for Mocha Race Testnet — mocha-4</h1>
+				<h1>Celestia Full Storage Node Setup for Mocha Testnet — mocha-4</h1>
 				<p>
 					Official documentation:{' '}
 					<a
@@ -228,7 +228,7 @@ make cel-key`}
 					code={`sudo systemctl stop celestia-full
 sudo systemctl disable celestia-full
 sudo rm /etc/systemd/system/celestia-full*
-rm -rf $HOME/celestia-node $HOME/.celestia-app $HOME/.celestia-full-blockspacerace-0`}
+rm -rf $HOME/celestia-node $HOME/.celestia-app $HOME/.celestia-full-mocha-4`}
 				/>
 			</div>
 		</AnimatedSection>

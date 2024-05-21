@@ -12,7 +12,7 @@ const BridgeNodeInstallation = () => {
 		<AnimatedSection>
 			<Head>
 				<title>Celestia Bridge Node Setup for Mocha Testnet — mocha-4</title>
-				<meta name='description' content='Celestia Bridge Node Setup instructions for Mocha Race Testnet.' />
+				<meta name='description' content='Celestia Bridge Node Setup instructions for Mocha  Testnet.' />
 			</Head>
 
 			<div
