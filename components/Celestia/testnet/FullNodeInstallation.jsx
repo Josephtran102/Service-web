@@ -42,7 +42,7 @@ const FullStorageNodeSetup = () => {
 					<li>Bandwidth: 1 Gbps for Download/1 Gbps for Upload</li>
 				</ul>
 
-				<h2 id='installation'>Set up a full storage node</h2>
+				<h2 id='installation'>Setting up a full storage node</h2>
 				<h4>Update packages and Install dependencies:</h4>
 				<CodeSnippet
 					theme={theme}

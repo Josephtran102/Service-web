@@ -34,7 +34,7 @@ const BridgeNodeInstallation = () => {
 					<li>Bandwidth: 1 Gbps for Download/100 Mbps for Upload</li>
 				</ul>
 
-				<h2 id='installation'>Set up a bridge node</h2>
+				<h2 id='installation'>Setting up a bridge node</h2>
 				<h4>Update packages and Install dependencies:</h4>
 				<CodeSnippet
 					theme={theme}
