@@ -33,7 +33,7 @@ const LightNodeInstallation = () => {
 					<li>Bandwidth: 56 Kbps for Download/56 Kbps for Upload</li>
 				</ul>
 
-				<h2 id='installation'>Set up a Celestia light node</h2>
+				<h2 id='installation'>Set up a light node</h2>
 				<h4>Update packages and Install dependencies:</h4>
 				<CodeSnippet
 					theme={theme}
