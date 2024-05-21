@@ -34,7 +34,7 @@ const BridgeNodeInstallation = () => {
 					<li>Bandwidth: 1 Gbps for Download/100 Mbps for Upload</li>
 				</ul>
 
-				<h2 id='installation'>Set up a Celestia bridge node</h2>
+				<h2 id='installation'>Set up a bridge node</h2>
 				<h4>Update packages and Install dependencies:</h4>
 				<CodeSnippet
 					theme={theme}
@@ -175,7 +175,7 @@ AUTH_TOKEN=$(celestia $NODE_TYPE auth admin --p2p.network mocha)`}
 				<h4>Check bridge wallet balance:</h4>
 				<CodeSnippet theme={theme} code={`celestia state balance --node.store ~/.celestia-bridge-mocha-4/`} />
 
-				<h4>Check bridge node status</h4>
+				<h4>Check bridge node status:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`celestia header sync-state --node.store "/home/celbridge/.celestia-bridge-mocha-4/"`}
@@ -191,7 +191,7 @@ AUTH_TOKEN=$(celestia $NODE_TYPE auth admin --p2p.network mocha)`}
 				<h4>Stop bridge node:</h4>
 				<CodeSnippet theme={theme} code={`sudo systemctl stop celestia-bridge`} />
 
-				<h4>Download binary</h4>
+				<h4>Download binary:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`cd $HOME
