@@ -111,6 +111,24 @@ make cel-key`}
 					theme={theme}
 					code={`celestia full init --keyring.accname my_celes_key --p2p.network mocha-4`}
 				/>
+				<h4>
+					If keys have not been created previously, Once you start the Bridge Node, a wallet key will be
+					generated for you. You will need to fund that address with Testnet tokens to pay for PayForBlob
+					transactions. You can find the address by running the following command:
+				</h4>
+				<CodeSnippet
+					theme={theme}
+					code={`cd $HOME/celestia-node
+./cel-key list --node.type bridge --keyring-backend test --p2p.network mocha`}
+				/>
+				<h4>Replace Consensus node ip, RPC and gRPC ports</h4>
+				<CodeSnippet
+					theme={theme}
+					code={`CORE_IP="<PUT_RPC_IP>"
+CORE_RPC_PORT="<PUT_RPC_PORT>"
+CORE_GRPC_PORT="<PUT_GRPC_PORT>"
+KEY_NAME="my_celes_key"`}
+				/>
 
 				<h4>Create Service file:</h4>
 				<CodeSnippet
