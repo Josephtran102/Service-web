@@ -18,7 +18,10 @@ const FullStorageNodeSetup = () => {
 				/>
 			</Head>
 
-			<div className={styles.mainColumn} style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}>
+			<div
+				className={styles.mainColumn}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b', gap: '4px' }}
+			>
 				<h1>Celestia Full Storage Node Setup for Mocha Testnet — mocha-4</h1>
 				<p>
 					Official documentation:{' '}

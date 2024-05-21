@@ -15,7 +15,10 @@ const LightNodeInstallation = () => {
 				<meta name='description' content='Setup instructions for Celestia Light Node on the Testnet.' />
 			</Head>
 
-			<div className={styles.mainColumn} style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}>
+			<div
+				className={styles.mainColumn}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b', gap: '4px' }}
+			>
 				<h1>Celestia Light Node Setup for Testnet — mocha-4</h1>
 
 				<p>
