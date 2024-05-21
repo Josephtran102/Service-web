@@ -120,8 +120,7 @@ KEY_NAME="my_celes_key"`}
 				<h4>Create Service file and replace FULL node ip, RPC and gRPC ports:</h4>
 				<CodeSnippet
 					theme={theme}
-					code={`
-sudo tee /etc/systemd/system/celestia-light.service > /dev/null <<EOF
+					code={`sudo tee /etc/systemd/system/celestia-light.service > /dev/null <<EOF
 [Unit]
 Description=celestia light
 After=network-online.target
