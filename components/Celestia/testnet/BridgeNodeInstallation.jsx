@@ -2,8 +2,8 @@ import { Context } from '@context/context'
 import styles from '@styles/Services.module.scss'
 import Head from 'next/head'
 import { useContext } from 'react'
-import AnimatedSection from '../AnimatedSection'
-import CodeSnippet from '../UI/CodeSnippet'
+import AnimatedSection from '../../AnimatedSection'
+import CodeSnippet from '../../UI/CodeSnippet'
 
 const BridgeNodeInstallation = () => {
 	const { theme } = useContext(Context)

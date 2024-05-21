@@ -90,6 +90,18 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 							'',
 							<span>Bridge Node installation</span>
 						),
+						generateLinkItem(
+							serviceURL + '/full-node-installation',
+							name,
+							'',
+							<span>Full Node installation</span>
+						),
+						generateLinkItem(
+							serviceURL + '/light-node-installation',
+							name,
+							'',
+							<span>Light Node installation</span>
+						),
 						generateLinkItem(serviceURL + '/installation', name, 'monitoring', <span>Monitoring</span>),
 						generateLinkItem(serviceURL + '/installation', name, 'security', <span>Security</span>),
 						generateLinkItem(serviceURL + '/installation', name, 'delete', <span>Delete node</span>)
