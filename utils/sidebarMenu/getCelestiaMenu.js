@@ -84,24 +84,6 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 							'create-validator',
 							<span>Create Validator</span>
 						),
-						generateLinkItem(
-							serviceURL + '/bridge-node-installation',
-							name,
-							'',
-							<span>Bridge Node installation</span>
-						),
-						generateLinkItem(
-							serviceURL + '/full-node-installation',
-							name,
-							'',
-							<span>Full Node installation</span>
-						),
-						generateLinkItem(
-							serviceURL + '/light-node-installation',
-							name,
-							'',
-							<span>Light Node installation</span>
-						),
 						generateLinkItem(serviceURL + '/installation', name, 'monitoring', <span>Monitoring</span>),
 						generateLinkItem(serviceURL + '/installation', name, 'security', <span>Security</span>),
 						generateLinkItem(serviceURL + '/installation', name, 'delete', <span>Delete node</span>)
@@ -154,6 +136,39 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 				)
 			],
 			'group'
+		),
+		getItem('', 'divider1', null, null, 'group'),
+		{
+			type: 'divider'
+		},
+		getItem(
+			<span className='mb-2 pt-1 block text-[13px] text-gray-400 dark:text-zinc-500'>
+				Data Availability Nodes:
+			</span>
+		),
+		getItem(
+			<Link href={serviceURL + '/bridge-node-installation'}>
+				<span className='mr-3'>🌉</span> Bridge
+			</Link>,
+			`upgrade`,
+			<RightOutlined />
+			// [generateLinkItem(serviceURL, name, 'manual', 'Manual upgrade', handleClick, '/upgrade')]
+		),
+		getItem(
+			<Link href={serviceURL + '/full-node-installation'}>
+				<span className='mr-3'>📦</span> Full
+			</Link>,
+			`upgrade`,
+			<RightOutlined />
+			// [generateLinkItem(serviceURL, name, 'manual', 'Manual upgrade', handleClick, '/upgrade')]
+		),
+		getItem(
+			<Link href={serviceURL + '/light-node-installation'}>
+				<span className='mr-3'>🪶</span> Light
+			</Link>,
+			`upgrade`,
+			<RightOutlined />
+			// [generateLinkItem(serviceURL, name, 'manual', 'Manual upgrade', handleClick, '/upgrade')]
 		),
 		getItem('', 'divider1', null, null, 'group'),
 		{
