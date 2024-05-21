@@ -188,7 +188,6 @@ make cel-key`}
 				/>
 
 				<h2 id='delete'>Delete light node</h2>
-				<h4>Delete light node:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo systemctl stop celestia-light
