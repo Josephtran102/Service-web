@@ -79,7 +79,7 @@ const About = () => {
 			<div className='w-full p-1 md:p-6 bg-white dark:bg-zinc-900/40' style={{ opacity: opacity }}>
 				<div
 					className={styles.mainColumn__wrapper}
-					style={{ width: '100%', padding: '10px', marginTop: '60px' }}
+					style={{ width: '100%', padding: '10px', marginTop: '55px' }}
 				>
 					<div className={styles.mainColumn}>
 						<h1 style={{ paddingTop: '0px' }}>Delegate funds 💸</h1>
