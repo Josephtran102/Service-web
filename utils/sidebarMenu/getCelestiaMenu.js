@@ -44,7 +44,7 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 						<span className='mr-3'>⚙️</span> API & Sync
 					</Link>,
 					`services`,
-					<RightOutlined />,
+					null,
 					[
 						generateLinkItem(serviceURL, name, 'rpc', 'RPC, API, GRPC', handleClick, ''),
 						generateLinkItem(serviceURL, name, 'peer', 'Peers, Seeds', handleClick, ''),
@@ -58,7 +58,7 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 						<span className='mr-3'>📌</span> Installation
 					</Link>,
 					`installation`,
-					<RightOutlined />,
+					null,
 					[
 						generateLinkItem(
 							serviceURL + '/installation',
@@ -94,7 +94,7 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 						<span className='mr-3'>🔄</span> Upgrade
 					</Link>,
 					`upgrade`,
-					<RightOutlined />,
+					null,
 					[generateLinkItem(serviceURL, name, 'manual', 'Manual upgrade', handleClick, '/upgrade')]
 				),
 				getItem(
@@ -102,7 +102,7 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 						<span className='mr-3'>📝</span> Cheat sheet
 					</Link>,
 					`cheat-sheet`,
-					<RightOutlined />,
+					null,
 					[
 						generateLinkItem(
 							serviceURL,
@@ -142,7 +142,7 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 			type: 'divider'
 		},
 		getItem(
-			<span className='mb-2 pt-1 block text-[13px] text-gray-400 dark:text-zinc-500'>
+			<span className='mb-2 pt-1 block text-[13px] text-gray-400 dark:text-zinc-300/95'>
 				Data Availability Nodes:
 			</span>
 		),

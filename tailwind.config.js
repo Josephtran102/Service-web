@@ -7,6 +7,7 @@ module.exports = {
 		'./styles/**/*.{css,scss}',
 		'./styles/*.{css,scss}',
 		'./layouts/**/*.{js,ts,jsx,tsx}',
+		'./utils/**/*.{js,ts,jsx,tsx}',
 		'./src/**/*.{js,ts,jsx,tsx,mdx}',
 		'./node_modules/@tremor/**/*.{js,ts,jsx,tsx}'
 	],
