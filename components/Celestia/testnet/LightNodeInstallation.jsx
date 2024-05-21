@@ -41,7 +41,7 @@ const LightNodeInstallation = () => {
 sudo apt install curl git wget htop tmux build-essential jq make gcc tar clang pkg-config libssl-dev ncdu -y`}
 				/>
 
-				<h4>
+				<h4 className='flex items-center'>
 					Install{' '}
 					<span
 						className='inline-block h-6 w-6 lg:h-8 lg:w-8 align-top m-1'
