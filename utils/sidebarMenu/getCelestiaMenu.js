@@ -207,21 +207,21 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 			null,
 			null,
 			'group'
-		),
-		getItem(
-			<div className='mb-2'>
-				<Link
-					className='font-normal text-sm dark:text-[#a7a7a7] flex items-center ml-3 mt-1'
-					href={serviceURL + '/monitoring'}
-				>
-					<Image className='mr-3' src='/icons/emoji/bot.svg' alt='telegram' width={18} height={18} />{' '}
-					Monitoring script
-				</Link>
-			</div>,
-			'public rpc',
-			null,
-			null,
-			'group'
 		)
+		// getItem(
+		// 	<div className='mb-2'>
+		// 		<Link
+		// 			className='font-normal text-sm dark:text-[#a7a7a7] flex items-center ml-3 mt-1'
+		// 			href={serviceURL + '/monitoring'}
+		// 		>
+		// 			<Image className='mr-3' src='/icons/emoji/bot.svg' alt='telegram' width={18} height={18} />{' '}
+		// 			Monitoring script
+		// 		</Link>
+		// 	</div>,
+		// 	'public rpc',
+		// 	null,
+		// 	null,
+		// 	'group'
+		// )
 	]
 }
