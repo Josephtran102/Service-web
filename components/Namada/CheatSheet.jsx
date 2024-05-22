@@ -41,7 +41,7 @@ const CheatSheet = props => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				<>
 					<div className='flex flex-col'>
@@ -296,13 +296,18 @@ source $HOME/.bash_profile`}
 							code={`namadac change-metadata --validator $VALIDATOR_ADDRESS --memo $MEMO`}
 						/>
 					</div>
-					
+
 					<h2 id='governance'>Governance</h2>
 					<div className='flex flex-col gap-y-2'>
 						<CodeBlock desc='all proposals list:' code={`namadac query-proposal`} />
 						<CodeBlock desc='edit proposal:' code={`namadac query-proposal --proposal-id <PROPOSAL_ID>`} />
-						<CodeBlock desc='save wallet address:' code={`WALLET_ADDRESS=$(namadaw find --alias $WALLET | grep "Implicit" | awk '{print $3}')`} />
-						<CodeBlock desc='import the variable into system:' code={`echo "export WALLET_ADDRESS="$WALLET_ADDRESS"" >> $HOME/.bash_profile
+						<CodeBlock
+							desc='save wallet address:'
+							code={`WALLET_ADDRESS=$(namadaw find --alias $WALLET | grep "Implicit" | awk '{print $3}')`}
+						/>
+						<CodeBlock
+							desc='import the variable into system:'
+							code={`echo "export WALLET_ADDRESS="$WALLET_ADDRESS"" >> $HOME/.bash_profile
 source $HOME/.bash_profile`}
 						/>
 						<CodeBlock

@@ -1,15 +1,15 @@
+import { Alert, Typography } from 'antd'
 import { useRouter } from 'next/router'
-import { Alert, Divider, Typography } from 'antd'
 const { Paragraph } = Typography
 
+import CodeBlock from '@components/UI/CodeBlock'
+import CodeSnippet from '@components/UI/CodeSnippet'
+import { Context } from '@context/context'
 import { getLayout } from '@layouts/dashboard'
 import styles from '@styles/Services.module.scss'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
-import { useContext } from 'react'
-import { Context } from '@context/context'
-import CodeBlock from '@components/UI/CodeBlock'
-import CodeSnippet from '@components/UI/CodeSnippet'
 import Head from 'next/head'
+import { useContext } from 'react'
 
 const type = 'testnet'
 
@@ -22,7 +22,7 @@ const MonitoringPage = () => {
 		<div
 			className={styles.mainColumn}
 			id='mainColumn'
-			style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+			style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 		>
 			<Head>
 				<title>{`Monitoring - ${projectName} | Services`}</title>

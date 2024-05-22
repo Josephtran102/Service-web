@@ -1,18 +1,18 @@
-import { useContext, useEffect, useState, useRef } from 'react'
-import { useRouter } from 'next/router'
-import { Tabs } from 'antd'
 import { LoadingOutlined, SearchOutlined } from '@ant-design/icons'
+import { Tabs } from 'antd'
+import { useRouter } from 'next/router'
+import { useContext, useEffect, useRef, useState } from 'react'
 
-import { currentProject } from 'utils/currentProjectByURL'
-import projects from 'data/projects'
-import { fetchStatus } from 'utils/fetchProject.js'
-import styles from '@styles/Services.module.scss'
-import ProjectsModal from './ProjectsModal'
-import { Context } from '@context/context'
 import Footer from '@components/Footer'
 import Header from '@components/Header'
 import SideMenu from '@components/SideMenu'
+import { Context } from '@context/context'
 import services from '@data/services'
+import styles from '@styles/Services.module.scss'
+import projects from 'data/projects'
+import { currentProject } from 'utils/currentProjectByURL'
+import { fetchStatus } from 'utils/fetchProject.js'
+import ProjectsModal from './ProjectsModal'
 
 export default function Dashboard(props) {
 	const { theme, toggleTheme } = useContext(Context)
@@ -105,7 +105,7 @@ export default function Dashboard(props) {
 				<main className={styles.mainColumn__wrapper}>
 					<div
 						className={styles.projectInfoCard}
-						style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+						style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 					>
 						<div className={styles.stats}>
 							<ProjectsModal name={name} type='services' />

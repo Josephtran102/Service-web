@@ -5,29 +5,26 @@ import { useContext } from 'react'
 import AnimatedSection from '../../AnimatedSection'
 import CodeSnippet from '../../UI/CodeSnippet'
 
-const LightNodeInstallation = () => {
+const LightNode = () => {
 	const { theme } = useContext(Context)
 
 	return (
 		<AnimatedSection>
 			<Head>
-				<title>Celestia Light Node Setup for Testnet — mocha-4</title>
+				<title>Light Node Setup for Testnet — mocha-4</title>
 				<meta name='description' content='Setup instructions for Celestia Light Node on the Testnet.' />
 			</Head>
 
 			<div
 				className={styles.mainColumn}
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b', gap: '4px' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A', gap: '4px' }}
 			>
-				<h1>Celestia Light Node Setup for Testnet — mocha-4</h1>
-
-				<p>
+				<h1>Light Node Setup for Testnet — mocha-4</h1>
+				<p className='pb-2'>
 					<a href='https://docs.celestia.org/nodes/light-node' target='_blank' rel='noopener noreferrer'>
 						Official documentation{' '}
 					</a>
 				</p>
-				<br />
-
 				<h4 className='hardware'>Hardware Requirements:</h4>
 				<ul className='!m-1'>
 					<li>Memory: 500 MB RAM (minimum)</li>
@@ -215,4 +212,4 @@ rm -rf $HOME/celestia-node $HOME/.celestia-app $HOME/.celestia-light-mocha`}
 	)
 }
 
-export default LightNodeInstallation
+export default LightNode

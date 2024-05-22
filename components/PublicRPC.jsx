@@ -1,6 +1,6 @@
-import { Table, Alert } from 'antd'
 import { WarningFilled } from '@ant-design/icons'
 import styles from '@styles/Services.module.scss'
+import { Alert, Table } from 'antd'
 import prettyMilliseconds from 'pretty-ms'
 
 const parseTime = snapTime => {
@@ -82,7 +82,7 @@ const PublicRPC = ({ data, projectName, type }) => {
 
 	return (
 		<>
-			<div className={`${styles.mainColumn} bg-[#fff] dark:bg-[#1b1b1b]`}>
+			<div className={`${styles.mainColumn} bg-[#fff] dark:bg-[#19191A]`}>
 				<h2 id='public-rpc'>Public RPC endpoints: {dataArray.length} active</h2>
 
 				<Alert

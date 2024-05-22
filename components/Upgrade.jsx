@@ -100,7 +100,7 @@ const Upgrade = ({ name, type }) => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				<></>
 				{!updHeight ? (

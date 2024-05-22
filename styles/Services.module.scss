@@ -17,7 +17,7 @@
 .container {
 	display: flex;
 	position: relative;
-	padding: 5px 35px;
+	padding: 5px 30px;
 	margin-top: 58px;
 	margin-bottom: 20px;
 	width: 100%;
@@ -128,12 +128,12 @@ b.bold {
 
 	h1 {
 		display: block;
-		font-size: 38px;
+		font-size: 36px;
 		font-weight: 900;
 		width: fit-content;
 
 		@media (max-width: 1600px) {
-			font-size: 34px;
+			font-size: 33px;
 		}
 		@media (max-width: 768px) {
 			font-size: 25px;
@@ -188,7 +188,7 @@ b.bold {
 	}
 
 	a {
-		color: #2982e7;
+		color: #2982e7ea;
 		font-weight: 400;
 		text-decoration: none;
 
@@ -328,7 +328,7 @@ b.bold {
 	display: flex;
 	flex-wrap: wrap;
 	row-gap: max(10px, 1vw);
-	column-gap: max(15px, 2vw);
+	column-gap: max(13px, 1.5vw);
 	margin: 10px 0;
 }
 

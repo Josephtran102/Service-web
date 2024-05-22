@@ -59,7 +59,7 @@ const CheatSheet = props => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				<>
 					<h2 id='service-operations'>Service operations ⚙️</h2>

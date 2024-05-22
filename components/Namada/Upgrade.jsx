@@ -1,12 +1,11 @@
-import { useContext, useRef } from 'react'
 import Head from 'next/head'
-import { Alert } from 'antd'
+import { useContext, useRef } from 'react'
 
-import projects from 'data/projects'
-import styles from '@styles/Services.module.scss'
 import { Context } from '@context/context'
-import CodeBlock from '../UI/CodeBlock'
+import styles from '@styles/Services.module.scss'
+import projects from 'data/projects'
 import AnimatedSection from '../AnimatedSection'
+import CodeBlock from '../UI/CodeBlock'
 
 const Upgrade = ({ name, type }) => {
 	const project = projects[type][name]
@@ -42,7 +41,7 @@ const Upgrade = ({ name, type }) => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				<CodeBlock
 					desc='Upgrade to v0.32.1'

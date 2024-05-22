@@ -5,27 +5,28 @@ import { useContext } from 'react'
 import AnimatedSection from '../../AnimatedSection'
 import CodeSnippet from '../../UI/CodeSnippet'
 
-const BridgeNodeInstallation = () => {
+const BridgeNode = () => {
 	const { theme } = useContext(Context)
 
 	return (
 		<AnimatedSection>
 			<Head>
-				<title>Celestia Bridge Node Setup for Mocha Testnet — mocha-4</title>
+				<title>Bridge Node Setup for Mocha Testnet — mocha-4</title>
 				<meta name='description' content='Celestia Bridge Node Setup instructions for Mocha  Testnet.' />
 			</Head>
 
 			<div
 				className={styles.mainColumn}
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b', gap: '4px' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A', gap: '4px' }}
 			>
-				<h1>Celestia Bridge Node Setup for Mocha Testnet (mocha-4)</h1>
+				<h1>Bridge Node Setup for Mocha Testnet (mocha-4)</h1>
 
 				<p className='flex flex-wrap items-center gap-2 pb-2'>
 					<a href='https://docs.celestia.org/nodes/bridge-node/' target='_blank' rel='noopener noreferrer'>
 						Official documentation
 					</a>
 				</p>
+
 				<h4 className='hardware'>Hardware Requirements:</h4>
 				<ul className='!m-1'>
 					<li>Memory: 8 GB RAM</li>
@@ -226,4 +227,4 @@ rm -rf $HOME/celestia-node $HOME/.celestia-app $HOME/.celestia-bridge-mocha-4`}
 	)
 }
 
-export default BridgeNodeInstallation
+export default BridgeNode

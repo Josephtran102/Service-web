@@ -64,7 +64,7 @@ const ProjectsModal = ({ name, type }) => {
 							return (
 								<Link
 									href={URL}
-									className={`${styles.chain__wrapper} bg-zinc-50/80 dark:bg-zinc-800`}
+									className={`${styles.chain__wrapper} bg-zinc-50/60 dark:bg-zinc-800 !text-[#8f8293]`}
 									onClick={handleLinkClick}
 									key={name}
 								>
@@ -94,7 +94,7 @@ const ProjectsModal = ({ name, type }) => {
 							return (
 								<Link
 									href={URL}
-									className={`${styles.chain__wrapper} bg-zinc-50/80 dark:bg-zinc-800`}
+									className={`${styles.chain__wrapper} bg-zinc-50/60 dark:bg-zinc-800 !text-[#91a785]`}
 									onClick={handleLinkClick}
 									key={name}
 								>

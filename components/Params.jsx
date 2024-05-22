@@ -1,10 +1,10 @@
+import { Table } from 'antd'
 import Head from 'next/head'
 import { useContext } from 'react'
-import { Table, Alert } from 'antd'
 import AnimatedSection from './AnimatedSection'
 
-import styles from '@styles/Services.module.scss'
 import { Context } from '@context/context'
+import styles from '@styles/Services.module.scss'
 
 const Params = ({ paramsData, type }) => {
 	const { theme } = useContext(Context)
@@ -53,7 +53,7 @@ const Params = ({ paramsData, type }) => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				{paramsData && (
 					<>

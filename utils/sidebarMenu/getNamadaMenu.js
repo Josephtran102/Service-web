@@ -21,7 +21,7 @@ export const getNamadaMenuItems = (type, imgURL, serviceURL, name, handleClick) 
 	return [
 		getItem(
 			<div className='flex flex-col gap-2 '>
-				<div className='flex gap-2 md:gap-3 items-center mb-1'>
+				<div className='flex gap-2 md:gap-3 items-center mb-2	'>
 					<Image
 						className='my-1 mx-1'
 						src={require(`../../public/${type}/${imgURL}`)}
@@ -41,10 +41,11 @@ export const getNamadaMenuItems = (type, imgURL, serviceURL, name, handleClick) 
 			[
 				getItem(
 					<Link href={serviceURL}>
-						<span className='mr-3'>⚙️</span> API & Sync
+						<Image className='mr-4' src='/icons/emoji/settings.svg' alt='telegram' width={18} height={18} />{' '}
+						API & Sync
 					</Link>,
 					`services`,
-					<RightOutlined />,
+					null,
 					[
 						generateLinkItem(serviceURL, name, 'rpc', 'RPC, API, GRPC', handleClick, ''),
 						generateLinkItem(serviceURL, name, 'peer', 'Peers, Seeds', handleClick, ''),
@@ -55,10 +56,11 @@ export const getNamadaMenuItems = (type, imgURL, serviceURL, name, handleClick) 
 				),
 				getItem(
 					<Link href={serviceURL + '/installation'}>
-						<span className='mr-3'>📌</span> Installation
+						<Image className='mr-4' src='/icons/emoji/pin.svg' alt='telegram' width={18} height={18} />{' '}
+						Installation
 					</Link>,
 					`installation`,
-					<RightOutlined />,
+					null,
 					[
 						generateLinkItem(
 							serviceURL,
@@ -82,18 +84,20 @@ export const getNamadaMenuItems = (type, imgURL, serviceURL, name, handleClick) 
 				),
 				getItem(
 					<Link href={serviceURL + '/upgrade'}>
-						<span className='mr-3'>🔄</span> Upgrade
+						<Image className='mr-4' src='/icons/emoji/update.svg' alt='update' width={18} height={18} />{' '}
+						Upgrade
 					</Link>,
 					`upgrade`,
-					<RightOutlined />,
+					null,
 					[generateLinkItem(serviceURL, name, 'manual', 'Manual upgrade', handleClick, '/upgrade')]
 				),
 				getItem(
 					<Link href={serviceURL + '/cheat-sheet'}>
-						<span className='mr-3'>📝</span> Cheat sheet
+						<Image className='mr-4' src='/icons/emoji/sheet.svg' alt='telegram' width={18} height={18} />{' '}
+						Cheat sheet
 					</Link>,
 					`cheat-sheet`,
-					<RightOutlined />,
+					null,
 					[
 						generateLinkItem(
 							serviceURL,
@@ -134,8 +138,12 @@ export const getNamadaMenuItems = (type, imgURL, serviceURL, name, handleClick) 
 		},
 		getItem(
 			<div>
-				<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/public-rpc'}>
-					<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
+				<Link
+					className='font-normal text-sm dark:text-[#a7a7a7] flex items-center gap-3 ml-3 mt-1'
+					href={serviceURL + '/public-rpc'}
+				>
+					<Image className='' src='/icons/emoji/globe.svg' alt='telegram' width={18} height={18} /> Public RPC
+					Scanner
 				</Link>
 			</div>,
 			'public rpc',

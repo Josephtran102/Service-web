@@ -1,15 +1,15 @@
-import { useContext, useEffect, useRef, useState } from 'react'
 import { Context } from '@context/context'
-import Head from 'next/head'
 import { Typography } from 'antd'
+import Head from 'next/head'
+import { useContext, useRef } from 'react'
 const { Paragraph } = Typography
 
-import projects from 'data/projects'
-import styles from '@styles/Services.module.scss'
-import CodeSnippet from '@components/UI/CodeSnippet.jsx'
 import AnimatedSection from '@components/AnimatedSection'
-import useNetInfo from 'hooks/useNetInfo'
+import CodeSnippet from '@components/UI/CodeSnippet.jsx'
 import useFetchSnapInfo from '@hooks/useFetchSnapInfo'
+import styles from '@styles/Services.module.scss'
+import projects from 'data/projects'
+import useNetInfo from 'hooks/useNetInfo'
 
 const CosmosAPI = ({ name, type }) => {
 	const project = projects[type][name]
@@ -39,7 +39,7 @@ const CosmosAPI = ({ name, type }) => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				<h2 id='rpc'>RPC, API, gRPC</h2>
 				<div className='flex flex-col flex-wrap gap-1 mb-1'>

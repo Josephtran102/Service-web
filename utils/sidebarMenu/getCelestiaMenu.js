@@ -21,7 +21,7 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 	return [
 		getItem(
 			<div className='flex flex-col gap-2 '>
-				<div className='flex gap-2 md:gap-3 items-center mb-1'>
+				<div className='flex gap-2 md:gap-3 items-center mb-2'>
 					<Image
 						className='my-1 mx-1'
 						src={require(`../../public/${type}/${imgURL}`)}
@@ -41,7 +41,8 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 			[
 				getItem(
 					<Link href={serviceURL}>
-						<span className='mr-3'>⚙️</span> API & Sync
+						<Image className='mr-4' src='/icons/emoji/settings.svg' alt='telegram' width={18} height={18} />{' '}
+						API & Sync
 					</Link>,
 					`services`,
 					null,
@@ -55,7 +56,8 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 				),
 				getItem(
 					<Link href={serviceURL + '/installation'}>
-						<span className='mr-3'>📌</span> Installation
+						<Image className='mr-4' src='/icons/emoji/pin.svg' alt='telegram' width={18} height={18} />{' '}
+						Installation
 					</Link>,
 					`installation`,
 					null,
@@ -91,7 +93,8 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 				),
 				getItem(
 					<Link href={serviceURL + '/upgrade'}>
-						<span className='mr-3'>🔄</span> Upgrade
+						<Image className='mr-4' src='/icons/emoji/update.svg' alt='update' width={18} height={18} />{' '}
+						Upgrade
 					</Link>,
 					`upgrade`,
 					null,
@@ -99,7 +102,8 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 				),
 				getItem(
 					<Link href={serviceURL + '/cheat-sheet'}>
-						<span className='mr-3'>📝</span> Cheat sheet
+						<Image className='mr-4' src='/icons/emoji/sheet.svg' alt='telegram' width={18} height={18} />{' '}
+						Cheat sheet
 					</Link>,
 					`cheat-sheet`,
 					null,
@@ -147,28 +151,43 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 			</span>
 		),
 		getItem(
-			<Link href={serviceURL + '/bridge-node-installation'}>
-				<span className='mr-3'>🌉</span> Bridge
+			<Link href={serviceURL + '/bridge-node'}>
+				<Image className='mr-4' src='/icons/emoji/bridge.svg' alt='telegram' width={18} height={18} /> Bridge
 			</Link>,
-			`upgrade`,
-			<RightOutlined />
-			// [generateLinkItem(serviceURL, name, 'manual', 'Manual upgrade', handleClick, '/upgrade')]
+			`bridge-node`,
+			null,
+			[
+				generateLinkItem(serviceURL, name, 'installation', 'Installation', handleClick, '/bridge-node'),
+				generateLinkItem(serviceURL, name, 'cheat-sheet', 'Cheat Sheet', handleClick, '/bridge-node'),
+				generateLinkItem(serviceURL, name, 'upgrade', 'Upgrade', handleClick, '/bridge-node'),
+				generateLinkItem(serviceURL, name, 'delete', 'Delete', handleClick, '/bridge-node')
+			]
 		),
 		getItem(
-			<Link href={serviceURL + '/full-node-installation'}>
-				<span className='mr-3'>📦</span> Full
+			<Link href={serviceURL + '/full-node'}>
+				<Image className='mr-4' src='/icons/emoji/dna.svg' alt='telegram' width={18} height={18} /> Full
 			</Link>,
-			`upgrade`,
-			<RightOutlined />
-			// [generateLinkItem(serviceURL, name, 'manual', 'Manual upgrade', handleClick, '/upgrade')]
+			`full-node`,
+			null,
+			[
+				generateLinkItem(serviceURL, name, 'installation', 'Installation', handleClick, '/full-node'),
+				generateLinkItem(serviceURL, name, 'cheat-sheet', 'Cheat Sheet', handleClick, '/full-node'),
+				generateLinkItem(serviceURL, name, 'upgrade', 'Upgrade', handleClick, '/full-node'),
+				generateLinkItem(serviceURL, name, 'delete', 'Delete', handleClick, '/full-node')
+			]
 		),
 		getItem(
-			<Link href={serviceURL + '/light-node-installation'}>
-				<span className='mr-3'>🪶</span> Light
+			<Link href={serviceURL + '/light-node'}>
+				<Image className='mr-4' src='/icons/emoji/feather.svg' alt='telegram' width={18} height={18} /> Light
 			</Link>,
-			`upgrade`,
-			<RightOutlined />
-			// [generateLinkItem(serviceURL, name, 'manual', 'Manual upgrade', handleClick, '/upgrade')]
+			`light-node`,
+			null,
+			[
+				generateLinkItem(serviceURL, name, 'installation', 'Installation', handleClick, '/light-node'),
+				generateLinkItem(serviceURL, name, 'cheat-sheet', 'Cheat Sheet', handleClick, '/light-node'),
+				generateLinkItem(serviceURL, name, 'upgrade', 'Upgrade', handleClick, '/light-node'),
+				generateLinkItem(serviceURL, name, 'delete', 'Delete', handleClick, '/light-node')
+			]
 		),
 		getItem('', 'divider1', null, null, 'group'),
 		{
@@ -176,8 +195,12 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 		},
 		getItem(
 			<div>
-				<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/public-rpc'}>
-					<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
+				<Link
+					className='font-normal text-sm dark:text-[#a7a7a7] flex items-center gap-3 ml-3 mt-1'
+					href={serviceURL + '/public-rpc'}
+				>
+					<Image className='' src='/icons/emoji/globe.svg' alt='telegram' width={18} height={18} /> Public RPC
+					Scanner
 				</Link>
 			</div>,
 			'public rpc',
@@ -187,8 +210,12 @@ export const getCelestiaMenuItems = (type, imgURL, serviceURL, name, handleClick
 		),
 		getItem(
 			<div className='mb-2'>
-				<Link className='font-normal text-sm dark:text-[#a7a7a7]' href={serviceURL + '/monitoring'}>
-					<span className='mr-2 ml-3'> 🤖</span> Monitoring script
+				<Link
+					className='font-normal text-sm dark:text-[#a7a7a7] flex items-center ml-3 mt-1'
+					href={serviceURL + '/monitoring'}
+				>
+					<Image className='mr-3' src='/icons/emoji/bot.svg' alt='telegram' width={18} height={18} />{' '}
+					Monitoring script
 				</Link>
 			</div>,
 			'public rpc',

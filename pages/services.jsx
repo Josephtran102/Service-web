@@ -25,13 +25,13 @@ const services = () => {
 					style={{
 						width: '100%',
 						padding: '10px',
-						marginTop: '60px'
+						marginTop: '50px'
 					}}
 				>
 					<div className={styles.mainColumn}>
-						<h1 style={{ paddingTop: '0px' }}>Services 🌟</h1>
+						{/* <h1 style={{ paddingTop: '0px' }}>Pick one of the project to check available services 🌟</h1> */}
 						<br />
-						<h2 id='mainnets' style={{ marginTop: '0', paddingTop: '5px' }}>
+						<h2 id='mainnets' style={{ marginTop: '-10px', paddingTop: '0' }}>
 							Mainnet
 						</h2>
 						<div className={styles.mainnetColumn}>
@@ -40,7 +40,11 @@ const services = () => {
 								const serviceURL = '/services/mainnet/' + name.toLowerCase()
 
 								return (
-									<Link href={serviceURL} key={name} className={styles.chain__wrapper}>
+									<Link
+										href={serviceURL}
+										key={name}
+										className={`${styles.chain__wrapper} bg-zinc-50/20 dark:bg-zinc-800 !text-[#8f8293]`}
+									>
 										<Image
 											src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
 											alt='project logo'
@@ -62,7 +66,11 @@ const services = () => {
 								const serviceURL = '/services/testnet/' + name.toLowerCase()
 
 								return (
-									<Link href={serviceURL} key={name} className={styles.chain__wrapper}>
+									<Link
+										href={serviceURL}
+										key={name}
+										className={`${styles.chain__wrapper} bg-zinc-50/60 dark:bg-zinc-800 !text-[#8c9a84]`}
+									>
 										<Image
 											src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
 											alt='project logo'

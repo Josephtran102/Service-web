@@ -40,7 +40,7 @@ const API = ({ name, type }) => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				<h2 id='rpc'>RPC, Peers, Seed, Addrbook, Genesis</h2>
 				<div className='flex flex-col flex-wrap gap-1 mb-1'>

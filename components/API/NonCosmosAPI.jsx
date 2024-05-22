@@ -1,12 +1,12 @@
-import { useContext, useRef } from 'react'
-import { Context } from '@context/context'
-import projects from 'data/projects'
-import styles from '@styles/Services.module.scss'
-import CodeSnippet from '@components/UI/CodeSnippet.jsx'
-import Head from 'next/head'
-import AnimatedSection from '../AnimatedSection'
-import { Alert } from 'antd'
 import CodeBlock from '@components/UI/CodeBlock'
+import CodeSnippet from '@components/UI/CodeSnippet.jsx'
+import { Context } from '@context/context'
+import styles from '@styles/Services.module.scss'
+import { Alert } from 'antd'
+import projects from 'data/projects'
+import Head from 'next/head'
+import { useContext, useRef } from 'react'
+import AnimatedSection from '../AnimatedSection'
 
 const NonCosmosAPI = ({ name, type }) => {
 	const project = projects[type][name]
@@ -60,7 +60,7 @@ const NonCosmosAPI = ({ name, type }) => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				<p className='flex flex-wrap items-center gap-2 pb-2'>
 					<a href={project.offValDoc} target='_blank' rel='nofollow'>

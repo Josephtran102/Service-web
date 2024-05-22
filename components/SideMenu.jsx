@@ -13,7 +13,16 @@ import { getNamadaMenuItems } from '@utils/sidebarMenu/getNamadaMenu'
 import projects from 'data/projects'
 import { currentProject } from 'utils/currentProjectByURL'
 
-let rootSubmenuKeys = ['services', 'installation', 'upgrade', 'cheat-sheet', 'public-rpc']
+let rootSubmenuKeys = [
+	'services',
+	'installation',
+	'upgrade',
+	'cheat-sheet',
+	'public-rpc',
+	'bridge-node',
+	'light-node',
+	'full-node'
+]
 
 const SideMenu = () => {
 	const router = useRouter()
@@ -118,7 +127,7 @@ const SideMenu = () => {
 				? setItems([
 						getItem(
 							<div className='flex flex-col gap-2 '>
-								<div className='flex gap-2 md:gap-3 items-center mb-1'>
+								<div className='flex gap-2 md:gap-3 items-center mb-2'>
 									{' '}
 									<Image
 										className='my-1 mx-1'
@@ -162,7 +171,14 @@ const SideMenu = () => {
 							name,
 							'upgrade',
 							<span>
-								<span className='mr-3'>🔄</span> Upgrade
+								<Image
+									className='mr-4'
+									src='/icons/emoji/update.svg'
+									alt='update'
+									width={18}
+									height={18}
+								/>{' '}
+								Upgrade
 							</span>
 						),
 						generateLinkItem(
@@ -230,7 +246,14 @@ const SideMenu = () => {
 							[
 								getItem(
 									<Link href={serviceURL}>
-										<span className='mr-3'>⚙️</span> API & Sync
+										<Image
+											className='mr-4'
+											src='/icons/emoji/settings.svg'
+											alt='telegram'
+											width={18}
+											height={18}
+										/>{' '}
+										API & Sync
 									</Link>,
 									`services`,
 									null,
@@ -245,7 +268,14 @@ const SideMenu = () => {
 
 								getItem(
 									<Link href={serviceURL + '/installation'}>
-										<span className='mr-3'>📌</span> Installation
+										<Image
+											className='mr-4'
+											src='/icons/emoji/pin.svg'
+											alt='telegram'
+											width={18}
+											height={18}
+										/>{' '}
+										Installation
 									</Link>,
 									`installation`,
 									null,
@@ -296,7 +326,14 @@ const SideMenu = () => {
 								),
 								getItem(
 									<Link href={serviceURL + '/upgrade'}>
-										<span className='mr-3'>🔄</span> Upgrade
+										<Image
+											className='mr-4'
+											src='/icons/emoji/update.svg'
+											alt='update'
+											width={18}
+											height={18}
+										/>{' '}
+										Upgrade
 									</Link>,
 									`upgrade`,
 									null,
@@ -312,7 +349,14 @@ const SideMenu = () => {
 								),
 								getItem(
 									<Link href={serviceURL + '/cheat-sheet'}>
-										<span className='mr-3'>📝</span> Cheat sheet
+										<Image
+											className='mr-4'
+											src='/icons/emoji/sheet.svg'
+											alt='telegram'
+											width={18}
+											height={18}
+										/>
+										Cheat sheet
 									</Link>,
 									`cheat-sheet`,
 									null,
@@ -355,10 +399,17 @@ const SideMenu = () => {
 						getItem(
 							<div>
 								<Link
-									className='font-normal text-sm dark:text-[#a7a7a7]'
+									className='font-normal text-sm dark:text-[#a7a7a7] flex items-center gap-3 ml-3 mt-1'
 									href={serviceURL + '/public-rpc'}
 								>
-									<span className='mr-2 ml-3'> 🌐</span> Public RPC Scanner
+									<Image
+										className=''
+										src='/icons/emoji/globe.svg'
+										alt='telegram'
+										width={18}
+										height={18}
+									/>{' '}
+									Public RPC Scanner
 								</Link>
 							</div>,
 							'public rpc',
@@ -385,12 +436,19 @@ const SideMenu = () => {
 						getItem(
 							<div className='mb-2'>
 								<a
-									className='font-normal text-sm dark:text-[#a7a7a7]'
+									className='font-normal text-sm dark:text-[#a7a7a7] flex items-center ml-3 mt-1'
 									href={`https://t.me/itrocket_${type}_proposal_bot`}
 									target='_blank'
 									rel='noopener noreferrer'
 								>
-									<span className='mr-2 ml-3'> 🤖</span> Proposal bot
+									<Image
+										className='mr-3'
+										src='/icons/emoji/bot.svg'
+										alt='telegram'
+										width={18}
+										height={18}
+									/>{' '}
+									Proposal bot
 								</a>
 							</div>,
 							'public rpc',
@@ -406,7 +464,7 @@ const SideMenu = () => {
 		<aside
 			className={styles.sideColumn}
 			style={{
-				backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a'
+				backgroundColor: theme === 'light' ? '#fff' : '#19191A'
 			}}
 		>
 			<div className={styles.sideColumn__wrapper}>
@@ -414,7 +472,7 @@ const SideMenu = () => {
 					items={items}
 					style={{
 						width: '100%',
-						backgroundColor: theme === 'light' ? '#fff' : '#1a1a1a'
+						backgroundColor: theme === 'light' ? '#fff' : '#19191A'
 					}}
 					mode='inline'
 					theme={theme}

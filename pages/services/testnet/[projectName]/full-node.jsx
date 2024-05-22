@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router'
 
+import FullStorageNode from '@components/Celestia/testnet/FullNode'
 import { getLayout } from '@layouts/dashboard'
 import { generateProjectPaths, getProjects } from '@utils/projectUtils'
 import FourOhFour from 'pages/_error'
-import LightNodeSetup from '@components/Celestia/testnet/LightNodeInstallation'
 
 const type = 'testnet'
 
@@ -15,7 +15,7 @@ const Project = ({ project }) => {
 		return <FourOhFour />
 	}
 
-	return <LightNodeSetup />
+	return <FullStorageNode />
 }
 
 export async function getStaticPaths() {

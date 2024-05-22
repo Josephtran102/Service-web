@@ -5,13 +5,13 @@ import { useContext } from 'react'
 import AnimatedSection from '../../AnimatedSection'
 import CodeSnippet from '../../UI/CodeSnippet'
 
-const FullStorageNodeSetup = () => {
+const FullStorageNode = () => {
 	const { theme } = useContext(Context)
 
 	return (
 		<AnimatedSection>
 			<Head>
-				<title>Celestia Full Storage Node Setup for Mocha Testnet — mocha-4</title>
+				<title>Full Storage Node Setup for Mocha Testnet — mocha-4</title>
 				<meta
 					name='description'
 					content='Setup instructions for Celestia Full Storage Node on the Mocha Testnet.'
@@ -20,17 +20,16 @@ const FullStorageNodeSetup = () => {
 
 			<div
 				className={styles.mainColumn}
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b', gap: '4px' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A', gap: '4px' }}
 			>
-				<h1>Celestia Full Storage Node Setup for Mocha Testnet — mocha-4</h1>
-				<p>
-					Official documentation:{' '}
+				<h1>Full Storage Node Setup for Mocha Testnet — mocha-4</h1>
+				<p className='pb-2'>
 					<a
 						href='https://docs.celestia.org/nodes/full-storage-node'
 						target='_blank'
 						rel='noopener noreferrer'
 					>
-						Full Storage node setup instructions
+						Official documentation
 					</a>
 				</p>
 
@@ -124,7 +123,7 @@ make cel-key`}
 					code={`cd $HOME/celestia-node
 ./cel-key list --node.type bridge --keyring-backend test --p2p.network mocha`}
 				/>
-				<h4>Replace Consensus node ip, RPC and gRPC ports</h4>
+				<h4>Replace Consensus node ip, RPC and gRPC ports:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`CORE_IP="<PUT_RPC_IP>"
@@ -225,7 +224,7 @@ make cel-key`}
 					code={`sudo systemctl restart celestia-full && sudo journalctl -u celestia-full -f`}
 				/>
 
-				<h2 className='delete'>Delete Full Storage node</h2>
+				<h2 id='delete'>Delete Full Storage node</h2>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo systemctl stop celestia-full
@@ -238,4 +237,4 @@ rm -rf $HOME/celestia-node $HOME/.celestia-app $HOME/.celestia-full-mocha-4`}
 	)
 }
 
-export default FullStorageNodeSetup
+export default FullStorageNode

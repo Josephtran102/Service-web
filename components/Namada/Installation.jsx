@@ -119,7 +119,7 @@ const Installation = props => {
 			<div
 				className={styles.mainColumn}
 				id='mainColumn'
-				style={{ backgroundColor: theme === 'light' ? '#fff' : '#1b1b1b' }}
+				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A' }}
 			>
 				<>
 					<h2 id='installation'>Manual Installation</h2>
@@ -248,10 +248,7 @@ namada client utils join-network --chain-id $CHAIN_ID --genesis-validator $ALIAS
 						]}
 					/>
 					<p>Join-network as Full Nodes or Post-Genesis Validator:</p>
-					<CodeSnippet
-						theme={theme}
-						code={`namada client utils join-network --chain-id $CHAIN_ID`}
-					/>					
+					<CodeSnippet theme={theme} code={`namada client utils join-network --chain-id $CHAIN_ID`} />
 				</div>
 				<p>Create Service file:</p>
 				<CodeSnippet
@@ -331,10 +328,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 										Check Sync status, once your node is fully synced, the output from above will say
 										<kbd className={`${styles.kbd} dark:bg-slate-600`}>false</kbd>
 									</span>
-									<CodeSnippet
-										theme={theme}
-										code={`curl http://127.0.0.1:26657/status | jq `}
-									/>
+									<CodeSnippet theme={theme} code={`curl http://127.0.0.1:26657/status | jq `} />
 								</div>
 							)
 						},
@@ -357,7 +351,7 @@ sudo systemctl restart namadad && sudo journalctl -u namadad -f`}
 		--discord-handle <DISCORD> \\
 		--account-keys $WALLET \\
 		--memo $MEMO`}
-/>
+									/>
 									<span>
 										Find your <kbd className={`${styles.kbd} dark:bg-slate-600`}>established</kbd>
 										validator address
