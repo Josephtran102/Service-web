@@ -153,7 +153,7 @@ sudo systemctl enable celestia-light
 sudo systemctl restart celestia-light && sudo journalctl -u celestia-light -f`}
 				/>
 
-				<h2 id='cheat-sheet'>Useful commands</h2>
+				<h2 id='cheat-sheet'>Cheat sheet</h2>
 				<h4>Check Light Node wallet balance:</h4>
 				<CodeSnippet theme={theme} code={`celestia state balance --node.store ~/.celestia-light-mocha-4/`} />
 

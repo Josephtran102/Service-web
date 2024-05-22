@@ -172,7 +172,7 @@ AUTH_TOKEN=$(celestia $NODE_TYPE auth admin --p2p.network mocha)`}
      http://localhost:26658`}
 				/>
 
-				<h2 id='cheat-sheet'>Useful commands</h2>
+				<h2 id='cheat-sheet'>Cheat sheet</h2>
 				<h4>Check bridge wallet balance:</h4>
 				<CodeSnippet theme={theme} code={`celestia state balance --node.store ~/.celestia-bridge-mocha-4/`} />
 
