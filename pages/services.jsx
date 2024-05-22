@@ -43,7 +43,7 @@ const services = () => {
 									<Link
 										href={serviceURL}
 										key={name}
-										className={`${styles.chain__wrapper} bg-zinc-50/20 dark:bg-zinc-800 !text-[#8f8293]`}
+										className={`${styles.chain__wrapper} bg-zinc-50/20 dark:bg-zinc-800 !text-[#8d7e92]`}
 									>
 										<Image
 											src={require('@public/mainnet/'.concat(mainnetData[item].imgUrl))}
@@ -69,7 +69,7 @@ const services = () => {
 									<Link
 										href={serviceURL}
 										key={name}
-										className={`${styles.chain__wrapper} bg-zinc-50/60 dark:bg-zinc-800 !text-[#8c9a84]`}
+										className={`${styles.chain__wrapper} bg-zinc-50/60 dark:bg-zinc-800 !text-[#88977f]`}
 									>
 										<Image
 											src={require('@public/testnet/'.concat(testnetData[item].imgUrl))}
