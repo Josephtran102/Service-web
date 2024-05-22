@@ -79,6 +79,9 @@ const SideMenu = () => {
 		if (URL.indexOf('installation') > -1) setOpenKeys([`installation`])
 		else if (URL.indexOf('upgrade') > -1) setOpenKeys([`upgrade`])
 		else if (URL.indexOf('cheat') > -1) setOpenKeys([`cheat-sheet`])
+		else if (URL.indexOf('bridge-node') > -1) setOpenKeys([`bridge-node`])
+		else if (URL.indexOf('full-node') > -1) setOpenKeys([`full-node`])
+		else if (URL.indexOf('light-node') > -1) setOpenKeys([`light-node`])
 		else setOpenKeys([`services`])
 	}
 
