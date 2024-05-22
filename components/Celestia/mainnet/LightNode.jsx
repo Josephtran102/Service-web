@@ -5,24 +5,24 @@ import { useContext } from 'react'
 import AnimatedSection from '../../AnimatedSection'
 import CodeSnippet from '../../UI/CodeSnippet'
 
-const LightNode = () => {
+const LightNodeMainnet = () => {
 	const { theme } = useContext(Context)
 
 	return (
 		<AnimatedSection>
 			<Head>
-				<title>Light Node Setup for Testnet — mocha-4</title>
-				<meta name='description' content='Setup instructions for Celestia Light Node on the Testnet.' />
+				<title>Light Node Setup for Celestia Mainnet — celestia</title>
+				<meta name='description' content='Setup instructions for Celestia Light Node on the Mainnet.' />
 			</Head>
 
 			<div
 				className={styles.mainColumn}
 				style={{ backgroundColor: theme === 'light' ? '#fff' : '#19191A', gap: '4px' }}
 			>
-				<h1>Light Node Setup for Testnet — mocha-4</h1>
+				<h1>Light Node Setup for Celestia Mainnet — celestia</h1>
 				<p className='pb-2'>
 					<a href='https://docs.celestia.org/nodes/light-node' target='_blank' rel='noopener noreferrer'>
-						Official documentation{' '}
+						Official documentation
 					</a>
 				</p>
 				<h4 className='hardware'>Hardware Requirements:</h4>
@@ -74,9 +74,9 @@ go version`}
 rm -rf celestia-node
 git clone https://github.com/celestiaorg/celestia-node.git
 cd celestia-node/
-git checkout tags/v0.13.5
-make build
-sudo make install
+git checkout tags/v0.13.5 
+make build 
+sudo make install 
 make cel-key`}
 				/>
 
@@ -105,7 +105,8 @@ cd ~/celestia-node
 					code={`cd $HOME/celestia-node
 ./cel-key list --node.type light --keyring-backend test --p2p.network mocha`}
 				/>
-				<h4>Create Service file Replace FULL node ip, RPC and gRPC ports:</h4>
+
+				<h4>Create Service file and replace FULL node ip, RPC and gRPC ports:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`CORE_IP="<PUT_FULL_NODE_RPC_IP>"
@@ -114,7 +115,6 @@ CORE_GRPC_PORT="<PUT_FULL_NODE_GRPC_PORT>"
 KEY_NAME="my_celes_key"`}
 				/>
 
-				<h4>Create Service file and replace FULL node ip, RPC and gRPC ports:</h4>
 				<CodeSnippet
 					theme={theme}
 					code={`sudo tee /etc/systemd/system/celestia-light.service > /dev/null <<EOF
@@ -135,7 +135,7 @@ ExecStart=$(which celestia) light start \\
 --rpc.port 26658 \\
 --p2p.network mocha \\
 --metrics.tls=true \\
---metrics --metrics.endpoint otel.celestia-mocha.com
+--metrics --metrics.endpoint otel.celestia.observer
 Restart=on-failure
 RestartSec=3
 LimitNOFILE=65535
@@ -155,23 +155,20 @@ sudo systemctl restart celestia-light && sudo journalctl -u celestia-light -f`}
 
 				<h2 id='cheat-sheet'>Useful commands</h2>
 				<h4>Check Light Node wallet balance:</h4>
-				<CodeSnippet theme={theme} code={`celestia state balance --node.store ~/.celestia-light-mocha-4/`} />
+				<CodeSnippet theme={theme} code={`celestia state balance --node.store ~/.celestia-light/`} />
 
 				<h4>Check Light node status:</h4>
-				<CodeSnippet
-					theme={theme}
-					code={`celestia header sync-state --node.store ~/.celestia-light-mocha-4/`}
-				/>
+				<CodeSnippet theme={theme} code={`celestia header sync-state --node.store ~/.celestia-light/`} />
 
 				<h4>Submit a blob to Celestia:</h4>
 				<CodeSnippet
 					theme={theme}
-					code={`AUTH_TOKEN=$(celestia light auth admin --p2p.network mocha)
+					code={`AUTH_TOKEN=$(celestia light auth admin)
 celestia blob submit 0x42690c204d39600fddd3 'gm' --token $AUTH_TOKEN`}
 				/>
 
 				<h4>(Optional) Add permissions for transferring keys to another server:</h4>
-				<CodeSnippet theme={theme} code={`chmod -R 700 .celestia-light-mocha-4`} />
+				<CodeSnippet theme={theme} code={`chmod -R 700 .celestia-light`} />
 
 				<h2 id='upgrade'>Upgrade</h2>
 				<h4>Stop light node:</h4>
@@ -205,11 +202,11 @@ make cel-key`}
 					code={`sudo systemctl stop celestia-light
 sudo systemctl disable celestia-light
 sudo rm /etc/systemd/system/celestia-light*
-rm -rf $HOME/celestia-node $HOME/.celestia-app $HOME/.celestia-light-mocha`}
+rm -rf $HOME/celestia-node $HOME/.celestia-app $HOME/.celestia-light`}
 				/>
 			</div>
 		</AnimatedSection>
 	)
 }
 
-export default LightNode
+export default LightNodeMainnet
