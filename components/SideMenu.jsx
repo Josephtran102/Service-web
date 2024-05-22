@@ -154,23 +154,31 @@ const SideMenu = () => {
 							serviceURL,
 							name,
 							'installation',
-							<span>
-								<span className='mr-3'>📌</span> Installation
-							</span>
+							<div className='flex'>
+								<Image className='mr-4' src='/icons/emoji/pin.svg' alt='telegram' width={18} height={18} />{' '}
+								Installation
+							</div>
 						),
 						generateLinkItem(
 							serviceURL,
 							name,
 							'security',
-							<span>
-								<span className='mr-3'>🔒</span> Security
-							</span>
+							<div className='flex'>
+								<Image
+									className='mr-4'
+									src='/icons/emoji/lock.svg'
+									alt='telegram'
+									width={18}
+									height={18}
+								/>{' '}
+								Security
+							</div>
 						),
 						generateLinkItem(
 							serviceURL,
 							name,
 							'upgrade',
-							<span>
+							<div className='flex'>
 								<Image
 									className='mr-4'
 									src='/icons/emoji/update.svg'
@@ -179,15 +187,16 @@ const SideMenu = () => {
 									height={18}
 								/>{' '}
 								Upgrade
-							</span>
+							</div>
 						),
 						generateLinkItem(
 							serviceURL,
 							name,
 							'delete',
-							<span>
-								<span className='mr-3'>❌</span> Delete
-							</span>
+							<div className='flex'>
+								<Image className='mr-4' src='/icons/emoji/no.svg' alt='telegram' width={18} height={18} />{' '}
+								Delete
+							</div>
 						),
 						name === 'nym' &&
 							generateLinkItem(
