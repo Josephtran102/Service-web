@@ -5,7 +5,7 @@
 	"scripts": {
 		"postinstall": "prisma generate",
 		"dev": "next dev",
-		"build": "next build",
+		"build": "prisma generate && <actual-build-command>",
 		"export": "next build && next export",
 		"start": "next start",
 		"lint": "next lint"
