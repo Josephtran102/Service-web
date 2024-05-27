@@ -51,7 +51,7 @@ const Dropdown = props => {
 					<a
 						target='_blank'
 						rel='noopener noreferrer'
-						href='https://testnet.itrocket.net/'
+						href='https://www.explorer.josephtran.xyz/'
 						className={styles.navItem}
 					>
 						Testnet

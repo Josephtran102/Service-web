@@ -88,7 +88,7 @@ const services = () => {
 						<div>
 							<Alert
 								message=<span>
-									ITRocket participates in{' '}
+									Joseph Tran participates in{' '}
 									<span
 										className='inline-block h-5 w-5 align-top mx-1 lg:mt-[2px]'
 										aria-hidden='true'
@@ -104,8 +104,8 @@ const services = () => {
 								showIcon
 								className='mt-1 mb-3 lg:mb-6 max-w-fit'
 							/>
-							<span>All ITRocket validator links - </span>
-							<Link href='/delegate'>https://itrocket.net/delegate</Link>
+							<span>All JosephTran validator links - </span>
+							<Link href='/delegate'>https://josephtran.xyz</Link>
 						</div>
 					</div>
 				</div>

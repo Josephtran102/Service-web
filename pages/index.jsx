@@ -111,7 +111,7 @@ const Home = () => {
 	return (
 		<>
 			<Head>
-				<title>ITRocket - Trusted Validator &amp; Interchain Utility Provider!</title>
+				<title>JosephTran - Reliable Validator &amp; Multi-Chain Service Provider!</title>
 				<meta
 					name='description'
 					content='ITRocket 🚀 - Crypto multipurpose project focused on providing best services for Cosmos (and not only) node operators'
@@ -142,12 +142,12 @@ const Home = () => {
 							<div className={styles.hero__column} id={styles.hero__descStaking}>
 								<div className={styles.hero__columnRoot}>
 									<h1 className='font-bold  mb-[15px] text-[26px] md:text-[38px] lg:text-[50px]'>
-										Trusted Validator &amp; Interchain Utility Provider
+									Reliable Validator &amp; Multi-Chain Service Provider
 									</h1>
 									<span className={styles.hero__desc}>
-										With few simple steps you can delegate funds to our trusted validators or explore our
-										services where you can find tools that will be useful for node operators and
-										developers.
+									By following a few easy steps, you can delegate your funds to our reliable validators
+									or explore our range of services, where you will find tools and resources beneficial for
+									both node operators and developers.
 									</span>
 								</div>
 								<div className={styles.hero__links}>

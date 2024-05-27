@@ -54,15 +54,16 @@ const Accordion = () => {
 			title: 'About us',
 			content: (
 				<span>
-					ITRocket is a team of DevOps engineers and Software Developers from Armenia{' '}
+					Welcome to Joseph Tran Node Operator Services, your comprehensive guide to setting up and managing blockchain nodes.{' '}
 					<span
 						className='inline-block h-5 w-5 align-top mx-1 lg:mt-[2px]'
 						aria-hidden='true'
-						style={{ background: "center / contain url('/icons/flag_am.svg')  no-repeat" }}
+						// style={{ background: "center / contain url('/icons/flag_am.svg')  no-repeat" }}
 					></span>{' '}
 					<br />
-					We are crypto enthusiasts and node operators in various crypto ecosystems. Our main goal is to help
-					millions of people effectively manage their crypto assets!
+					Our guides are designed to be clear and accessible, covering a wide range of blockchain platforms including
+					Ethereum, Polkadot, and Cosmos. We provide step-by-step instructions, best practices for security and performance,
+					and troubleshooting tips to ensure your nodes run smoothly and efficiently
 				</span>
 			)
 		},

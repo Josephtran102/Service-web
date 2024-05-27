@@ -44,8 +44,8 @@ const Header = () => {
 					setIsOpen(!isOpen)
 				}}
 			>
-				<a href='https://mainnet.itrocket.net/'>Mainnet</a>
-				<a href='https://testnet.itrocket.net/'>Testnet</a>
+				<a href='https://www.explorer.josephtran.xyz/'>Mainnet</a>
+				<a href='https://www.explorer.josephtran.xyz/'>Testnet</a>
 			</div>
 		</div>,
 		<Link
@@ -115,7 +115,7 @@ const Header = () => {
 				{
 					<Link href='/'>
 						<Image
-							src='/logo.svg'
+							src='/joselogo.png'
 							alt='logo'
 							width={180}
 							height={55}
@@ -125,7 +125,7 @@ const Header = () => {
 						/>
 
 						<Image
-							src='/darkLogo.svg'
+							src='/joselogo.png'
 							alt='logo'
 							width={180}
 							height={55}
@@ -246,15 +246,15 @@ const Header = () => {
 					<div className='divider-vertical hidden lg:block'></div>
 
 					<div className='hidden gap-3 lg:flex'>
-						<a href='https://t.me/itrocket_en' target='_blank' rel='noopener noreferrer'>
+						<a href='https://t.me/josephtran' target='_blank' rel='noopener noreferrer'>
 							<Image src='/icons/tg.svg' alt='telegram' width={30} height={30} />
 						</a>
 
-						<a href='https://twitter.com/itrocket_team' target='_blank' rel='noopener noreferrer'>
+						<a href='https://twitter.com/josephtran102' target='_blank' rel='noopener noreferrer'>
 							<Image src='/icons/twitter.svg' alt='twitter' width={30} height={30} />
 						</a>
 						<a
-							href='https://github.com/itrocket-am'
+							href='https://github.com/josephtran102'
 							target='_blank'
 							rel='noopener noreferrer'
 							style={{ display: theme === 'light' ? 'block' : 'none' }}
@@ -293,15 +293,15 @@ const Header = () => {
 				</nav>
 
 				<div className='socials'>
-					<a href='https://t.me/itrocket_en' target='_blank' rel='noopener noreferrer'>
+					<a href='https://t.me/josephtran' target='_blank' rel='noopener noreferrer'>
 						<Image src='/icons/tg.svg' alt='telegram' width={30} height={30} />
 					</a>
 
-					<a href='https://twitter.com/itrocket_team' target='_blank' rel='noopener noreferrer'>
+					<a href='https://twitter.com/josephtran102' target='_blank' rel='noopener noreferrer'>
 						<Image src='/icons/twitter.svg' alt='twitter' width={30} height={30} />
 					</a>
 					<a
-						href='https://github.com/itrocket-am'
+						href='https://github.com/josephtran102'
 						target='_blank'
 						rel='noopener noreferrer'
 						style={{ display: theme === 'light' ? 'block' : 'none' }}

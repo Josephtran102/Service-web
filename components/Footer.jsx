@@ -20,7 +20,7 @@ const Footer = props => {
 				<div className={styles.footer__logo}>
 					<Link href='/'>
 						<Image
-							src='/logo.svg'
+							src='/joselogo.png'
 							alt='logo'
 							width={220}
 							height={100}
@@ -29,7 +29,7 @@ const Footer = props => {
 						/>
 
 						<Image
-							src='/darkLogo.svg'
+							src='/joselogo.png'
 							alt='logo'
 							width={220}
 							height={100}
@@ -49,19 +49,19 @@ const Footer = props => {
 						/>{' '}
 						for the Web3 community.
 					</span>
-					<span className='text-slate-600'>© ITRocket Team. All rights reserved</span>
+					<span className='text-slate-600'>©Thanks to <a href="https://www.itrocket.net" target="_blank" rel="noopener noreferrer" className='text-blue-500 underline'>iTrocket</a> team for the source code.</span>
 				</div>
 
 				<div className='flex flex-col gap-2'>
 					<div className='socials'>
-						<a href='https://t.me/itrocket_en' target='_blank' rel='noopener noreferrer'>
+						<a href='https://t.me/josephtran' target='_blank' rel='noopener noreferrer'>
 							<Image src='/icons/tg.svg' alt='telegram' width={35} height={35} />
 						</a>
 
-						<a href='https://twitter.com/itrocket_team' target='_blank' rel='noopener noreferrer'>
+						<a href='https://twitter.com/josephtran102' target='_blank' rel='noopener noreferrer'>
 							<Image src='/icons/twitter.svg' alt='twitter' width={35} height={35} />
 						</a>
-						<a href='https://github.com/itrocket-am' target='_blank' rel='noopener noreferrer'>
+						<a href='https://github.com/josephtran102' target='_blank' rel='noopener noreferrer'>
 							<Image
 								src='/icons/github.svg'
 								alt='github'
@@ -80,7 +80,7 @@ const Footer = props => {
 					</div>
 					<div className='flex items-center justify-center'>
 						<Link href='/delegate' className='text-xs opacity-60 hover:opacity-85'>
-							ITRocket validator links
+							Joseph Tran validator links
 						</Link>
 					</div>
 				</div>
